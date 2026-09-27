@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Songs — LBC Worship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0d0d0f; --panel:#161618; --panel-2:#1c1c1f; --line:#2a2a2e; --line-soft:#202024; --ink:#ececed; --ink-dim:#9a9a9e; --ink-faint:#6a6a6e; --gold:#c9a84c; --font:'Inter',-apple-system,sans-serif; }
+    @font-face { font-family:'Priestacy'; src:url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display:swap; }
+    html, body { background:var(--bg); color:var(--ink); font-family:var(--font); }
+    body { line-height:1.5; -webkit-font-smoothing:antialiased; }
+    header { border-bottom:1px solid var(--line); padding:12px 20px; display:flex; align-items:center; gap:14px; }
+    .brand { font-family:'Priestacy',var(--font); font-size:27px; }
+    header a.home { color:var(--ink-dim); text-decoration:none; font-size:13px; padding:6px 10px; border:1px solid transparent; border-radius:7px; }
+    header a.home:hover { color:var(--ink); border-color:var(--line); }
+    .wrap { display:grid; grid-template-columns: 340px 1fr; min-height: calc(100vh - 58px); }
+    .list { border-right:1px solid var(--line); overflow-y:auto; max-height: calc(100vh - 58px); }
+    .search { position:sticky; top:0; background:var(--bg); padding:14px; border-bottom:1px solid var(--line-soft); }
+    .search input { width:100%; font:inherit; font-size:14px; background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:11px 12px; }
+    .search input:focus { outline:none; border-color:var(--ink-faint); }
+    .letter { font-size:10.5px; font-weight:700; letter-spacing:.13em; color:var(--ink-faint); padding:14px 16px 4px; }
+    .song { display:flex; align-items:center; gap:8px; width:100%; text-align:left; font:inherit; font-size:14px; background:none; border:0; color:var(--ink-dim); padding:9px 16px; cursor:pointer; }
+    .song:hover { background:var(--panel); color:var(--ink); }
+    .song.active { background:var(--panel-2); color:var(--ink); }
+    .song .dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    .song .dot.off { background:var(--line); }
+    .count { font-size:12px; color:var(--ink-faint); padding:8px 16px 20px; }
+    .view { padding:26px 34px; overflow-y:auto; max-height: calc(100vh - 58px); }
+    .view h1 { font-size:22px; font-weight:600; margin-bottom:4px; }
+    .meta { font-size:13px; color:var(--ink-dim); margin-bottom:18px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    .meta a { color:var(--ink); text-decoration:none; border:1px solid var(--line); padding:5px 11px; border-radius:6px; font-size:12.5px; }
+    .meta a:hover { border-color:var(--ink-faint); }
+    .block { border:1px solid var(--line-soft); border-radius:8px; padding:12px 14px; margin-bottom:8px; background:var(--panel); max-width:640px; }
+    .label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+    .line { font-size:15px; }
+    .empty { color:var(--ink-dim); font-size:15px; padding:40px 0; }
+    @media (max-width: 760px) { .wrap { grid-template-columns:1fr; } .list { border-right:0; border-bottom:1px solid var(--line); max-height:46vh; } .view { max-height:none; padding:20px 16px; } }
+  </style>
+</head>
+<body>
+  <header><a class="home" href="worship.html">&larr; Worship home</a><span class="brand">All Songs</span></header>
+  <div class="wrap">
+    <div class="list">
+      <div class="search"><input id="q" placeholder="Search songs" autocomplete="off"></div>
+      <div id="list"></div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="view" id="view"><div class="empty">Pick a song to see its words.</div></div>
+  </div>
+  <script src="js/songs-data.js"></script>
+  <script src="js/worship-songs.js"></script>
+  <script src="js/sheet.js?v=12"></script>
+  <script>
+    var S = LBCSheet, L = S.library(), setlist = S.setlist();
+    var all = Object.keys(L).map(function (s) { return { slug: s, title: S.titleOf(s), hasVideo: !!S.videoId(L[s].youtube), hasWords: !!(L[s].lyrics && L[s].lyrics.length) }; })
+      .sort(function (a, b) { return key(a.title).localeCompare(key(b.title)); });
+    function key(t) { return t.replace(/^(the|a|an)\s+/i, '').toLowerCase(); }
+    var current = location.hash.slice(1) || '';
+    function render(q) {
+      q = (q || '').trim().toLowerCase();
+      var items = q ? S.searchLibrary(q, 60).map(function (r) { return all.find(function (a) { return a.slug === r.slug; }); }).filter(Boolean) : all;
+      var html = '', last = '';
+      items.forEach(function (s) {
+        var ch = key(s.title)[0].toUpperCase();
+        if (!q && ch !== last) { html += '<div class="letter">' + ch + '</div>'; last = ch; }
+        html += '<button class="song' + (s.slug === current ? ' active' : '') + '" data-slug="' + s.slug + '"><span class="dot' + (s.hasVideo ? '' : ' off') + '"></span><span></span></button>';
+      });
+      document.getElementById('list').innerHTML = html;
+      var btns = document.querySelectorAll('.song');
+      items.forEach(function (s, i) { btns[i].lastChild.textContent = s.title; btns[i].onclick = function () { show(s.slug); }; });
+      document.getElementById('count').textContent = items.length + ' of ' + all.length + ' songs · gold dot = has a video';
+    }
+    function show(slug) {
+      current = slug; location.hash = slug;
+      var d = L[slug]; if (!d) return;
+      var v = S.videoId(d.youtube);
+      var html = '<h1></h1><div class="meta">' +
+        (v ? '<a href="' + d.youtube + '" target="_blank" rel="noopener">&#9654; Play on YouTube</a>' : '<span>No video yet</span>') +
+        '<a href="worship-studio.html">Add to Sunday in the Studio &rarr;</a>' +
+        (setlist.indexOf(slug) !== -1 ? '<span style="color:var(--gold)">In this Sunday’s set</span>' : '') + '</div>';
+      (d.lyrics || []).forEach(function (b) {
+        html += '<div class="block">' + (b.label ? '<div class="label"></div>' : '') + (b.lines || []).map(function () { return '<div class="line"></div>'; }).join('') + '</div>';
+      });
+      var view = document.getElementById('view'); view.innerHTML = html;
+      view.querySelector('h1').textContent = S.titleOf(slug);
+      var blocks = view.querySelectorAll('.block');
+      (d.lyrics || []).forEach(function (b, i) {
+        var lab = blocks[i].querySelector('.label'); if (lab) lab.textContent = b.label;
+        var lines = blocks[i].querySelectorAll('.line'); (b.lines || []).forEach(function (t, j) { lines[j].textContent = t; });
+      });
+      render(document.getElementById('q').value);
+      if (window.innerWidth <= 760) view.scrollIntoView({ behavior: 'smooth' });
+    }
+    document.getElementById('q').oninput = function () { render(this.value); };
+    render('');
+    if (current && L[current]) show(current);
+  </script>
+</body>
+</html>
