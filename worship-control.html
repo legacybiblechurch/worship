@@ -228,43 +228,47 @@
 
     /* ── mobile ─────────────────────────────── */
     @media (max-width: 760px) {
-      :root { --header-h: 48px; --footer-h: 68px; }
+      :root { --header-h: 50px; --footer-h: 72px; }
       .kbd-hint { display: none; }
-      #header { padding: 0 14px; gap: 10px; }
-      .wordmark { font-size: 19px; }
-      .display-link { padding: 7px 11px; }
+
+      /* header: brand + the two things a phone needs. On a phone the TV is
+         driven by the laptop, so "Open display" and the display pill go. */
+      #header { padding: 0 10px; gap: 8px; }
+      .wordmark { font-size: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+      #header a.display-link[href="worship.html"] { padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
+      #header a[href="worship-display.html"], #disp-pill, #phone-btn { display: none; }
+      body.remote #remote-pill { flex-shrink: 0; margin: 0; }
+      body:not(.remote) #phone-btn { display: inline-block; padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
+      #phone-panel { right: 10px; left: 10px; width: auto; }
 
       #layout { flex-direction: column; }
-      #sidebar {
-        width: auto; height: auto; flex-shrink: 0;
-        border-right: 0; border-bottom: 1px solid var(--line);
-        flex-direction: row; overflow: hidden;
-      }
+      #sidebar { width: auto; height: auto; flex-shrink: 0; border-right: 0; border-bottom: 1px solid var(--line); flex-direction: row; overflow: hidden; }
       .sidebar-head { display: none; }
-      #song-list {
-        display: flex; flex-direction: row; padding: 8px 10px; gap: 8px;
-        overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
+      #song-list { display: flex; flex-direction: row; padding: 8px 10px; gap: 8px; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       #song-list::-webkit-scrollbar { display: none; }
-      .song-item {
-        flex-direction: column; align-items: flex-start; gap: 2px;
-        border: 1px solid var(--line); border-left: 1px solid var(--line);
-        border-radius: 7px; padding: 8px 12px; white-space: nowrap;
-      }
+      .song-item { flex-direction: column; align-items: flex-start; gap: 2px; border: 1px solid var(--line); border-left: 1px solid var(--line); border-radius: 7px; padding: 8px 12px; white-space: nowrap; }
       .song-item.active { border-color: var(--gold); }
       .song-name { -webkit-line-clamp: 1; font-size: 13px; }
       .song-count::before { content: '· '; }
 
-      #main { padding: 14px 14px 18px; }
+      #main { padding: 12px 12px 190px; }
+      .song-bar { gap: 8px; }
+      .yt-link { display: none; }
       #slide-grid { grid-template-columns: 1fr; gap: 8px; }
       .slide-thumb { min-height: 0; padding: 12px 14px; }
-      .thumb-lines { font-size: 13px; }
 
-      #footer { padding: 0 10px; gap: 6px; }
-      .nav-btn { flex: 1 1 0; min-width: 0; padding: 14px 6px; font-size: 14px; text-align: center; justify-content: center; }
+      /* the audio deck becomes a full-width strip above the footer */
+      #deck { left: 10px; right: 10px; width: auto; bottom: calc(var(--footer-h) + 8px); padding: 8px 10px; }
+      #deck .vids { display: none; }
+      #deck .row button { padding: 10px 10px; font-size: 13px; flex: 1; }
+      #deck .row button.gold { flex: 1.6; }
+
+      /* footer: three big targets */
+      #footer { padding: 0 10px; gap: 8px; }
+      .nav-btn { flex: 1; padding: 14px 0; font-size: 15px; }
+      .nav-btn.primary { flex: 1.5; }
+      .blank-btn { padding: 14px 12px; font-size: 13px; }
       #position-info { display: none; }
-      .blank-btn { flex: 0 0 62px; min-width: 0; padding: 14px 4px; font-size: 11px; margin: 0; text-align: center; }
     }
   </style>
 </head>
