@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'christ-our-hope-in-life-and-death',
-  'ancient-of-days',
-  'yet-not-i-but-through-christ-in-me',
+  'holy-holy-holy',
+  'jesus-thank-you',
+  'amazing-grace',
 ];
