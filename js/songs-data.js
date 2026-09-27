@@ -107,8 +107,8 @@ const LEGACY_SONGS = {
   ]
   },
   "amen-go-tell-it-on-the-mountain": {
-    title: "Amen &mdash; Go Tell It on the Mountain",
-    youtube: "https://www.youtube.com/results?search_query=Amen+Go+Tell+It+on+the+Mountain+worship+official",
+    title: "Amen — Go Tell It on the Mountain",
+    youtube: "",
     lyrics: [
     { label: "", lines: ["Amen, amen, amen, amen, amen", "Sing it over!", "Amen, amen, amen, amen, amen"] },
     { label: "", lines: ["Go, tell it on the mountain", "Over the hills and ev'rywhere", "Go, tell it on the mountain", "That Jesus Christ is born!"] },
