@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'holy-holy-holy',
-  'jesus-thank-you',
   'amazing-grace',
+  'holy-holy-holy',
+  'give-us-clean-hands',
 ];
