@@ -1,0 +1,34 @@
+name: Lyrics engine accuracy
+
+# Every change to the engine is scored against the human-verified library on the
+# cached evidence for the evaluation recordings (evidence/*.json). A drop in
+# accuracy fails the check, so the engine cannot quietly get worse.
+
+on:
+  pull_request:
+    paths: ["scripts/engine/**", "evidence/**", "verified/**"]
+  push:
+    branches: [main]
+    paths: ["scripts/engine/**"]
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install --quiet requests
+      - name: Score the engine
+        run: |
+          python scripts/engine/eval.py --audio /nonexistent | tee eval.txt
+          python - << 'PY'
+          import json
+          rows = json.load(open("tests/engine_report.json"))
+          bad = [r for r in rows if r["line_wer"] > 0.25]
+          mean = sum(r["line_wer"] for r in rows) / max(1, len(rows))
+          print(f"mean line WER {mean:.3f} over {len(rows)} recordings")
+          assert mean <= 0.06, f"engine accuracy regressed: mean line WER {mean:.3f} > 0.06"
+          assert not bad, "songs over 25% line WER: " + ", ".join(r["slug"] for r in bad)
+          PY

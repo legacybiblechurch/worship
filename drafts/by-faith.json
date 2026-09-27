@@ -1,0 +1,106 @@
+{
+  "slug": "by-faith",
+  "title": "By Faith",
+  "input": "By Faith",
+  "isNew": false,
+  "forced": null,
+  "signature": "library",
+  "generatedAt": "2026-09-13T16:45:09+00:00",
+  "libraryReady": true,
+  "approvedAt": "",
+  "candidates": [
+    {
+      "videoId": "fXB8ihepUpE",
+      "url": "https://www.youtube.com/watch?v=fXB8ihepUpE",
+      "title": "By Faith",
+      "channel": "",
+      "duration": "",
+      "durationSec": 0,
+      "views": 0,
+      "hasCaptions": true,
+      "transcriptSource": "library",
+      "lyrics": [
+        {
+          "label": "",
+          "lines": [
+            "By faith we",
+            "See the hand of God",
+            "In the light of",
+            "Creation's grand design"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "In the lives of those who prove",
+            "His faithfulness",
+            "Who walk by faith and not by sight"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "By faith our",
+            "Fathers roamed the earth",
+            "With the pow'r of",
+            "His promise in their hearts"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Of a holy city built by",
+            "God's own hand",
+            "A place where peace and justice reign"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "We will stand as children of the promise",
+            "We will fix our eyes on Him, our soul's reward",
+            "Till the race is finished",
+            "And the work is done",
+            "We'll walk by faith and not by sight",
+            "By faith the",
+            "Prophets saw a day",
+            "When the longed-for",
+            "Messiah would appear"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "With the pow'r to Break the chains of",
+            "Sin and death",
+            "And rise triumphant from the grave"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "We will stand as children of the promise",
+            "We will fix our eyes on Him our soul's reward",
+            "Till the race is finished",
+            "And the work is done",
+            "We'll walk by faith and not by sight"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "We will stand as children of the promise",
+            "We will fix our eyes on Him our soul's reward",
+            "Till the race is finished",
+            "And the work is done",
+            "We'll walk by faith and not by sight",
+            "We'll walk by faith and not by sight"
+          ]
+        }
+      ],
+      "confidence": 100,
+      "order": "",
+      "notes": "Already in the library. Nothing to review - set Review = Approve to add it to this Sunday, or put 'redo' in Review to rebuild it from scratch."
+    }
+  ]
+}

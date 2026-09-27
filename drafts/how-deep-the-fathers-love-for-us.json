@@ -1,0 +1,165 @@
+{
+  "slug": "how-deep-the-fathers-love-for-us",
+  "title": "How Deep the Father's Love for Us",
+  "input": "how-deep-the-fathers-love-for-us",
+  "isNew": false,
+  "forced": null,
+  "signature": "4228b6abc2262b23",
+  "generatedAt": "2026-08-30T05:34:39+00:00",
+  "candidates": [
+    {
+      "videoId": "z65YxhqY0_E",
+      "url": "https://www.youtube.com/watch?v=z65YxhqY0_E",
+      "title": "How Deep the Father&#39;s Love For Us - Austin Stone Worship Live",
+      "channel": "Austin Stone Worship",
+      "publishedAt": "2015-10-16T08:32:13Z",
+      "durationSec": 271,
+      "duration": "4:31",
+      "views": 3019053,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "How deep the Father's love for us",
+            "How vast beyond all measure",
+            "That He should give His only Son",
+            "To make a wretch His treasure",
+            "How great the pain of searing loss",
+            "The Father turns His face away",
+            "As wounds which mar the Chosen One",
+            "Bring many sons to glory"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Behold the Man upon a cross",
+            "My sin upon His shoulders",
+            "Ashamed, I hear my mocking voice",
+            "Call out among the scoffers",
+            "It was my sin that held Him there",
+            "Until it was accomplished",
+            "His dying breath has brought me life",
+            "I know that it is finished"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "It is finished"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "It is finished"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "It is finished"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I will not boast in anything",
+            "No gifts, no power, no wisdom",
+            "But I will boast in Jesus Christ",
+            "His death and resurrection",
+            "Why should I gain from His reward",
+            "I cannot give an answer",
+            "But this I know with all my heart",
+            "His wounds have paid my ransom"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Why should I gain from His reward",
+            "I cannot give an answer",
+            "But this I know with all my heart",
+            "His wounds have paid my ransom"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Yes this I know with all my heart",
+            "His wounds have paid my ransom"
+          ]
+        }
+      ],
+      "transcriptSource": "subs",
+      "confidence": 92,
+      "notes": "Repeated 'It is finished' treated as three single-line Tag blocks. The final four-line and two-line repeats after Verse 3 are captured as separate Tag blocks since they are partial repeats, not full verses.",
+      "order": "Verse 1 · Verse 2 · Tag · Tag · Tag · Verse 3 · Tag · Tag"
+    },
+    {
+      "videoId": "SKDujmtyAVk",
+      "url": "https://www.youtube.com/watch?v=SKDujmtyAVk",
+      "title": "Selah - How Deep The Father&#39;s Love For Us [with lyrics]",
+      "channel": "Worship Videos (Louange et Adoration)",
+      "publishedAt": "2011-10-02T15:40:25Z",
+      "durationSec": 201,
+      "duration": "3:21",
+      "views": 3405952,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (ERROR: [youtube] SKDujmtyAVk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-).",
+      "order": ""
+    },
+    {
+      "videoId": "A0CDqG5STPM",
+      "url": "https://www.youtube.com/watch?v=A0CDqG5STPM",
+      "title": "How Deep The Father&#39;s Love For Us - Stuart Townend (Lyrics)",
+      "channel": "Humber UBF",
+      "publishedAt": "2020-04-26T18:20:20Z",
+      "durationSec": 218,
+      "duration": "3:38",
+      "views": 428435,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "TlyMxBj17LE",
+      "url": "https://www.youtube.com/watch?v=TlyMxBj17LE",
+      "title": "How Deep the Father&#39;s Love for Us - Phillips, Craig, &amp; Dean - Lyrics",
+      "channel": "Ginny G (Organizing Homelife)",
+      "publishedAt": "2020-04-13T22:48:49Z",
+      "durationSec": 197,
+      "duration": "3:17",
+      "views": 144056,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "dzKsLbM9UcY",
+      "url": "https://www.youtube.com/watch?v=dzKsLbM9UcY",
+      "title": "How Deep The Father&#39;s Love For Us - Phillips, Craig &amp; Dean (lyrics)",
+      "channel": "CHICAGO UBF - University Bible Fellowship",
+      "publishedAt": "2024-03-27T19:13:10Z",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 12518,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ]
+}

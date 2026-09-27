@@ -1,0 +1,198 @@
+{
+  "slug": "as-the-deer",
+  "title": "As The Deer",
+  "input": "As The Deer",
+  "isNew": true,
+  "forced": "ju9nbjIONzE",
+  "signature": "94f2e55900e524d1",
+  "generatedAt": "2026-09-06T17:24:38+00:00",
+  "candidates": [
+    {
+      "videoId": "ju9nbjIONzE",
+      "url": "https://www.youtube.com/watch?v=ju9nbjIONzE",
+      "title": "As the Deer",
+      "channel": "Juan Karlos Labaijo - Topic",
+      "publishedAt": "2026-02-12T06:20:58Z",
+      "durationSec": 207,
+      "duration": "3:27",
+      "views": 123680,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "As the deer panteth for the water so my soul longeth after Thee",
+            "You alone are my hearts desire and I long to worship Thee",
+            "You alone are my strength, my shield",
+            "To You alone may my spirit yield"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "You alone are my hearts desire and I long to worship Thee",
+            "You're my friend and You are my brother",
+            "Even though You are a King I love You more than any other",
+            "So much more than anything"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "You alone are my strength, my shield",
+            "To You alone may my spirit yield",
+            "You alone are my hearts desire and I long to worship Thee",
+            "I want You more than gold or silver"
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Only You can satisfy",
+            "You alone are the real joy giver and the apple of My eye",
+            "You alone are my strength, my shield",
+            "To You alone make my spirit yield"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "You alone are my hearts desire and I long to worship Thee"
+          ]
+        }
+      ],
+      "transcriptSource": "fromtitle",
+      "confidence": 90,
+      "notes": "Corrected spelling (dear→deer, herarts→hearts, youre→you're). Capitalized each line start and You/Your when referring to God.",
+      "order": "['Verse 1', 'Chorus', 'Verse 2', 'Bridge', 'Tag']"
+    },
+    {
+      "videoId": "78lj3sl8L9M",
+      "url": "https://www.youtube.com/watch?v=78lj3sl8L9M",
+      "title": "As the deer panteth for the water -hymn  lyrics video",
+      "channel": "Christian Fellowship TV",
+      "publishedAt": "2019-06-25T18:08:16Z",
+      "durationSec": 203,
+      "duration": "3:23",
+      "views": 341404,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "5rrXC5uKVb4",
+      "url": "https://www.youtube.com/watch?v=5rrXC5uKVb4",
+      "title": "As The Deer - Female version (with lyrics)",
+      "channel": "Music and Sound",
+      "publishedAt": "2019-05-13T03:47:03Z",
+      "durationSec": 207,
+      "duration": "3:27",
+      "views": 6132882,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "jSZWogD0AH4",
+      "url": "https://www.youtube.com/watch?v=jSZWogD0AH4",
+      "title": "As The Deer With Lyrics Best Heartwarming Version - Popular Christian Hymns &amp; Songs",
+      "channel": "Shemaroo Eternal Grace",
+      "publishedAt": "2019-11-15T13:54:39Z",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 5203164,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "zrCT90eSjVY",
+      "url": "https://www.youtube.com/watch?v=zrCT90eSjVY",
+      "title": "As the deer pants for the water English Christian worship song",
+      "channel": "Yogesh Oraon",
+      "publishedAt": "2018-11-24T17:15:44Z",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 1594917,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "TF27EczT_pU",
+      "url": "https://www.youtube.com/watch?v=TF27EczT_pU",
+      "title": "As the Deer (worship video w/ lyrics)",
+      "channel": "pastorloran",
+      "publishedAt": "2008-02-16T18:32:36Z",
+      "durationSec": 204,
+      "duration": "3:24",
+      "views": 1533864,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "RVQmZCK4Fiw",
+      "url": "https://www.youtube.com/watch?v=RVQmZCK4Fiw",
+      "title": "As The Deer - Maranatha Singers (With Lyrics)",
+      "channel": "soni817",
+      "publishedAt": "2008-12-21T19:01:12Z",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 1282132,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "rXFZsRhdT78",
+      "url": "https://www.youtube.com/watch?v=rXFZsRhdT78",
+      "title": "As the Deer | Lyric Video",
+      "channel": "Maranatha! Music",
+      "publishedAt": "2017-04-11T20:44:56Z",
+      "durationSec": 250,
+      "duration": "4:10",
+      "views": 578874,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "HN8BofgAQQ8",
+      "url": "https://www.youtube.com/watch?v=HN8BofgAQQ8",
+      "title": "As The Deer(Lyrics)-Martin J .Nystrom",
+      "channel": "Jojis Channel",
+      "publishedAt": "2020-03-23T07:15:40Z",
+      "durationSec": 169,
+      "duration": "2:49",
+      "views": 25762,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ]
+}

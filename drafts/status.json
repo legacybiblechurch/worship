@@ -1,0 +1,33 @@
+{
+  "updatedAt": "2026-09-13T16:45:09+00:00",
+  "sunday": "2026-09-13",
+  "songs": [
+    {
+      "input": "Crown Him with Many Crowns",
+      "review": "",
+      "chosenVideo": "",
+      "status": "draft",
+      "confidence": 100,
+      "message": "1 candidate(s)",
+      "slug": "crown-him-with-many-crowns"
+    },
+    {
+      "input": "By Faith",
+      "review": "",
+      "chosenVideo": "",
+      "status": "draft",
+      "confidence": 100,
+      "message": "1 candidate(s)",
+      "slug": "by-faith"
+    },
+    {
+      "input": "My Worth Is Not in What I Own",
+      "review": "",
+      "chosenVideo": "",
+      "status": "draft",
+      "confidence": 100,
+      "message": "1 candidate(s)",
+      "slug": "my-worth-is-not-in-what-i-own"
+    }
+  ]
+}

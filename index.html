@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worship — Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @font-face { font-family: 'Priestacy'; src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display: swap; }
+    :root {
+      --bg: #0d0d0f; --panel: #141416; --panel-2: #1b1b1e; --line: #2a2a2e; --line-soft: #202024;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #62626a; --gold: #c9a84c; --good: #7bb37e; --warn: #d8a657;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; padding: 40px 20px 60px; }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    .brand { font-family: 'Priestacy', var(--font); font-size: 40px; line-height: 1; }
+    .brand-sub { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; }
+
+    .card { margin-top: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+    .card-head { padding: 13px 18px; border-bottom: 1px solid var(--line-soft); display: flex; align-items: center; gap: 10px; }
+    .card-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
+    .card-state { margin-left: auto; font-size: 12.5px; font-weight: 600; }
+    .card-state.good { color: var(--good); }
+    .card-state.warn { color: var(--warn); }
+    .row { display: flex; align-items: center; gap: 12px; padding: 11px 18px; font-size: 15px; border-bottom: 1px solid var(--line-soft); }
+    .row:last-child { border-bottom: 0; }
+    .row .n { color: var(--ink-faint); font-size: 12px; width: 14px; font-variant-numeric: tabular-nums; }
+    .row .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); flex-shrink: 0; }
+    .row .dot.warn { background: var(--warn); }
+    .row .t { flex: 1; min-width: 0; }
+    .row .s { font-size: 12px; color: var(--ink-faint); }
+    .empty { padding: 18px; font-size: 14px; color: var(--ink-dim); }
+
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+    .act { display: block; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; min-height: 124px; }
+    .act:active { background: var(--panel-2); }
+    .act.primary { background: var(--gold); border-color: var(--gold); color: #16130a; }
+    .act h2 { font-size: 19px; font-weight: 600; }
+    .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
+    .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
+
+    .links { margin-top: 30px; display: flex; gap: 18px; font-size: 13px; }
+    .links a { color: var(--ink-dim); text-decoration: none; }
+    .links a:hover { color: var(--ink); }
+    @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } body { padding: 28px 16px 50px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Worship</div>
+    <div class="brand-sub">Legacy Bible Church</div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
+      <div id="songs"><div class="empty">Loading…</div></div>
+    </div>
+
+    <div class="actions">
+      <a class="act primary" href="worship-studio.html">
+        <div class="k">Before Sunday</div>
+        <h2>Prepare the songs</h2>
+        <p>Type the song names. The words are found and laid out for you.</p>
+      </a>
+      <a class="act" href="worship-control.html">
+        <div class="k">Sunday morning</div>
+        <h2>Run the service</h2>
+        <p>Open this on the laptop, then click “Open display” for the TV.</p>
+      </a>
+    </div>
+
+    <div class="links">
+      <a href="https://legacybiblechurch.github.io/legacy-bible-church/hymnal.html">All songs</a>
+      <a href="setlist.html">Song videos</a>
+    </div>
+  </div>
+
+  <script src="js/songs-data.js"></script>
+  <script src="js/worship-songs.js"></script>
+  <script src="js/sheet.js?v=12"></script>
+  <script>
+    LBCSheet.loadSongs(function (songs) {
+      var box = document.getElementById('songs'), st = document.getElementById('state');
+      if (!songs.length) {
+        box.innerHTML = '<div class="empty">No songs set yet. Tap <b>Prepare the songs</b> to add them.</div>';
+        st.textContent = 'Not set'; st.className = 'card-state warn'; return;
+      }
+      var bad = songs.filter(function (s) { return !s.ready; }).length;
+      box.innerHTML = songs.map(function (s, i) {
+        var d = document.createElement('div');
+        d.className = 'row';
+        d.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="dot' + (s.ready ? '' : ' warn') + '"></span><span class="t"></span><span class="s">' + (s.ready ? '' : 'no words') + '</span>';
+        d.querySelector('.t').textContent = s.title;
+        return d.outerHTML;
+      }).join('');
+      st.textContent = bad ? bad + ' need attention' : 'Ready';
+      st.className = 'card-state ' + (bad ? 'warn' : 'good');
+    });
+  </script>
+</body>
+</html>

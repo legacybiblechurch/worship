@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Videos — Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @font-face {
+      font-family: 'Priestacy';
+      src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype');
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #0d0d0f; --panel: #151517; --line: #262629;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #62626a;
+      --yt: #d94a3d;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: var(--bg); color: var(--ink); font-family: var(--font);
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 56px 22px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px;
+    }
+    h1 { font-family: 'Priestacy', var(--font); font-size: clamp(30px, 7vw, 44px); font-weight: 400; color: var(--ink); }
+    .date { font-size: 13px; color: var(--ink-dim); margin: 6px 0 44px; letter-spacing: 0.03em; }
+
+    .songs { display: flex; flex-direction: column; width: 100%; max-width: 460px; }
+    .song-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 4px; border-bottom: 1px solid var(--line);
+    }
+    .song-card:first-child { border-top: 1px solid var(--line); }
+    .song-num { font-size: 13px; color: var(--ink-faint); width: 18px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+    .song-info { flex: 1; min-width: 0; }
+    .song-title { font-size: 16px; font-weight: 600; color: var(--ink); }
+    .song-sub { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+    .yt-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid var(--line); color: var(--ink-dim);
+      text-decoration: none; font-size: 12px; font-weight: 600;
+      padding: 8px 13px; border-radius: 6px; white-space: nowrap; flex-shrink: 0;
+    }
+    .yt-btn:hover { border-color: var(--yt); color: var(--ink); }
+    .yt-icon { width: 13px; height: 9px; color: var(--yt); }
+    .no-song, .no-link { color: var(--ink-faint); font-size: 12px; }
+    .no-song { font-style: italic; text-align: center; }
+
+    .footer-note { margin-top: 44px; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+    .footer-note a { color: var(--ink-dim); }
+
+    @media (max-width: 560px) {
+      body { padding: 40px 18px; }
+      .date { margin-bottom: 32px; }
+      .song-card { gap: 12px; padding: 16px 2px; }
+      .song-title { font-size: 15.5px; }
+      .yt-btn { padding: 11px 15px; font-size: 13px; }
+    }
+      .home-back { position: fixed; top: 14px; left: 16px; z-index: 500; display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: #9a9a9e; text-decoration: none; background: rgba(13,13,15,0.85); border: 1px solid #2a2a2e; border-radius: 100px; padding: 7px 13px; backdrop-filter: blur(6px); }
+    .home-back:hover { color: #ececed; border-color: #6a6a6e; }
+  </style>
+</head>
+<body>
+  <a class="home-back" href="worship.html">&larr; Worship home</a>
+  <div class="eyebrow">Legacy Bible Church</div>
+  <h1>Song Videos</h1>
+  <div class="date" id="date-line">Loading&hellip;</div>
+
+  <div class="songs" id="song-list"><p class="no-song">Loading songs&hellip;</p></div>
+
+  <div class="footer-note">Updates every week &middot; <a href="worship.html">Worship home</a></div>
+
+  <script src="js/songs-data.js"></script>
+  <script src="js/worship-songs.js"></script>
+  <script>
+    var now = new Date(), day = now.getDay();
+    var sunday = new Date(now);
+    sunday.setDate(now.getDate() + (day === 0 ? 0 : 7 - day));
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('date-line').textContent = months[sunday.getMonth()] + ' ' + sunday.getDate() + ', ' + sunday.getFullYear();
+
+    var list = document.getElementById('song-list');
+    var setlist = window.WORSHIP_SETLIST || [];
+    list.innerHTML = '';
+
+    if (!setlist.length) {
+      list.innerHTML = '<p class="no-song">This week’s songs aren’t posted yet.</p>';
+    }
+
+    setlist.forEach(function (slug, i) {
+      var data = LEGACY_SONGS[slug];
+      var card = document.createElement('div');
+      card.className = 'song-card';
+      if (!data) {
+        card.innerHTML = '<span class="song-num">' + (i + 1) + '</span>' +
+          '<div class="song-info"><div class="song-title" style="color:var(--ink-faint)">Not found: ' + slug + '</div></div>';
+        list.appendChild(card); return;
+      }
+      var hasYt = data.youtube && data.youtube.indexOf('watch?v=') !== -1;
+      card.innerHTML =
+        '<span class="song-num">' + (i + 1) + '</span>' +
+        '<div class="song-info">' +
+          '<div class="song-title">' + data.title + '</div>' +
+          '<div class="song-sub">' + (hasYt ? 'Play along on YouTube' : 'Video coming soon') + '</div>' +
+        '</div>' +
+        (hasYt
+          ? '<a class="yt-btn" href="' + data.youtube + '" target="_blank" rel="noopener">' +
+              '<svg class="yt-icon" viewBox="0 0 14 10" fill="currentColor"><path d="M13.7 1.56A1.76 1.76 0 0 0 12.47.32C11.37 0 7 0 7 0S2.63 0 1.53.32A1.76 1.76 0 0 0 .3 1.56C0 2.67 0 5 0 5s0 2.33.3 3.44a1.76 1.76 0 0 0 1.23 1.24C2.63 10 7 10 7 10s4.37 0 5.47-.32a1.76 1.76 0 0 0 1.23-1.24C14 7.33 14 5 14 5s0-2.33-.3-3.44ZM5.6 7.14V2.86L9.24 5 5.6 7.14Z"/></svg>' +
+              'Play</a>'
+          : '<span class="no-link">No link</span>');
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>

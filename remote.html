@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Remote — LBC Worship</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d0d0f;color:#ececed;font-family:'Inter',-apple-system,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .box{width:100%;max-width:360px;text-align:center}
+  h1{font-size:20px;font-weight:600;margin-bottom:6px}
+  p{color:#9a9a9e;font-size:14px;line-height:1.5;margin-bottom:22px}
+  input{width:100%;font:inherit;font-size:30px;font-weight:600;letter-spacing:.2em;text-align:center;text-transform:uppercase;background:#161618;color:#ececed;border:1px solid #2a2a2e;border-radius:12px;padding:16px 10px;outline:none}
+  input:focus{border-color:#c9a84c}
+  button{width:100%;margin-top:12px;font:inherit;font-size:17px;font-weight:600;background:#c9a84c;color:#16130a;border:0;border-radius:12px;padding:16px;cursor:pointer}
+  .hint{margin-top:18px;font-size:12.5px;color:#6a6a6e}
+</style></head><body>
+<div class="box">
+  <h1>Phone remote</h1>
+  <p>On the church computer, open Worship Control and click <b>Phone remote</b>. Type the code it shows.</p>
+  <input id="code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder="CODE" inputmode="text">
+  <button id="go">Connect</button>
+  <div class="hint">The phone moves the slides on the TV and can play / fade the songs on the computer.</div>
+</div>
+<script>
+  var i=document.getElementById('code');
+  try{ var saved=localStorage.getItem('lbc-room'); if(saved) i.value=saved; }catch(e){}
+  function go(){ var c=i.value.trim().toUpperCase().replace(/[^A-Z0-9]/g,''); if(c.length<4) return; location.href='worship-control.html?remote='+c; }
+  document.getElementById('go').onclick=go; i.onkeydown=function(e){ if(e.key==='Enter') go(); };
+  i.focus();
+</script>
+</body></html>

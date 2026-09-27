@@ -1,0 +1,210 @@
+[
+ {
+  "line_wer": 0.389,
+  "wer": 1.779,
+  "line_hit": 0.667,
+  "extra": 15,
+  "lines_out": 38,
+  "lines_ref": 18,
+  "checks": 10,
+  "verdict": "unverified",
+  "slug": "agnus-dei",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.396,
+  "wer": 0.065,
+  "line_hit": 0.531,
+  "extra": 14,
+  "lines_out": 28,
+  "lines_ref": 32,
+  "checks": 1,
+  "verdict": "check",
+  "slug": "before-the-throne-of-god-above",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.238,
+  "wer": 0.117,
+  "line_hit": 0.542,
+  "extra": 20,
+  "lines_out": 41,
+  "lines_ref": 48,
+  "checks": 6,
+  "verdict": "check",
+  "slug": "by-faith",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.35,
+  "wer": 0.113,
+  "line_hit": 0.472,
+  "extra": 17,
+  "lines_out": 32,
+  "lines_ref": 36,
+  "checks": 10,
+  "verdict": "unverified",
+  "slug": "christ-the-sure-and-steady-anchor",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.455,
+  "wer": 0.202,
+  "line_hit": 0.647,
+  "extra": 12,
+  "lines_out": 20,
+  "lines_ref": 17,
+  "checks": 4,
+  "verdict": "check",
+  "slug": "holy-holy-holy",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.399,
+  "wer": 0.027,
+  "line_hit": 0.636,
+  "extra": 11,
+  "lines_out": 28,
+  "lines_ref": 33,
+  "checks": 1,
+  "verdict": "check",
+  "slug": "how-long-o-lord-how-long-psalm-13",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.26,
+  "wer": 0.464,
+  "line_hit": 0.75,
+  "extra": 18,
+  "lines_out": 39,
+  "lines_ref": 28,
+  "checks": 11,
+  "verdict": "unverified",
+  "slug": "i-will-glory-in-my-redeemer",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.288,
+  "wer": 0.19,
+  "line_hit": 0.87,
+  "extra": 19,
+  "lines_out": 41,
+  "lines_ref": 46,
+  "checks": 6,
+  "verdict": "check",
+  "slug": "jesus-thank-you",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.347,
+  "wer": 0.017,
+  "line_hit": 0.611,
+  "extra": 13,
+  "lines_out": 43,
+  "lines_ref": 54,
+  "checks": 0,
+  "verdict": "verified",
+  "slug": "my-soul-longs-for-the-lord",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.268,
+  "wer": 0.051,
+  "line_hit": 0.776,
+  "extra": 16,
+  "lines_out": 45,
+  "lines_ref": 49,
+  "checks": 4,
+  "verdict": "check",
+  "slug": "my-soul-will-wait-psalm-62",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.292,
+  "wer": 0.083,
+  "line_hit": 0.419,
+  "extra": 18,
+  "lines_out": 31,
+  "lines_ref": 43,
+  "checks": 5,
+  "verdict": "check",
+  "slug": "my-worth-is-not-in-what-i-own",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.464,
+  "wer": 0.448,
+  "line_hit": 0.583,
+  "extra": 23,
+  "lines_out": 36,
+  "lines_ref": 36,
+  "checks": 11,
+  "verdict": "unverified",
+  "slug": "the-power-of-the-cross",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ },
+ {
+  "line_wer": 0.181,
+  "wer": 0.062,
+  "line_hit": 0.625,
+  "extra": 10,
+  "lines_out": 25,
+  "lines_ref": 24,
+  "checks": 7,
+  "verdict": "unverified",
+  "slug": "speak-o-lord",
+  "sources": [
+   "asr_large",
+   "asr_turbo",
+   "asr_prompted"
+  ]
+ }
+]

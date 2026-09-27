@@ -1,0 +1,77 @@
+{
+  "slug": "crown-him-with-many-crowns",
+  "title": "Crown Him with Many Crowns",
+  "input": "Crown Him with Many Crowns",
+  "isNew": false,
+  "forced": null,
+  "signature": "library",
+  "generatedAt": "2026-09-13T16:45:09+00:00",
+  "libraryReady": true,
+  "approvedAt": "",
+  "candidates": [
+    {
+      "videoId": "YuMh_ept-Js",
+      "url": "https://www.youtube.com/watch?v=YuMh_ept-Js",
+      "title": "Crown Him with Many Crowns",
+      "channel": "",
+      "duration": "",
+      "durationSec": 0,
+      "views": 0,
+      "hasCaptions": true,
+      "transcriptSource": "library",
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Crown Him with many crowns",
+            "The Lamb upon His throne",
+            "Hark! how the heav'nly anthem drowns",
+            "All music but its own",
+            "Awake my soul and sing",
+            "Of Him who died for thee",
+            "And hail Him as thy matchless King",
+            "Through all eternity"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Crown Him the Lord of love",
+            "Behold His hands and side",
+            "Rich wounds, yet visible above",
+            "In beauty glorified",
+            "No angel in the sky",
+            "Can fully bear that sight",
+            "But downward bends his wand'ring eye",
+            "At mysteries so bright"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Crown Him the Lord of life",
+            "Who triumphed o'er the grave",
+            "And rose victorious in the strife",
+            "For those He came to save",
+            "His glories now we sing",
+            "Who died, and rose on high",
+            "Who died, eternal life to bring",
+            "And lives that death may die"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "All hail, Redeemer, hail!",
+            "For Thou hast died for me",
+            "Thy praise shall never, never fail",
+            "Throughout eternity"
+          ]
+        }
+      ],
+      "confidence": 100,
+      "order": "",
+      "notes": "Already in the library. Nothing to review - set Review = Approve to add it to this Sunday, or put 'redo' in Review to rebuild it from scratch."
+    }
+  ]
+}

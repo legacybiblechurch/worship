@@ -1,0 +1,16 @@
+name: yt-diag
+# Proves GitHub can fetch YouTube audio through the residential proxy (YT_PROXY).
+on: { workflow_dispatch: {} }
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q -U yt-dlp
+      - name: fetch through proxy
+        env: { YT_PROXY: "${{ secrets.YT_PROXY }}" }
+        run: |
+          [ -n "$YT_PROXY" ] || { echo "YT_PROXY secret is not set"; exit 1; }
+          yt-dlp -q --no-warnings --proxy "$YT_PROXY" -f "bestaudio[ext=m4a]/bestaudio" -o "out.%(ext)s" "https://www.youtube.com/watch?v=avFBQh0iWMI"
+          ls -la out.* && echo "PROXY OK"

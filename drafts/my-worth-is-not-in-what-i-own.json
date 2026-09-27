@@ -1,0 +1,107 @@
+{
+  "slug": "my-worth-is-not-in-what-i-own",
+  "title": "My Worth Is Not in What I Own",
+  "input": "My Worth Is Not in What I Own",
+  "isNew": false,
+  "forced": null,
+  "signature": "library",
+  "generatedAt": "2026-09-13T16:45:09+00:00",
+  "libraryReady": true,
+  "approvedAt": "",
+  "candidates": [
+    {
+      "videoId": "05jKxv8ApuI",
+      "url": "https://www.youtube.com/watch?v=05jKxv8ApuI",
+      "title": "My Worth Is Not in What I Own",
+      "channel": "",
+      "duration": "",
+      "durationSec": 0,
+      "views": 0,
+      "hasCaptions": true,
+      "transcriptSource": "library",
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "My worth is not in what I own",
+            "Not in the strength of flesh and bone",
+            "But in the costly wounds of love",
+            "At the cross"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "My worth is not in skill or name",
+            "In win or lose, in pride or shame",
+            "But in the blood of Christ that flowed",
+            "At the cross"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "I rejoice in my Redeemer",
+            "Greatest treasure",
+            "Wellspring of my soul",
+            "I will trust in Him, no other",
+            "My soul is satisfied",
+            "In Him alone"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "As summer flowers, we fade and die",
+            "Fame, youth and beauty hurry by",
+            "But life eternal calls to us",
+            "At the cross"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "I will not boast in wealth or might",
+            "Or human wisdom's fleeting light",
+            "But I will boast in knowing Christ",
+            "At the cross"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "I rejoice in my Redeemer",
+            "Greatest treasure",
+            "Wellspring of my soul",
+            "I will trust in Him, no other",
+            "My soul is satisfied",
+            "In Him alone"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "Two wonders here that I confess",
+            "My worth and my unworthiness",
+            "My value fixed, my ransom paid",
+            "At the cross"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "I rejoice in my Redeemer",
+            "Greatest treasure",
+            "Wellspring of my soul",
+            "I will trust in Him, no other",
+            "My soul is satisfied",
+            "In Him alone"
+          ]
+        }
+      ],
+      "confidence": 100,
+      "order": "",
+      "notes": "Already in the library. Nothing to review - set Review = Approve to add it to this Sunday, or put 'redo' in Review to rebuild it from scratch."
+    }
+  ]
+}

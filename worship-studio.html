@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worship Studio — LBC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0d0d0f; --panel: #161618; --panel-2: #1c1c1f; --line: #2a2a2e; --line-soft: #202024;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #6a6a6e;
+      --gold: #c9a84c; --good: #7bb37e; --warn: #d8a657; --bad: #d98a7a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    @font-face { font-family: 'Priestacy'; src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display: swap; }
+    html, body { background: var(--bg); color: var(--ink); font-family: var(--font); height: 100%; }
+    body { line-height: 1.5; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; }
+    a { color: inherit; }
+    button { font: inherit; }
+
+    header { border-bottom: 1px solid var(--line); padding: 12px 20px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .brand { font-family: 'Priestacy', var(--font); font-size: 27px; }
+    .hdr-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--ink-dim); padding: 5px 10px; border: 1px solid var(--line); border-radius: 100px; cursor: pointer; background: none; white-space: nowrap; }
+    .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); }
+    .pill.on .dot { background: var(--good); }
+    .pill.on { cursor: default; }
+
+    .btn { font-size: 13px; font-weight: 500; background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); padding: 8px 14px; border-radius: 7px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+    .btn:hover { border-color: var(--ink-faint); }
+    .btn:disabled { opacity: 0.45; cursor: default; }
+    .btn.primary { background: var(--gold); color: #16130a; border-color: var(--gold); font-weight: 600; }
+    .btn.primary:hover { filter: brightness(1.08); }
+    .btn.primary:disabled { background: var(--panel-2); color: var(--ink-faint); border-color: var(--line); filter: none; }
+    .btn.big { font-size: 15px; padding: 13px 18px; width: 100%; justify-content: center; }
+    .btn.good { background: var(--good); border-color: var(--good); color: #0f1a10; font-weight: 600; }
+    .btn.quiet { background: none; border-color: transparent; color: var(--ink-dim); }
+    .btn.quiet:hover { color: var(--ink); border-color: var(--line); }
+
+    #work { flex: 1; display: grid; grid-template-columns: 290px 1fr; min-height: 0; }
+
+    /* ── rail ─────────────────────────────────── */
+    .rail { border-right: 1px solid var(--line); overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 6px; }
+    .rail-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); margin: 8px 2px 4px; display: flex; align-items: center; }
+    .rail-label .sub { margin-left: auto; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--warn); }
+    .song-row { display: flex; align-items: center; gap: 6px; border: 1px solid transparent; border-radius: 7px; padding: 4px 4px 4px 10px; color: var(--ink-dim); cursor: pointer; }
+    .song-row:hover { background: var(--panel); color: var(--ink); }
+    .song-row.active { background: var(--panel-2); border-color: var(--line); color: var(--ink); }
+    .song-row .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); flex-shrink: 0; }
+    .song-row .dot.warn { background: var(--warn); }
+    .song-row .dot.busy { background: var(--ink-faint); animation: pulse 1.2s infinite; }
+    @keyframes pulse { 50% { opacity: 0.3; } }
+    .song-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13.5px; padding: 4px 0; }
+    .song-row .nm small { display: block; font-size: 11px; color: var(--ink-faint); }
+    .song-row .unsaved { color: var(--warn); font-size: 16px; line-height: 1; }
+    .song-row .ctl { display: none; gap: 1px; }
+    .song-row:hover .ctl, .song-row.active .ctl { display: inline-flex; }
+    .ico { background: none; border: 0; color: var(--ink-faint); width: 24px; height: 24px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+    .ico:hover { background: var(--line); color: var(--ink); }
+    .ico:disabled { opacity: 0.25; cursor: default; }
+    .ico.x:hover { color: var(--bad); }
+
+    .add-wrap { position: relative; margin-top: 4px; }
+    .add-wrap input { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 11px 12px; }
+    .add-wrap input:focus { outline: none; border-color: var(--ink-faint); }
+    .add-wrap input::placeholder { color: var(--ink-faint); }
+    .sugg { position: absolute; left: 0; right: 0; top: 100%; margin-top: 4px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; z-index: 20; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; }
+    .sugg.show { display: block; }
+    .sugg button { display: flex; width: 100%; text-align: left; align-items: center; gap: 9px; background: none; border: 0; color: var(--ink); padding: 10px 12px; cursor: pointer; font-size: 13.5px; border-bottom: 1px solid var(--line-soft); }
+    .sugg button:last-child { border-bottom: 0; }
+    .sugg button:hover, .sugg button.hi { background: var(--line-soft); }
+    .sugg .tag { margin-left: auto; font-size: 11px; color: var(--ink-faint); white-space: nowrap; }
+    .sugg .find { color: var(--gold); }
+    .rail-foot { margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .ready-note { font-size: 12px; color: var(--ink-faint); text-align: center; min-height: 18px; }
+    .ready-note.warn { color: var(--warn); }
+    .ready-note.good { color: var(--good); }
+
+    /* ── main ─────────────────────────────────── */
+    .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+    .main-head { padding: 12px 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; flex-shrink: 0; min-height: 58px; }
+    .main-title { font-size: 18px; font-weight: 600; }
+    .main-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+    .save-state { font-size: 12.5px; color: var(--ink-faint); }
+    .save-state.dirty { color: var(--warn); }
+    .panes { flex: 1; display: grid; grid-template-columns: 1fr 1fr; min-height: 0; }
+    .pane { display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: hidden; }
+    .pane + .pane { border-left: 1px solid var(--line); }
+    .pane-head { padding: 9px 16px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); border-bottom: 1px solid var(--line-soft); flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+    .pane-head .hint { font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 11.5px; }
+    .pane-head .right { margin-left: auto; font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 11.5px; }
+    #lyricBox { flex: 1; width: 100%; resize: none; font: inherit; font-size: 15px; line-height: 1.72; background: var(--bg); color: var(--ink); border: 0; padding: 16px 20px; outline: none; }
+    .preview { flex: 1; overflow-y: auto; padding: 16px; }
+    .pv { border: 1px solid var(--line-soft); border-radius: 6px; padding: 11px 13px; margin-bottom: 7px; background: var(--panel); }
+    .pv-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+    .pv-line { font-size: 14px; }
+    .video-strip { padding: 12px 16px; border-bottom: 1px solid var(--line-soft); flex-shrink: 0; }
+    .video-strip iframe { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 6px; background: #000; display: block; }
+    .video-strip .novid { aspect-ratio: 16/9; border: 1px dashed var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--ink-faint); font-size: 13px; }
+    .video-strip input { width: 100%; margin-top: 8px; font: inherit; font-size: 12.5px; font-family: var(--mono); background: var(--panel); color: var(--ink-dim); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; }
+
+    /* finding / candidates */
+    .center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; color: var(--ink-dim); gap: 10px; }
+    .center h2 { font-size: 20px; font-weight: 600; color: var(--ink); }
+    .center p { max-width: 460px; font-size: 14px; }
+    .spinner { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.9s linear infinite; margin-bottom: 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .cands { flex: 1; overflow-y: auto; padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; }
+    .cand { display: grid; grid-template-columns: 200px 1fr auto; gap: 16px; align-items: center; background: var(--panel); border: 1px solid var(--line-soft); border-radius: 9px; padding: 12px; }
+    .cand.best { border-color: rgba(201,168,76,0.5); }
+    .cand img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 5px; display: block; background: #000; }
+    .cand .t { font-size: 14px; font-weight: 500; }
+    .cand .f { font-size: 12px; color: var(--ink-dim); margin-top: 3px; }
+    .cand .f b { color: var(--good); font-weight: 600; }
+    .cand .f b.mid { color: var(--warn); }
+    .cand .acts { display: flex; flex-direction: column; gap: 6px; }
+
+    .verdict { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--line); color: var(--ink-dim); }
+    .verdict.verified { color: var(--good); border-color: rgba(123,179,126,0.45); }
+    .verdict.check { color: var(--warn); border-color: rgba(216,166,87,0.45); }
+    .verdict.unverified { color: var(--bad); border-color: rgba(217,138,122,0.45); }
+    .cand .f .how { display: block; margin-top: 4px; color: var(--ink-faint); }
+    .chk { flex: 1; overflow-y: auto; padding: 18px 22px; display: flex; flex-direction: column; gap: 14px; max-width: 760px; margin: 0 auto; width: 100%; }
+    .chk-prog { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; }
+    .chk iframe { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 8px; background: #000; }
+    .chk-q { font-size: 15px; color: var(--ink-dim); }
+    .chk-opts { display: flex; flex-direction: column; gap: 8px; }
+    .chk-opt { text-align: left; font-size: 17px; padding: 13px 16px; border-radius: 9px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+    .chk-opt:hover { border-color: var(--gold); }
+    .chk-own { display: flex; gap: 8px; }
+    .chk-own input { flex: 1; font: inherit; font-size: 15px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+    .chk-foot { display: flex; gap: 8px; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-faint); }
+    #toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 11px 18px; font-size: 13.5px; z-index: 99; opacity: 0; pointer-events: none; transition: opacity 0.2s; max-width: 90vw; }
+    #toast.show { opacity: 1; pointer-events: auto; }
+    #toast.err { border-color: rgba(217,138,122,0.5); color: var(--bad); }
+    #toast.ok { border-color: rgba(123,179,126,0.45); color: var(--good); }
+
+    /* connect sheet */
+    #connect { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+    #connect.show { display: flex; }
+    .sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; max-width: 600px; width: 100%; padding: 26px 28px; max-height: 92vh; overflow-y: auto; }
+    .sheet h1 { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+    .sheet p { color: var(--ink-dim); font-size: 14px; margin-bottom: 14px; }
+    .sheet ol { color: var(--ink-dim); font-size: 14px; margin: 0 0 16px 20px; }
+    .sheet li { margin-bottom: 8px; }
+    .sheet b { color: var(--ink); font-weight: 600; }
+    .sheet code { background: var(--panel-2); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; font-family: var(--mono); }
+    .token-row { display: flex; gap: 8px; }
+    .token-row input { flex: 1; font: inherit; font-family: var(--mono); font-size: 13px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 9px 11px; }
+    .gate-msg { font-size: 13px; margin-top: 10px; min-height: 20px; }
+    .gate-msg.err { color: var(--bad); }
+    .sheet .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 12px; color: var(--ink-faint); }
+
+    @media (max-width: 900px) {
+      #work { grid-template-columns: 1fr; }
+      .rail { border-right: 0; border-bottom: 1px solid var(--line); max-height: 46vh; }
+      .panes { grid-template-columns: 1fr; }
+      .pane + .pane { border-left: 0; border-top: 1px solid var(--line); }
+      #lyricBox { min-height: 280px; }
+      .cand { grid-template-columns: 1fr; }
+      .song-row .ctl { display: inline-flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="btn quiet" href="worship.html" style="margin-right:2px">&larr; Home</a>
+    <span class="brand">Worship Studio</span>
+    <div class="hdr-right">
+      <button class="pill off" id="connPill"><span class="dot"></span><span id="connText">Not connected</span></button>
+      <a class="btn" href="worship-control.html" target="_blank" rel="noopener">Run Sunday &nearr;</a>
+    </div>
+  </header>
+
+  <div id="work">
+    <div class="rail" id="rail"></div>
+    <div class="main" id="main"></div>
+  </div>
+
+  <div id="toast"></div>
+
+  <div id="connect">
+    <div class="sheet">
+      <h1>Connect this computer</h1>
+      <p>Saving songs needs permission to write to the church website. One-time setup on this computer, about two minutes. After that nobody sees this again.</p>
+      <ol>
+        <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener"><b>this GitHub page</b> &nearr;</a> (sign in as the church account if asked).</li>
+        <li>Name it anything, like <code>worship studio</code>. Expiration: <b>No expiration</b>.</li>
+        <li><b>Repository access</b> &rarr; <b>Only select repositories</b> &rarr; pick <code>worship</code>.</li>
+        <li><b>Repository permissions</b> &rarr; <b>Add permissions</b> &rarr; add <code>Contents</code> and <code>Actions</code>, and set <b>both</b> to <b>Read and write</b>.</li>
+        <li><b>Generate token</b>, copy it, paste it here.</li>
+      </ol>
+      <div class="token-row">
+        <input id="tokenInput" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
+        <button class="btn primary" id="tokenSave">Connect</button>
+      </div>
+      <div class="gate-msg" id="gateMsg"></div>
+      <div class="foot">
+        <span>Stored only in this browser. Never on the website.</span>
+        <button class="btn quiet" id="connectClose">Not now</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/songs-data.js"></script>
+  <script src="js/worship-songs.js"></script>
+  <script src="js/sheet.js?v=12"></script>
+  <script>
+  (function () {
+    'use strict';
+    var REPO = 'legacybiblechurch/worship';
+    var SONGS_PATH = 'js/songs-data.js', SETLIST_PATH = 'js/worship-songs.js', WORKFLOW = 'worship-prep.yml';
+    var TOKEN_KEY = 'lbc-gh-token', FIND_KEY = 'lbc-studio-finding', ORDER_KEY = 'lbc-studio-order';
+    var S = LBCSheet;
+
+    var LIB = S.library();
+    var published = S.setlist();            // what Sunday currently is (on the site)
+    var order = published.slice();          // what this person is arranging
+    var draft = {};                         // slug -> {title, youtube, lyrics}
+    var dirty = {};                         // slug -> true (unsaved words)
+    var finding = {};                       // slug -> {title, startedAt, video}
+    var found = {};                         // slug -> draft json (candidates) awaiting a choice
+    var current = null;
+    var connected = false;
+
+    try { var o = JSON.parse(localStorage.getItem(ORDER_KEY) || 'null'); if (Array.isArray(o) && o.length) order = o; } catch (e) {}
+    try { finding = JSON.parse(localStorage.getItem(FIND_KEY) || '{}') || {}; } catch (e) {}
+
+    // ───────────────────────────── GitHub
+    function token() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; } }
+    function setToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch (e) {} }
+    var NEEDS_WRITE = 'This computer can see the site but not save to it. On github.com/settings/personal-access-tokens open the token and set Contents and Actions to "Read and write".';
+    var NEEDS_ACTIONS = 'Finding new songs needs one more permission: on github.com/settings/personal-access-tokens open the token and set Actions to "Read and write".';
+
+    function gh(path, opts) {
+      opts = opts || {};
+      return fetch('https://api.github.com' + path, {
+        method: opts.method || 'GET',
+        headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token(), 'X-GitHub-Api-Version': '2022-11-28' },
+        body: opts.body
+      }).then(function (r) {
+        return r.text().then(function (t) {
+          var j = null; try { j = JSON.parse(t); } catch (e) {}
+          if (!r.ok) {
+            var msg = (j && j.message) || ('HTTP ' + r.status);
+            if (r.status === 401) msg = 'The saved connection was rejected. Connect this computer again.';
+            if (r.status === 403) msg = opts.actions ? NEEDS_ACTIONS : NEEDS_WRITE;
+            if (r.status === 404 && !opts.allow404) msg = 'The website could not be reached. Check the internet connection and try again.';
+            if (r.status === 409) msg = 'Someone else just saved this. Reload the page and try again.';
+            var e = new Error(msg); e.status = r.status; throw e;
+          }
+          return j;
+        });
+      });
+    }
+    function b64encode(str) {
+      var bytes = new TextEncoder().encode(str), out = '', CH = 0x8000;
+      for (var i = 0; i < bytes.length; i += CH) out += String.fromCharCode.apply(null, bytes.subarray(i, i + CH));
+      return btoa(out);
+    }
+    function b64decode(b64) {
+      var bin = atob(String(b64).replace(/\s/g, '')), bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    }
+    function getFile(path, allow404) {
+      return gh('/repos/' + REPO + '/contents/' + path + '?ref=main&cb=' + Date.now(), { allow404: allow404 })
+        .then(function (j) { return { text: b64decode(j.content), sha: j.sha }; });
+    }
+    function putFile(path, text, sha, message) {
+      return gh('/repos/' + REPO + '/contents/' + path, { method: 'PUT',
+        body: JSON.stringify({ message: message, content: b64encode(text), sha: sha, branch: 'main' }) });
+    }
+    // a real write call with no effect: 403 = no write permission, 422 = we're good
+    function checkAccess() {
+      return gh('/repos/' + REPO).then(function () {
+        return fetch('https://api.github.com/repos/' + REPO + '/git/refs', { method: 'POST',
+          headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token(), 'X-GitHub-Api-Version': '2022-11-28' },
+          body: JSON.stringify({ ref: 'refs/heads/main', sha: '0'.repeat(40) }) });
+      }).then(function (r) { if (r.status === 403 || r.status === 401) throw new Error(NEEDS_WRITE); return true; });
+    }
+
+    // ───────────────────────────── songs-data.js (mirrors lib_songs.py exactly)
+    function emitStr(s) { return '"' + String(s == null ? '' : s).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"'; }
+    function emitSong(slug, song) {
+      var blocks = (song.lyrics || []).map(function (b) {
+        return '    { label: ' + emitStr(b.label || '') + ', lines: [' + (b.lines || []).map(emitStr).join(', ') + '] }';
+      }).join(',\n');
+      return '  ' + emitStr(slug) + ': {\n    title: ' + emitStr(song.title) + ',\n    youtube: ' + emitStr(song.youtube || '') +
+             ',\n    lyrics: [\n' + blocks + '\n  ]\n  }';
+    }
+    function spliceSong(fileText, slug, song) {
+      var objEnd = fileText.indexOf('\n};');
+      if (objEnd === -1) throw new Error('The song library file looks damaged. Nothing was changed.');
+      var start = fileText.indexOf('\n  ' + emitStr(slug) + ': {'), emitted = emitSong(slug, song);
+      if (start === -1 || start > objEnd) return fileText.slice(0, objEnd) + ',\n' + emitted + fileText.slice(objEnd);
+      var next = fileText.indexOf('\n  "', start + 1);
+      if (next === -1 || next > objEnd) next = objEnd;
+      return fileText.slice(0, start) + '\n' + emitted + ',' + fileText.slice(next);
+    }
+    function parseLib(text) { return new Function(text + '\n;return LEGACY_SONGS;')(); }
+    function verify(fileText, slug, song, expectCount) {
+      var obj;
+      try { obj = parseLib(fileText); } catch (e) { throw new Error('Refusing to save: the rebuilt library would not load. Nothing was changed.'); }
+      if (Object.keys(obj).length !== expectCount) throw new Error('Refusing to save: the song count changed unexpectedly. Nothing was changed.');
+      if (JSON.stringify(obj[slug]) !== JSON.stringify(song)) throw new Error('Refusing to save: the edit did not come back intact. Nothing was changed.');
+    }
+
+    // ───────────────────────────── state helpers
+    function songOf(slug) {
+      if (!draft[slug]) {
+        var src = LIB[slug] || { title: (finding[slug] && finding[slug].title) || slug, youtube: '', lyrics: [] };
+        draft[slug] = { title: S.decodeEntities(src.title || slug), youtube: src.youtube || '', lyrics: JSON.parse(JSON.stringify(src.lyrics || [])) };
+      }
+      return draft[slug];
+    }
+    function isReady(slug) { var s = songOf(slug); return !!(s.lyrics && s.lyrics.length); }
+    function anyDirty() { return Object.keys(dirty).some(function (k) { return dirty[k]; }); }
+    function sameList(a, b) { return a.length === b.length && a.every(function (x, i) { return x === b[i]; }); }
+    function persistOrder() { try { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); } catch (e) {} }
+    function persistFinding() { try { localStorage.setItem(FIND_KEY, JSON.stringify(finding)); } catch (e) {} }
+
+    function toast(msg, kind, sticky) {
+      var el = document.getElementById('toast');
+      el.textContent = msg; el.className = 'show' + (kind ? ' ' + kind : '');
+      clearTimeout(toast._t);
+      if (!sticky) toast._t = setTimeout(function () { el.className = ''; }, kind === 'err' ? 8000 : 3000);
+    }
+
+    // ───────────────────────────── rail
+    function renderRail() {
+      var rail = document.getElementById('rail');
+      rail.innerHTML = '';
+      var lbl = el('div', 'rail-label', 'This Sunday');
+      if (!sameList(order, published)) lbl.appendChild(el('span', 'sub', 'not published yet'));
+      rail.appendChild(lbl);
+
+      if (!order.length) {
+        var none = el('div', '', 'No songs yet. Add the first one below.');
+        none.style.cssText = 'font-size:13px;color:var(--ink-faint);padding:6px 10px 10px';
+        rail.appendChild(none);
+      }
+      order.forEach(function (slug, i) {
+        var s = songOf(slug), row = el('div', 'song-row' + (slug === current ? ' active' : ''));
+        var st = finding[slug] ? 'busy' : isReady(slug) ? '' : 'warn';
+        row.appendChild(el('span', 'dot ' + st));
+        var nm = el('span', 'nm', S.decodeEntities((found[slug] && found[slug].title) || (finding[slug] && finding[slug].title) || s.title));
+        if (finding[slug]) nm.appendChild(el('small', '', finding[slug].phase === 'listening' ? 'listening to the recording…' : 'finding the song…'));
+        else if (found[slug]) nm.appendChild(el('small', '', 'pick a video'));
+        else if (!isReady(slug)) nm.appendChild(el('small', '', 'no words yet'));
+        row.appendChild(nm);
+        if (dirty[slug]) row.appendChild(el('span', 'unsaved', '•'));
+        var ctl = el('span', 'ctl');
+        ctl.appendChild(icoBtn('▲', i === 0, function () { move(i, -1); }));
+        ctl.appendChild(icoBtn('▼', i === order.length - 1, function () { move(i, 1); }));
+        var x = icoBtn('✕', false, function () { remove(slug); }); x.classList.add('x');
+        ctl.appendChild(x);
+        row.appendChild(ctl);
+        row.onclick = function () { select(slug); };
+        rail.appendChild(row);
+      });
+
+      rail.appendChild(el('div', 'rail-label', 'Add a song'));
+      var wrap = el('div', 'add-wrap');
+      var inp = document.createElement('input');
+      inp.id = 'addName'; inp.placeholder = 'Type a song name'; inp.autocomplete = 'off';
+      var sugg = el('div', 'sugg'); sugg.id = 'sugg';
+      wrap.appendChild(inp); wrap.appendChild(sugg);
+      rail.appendChild(wrap);
+      wireAdd(inp, sugg);
+
+      var foot = el('div', 'rail-foot');
+      var readyBtn = document.createElement('button');
+      readyBtn.className = 'btn big ' + (sameList(order, published) && order.length ? 'good' : 'primary');
+      readyBtn.id = 'readyBtn';
+      readyBtn.textContent = sameList(order, published) && order.length ? '✓ Ready for Sunday' : 'Ready for Sunday';
+      readyBtn.onclick = publish;
+      foot.appendChild(readyBtn);
+      foot.appendChild(el('div', 'ready-note', '')); foot.lastChild.id = 'readyNote';
+      rail.appendChild(foot);
+      paintReadyNote();
+    }
+    function el(tag, cls, text) { var d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; }
+    function icoBtn(ch, disabled, fn) {
+      var b = document.createElement('button'); b.className = 'ico'; b.textContent = ch; b.disabled = !!disabled;
+      b.onclick = function (e) { e.stopPropagation(); fn(); }; return b;
+    }
+    function paintReadyNote() {
+      var n = document.getElementById('readyNote'); if (!n) return;
+      var problems = order.filter(function (s) { return !isReady(s) && !finding[s]; });
+      var busy = order.filter(function (s) { return finding[s]; });
+      if (!order.length) { n.textContent = ''; n.className = 'ready-note'; return; }
+      if (busy.length) { n.textContent = 'Still finding ' + busy.length + (busy.length === 1 ? ' song' : ' songs') + '…'; n.className = 'ready-note'; return; }
+      if (problems.length) { n.textContent = problems.length + (problems.length === 1 ? ' song has' : ' songs have') + ' no words yet'; n.className = 'ready-note warn'; return; }
+      if (anyDirty()) { n.textContent = 'Unsaved edits — save first'; n.className = 'ready-note warn'; return; }
+      if (sameList(order, published)) { n.textContent = 'Control and Display are showing this set'; n.className = 'ready-note good'; return; }
+      n.textContent = order.length + (order.length === 1 ? ' song' : ' songs') + ' — click when they’re right'; n.className = 'ready-note';
+    }
+
+    function move(i, d) {
+      var j = i + d; if (j < 0 || j >= order.length) return;
+      var t = order[i]; order[i] = order[j]; order[j] = t;
+      persistOrder(); renderRail();
+    }
+    function remove(slug) {
+      var s = songOf(slug);
+      if (dirty[slug] && !confirm('“' + s.title + '” has unsaved edits. Remove it from Sunday anyway?')) return;
+      order = order.filter(function (x) { return x !== slug; });
+      delete dirty[slug]; delete finding[slug]; delete found[slug];
+      persistOrder(); persistFinding();
+      if (current === slug) current = order[0] || null;
+      renderRail(); renderMain();
+    }
+
+    // ───────────────────────────── add a song (autocomplete)
+    function wireAdd(inp, sugg) {
+      var hi = -1, items = [];
+      function paint() {
+        var q = inp.value.trim();
+        items = q ? S.searchLibrary(q, 7) : [];
+        sugg.innerHTML = '';
+        if (!q) { sugg.className = 'sugg'; return; }
+        items.forEach(function (it, i) {
+          var b = document.createElement('button');
+          b.innerHTML = '<span></span><span class="tag">' + (order.indexOf(it.slug) !== -1 ? 'already in' : 'in the library') + '</span>';
+          b.firstChild.textContent = it.title;
+          if (i === hi) b.classList.add('hi');
+          b.onmousedown = function (e) { e.preventDefault(); choose(it.slug, it.title); };
+          sugg.appendChild(b);
+        });
+        var exact = items.length && S.searchLibrary(q, 1)[0] && S.searchLibrary(q, 1)[0].score >= 99;
+        if (!exact) {
+          var f = document.createElement('button');
+          f.innerHTML = '<span class="find"></span><span class="tag">find it</span>';
+          f.firstChild.textContent = 'Find “' + q + '” on YouTube';
+          if (hi === items.length) f.classList.add('hi');
+          f.onmousedown = function (e) { e.preventDefault(); findNew(q); };
+          sugg.appendChild(f);
+        }
+        sugg.className = 'sugg show';
+      }
+      inp.oninput = function () { hi = -1; paint(); };
+      inp.onfocus = paint;
+      inp.onblur = function () { setTimeout(function () { sugg.className = 'sugg'; }, 120); };
+      inp.onkeydown = function (e) {
+        var n = sugg.children.length;
+        if (e.key === 'ArrowDown') { hi = Math.min(hi + 1, n - 1); paint(); e.preventDefault(); }
+        else if (e.key === 'ArrowUp') { hi = Math.max(hi - 1, -1); paint(); e.preventDefault(); }
+        else if (e.key === 'Enter') {
+          e.preventDefault();
+          var q = inp.value.trim(); if (!q) return;
+          if (hi >= 0 && sugg.children[hi]) { sugg.children[hi].onmousedown(e); return; }
+          var top = S.searchLibrary(q, 1)[0];
+          if (top && top.score >= 80) choose(top.slug, top.title); else findNew(q);
+        } else if (e.key === 'Escape') { inp.value = ''; paint(); }
+      };
+      function choose(slug, title) {
+        inp.value = ''; sugg.className = 'sugg';
+        if (order.indexOf(slug) === -1) { order.push(slug); persistOrder(); }
+        select(slug);
+        toast('Added “' + title + '” — it already has its words.', 'ok');
+      }
+    }
+
+    // ───────────────────────────── find a brand-new song (runs the Action)
+    function findNew(name) {
+      var inp = document.getElementById('addName'); if (inp) inp.value = '';
+      if (!connected) { openConnect('Finding a new song needs this computer connected first.'); return; }
+      var slug = S.slugify(name);
+      if (!slug) return;
+      if (LIB[slug]) { if (order.indexOf(slug) === -1) order.push(slug); persistOrder(); select(slug); return; }
+      if (finding[slug]) { select(slug); return; }
+      finding[slug] = { title: name, startedAt: Date.now() };
+      persistFinding();
+      if (order.indexOf(slug) === -1) order.push(slug);
+      persistOrder();
+      songOf(slug).title = name;
+      select(slug);
+      gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
+        body: JSON.stringify({ ref: 'main', inputs: { song: name, video: '' } }) })
+      .then(function () { pollFind(slug); })
+      .catch(function (e) {
+        delete finding[slug]; persistFinding();
+        renderRail(); renderMain();
+        toast(e.message, 'err');
+      });
+    }
+    var pollTimers = {};
+    function pollFind(slug) {
+      if (!finding[slug]) return;
+      clearTimeout(pollTimers[slug]);
+      var started = finding[slug].startedAt;
+      getFile('drafts/' + slug + '.json', true).then(function (f) {
+        var d = JSON.parse(f.text);
+        var when = Date.parse(d.generatedAt || 0);
+        if (!(when > started - 60000)) throw new Error('old');     // a stale draft from before
+        if (d.needsAudio && !d.error) {
+          // videos found; the church computer still has to listen to the recording
+          if (finding[slug].phase !== 'listening') {
+            finding[slug].phase = 'listening'; persistFinding();
+            renderRail(); if (current === slug) renderMain();
+          }
+          throw new Error('listening');
+        }
+        delete finding[slug]; persistFinding();
+        found[slug] = d;
+        renderRail();
+        if (current === slug) renderMain();
+        toast(d.error ? 'Couldn’t find that song automatically.' : 'Found “' + (d.title || slug) + '”. Pick the video that sounds right.', d.error ? 'err' : 'ok');
+      }).catch(function () {
+        if (Date.now() - started > 20 * 60000) {
+          delete finding[slug]; persistFinding();
+          found[slug] = { slug: slug, title: songOf(slug).title, candidates: [], error: 'took too long' };
+          renderRail(); if (current === slug) renderMain();
+          return;
+        }
+        pollTimers[slug] = setTimeout(function () { pollFind(slug); }, 6000);
+        if (current === slug) paintElapsed(slug);
+      });
+    }
+    function paintElapsed(slug) {
+      var e = document.getElementById('elapsed'); if (!e || !finding[slug]) return;
+      var sec = Math.round((Date.now() - finding[slug].startedAt) / 1000);
+      e.textContent = sec < 60 ? sec + 's' : Math.floor(sec / 60) + 'm ' + (sec % 60) + 's';
+    }
+    setInterval(function () { if (current && finding[current]) paintElapsed(current); }, 1000);
+
+    var pendingChecks = {};   // slug -> {checks, i}
+    function useCandidate(slug, c) {
+      var s = songOf(slug);
+      s.title = S.decodeEntities((found[slug] && found[slug].title) || s.title);
+      s.youtube = c.url || ('https://www.youtube.com/watch?v=' + c.videoId);
+      s.lyrics = JSON.parse(JSON.stringify(c.lyrics || []));
+      s.engineLines = (c.engine && c.engine.lines) ? JSON.parse(JSON.stringify(c.engine.lines.filter(function (l) { return l.status !== 'excluded'; }))) : null;
+      delete found[slug];
+      dirty[slug] = true;
+      var checks = (c.engine && c.engine.checks) || [];
+      if (checks.length && s.engineLines) {
+        pendingChecks[slug] = { checks: checks, i: 0 };
+        renderRail(); renderMain();
+        return;
+      }
+      renderRail(); renderMain();
+      saveSong(slug);      // automation: choosing the video IS the confirmation
+    }
+
+    // the person answers only the genuinely ambiguous lines, with the video cued
+    // a couple of seconds before each one
+    function renderChecks(slug) {
+      var main = document.getElementById('main'), s = songOf(slug), pc = pendingChecks[slug];
+      var ch = pc.checks[pc.i], vid = S.videoId(s.youtube);
+      var opts = [];
+      ch.options.forEach(function (o) {
+        var t = String(o).replace(/[\s.,;]+$/, '').trim();
+        if (t && !opts.some(function (x) { return S.slugify(x) === S.slugify(t); })) opts.push(t);
+      });
+      main.innerHTML =
+        '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
+          '<button class="btn quiet" id="chkSkipAll">Skip the rest, I’ll edit by hand</button></div></div>' +
+        '<div class="chk">' +
+          '<div class="chk-prog">Quick check ' + (pc.i + 1) + ' of ' + pc.checks.length + '</div>' +
+          (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '?start=' + Math.floor(ch.t0) + '&autoplay=1&rel=0" allow="autoplay; encrypted-media"></iframe>' : '') +
+          '<div class="chk-q">Listen — which is it?</div>' +
+          '<div class="chk-opts">' + opts.map(function (o, i) { return '<button class="chk-opt" data-i="' + i + '"></button>'; }).join('') + '</div>' +
+          '<div class="chk-own"><input id="chkOwn" placeholder="Or type what you hear"><button class="btn" id="chkOwnBtn">Use this</button></div>' +
+          '<div class="chk-foot"><span>' + esc(ch.why || '') + '</span><button class="btn quiet" id="chkSkip">Not sure — skip</button></div>' +
+        '</div>';
+      main.querySelector('.main-title').textContent = s.title;
+      var btns = main.querySelectorAll('.chk-opt');
+      opts.forEach(function (o, i) { btns[i].textContent = o; btns[i].onclick = function () { answerCheck(slug, o); }; });
+      document.getElementById('chkOwnBtn').onclick = function () { var v = document.getElementById('chkOwn').value.trim(); if (v) answerCheck(slug, v); };
+      document.getElementById('chkOwn').onkeydown = function (e) { if (e.key === 'Enter') document.getElementById('chkOwnBtn').click(); };
+      document.getElementById('chkSkip').onclick = function () { answerCheck(slug, null); };
+      document.getElementById('chkSkipAll').onclick = function () { delete pendingChecks[slug]; renderRail(); renderMain(); };
+    }
+    function answerCheck(slug, text) {
+      var s = songOf(slug), pc = pendingChecks[slug], ch = pc.checks[pc.i];
+      if (text) {
+        // the check's line is the engine line at that moment; the slide blocks were
+        // built from these lines in order, so rebuild them in step
+        var li = -1, bestD = 1e9;
+        s.engineLines.forEach(function (l, i) { var d = Math.abs((l.t0 || 0) - (ch.t0 + 2)); if (d < bestD) { bestD = d; li = i; } });
+        if (li >= 0) {
+          s.engineLines[li].text = text; s.engineLines[li].status = 'verified';
+          var k = 0;
+          s.lyrics.forEach(function (b) { b.lines = b.lines.map(function (line) { var t = s.engineLines[k] ? s.engineLines[k].text : line; k++; return t; }); });
+        }
+      }
+      pc.i++;
+      if (pc.i >= pc.checks.length) {
+        delete pendingChecks[slug];
+        renderRail(); renderMain();
+        saveSong(slug);
+        return;
+      }
+      renderChecks(slug);
+    }
+    function useBlank(slug) {
+      delete found[slug]; dirty[slug] = true;
+      renderRail(); renderMain();
+      toast('Paste the YouTube link and the words, then Save.', 'ok');
+    }
+
+    // ───────────────────────────── main
+    function select(slug) { current = slug; renderRail(); renderMain(); }
+
+    function renderMain() {
+      var main = document.getElementById('main');
+      if (!current) {
+        main.innerHTML = '<div class="center"><h2>' + (order.length ? 'Pick a song on the left' : 'Add the first song') + '</h2>' +
+          '<p>' + (order.length ? '' : 'Type its name on the left. Songs we’ve sung before are added instantly. New ones get found automatically.') + '</p></div>';
+        return;
+      }
+      if (finding[current]) {
+        var listening = finding[current].phase === 'listening';
+        main.innerHTML = '<div class="main-head"><span class="main-title"></span></div>' +
+          '<div class="center"><div class="spinner"></div><h2>' + (listening ? 'Listening to the recording' : 'Finding the song') + '</h2>' +
+          '<p>' + (listening
+            ? 'The church computer is listening to the recording three separate ways and comparing what it hears, so the words match this exact version. About a minute when it’s on; if it’s off, this waits until it is.'
+            : 'Searching YouTube for the song. You can add other songs while you wait.') + '</p>' +
+          '<p style="color:var(--ink-faint);font-size:12px" id="elapsed"></p></div>';
+        main.querySelector('.main-title').textContent = songOf(current).title;
+        paintElapsed(current);
+        return;
+      }
+      if (found[current]) { renderCandidates(current); return; }
+      if (pendingChecks[current]) { renderChecks(current); return; }
+      renderEditor(current);
+    }
+
+    function renderCandidates(slug) {
+      var main = document.getElementById('main'), d = found[slug];
+      var rank = { verified: 0, check: 1, unverified: 2 };
+      var cands = (d.candidates || []).filter(function (c) { return c.lyrics && c.lyrics.length; })
+        .sort(function (a, b) {
+          var ra = rank[(a.engine || {}).verdict] ?? 3, rb = rank[(b.engine || {}).verdict] ?? 3;
+          if (ra !== rb) return ra - rb;
+          return ((a.engine || {}).checks || []).length - ((b.engine || {}).checks || []).length;
+        });
+      var html = '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
+                 '<button class="btn quiet" id="skipBtn">I’ll paste the words myself</button></div></div>';
+      if (!cands.length) {
+        html += '<div class="center"><h2>Couldn’t find good words for this one</h2>' +
+                '<p>' + (d.error === 'took too long' ? 'It took longer than usual and gave up.' : 'That title didn’t turn up a recording with usable words.') +
+                ' You can paste the YouTube link and the words in yourself — it’s saved for good after that.</p>' +
+                '<button class="btn primary" id="blankBtn">Paste them in</button></div>';
+      } else {
+        html += '<div class="cands">' + cands.map(function (c, i) {
+          var conf = c.confidence || 0, src = c.transcriptSource || 'none', eng = c.engine || null;
+          var v = eng ? eng.verdict : '';
+          var how = eng ? (v === 'verified' ? 'Every line verified — the listens, and the words we already had, agree'
+                          : v === 'check' ? (eng.checks || []).length + ' line' + ((eng.checks || []).length === 1 ? '' : 's') + ' to confirm by ear — the rest is verified'
+                          : 'Hard to hear — the words will need a look')
+                  : (src === 'subs' || src === 'asr' || src === 'whisper') ? 'words heard from this recording'
+                  : src === 'description' ? 'words from the video description — check the order'
+                  : 'words from memory, not this recording — check every line';
+          var badge = eng ? '<span class="verdict ' + v + '">' + (v === 'verified' ? 'Verified' : v === 'check' ? 'Quick check' : 'Unclear') + '</span> ' : '';
+          return '<div class="cand' + (i === 0 ? ' best' : '') + '">' +
+            '<a href="' + esc(c.url) + '" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/' + esc(c.videoId) + '/mqdefault.jpg" alt=""></a>' +
+            '<div><div class="t"></div><div class="f">' + badge + esc(S.decodeEntities(c.channel || '')) + (c.duration ? ' · ' + esc(c.duration) : '') +
+            (eng ? '' : ' · <b class="' + (conf >= 80 ? '' : 'mid') + '">' + conf + '% match</b>') + (i === 0 ? ' · best guess' : '') +
+            '<span class="how">' + how + '</span></div></div>' +
+            '<div class="acts"><button class="btn primary" data-i="' + i + '">Use this one</button>' +
+            '<a class="btn" href="' + esc(c.url) + '" target="_blank" rel="noopener">Listen &nearr;</a></div></div>';
+        }).join('') + '</div>';
+      }
+      main.innerHTML = html;
+      main.querySelector('.main-title').textContent = S.decodeEntities(d.title || songOf(slug).title);
+      var ts = main.querySelectorAll('.cand .t');
+      cands.forEach(function (c, i) { ts[i].textContent = S.decodeEntities(c.title || ''); });
+      main.querySelectorAll('.cand .acts .primary').forEach(function (b) {
+        b.onclick = function () { useCandidate(slug, cands[+b.dataset.i]); };
+      });
+      var sk = document.getElementById('skipBtn'); if (sk) sk.onclick = function () { useBlank(slug); };
+      var bl = document.getElementById('blankBtn'); if (bl) bl.onclick = function () { useBlank(slug); };
+    }
+
+    function renderEditor(slug) {
+      var main = document.getElementById('main'), s = songOf(slug), vid = S.videoId(s.youtube);
+      main.innerHTML =
+        '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
+          '<span class="save-state" id="saveState"></span>' +
+          '<button class="btn primary" id="saveBtn">Save</button></div></div>' +
+        '<div class="panes">' +
+          '<div class="pane">' +
+            '<div class="video-strip">' +
+              (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet — paste a YouTube link below</div>') +
+              '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
+            '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span></div>' +
+            '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>' +
+          '</div>' +
+          '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
+        '</div>';
+      main.querySelector('.main-title').textContent = s.title;
+      var vidIn = document.getElementById('vidInput');
+      vidIn.value = s.youtube || '';
+      vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
+      var box = document.getElementById('lyricBox');
+      box.value = S.blocksToText(s.lyrics);
+      box.oninput = function () {
+        s.lyrics = S.textToBlocks(box.value); dirty[slug] = true;
+        paintPreview(s); paintSaveState();
+        var active = document.querySelector('.song-row.active');
+        if (active && !active.querySelector('.unsaved')) renderRail();
+      };
+      document.getElementById('saveBtn').onclick = function () { saveSong(slug); };
+      paintPreview(s); paintSaveState();
+    }
+    function paintPreview(s) {
+      var slides = S.buildSlides(s.lyrics), pv = document.getElementById('preview');
+      pv.innerHTML = '';
+      slides.forEach(function (sl) {
+        var d = el('div', 'pv');
+        if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
+        sl.lines.forEach(function (line) { d.appendChild(el('div', 'pv-line', line)); });
+        pv.appendChild(d);
+      });
+      document.getElementById('pvCount').textContent = slides.length ? slides.length + (slides.length === 1 ? ' slide' : ' slides') : '';
+    }
+    function paintSaveState() {
+      var e = document.getElementById('saveState'); if (!e) return;
+      e.textContent = dirty[current] ? 'Unsaved' : ''; e.className = 'save-state' + (dirty[current] ? ' dirty' : '');
+      paintReadyNote();
+    }
+    function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+    // ───────────────────────────── saving
+    var saving = false;
+    function saveSong(slug) {
+      if (saving) return;
+      var s = songOf(slug);
+      if (!s.lyrics.length) { toast('Nothing to save yet — add the words first.', 'err'); return; }
+      if (!connected) { openConnect('Saving needs this computer connected first.'); return; }
+      saving = true;
+      var btn = document.getElementById('saveBtn'); if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+      getFile(SONGS_PATH).then(function (f) {
+        var before = parseLib(f.text), count = Object.keys(before).length + (before[slug] ? 0 : 1);
+        var next = spliceSong(f.text, slug, s);
+        verify(next, slug, s, count);
+        return putFile(SONGS_PATH, next, f.sha, 'worship studio: ' + (before[slug] ? 'update' : 'add') + ' ' + s.title);
+      }).then(function () {
+        dirty[slug] = false; LIB[slug] = JSON.parse(JSON.stringify(s));
+        toast('Saved “' + s.title + '”.', 'ok');
+        renderRail(); paintSaveState();
+        return storeVerified(slug, s);
+      }).catch(function (e) { toast(e.message, 'err', true); })
+        .then(function () { saving = false; var b = document.getElementById('saveBtn'); if (b) { b.disabled = false; b.textContent = 'Save'; } });
+    }
+
+    // A saved song is a human-confirmed recording: remember the exact words for this
+    // exact video, so the next time anyone adds it there is nothing to listen to.
+    function storeVerified(slug, s) {
+      var vid = S.videoId(s.youtube);
+      if (!vid) return;
+      var path = 'verified/' + vid + '.json';
+      var body = JSON.stringify({ videoId: vid, slug: slug, title: s.title, lyrics: s.lyrics,
+        lines: (s.engineLines || []).map(function (l) { return { text: l.text, t0: l.t0, t1: l.t1 }; }),
+        verifiedAt: new Date().toISOString(), by: 'worship studio' }, null, 1);
+      return getFile(path, true).then(function (f) { return f.sha; }, function () { return null; })
+        .then(function (sha) {
+          var payload = { message: 'verified: ' + s.title + ' (' + vid + ')', content: b64encode(body), branch: 'main' };
+          if (sha) payload.sha = sha;
+          return gh('/repos/' + REPO + '/contents/' + path, { method: 'PUT', body: JSON.stringify(payload) });
+        }).catch(function () { /* the library save already succeeded; this memory is best effort */ });
+    }
+
+    // "Ready for Sunday" = validate, then publish the set to Control/Display
+    var publishing = false;
+    function publish() {
+      if (publishing) return;
+      if (!order.length) { toast('Add at least one song first.', 'err'); return; }
+      var busy = order.filter(function (s) { return finding[s]; });
+      if (busy.length) { toast('Still finding “' + songOf(busy[0]).title + '” — give it a minute.', 'err'); return; }
+      var missing = order.filter(function (s) { return !isReady(s); });
+      if (missing.length) { select(missing[0]); toast('“' + songOf(missing[0]).title + '” has no words yet.', 'err'); return; }
+      var un = order.filter(function (s) { return dirty[s]; });
+      if (un.length) { select(un[0]); toast('Save “' + songOf(un[0]).title + '” first (it has unsaved edits).', 'err'); return; }
+      if (!connected) { openConnect('Publishing Sunday needs this computer connected first.'); return; }
+      if (sameList(order, published)) { toast('Sunday is already set. Control and Display are showing these songs.', 'ok'); return; }
+      publishing = true;
+      var b = document.getElementById('readyBtn'); if (b) { b.disabled = true; b.textContent = 'Publishing…'; }
+      var text = '/**\n * LBC Sunday Setlist\n * ──────────────────\n * Set in Worship Studio.\n */\n\nwindow.WORSHIP_SETLIST = [\n' +
+                 order.map(function (s) { return "  '" + s + "',\n"; }).join('') + '];\n';
+      getFile(SETLIST_PATH).then(function (f) {
+        return putFile(SETLIST_PATH, text, f.sha, 'worship studio: set Sunday (' + order.length + ' songs)');
+      }).then(function () {
+        published = order.slice();
+        toast('Sunday is set. Control and Display will show these songs within a minute.', 'ok');
+      }).catch(function (e) { toast(e.message, 'err', true); })
+        .then(function () { publishing = false; renderRail(); });
+    }
+
+    // ───────────────────────────── connection
+    function paintConn() {
+      document.getElementById('connPill').className = 'pill ' + (connected ? 'on' : 'off');
+      document.getElementById('connText').textContent = connected ? 'Connected' : 'Connect this computer';
+    }
+    function openConnect(reason) {
+      document.getElementById('connect').className = 'show';
+      var m = document.getElementById('gateMsg'); m.textContent = reason || ''; m.className = 'gate-msg';
+      setTimeout(function () { document.getElementById('tokenInput').focus(); }, 50);
+    }
+    document.getElementById('connPill').onclick = function () { if (!connected) openConnect(); };
+    document.getElementById('connectClose').onclick = function () { document.getElementById('connect').className = ''; };
+    document.getElementById('tokenSave').onclick = function () {
+      var t = document.getElementById('tokenInput').value.trim() || token();
+      if (!t) return;
+      setToken(t);
+      var m = document.getElementById('gateMsg'); m.textContent = 'Checking…'; m.className = 'gate-msg';
+      checkAccess().then(function () {
+        connected = true; paintConn();
+        document.getElementById('connect').className = '';
+        document.getElementById('tokenInput').value = '';
+        toast('Connected. This computer can now save songs.', 'ok');
+        Object.keys(finding).forEach(pollFind);
+      }).catch(function (e) { m.textContent = e.message; m.className = 'gate-msg err'; });
+    };
+    document.getElementById('tokenInput').onkeydown = function (e) { if (e.key === 'Enter') document.getElementById('tokenSave').click(); };
+
+    window.addEventListener('beforeunload', function (e) { if (anyDirty()) { e.preventDefault(); e.returnValue = ''; } });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); if (current && dirty[current]) saveSong(current); }
+    });
+
+    // ───────────────────────────── boot
+    order.forEach(songOf);
+    current = order[0] || null;
+    renderRail(); renderMain(); paintConn();
+    if (token()) {
+      checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); })
+        .catch(function () { connected = false; paintConn(); });
+    }
+  })();
+  </script>
+</body>
+</html>

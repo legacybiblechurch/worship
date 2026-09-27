@@ -1,0 +1,93 @@
+name: Worship prep
+
+# Reads the setlist Google Sheet, drafts lyrics for candidate videos (Pass A),
+# and applies any rows marked Review = Approve (Pass B). Commits drafts/ always;
+# commits js/songs-data.js + js/worship-songs.js only when a song is approved.
+
+on:
+  workflow_dispatch:
+    inputs:
+      song:
+        description: "Draft ONE song by name (what Worship Studio's Add button sends). Leave blank for the old sheet-driven run."
+        default: ""
+        required: false
+      video:
+        description: "Optional YouTube link to use for that song"
+        default: ""
+        required: false
+      mode:
+        description: "draft | apply | both  (sheet-driven run only)"
+        default: "both"
+        required: false
+  # PAUSED ON PURPOSE while the prep workflow is being reworked.
+  #
+  # This job rebuilds js/worship-songs.js from the APPROVED rows of the planner
+  # sheet. With no approved rows it writes an empty setlist, which would wipe the
+  # hand-set one-song setlist currently in that file. Leave this commented out
+  # until the new flow is in place.
+  #
+  # It can still be run on demand from the Actions tab (workflow_dispatch above).
+  #
+  # schedule:
+  #   # every 5 min, every day (GitHub's fastest supported interval). Safe to run
+  #   # this often: rows with nothing changed skip straight through (no search, no
+  #   # LLM call - see run.py's cache checks), so idle songs cost nothing extra.
+  #   - cron: "*/5 * * * *"
+
+concurrency:
+  group: worship-prep
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install --quiet requests yt-dlp
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
+          YT_PROXY: ${{ secrets.YT_PROXY }}
+        working-directory: scripts/prep
+        run: |
+          if [ -n "${{ github.event.inputs.song }}" ]; then
+            python run.py --song "${{ github.event.inputs.song }}" "${{ github.event.inputs.video }}"
+          else
+            python run.py "${{ github.event.inputs.mode || 'both' }}"
+          fi
+
+      - name: Commit changes
+        run: |
+          git config user.name  "lbc-worship-bot"
+          git config user.email "worship-bot@users.noreply.github.com"
+          git add drafts evidence js/songs-data.js js/worship-songs.js
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "worship-prep: refresh drafts / apply approvals [skip ci]"
+          # another run or a manual push may have moved main since checkout; merge it
+          # in, letting the newer remote win any file-level conflict (drafts are
+          # regenerated wholesale so there is nothing to hand-merge)
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected, merging remote (attempt $i)"
+            git fetch -q origin main
+            git merge -X theirs --no-edit origin/main || git merge --abort
+            sleep $((RANDOM % 6 + 2))
+          done
+          git push

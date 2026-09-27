@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worship — Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+      cursor: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* No background gradient — pure Legacy black */
+    .bg { display: none; }
+
+    /* ── STANDBY SCREEN ─────────────────────────── */
+    #standby {
+      position: fixed; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+    }
+    #standby.hidden { opacity: 0; pointer-events: none; }
+
+    .standby-logo {
+      font-size: clamp(26px, 3.2vw, 52px);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C9A84C;
+    }
+    .standby-rule {
+      width: 56px; height: 1px;
+      background: #C9A84C;
+      margin: 22px auto;
+      opacity: 0.5;
+    }
+    .standby-sub {
+      font-size: clamp(14px, 1.6vw, 26px);
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── SLIDE AREA ─────────────────────────────── */
+    #slide-wrap {
+      position: fixed; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 5vw 10vw;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      z-index: 1;
+    }
+    #slide-wrap.visible { opacity: 1; }
+
+    .slide-label {
+      font-size: clamp(12px, 1.3vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #C9A84C;
+      margin-bottom: clamp(16px, 3vh, 44px);
+    }
+    .slide-label:empty { display: none; }
+
+    .slide-lines {
+      display: flex; flex-direction: column;
+      align-items: center;
+      gap: clamp(6px, 1.8vh, 26px);
+      text-align: center;
+    }
+
+    .slide-line {
+      font-size: clamp(30px, 4.2vw, 68px);
+      font-weight: 300;
+      line-height: 1.3;
+      color: #ffffff;
+    }
+
+    /* ── SONG TITLE FOOTER ──────────────────────── */
+    #song-title {
+      position: fixed;
+      bottom: 28px; right: 40px;
+      font-size: clamp(11px, 1vw, 17px);
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.2);
+      z-index: 2;
+      transition: opacity 0.5s ease;
+    }
+
+    /* ── SCREENSAVER OVERLAY ────────────────────── */
+    #blank {
+      position: fixed; inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 999;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #blank.active { opacity: 1; }
+
+    /* static, centered church logo — no motion during the service */
+    #dvd-logo {
+      position: static;
+      width: clamp(340px, 48vw, 820px);
+      max-width: 82vw;
+    }
+    #dvd-logo img {
+      width: 100%;
+      display: block;
+      opacity: 0.92;
+    }
+
+    /* ── mobile / portrait ──────────────────────── */
+    @media (max-width: 760px) {
+      html, body { cursor: auto; }
+      #slide-wrap { padding: 8vw 6vw; }
+      .slide-line { font-size: clamp(22px, 6.2vw, 40px); line-height: 1.35; }
+      .slide-label { font-size: 12px; letter-spacing: 0.2em; margin-bottom: 5vh; }
+      .slide-lines { gap: clamp(8px, 2.4vh, 18px); }
+      .standby-logo { font-size: clamp(20px, 7vw, 34px); letter-spacing: 0.14em; padding: 0 6vw; }
+      .standby-sub { font-size: 13px; letter-spacing: 0.18em; }
+      #song-title { bottom: 16px; right: 18px; left: 18px; text-align: center; }
+      #dvd-logo { width: 40vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <!-- Shown when no slide is active yet -->
+  <div id="standby">
+    <div class="standby-logo">Legacy Bible Church</div>
+    <div class="standby-rule"></div>
+    <div class="standby-sub">Worship</div>
+  </div>
+
+  <!-- Slide content -->
+  <div id="slide-wrap">
+    <div class="slide-label" id="slideLabel"></div>
+    <div class="slide-lines" id="slideLines"></div>
+  </div>
+
+  <!-- Song title, bottom-right -->
+  <div id="song-title"></div>
+
+  <!-- Blank screen: the church logo, still -->
+  <div id="blank">
+    <div id="dvd-logo">
+      <img src="images/logo-dark.png" alt="Legacy Bible Church">
+    </div>
+  </div>
+
+  <script src="js/songs-data.js"></script>
+  <script src="js/worship-songs.js"></script>
+  <script src="js/sheet.js?v=12"></script>
+  <script>
+    var SONGS_BUILT = [];
+    var songsReady  = false;
+    var pendingState = null;
+
+    function buildSongs(items) {
+      return items.map(function (it) {
+        if (!it.lyrics || !it.lyrics.length) return { title: it.title, slides: [{ label: '', lines: [] }] };
+        return { title: it.title, slides: LBCSheet.buildSlides(it.lyrics) };
+      });
+    }
+
+    function onSongsReady(items) {
+      SONGS_BUILT = buildSongs(items);
+      songsReady = true;
+      if (pendingState) {
+        renderState(pendingState);
+        pendingState = null;
+      }
+    }
+
+    // If this window is refreshed mid-service, resume the current slide instead of
+    // dropping to standby until the operator presses a key.
+    try { pendingState = JSON.parse(localStorage.getItem('lbc-worship-state') || 'null'); } catch (e) {}
+    LBCSheet.loadSongs(onSongsReady);
+
+    var channel    = new BroadcastChannel('lbc-worship');
+    var standby    = document.getElementById('standby');
+    var slideWrap  = document.getElementById('slide-wrap');
+    var slideLabel = document.getElementById('slideLabel');
+    var slideLines = document.getElementById('slideLines');
+    var songTitle  = document.getElementById('song-title');
+    var blankEl    = document.getElementById('blank');
+
+    function esc(t) {
+      return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function showStandby() {
+      standby.classList.remove('hidden');
+      slideWrap.classList.remove('visible');
+      songTitle.textContent = '';
+    }
+
+    function renderState(state) {
+      var songIdx  = state.songIndex;
+      var slideIdx = state.slideIndex;
+      var blank    = !!state.blank;
+
+      blankEl.classList.toggle('active', blank);
+      stopDvd();   // logo stays put during the service
+
+      if (songIdx == null || songIdx === undefined) {
+        showStandby();
+        return;
+      }
+
+      var song  = SONGS_BUILT[songIdx];
+      var slide = song && song.slides[slideIdx];
+      if (!song || !slide) { showStandby(); return; }
+
+      // Fade out current content, swap, fade back in
+      slideWrap.classList.remove('visible');
+      standby.classList.add('hidden');
+
+      setTimeout(function () {
+        slideLabel.textContent = '';   // no "Verse 1 / Chorus" on the congregation's screen
+        slideLines.innerHTML = slide.lines
+          .map(function(l){ return '<div class="slide-line">' + esc(l) + '</div>'; })
+          .join('');
+        songTitle.textContent = song.title;
+        slideWrap.classList.add('visible');
+      }, 340);
+    }
+
+    /* ── DVD SCREENSAVER ──────────────────────── */
+    var dvdEl  = document.getElementById('dvd-logo');
+    var dvdX   = 120, dvdY = 80;
+    var dvdDX  = 0.8, dvdDY = 0.65;
+    var dvdRaf = null;
+
+    function dvdFrame() {
+      var W = window.innerWidth;
+      var H = window.innerHeight;
+      var w = dvdEl.offsetWidth  || 260;
+      var h = dvdEl.offsetHeight || 80;
+
+      dvdX += dvdDX;
+      dvdY += dvdDY;
+
+      if (dvdX + w >= W) { dvdX = W - w; dvdDX = -Math.abs(dvdDX); }
+      if (dvdX <= 0)     { dvdX = 0;     dvdDX =  Math.abs(dvdDX); }
+      if (dvdY + h >= H) { dvdY = H - h; dvdDY = -Math.abs(dvdDY); }
+      if (dvdY <= 0)     { dvdY = 0;     dvdDY =  Math.abs(dvdDY); }
+
+      dvdEl.style.left = dvdX + 'px';
+      dvdEl.style.top  = dvdY + 'px';
+      dvdRaf = requestAnimationFrame(dvdFrame);
+    }
+
+    function startDvd() {
+      dvdX  = Math.random() * (window.innerWidth  - 280);
+      dvdY  = Math.random() * (window.innerHeight - 100);
+      dvdDX = (Math.random() > 0.5 ? 1 : -1) * 1.4;
+      dvdDY = (Math.random() > 0.5 ? 1 : -1) * 1.0;
+      if (!dvdRaf) dvdFrame();
+    }
+
+    function stopDvd() {
+      if (dvdRaf) { cancelAnimationFrame(dvdRaf); dvdRaf = null; }
+    }
+
+    // Restore last known state only after songs are ready
+    // (handled in onSongsReady via pendingState)
+
+    // slides from a phone (or any other device) arrive through the same relay
+    // Control uses; the room code is shared via localStorage on this computer
+    (function () {
+      var code = '';
+      try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {}
+      if (!code) return;
+      var topic = 'lbc-worship-' + code.toLowerCase() + '-7f3a', es;
+      function connect() {
+        es = new EventSource('https://ntfy.sh/' + topic + '/sse');
+        es.onmessage = function (e) {
+          try {
+            var d = JSON.parse(JSON.parse(e.data).message);
+            if (d.type !== 'state') return;
+            var st = { songIndex: d.songIndex, slideIndex: d.slideIndex, blank: !!d.blank };
+            localStorage.setItem('lbc-worship-state', JSON.stringify(st));
+            if (songsReady) renderState(st); else pendingState = st;
+          } catch (x) {}
+        };
+        es.onerror = function () { es.close(); setTimeout(connect, 3000); };
+      }
+      connect();
+    })();
+
+    // heartbeat: Control shows a green "Display connected" while these arrive
+    setInterval(function () { channel.postMessage({ type: 'ping', from: 'display' }); }, 1500);
+    channel.postMessage({ type: 'ping', from: 'display' });
+
+    // Live updates from control page
+    channel.onmessage = function(e) {
+      if (!e.data || e.data.type === 'ping') return;
+      localStorage.setItem('lbc-worship-state', JSON.stringify(e.data));
+      if (songsReady) {
+        renderState(e.data);
+      } else {
+        pendingState = e.data;
+      }
+    };
+  </script>
+</body>
+</html>
