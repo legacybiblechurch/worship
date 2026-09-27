@@ -1,0 +1,752 @@
+{
+  "slug": "be-thou-my-vision",
+  "title": "Be Thou My Vision",
+  "input": "Be Thou My Vision",
+  "isNew": false,
+  "forced": null,
+  "signature": "531e10ad634d8e25",
+  "generatedAt": "2026-09-27T20:25:02+00:00",
+  "titleKey": "be thou my vision",
+  "searchCandidates": [
+    {
+      "videoId": "ihJAJA4ibEs",
+      "url": "https://www.youtube.com/watch?v=ihJAJA4ibEs",
+      "title": "BE THOU MY VISION -- My Favorite Irish Hymn! :)",
+      "channel": "Nathan Pacheco",
+      "publishedAt": "2017-02-24T23:00:01Z",
+      "durationSec": 225,
+      "duration": "3:45",
+      "views": 16786994,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "Optrm7lF16s",
+      "url": "https://www.youtube.com/watch?v=Optrm7lF16s",
+      "title": "Be Thou My Vision - Audrey Assad",
+      "channel": "Audrey Assad",
+      "publishedAt": "2016-02-19T16:13:23Z",
+      "durationSec": 215,
+      "duration": "3:35",
+      "views": 8598918,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "6CMclLT_Hjg",
+      "url": "https://www.youtube.com/watch?v=6CMclLT_Hjg",
+      "title": "Be thou my vision - (with lyrics)",
+      "channel": "Evolsiay Tulip",
+      "publishedAt": "2009-12-22T17:34:30Z",
+      "durationSec": 286,
+      "duration": "4:46",
+      "views": 8516880,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "jIMhshpf0Y4",
+      "url": "https://www.youtube.com/watch?v=jIMhshpf0Y4",
+      "title": "Be Thou My Vision by 4Him -Lyrics (Celtic Version)",
+      "channel": "Praise Adonai",
+      "publishedAt": "2014-02-26T17:44:40Z",
+      "durationSec": 261,
+      "duration": "4:21",
+      "views": 3801736,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "zqOB_XzuQWs",
+      "url": "https://www.youtube.com/watch?v=zqOB_XzuQWs",
+      "title": "Be Thou My Vision (Official Lyric Video) - Keith &amp; Kristyn Getty",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "2021-10-29T15:32:58Z",
+      "durationSec": 329,
+      "duration": "5:29",
+      "views": 203043,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "DxWKJZvW7Fs",
+      "url": "https://www.youtube.com/watch?v=DxWKJZvW7Fs",
+      "title": "JJ Heller - Be Thou My VIsion (Official Lyric Video)",
+      "channel": "JJHellermusic",
+      "publishedAt": "2023-09-08T04:00:08Z",
+      "durationSec": 206,
+      "duration": "3:26",
+      "views": 71600,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "hJ41EFfdEqk",
+      "url": "https://www.youtube.com/watch?v=hJ41EFfdEqk",
+      "title": "Be thou my vision   with lyrics",
+      "channel": "Peet van der Merwe",
+      "publishedAt": "2014-02-02T19:43:55Z",
+      "durationSec": 286,
+      "duration": "4:46",
+      "views": 30259,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "6d4iMknjLyM",
+      "url": "https://www.youtube.com/watch?v=6d4iMknjLyM",
+      "title": "Be thou my vision | Hymn 547, with lyrics | Maxwell",
+      "channel": "Maxwell Hymns",
+      "publishedAt": "2020-12-27T21:43:05Z",
+      "durationSec": 162,
+      "duration": "2:42",
+      "views": 3096,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "ihJAJA4ibEs",
+      "url": "https://www.youtube.com/watch?v=ihJAJA4ibEs",
+      "title": "BE THOU MY VISION -- My Favorite Irish Hymn! :)",
+      "channel": "Nathan Pacheco",
+      "publishedAt": "2017-02-24T23:00:01Z",
+      "durationSec": 225,
+      "duration": "3:45",
+      "views": 16786994,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Be Thou my vision,",
+            "O Lord of my heart",
+            "Naught be all else to me,",
+            "Save that Thou art",
+            "Thou my best thought,",
+            "By day or by night",
+            "Waking or sleeping,",
+            "Thy presence my light"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Be Thou my Wisdom,",
+            "And Thou my true Word",
+            "I ever with Thee,",
+            "And Thou with me, Lord",
+            "Thou my great Father,",
+            "I thy true son",
+            "Thou in me dwelling,",
+            "And I with Thee one"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "High King of heaven,",
+            "My victory won",
+            "May I reach heaven's joys,",
+            "O bright heaven's sun!",
+            "Heart of my own heart,",
+            "Whatever befall",
+            "Still be my vision,",
+            "O Ruler of All"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Amen Amen Amen"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 100,
+      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
+      "order": "",
+      "engine": {
+        "verdict": "verified",
+        "lines": [
+          {
+            "text": "Be Thou my vision,",
+            "t0": 20.92,
+            "t1": 23.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Be Thou my vision,",
+              "asr_large": "Be Thou My Vision",
+              "asr_turbo": "Be Thou my vision,",
+              "asr_prompted": "O Lord of my heart, My vision's light, my light, my light. Be Thou my vision,"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "O Lord of my heart",
+            "t0": 24.86,
+            "t1": 28.88,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "O Lord of my heart",
+              "asr_large": "O Lord of my heart",
+              "asr_turbo": "O Lord of my heart",
+              "asr_prompted": "O Lord of my heart,"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Naught be all else to me,",
+            "t0": 29.38,
+            "t1": 33.28,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "library": "Naught be all else to me,",
+              "asr_large": "Not be all else to me",
+              "asr_turbo": "But be all else to me",
+              "asr_prompted": "Naught be all else to me,"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Save that Thou art",
+            "t0": 33.28,
+            "t1": 37.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Save that Thou art",
+              "asr_large": "Save that Thou art",
+              "asr_turbo": "save that Thou art",
+              "asr_prompted": "Save that Thou art"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Thou my best thought,",
+            "t0": 37.48,
+            "t1": 40.68,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Thou my best thought,",
+              "asr_large": "Thou my best thought",
+              "asr_turbo": "Thou my best thought",
+              "asr_prompted": "Thou my best thought,"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "By day or by night",
+            "t0": 40.68,
+            "t1": 45.14,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "By day or by night",
+              "asr_large": "By day or by night",
+              "asr_turbo": "by day or by night",
+              "asr_prompted": "By day or by night"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Waking or sleeping,",
+            "t0": 46.02,
+            "t1": 49.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Waking or sleeping,",
+              "asr_large": "Waking or sleeping,",
+              "asr_turbo": "Waking or sleeping,",
+              "asr_prompted": "Bwisens"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Thy presence my light",
+            "t0": 49.72,
+            "t1": 53.76,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Thy presence my light",
+              "asr_large": "Thy presence my light",
+              "asr_turbo": "Thy presence my light",
+              "asr_prompted": "my light."
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Be Thou my Wisdom,",
+            "t0": 62.42,
+            "t1": 65.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Be Thou my Wisdom,",
+              "asr_large": "Be Thou my wisdom",
+              "asr_turbo": "Be Thou my wisdom,",
+              "asr_prompted": "Be Thou my wisdom,"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "And Thou my true Word",
+            "t0": 65.34,
+            "t1": 69.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "And Thou my true Word",
+              "asr_large": "And Thou my true word",
+              "asr_turbo": "and Thou my true word.",
+              "asr_prompted": "And Thou my true word"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "I ever with Thee,",
+            "t0": 70.1,
+            "t1": 73.84,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "I ever with Thee,",
+              "asr_large": "I ever with Thee",
+              "asr_turbo": "I ever with Thee,",
+              "asr_prompted": "I ever with Thee,"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "And Thou with me, Lord",
+            "t0": 73.84,
+            "t1": 77.64,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "And Thou with me, Lord",
+              "asr_large": "And Thou with me, Lord",
+              "asr_turbo": "and Thou with me, Lord.",
+              "asr_prompted": "And Thou with me, Lord"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "Thou my great Father,",
+            "t0": 78.1,
+            "t1": 83.16,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Thou my great Father,",
+              "asr_large": "Thou my great Father,",
+              "asr_turbo": "Thou my great Father,",
+              "asr_prompted": "Father,"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "I thy true son",
+            "t0": 83.16,
+            "t1": 85.66,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "I thy true son",
+              "asr_large": "I Thy true son",
+              "asr_turbo": "I Thy true Son.",
+              "asr_prompted": "I thy true son,"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "Thou in me dwelling,",
+            "t0": 86.98,
+            "t1": 89.78,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Thou in me dwelling,",
+              "asr_large": "Thou in me dwelling",
+              "asr_turbo": "Thou in me dwelling,",
+              "asr_prompted": "Thou in me dwelling,"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "And I with Thee one",
+            "t0": 89.78,
+            "t1": 93.9,
+            "conf": 0.92,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "library": "And I with Thee one",
+              "asr_large": "And I with Thee one",
+              "asr_turbo": "and I with Thee was.",
+              "asr_prompted": "And I with Thee one"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "High King of heaven,",
+            "t0": 93.66,
+            "t1": 112.81493,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words",
+            "sources": {
+              "library": "High King of heaven,",
+              "asr_large": "My King of Heaven,",
+              "asr_turbo": "My King of Heaven,",
+              "asr_prompted": "of heaven,"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "My victory won",
+            "t0": 112.81493,
+            "t1": 115.79494,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "My victory won",
+              "asr_large": "My victory won",
+              "asr_turbo": "my victory won,",
+              "asr_prompted": "My victory won"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "May I reach heaven's joys,",
+            "t0": 116.574936,
+            "t1": 121.574936,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "May I reach heaven's joys,",
+              "asr_large": "May I reach heaven's joys,",
+              "asr_turbo": "May I reach Heaven's joys,",
+              "asr_prompted": "May I reach heaven's joys,"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "O bright heaven's sun!",
+            "t0": 121.574936,
+            "t1": 124.394936,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "library": "O bright heaven's sun!",
+              "asr_large": "A bright heaven's sun",
+              "asr_turbo": "O bright Heaven's sun,",
+              "asr_prompted": "O bright heaven's sun!"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "Heart of my own heart,",
+            "t0": 125.33493,
+            "t1": 129.33493,
+            "conf": 0.91,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "library": "Heart of my own heart,",
+              "asr_large": "Heart of my own heart,",
+              "asr_turbo": "Out of my own heart,",
+              "asr_prompted": "Heart of my own heart,"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "Whatever befall",
+            "t0": 129.33493,
+            "t1": 131.89493,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Whatever befall",
+              "asr_large": "Whatever befall",
+              "asr_turbo": "whatever befall",
+              "asr_prompted": "Whatever befall"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "Still be my vision,",
+            "t0": 133.25493,
+            "t1": 137.25493,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Still be my vision,",
+              "asr_large": "Still be my vision,",
+              "asr_turbo": "Still be my vision,"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "O Ruler of All",
+            "t0": 137.25493,
+            "t1": 140.77493,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "O Ruler of All",
+              "asr_large": "O ruler of all",
+              "asr_turbo": "O ruler of all",
+              "asr_prompted": "O Ruler of All"
+            },
+            "label": "Verse 4",
+            "block": 3
+          },
+          {
+            "text": "Amen Amen Amen",
+            "t0": 140.95493,
+            "t1": 186.83493,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Amen Amen Amen",
+              "asr_turbo": "Amen Amen. Amen.",
+              "asr_prompted": "Amen Amen Amen"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [],
+        "report": {
+          "videoId": "ihJAJA4ibEs",
+          "sources": [
+            "library",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "captions"
+          ],
+          "asr_seconds": 6.9,
+          "excluded": [
+            {
+              "t0": 190.51492,
+              "text": "Amen"
+            },
+            {
+              "t0": 215.35493,
+              "text": "You"
+            }
+          ],
+          "lines": 25,
+          "verified": 25,
+          "checks": 0,
+          "seconds": 7.4,
+          "generatedAt": "2026-09-27T20:25:56+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "Optrm7lF16s",
+      "url": "https://www.youtube.com/watch?v=Optrm7lF16s",
+      "title": "Be Thou My Vision - Audrey Assad",
+      "channel": "Audrey Assad",
+      "publishedAt": "2016-02-19T16:13:23Z",
+      "durationSec": 215,
+      "duration": "3:35",
+      "views": 8598918,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": "",
+      "fetchError": "ERROR: [youtube] Optrm7lF16s: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "Optrm7lF16s",
+          "sources": [
+            "library"
+          ],
+          "missing": [
+            "captions",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
+        }
+      }
+    },
+    {
+      "videoId": "6CMclLT_Hjg",
+      "url": "https://www.youtube.com/watch?v=6CMclLT_Hjg",
+      "title": "Be thou my vision - (with lyrics)",
+      "channel": "Evolsiay Tulip",
+      "publishedAt": "2009-12-22T17:34:30Z",
+      "durationSec": 286,
+      "duration": "4:46",
+      "views": 8516880,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "jIMhshpf0Y4",
+      "url": "https://www.youtube.com/watch?v=jIMhshpf0Y4",
+      "title": "Be Thou My Vision by 4Him -Lyrics (Celtic Version)",
+      "channel": "Praise Adonai",
+      "publishedAt": "2014-02-26T17:44:40Z",
+      "durationSec": 261,
+      "duration": "4:21",
+      "views": 3801736,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "zqOB_XzuQWs",
+      "url": "https://www.youtube.com/watch?v=zqOB_XzuQWs",
+      "title": "Be Thou My Vision (Official Lyric Video) - Keith &amp; Kristyn Getty",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "2021-10-29T15:32:58Z",
+      "durationSec": 329,
+      "duration": "5:29",
+      "views": 203043,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "DxWKJZvW7Fs",
+      "url": "https://www.youtube.com/watch?v=DxWKJZvW7Fs",
+      "title": "JJ Heller - Be Thou My VIsion (Official Lyric Video)",
+      "channel": "JJHellermusic",
+      "publishedAt": "2023-09-08T04:00:08Z",
+      "durationSec": 206,
+      "duration": "3:26",
+      "views": 71600,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "hJ41EFfdEqk",
+      "url": "https://www.youtube.com/watch?v=hJ41EFfdEqk",
+      "title": "Be thou my vision   with lyrics",
+      "channel": "Peet van der Merwe",
+      "publishedAt": "2014-02-02T19:43:55Z",
+      "durationSec": 286,
+      "duration": "4:46",
+      "views": 30259,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "6d4iMknjLyM",
+      "url": "https://www.youtube.com/watch?v=6d4iMknjLyM",
+      "title": "Be thou my vision | Hymn 547, with lyrics | Maxwell",
+      "channel": "Maxwell Hymns",
+      "publishedAt": "2020-12-27T21:43:05Z",
+      "durationSec": 162,
+      "duration": "2:42",
+      "views": 3096,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-09-27T20:26:02+00:00"
+}
