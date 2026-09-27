@@ -818,7 +818,7 @@ const LEGACY_SONGS = {
   },
   "holy-holy-holy": {
     title: "Holy, Holy, Holy",
-    youtube: "https://www.youtube.com/watch?v=AgHrNNM23p8",
+    youtube: "https://www.youtube.com/watch?v=2D4gg03f0DM",
     lyrics: [
     { label: "Verse 1", lines: ["Holy, holy, holy", "Lord, God Almighty", "Early in the morning our song shall rise to Thee", "Holy, holy, holy", "Merciful and mighty", "God in three persons blessed Trinity"] },
     { label: "Verse 2", lines: ["Holy, holy, holy", "Though the darkness hide Thee", "Though the eye of sinful man thy glory may not see", "Only Thou art holy; there is none beside Thee", "Perfect in power, in love, and purity"] },
