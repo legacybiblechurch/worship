@@ -150,6 +150,8 @@
     .sheet li { margin-bottom: 8px; }
     .sheet b { color: var(--ink); font-weight: 600; }
     .sheet code { background: var(--panel-2); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; font-family: var(--mono); }
+    .sheet a.open-gh { display: inline-block; margin-top: 7px; background: var(--gold); color: #16130a; font-weight: 600; text-decoration: none; padding: 9px 14px; border-radius: 8px; }
+    .sheet a.open-gh:hover { filter: brightness(1.08); }
     .token-row { display: flex; gap: 8px; }
     .token-row input { flex: 1; font: inherit; font-family: var(--mono); font-size: 13px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 9px 11px; }
     .gate-msg { font-size: 13px; margin-top: 10px; min-height: 20px; }
@@ -198,7 +200,7 @@
       <h1>Connect this computer</h1>
       <p>Saving songs needs permission to write to the church website. One-time setup on this computer, about two minutes. After that nobody sees this again.</p>
       <ol>
-        <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener"><b>this GitHub page</b> &nearr;</a> (sign in as the church account if asked).</li>
+        <li>Click this button (sign in as the church account if it asks):<br><a class="open-gh" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Open GitHub &rarr; New token &nearr;</a></li>
         <li>Name it anything, like <code>worship studio</code>. Expiration: <b>No expiration</b>.</li>
         <li><b>Repository access</b> &rarr; <b>Only select repositories</b> &rarr; pick <code>worship</code>.</li>
         <li><b>Repository permissions</b> &rarr; <b>Add permissions</b> &rarr; add <code>Contents</code> and <code>Actions</code>, and set <b>both</b> to <b>Read and write</b>.</li>
