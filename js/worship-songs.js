@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'amazing-grace',
-  'holy-holy-holy',
-  'give-us-clean-hands',
+  'be-thou-my-vision',
+  'be-unto-your-name',
+  'the-gospel-song',
 ];
