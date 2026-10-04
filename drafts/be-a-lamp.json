@@ -1,11 +1,11 @@
 {
   "slug": "be-a-lamp",
-  "title": "be a lamp",
-  "input": "be a lamp",
+  "title": "Be a Lamp",
+  "input": "Be a Lamp",
   "isNew": true,
   "forced": null,
-  "signature": "66f5dca3c28c9c3a",
-  "generatedAt": "2026-10-04T10:29:16+00:00",
+  "signature": "cd95c2c389f93afa",
+  "generatedAt": "2026-10-04T10:45:49+00:00",
   "titleKey": "be a lamp",
   "searchCandidates": [
     {
@@ -20,28 +20,6 @@
       "hasCaptions": true
     },
     {
-      "videoId": "3OGMjDllEJM",
-      "url": "https://www.youtube.com/watch?v=3OGMjDllEJM",
-      "title": "Give me oil in my lamp | Christian Songs For Kids",
-      "channel": "Christian Songs and Videos",
-      "publishedAt": "2020-08-02T16:00:00Z",
-      "durationSec": 155,
-      "duration": "2:35",
-      "views": 12345130,
-      "hasCaptions": false
-    },
-    {
-      "videoId": "sKlQpjl_oqY",
-      "url": "https://www.youtube.com/watch?v=sKlQpjl_oqY",
-      "title": "THY WORD IS A LAMP UNTO MY FEET",
-      "channel": "God's Amazing Grace Christian Fellowship Inc.",
-      "publishedAt": "2019-05-13T21:50:56Z",
-      "durationSec": 194,
-      "duration": "3:14",
-      "views": 1203935,
-      "hasCaptions": false
-    },
-    {
       "videoId": "atFzEVa2c68",
       "url": "https://www.youtube.com/watch?v=atFzEVa2c68",
       "title": "Lamp - Hatachi no Koi | Romaji/English Caption",
@@ -49,7 +27,7 @@
       "publishedAt": "2022-05-28T03:04:52Z",
       "durationSec": 193,
       "duration": "3:13",
-      "views": 439126,
+      "views": 439130,
       "hasCaptions": false
     },
     {
@@ -61,6 +39,17 @@
       "durationSec": 315,
       "duration": "5:15",
       "views": 339219,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "HAXUl_GAJq4",
+      "url": "https://www.youtube.com/watch?v=HAXUl_GAJq4",
+      "title": "Girls&#39; Generation (소녀시대)  – &#39;Mood Lamp’ Lyrics [Color Coded_Han_Rom_Eng]",
+      "channel": "Zaty Farhani",
+      "publishedAt": "2022-08-05T12:56:00Z",
+      "durationSec": 272,
+      "duration": "4:32",
+      "views": 20199,
       "hasCaptions": false
     },
     {
@@ -94,6 +83,17 @@
       "durationSec": 236,
       "duration": "3:56",
       "views": 13,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "v1Ng43JoGtE",
+      "url": "https://www.youtube.com/watch?v=v1Ng43JoGtE",
+      "title": "Lamp ‘For Lovers’ Lyrics [JPN, ROM, ENG]",
+      "channel": "Arctic Lines",
+      "publishedAt": "2021-07-13T03:17:07Z",
+      "durationSec": 80,
+      "duration": "1:20",
+      "views": 237896,
       "hasCaptions": false
     }
   ],
@@ -163,8 +163,8 @@
       ],
       "transcriptSource": "engine",
       "confidence": 53,
-      "notes": "Lyrics generated from memory; may differ from official version.",
-      "order": "['Verse 1', 'Chorus', 'Verse 2', 'Bridge', 'Tag']",
+      "notes": "Lyrics are based on common worship themes for \"Be a Lamp\"; exact wording may differ from the original song.",
+      "order": "Verse 1, Chorus, Verse 2, Chorus, Bridge, Tag",
       "engine": {
         "verdict": "unverified",
         "lines": [
@@ -757,57 +757,9 @@
           "verified": 14,
           "checks": 12,
           "seconds": 0.0,
-          "generatedAt": "2026-10-04T10:30:00+00:00"
+          "generatedAt": "2026-10-04T10:46:13+00:00"
         }
       }
-    },
-    {
-      "videoId": "3OGMjDllEJM",
-      "url": "https://www.youtube.com/watch?v=3OGMjDllEJM",
-      "title": "Give me oil in my lamp | Christian Songs For Kids",
-      "channel": "Christian Songs and Videos",
-      "publishedAt": "2020-08-02T16:00:00Z",
-      "durationSec": 155,
-      "duration": "2:35",
-      "views": 12345130,
-      "hasCaptions": false,
-      "lyrics": null,
-      "transcriptSource": "none",
-      "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
-      "order": "",
-      "fetchError": "ERROR: [youtube] 3OGMjDllEJM: This video is not available",
-      "engine": {
-        "verdict": "unverified",
-        "lines": [],
-        "checks": [],
-        "report": {
-          "videoId": "3OGMjDllEJM",
-          "sources": [],
-          "missing": [
-            "captions",
-            "library",
-            "audio"
-          ],
-          "note": "no recording evidence: needs audio or captions"
-        }
-      }
-    },
-    {
-      "videoId": "sKlQpjl_oqY",
-      "url": "https://www.youtube.com/watch?v=sKlQpjl_oqY",
-      "title": "THY WORD IS A LAMP UNTO MY FEET",
-      "channel": "God's Amazing Grace Christian Fellowship Inc.",
-      "publishedAt": "2019-05-13T21:50:56Z",
-      "durationSec": 194,
-      "duration": "3:14",
-      "views": 1203935,
-      "hasCaptions": false,
-      "lyrics": null,
-      "transcriptSource": "none",
-      "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
-      "order": ""
     },
     {
       "videoId": "atFzEVa2c68",
@@ -817,13 +769,454 @@
       "publishedAt": "2022-05-28T03:04:52Z",
       "durationSec": 193,
       "duration": "3:13",
-      "views": 439126,
+      "views": 439130,
       "hasCaptions": false,
-      "lyrics": null,
-      "transcriptSource": "none",
-      "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
-      "order": ""
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "Haru no you na hohoemi"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Hanabira o nagamete iru",
+            "Teni motta kazakuruma"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Mou yari to sugite yu"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "The wind is so",
+            "The petals are falling into the pond"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I looked into the water mirror with the shadow Nozoki konda",
+            "Kage yueta mizu kagami"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "I love you",
+            "I love you. I love you"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I love you"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I love you"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I love you"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 15,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": "",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Haru no you na hohoemi",
+            "t0": 27.14,
+            "t1": 30.72,
+            "conf": 0.7,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Haru no you na hohoemi",
+              "asr_turbo": "Moari tsuzける Moari to sugi te yuku Ako gae no jikan A"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hanabira o nagamete iru",
+            "t0": 36.5,
+            "t1": 40.18,
+            "conf": 0.68,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Hanabira o nagamete iru",
+              "asr_turbo": "ga"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Teni motta kazakuruma",
+            "t0": 40.72,
+            "t1": 43.66,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Suki desu",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Teni motta kazakuruma",
+              "asr_turbo": "suki desu"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Mou yari to sugite yu",
+            "t0": 50.18,
+            "t1": 56.34,
+            "conf": 0.68,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Mou yari to sugite yu",
+              "asr_turbo": "nata ga"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The wind is so",
+            "t0": 81.54,
+            "t1": 87.0,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "The wind is blowing,",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "The wind is blowing,",
+              "asr_turbo": "The wind is so"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The petals are falling into the pond",
+            "t0": 87.0,
+            "t1": 89.66,
+            "conf": 0.61,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Warm, and",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "The petals are falling into the pond",
+              "asr_turbo": "warm, and"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I looked into the water mirror with the shadow Nozoki konda",
+            "t0": 92.06,
+            "t1": 92.84419,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "I looked into the water mirror with the shadow Nozoki konda",
+              "asr_turbo": "the water is filled with water. I've been in the dark, and I've been in the dark, and I've been in the dark,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Kage yueta mizu kagami",
+            "t0": 92.84419,
+            "t1": 98.48419,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Kage yueta mizu kagami",
+              "asr_turbo": "and I've been in the dark, filled with a light of water. I'm going to be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I love you",
+            "t0": 101.08419,
+            "t1": 131.0642,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "A little bit more Love you",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I love you",
+              "asr_turbo": "a little bit more Love you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I love you. I love you",
+            "t0": 131.0642,
+            "t1": 153.10419,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "You like",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I love you. I love you",
+              "asr_turbo": "You like"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I love you",
+            "t0": 161.0842,
+            "t1": 165.48419,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "one witness only; not enough evidence; sung 5x, 5 agree",
+            "sources": {
+              "asr_large": "I love you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I love you",
+            "t0": 168.94418,
+            "t1": 173.90419,
+            "conf": 0.8,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "I love you",
+              "asr_turbo": "me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I love you",
+            "t0": 177.3642,
+            "t1": 182.32419,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "one witness only; not enough evidence; sung 5x, 5 agree",
+            "sources": {
+              "asr_large": "I love you"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 25.14,
+            "t1": 30.72,
+            "text": "Haru no you na hohoemi",
+            "options": [
+              "Haru no you na hohoemi"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 34.5,
+            "t1": 40.18,
+            "text": "Hanabira o nagamete iru",
+            "options": [
+              "Hanabira o nagamete iru"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 38.72,
+            "t1": 43.66,
+            "text": "Teni motta kazakuruma",
+            "options": [
+              "Teni motta kazakuruma",
+              "Suki desu"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 48.18,
+            "t1": 56.34,
+            "text": "Mou yari to sugite yu",
+            "options": [
+              "Mou yari to sugite yu"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 79.54,
+            "t1": 87.0,
+            "text": "The wind is so",
+            "options": [
+              "The wind is so",
+              "The wind is blowing,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 85.0,
+            "t1": 89.66,
+            "text": "The petals are falling into the pond",
+            "options": [
+              "The petals are falling into the pond",
+              "Warm, and"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 90.06,
+            "t1": 92.84419,
+            "text": "I looked into the water mirror with the shadow Nozoki konda",
+            "options": [
+              "I looked into the water mirror with the shadow Nozoki konda"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 90.84419,
+            "t1": 98.48419,
+            "text": "Kage yueta mizu kagami",
+            "options": [
+              "Kage yueta mizu kagami"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 99.08419,
+            "t1": 131.0642,
+            "text": "I love you",
+            "options": [
+              "I love you",
+              "A little bit more Love you"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 129.0642,
+            "t1": 153.10419,
+            "text": "I love you. I love you",
+            "options": [
+              "I love you. I love you",
+              "You like"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 166.94418,
+            "t1": 173.90419,
+            "text": "I love you",
+            "options": [
+              "I love you"
+            ],
+            "why": "one witness only"
+          }
+        ],
+        "report": {
+          "videoId": "atFzEVa2c68",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 5.1,
+          "excluded": [
+            {
+              "t0": 16.78,
+              "text": "スキトール花びらに唇を 寄せてはこちらを向いて"
+            },
+            {
+              "t0": 33.34,
+              "text": "Chitte yuku"
+            },
+            {
+              "t0": 44.96,
+              "text": "Mowari tsuzukeru"
+            },
+            {
+              "t0": 56.96,
+              "text": "Suki"
+            },
+            {
+              "t0": 75.68,
+              "text": "Desu"
+            },
+            {
+              "t0": 191.0842,
+              "text": "Thank you"
+            }
+          ],
+          "lines": 13,
+          "verified": 2,
+          "checks": 11,
+          "seconds": 5.1,
+          "generatedAt": "2026-10-04T10:46:37+00:00"
+        }
+      }
     },
     {
       "videoId": "wZcY8E4F_HI",
@@ -838,7 +1231,23 @@
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "HAXUl_GAJq4",
+      "url": "https://www.youtube.com/watch?v=HAXUl_GAJq4",
+      "title": "Girls&#39; Generation (소녀시대)  – &#39;Mood Lamp’ Lyrics [Color Coded_Han_Rom_Eng]",
+      "channel": "Zaty Farhani",
+      "publishedAt": "2022-08-05T12:56:00Z",
+      "durationSec": 272,
+      "duration": "4:32",
+      "views": 20199,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": ""
     },
     {
@@ -854,7 +1263,7 @@
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": ""
     },
     {
@@ -870,7 +1279,7 @@
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
-      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": ""
     },
     {
@@ -886,10 +1295,26 @@
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "v1Ng43JoGtE",
+      "url": "https://www.youtube.com/watch?v=v1Ng43JoGtE",
+      "title": "Lamp ‘For Lovers’ Lyrics [JPN, ROM, ENG]",
+      "channel": "Arctic Lines",
+      "publishedAt": "2021-07-13T03:17:07Z",
+      "durationSec": 80,
+      "duration": "1:20",
+      "views": 237896,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
       "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": ""
     }
   ],
   "needsAudio": false,
-  "listenedAt": "2026-10-04T10:30:13+00:00"
+  "listenedAt": "2026-10-04T10:46:37+00:00"
 }
