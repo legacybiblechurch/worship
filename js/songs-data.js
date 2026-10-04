@@ -209,12 +209,18 @@ const LEGACY_SONGS = {
   },
   "be-thou-my-vision": {
     title: "Be Thou My Vision",
-    youtube: "https://www.youtube.com/results?search_query=Be+Thou+My+Vision+hymn+official+worship",
+    youtube: "https://youtu.be/AyaaEkzz4ms?si=cmbmIoZveUa-CgKQ",
     lyrics: [
-    { label: "Verse 1", lines: ["Be Thou my vision,", "O Lord of my heart", "Naught be all else to me,", "Save that Thou art", "Thou my best thought,", "By day or by night", "Waking or sleeping,", "Thy presence my light"] },
-    { label: "Verse 2", lines: ["Be Thou my Wisdom,", "And Thou my true Word", "I ever with Thee,", "And Thou with me, Lord", "Thou my great Father,", "I thy true son", "Thou in me dwelling,", "And I with Thee one"] },
-    { label: "Verse 3", lines: ["Riches I heed not,", "Nor man's empty praise", "Thou mine inheritance,", "Now and always", "Thou and Thou only,", "First in my heart", "High King of heaven,", "My Treasure Thou art"] },
-    { label: "Verse 4", lines: ["High King of heaven,", "My victory won", "May I reach heaven's joys,", "O bright heaven's sun!", "Heart of my own heart,", "Whatever befall", "Still be my vision,", "O Ruler of All"] }
+    { label: "", lines: ["Be Thou my vision,", "O Lord of my heart", "Naught be all else to me,", "Save that Thou art"] },
+    { label: "", lines: ["Thou my best thought,", "By day or by night", "Waking or sleeping,", "Thy presence my light"] },
+    { label: "", lines: ["Be Thou my Wisdom,", "And Thou my true Word", "I ever with Thee,", "And Thou with me, Lord"] },
+    { label: "", lines: ["Thou my great Father,", "I thy true son", "Thou in me dwelling,", "And I with Thee one"] },
+    { label: "", lines: ["Riches I heed not,", "Nor man's empty praise", "Thou mine inheritance,", "Now and always"] },
+    { label: "", lines: ["Thou and Thou only,", "First in my heart", "High King of heaven,", "My Treasure Thou art"] },
+    { label: "", lines: ["Hallelujah", "Hallelujah"] },
+    { label: "", lines: ["High King of heaven,", "My victory won", "May I reach heaven's joys,", "O bright heaven's sun!"] },
+    { label: "", lines: ["Heart of my own heart,", "Whatever befall", "Still be my vision,", "O Ruler of All"] },
+    { label: "", lines: ["Heart of my own heart,", "Whatever befall", "Still be my vision,", "O Ruler of All"] }
   ]
   },
   "be-unto-your-name": {
