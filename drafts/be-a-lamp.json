@@ -4,8 +4,8 @@
   "input": "be a lamp",
   "isNew": true,
   "forced": null,
-  "signature": "9c25940adf0b3a9b",
-  "generatedAt": "2026-10-04T07:35:05+00:00",
+  "signature": "66f5dca3c28c9c3a",
+  "generatedAt": "2026-10-04T08:25:02+00:00",
   "titleKey": "be a lamp",
   "searchCandidates": [
     {
@@ -20,6 +20,28 @@
       "hasCaptions": true
     },
     {
+      "videoId": "3OGMjDllEJM",
+      "url": "https://www.youtube.com/watch?v=3OGMjDllEJM",
+      "title": "Give me oil in my lamp | Christian Songs For Kids",
+      "channel": "Christian Songs and Videos",
+      "publishedAt": "2020-08-02T16:00:00Z",
+      "durationSec": 155,
+      "duration": "2:35",
+      "views": 12344702,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "sKlQpjl_oqY",
+      "url": "https://www.youtube.com/watch?v=sKlQpjl_oqY",
+      "title": "THY WORD IS A LAMP UNTO MY FEET",
+      "channel": "God's Amazing Grace Christian Fellowship Inc.",
+      "publishedAt": "2019-05-13T21:50:56Z",
+      "durationSec": 194,
+      "duration": "3:14",
+      "views": 1203915,
+      "hasCaptions": false
+    },
+    {
       "videoId": "atFzEVa2c68",
       "url": "https://www.youtube.com/watch?v=atFzEVa2c68",
       "title": "Lamp - Hatachi no Koi | Romaji/English Caption",
@@ -27,7 +49,7 @@
       "publishedAt": "2022-05-28T03:04:52Z",
       "durationSec": 193,
       "duration": "3:13",
-      "views": 439092,
+      "views": 439102,
       "hasCaptions": false
     },
     {
@@ -42,28 +64,6 @@
       "hasCaptions": false
     },
     {
-      "videoId": "PZPh9WMHmLQ",
-      "url": "https://www.youtube.com/watch?v=PZPh9WMHmLQ",
-      "title": "Lamp ‘Last Train At 25 O’clock’ Lyrics [JPN, ROM, ENG]",
-      "channel": "Arctic Lines",
-      "publishedAt": "2022-07-31T10:17:55Z",
-      "durationSec": 265,
-      "duration": "4:25",
-      "views": 103167,
-      "hasCaptions": false
-    },
-    {
-      "videoId": "HAXUl_GAJq4",
-      "url": "https://www.youtube.com/watch?v=HAXUl_GAJq4",
-      "title": "Girls&#39; Generation (소녀시대)  – &#39;Mood Lamp’ Lyrics [Color Coded_Han_Rom_Eng]",
-      "channel": "Zaty Farhani",
-      "publishedAt": "2022-08-05T12:56:00Z",
-      "durationSec": 272,
-      "duration": "4:32",
-      "views": 20199,
-      "hasCaptions": false
-    },
-    {
       "videoId": "Mp-BR6oSqss",
       "url": "https://www.youtube.com/watch?v=Mp-BR6oSqss",
       "title": "Lamp ‘密やかに’ Lyrics [JPN, ROM, ENG]",
@@ -71,29 +71,29 @@
       "publishedAt": "2023-07-31T22:55:45Z",
       "durationSec": 177,
       "duration": "2:57",
-      "views": 10997,
+      "views": 10999,
       "hasCaptions": false
     },
     {
-      "videoId": "i3PlGEuNWpY",
-      "url": "https://www.youtube.com/watch?v=i3PlGEuNWpY",
-      "title": "NBA Youngboy- Dope Lamp (Lyrics)",
-      "channel": "TY Lyrics",
-      "publishedAt": "2018-11-15T00:12:33Z",
-      "durationSec": 162,
-      "duration": "2:42",
-      "views": 2768,
+      "videoId": "qUbckM6Jwaw",
+      "url": "https://www.youtube.com/watch?v=qUbckM6Jwaw",
+      "title": "Be a Lamp | Norton Hall Band | Lyrics",
+      "channel": "The Living Word",
+      "publishedAt": "2020-05-02T18:59:15Z",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 240,
       "hasCaptions": false
     },
     {
-      "videoId": "v1Ng43JoGtE",
-      "url": "https://www.youtube.com/watch?v=v1Ng43JoGtE",
-      "title": "Lamp ‘For Lovers’ Lyrics [JPN, ROM, ENG]",
-      "channel": "Arctic Lines",
-      "publishedAt": "2021-07-13T03:17:07Z",
-      "durationSec": 80,
-      "duration": "1:20",
-      "views": 237895,
+      "videoId": "1CVDy7-5Xv4",
+      "url": "https://www.youtube.com/watch?v=1CVDy7-5Xv4",
+      "title": "Be A Lamp",
+      "channel": "Hope Bible Fellowship",
+      "publishedAt": "2025-09-02T08:26:22Z",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 13,
       "hasCaptions": false
     }
   ],
@@ -163,8 +163,8 @@
       ],
       "transcriptSource": "engine",
       "confidence": 53,
-      "notes": "Lyrics are based on common worship themes for the song “Be a Lamp”; exact wording may differ.",
-      "order": "['Verse 1', 'Chorus', 'Bridge', 'Tag']",
+      "notes": "Lyrics based on memory; may not be exact.",
+      "order": "['Verse 1', 'Chorus', 'Verse 2', 'Bridge', 'Tag']",
       "engine": {
         "verdict": "unverified",
         "lines": [
@@ -743,7 +743,6 @@
             "captions",
             "library"
           ],
-          "asr_seconds": 3.7,
           "excluded": [
             {
               "t0": 0.0,
@@ -757,33 +756,33 @@
           "lines": 26,
           "verified": 14,
           "checks": 12,
-          "seconds": 3.7,
-          "generatedAt": "2026-10-04T07:35:59+00:00"
+          "seconds": 0.0,
+          "generatedAt": "2026-10-04T08:25:34+00:00"
         }
       }
     },
     {
-      "videoId": "atFzEVa2c68",
-      "url": "https://www.youtube.com/watch?v=atFzEVa2c68",
-      "title": "Lamp - Hatachi no Koi | Romaji/English Caption",
-      "channel": "Goober McGuffin",
-      "publishedAt": "2022-05-28T03:04:52Z",
-      "durationSec": 193,
-      "duration": "3:13",
-      "views": 439092,
+      "videoId": "3OGMjDllEJM",
+      "url": "https://www.youtube.com/watch?v=3OGMjDllEJM",
+      "title": "Give me oil in my lamp | Christian Songs For Kids",
+      "channel": "Christian Songs and Videos",
+      "publishedAt": "2020-08-02T16:00:00Z",
+      "durationSec": 155,
+      "duration": "2:35",
+      "views": 12344702,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
       "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": "",
-      "fetchError": "ERROR: [youtube] atFzEVa2c68: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-",
+      "fetchError": "ERROR: [youtube] 3OGMjDllEJM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-",
       "engine": {
         "verdict": "unverified",
         "lines": [],
         "checks": [],
         "report": {
-          "videoId": "atFzEVa2c68",
+          "videoId": "3OGMjDllEJM",
           "sources": [],
           "missing": [
             "captions",
@@ -795,14 +794,14 @@
       }
     },
     {
-      "videoId": "wZcY8E4F_HI",
-      "url": "https://www.youtube.com/watch?v=wZcY8E4F_HI",
-      "title": "lamp (ランプ) - yume utsutsu / ゆめうつつ [lyrics eng/rom/kan]",
-      "channel": "interwebs",
-      "publishedAt": "2021-06-16T22:38:26Z",
-      "durationSec": 315,
-      "duration": "5:15",
-      "views": 339208,
+      "videoId": "sKlQpjl_oqY",
+      "url": "https://www.youtube.com/watch?v=sKlQpjl_oqY",
+      "title": "THY WORD IS A LAMP UNTO MY FEET",
+      "channel": "God's Amazing Grace Christian Fellowship Inc.",
+      "publishedAt": "2019-05-13T21:50:56Z",
+      "durationSec": 194,
+      "duration": "3:14",
+      "views": 1203915,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -811,14 +810,14 @@
       "order": ""
     },
     {
-      "videoId": "PZPh9WMHmLQ",
-      "url": "https://www.youtube.com/watch?v=PZPh9WMHmLQ",
-      "title": "Lamp ‘Last Train At 25 O’clock’ Lyrics [JPN, ROM, ENG]",
-      "channel": "Arctic Lines",
-      "publishedAt": "2022-07-31T10:17:55Z",
-      "durationSec": 265,
-      "duration": "4:25",
-      "views": 103167,
+      "videoId": "atFzEVa2c68",
+      "url": "https://www.youtube.com/watch?v=atFzEVa2c68",
+      "title": "Lamp - Hatachi no Koi | Romaji/English Caption",
+      "channel": "Goober McGuffin",
+      "publishedAt": "2022-05-28T03:04:52Z",
+      "durationSec": 193,
+      "duration": "3:13",
+      "views": 439102,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -827,14 +826,14 @@
       "order": ""
     },
     {
-      "videoId": "HAXUl_GAJq4",
-      "url": "https://www.youtube.com/watch?v=HAXUl_GAJq4",
-      "title": "Girls&#39; Generation (소녀시대)  – &#39;Mood Lamp’ Lyrics [Color Coded_Han_Rom_Eng]",
-      "channel": "Zaty Farhani",
-      "publishedAt": "2022-08-05T12:56:00Z",
-      "durationSec": 272,
-      "duration": "4:32",
-      "views": 20199,
+      "videoId": "wZcY8E4F_HI",
+      "url": "https://www.youtube.com/watch?v=wZcY8E4F_HI",
+      "title": "lamp (ランプ) - yume utsutsu / ゆめうつつ [lyrics eng/rom/kan]",
+      "channel": "interwebs",
+      "publishedAt": "2021-06-16T22:38:26Z",
+      "durationSec": 315,
+      "duration": "5:15",
+      "views": 339208,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -850,7 +849,7 @@
       "publishedAt": "2023-07-31T22:55:45Z",
       "durationSec": 177,
       "duration": "2:57",
-      "views": 10997,
+      "views": 10999,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -859,14 +858,14 @@
       "order": ""
     },
     {
-      "videoId": "i3PlGEuNWpY",
-      "url": "https://www.youtube.com/watch?v=i3PlGEuNWpY",
-      "title": "NBA Youngboy- Dope Lamp (Lyrics)",
-      "channel": "TY Lyrics",
-      "publishedAt": "2018-11-15T00:12:33Z",
-      "durationSec": 162,
-      "duration": "2:42",
-      "views": 2768,
+      "videoId": "qUbckM6Jwaw",
+      "url": "https://www.youtube.com/watch?v=qUbckM6Jwaw",
+      "title": "Be a Lamp | Norton Hall Band | Lyrics",
+      "channel": "The Living Word",
+      "publishedAt": "2020-05-02T18:59:15Z",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 240,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -875,14 +874,14 @@
       "order": ""
     },
     {
-      "videoId": "v1Ng43JoGtE",
-      "url": "https://www.youtube.com/watch?v=v1Ng43JoGtE",
-      "title": "Lamp ‘For Lovers’ Lyrics [JPN, ROM, ENG]",
-      "channel": "Arctic Lines",
-      "publishedAt": "2021-07-13T03:17:07Z",
-      "durationSec": 80,
-      "duration": "1:20",
-      "views": 237895,
+      "videoId": "1CVDy7-5Xv4",
+      "url": "https://www.youtube.com/watch?v=1CVDy7-5Xv4",
+      "title": "Be A Lamp",
+      "channel": "Hope Bible Fellowship",
+      "publishedAt": "2025-09-02T08:26:22Z",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 13,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -892,5 +891,5 @@
     }
   ],
   "needsAudio": false,
-  "listenedAt": "2026-10-04T07:36:06+00:00"
+  "listenedAt": "2026-10-04T08:25:37+00:00"
 }
