@@ -1867,4 +1867,31 @@ const LEGACY_SONGS = {
     { label: "Tag", lines: ["You alone are my hearts desire", "And I long to worship Thee"] }
   ]
   },
+  "be-a-lamp": {
+    title: "Be a Lamp",
+    youtube: "https://www.youtube.com/watch?v=_7fyOC3XY3k",
+    lyrics: [
+    { label: "Verse 1", lines: ["Be a lamp for all my days, Lord", "Bear a torch that I might see", "Through the fog of bitter pain", "And know Your purpose lies beneath"] },
+    { label: "Chorus", lines: ["O to taste and see the gospel", "As I never have before", "Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "Verse 2", lines: ["As I sojourn 'cross this desert", "Through the plains of doubtful night", "Speak the words that guide my footsteps", "Let them shine as stars so bright"] },
+    { label: "Verse 2", lines: ["Point me northward to Thy country", "Where my soul will find its home", "Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "Verse 3", lines: ["You're the lamp, the light of heaven", "Dawn of mercy for all men", "Through Your death and resurrection", "Sons of night are born again"] },
+    { label: "Verse 3", lines: ["What a gift so free and moving", "Sets ablaze my fainting soul", "Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "Outro", lines: ["O to taste and see the gospel", "As I never have before", "Be a lamp for all my days", "And I shall walk in endless joy"] }
+  ]
+  },
+  "tis-so-sweet-to-trust-in-jesus": {
+    title: "'Tis So Sweet to Trust in Jesus",
+    youtube: "https://www.youtube.com/watch?v=UCtQMiNlTKk",
+    lyrics: [
+    { label: "Verse 1", lines: ["'Tis so sweet to trust in Jesus", "Just to take Him at His word", "Just to rest upon His promise", "Just to know, \"Thus saith the Lord\""] },
+    { label: "Chorus", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er", "Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "Verse 2", lines: ["O how sweet to trust in Jesus", "Just to trust His cleansing blood", "And in simple faith to plunge me", "'Neath the healing, cleansing flood"] },
+    { label: "Chorus", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er", "Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "Chorus", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er", "Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "Tag", lines: ["To trust Him more"] },
+    { label: "Verse 3", lines: ["I'm so glad I learned to trust Him", "Precious Jesus, Savior, Friend", "And I know that Thou art with me", "Wilt be with me 'til the end"] },
+    { label: "Outro", lines: ["You are with me, Lord", "'Til the end", "'Til the end"] }
+  ]
+  },
 };
