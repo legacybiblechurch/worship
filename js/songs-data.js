@@ -225,12 +225,22 @@ const LEGACY_SONGS = {
   },
   "be-unto-your-name": {
     title: "Be Unto Your Name",
-    youtube: "https://www.youtube.com/results?search_query=Be+Unto+Your+Name+Robin+Mark+official",
+    youtube: "https://youtu.be/rG5S8CR-nVk?si=qt4L_MkXhXjLMjQe",
     lyrics: [
-    { label: "", lines: ["We are a moment, You are forever", "Lord of the Ages, God before time", "We are a vapor, You are eternal", "Love everlasting, reigning on high"] },
-    { label: "", lines: ["Holy, holy, Lord God Almighty", "Worthy is the Lamb who was slain", "Highest praises, honor and glory", "Be unto Your Name", "Be unto Your Name"] },
-    { label: "", lines: ["We are the broken, You are the Healer", "Jesus, Redeemer, mighty to save", "You are the sweet song we'll sing forever", "Bowing before You, blessing Your name", "Holy, holy, Lord God Almighty", "Worthy is the Lamb who was slain", "Highest praises, honor and glory", "Be unto Your Name", "Be unto Your Name"] },
-    { label: "", lines: ["Holy, holy, Lord God Almighty", "Worthy is the Lamb who was slain", "Highest praises, honor and glory", "Be unto Your Name", "Be unto Your Name"] }
+    { label: "", lines: ["Be a lamp for all my days, Lord", "Bear a torch that I might see"] },
+    { label: "", lines: ["Through the fog of bitter pain", "And know Your purpose lies beneath"] },
+    { label: "", lines: ["O to taste and see the gospel", "As I never have before"] },
+    { label: "", lines: ["Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "", lines: ["As I sojourn 'cross this desert", "Through the plains of doubtful nights"] },
+    { label: "", lines: ["Speak the words that guide my footsteps", "Let them shine as stars so bright"] },
+    { label: "", lines: ["Point me northward to Thy country", "Where my soul will find its home"] },
+    { label: "", lines: ["Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "", lines: ["You're the lamp, the light of heaven", "Dawn of mercy for all men"] },
+    { label: "", lines: ["Through Your death and resurrection", "Sons of night are born again"] },
+    { label: "", lines: ["What a gift so free and moving", "Sets ablaze my fainting soul"] },
+    { label: "", lines: ["Be a lamp for all my days", "And I shall walk in endless joy"] },
+    { label: "", lines: ["O to taste and see the gospel", "As I never have before"] },
+    { label: "", lines: ["Be a lamp for all my days", "And I shall walk in endless joy"] }
   ]
   },
   "before-the-throne-of-god-above": {
