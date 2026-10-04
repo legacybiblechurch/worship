@@ -85,9 +85,8 @@ def collect(url: str, slug: str | None, audio: Path | None, use_cache: bool = Tr
     out: list[S.Source] = []
 
     # captions
-    if "captions" in ev:
-        if ev["captions"]:
-            out.append(_src_from_cache(ev["captions"]["name"], ev["captions"]))
+    if ev.get("captions"):            # a miss is not cached: captions may be reachable next time
+        out.append(_src_from_cache(ev["captions"]["name"], ev["captions"]))
     else:
         cap = S.captions(url)
         ev["captions"] = ({"name": cap.name, **_src_to_cache(cap)} if cap else None)
