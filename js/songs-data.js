@@ -660,12 +660,22 @@ const LEGACY_SONGS = {
   },
   "the-gospel-song": {
     title: "The Gospel Song",
-    youtube: "https://www.youtube.com/results?search_query=The+Gospel+Song+worship+official",
+    youtube: "https://youtu.be/h-j7jQnVZSM?si=sbUKfDgNHt5iorQ-",
     lyrics: [
-    { label: "", lines: ["Holy God, in sov'reignty", "Chose my soul to spare, in Thee", "Purposed to redeem, and save", "Though my heart deserved the grave"] },
-    { label: "", lines: ["How to make unrighteousness", "Fit for heaven, nonetheless?", "Oh, what grace was Love's design", "Christ exchanged His own, for mine!"] },
-    { label: "", lines: ["Holy God, in love, became", "Perfect Man to bear my blame", "On the cross He took my sin", "By His death I live again"] },
-    { label: "", lines: ["Justified, how can it be?", "Christ, now risen, lives in me!", "Abba, Father, by Your grace", "Christ, my all, my resting place"] }
+    { label: "", lines: ["'Tis so sweet to trust in Jesus", "Just to take Him at His word"] },
+    { label: "", lines: ["Just to rest upon His promise", "Just to know, \"Thus saith the Lord\""] },
+    { label: "", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er"] },
+    { label: "", lines: ["Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "", lines: ["O how sweet to trust in Jesus", "Just to trust His cleansing blood"] },
+    { label: "", lines: ["And in simple faith to plunge me", "'Neath the healing, cleansing flood"] },
+    { label: "", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er"] },
+    { label: "", lines: ["Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "", lines: ["Jesus, Jesus, how I trust Him", "How I've proved Him o'er and o'er"] },
+    { label: "", lines: ["Jesus, Jesus, precious Jesus", "O for grace to trust Him more"] },
+    { label: "", lines: ["To trust Him more"] },
+    { label: "", lines: ["I'm so glad I learned to trust Him", "Precious Jesus, Savior, Friend"] },
+    { label: "", lines: ["And I know that Thou art with me", "Wilt be with me 'til the end"] },
+    { label: "", lines: ["You are with me, Lord", "'Til the end", "'Til the end"] }
   ]
   },
   "great-is-thy-faithfulness": {
