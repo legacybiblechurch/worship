@@ -309,7 +309,11 @@
       var objEnd = fileText.indexOf('\n};');
       if (objEnd === -1) throw new Error('The song library file looks damaged. Nothing was changed.');
       var start = fileText.indexOf('\n  ' + emitStr(slug) + ': {'), emitted = emitSong(slug, song);
-      if (start === -1 || start > objEnd) return fileText.slice(0, objEnd) + ',\n' + emitted + fileText.slice(objEnd);
+      if (start === -1 || start > objEnd) {
+        // a new song goes last; the file always ends "  },\n};" so drop that comma before adding ours
+        var head = fileText.slice(0, objEnd).replace(/,\s*$/, '');
+        return head + ',\n' + emitted + ',' + fileText.slice(objEnd);
+      }
       var next = fileText.indexOf('\n  "', start + 1);
       if (next === -1 || next > objEnd) next = objEnd;
       return fileText.slice(0, start) + '\n' + emitted + ',' + fileText.slice(next);
@@ -319,7 +323,8 @@
       var obj;
       try { obj = parseLib(fileText); } catch (e) { throw new Error('Refusing to save: the rebuilt library would not load. Nothing was changed.'); }
       if (Object.keys(obj).length !== expectCount) throw new Error('Refusing to save: the song count changed unexpectedly. Nothing was changed.');
-      if (JSON.stringify(obj[slug]) !== JSON.stringify(song)) throw new Error('Refusing to save: the edit did not come back intact. Nothing was changed.');
+      var want = { title: song.title, youtube: song.youtube || '', lyrics: song.lyrics || [] };
+      if (JSON.stringify(obj[slug]) !== JSON.stringify(want)) throw new Error('Refusing to save: the edit did not come back intact. Nothing was changed.');
     }
 
     // ───────────────────────────── state helpers
