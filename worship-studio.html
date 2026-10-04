@@ -497,9 +497,20 @@
       persistOrder();
       songOf(slug).title = name;
       select(slug);
-      gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
-        body: JSON.stringify({ ref: 'main', inputs: { song: name, video: '' } }) })
-      .then(function () { pollFind(slug); })
+      // songs found ahead of time (the library builder) are ready instantly
+      getFile('drafts/' + slug + '.json', true).then(function (f) {
+        var d = JSON.parse(f.text);
+        var ready = d.listenedAt && (d.candidates || []).some(function (c) { return c.lyrics && c.lyrics.length; });
+        if (!ready) throw new Error('not pre-found');
+        delete finding[slug]; persistFinding();
+        found[slug] = d;
+        renderRail(); if (current === slug) renderMain();
+        toast('Found “' + (d.title || name) + '” already. Pick the video that sounds right.', 'ok');
+      }).catch(function () {
+        return gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
+          body: JSON.stringify({ ref: 'main', inputs: { song: name, video: '' } }) })
+        .then(function () { pollFind(slug); });
+      })
       .catch(function (e) {
         delete finding[slug]; persistFinding();
         renderRail(); renderMain();
