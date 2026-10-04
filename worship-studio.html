@@ -816,6 +816,18 @@
       getFile(SETLIST_PATH).then(function (f) {
         return putFile(SETLIST_PATH, text, f.sha, 'worship studio: set Sunday (' + order.length + ' songs)');
       }).then(function () {
+        // remember these as songs the church has sung (the website's song list shows only those)
+        return getFile('js/sung.js').then(function (f) {
+          var have = []; try { have = new Function(f.text + '\n;return window.SUNG_SONGS;').call({ window: {} }) || []; } catch (e) {}
+          var m = /window\.SUNG_SONGS = \[([\s\S]*?)\];/.exec(f.text);
+          have = m ? m[1].split('\n').map(function (l) { return (l.match(/'([^']+)'/) || [])[1]; }).filter(Boolean) : have;
+          var add = order.filter(function (s) { return have.indexOf(s) === -1; });
+          if (!add.length) return;
+          var all = have.concat(add);
+          var sung = f.text.replace(/window\.SUNG_SONGS = \[[\s\S]*?\];/, 'window.SUNG_SONGS = [\n' + all.map(function (s) { return "  '" + s + "',\n"; }).join('') + '];');
+          return putFile('js/sung.js', sung, f.sha, 'worship studio: sung ' + add.join(', '));
+        }).catch(function () {});
+      }).then(function () {
         published = order.slice();
         toast('Sunday is set. Control and Display will show these songs within a minute.', 'ok');
       }).catch(function (e) { toast(e.message, 'err', true); })
