@@ -5,7 +5,7 @@
   "isNew": true,
   "forced": null,
   "signature": "66f5dca3c28c9c3a",
-  "generatedAt": "2026-10-04T08:25:02+00:00",
+  "generatedAt": "2026-10-04T10:29:16+00:00",
   "titleKey": "be a lamp",
   "searchCandidates": [
     {
@@ -16,7 +16,7 @@
       "publishedAt": "2018-08-08T11:59:22Z",
       "durationSec": 243,
       "duration": "4:03",
-      "views": 156983,
+      "views": 156984,
       "hasCaptions": true
     },
     {
@@ -27,7 +27,7 @@
       "publishedAt": "2020-08-02T16:00:00Z",
       "durationSec": 155,
       "duration": "2:35",
-      "views": 12344702,
+      "views": 12345130,
       "hasCaptions": false
     },
     {
@@ -38,7 +38,7 @@
       "publishedAt": "2019-05-13T21:50:56Z",
       "durationSec": 194,
       "duration": "3:14",
-      "views": 1203915,
+      "views": 1203935,
       "hasCaptions": false
     },
     {
@@ -49,7 +49,7 @@
       "publishedAt": "2022-05-28T03:04:52Z",
       "durationSec": 193,
       "duration": "3:13",
-      "views": 439102,
+      "views": 439126,
       "hasCaptions": false
     },
     {
@@ -60,7 +60,7 @@
       "publishedAt": "2021-06-16T22:38:26Z",
       "durationSec": 315,
       "duration": "5:15",
-      "views": 339208,
+      "views": 339219,
       "hasCaptions": false
     },
     {
@@ -106,7 +106,7 @@
       "publishedAt": "2018-08-08T11:59:22Z",
       "durationSec": 243,
       "duration": "4:03",
-      "views": 156983,
+      "views": 156984,
       "hasCaptions": true,
       "lyrics": [
         {
@@ -163,7 +163,7 @@
       ],
       "transcriptSource": "engine",
       "confidence": 53,
-      "notes": "Lyrics based on memory; may not be exact.",
+      "notes": "Lyrics generated from memory; may differ from official version.",
       "order": "['Verse 1', 'Chorus', 'Verse 2', 'Bridge', 'Tag']",
       "engine": {
         "verdict": "unverified",
@@ -757,7 +757,7 @@
           "verified": 14,
           "checks": 12,
           "seconds": 0.0,
-          "generatedAt": "2026-10-04T08:25:34+00:00"
+          "generatedAt": "2026-10-04T10:30:00+00:00"
         }
       }
     },
@@ -769,14 +769,14 @@
       "publishedAt": "2020-08-02T16:00:00Z",
       "durationSec": 155,
       "duration": "2:35",
-      "views": 12344702,
+      "views": 12345130,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
       "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
       "order": "",
-      "fetchError": "ERROR: [youtube] 3OGMjDllEJM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-",
+      "fetchError": "ERROR: [youtube] 3OGMjDllEJM: This video is not available",
       "engine": {
         "verdict": "unverified",
         "lines": [],
@@ -801,7 +801,7 @@
       "publishedAt": "2019-05-13T21:50:56Z",
       "durationSec": 194,
       "duration": "3:14",
-      "views": 1203915,
+      "views": 1203935,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -817,7 +817,7 @@
       "publishedAt": "2022-05-28T03:04:52Z",
       "durationSec": 193,
       "duration": "3:13",
-      "views": 439102,
+      "views": 439126,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -833,7 +833,7 @@
       "publishedAt": "2021-06-16T22:38:26Z",
       "durationSec": 315,
       "duration": "5:15",
-      "views": 339208,
+      "views": 339219,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -891,5 +891,5 @@
     }
   ],
   "needsAudio": false,
-  "listenedAt": "2026-10-04T08:25:37+00:00"
+  "listenedAt": "2026-10-04T10:30:13+00:00"
 }
