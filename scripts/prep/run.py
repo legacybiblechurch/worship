@@ -433,9 +433,11 @@ def draft_one(name: str, video: str = "") -> None:
         import tempfile
         import sources as esrc
         audio_dir = Path(tempfile.mkdtemp(prefix="lbc-audio-"))
-        can_fetch = bool(os.environ.get("YT_PROXY"))
+        # on GitHub the audio needs the proxy; on a home connection set LBC_FETCH_AUDIO=1
+        can_fetch = bool(os.environ.get("YT_PROXY")) or os.environ.get("LBC_FETCH_AUDIO") == "1"
         listened = False
-        for c in d["candidates"][:2]:
+        listen_top = int(os.environ.get("LBC_LISTEN_TOP", "2") or 2)
+        for c in d["candidates"][:listen_top]:
             audio = esrc.fetch_audio(c["videoId"], audio_dir) if can_fetch else None
             if can_fetch and not audio:
                 c.setdefault("notes", "")

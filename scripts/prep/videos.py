@@ -35,7 +35,22 @@ def _mmss(sec: int) -> str:
     return f"{sec // 60}:{sec % 60:02d}"
 
 
-def _rank(cands: list[dict], limit: int) -> list[dict]:
+_STOP = {"the", "a", "an", "of", "and", "in", "to", "my", "o", "is", "for", "on", "with", "i", "we", "you", "your", "me", "be", "it", "all", "this"}
+
+
+def _words(t: str) -> set[str]:
+    return {w for w in re.sub(r"[^a-z0-9 ]+", " ", (t or "").lower()).split() if w not in _STOP}
+
+
+def _rank(cands: list[dict], limit: int, title: str = "") -> list[dict]:
+    want = _words(title)
+
+    def overlap(c: dict) -> float:
+        if not want:
+            return 1.0
+        have = _words(c.get("title", "")) | _words(c.get("channel", ""))
+        return len(want & have) / len(want)
+
     def score(c: dict) -> float:
         s = 0.0
         if c.get("hasCaptions"):
@@ -43,8 +58,11 @@ def _rank(cands: list[dict], limit: int) -> list[dict]:
         if 90 <= c.get("durationSec", 0) <= 540:      # a plausible single-song length
             s += 200
         s += min(c.get("views", 0) / 1e6, 50)
+        s += 2000 * overlap(c)                         # the video must be this song, not a namesake
         return s
 
+    # a video whose title shares none of the song's words is another song entirely
+    cands = [c for c in cands if overlap(c) >= 0.5] or cands
     return sorted(cands, key=score, reverse=True)[:limit]
 
 
@@ -72,7 +90,8 @@ _QUERIES = ("{t} lyrics", "{t} lyric video", "{t} worship lyrics", "{t} hymn lyr
 
 def _search_api(title: str, max_results: int) -> list[dict]:
     seen: dict[str, dict] = {}
-    for q in (s.format(t=title) for s in _QUERIES):
+    hint = os.environ.get("LBC_SEARCH_HINT", "").strip()
+    for q in (s.format(t=(title + " " + hint).strip()) for s in _QUERIES):
         try:
             res = _api_get("search", part="snippet", q=q, type="video",
                            maxResults=max_results, videoEmbeddable="true")
@@ -129,7 +148,8 @@ def _ytdlp_json(args: list[str]) -> list[dict]:
 
 def _search_ytdlp(title: str, max_results: int) -> list[dict]:
     seen: dict[str, dict] = {}
-    for q in (s.format(t=title) for s in _QUERIES[:3]):
+    hint = os.environ.get("LBC_SEARCH_HINT", "").strip()
+    for q in (s.format(t=(title + " " + hint).strip()) for s in _QUERIES[:3]):
         for d in _ytdlp_json([f"ytsearch{max_results}:{q}"]):
             vid = d.get("id")
             if not vid or vid in seen:
@@ -156,8 +176,8 @@ def search(title: str, *, max_results: int = 6) -> list[dict]:
     if os.environ.get("YOUTUBE_API_KEY"):
         cands = _search_api(title, max_results)
         if cands:
-            return _rank(cands, max_results)
-    return _rank(_search_ytdlp(title, max_results), max_results)
+            return _rank(cands, max_results, title)
+    return _rank(_search_ytdlp(title, max_results), max_results, title)
 
 
 def details(vid: str) -> dict | None:
