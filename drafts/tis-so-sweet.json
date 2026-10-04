@@ -1,12 +1,12 @@
 {
   "slug": "tis-so-sweet",
-  "title": "tis so sweet",
-  "input": "tis so sweet",
+  "title": "'Tis so Sweet",
+  "input": "'Tis so Sweet",
   "isNew": true,
   "forced": null,
-  "signature": "0c5120b9235970f3",
-  "generatedAt": "2026-10-04T10:30:38+00:00",
-  "titleKey": "tis so sweet",
+  "signature": "fd6e11146e630b9c",
+  "generatedAt": "2026-10-04T11:37:05+00:00",
+  "titleKey": "'tis so sweet",
   "searchCandidates": [
     {
       "videoId": "_B2TPZd4GQg",
@@ -16,7 +16,7 @@
       "publishedAt": "2022-03-30T16:30:10Z",
       "durationSec": 377,
       "duration": "6:17",
-      "views": 374908,
+      "views": 374905,
       "hasCaptions": true
     },
     {
@@ -27,7 +27,7 @@
       "publishedAt": "2009-09-07T06:47:19Z",
       "durationSec": 310,
       "duration": "5:10",
-      "views": 26406021,
+      "views": 26406164,
       "hasCaptions": false
     },
     {
@@ -49,18 +49,18 @@
       "publishedAt": "2022-08-10T15:16:03Z",
       "durationSec": 218,
       "duration": "3:38",
-      "views": 217627,
+      "views": 217644,
       "hasCaptions": false
     },
     {
-      "videoId": "rbVgJwF8SG8",
-      "url": "https://www.youtube.com/watch?v=rbVgJwF8SG8",
-      "title": "&#39;Tis So Sweet To Trust In Jesus (with Lyrics)",
-      "channel": "Parkway Worship Ministry",
-      "publishedAt": "2015-06-11T18:16:53Z",
-      "durationSec": 253,
-      "duration": "4:13",
-      "views": 115531,
+      "videoId": "KJ9tJYX1PFY",
+      "url": "https://www.youtube.com/watch?v=KJ9tJYX1PFY",
+      "title": "Tis So Sweet To Trust In Jesus (Lyric Video / Live At Ryman Auditorium, Nashville, TN, 2006)",
+      "channel": "GaitherVEVO",
+      "publishedAt": "2023-08-31T04:00:12Z",
+      "durationSec": 112,
+      "duration": "1:52",
+      "views": 131034,
       "hasCaptions": false
     },
     {
@@ -82,7 +82,7 @@
       "publishedAt": "2019-11-05T14:15:51Z",
       "durationSec": 387,
       "duration": "6:27",
-      "views": 101072,
+      "views": 101071,
       "hasCaptions": false
     },
     {
@@ -106,7 +106,7 @@
       "publishedAt": "2022-03-30T16:30:10Z",
       "durationSec": 377,
       "duration": "6:17",
-      "views": 374908,
+      "views": 374905,
       "hasCaptions": true,
       "lyrics": [
         {
@@ -177,8 +177,8 @@
       ],
       "transcriptSource": "engine",
       "confidence": 85,
-      "notes": "Based on common hymn ‘Tis So Sweet to Trust in Jesus'; confidence low due to possible lyric variations.",
-      "order": "Verse 1, Verse 2, Verse 3",
+      "notes": "Traditional hymn written by Louisa M. R. Stead (words) and William J. Kirkpatrick (music).",
+      "order": "Verse 1, Chorus, Verse 2, Chorus",
       "engine": {
         "verdict": "check",
         "lines": [
@@ -825,7 +825,6 @@
             "captions",
             "library"
           ],
-          "asr_seconds": 2.9,
           "excluded": [
             {
               "t0": 0.04,
@@ -839,8 +838,8 @@
           "lines": 35,
           "verified": 30,
           "checks": 5,
-          "seconds": 2.9,
-          "generatedAt": "2026-10-04T10:31:31+00:00"
+          "seconds": 0.0,
+          "generatedAt": "2026-10-04T11:37:35+00:00"
         }
       }
     },
@@ -852,7 +851,7 @@
       "publishedAt": "2009-09-07T06:47:19Z",
       "durationSec": 310,
       "duration": "5:10",
-      "views": 26406021,
+      "views": 26406164,
       "hasCaptions": false,
       "lyrics": [
         {
@@ -1478,7 +1477,6 @@
             "captions",
             "library"
           ],
-          "asr_seconds": 2.3,
           "excluded": [
             {
               "t0": 256.3453,
@@ -1492,8 +1490,8 @@
           "lines": 32,
           "verified": 26,
           "checks": 3,
-          "seconds": 2.3,
-          "generatedAt": "2026-10-04T10:31:47+00:00"
+          "seconds": 0.0,
+          "generatedAt": "2026-10-04T11:38:31+00:00"
         }
       }
     },
@@ -1521,7 +1519,7 @@
       "publishedAt": "2022-08-10T15:16:03Z",
       "durationSec": 218,
       "duration": "3:38",
-      "views": 217627,
+      "views": 217644,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1530,14 +1528,14 @@
       "order": ""
     },
     {
-      "videoId": "rbVgJwF8SG8",
-      "url": "https://www.youtube.com/watch?v=rbVgJwF8SG8",
-      "title": "&#39;Tis So Sweet To Trust In Jesus (with Lyrics)",
-      "channel": "Parkway Worship Ministry",
-      "publishedAt": "2015-06-11T18:16:53Z",
-      "durationSec": 253,
-      "duration": "4:13",
-      "views": 115531,
+      "videoId": "KJ9tJYX1PFY",
+      "url": "https://www.youtube.com/watch?v=KJ9tJYX1PFY",
+      "title": "Tis So Sweet To Trust In Jesus (Lyric Video / Live At Ryman Auditorium, Nashville, TN, 2006)",
+      "channel": "GaitherVEVO",
+      "publishedAt": "2023-08-31T04:00:12Z",
+      "durationSec": 112,
+      "duration": "1:52",
+      "views": 131034,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1569,7 +1567,7 @@
       "publishedAt": "2019-11-05T14:15:51Z",
       "durationSec": 387,
       "duration": "6:27",
-      "views": 101072,
+      "views": 101071,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1595,5 +1593,5 @@
     }
   ],
   "needsAudio": false,
-  "listenedAt": "2026-10-04T10:31:47+00:00"
+  "listenedAt": "2026-10-04T11:38:31+00:00"
 }
