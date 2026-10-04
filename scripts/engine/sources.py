@@ -48,11 +48,14 @@ class Source:
 # ───────────────────────────────────────────── captions
 
 def captions(url: str) -> Source | None:
+    got = None
     try:
         import transcript as t
         got = t._supadata_captions(url)
+        if not got:
+            got = t._ytdlp_captions(url)      # the captions YouTube itself serves
     except Exception:  # noqa: BLE001
-        got = None
+        got = got or None
     if not got:
         return None
     manual = got.get("source") == "subs"

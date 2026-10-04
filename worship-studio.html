@@ -818,9 +818,8 @@
       }).then(function () {
         // remember these as songs the church has sung (the website's song list shows only those)
         return getFile('js/sung.js').then(function (f) {
-          var have = []; try { have = new Function(f.text + '\n;return window.SUNG_SONGS;').call({ window: {} }) || []; } catch (e) {}
           var m = /window\.SUNG_SONGS = \[([\s\S]*?)\];/.exec(f.text);
-          have = m ? m[1].split('\n').map(function (l) { return (l.match(/'([^']+)'/) || [])[1]; }).filter(Boolean) : have;
+          var have = m ? m[1].split('\n').map(function (l) { return (l.match(/'([^']+)'/) || [])[1]; }).filter(Boolean) : [];
           var add = order.filter(function (s) { return have.indexOf(s) === -1; });
           if (!add.length) return;
           var all = have.concat(add);
