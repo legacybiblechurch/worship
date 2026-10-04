@@ -1,0 +1,720 @@
+{
+  "slug": "all-people-that-on-earth-do-dwell",
+  "title": "All People That on Earth Do Dwell",
+  "input": "All People That on Earth Do Dwell",
+  "isNew": true,
+  "forced": null,
+  "signature": "bb1e9dfb6911c9c3",
+  "generatedAt": "2026-10-04T23:27:58+00:00",
+  "titleKey": "all people that on earth do dwell",
+  "searchCandidates": [
+    {
+      "videoId": "L7VheM7mNss",
+      "url": "https://www.youtube.com/watch?v=L7VheM7mNss",
+      "title": "All People That on Earth Do Dwell (OLD HUNDRETH) - Louis Bourgeois",
+      "channel": "Catholic Hymns - Vocal, Piano, free MIDI tracks",
+      "publishedAt": "20240709",
+      "durationSec": 134,
+      "duration": "2:14",
+      "views": 7635,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "X-1dQ8t03mE",
+      "url": "https://www.youtube.com/watch?v=X-1dQ8t03mE",
+      "title": "Hymn - All people that on earth do dwell",
+      "channel": "Mandetriens",
+      "publishedAt": "20130605",
+      "durationSec": 281,
+      "duration": "4:41",
+      "views": 3331319,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "5QgakrRvsX8",
+      "url": "https://www.youtube.com/watch?v=5QgakrRvsX8",
+      "title": "All people that on earth do dwell Hymn - Westminster Abbey",
+      "channel": "yes",
+      "publishedAt": "20220315",
+      "durationSec": 280,
+      "duration": "4:40",
+      "views": 465782,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "JmGwHdNtpEw",
+      "url": "https://www.youtube.com/watch?v=JmGwHdNtpEw",
+      "title": "All People That on Earth Do Dwell (Grace Community Church)",
+      "channel": "Martijn de Groot",
+      "publishedAt": "20170902",
+      "durationSec": 193,
+      "duration": "3:13",
+      "views": 453191,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "e6IdQNsFUEw",
+      "url": "https://www.youtube.com/watch?v=e6IdQNsFUEw",
+      "title": "All People That On Earth Do Dwell (Live from Sing! 2018)- Keith Getty and the Sing! Conference Choir",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "20190719",
+      "durationSec": 261,
+      "duration": "4:21",
+      "views": 98045,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "42_kOGDTpKg",
+      "url": "https://www.youtube.com/watch?v=42_kOGDTpKg",
+      "title": "All People That On Earth Do Dwell (Tune: Old Hundredth - 5vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20200709",
+      "durationSec": 278,
+      "duration": "4:38",
+      "views": 45860,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "WQf18IhqUpA",
+      "url": "https://www.youtube.com/watch?v=WQf18IhqUpA",
+      "title": "All People That on Earth Do Dwell (Keith & Kristyn Getty) (lyric video)",
+      "channel": "Ps 96v1",
+      "publishedAt": "20210226",
+      "durationSec": 258,
+      "duration": "4:18",
+      "views": 10188,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "IAZ6k_hvrdk",
+      "url": "https://www.youtube.com/watch?v=IAZ6k_hvrdk",
+      "title": "Old Hundredth \"All people that on earth do dwell\"",
+      "channel": "Martin Neary - Topic",
+      "publishedAt": "20250311",
+      "durationSec": 293,
+      "duration": "4:53",
+      "views": 2062,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "L7VheM7mNss",
+      "url": "https://www.youtube.com/watch?v=L7VheM7mNss",
+      "title": "All People That on Earth Do Dwell (OLD HUNDRETH) - Louis Bourgeois",
+      "channel": "Catholic Hymns - Vocal, Piano, free MIDI tracks",
+      "publishedAt": "20240709",
+      "durationSec": 134,
+      "duration": "2:14",
+      "views": 7635,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "All people that on earth do dwell on",
+            "The earth, Sing to the Lord with cheerful voice",
+            "Him serve with birth His praise foretell",
+            "Come we before Him and rejoice",
+            "Know that the Lord is God indeed Without",
+            "Our aid He did us make",
+            "We are his folk,",
+            "He does us feed"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "And for his sheep he does us take",
+            "Oh enter Then his gates with pra",
+            "Approach with joy His courts unto, Praise",
+            "Loud and bless His name always,",
+            "For it is simply so true",
+            "Thank you"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 57,
+      "notes": "Auto‑generated captions were too garbled to determine the exact structure or repeats. No reference lyrics were provided, so the well‑known hymn text was used. The order follows the typical two‑verse form of \"All People That on Earth Do Dwell.\"",
+      "order": "Verse 1 · Verse 2",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "All people that on earth do dwell on",
+            "t0": 23.52,
+            "t1": 29.98,
+            "conf": 0.88,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "all people that on Earth Do Dwell",
+              "asr_large": "All people that on earth do dwell on",
+              "asr_prompted": "earth EARTH DO DWELL"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The earth, Sing to the Lord with cheerful voice",
+            "t0": 29.98,
+            "t1": 37.18,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "sing to the Lord with cheerful voice",
+              "asr_large": "The earth, Sing to the Lord with cheerful voice",
+              "asr_turbo": "The End The End Sing to the Lord with cheerful voice",
+              "asr_prompted": "sing to the Lord with cheerful voice"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Him serve with birth His praise foretell",
+            "t0": 37.52,
+            "t1": 44.22,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "He serve with birth his praise for tell",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "he serve with birth his praise for tell",
+              "asr_large": "Him serve with birth His praise foretell",
+              "asr_turbo": "Him serve with birth, His praise foretell",
+              "asr_prompted": "he serve with birth his praise for tell"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Come we before Him and rejoice",
+            "t0": 44.7,
+            "t1": 50.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "come we before him and rejoice",
+              "asr_large": "Come we before Him and rejoice",
+              "asr_turbo": "Come we before Him and rejoice",
+              "asr_prompted": "come we before him and rejoice"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Know that the Lord is God indeed Without",
+            "t0": 51.44,
+            "t1": 62.12,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "no that the Lord is God indeed without",
+              "asr_large": "Know that the Lord is God indeed Without",
+              "asr_turbo": "know that the Lord is God indeed without",
+              "asr_prompted": "is G-d G-d indeed without"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our aid He did us make",
+            "t0": 62.12,
+            "t1": 67.968216,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "our Aid he did US make",
+              "asr_large": "Our aid He did us make",
+              "asr_turbo": "our aid he did us make",
+              "asr_prompted": "our Aid he did US make"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We are his folk,",
+            "t0": 67.94822,
+            "t1": 70.94822,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "We are his FK",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "we are his FK",
+              "asr_large": "We are his folk,",
+              "asr_turbo": "We are His folk",
+              "asr_prompted": "we are his FK"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He does us feed",
+            "t0": 70.94822,
+            "t1": 75.248215,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "he does US feed",
+              "asr_large": "He does us feed",
+              "asr_turbo": "He does us feed",
+              "asr_prompted": "he does US feed"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And for his sheep he does us take",
+            "t0": 75.04822,
+            "t1": 83.50822,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and for his chief he does us take",
+              "asr_large": "And for his sheep he does us take",
+              "asr_turbo": "And for His sheep He does us take",
+              "asr_prompted": "and for his chief he does US take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Oh enter Then his gates with pra",
+            "t0": 83.468216,
+            "t1": 91.02822,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "O enter then His gates with praise,",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "More enter then His gates with grace",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "oh enter Then his gates with pra",
+              "asr_large": "O enter then His gates with praise,",
+              "asr_turbo": "More enter then His gates with grace",
+              "asr_prompted": "oh enter Then his gates with pra"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Approach with joy His courts unto, Praise",
+            "t0": 91.02822,
+            "t1": 99.16822,
+            "conf": 0.34,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Approach with joy his cour unto praise",
+                "sources": [
+                  "captions_auto"
+                ]
+              },
+              {
+                "text": "Approach with joy his course unto praise",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "approach with joy his cour unto praise",
+              "asr_large": "Approach with joy His courts unto, Praise",
+              "asr_turbo": "approach with joy his course unto praise",
+              "asr_prompted": "approach with joy his cour"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Loud and bless His name always,",
+            "t0": 99.16822,
+            "t1": 105.36822,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "loud and bless his name",
+              "asr_large": "Loud and bless His name always,",
+              "asr_turbo": "loud and bless his name always always"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "For it is simply so true",
+            "t0": 105.36822,
+            "t1": 111.008224,
+            "conf": 0.41,
+            "status": "check",
+            "alts": [
+              {
+                "text": "For it is simply so to",
+                "sources": [
+                  "captions_auto"
+                ]
+              },
+              {
+                "text": "For it is simply so true true true",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "for it is simply so to",
+              "asr_large": "For it is simply so true",
+              "asr_turbo": "for it is simply so true true true"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thank you",
+            "t0": 113.02821,
+            "t1": 113.36822,
+            "conf": 0.44,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Do for",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "do for",
+              "asr_large": "Thank you",
+              "asr_turbo": "Thank you.",
+              "asr_prompted": "you you"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 35.52,
+            "t1": 44.22,
+            "text": "Him serve with birth His praise foretell",
+            "options": [
+              "Him serve with birth His praise foretell",
+              "He serve with birth his praise for tell"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 65.94822,
+            "t1": 70.94822,
+            "text": "We are his folk,",
+            "options": [
+              "We are his folk,",
+              "We are his FK"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 81.468216,
+            "t1": 91.02822,
+            "text": "Oh enter Then his gates with pra",
+            "options": [
+              "Oh enter Then his gates with pra",
+              "O enter then His gates with praise,",
+              "More enter then His gates with grace"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 89.02822,
+            "t1": 99.16822,
+            "text": "Approach with joy His courts unto, Praise",
+            "options": [
+              "Approach with joy His courts unto, Praise",
+              "Approach with joy his cour unto praise",
+              "Approach with joy his course unto praise"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 103.36822,
+            "t1": 111.008224,
+            "text": "For it is simply so true",
+            "options": [
+              "For it is simply so true",
+              "For it is simply so to",
+              "For it is simply so true true true"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 111.02821,
+            "t1": 113.36822,
+            "text": "Thank you",
+            "options": [
+              "Thank you",
+              "Do for"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "L7VheM7mNss",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 56.1,
+          "lines": 14,
+          "verified": 8,
+          "checks": 6,
+          "seconds": 58.3,
+          "generatedAt": "2026-10-04T23:29:01+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "X-1dQ8t03mE",
+      "url": "https://www.youtube.com/watch?v=X-1dQ8t03mE",
+      "title": "Hymn - All people that on earth do dwell",
+      "channel": "Mandetriens",
+      "publishedAt": "20130605",
+      "durationSec": 281,
+      "duration": "4:41",
+      "views": 3331319,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "Ray Fawn Williams version",
+            "All people that on earth do dwell"
+          ],
+          "times": [
+            0.0,
+            null
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Rejoice halo ye ordinary stories",
+            "The Lord be with you",
+            "And holy sheep beyond the sea",
+            "O enter then his gates with praise",
+            "Hark you'll shift joy his thoughts unto"
+          ],
+          "times": [
+            60.0,
+            218.4,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Praise Lord and bless his name always",
+            "For it is deeply sound",
+            "To do",
+            "For",
+            "By the Lord our",
+            "God is good",
+            "His mercy is forever sure"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "His truth at all times firmly stood",
+            "And shall from age to age endure",
+            "To Father Son and Holy Ghost",
+            "The Lord will ever love the Lord",
+            "O may that love be in heaven",
+            "In praise and glory evermore"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            228.8,
+            238.0
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "No dear"
+          ],
+          "times": [
+            268.0
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 45,
+      "notes": "Transcript is highly garbled and contains many unrelated fragments. Reconstructed sections are best‑guess groupings of the captured lines, using sentence‑case and short phrasing for screen display. Confidence is low due to lack of reliable reference lyrics.",
+      "order": "Intro · Verse 1 · Verse 2 · Bridge · Tag"
+    },
+    {
+      "videoId": "5QgakrRvsX8",
+      "url": "https://www.youtube.com/watch?v=5QgakrRvsX8",
+      "title": "All people that on earth do dwell Hymn - Westminster Abbey",
+      "channel": "yes",
+      "publishedAt": "20220315",
+      "durationSec": 280,
+      "duration": "4:40",
+      "views": 465782,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "JmGwHdNtpEw",
+      "url": "https://www.youtube.com/watch?v=JmGwHdNtpEw",
+      "title": "All People That on Earth Do Dwell (Grace Community Church)",
+      "channel": "Martijn de Groot",
+      "publishedAt": "20170902",
+      "durationSec": 193,
+      "duration": "3:13",
+      "views": 453191,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "e6IdQNsFUEw",
+      "url": "https://www.youtube.com/watch?v=e6IdQNsFUEw",
+      "title": "All People That On Earth Do Dwell (Live from Sing! 2018)- Keith Getty and the Sing! Conference Choir",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "20190719",
+      "durationSec": 261,
+      "duration": "4:21",
+      "views": 98045,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "42_kOGDTpKg",
+      "url": "https://www.youtube.com/watch?v=42_kOGDTpKg",
+      "title": "All People That On Earth Do Dwell (Tune: Old Hundredth - 5vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20200709",
+      "durationSec": 278,
+      "duration": "4:38",
+      "views": 45860,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "WQf18IhqUpA",
+      "url": "https://www.youtube.com/watch?v=WQf18IhqUpA",
+      "title": "All People That on Earth Do Dwell (Keith & Kristyn Getty) (lyric video)",
+      "channel": "Ps 96v1",
+      "publishedAt": "20210226",
+      "durationSec": 258,
+      "duration": "4:18",
+      "views": 10188,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "IAZ6k_hvrdk",
+      "url": "https://www.youtube.com/watch?v=IAZ6k_hvrdk",
+      "title": "Old Hundredth \"All people that on earth do dwell\"",
+      "channel": "Martin Neary - Topic",
+      "publishedAt": "20250311",
+      "durationSec": 293,
+      "duration": "4:53",
+      "views": 2062,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-04T23:29:01+00:00"
+}

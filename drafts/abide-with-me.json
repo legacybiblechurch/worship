@@ -1,0 +1,684 @@
+{
+  "slug": "abide-with-me",
+  "title": "Abide with Me",
+  "input": "Abide with Me",
+  "isNew": true,
+  "forced": null,
+  "signature": "2decfa0978767fa9",
+  "generatedAt": "2026-10-04T23:12:14+00:00",
+  "titleKey": "abide with me",
+  "searchCandidates": [
+    {
+      "videoId": "PzmvagnGTYY",
+      "url": "https://www.youtube.com/watch?v=PzmvagnGTYY",
+      "title": "Abide With Me | Christian Church Hymn | Choral Version (SATB) with Lyrics | Sunday 7pm Choir",
+      "channel": "Sunday 7pm Choir | Catholic & Christian Choral Music",
+      "publishedAt": "20200517",
+      "durationSec": 170,
+      "duration": "2:50",
+      "views": 1545211,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "xRHUebvPsig",
+      "url": "https://www.youtube.com/watch?v=xRHUebvPsig",
+      "title": "Abide With Me (with lyrics) - The most BEAUTIFUL hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220126",
+      "durationSec": 260,
+      "duration": "4:20",
+      "views": 827440,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "yPcrmSXTCJs",
+      "url": "https://www.youtube.com/watch?v=yPcrmSXTCJs",
+      "title": "Abide With Me | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230531",
+      "durationSec": 306,
+      "duration": "5:06",
+      "views": 355854,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "oUSh_KTB0Jc",
+      "url": "https://www.youtube.com/watch?v=oUSh_KTB0Jc",
+      "title": "Abide With Me | Streams of Song",
+      "channel": "Streams of Song",
+      "publishedAt": "20250907",
+      "durationSec": 273,
+      "duration": "4:33",
+      "views": 230982,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "i5nbq_VEea0",
+      "url": "https://www.youtube.com/watch?v=i5nbq_VEea0",
+      "title": "Abide With Me",
+      "channel": "SE Samonte",
+      "publishedAt": "20081208",
+      "durationSec": 182,
+      "duration": "3:02",
+      "views": 3681660,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "PmjuqZSH_aY",
+      "url": "https://www.youtube.com/watch?v=PmjuqZSH_aY",
+      "title": "Abide With Me",
+      "channel": "w3tno",
+      "publishedAt": "20091212",
+      "durationSec": 284,
+      "duration": "4:44",
+      "views": 2289516,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "qTQoPg856Ow",
+      "url": "https://www.youtube.com/watch?v=qTQoPg856Ow",
+      "title": "Abide With Me - Choir (Coral) - Lyrics",
+      "channel": "Leandro Tiozzo",
+      "publishedAt": "20120321",
+      "durationSec": 289,
+      "duration": "4:49",
+      "views": 1118788,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "NTT5HGSaO-Y",
+      "url": "https://www.youtube.com/watch?v=NTT5HGSaO-Y",
+      "title": "Abide With Me (Tune: Eventide - 5vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20201007",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 1068860,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "PzmvagnGTYY",
+      "url": "https://www.youtube.com/watch?v=PzmvagnGTYY",
+      "title": "Abide With Me | Christian Church Hymn | Choral Version (SATB) with Lyrics | Sunday 7pm Choir",
+      "channel": "Sunday 7pm Choir | Catholic & Christian Choral Music",
+      "publishedAt": "20200517",
+      "durationSec": 170,
+      "duration": "2:50",
+      "views": 1545211,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Abide with me; fast falls the eventide; The darkness deepens; Lord with",
+            "Me abide",
+            "When other helpers",
+            "Fail and comforts flee,",
+            "Help of the helpless, O abide with me"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "I need Your presence every passing hour",
+            "What but Your grace can foil the tempter's power?",
+            "Who, like Yourself, my guide and strength can be?",
+            "Through cloud and sunshine,",
+            "Lord, abide with me"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I fear no foe, with",
+            "You at hand to bless;",
+            "Ills have no weight, and",
+            "Tears no bitterness",
+            "Where is death's sting?",
+            "Where, grave, your victory?",
+            "I triumph still, if",
+            "You abide with me"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 100,
+      "notes": "Human-written captions used; no reference lyrics available, reconstructed from transcript. Structure inferred from line groupings; may differ from original hymn ordering.",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Verse 4",
+      "engine": {
+        "verdict": "verified",
+        "lines": [
+          {
+            "text": "Abide with me; fast falls the eventide; The darkness deepens; Lord with",
+            "t0": 14.5,
+            "t1": 28.38,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Abide with me; fast falls the eventide; The darkness deepens; Lord with",
+              "asr_large": "The Darkest Deepest",
+              "asr_turbo": "Abide with me as draws me inside. The darkness deepens, Lord, with",
+              "asr_prompted": "Abide with me, fast falls the eventide, The darkness deepens, Lord with"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Me abide",
+            "t0": 30.0,
+            "t1": 31.68,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "me abide.",
+              "asr_large": "Me abide",
+              "asr_turbo": "me abide.",
+              "asr_prompted": "me abide."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When other helpers",
+            "t0": 32.9,
+            "t1": 38.9,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "When other helpers",
+              "asr_large": "When other helpers helpers",
+              "asr_turbo": "When other helpers",
+              "asr_prompted": "When other helpers"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fail and comforts flee,",
+            "t0": 39.1,
+            "t1": 42.42,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "fail and comforts flee,",
+              "asr_large": "Feel and comforts me",
+              "asr_turbo": "heal and comforts lead,",
+              "asr_prompted": "fail and comforts flee,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Help of the helpless, O abide with me",
+            "t0": 44.22,
+            "t1": 53.26,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Help of the helpless, O abide with me.",
+              "asr_large": "Help of the helpless who abide with me",
+              "asr_turbo": "Help of the helpless, O abide with me.",
+              "asr_prompted": "Help of the helpless, O abide with me."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I need Your presence every passing hour",
+            "t0": 58.7,
+            "t1": 68.7,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I need Your presence every passing hour.",
+              "asr_large": "I need your presence every passing hour",
+              "asr_turbo": "I need your presence every passing hour.",
+              "asr_prompted": "I need Your presence every passing hour."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What but Your grace can foil the tempter's power?",
+            "t0": 69.64,
+            "t1": 80.28,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "What but Your grace can foil the tempter's power?",
+              "asr_large": "What but your grace can foil the tempter's power?",
+              "asr_turbo": "What but your grace can foil the tempter's power?",
+              "asr_prompted": "What but Your grace can foil the tempter's power?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Who, like Yourself, my guide and strength can be?",
+            "t0": 80.58,
+            "t1": 90.05081,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Who, like Yourself, my guide and strength can be?",
+              "asr_large": "Who like yourself by my hand strengthened me",
+              "asr_turbo": "Who, like yourself, my pride and strength can be",
+              "asr_prompted": "Who, like Yourself, my guide"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Through cloud and sunshine,",
+            "t0": 91.73081,
+            "t1": 96.210815,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Through cloud and sunshine,",
+              "asr_large": "Through cloud and sunshine,",
+              "asr_turbo": "Through cloud and sunshine,",
+              "asr_prompted": "and strength can be? I need Your presence every passing hour. Whet but Your grace can foil"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord, abide with me",
+            "t0": 96.210815,
+            "t1": 101.51082,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Lord, abide with me.",
+              "asr_large": "Lord abide with me",
+              "asr_turbo": "Lord, abide with me",
+              "asr_prompted": "the tempter's power? When other helpers fail and comforts flee, Help of the helpless, O abide with me. I need Your presence every passing hour. Whet but Your grace can foil the tempter's power?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I fear no foe, with",
+            "t0": 106.070816,
+            "t1": 111.63081,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I fear no foe, with",
+              "asr_large": "I fear no foe With",
+              "asr_turbo": "I fear no foe with",
+              "asr_prompted": "I fear no foe, with"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You at hand to bless;",
+            "t0": 111.63081,
+            "t1": 115.37082,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "You at hand to bless;",
+              "asr_large": "You at hand to bless",
+              "asr_turbo": "you at hand to bless",
+              "asr_prompted": "You at hand to bless."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ills have no weight, and",
+            "t0": 117.210815,
+            "t1": 122.83081,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Ills have no weight, and",
+              "asr_large": "Heals have no weight And",
+              "asr_turbo": "Hills have no weight and",
+              "asr_prompted": "Ills have no weight, and"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Tears no bitterness",
+            "t0": 122.83081,
+            "t1": 125.77081,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "tears no bitterness.",
+              "asr_large": "Tears no bitterness",
+              "asr_turbo": "tears no bitterness",
+              "asr_prompted": "tears no bitterness."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Where is death's sting?",
+            "t0": 127.710815,
+            "t1": 131.71082,
+            "conf": 0.94,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Where is death's sting?",
+              "asr_large": "Where is death's sting",
+              "asr_turbo": "Where is death sting?",
+              "asr_prompted": "Where is death's sting?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Where, grave, your victory?",
+            "t0": 132.41081,
+            "t1": 136.71082,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Where, grave, your victory?",
+              "asr_large": "Where great your victory",
+              "asr_turbo": "Where crave your victory?",
+              "asr_prompted": "Where, grave, your victory?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I triumph still, if",
+            "t0": 138.97081,
+            "t1": 143.65082,
+            "conf": 0.92,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "I triumph still, if",
+              "asr_large": "I triumph still If",
+              "asr_turbo": "Why triumph still if",
+              "asr_prompted": "I triumph still, if"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You abide with me",
+            "t0": 143.65082,
+            "t1": 149.6708,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "You abide with me.",
+              "asr_large": "You abide with me",
+              "asr_turbo": "you abide with me? Thank",
+              "asr_prompted": "You abide with me."
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [],
+        "report": {
+          "videoId": "PzmvagnGTYY",
+          "sources": [
+            "captions_manual",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 11.0,
+          "excluded": [
+            {
+              "t0": 56.38,
+              "text": "I"
+            },
+            {
+              "t0": 162.07082,
+              "text": "You"
+            }
+          ],
+          "lines": 18,
+          "verified": 18,
+          "checks": 0,
+          "seconds": 13.5,
+          "generatedAt": "2026-10-04T23:12:31+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "xRHUebvPsig",
+      "url": "https://www.youtube.com/watch?v=xRHUebvPsig",
+      "title": "Abide With Me (with lyrics) - The most BEAUTIFUL hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220126",
+      "durationSec": 260,
+      "duration": "4:20",
+      "views": 827440,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Abide with me, fast falls the eventide",
+            "The darkness deepens, Lord with me abide",
+            "When other helpers fail and comforts flee",
+            "Help of the helpless, O abide with me"
+          ],
+          "times": [
+            0.0,
+            13.0,
+            28.0,
+            42.0
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Swift to its close ebbs out",
+            "Life, little day",
+            "Earth's joys grow dim,",
+            "Its glories pass away.",
+            "Change and decay in all around I see.",
+            "O thou who changest not, abide with me"
+          ],
+          "times": [
+            56.0,
+            null,
+            70.9,
+            null,
+            82.9,
+            96.7
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I am the one who will be",
+            "The king of the world, thank you"
+          ],
+          "times": [
+            112.9,
+            null
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Hold thou thy cross",
+            "Before my closing eyes",
+            "Shine through the gloom",
+            "And point me to the skies",
+            "Heaven morning rays",
+            "And earth's main shadows flee",
+            "In life and death, O Lord, abide with me"
+          ],
+          "times": [
+            154.8,
+            175.2,
+            183.4,
+            189.0,
+            null,
+            202.7,
+            210.7
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Abide with me.",
+            "Abide with me."
+          ],
+          "times": [
+            222.0,
+            230.3
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 45,
+      "notes": "Transcript is auto‑generated and contains many garbled or unrelated lines (e.g., \"I am the one who will be the king of the world Thank you\", stray \"you\"). Used the clear lines to form verses; split overly long lines into shorter phrases for screen display. Repeats are taken only from explicit repeated lines at the end. Confidence is low due to missing reference lyrics and transcript errors.",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Verse 4 · Tag"
+    },
+    {
+      "videoId": "yPcrmSXTCJs",
+      "url": "https://www.youtube.com/watch?v=yPcrmSXTCJs",
+      "title": "Abide With Me | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230531",
+      "durationSec": 306,
+      "duration": "5:06",
+      "views": 355854,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "oUSh_KTB0Jc",
+      "url": "https://www.youtube.com/watch?v=oUSh_KTB0Jc",
+      "title": "Abide With Me | Streams of Song",
+      "channel": "Streams of Song",
+      "publishedAt": "20250907",
+      "durationSec": 273,
+      "duration": "4:33",
+      "views": 230982,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "i5nbq_VEea0",
+      "url": "https://www.youtube.com/watch?v=i5nbq_VEea0",
+      "title": "Abide With Me",
+      "channel": "SE Samonte",
+      "publishedAt": "20081208",
+      "durationSec": 182,
+      "duration": "3:02",
+      "views": 3681660,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "PmjuqZSH_aY",
+      "url": "https://www.youtube.com/watch?v=PmjuqZSH_aY",
+      "title": "Abide With Me",
+      "channel": "w3tno",
+      "publishedAt": "20091212",
+      "durationSec": 284,
+      "duration": "4:44",
+      "views": 2289516,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "qTQoPg856Ow",
+      "url": "https://www.youtube.com/watch?v=qTQoPg856Ow",
+      "title": "Abide With Me - Choir (Coral) - Lyrics",
+      "channel": "Leandro Tiozzo",
+      "publishedAt": "20120321",
+      "durationSec": 289,
+      "duration": "4:49",
+      "views": 1118788,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "NTT5HGSaO-Y",
+      "url": "https://www.youtube.com/watch?v=NTT5HGSaO-Y",
+      "title": "Abide With Me (Tune: Eventide - 5vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20201007",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 1068860,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-04T23:12:31+00:00"
+}

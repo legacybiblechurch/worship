@@ -1,0 +1,1016 @@
+{
+  "slug": "all-must-be-well",
+  "title": "All Must Be Well",
+  "input": "All Must Be Well",
+  "isNew": true,
+  "forced": null,
+  "signature": "c037e1d2811ada7c",
+  "generatedAt": "2026-10-04T23:24:39+00:00",
+  "titleKey": "all must be well",
+  "searchCandidates": [
+    {
+      "videoId": "Y50EDNEJvTA",
+      "url": "https://www.youtube.com/watch?v=Y50EDNEJvTA",
+      "title": "All Must Be Well - Indelible Grace",
+      "channel": "dmcvicker",
+      "publishedAt": "20120629",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 91917,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "M3zeRwnywG0",
+      "url": "https://www.youtube.com/watch?v=M3zeRwnywG0",
+      "title": "All Must Be Well",
+      "channel": "Coburn Ingram",
+      "publishedAt": "20131031",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 43139,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "y8f9_1DWwaI",
+      "url": "https://www.youtube.com/watch?v=y8f9_1DWwaI",
+      "title": "All Must Be Well",
+      "channel": "Fairview Baptist Church",
+      "publishedAt": "20160911",
+      "durationSec": 139,
+      "duration": "2:19",
+      "views": 1545,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "kgAZkz1O10w",
+      "url": "https://www.youtube.com/watch?v=kgAZkz1O10w",
+      "title": "144 All Must Be Well",
+      "channel": "UCG Central Georgia",
+      "publishedAt": "20201125",
+      "durationSec": 111,
+      "duration": "1:51",
+      "views": 1276,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "1xvieIwDYy0",
+      "url": "https://www.youtube.com/watch?v=1xvieIwDYy0",
+      "title": "All Must Be Well by Matthew Smith",
+      "channel": "CityChurchSF",
+      "publishedAt": "20210418",
+      "durationSec": 149,
+      "duration": "2:29",
+      "views": 257,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "8R94A4i-iVI",
+      "url": "https://www.youtube.com/watch?v=8R94A4i-iVI",
+      "title": "All Must Be Well (Indelible Grace)",
+      "channel": "velasje",
+      "publishedAt": "20120927",
+      "durationSec": 78,
+      "duration": "1:18",
+      "views": 2344,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "VPa3oMLH4iE",
+      "url": "https://www.youtube.com/watch?v=VPa3oMLH4iE",
+      "title": "All Must Be Well [Matthew Smith]",
+      "channel": "indeliblegrace",
+      "publishedAt": "20150224",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 50363,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "HHHW6ReDfj0",
+      "url": "https://www.youtube.com/watch?v=HHHW6ReDfj0",
+      "title": "All Must Be Well // Indelible Grace (Cover) // Christ Covenant Church",
+      "channel": "Scott Smith",
+      "publishedAt": "20181112",
+      "durationSec": 144,
+      "duration": "2:24",
+      "views": 99,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "M3zeRwnywG0",
+      "url": "https://www.youtube.com/watch?v=M3zeRwnywG0",
+      "title": "All Must Be Well",
+      "channel": "Coburn Ingram",
+      "publishedAt": "20131031",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 43139,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "Through the love of God our Savior all will be well"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Free and changeless is His favor,",
+            "All is well"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Precious is the blood that healed us Perfect",
+            "Is the grace that sealed us",
+            "Strong the hand stretched forth to shield us All",
+            "Must be well"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Though we pass through tribulation All",
+            "Will be well"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Ours is such a full salvation All is well",
+            "Happy still in God confiding",
+            "Fruitful if in Christ abiding",
+            "Steadfast through the Spirit's guiding All"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "We expect a bright tomorrow All",
+            "Will be well"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "They can sing through days of sorrow All is well"
+          ]
+        },
+        {
+          "label": "Verse 6",
+          "lines": [
+            "On our Father's love relying Jesus,",
+            "Every need supplying Yes,",
+            "In living or in dying All",
+            "Must be well",
+            "On our Father's love relying Jesus,",
+            "Every need supplying",
+            "Yes and live livin more and dying all",
+            "Must be loved"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 54,
+      "notes": "Used transcript lines up to 89 seconds; later garbled text ignored. No reference lyrics available, so structure inferred from the order of spoken lines.",
+      "order": "Verse 1 · Tag · Verse 2 · Bridge · Tag",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Through the love of God our Savior all will be well",
+            "t0": 19.5,
+            "t1": 26.0,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "through the love of God our savior all will be well",
+              "asr_large": "Through the love of God our Savior all will be well",
+              "asr_turbo": "Through the love of God our Savior All will be well",
+              "asr_prompted": "God our savior all will be well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Free and changeless is His favor,",
+            "t0": 28.66,
+            "t1": 33.08,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "free and change angess is his favor",
+              "asr_large": "Free and changeless is His favor,",
+              "asr_turbo": "Free and changeless is His favor",
+              "asr_prompted": "free and change less is his favor"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All is well",
+            "t0": 33.08,
+            "t1": 35.44,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "all is well",
+              "asr_large": "All is well",
+              "asr_turbo": "All is well",
+              "asr_prompted": "all is well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Precious is the blood that healed us Perfect",
+            "t0": 38.02,
+            "t1": 43.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "precious is the blood that healed us perfect",
+              "asr_large": "Precious is the blood that healed us Perfect",
+              "asr_turbo": "Precious is the blood that healed us Perfect",
+              "asr_prompted": "precious is the blood that healed us perfect"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is the grace that sealed us",
+            "t0": 43.36,
+            "t1": 47.12,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "is the grace that seal us",
+              "asr_large": "Is the grace that sealed us",
+              "asr_turbo": "is the grace that sealed us",
+              "asr_prompted": "is the grace that sealed us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Strong the hand stretched forth to shield us All",
+            "t0": 47.36,
+            "t1": 52.22,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "strong the hands stretched forth to Shield us all",
+              "asr_large": "Strong the hand stretched forth to shield us All",
+              "asr_turbo": "Strong the hand stretched forth to shield us All",
+              "asr_prompted": "strong the hand stretched forth to shield us all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Must be well",
+            "t0": 52.22,
+            "t1": 54.08,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "must be well",
+              "asr_large": "Must be well",
+              "asr_turbo": "must be well",
+              "asr_prompted": "must be well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though we pass through tribulation All",
+            "t0": 56.8,
+            "t1": 61.48,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "when we pass through treul all",
+              "asr_large": "Though we pass through tribulation All",
+              "asr_turbo": "Though we pass through tribulation, all",
+              "asr_prompted": "we pass through tribulation all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will be well",
+            "t0": 61.48,
+            "t1": 63.48,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "will be well",
+              "asr_large": "Will be well",
+              "asr_turbo": "will be well",
+              "asr_prompted": "will be well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ours is such a full salvation All is well",
+            "t0": 66.08,
+            "t1": 73.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "because is such a full salvation all is well",
+              "asr_large": "Ours is such a full salvation All is well",
+              "asr_turbo": "Ours is such a full salvation, all is well",
+              "asr_prompted": "cause is such a full salvation all is well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Happy still in God confiding",
+            "t0": 75.38,
+            "t1": 79.44,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Happy still in God confiding",
+              "asr_large": "Happy still in God confiding",
+              "asr_turbo": "Happy still in God confiding,",
+              "asr_prompted": "happy still in God confiding"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fruitful if in Christ abiding",
+            "t0": 80.18,
+            "t1": 84.04,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Fruitful death and Christ abiding",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "Fruitful living Christ abiding",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "fruitful if in Christ abiding",
+              "asr_large": "Fruitful death and Christ abiding",
+              "asr_turbo": "fruitful living Christ abiding",
+              "asr_prompted": "fruitful if in Christ abiding"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Steadfast through the Spirit's guiding All",
+            "t0": 84.54,
+            "t1": 89.58,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "steadfast through the spirit's guiding all",
+              "asr_large": "Steadfast through the Spirit's guiding All",
+              "asr_turbo": "Step fast through the Spirit's guiding All",
+              "asr_prompted": "steadfast through the spirit's guiding it's guiding all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We expect a bright tomorrow All",
+            "t0": 131.71968,
+            "t1": 136.23969,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "We expect a bride tomorrow all",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "we expect a bride tomorrow all",
+              "asr_large": "We expect a bright tomorrow All",
+              "asr_turbo": "We expect a bright tomorrow All",
+              "asr_prompted": "we expect a bride tomorrow all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will be well",
+            "t0": 136.23969,
+            "t1": 138.2797,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "will be well",
+              "asr_large": "Will be well",
+              "asr_turbo": "will be well",
+              "asr_prompted": "will be well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "They can sing through days of sorrow All is well",
+            "t0": 140.95969,
+            "t1": 147.63968,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "great can sing through days of Sorrow all is well",
+              "asr_large": "They can sing through days of sorrow All is well",
+              "asr_turbo": "They can sing through days of sorrow All is well",
+              "asr_prompted": "great can sing through days of Sorrow all is well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On our Father's love relying Jesus,",
+            "t0": 150.0597,
+            "t1": 155.9997,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "On our Father's Love Ring",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "on our Father's Love Ring Jesus",
+              "asr_large": "On our Father's love relying Jesus,",
+              "asr_turbo": "On our Father's love relying Jesus,",
+              "asr_prompted": "on our Father's Love Ring"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Every need supplying Yes,",
+            "t0": 155.9997,
+            "t1": 160.07968,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "every need of flying yes",
+              "asr_large": "Every need supplying Yes,",
+              "asr_turbo": "every need supplying Yes,",
+              "asr_prompted": "every need supplying yes"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In living or in dying All",
+            "t0": 160.07968,
+            "t1": 164.31969,
+            "conf": 0.98,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "in living or in dying all",
+              "asr_large": "In living or in dying All",
+              "asr_turbo": "in living or in dying All",
+              "asr_prompted": "and live livin more and dying all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Must be well",
+            "t0": 164.31969,
+            "t1": 166.61969,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "must be well",
+              "asr_large": "Must be well",
+              "asr_turbo": "must be well",
+              "asr_prompted": "must be well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On our Father's love relying Jesus,",
+            "t0": 168.97968,
+            "t1": 174.7197,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "on our Father's Love Ring Jes us",
+              "asr_large": "On our Father's love relying Jesus,",
+              "asr_turbo": "On our Father's love relying Jesus,",
+              "asr_prompted": "on our Fathers Love Ring Jes us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Every need supplying",
+            "t0": 174.7197,
+            "t1": 177.2197,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "every need supplying",
+              "asr_large": "Every need supplying",
+              "asr_turbo": "every need supplying",
+              "asr_prompted": "every need supplying"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Yes and live livin more and dying all",
+            "t0": 178.29968,
+            "t1": 183.07968,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Yes, in living or in dying All",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "Yes, and living, more than dying All",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "yes and live living more and dying all",
+              "asr_large": "Yes, and living, more than dying All",
+              "asr_turbo": "Yes, in living or in dying All",
+              "asr_prompted": "yes and live livin more and dying all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Must be loved",
+            "t0": 183.07968,
+            "t1": 184.73969,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Must be well",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "must be well",
+              "asr_large": "Must be loved",
+              "asr_turbo": "must be loved",
+              "asr_prompted": "must be well in the promise of a free and changing"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 26.66,
+            "t1": 33.08,
+            "text": "Free and changeless is His favor,",
+            "options": [
+              "Free and changeless is His favor,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 41.36,
+            "t1": 47.12,
+            "text": "Is the grace that sealed us",
+            "options": [
+              "Is the grace that sealed us"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 54.8,
+            "t1": 61.48,
+            "text": "Though we pass through tribulation All",
+            "options": [
+              "Though we pass through tribulation All"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 78.18,
+            "t1": 84.04,
+            "text": "Fruitful if in Christ abiding",
+            "options": [
+              "Fruitful if in Christ abiding",
+              "Fruitful death and Christ abiding",
+              "Fruitful living Christ abiding"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 82.54,
+            "t1": 89.58,
+            "text": "Steadfast through the Spirit's guiding All",
+            "options": [
+              "Steadfast through the Spirit's guiding All"
+            ],
+            "why": "independent sources agree"
+          },
+          {
+            "t0": 129.71968,
+            "t1": 136.23969,
+            "text": "We expect a bright tomorrow All",
+            "options": [
+              "We expect a bright tomorrow All",
+              "We expect a bride tomorrow all"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 148.0597,
+            "t1": 155.9997,
+            "text": "On our Father's love relying Jesus,",
+            "options": [
+              "On our Father's love relying Jesus,",
+              "On our Father's Love Ring"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 153.9997,
+            "t1": 160.07968,
+            "text": "Every need supplying Yes,",
+            "options": [
+              "Every need supplying Yes,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 166.97968,
+            "t1": 174.7197,
+            "text": "On our Father's love relying Jesus,",
+            "options": [
+              "On our Father's love relying Jesus,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 176.29968,
+            "t1": 183.07968,
+            "text": "Yes and live livin more and dying all",
+            "options": [
+              "Yes and live livin more and dying all",
+              "Yes, in living or in dying All",
+              "Yes, and living, more than dying All"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 181.07968,
+            "t1": 184.73969,
+            "text": "Must be loved",
+            "options": [
+              "Must be loved",
+              "Must be well"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "M3zeRwnywG0",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 13.6,
+          "excluded": [
+            {
+              "t0": 89.58,
+              "text": "Must be well guitar solo"
+            },
+            {
+              "t0": 112.61969,
+              "text": "The"
+            },
+            {
+              "t0": 197.11969,
+              "text": "You"
+            }
+          ],
+          "lines": 24,
+          "verified": 13,
+          "checks": 11,
+          "seconds": 16.8,
+          "generatedAt": "2026-10-04T23:25:00+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "Y50EDNEJvTA",
+      "url": "https://www.youtube.com/watch?v=Y50EDNEJvTA",
+      "title": "All Must Be Well - Indelible Grace",
+      "channel": "dmcvicker",
+      "publishedAt": "20120629",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 91917,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Through the love of God",
+            "Our Savior all will be well",
+            "Free and changeless is His favor",
+            "All is well",
+            "Precious is the blood that healed us",
+            "Perfect is the grace that sealed us",
+            "Strong hand stretched forth to shield us"
+          ],
+          "times": [
+            0.0,
+            51.4,
+            null,
+            60.4,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "All must be well"
+          ],
+          "times": [
+            88.5
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Though we pass through tribulation",
+            "All will be well",
+            "Ours is such a full salvation",
+            "All is well"
+          ],
+          "times": [
+            null,
+            159.3,
+            null,
+            177.9
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Happy still in God confiding",
+            "Fruitful death and Christ the fighting",
+            "Steadfast through the Spirit's guiding",
+            "All must be well"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Խ្ពើមព័យម្អំណាងថា, ចចំយម។ំ ប្រាំងដោយ။",
+            "ភ្រទៀបោកមពោប្អំយម្វើក៏្សាស។",
+            "បូរសាំងាំងគាក់ទ្រាប់អគមវាអ់បន។",
+            "ថ្យកសិតែលនាសនៃត្លចំព្រីន្វើកម្រាស់, ខ្ល្រាប់ធ្រៀនាលិត ស្លាពេលទ្រៀនៅំព្រា។",
+            "ប៉ាបានធ្តែកាសមព្ឲសៗដំល់ខ្ល溜ញពីលក្វភាញឱ្លជ់ការំបមុនអើកប្រាំបួគ្បាគ់ព្ជ្តែះ្ដាប់វីក្ព្វីថ្នួងបេ។",
+            "ត្នឹងខ្នឹការៀមិនដ។",
+            "២្នាប្រៀការាប់ហូតកព្វិងធ្នៃ។",
+            "ជួរក្រះាសភាពន្វើលា៓រាប់សខ្វិផួយ"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "Yes and living more and dying",
+            "All must be well"
+          ],
+          "times": [
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "On our father's love relying",
+            "Jesus every need supplying"
+          ],
+          "times": [
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "Yes and living more and dying",
+            "All must be well"
+          ],
+          "times": [
+            null,
+            null
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 55,
+      "notes": "Structure inferred from auto‑generated transcript; non‑English segment treated as Bridge. Repeated lines labelled as Refrain only when clearly shown. Confidence low due to garbled captions and lack of reference lyrics.",
+      "order": "Verse 1 · Refrain · Verse 2 · Verse 3 · Bridge · Refrain · Verse 4 · Refrain"
+    },
+    {
+      "videoId": "y8f9_1DWwaI",
+      "url": "https://www.youtube.com/watch?v=y8f9_1DWwaI",
+      "title": "All Must Be Well",
+      "channel": "Fairview Baptist Church",
+      "publishedAt": "20160911",
+      "durationSec": 139,
+      "duration": "2:19",
+      "views": 1545,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "kgAZkz1O10w",
+      "url": "https://www.youtube.com/watch?v=kgAZkz1O10w",
+      "title": "144 All Must Be Well",
+      "channel": "UCG Central Georgia",
+      "publishedAt": "20201125",
+      "durationSec": 111,
+      "duration": "1:51",
+      "views": 1276,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "1xvieIwDYy0",
+      "url": "https://www.youtube.com/watch?v=1xvieIwDYy0",
+      "title": "All Must Be Well by Matthew Smith",
+      "channel": "CityChurchSF",
+      "publishedAt": "20210418",
+      "durationSec": 149,
+      "duration": "2:29",
+      "views": 257,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "8R94A4i-iVI",
+      "url": "https://www.youtube.com/watch?v=8R94A4i-iVI",
+      "title": "All Must Be Well (Indelible Grace)",
+      "channel": "velasje",
+      "publishedAt": "20120927",
+      "durationSec": 78,
+      "duration": "1:18",
+      "views": 2344,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "VPa3oMLH4iE",
+      "url": "https://www.youtube.com/watch?v=VPa3oMLH4iE",
+      "title": "All Must Be Well [Matthew Smith]",
+      "channel": "indeliblegrace",
+      "publishedAt": "20150224",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 50363,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "HHHW6ReDfj0",
+      "url": "https://www.youtube.com/watch?v=HHHW6ReDfj0",
+      "title": "All Must Be Well // Indelible Grace (Cover) // Christ Covenant Church",
+      "channel": "Scott Smith",
+      "publishedAt": "20181112",
+      "durationSec": 144,
+      "duration": "2:24",
+      "views": 99,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-04T23:25:00+00:00"
+}
