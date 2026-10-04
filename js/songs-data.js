@@ -1894,4 +1894,13 @@ const LEGACY_SONGS = {
     { label: "Outro", lines: ["You are with me, Lord", "'Til the end", "'Til the end"] }
   ]
   },
+  "abide-with-me": {
+    title: "Abide with Me",
+    youtube: "https://www.youtube.com/watch?v=PzmvagnGTYY",
+    lyrics: [
+    { label: "Verse 1", lines: ["Abide with me; fast falls the eventide; The darkness deepens; Lord with", "Me abide", "When other helpers", "Fail and comforts flee,", "Help of the helpless, O abide with me"] },
+    { label: "Verse 2", lines: ["I need Your presence every passing hour", "What but Your grace can foil the tempter's power?", "Who, like Yourself, my guide and strength can be?", "Through cloud and sunshine,", "Lord, abide with me"] },
+    { label: "Verse 3", lines: ["I fear no foe, with", "You at hand to bless;", "Ills have no weight, and", "Tears no bitterness", "Where is death's sting?", "Where, grave, your victory?", "I triumph still, if", "You abide with me"] }
+  ]
+  },
 };
