@@ -488,10 +488,18 @@
     var Net = (function () {
       var qs = new URLSearchParams(location.search);
       var isRemote = qs.has('remote');
+      // A phone that opens Control directly becomes its own player and controls
+      // nothing. Phones belong on the code screen unless told otherwise.
+      var phone = navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) < 700;
+      var mainHere = false; try { mainHere = localStorage.getItem('lbc-main-device') === '1'; } catch (e) {}
+      if (qs.get('main') === '1') { mainHere = true; try { localStorage.setItem('lbc-main-device', '1'); } catch (e) {} }
+      if (!isRemote && phone && !mainHere) { location.replace('remote.html?from=control'); }
       var code = (qs.get('remote') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-      if (!code) { try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {} }
+      if (!code && !isRemote) { try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {} }
       if (!code) { code = Array.from({ length: 6 }, function () { return 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 31)]; }).join(''); }
-      try { localStorage.setItem('lbc-room', code); } catch (e) {}
+      // the laptop's own room is 'lbc-room'; a phone remembers the code it typed separately,
+      // so the code screen never offers a phone its own stale room as if it were the laptop's
+      try { localStorage.setItem(isRemote ? 'lbc-remote-code' : 'lbc-room', code); } catch (e) {}
       var topic = 'lbc-worship-' + code.toLowerCase() + '-7f3a';
       var me = Math.random().toString(36).slice(2), es = null, onMsg = null;
       function send(obj) {
@@ -520,6 +528,8 @@
     if (Net.isRemote) {
       document.body.classList.add('remote');
       document.getElementById('remote-pill').style.display = '';
+      setTimeout(function () { Net.send({ type: 'hello' }); paintRemotePill(); }, 800);
+      setTimeout(function () { if (!heardLaptop) Net.send({ type: 'hello' }); }, 6000);
       document.getElementById('disp-pill').style.display = 'none';
       document.getElementById('phone-btn').style.display = 'none';
     }
@@ -530,8 +540,16 @@
       if (p.classList.contains('on') && !p.contains(e.target) && e.target.id !== 'phone-btn') p.classList.remove('on');
     });
 
-    var applyingRemote = false;
+    var applyingRemote = false, heardLaptop = false;
+    function paintRemotePill() {
+      if (!Net.isRemote) return;
+      var p = document.getElementById('remote-pill');
+      p.innerHTML = '<span class="dot"></span>' + (heardLaptop ? 'Phone remote · connected to the computer' : 'Phone remote · waiting for the computer… check the code');
+      p.style.color = heardLaptop ? '' : 'var(--bad, #d98a7a)';
+    }
     Net.listen(function (d) {
+      if (Net.isRemote && (d.type === 'state' || d.type === 'here')) { heardLaptop = true; paintRemotePill(); }
+      if (d.type === 'hello' && !Net.isRemote) { Net.send({ type: 'here' }); broadcast(); return; }
       if (d.type === 'state' && d.songIndex != null) {
         if (!songs.length) return;
         applyingRemote = true;
