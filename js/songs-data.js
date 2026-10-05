@@ -1903,4 +1903,22 @@ const LEGACY_SONGS = {
     { label: "Verse 3", lines: ["I fear no foe, with", "You at hand to bless;", "Ills have no weight, and", "Tears no bitterness", "Where is death's sting?", "Where, grave, your victory?", "I triumph still, if", "You abide with me"] }
   ]
   },
+  "at-the-cross-love-ran-red": {
+    title: "At the Cross (Love Ran Red)",
+    youtube: "https://www.youtube.com/watch?v=ORyXT2ZRwUE",
+    lyrics: [
+    { label: "Tag", lines: ["One, two, three,"] },
+    { label: "Tag", lines: ["There's a place where mercy reigns and never dies"] },
+    { label: "Tag", lines: ["There's a place where streams of grace flow deep and wide"] },
+    { label: "Verse 1", lines: ["Where all the love I've ever found", "Comes like a flood", "Comes flowing down"] },
+    { label: "Chorus", lines: ["At the cross. at the cross", "I surrender my life", "I'm in awe of you,", "I'm in awe of you", "Where your love ran red and my sin washed white", "I owe all to you,", "I owe all to you,"] },
+    { label: "Tag", lines: ["There's a place where sin and shame are powerless"] },
+    { label: "Tag", lines: ["Where my heart has peace with God and forgiveness"] },
+    { label: "Verse 2", lines: ["Where all the love I've ever found", "Comes like a flood", "Comes flowing down", "At the cross, at the cross I", "Surrender my life I'm", "I'm in awe of you,", "I'm in awe of you", "Where your love ran red and my sin washed white"] },
+    { label: "Verse 3", lines: ["I owe all to you,", "I owe all to you", "Here, my hope is found", "Here, on holy ground here,", "I bow down here, I bow down", "Here, arms open wide", "Here, you saved my life", "Here, I bow down"] },
+    { label: "Chorus", lines: ["Here, I bow at the cross,", "At the cross I surrender my life", "I'm in awe of you,", "I'm in awe of you", "Where your love ran red and my sin washed white", "I owe all to you,", "I owe all to you", "I owe all to you,"] },
+    { label: "Tag", lines: ["I owe all to you,"] },
+    { label: "Verse 4", lines: ["Your love ran red", "Your love ran red"] }
+  ]
+  },
 };
