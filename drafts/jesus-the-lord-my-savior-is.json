@@ -1,0 +1,894 @@
+{
+  "slug": "jesus-the-lord-my-savior-is",
+  "title": "Jesus the Lord My Savior Is",
+  "input": "Jesus the Lord My Savior Is",
+  "isNew": true,
+  "forced": null,
+  "signature": "0aaaae7de0de7b8f",
+  "generatedAt": "2026-10-05T21:33:08+00:00",
+  "titleKey": "jesus the lord my savior is",
+  "searchCandidates": [
+    {
+      "videoId": "-LdOV5iG91M",
+      "url": "https://www.youtube.com/watch?v=-LdOV5iG91M",
+      "title": "Jesus, Our Judge and Our Savior (Official Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240510",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 407898,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "yRvAhGETTV8",
+      "url": "https://www.youtube.com/watch?v=yRvAhGETTV8",
+      "title": "Jesus, Our Judge and Our Savior (Official Lyric Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240724",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 35242,
+      "hasCaptions": true
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "-LdOV5iG91M",
+      "url": "https://www.youtube.com/watch?v=-LdOV5iG91M",
+      "title": "Jesus, Our Judge and Our Savior (Official Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240510",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 407898,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Call now, O sinner,",
+            "On your coming judge to be here even now as your Savior",
+            "Fall now, O sinner,",
+            "On the mercy and grace Of",
+            "Jesus our judge and our Savior Who",
+            "Is He we shall meet at the end of life's road",
+            "The one who will judge every heart,",
+            "Every soul Who"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Is he who will one day sip the tears from the wheat?",
+            "Jesus our judge and our Savior",
+            "Call now, O sinner,",
+            "On your coming judge",
+            "On your coming judge to be here even now as your Savior",
+            "Fall now, O sinner,",
+            "On the mercy and grace Of",
+            "Jesus our judge and our Savior"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Who is he who will end all the sin and the",
+            "Pain? The one who was dead Yet rose up again Who is he?",
+            "Heaven praises as the lamb who was slain Jesus",
+            "Our judge and our savior Come",
+            "Now, O sinner On",
+            "Your coming judge To be healed",
+            "Even now as your Savior",
+            "Fall now, O sinner,"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "On the mercy and grace Of",
+            "Jesus our judge and our Savior For",
+            "The Lord will come down",
+            "And the trumpet will sound at the mighty command of the Lord",
+            "And the saints will rise,",
+            "Meet the Lord in the skies,",
+            "To be joyful in Jesus forever"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "Call now, O sinner,",
+            "On your coming judge to be here even now as your Savior",
+            "Fall now, O sinner,",
+            "On the mercy embrace of Jesus our judge and our Savior",
+            "Of Jesus our judge and our Savior"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 63,
+      "notes": "This video has no captions and the song isn't in the library yet. Paste a lyric video that has captions, or type the lyrics into the Fixes column. (HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b)",
+      "order": "",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Call now, O sinner,",
+            "t0": 10.02,
+            "t1": 12.44,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "call now oh sinner on your coming judge to be here even now as your savior fall now oh Center on the mercy and Grace of Jesus judge and our saor who is he we shall meet at the end of life's Road the one who will judge every heart every soul who is he who will walk one day SI the test from the we Jesus I judge and I saor call now oh sinner",
+              "asr_large": "Call now, O sinner,",
+              "asr_turbo": "Call now, O sinner,",
+              "asr_prompted": "on your coming judge to be here even now as your savior fall now oh sinner on the mercy and grace of Jesus I judge and I say who is he we shall meet at the end of life's Road the one who will judge every heart every soul who is he who will one day SI the test from the we jesus our judge and I save Lord call now oh sinner on your coming judge to be here even now as your saor fall now oh sinner on the mercy and grace of jesus our judge and our saor Lord music music who is he who will end all the sin and the pain the one who was dead yet who rose up again who is he heaven praises as the lamb who was slain Jesus our judge and our saor call now oh sinner"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On your coming judge to be here even now as your Savior",
+            "t0": 12.44,
+            "t1": 21.04,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 2 agree",
+            "sources": {
+              "captions_auto": "on your coming judge to be here even now as your savior",
+              "asr_large": "On your coming judge to be here even now as your Savior",
+              "asr_turbo": "on your coming judge to be here, even now, as your Savior.",
+              "asr_prompted": "on your coming judge to be here even now as your savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fall now, O sinner,",
+            "t0": 22.3,
+            "t1": 24.88,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "fall now oh sinner",
+              "asr_large": "Fall now, O sinner,",
+              "asr_turbo": "Fall now, O sinner,",
+              "asr_prompted": "fall now oh sinner"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On the mercy and grace Of",
+            "t0": 24.88,
+            "t1": 28.62,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "on the mercy and Grace of Jes",
+              "asr_large": "On the mercy and grace Of",
+              "asr_turbo": "on the mercy and grace Of",
+              "asr_prompted": "on the mercy and grace of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus our judge and our Savior Who",
+            "t0": 28.62,
+            "t1": 45.28,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Jesus our judge and I",
+              "asr_large": "Jesus our judge and our Savior Who",
+              "asr_turbo": "Jesus our Judge and our Savior Who",
+              "asr_prompted": "Jesus our judge and our saor"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is He we shall meet at the end of life's road",
+            "t0": 45.28,
+            "t1": 50.88,
+            "conf": 0.81,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "save",
+              "asr_large": "Is He we shall meet at the end of life's road",
+              "asr_turbo": "is He we shall meet at the end of life's road?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The one who will judge every heart,",
+            "t0": 51.66,
+            "t1": 55.92,
+            "conf": 0.81,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Lord",
+              "asr_large": "The one who will judge every heart,",
+              "asr_turbo": "The one who will judge every heart,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Every soul Who",
+            "t0": 55.92,
+            "t1": 57.96,
+            "conf": 0.81,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "who",
+              "asr_large": "Every soul Who",
+              "asr_turbo": "every soul Who"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is he who will one day sip the tears from the wheat?",
+            "t0": 57.96,
+            "t1": 63.44,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "is he who will end all the sin and the pain the one who was dead yet who rose up again who is he Heaven Praises as the lamb who was slain",
+              "asr_large": "Is he who will one day sip the tears from the wheat?",
+              "asr_turbo": "is he who will one day sip the tears from the weak"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus our judge and our Savior",
+            "t0": 64.36,
+            "t1": 69.38,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Jesus our judg and our saor",
+              "asr_large": "Jesus our judge and our Savior",
+              "asr_turbo": "Jesus our judge and our Savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Call now, O sinner,",
+            "t0": 70.6,
+            "t1": 73.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "call now oh sinner",
+              "asr_large": "Call now, O sinner,",
+              "asr_turbo": "Call now, O sinner,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On your coming judge",
+            "t0": 73.1,
+            "t1": 75.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "on your coming judge",
+              "asr_large": "On your coming judge",
+              "asr_turbo": "on your coming judge"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On your coming judge to be here even now as your Savior",
+            "t0": 75.96,
+            "t1": 81.8,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "To be here even now as your Savior",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "independent sources agree; matched to 2 other occurrences",
+            "sources": {
+              "captions_auto": "to be here even now as your savior",
+              "asr_large": "To be here even now as your Savior",
+              "asr_turbo": "To be here even now as your Savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fall now, O sinner,",
+            "t0": 83.08,
+            "t1": 85.58,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "fall now will sinner",
+              "asr_large": "Fall now, O sinner,",
+              "asr_turbo": "Fall now, O sinner,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On the mercy and grace Of",
+            "t0": 85.58,
+            "t1": 89.42,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "on the mercy and Grace of",
+              "asr_large": "On the mercy and grace Of",
+              "asr_turbo": "on the mercy and grace Of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus our judge and our Savior",
+            "t0": 89.42,
+            "t1": 94.28,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Jesus our judge and our saor",
+              "asr_large": "Jesus our judge and our Savior",
+              "asr_turbo": "Jesus our Judge and our Savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Who is he who will end all the sin and the",
+            "t0": 105.96,
+            "t1": 111.22,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Who is he who will end all the sin and the",
+              "asr_turbo": "Who is he who will end all the sin and the"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Pain? The one who was dead Yet rose up again Who is he?",
+            "t0": 111.22,
+            "t1": 120.04237,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Pain? The one who was dead Yet rose up again Who is he?",
+              "asr_turbo": "pain? The one who was dead Yet who rose up again Who is he?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Heaven praises as the lamb who was slain Jesus",
+            "t0": 119.92238,
+            "t1": 126.02238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Heaven praises as the lamb who was slain Jesus",
+              "asr_turbo": "Heaven praises as the Lamb who was slain Jesus"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our judge and our savior Come",
+            "t0": 126.02238,
+            "t1": 132.04237,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Our judge and our Savior Call",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Our judge and our savior Come",
+              "asr_turbo": "our judge and our Savior Call"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Now, O sinner On",
+            "t0": 132.04237,
+            "t1": 134.30238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Now, O sinner On",
+              "asr_turbo": "now, O sinner On"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Your coming judge To be healed",
+            "t0": 134.30238,
+            "t1": 138.18237,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Your coming judge To be here",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Your coming judge To be healed",
+              "asr_turbo": "your coming judge To be here"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Even now as your Savior",
+            "t0": 138.58238,
+            "t1": 142.58238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Even now as your Savior",
+              "asr_turbo": "even now as your Savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fall now, O sinner,",
+            "t0": 143.78238,
+            "t1": 146.38239,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "Fall now, O sinner,",
+              "asr_turbo": "Fall now, O sinner,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On the mercy and grace Of",
+            "t0": 146.38239,
+            "t1": 150.20238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 3 agree",
+            "sources": {
+              "asr_large": "On the mercy and grace Of",
+              "asr_turbo": "on the mercy and grace Of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus our judge and our Savior For",
+            "t0": 150.20238,
+            "t1": 160.52237,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "for",
+              "asr_large": "Jesus our judge and our Savior For",
+              "asr_turbo": "Jesus our Judge and our Savior For",
+              "asr_prompted": "for"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The Lord will come down",
+            "t0": 160.52237,
+            "t1": 163.22238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "the Lord will come down",
+              "asr_large": "The Lord will come down",
+              "asr_turbo": "the Lord will come down",
+              "asr_prompted": "the Lord will come down"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And the trumpet will sound at the mighty command of the Lord",
+            "t0": 163.54237,
+            "t1": 170.86238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and the trumpet will sound at the mighty command of the Lord",
+              "asr_large": "And the trumpet will sound at the mighty command of the Lord",
+              "asr_turbo": "And the trumpet will sound At the mighty command of the Lord",
+              "asr_prompted": "and the trumpet will sound at the mighty call command of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And the saints will rise,",
+            "t0": 172.76237,
+            "t1": 176.04237,
+            "conf": 0.32,
+            "status": "check",
+            "alts": [
+              {
+                "text": "The embassies will rise",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "Him the SE will arise",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "him the SE will arise",
+              "asr_large": "And the saints will rise,",
+              "asr_turbo": "The embassies will rise",
+              "asr_prompted": "the endless seas will rise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Meet the Lord in the skies,",
+            "t0": 176.04237,
+            "t1": 179.12238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "meet the Lord in the skies",
+              "asr_large": "Meet the Lord in the skies,",
+              "asr_turbo": "Meet the Lord in the skies",
+              "asr_prompted": "meet the Lord in the skies"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To be joyful in Jesus forever",
+            "t0": 179.12238,
+            "t1": 183.36237,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "to be joyful in Jesus forever",
+              "asr_large": "To be joyful in Jesus forever",
+              "asr_turbo": "To be joyful in Jesus forever",
+              "asr_prompted": "to be joyful in Jesus forever"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Call now, O sinner,",
+            "t0": 185.76237,
+            "t1": 188.44238,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "come now our sin",
+              "asr_large": "Call now, O sinner,",
+              "asr_turbo": "Call now, O sinner",
+              "asr_prompted": "call now oh sinner"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On your coming judge to be here even now as your Savior",
+            "t0": 188.44238,
+            "t1": 197.14238,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "on your coming jch to be here even now as your s",
+              "asr_large": "On your coming judge to be here even now as your Savior",
+              "asr_turbo": "On your coming judge To be here even now As your Savior",
+              "asr_prompted": "on your coming judge to be here even now as your savior"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fall now, O sinner,",
+            "t0": 198.42238,
+            "t1": 201.00238,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "fall now oh sinner",
+              "asr_large": "Fall now, O sinner,",
+              "asr_turbo": "Fall now, O sinner",
+              "asr_prompted": "fall fall now oh sinner on your coming judge to be here in grace of Jesus judge and I saor call now oh sinner"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On the mercy embrace of Jesus our judge and our Savior",
+            "t0": 201.00238,
+            "t1": 209.56238,
+            "conf": 0.66,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "on the mercy and Grace of Jesus our judge and our saor of Jesus our judge and our savior",
+              "asr_large": "On the mercy embrace of Jesus our judge and our Savior",
+              "asr_turbo": "On the mercy and grace Of Jesus our Judge And our Savior",
+              "asr_prompted": "on the mercy grace of Jesus judge and I savior call now oh sinner on the mercy grace"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of Jesus our judge and our Savior",
+            "t0": 209.60239,
+            "t1": 216.00238,
+            "conf": 0.91,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Of Jesus our judge and our Savior",
+              "asr_turbo": "Of Jesus our Judge And our Savior Thank you.",
+              "asr_prompted": "of Jesus judge and I saor call now oh sinner and I'll"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 8.02,
+            "t1": 12.44,
+            "text": "Call now, O sinner,",
+            "options": [
+              "Call now, O sinner,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 26.62,
+            "t1": 45.28,
+            "text": "Jesus our judge and our Savior Who",
+            "options": [
+              "Jesus our judge and our Savior Who"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 55.96,
+            "t1": 63.44,
+            "text": "Is he who will one day sip the tears from the wheat?",
+            "options": [
+              "Is he who will one day sip the tears from the wheat?"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 62.36,
+            "t1": 69.38,
+            "text": "Jesus our judge and our Savior",
+            "options": [
+              "Jesus our judge and our Savior"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 81.08,
+            "t1": 85.58,
+            "text": "Fall now, O sinner,",
+            "options": [
+              "Fall now, O sinner,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 87.42,
+            "t1": 94.28,
+            "text": "Jesus our judge and our Savior",
+            "options": [
+              "Jesus our judge and our Savior"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 124.02238,
+            "t1": 132.04237,
+            "text": "Our judge and our savior Come",
+            "options": [
+              "Our judge and our savior Come",
+              "Our judge and our Savior Call"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 132.30238,
+            "t1": 138.18237,
+            "text": "Your coming judge To be healed",
+            "options": [
+              "Your coming judge To be healed",
+              "Your coming judge To be here"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 148.20238,
+            "t1": 160.52237,
+            "text": "Jesus our judge and our Savior For",
+            "options": [
+              "Jesus our judge and our Savior For"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 170.76237,
+            "t1": 176.04237,
+            "text": "And the saints will rise,",
+            "options": [
+              "And the saints will rise,",
+              "The embassies will rise",
+              "Him the SE will arise"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 183.76237,
+            "t1": 188.44238,
+            "text": "Call now, O sinner,",
+            "options": [
+              "Call now, O sinner,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 186.44238,
+            "t1": 197.14238,
+            "text": "On your coming judge to be here even now as your Savior",
+            "options": [
+              "On your coming judge to be here even now as your Savior"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 199.00238,
+            "t1": 209.56238,
+            "text": "On the mercy embrace of Jesus our judge and our Savior",
+            "options": [
+              "On the mercy embrace of Jesus our judge and our Savior"
+            ],
+            "why": "two listens agree"
+          }
+        ],
+        "report": {
+          "videoId": "-LdOV5iG91M",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 9.8,
+          "lines": 36,
+          "verified": 23,
+          "checks": 13,
+          "seconds": 11.9,
+          "generatedAt": "2026-10-05T21:33:22+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "yRvAhGETTV8",
+      "url": "https://www.youtube.com/watch?v=yRvAhGETTV8",
+      "title": "Jesus, Our Judge and Our Savior (Official Lyric Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240724",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 35242,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Requested 1682. Please try again in 9m33.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T21:33:22+00:00"
+}
