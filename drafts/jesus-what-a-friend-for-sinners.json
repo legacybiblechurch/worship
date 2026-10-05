@@ -1,0 +1,943 @@
+{
+  "slug": "jesus-what-a-friend-for-sinners",
+  "title": "Jesus What a Friend for Sinners",
+  "input": "Jesus What a Friend for Sinners",
+  "isNew": true,
+  "forced": null,
+  "signature": "13271e0c15ac030d",
+  "generatedAt": "2026-10-05T22:12:12+00:00",
+  "titleKey": "jesus what a friend for sinners",
+  "searchCandidates": [
+    {
+      "videoId": "PvnP29BfUyA",
+      "url": "https://www.youtube.com/watch?v=PvnP29BfUyA",
+      "title": "187 SDA Hymn - Jesus, What A Friend For Sinners (Singing w/ Lyrics)",
+      "channel": "Melissa Oretade",
+      "publishedAt": "20210519",
+      "durationSec": 187,
+      "duration": "3:07",
+      "views": 42701,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "Ydvpb1hwNDk",
+      "url": "https://www.youtube.com/watch?v=Ydvpb1hwNDk",
+      "title": "Jesus, What A Friend Of Sinners - Jeremy Moore (Lyric video)",
+      "channel": "Breathe Back Ministries",
+      "publishedAt": "20220602",
+      "durationSec": 252,
+      "duration": "4:12",
+      "views": 1798,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "QdtAtC99rH0",
+      "url": "https://www.youtube.com/watch?v=QdtAtC99rH0",
+      "title": "Jesus! What A Friend for Sinners!",
+      "channel": "SE Samonte",
+      "publishedAt": "20130904",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 589603,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "pr_dv1zVfmU",
+      "url": "https://www.youtube.com/watch?v=pr_dv1zVfmU",
+      "title": "Jesus! What a Friend for Sinners (Hymn 206) | Grace Community Church Congregation & Orchestra",
+      "channel": "Hymns of Grace",
+      "publishedAt": "20231110",
+      "durationSec": 353,
+      "duration": "5:53",
+      "views": 248455,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "wc3_duERGzI",
+      "url": "https://www.youtube.com/watch?v=wc3_duERGzI",
+      "title": "Jesus, What A Friend For Sinners",
+      "channel": "Matthew Smith - Topic",
+      "publishedAt": "20151110",
+      "durationSec": 220,
+      "duration": "3:40",
+      "views": 44941,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "gqps2OvzFSU",
+      "url": "https://www.youtube.com/watch?v=gqps2OvzFSU",
+      "title": "Jesus, What a Friend for Sinners",
+      "channel": "Changing Lives Ministry",
+      "publishedAt": "20151102",
+      "durationSec": 215,
+      "duration": "3:35",
+      "views": 21469,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "rtK4nbKVS-4",
+      "url": "https://www.youtube.com/watch?v=rtK4nbKVS-4",
+      "title": "Jesus, What a Friend for Sinners",
+      "channel": "Acapella Hymns",
+      "publishedAt": "20221112",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 9391,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "1K6Ug-OT-WE",
+      "url": "https://www.youtube.com/watch?v=1K6Ug-OT-WE",
+      "title": "Jesus! what a friend for sinners",
+      "channel": "Squirrel 24",
+      "publishedAt": "20200710",
+      "durationSec": 210,
+      "duration": "3:30",
+      "views": 4737,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "rtK4nbKVS-4",
+      "url": "https://www.youtube.com/watch?v=rtK4nbKVS-4",
+      "title": "Jesus, What a Friend for Sinners",
+      "channel": "Acapella Hymns",
+      "publishedAt": "20221112",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 9391,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Jesus, what a friend for sinners,",
+            "Jesus, Father of my soul",
+            "Friends may fail me,",
+            "Foes I'll sail me,",
+            "He my Savior makes me whole",
+            "Hallelujah, what a Savior Hallelujah,",
+            "What a friend",
+            "Saving, helping, keeping, loving He"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Is with me to the end",
+            "Jesus, what a strength and weakness That",
+            "Behind myself in him",
+            "Tempted, tried, and sometimes failing",
+            "He my strength, my victory wins",
+            "Hallelujah, what a Savior Hallelujah,",
+            "What a friend",
+            "Saving, helping, keeping, loving He"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Is with me to the end",
+            "Jesus, what a help in sorrow,",
+            "While the billows o'er me roll",
+            "Even when my heart is breaking,",
+            "Me my comfort helps my soul",
+            "Hallelujah, what a Savior Hallelujah,",
+            "What a friend",
+            "Saving, helping, keeping, loving He"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Is with me to the end",
+            "Jesus, what a guide and keeper While",
+            "The tempest still is high",
+            "Storms about me night or day He,",
+            "My pilot, hears my cry",
+            "Hallelujah, what a Savior Hallelujah,",
+            "What a friend",
+            "Saving, helping, keeping, loving He"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Is with me to the end"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 78,
+      "notes": "Transcript is auto‑generated and contains garbled lines (e.g., \"Jesus what a helping sorrow while the billows o me roll\"). Those lines were interpreted as best as possible and broken into shorter phrases. No official reference lyrics were available, so wording follows the transcript with minor adjustments for readability.",
+      "order": "Verse 1 · Chorus · Verse 2 · Chorus · Verse 3 · Chorus · Verse 4 · Chorus",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Jesus, what a friend for sinners,",
+            "t0": 2.36,
+            "t1": 8.46,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Jesus, what a friend for sinners,",
+              "asr_turbo": "Jesus, what a friend for sinners,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, Father of my soul",
+            "t0": 8.46,
+            "t1": 14.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Jesus, Father of my soul",
+              "asr_turbo": "Jesus, Father of my soul."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Friends may fail me,",
+            "t0": 14.76,
+            "t1": 18.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Friends may fail me,",
+              "asr_turbo": "Friends may fail me,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Foes I'll sail me,",
+            "t0": 18.12,
+            "t1": 21.26,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Cause I'll sell me,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Foes I'll sail me,",
+              "asr_turbo": "cause I'll sell me,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He my Savior makes me whole",
+            "t0": 21.26,
+            "t1": 27.06,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He my Savior makes me whole",
+              "asr_turbo": "He my Savior makes me whole."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hallelujah, what a Savior Hallelujah,",
+            "t0": 27.82,
+            "t1": 37.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "Hallelujah, what a Savior Hallelujah,",
+              "asr_turbo": "Alleluia, what a Savior Alleluia,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What a friend",
+            "t0": 37.58,
+            "t1": 40.0,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "What a friend",
+              "asr_turbo": "what a friend"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Saving, helping, keeping, loving He",
+            "t0": 40.94,
+            "t1": 48.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Saving, helping, keeping, loving He",
+              "asr_turbo": "Saving, helping, keeping, loving He"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is with me to the end",
+            "t0": 48.34,
+            "t1": 54.28,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Is with me to the end",
+              "asr_turbo": "is with me to the end"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, what a strength and weakness That",
+            "t0": 55.26,
+            "t1": 63.24,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Jesus, what a strength and weakness Let me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Jesus, what a strength and weakness That",
+              "asr_turbo": "Jesus, what a strength and weakness Let me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Behind myself in him",
+            "t0": 63.24,
+            "t1": 67.92,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Hide myself in Him",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Behind myself in him",
+              "asr_turbo": "hide myself in Him"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Tempted, tried, and sometimes failing",
+            "t0": 68.62,
+            "t1": 74.76,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Tempted, tried, and sometimes failing",
+              "asr_turbo": "Tempted, tried, and sometimes failing"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He my strength, my victory wins",
+            "t0": 75.22,
+            "t1": 81.18,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He my strength, my victory wins",
+              "asr_turbo": "He my strength, my victory wins"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hallelujah, what a Savior Hallelujah,",
+            "t0": 81.9,
+            "t1": 92.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "Hallelujah, what a Savior Hallelujah,",
+              "asr_turbo": "Hallelujah, what a Savior Hallelujah,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What a friend",
+            "t0": 92.1,
+            "t1": 94.56,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "What a friend",
+              "asr_turbo": "what a friend"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Saving, helping, keeping, loving He",
+            "t0": 95.5,
+            "t1": 102.94,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Saving, helping, keeping, loving He",
+              "asr_turbo": "Saving, helping, keeping, loving He"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is with me to the end",
+            "t0": 102.94,
+            "t1": 109.0,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Is with me to the end",
+              "asr_turbo": "is with me to the end"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, what a help in sorrow,",
+            "t0": 110.22,
+            "t1": 117.54,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Jesus, what a help in sorrow,",
+              "asr_turbo": "Jesus, what a help in sorrow"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "While the billows o'er me roll",
+            "t0": 117.54,
+            "t1": 124.35347,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Above the billows o'er me roll",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Above the billows o'er me roll",
+              "asr_turbo": "while the billows o'er me roll."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Even when my heart is breaking,",
+            "t0": 124.593475,
+            "t1": 131.07347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Even when my heart is breaking,",
+              "asr_turbo": "Even when my heart is breaking,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Me my comfort helps my soul",
+            "t0": 131.73347,
+            "t1": 137.87347,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Be my comfort, help my soul",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Be my comfort, help my soul",
+              "asr_turbo": "me my comfort helps my soul."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hallelujah, what a Savior Hallelujah,",
+            "t0": 138.85347,
+            "t1": 149.43347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "Hallelujah, what a Savior Hallelujah,",
+              "asr_turbo": "Alleluia, what a Savior Alleluia,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What a friend",
+            "t0": 149.43347,
+            "t1": 151.99347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "What a friend",
+              "asr_turbo": "what a friend"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Saving, helping, keeping, loving He",
+            "t0": 152.99347,
+            "t1": 160.75348,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Saving, helping, keeping, loving He",
+              "asr_turbo": "Saving, helping, keeping, loving He"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is with me to the end",
+            "t0": 160.75348,
+            "t1": 166.85347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Is with me to the end",
+              "asr_turbo": "is with me to the end"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, what a guide and keeper While",
+            "t0": 168.53348,
+            "t1": 176.81348,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Jesus was a guide and keeper While",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Jesus, what a guide and keeper While",
+              "asr_turbo": "Jesus was a guide and keeper While"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The tempest still is high",
+            "t0": 176.81348,
+            "t1": 181.99347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The tempest still is high",
+              "asr_turbo": "the tempest still is high"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Storms about me night or day He,",
+            "t0": 182.59348,
+            "t1": 190.97348,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Storms about me night foretakes me He",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Storms about me night or day He,",
+              "asr_turbo": "Storms about me night foretakes me He"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My pilot, hears my cry",
+            "t0": 190.97348,
+            "t1": 195.83347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My pilot, hears my cry",
+              "asr_turbo": "my pilot hears my cry"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hallelujah, what a Savior Hallelujah,",
+            "t0": 197.03348,
+            "t1": 207.69348,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "Hallelujah, what a Savior Hallelujah,",
+              "asr_turbo": "Alleluia, what a Savior Alleluia,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What a friend",
+            "t0": 207.69348,
+            "t1": 210.33347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "What a friend",
+              "asr_turbo": "what a friend"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Saving, helping, keeping, loving He",
+            "t0": 211.25348,
+            "t1": 218.43347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Saving, helping, keeping, loving",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 3 other occurrences",
+            "sources": {
+              "asr_large": "Saving, helping, keeping, loving",
+              "asr_turbo": "Saving, helping, keeping, loving"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is with me to the end",
+            "t0": 221.07347,
+            "t1": 229.49347,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "He is with me to the end",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 3 other occurrences",
+            "sources": {
+              "asr_large": "He is with me to the end",
+              "asr_turbo": "He is with me to the end."
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 16.12,
+            "t1": 21.26,
+            "text": "Foes I'll sail me,",
+            "options": [
+              "Foes I'll sail me,",
+              "Cause I'll sell me,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 53.26,
+            "t1": 63.24,
+            "text": "Jesus, what a strength and weakness That",
+            "options": [
+              "Jesus, what a strength and weakness That",
+              "Jesus, what a strength and weakness Let me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 61.24,
+            "t1": 67.92,
+            "text": "Behind myself in him",
+            "options": [
+              "Behind myself in him",
+              "Hide myself in Him"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 115.54,
+            "t1": 124.35347,
+            "text": "While the billows o'er me roll",
+            "options": [
+              "While the billows o'er me roll",
+              "Above the billows o'er me roll"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 129.73347,
+            "t1": 137.87347,
+            "text": "Me my comfort helps my soul",
+            "options": [
+              "Me my comfort helps my soul",
+              "Be my comfort, help my soul"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 166.53348,
+            "t1": 176.81348,
+            "text": "Jesus, what a guide and keeper While",
+            "options": [
+              "Jesus, what a guide and keeper While",
+              "Jesus was a guide and keeper While"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 180.59348,
+            "t1": 190.97348,
+            "text": "Storms about me night or day He,",
+            "options": [
+              "Storms about me night or day He,",
+              "Storms about me night foretakes me He"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "rtK4nbKVS-4",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 3.4,
+          "lines": 33,
+          "verified": 26,
+          "checks": 7,
+          "seconds": 11.7,
+          "generatedAt": "2026-10-05T22:12:27+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "PvnP29BfUyA",
+      "url": "https://www.youtube.com/watch?v=PvnP29BfUyA",
+      "title": "187 SDA Hymn - Jesus, What A Friend For Sinners (Singing w/ Lyrics)",
+      "channel": "Melissa Oretade",
+      "publishedAt": "20210519",
+      "durationSec": 187,
+      "duration": "3:07",
+      "views": 42701,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198538, Requested 1752. Please try again in 2m5.279999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "Ydvpb1hwNDk",
+      "url": "https://www.youtube.com/watch?v=Ydvpb1hwNDk",
+      "title": "Jesus, What A Friend Of Sinners - Jeremy Moore (Lyric video)",
+      "channel": "Breathe Back Ministries",
+      "publishedAt": "20220602",
+      "durationSec": 252,
+      "duration": "4:12",
+      "views": 1798,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199698, Requested 1659. Please try again in 9m46.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "QdtAtC99rH0",
+      "url": "https://www.youtube.com/watch?v=QdtAtC99rH0",
+      "title": "Jesus! What A Friend for Sinners!",
+      "channel": "SE Samonte",
+      "publishedAt": "20130904",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 589603,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199360, Requested 1613. Please try again in 7m0.336s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "pr_dv1zVfmU",
+      "url": "https://www.youtube.com/watch?v=pr_dv1zVfmU",
+      "title": "Jesus! What a Friend for Sinners (Hymn 206) | Grace Community Church Congregation & Orchestra",
+      "channel": "Hymns of Grace",
+      "publishedAt": "20231110",
+      "durationSec": 353,
+      "duration": "5:53",
+      "views": 248455,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198999, Requested 1751. Please try again in 5m24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "wc3_duERGzI",
+      "url": "https://www.youtube.com/watch?v=wc3_duERGzI",
+      "title": "Jesus, What A Friend For Sinners",
+      "channel": "Matthew Smith - Topic",
+      "publishedAt": "20151110",
+      "durationSec": 220,
+      "duration": "3:40",
+      "views": 44941,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198641, Requested 1734. Please try again in 2m42s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "gqps2OvzFSU",
+      "url": "https://www.youtube.com/watch?v=gqps2OvzFSU",
+      "title": "Jesus, What a Friend for Sinners",
+      "channel": "Changing Lives Ministry",
+      "publishedAt": "20151102",
+      "durationSec": 215,
+      "duration": "3:35",
+      "views": 21469,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198301, Requested 1717. Please try again in 7.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "1K6Ug-OT-WE",
+      "url": "https://www.youtube.com/watch?v=1K6Ug-OT-WE",
+      "title": "Jesus! what a friend for sinners",
+      "channel": "Squirrel 24",
+      "publishedAt": "20200710",
+      "durationSec": 210,
+      "duration": "3:30",
+      "views": 4737,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199674, Requested 1709. Please try again in 9m57.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T22:12:27+00:00"
+}

@@ -1,0 +1,696 @@
+{
+  "slug": "just-as-i-am",
+  "title": "Just As I Am",
+  "input": "Just As I Am",
+  "isNew": true,
+  "forced": null,
+  "signature": "a402c7f748fa7c91",
+  "generatedAt": "2026-10-05T22:51:47+00:00",
+  "titleKey": "just as i am",
+  "searchCandidates": [
+    {
+      "videoId": "G0XjqRZ9W_8",
+      "url": "https://www.youtube.com/watch?v=G0XjqRZ9W_8",
+      "title": "Just as I am worship video ( modern)",
+      "channel": "TheIslandSing",
+      "publishedAt": "20120806",
+      "durationSec": 307,
+      "duration": "5:07",
+      "views": 1942588,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "zOjLXuJgbd0",
+      "url": "https://www.youtube.com/watch?v=zOjLXuJgbd0",
+      "title": "Just As I Am (I Come Broken) - Travis Cottrell - Lyrics",
+      "channel": "StrangeLyrics",
+      "publishedAt": "20150807",
+      "durationSec": 308,
+      "duration": "5:08",
+      "views": 631172,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "HZV5fwmqsI0",
+      "url": "https://www.youtube.com/watch?v=HZV5fwmqsI0",
+      "title": "Just As I Am (with lyrics) The Most BEAUTIFUL hymn you’ve EVER Heard!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20210728",
+      "durationSec": 281,
+      "duration": "4:41",
+      "views": 552118,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "CxA0TFe3-Uo",
+      "url": "https://www.youtube.com/watch?v=CxA0TFe3-Uo",
+      "title": "Just As I Am, Without One Plea",
+      "channel": "SE Samonte",
+      "publishedAt": "20131018",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 4262458,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "7lxqhPC1mNA",
+      "url": "https://www.youtube.com/watch?v=7lxqhPC1mNA",
+      "title": "Just As I Am (Hymns with lyrics)",
+      "channel": "VagleBrothers",
+      "publishedAt": "20131023",
+      "durationSec": 185,
+      "duration": "3:05",
+      "views": 497817,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "iHmDNHL9NbQ",
+      "url": "https://www.youtube.com/watch?v=iHmDNHL9NbQ",
+      "title": "Just As I Am | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230125",
+      "durationSec": 201,
+      "duration": "3:21",
+      "views": 378142,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "ykc-wMWyjbo",
+      "url": "https://www.youtube.com/watch?v=ykc-wMWyjbo",
+      "title": "Just As I Am - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20211121",
+      "durationSec": 159,
+      "duration": "2:39",
+      "views": 284470,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "jTWgj5TdlJI",
+      "url": "https://www.youtube.com/watch?v=jTWgj5TdlJI",
+      "title": "Just as I am Original Hymn",
+      "channel": "Living In Grace",
+      "publishedAt": "20190918",
+      "durationSec": 248,
+      "duration": "4:08",
+      "views": 177590,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "iHmDNHL9NbQ",
+      "url": "https://www.youtube.com/watch?v=iHmDNHL9NbQ",
+      "title": "Just As I Am | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230125",
+      "durationSec": 201,
+      "duration": "3:21",
+      "views": 378142,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "Fountain of the the"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Just as I am without one plea But",
+            "That Thy blood was shed for me",
+            "And that Thou biddest me come to Thee",
+            "O Lamb of God, I come, I come"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Just as I am and waiting not To",
+            "Rid my soul of one dark blood",
+            "To Thee whose blood can cleanse each spot,",
+            "O Lamb of God, I come, I come"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Just as I am,",
+            "Though tossed about",
+            "With many conflicts, many doubts,",
+            "Fightings within and fears, With",
+            "The whole land of God I come, I come"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Just as I am,",
+            "Thou wilt receive",
+            "Will walk on part and cleanse really Because",
+            "Thy promise I believe",
+            "O Lamb of God, I come, I come"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 68,
+      "notes": "Lyrics taken from the video description; the actual recording’s section order and any repeats are unknown. Please verify each verse and repeat against the video before use.",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Verse 4",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Fountain of the the",
+            "t0": 5.64,
+            "t1": 10.72,
+            "conf": 1.0,
+            "status": "unverified",
+            "alts": [],
+            "why": "one witness only; not enough evidence",
+            "sources": {
+              "asr_large": "Fountain of the the"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Just as I am without one plea But",
+            "t0": 30.4,
+            "t1": 37.8,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Just as I am without one plea But",
+              "asr_turbo": "Just as I am without one plea But"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "That Thy blood was shed for me",
+            "t0": 37.8,
+            "t1": 43.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "That Thy blood was shed for me",
+              "asr_turbo": "that Thy blood was shed for me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And that Thou biddest me come to Thee",
+            "t0": 44.16,
+            "t1": 50.88,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And that Thou biddest me come to Thee",
+              "asr_turbo": "And that Thou bidest me come to Thee,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "O Lamb of God, I come, I come",
+            "t0": 50.6,
+            "t1": 58.84,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 3 agree",
+            "sources": {
+              "asr_large": "O Lamb of God, I come, I come",
+              "asr_turbo": "O Lamb of God I come, I come"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Just as I am and waiting not To",
+            "t0": 71.6,
+            "t1": 78.82,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Just as I am and waiting not To",
+              "asr_turbo": "Just as I am and waiting on To"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Rid my soul of one dark blood",
+            "t0": 78.82,
+            "t1": 84.48,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Rid my soul of one dark block",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Rid my soul of one dark blood",
+              "asr_turbo": "rid my soul of one dark block"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To Thee whose blood can cleanse each spot,",
+            "t0": 84.78,
+            "t1": 92.42,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "To Thee whose blood can cleanse each spot,",
+              "asr_turbo": "To Thee whose blood can cleanse each spot"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "O Lamb of God, I come, I come",
+            "t0": 92.42,
+            "t1": 100.17206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 3 agree",
+            "sources": {
+              "asr_large": "O Lamb of God, I come, I come",
+              "asr_turbo": "O Lamb of God, I come, I come"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Just as I am,",
+            "t0": 112.49206,
+            "t1": 116.31206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Just as I am,",
+              "asr_turbo": "Just as I am,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though tossed about",
+            "t0": 116.31206,
+            "t1": 118.91206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Though tossed about",
+              "asr_turbo": "though tossed about"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "With many conflicts, many doubts,",
+            "t0": 119.53206,
+            "t1": 126.55206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "With many conflicts, many doubts,",
+              "asr_turbo": "With many conflicts, many doubts"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fightings within and fears, With",
+            "t0": 126.53206,
+            "t1": 132.13206,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Fights within and fears With",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Fightings within and fears, With",
+              "asr_turbo": "Fights within and fears With"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The whole land of God I come, I come",
+            "t0": 132.13206,
+            "t1": 141.09206,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "The heart, O Lamb of God I come, I come",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "The whole land of God I come, I come",
+              "asr_turbo": "the heart, O Lamb of God I come, I come"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Just as I am,",
+            "t0": 153.81206,
+            "t1": 157.37206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Just as I am,",
+              "asr_turbo": "Just as I am,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thou wilt receive",
+            "t0": 157.37206,
+            "t1": 159.81206,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Thou will receive",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Thou wilt receive",
+              "asr_turbo": "Thou will receive"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will walk on part and cleanse really Because",
+            "t0": 160.63205,
+            "t1": 168.69206,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "We'll walk on part and cleanse freely Because",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Will walk on part and cleanse really Because",
+              "asr_turbo": "We'll walk on part and cleanse freely Because"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy promise I believe",
+            "t0": 168.69206,
+            "t1": 173.49207,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Thy promise I believe",
+              "asr_turbo": "Thy promise I believe"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "O Lamb of God, I come, I come",
+            "t0": 174.21207,
+            "t1": 182.03206,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 3 agree",
+            "sources": {
+              "asr_large": "O Lamb of God, I come, I come",
+              "asr_turbo": "O Lamb of God, I come I come"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 76.82,
+            "t1": 84.48,
+            "text": "Rid my soul of one dark blood",
+            "options": [
+              "Rid my soul of one dark blood",
+              "Rid my soul of one dark block"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 124.53206,
+            "t1": 132.13206,
+            "text": "Fightings within and fears, With",
+            "options": [
+              "Fightings within and fears, With",
+              "Fights within and fears With"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 130.13206,
+            "t1": 141.09206,
+            "text": "The whole land of God I come, I come",
+            "options": [
+              "The whole land of God I come, I come",
+              "The heart, O Lamb of God I come, I come"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 155.37206,
+            "t1": 159.81206,
+            "text": "Thou wilt receive",
+            "options": [
+              "Thou wilt receive",
+              "Thou will receive"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 158.63205,
+            "t1": 168.69206,
+            "text": "Will walk on part and cleanse really Because",
+            "options": [
+              "Will walk on part and cleanse really Because",
+              "We'll walk on part and cleanse freely Because"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "iHmDNHL9NbQ",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 4.0,
+          "excluded": [
+            {
+              "t0": 0.0,
+              "text": "The"
+            },
+            {
+              "t0": 12.36,
+              "text": "Spirit"
+            },
+            {
+              "t0": 14.0,
+              "text": "Of of"
+            },
+            {
+              "t0": 19.32,
+              "text": "The"
+            },
+            {
+              "t0": 22.48,
+              "text": "Holy"
+            },
+            {
+              "t0": 25.46,
+              "text": "Ghost"
+            }
+          ],
+          "lines": 19,
+          "verified": 13,
+          "checks": 5,
+          "seconds": 13.3,
+          "generatedAt": "2026-10-05T22:52:03+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "G0XjqRZ9W_8",
+      "url": "https://www.youtube.com/watch?v=G0XjqRZ9W_8",
+      "title": "Just as I am worship video ( modern)",
+      "channel": "TheIslandSing",
+      "publishedAt": "20120806",
+      "durationSec": 307,
+      "duration": "5:07",
+      "views": 1942588,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198313, Requested 1965. Please try again in 2m0.095999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "zOjLXuJgbd0",
+      "url": "https://www.youtube.com/watch?v=zOjLXuJgbd0",
+      "title": "Just As I Am (I Come Broken) - Travis Cottrell - Lyrics",
+      "channel": "StrangeLyrics",
+      "publishedAt": "20150807",
+      "durationSec": 308,
+      "duration": "5:08",
+      "views": 631172,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199709, Requested 1756. Please try again in 10m32.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "HZV5fwmqsI0",
+      "url": "https://www.youtube.com/watch?v=HZV5fwmqsI0",
+      "title": "Just As I Am (with lyrics) The Most BEAUTIFUL hymn you’ve EVER Heard!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20210728",
+      "durationSec": 281,
+      "duration": "4:41",
+      "views": 552118,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "subs",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199420, Requested 1605. Please try again in 7m22.8s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "CxA0TFe3-Uo",
+      "url": "https://www.youtube.com/watch?v=CxA0TFe3-Uo",
+      "title": "Just As I Am, Without One Plea",
+      "channel": "SE Samonte",
+      "publishedAt": "20131018",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 4262458,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199090, Requested 1459. Please try again in 3m57.168s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "7lxqhPC1mNA",
+      "url": "https://www.youtube.com/watch?v=7lxqhPC1mNA",
+      "title": "Just As I Am (Hymns with lyrics)",
+      "channel": "VagleBrothers",
+      "publishedAt": "20131023",
+      "durationSec": 185,
+      "duration": "3:05",
+      "views": 497817,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198751, Requested 1369. Please try again in 51.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "ykc-wMWyjbo",
+      "url": "https://www.youtube.com/watch?v=ykc-wMWyjbo",
+      "title": "Just As I Am - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20211121",
+      "durationSec": 159,
+      "duration": "2:39",
+      "views": 284470,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199539, Requested 1243. Please try again in 5m37.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "jTWgj5TdlJI",
+      "url": "https://www.youtube.com/watch?v=jTWgj5TdlJI",
+      "title": "Just as I am Original Hymn",
+      "channel": "Living In Grace",
+      "publishedAt": "20190918",
+      "durationSec": 248,
+      "duration": "4:08",
+      "views": 177590,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199202, Requested 1395. Please try again in 4m17.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T22:52:03+00:00"
+}

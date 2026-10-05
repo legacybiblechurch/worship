@@ -1,0 +1,336 @@
+{
+  "slug": "lamb-of-god",
+  "title": "Lamb of God",
+  "input": "Lamb of God",
+  "isNew": true,
+  "forced": null,
+  "signature": "75e1ca20036c64f9",
+  "generatedAt": "2026-10-05T23:40:42+00:00",
+  "titleKey": "lamb of god",
+  "searchCandidates": [
+    {
+      "videoId": "O2tUmYWCsVY",
+      "url": "https://www.youtube.com/watch?v=O2tUmYWCsVY",
+      "title": "Twila Paris - Lamb of God (live)",
+      "channel": "Twila Paris & Friends",
+      "publishedAt": "20100708",
+      "durationSec": 186,
+      "duration": "3:06",
+      "views": 246068,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "2QGNUDsQ6fI",
+      "url": "https://www.youtube.com/watch?v=2QGNUDsQ6fI",
+      "title": "Lamb of God (with lyrics)",
+      "channel": "DarleneBAZ",
+      "publishedAt": "20161208",
+      "durationSec": 212,
+      "duration": "3:32",
+      "views": 1002208,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "x_-flIpeAsc",
+      "url": "https://www.youtube.com/watch?v=x_-flIpeAsc",
+      "title": "Twila Paris - Lamb of God",
+      "channel": "newbeginningschapel",
+      "publishedAt": "20071201",
+      "durationSec": 244,
+      "duration": "4:04",
+      "views": 904409,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "1nFtvbrjvjY",
+      "url": "https://www.youtube.com/watch?v=1nFtvbrjvjY",
+      "title": "Lamb Of God",
+      "channel": "Twila Paris - Topic",
+      "publishedAt": "20181030",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 233885,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "cwsVBNyi9jY",
+      "url": "https://www.youtube.com/watch?v=cwsVBNyi9jY",
+      "title": "Lamb Of God",
+      "channel": "Twila Paris - Topic",
+      "publishedAt": "20170725",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 180032,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "mmbGyi6YXDs",
+      "url": "https://www.youtube.com/watch?v=mmbGyi6YXDs",
+      "title": "Lamb of God - Twila Paris/Arr. Lloyd Larson",
+      "channel": "Hope Publishing",
+      "publishedAt": "20230823",
+      "durationSec": 201,
+      "duration": "3:21",
+      "views": 138049,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "kmVrP-G3rAw",
+      "url": "https://www.youtube.com/watch?v=kmVrP-G3rAw",
+      "title": "\"Lamb of God\" by Twila Paris",
+      "channel": "QuestionMarkBlog",
+      "publishedAt": "20130329",
+      "durationSec": 242,
+      "duration": "4:02",
+      "views": 74670,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "JpZPk4H6CFw",
+      "url": "https://www.youtube.com/watch?v=JpZPk4H6CFw",
+      "title": "Lamb of God with lyrics  (Song by Twila Paris)",
+      "channel": "Simple Life",
+      "publishedAt": "20191204",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 72272,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "cwsVBNyi9jY",
+      "url": "https://www.youtube.com/watch?v=cwsVBNyi9jY",
+      "title": "Lamb Of God",
+      "channel": "Twila Paris - Topic",
+      "publishedAt": "20170725",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 180032,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Your only Son, no sin hidden",
+            "But you sent Him from your side",
+            "To walk upon this guilty ground",
+            "And become the Lamb of God"
+          ],
+          "times": [
+            0.0,
+            27.0,
+            34.8,
+            42.0
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Your gift of love they crucified",
+            "They left, scorned Him as He died",
+            "The humble king they called a fraud",
+            "And sacrificed the Lamb of God"
+          ],
+          "times": [
+            50.8,
+            null,
+            69.2,
+            162.7
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "The Lamb of God, sweet Lamb",
+            "I love holy Lamb of God",
+            "Oh, wash me in His blood",
+            "My Jesus Christ, Lamb of God"
+          ],
+          "times": [
+            170.4,
+            176.7,
+            192.8,
+            206.8
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "I was lost, should have died",
+            "But you brought me to your side",
+            "To be led by your step",
+            "And to be called Lamb of God"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Oh Lamb of God, sweet Lamb",
+            "I love holy Lamb of God",
+            "Oh, wash me in His blood",
+            "Till I am just a Lamb of God",
+            "Oh, wash me in His blood",
+            "My Jesus Christ, Lamb of God"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "You"
+          ],
+          "times": [
+            236.8
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 45,
+      "notes": "Transcript is a whisper auto‑generated caption with many garbled phrases. No reference lyrics were available, so sections (Verse, Chorus, Bridge) were inferred from the order and content of the captured lines. Repeated choruses were included only where the transcript clearly repeats similar lines. Minor wording adjustments were made for clarity while preserving the original meaning.",
+      "order": "Verse 1 · Verse 2 · Chorus · Bridge · Chorus · Tag",
+      "fetchError": "ERROR: unable to download video data: HTTP Error 403: Forbidden",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "cwsVBNyi9jY",
+          "sources": [],
+          "missing": [
+            "captions",
+            "library",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
+        }
+      }
+    },
+    {
+      "videoId": "O2tUmYWCsVY",
+      "url": "https://www.youtube.com/watch?v=O2tUmYWCsVY",
+      "title": "Twila Paris - Lamb of God (live)",
+      "channel": "Twila Paris & Friends",
+      "publishedAt": "20100708",
+      "durationSec": 186,
+      "duration": "3:06",
+      "views": 246068,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199709, Requested 2943. Please try again in 19m5.664s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "2QGNUDsQ6fI",
+      "url": "https://www.youtube.com/watch?v=2QGNUDsQ6fI",
+      "title": "Lamb of God (with lyrics)",
+      "channel": "DarleneBAZ",
+      "publishedAt": "20161208",
+      "durationSec": 212,
+      "duration": "3:32",
+      "views": 1002208,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199371, Requested 2974. Please try again in 16m53.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "x_-flIpeAsc",
+      "url": "https://www.youtube.com/watch?v=x_-flIpeAsc",
+      "title": "Twila Paris - Lamb of God",
+      "channel": "newbeginningschapel",
+      "publishedAt": "20071201",
+      "durationSec": 244,
+      "duration": "4:04",
+      "views": 904409,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199042, Requested 1496. Please try again in 3m52.416s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "1nFtvbrjvjY",
+      "url": "https://www.youtube.com/watch?v=1nFtvbrjvjY",
+      "title": "Lamb Of God",
+      "channel": "Twila Paris - Topic",
+      "publishedAt": "20181030",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 233885,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198706, Requested 1338. Please try again in 19.008s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "mmbGyi6YXDs",
+      "url": "https://www.youtube.com/watch?v=mmbGyi6YXDs",
+      "title": "Lamb of God - Twila Paris/Arr. Lloyd Larson",
+      "channel": "Hope Publishing",
+      "publishedAt": "20230823",
+      "durationSec": 201,
+      "duration": "3:21",
+      "views": 138049,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Requested 3775. Please try again in 24m48.24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "kmVrP-G3rAw",
+      "url": "https://www.youtube.com/watch?v=kmVrP-G3rAw",
+      "title": "\"Lamb of God\" by Twila Paris",
+      "channel": "QuestionMarkBlog",
+      "publishedAt": "20130329",
+      "durationSec": 242,
+      "duration": "4:02",
+      "views": 74670,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199331, Requested 1519. Please try again in 6m7.2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "JpZPk4H6CFw",
+      "url": "https://www.youtube.com/watch?v=JpZPk4H6CFw",
+      "title": "Lamb of God with lyrics  (Song by Twila Paris)",
+      "channel": "Simple Life",
+      "publishedAt": "20191204",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 72272,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (ERROR: [youtube] kmVrP-G3rAw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] JpZPk4H6CFw: Requested format is not available. Use --list-formats for a list of available formats).",
+      "order": ""
+    }
+  ],
+  "needsAudio": true
+}
