@@ -84,6 +84,8 @@
     #phone-panel .code { font-size: 30px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink); margin: 8px 0 6px; font-variant-numeric: tabular-nums; }
     #phone-panel .url { font-size: 12.5px; color: var(--ink); word-break: break-all; }
     #phone-panel b { color: var(--ink); }
+    #phone-panel .qr { background: #fff; border-radius: 8px; padding: 10px; width: 196px; height: 196px; margin: 10px auto 12px; }
+    #phone-panel .qr svg { display: block; width: 176px; height: 176px; }
     body.remote #deck .vids, body.remote #deck .bar, body.remote #deck input[type=range] { display: none; }
 
     /* ── layout ─────────────────────────────── */
@@ -272,6 +274,7 @@
       #position-info { display: none; }
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
 </head>
 <body>
   <div id="header">
@@ -302,9 +305,9 @@
 
   <div id="phone-panel">
     <b>Run the slides from a phone</b><br>
-    On the phone, open<br>
-    <span class="url">worship.legacybiblechurch.com/remote</span><br>
-    and enter this code:
+    Point the phone's camera at this code. It connects by itself.
+    <div class="qr" id="phone-qr"></div>
+    Or open <span class="url">worship.legacybiblechurch.com/remote</span> on the phone and type:
     <div class="code" id="phone-code"></div>
     The phone then moves the slides on this computer's Display, and its Play / Fade buttons drive the audio playing here. Leave this window open.
   </div>
@@ -534,6 +537,17 @@
       document.getElementById('phone-btn').style.display = 'none';
     }
     document.getElementById('phone-code').textContent = Net.code;
+    // the QR code carries the full connect link, so a phone joins with one scan
+    (function drawQr() {
+      var box = document.getElementById('phone-qr');
+      if (typeof qrcode !== 'function') { setTimeout(drawQr, 300); return; }
+      try {
+        var q = qrcode(0, 'M');
+        q.addData('https://worship.legacybiblechurch.com/worship-control.html?remote=' + Net.code);
+        q.make();
+        box.innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+      } catch (e) { box.style.display = 'none'; }
+    })();
     document.getElementById('phone-btn').onclick = function () { document.getElementById('phone-panel').classList.toggle('on'); };
     document.addEventListener('click', function (e) {
       var p = document.getElementById('phone-panel');
