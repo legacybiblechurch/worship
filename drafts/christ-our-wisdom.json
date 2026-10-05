@@ -1,0 +1,193 @@
+{
+  "slug": "christ-our-wisdom",
+  "title": "Christ Our Wisdom",
+  "input": "Christ Our Wisdom",
+  "isNew": true,
+  "forced": null,
+  "signature": "9547905132c77bb7",
+  "generatedAt": "2026-10-05T15:29:52+00:00",
+  "titleKey": "christ our wisdom",
+  "searchCandidates": [
+    {
+      "videoId": "2NlxdVH6c24",
+      "url": "https://www.youtube.com/watch?v=2NlxdVH6c24",
+      "title": "Christ Our Wisdom (Official Lyric Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240725",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 176725,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "-S2AxLzfbqo",
+      "url": "https://www.youtube.com/watch?v=-S2AxLzfbqo",
+      "title": "Christ Our Wisdom (Official Acoustic Version)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20250613",
+      "durationSec": 224,
+      "duration": "3:44",
+      "views": 55832,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "_lkpA2Hbp6g",
+      "url": "https://www.youtube.com/watch?v=_lkpA2Hbp6g",
+      "title": "Christ Our Wisdom - Sovereign Grace Music (Lyric video)",
+      "channel": "Breathe Back Ministries",
+      "publishedAt": "20240610",
+      "durationSec": 212,
+      "duration": "3:32",
+      "views": 17404,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "OL6DKSRBWRA",
+      "url": "https://www.youtube.com/watch?v=OL6DKSRBWRA",
+      "title": "Christ Our Wisdom Lyric Video •  Sovereign Grace Music",
+      "channel": "ChaNel Lyric Videos",
+      "publishedAt": "20241026",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 1333,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "ixLXQz8b4n4",
+      "url": "https://www.youtube.com/watch?v=ixLXQz8b4n4",
+      "title": "Christ Our Wisdom (Official Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240308",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 946517,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "jnDlhK1gCBg",
+      "url": "https://www.youtube.com/watch?v=jnDlhK1gCBg",
+      "title": "Christ Our Wisdom (Bob Kauflin)",
+      "channel": "klassenp1",
+      "publishedAt": "20250904",
+      "durationSec": 219,
+      "duration": "3:39",
+      "views": 3290,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "2NlxdVH6c24",
+      "url": "https://www.youtube.com/watch?v=2NlxdVH6c24",
+      "title": "Christ Our Wisdom (Official Lyric Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240725",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 176725,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "This video has no captions and the song isn't in the library yet. Paste a lyric video that has captions, or type the lyrics into the Fixes column. (HTTP 0: )",
+      "order": "",
+      "fetchError": "ERROR: [youtube] 2NlxdVH6c24: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "2NlxdVH6c24",
+          "sources": [],
+          "missing": [
+            "captions",
+            "library",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
+        }
+      }
+    },
+    {
+      "videoId": "-S2AxLzfbqo",
+      "url": "https://www.youtube.com/watch?v=-S2AxLzfbqo",
+      "title": "Christ Our Wisdom (Official Acoustic Version)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20250613",
+      "durationSec": 224,
+      "duration": "3:44",
+      "views": 55832,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198783, Requested 1625. Please try again in 2m56.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "_lkpA2Hbp6g",
+      "url": "https://www.youtube.com/watch?v=_lkpA2Hbp6g",
+      "title": "Christ Our Wisdom - Sovereign Grace Music (Lyric video)",
+      "channel": "Breathe Back Ministries",
+      "publishedAt": "20240610",
+      "durationSec": 212,
+      "duration": "3:32",
+      "views": 17404,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 0: ",
+      "order": ""
+    },
+    {
+      "videoId": "OL6DKSRBWRA",
+      "url": "https://www.youtube.com/watch?v=OL6DKSRBWRA",
+      "title": "Christ Our Wisdom Lyric Video •  Sovereign Grace Music",
+      "channel": "ChaNel Lyric Videos",
+      "publishedAt": "20241026",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 1333,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] OL6DKSRBWRA: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know).",
+      "order": ""
+    },
+    {
+      "videoId": "ixLXQz8b4n4",
+      "url": "https://www.youtube.com/watch?v=ixLXQz8b4n4",
+      "title": "Christ Our Wisdom (Official Video)",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "20240308",
+      "durationSec": 223,
+      "duration": "3:43",
+      "views": 946517,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] OL6DKSRBWRA: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know; yt-dlp: ERROR: [youtube] ixLXQz8b4n4: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know).",
+      "order": ""
+    },
+    {
+      "videoId": "jnDlhK1gCBg",
+      "url": "https://www.youtube.com/watch?v=jnDlhK1gCBg",
+      "title": "Christ Our Wisdom (Bob Kauflin)",
+      "channel": "klassenp1",
+      "publishedAt": "20250904",
+      "durationSec": 219,
+      "duration": "3:39",
+      "views": 3290,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] OL6DKSRBWRA: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know; yt-dlp: ERROR: [youtube] ixLXQz8b4n4: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know; yt-dlp: ERROR: [youtube] jnDlhK1gCBg: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno 8] nodename nor servname provided, or not know).",
+      "order": ""
+    }
+  ],
+  "needsAudio": true
+}
