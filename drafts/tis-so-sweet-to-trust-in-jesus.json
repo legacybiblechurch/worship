@@ -2,23 +2,12 @@
   "slug": "tis-so-sweet-to-trust-in-jesus",
   "title": "'Tis So Sweet to Trust in Jesus",
   "input": "'Tis So Sweet to Trust in Jesus",
-  "isNew": true,
+  "isNew": false,
   "forced": null,
-  "signature": "c395b858d22da520",
-  "generatedAt": "2026-10-04T23:17:23+00:00",
+  "signature": "92910d9421237305",
+  "generatedAt": "2026-10-04T23:31:53+00:00",
   "titleKey": "'tis so sweet to trust in jesus",
   "searchCandidates": [
-    {
-      "videoId": "UCtQMiNlTKk",
-      "url": "https://www.youtube.com/watch?v=UCtQMiNlTKk",
-      "title": "'Tis So Sweet to Trust in Jesus",
-      "channel": "Acapeldridge",
-      "publishedAt": "20201009",
-      "durationSec": 185,
-      "duration": "3:05",
-      "views": 6595823,
-      "hasCaptions": true
-    },
     {
       "videoId": "do5jAvg8uZI",
       "url": "https://www.youtube.com/watch?v=do5jAvg8uZI",
@@ -27,7 +16,7 @@
       "publishedAt": "20260110",
       "durationSec": 225,
       "duration": "3:45",
-      "views": 1123732,
+      "views": 1123765,
       "hasCaptions": true
     },
     {
@@ -49,7 +38,7 @@
       "publishedAt": "20171026",
       "durationSec": 151,
       "duration": "2:31",
-      "views": 266961,
+      "views": 266962,
       "hasCaptions": true
     },
     {
@@ -60,7 +49,18 @@
       "publishedAt": "20220810",
       "durationSec": 217,
       "duration": "3:37",
-      "views": 217780,
+      "views": 217776,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "V01TssqHqNM",
+      "url": "https://www.youtube.com/watch?v=V01TssqHqNM",
+      "title": "Tis So Sweet // Her Heart Sings",
+      "channel": "Sounds Like Reign",
+      "publishedAt": "20191217",
+      "durationSec": 225,
+      "duration": "3:45",
+      "views": 1054959,
       "hasCaptions": true
     },
     {
@@ -71,7 +71,7 @@
       "publishedAt": "20090907",
       "durationSec": 310,
       "duration": "5:10",
-      "views": 26408152,
+      "views": 26408183,
       "hasCaptions": false
     },
     {
@@ -82,7 +82,7 @@
       "publishedAt": "20080410",
       "durationSec": 188,
       "duration": "3:08",
-      "views": 2776852,
+      "views": 2776880,
       "hasCaptions": false
     },
     {
@@ -99,735 +99,6 @@
   ],
   "candidates": [
     {
-      "videoId": "UCtQMiNlTKk",
-      "url": "https://www.youtube.com/watch?v=UCtQMiNlTKk",
-      "title": "'Tis So Sweet to Trust in Jesus",
-      "channel": "Acapeldridge",
-      "publishedAt": "20201009",
-      "durationSec": 185,
-      "duration": "3:05",
-      "views": 6595823,
-      "hasCaptions": true,
-      "lyrics": [
-        {
-          "label": "Verse 1",
-          "lines": [
-            "It is so sweet to trust in Jesus,",
-            "Just to take Him at His word,",
-            "Just to rest upon His promise,",
-            "Just to know the Savior, the Lord",
-            "Jesus, Jesus, how I trust him,",
-            "How I've proved him all and all",
-            "Jesus, Jesus, precious Jesus,",
-            "Oh, for grace to trust him all"
-          ]
-        },
-        {
-          "label": "Verse 2",
-          "lines": [
-            "Oh, how sweet to trust in Jesus,",
-            "Just to trust his cleansing blood,",
-            "Just in simple faith to plunge me neath a healing, cleansing flood",
-            "Jesus, Jesus, how I trust him,",
-            "How I've proved him o'er and o'er",
-            "Jesus, Jesus, precious Jesus,",
-            "All for grace to trust him o'er",
-            "Yes, it's sweet to trust in Jesus,"
-          ]
-        },
-        {
-          "label": "Verse 3",
-          "lines": [
-            "Just from sin and self to cease",
-            "Just from Jesus simply taking life",
-            "And rest and joy and peace",
-            "Jesus, Jesus, how I trust him,",
-            "How I've proved him o'er and o'er",
-            "Jesus, Jesus, precious Jesus,",
-            "All for grace to trust him more",
-            "I'm so glad I learned to trust thee,"
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "Precious Jesus, Savior, friend",
-            "And I know that Thou art with me,",
-            "Wilt be with me to the end",
-            "Jesus, Jesus, how I trust Him,",
-            "How I've proved Him o'er and o'er",
-            "Jesus, Jesus, precious Jesus",
-            "Oh, for grace to trust Him more"
-          ]
-        }
-      ],
-      "transcriptSource": "engine",
-      "confidence": 70,
-      "notes": "Structure derived from auto‑generated transcript; no official reference available. Minor wording adjustments made for clarity (e.g., \"Neath\" for \"neath\", added punctuation). Repeats follow explicit transcript occurrences.",
-      "order": "Verse 1 · Chorus · Verse 2 · Chorus · Verse 3 · Chorus · Verse 4 · Chorus",
-      "engine": {
-        "verdict": "unverified",
-        "lines": [
-          {
-            "text": "It is so sweet to trust in Jesus,",
-            "t0": 1.24,
-            "t1": 6.28,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "It is so sweet to trust in Jesus,",
-              "asr_turbo": "It is so sweet to trust in Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just to take Him at His word,",
-            "t0": 6.28,
-            "t1": 11.26,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Just to take Him at His word,",
-              "asr_turbo": "just to take Him at His word,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just to rest upon His promise,",
-            "t0": 11.28,
-            "t1": 16.3,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Just to rest upon His promise,",
-              "asr_turbo": "just to rest upon His promise,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just to know the Savior, the Lord",
-            "t0": 16.3,
-            "t1": 20.64,
-            "conf": 0.54,
-            "status": "check",
-            "alts": [
-              {
-                "text": "Just to know the saith the Lord",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "Just to know the Savior, the Lord",
-              "asr_turbo": "just to know the saith the Lord."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, how I trust him,",
-            "t0": 21.28,
-            "t1": 26.02,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 3 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, how I trust him,",
-              "asr_turbo": "Jesus, Jesus, how I trust Him,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "How I've proved him all and all",
-            "t0": 26.02,
-            "t1": 30.74,
-            "conf": 0.53,
-            "status": "check",
-            "alts": [
-              {
-                "text": "How I proved Him all and all",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "How I've proved him all and all",
-              "asr_turbo": "how I proved Him all and all."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, precious Jesus,",
-            "t0": 31.28,
-            "t1": 36.3,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 4 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, precious Jesus,",
-              "asr_turbo": "Jesus, Jesus, precious Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Oh, for grace to trust him all",
-            "t0": 36.3,
-            "t1": 40.72,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Oh, for grace to trust him all",
-              "asr_turbo": "oh, for grace to trust Him all."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Oh, how sweet to trust in Jesus,",
-            "t0": 41.3,
-            "t1": 47.56,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Oh, how sweet to trust in Jesus,",
-              "asr_turbo": "Oh, how sweet to trust in Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just to trust his cleansing blood,",
-            "t0": 47.56,
-            "t1": 51.52,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Just to trust his cleansing blood,",
-              "asr_turbo": "just to trust His cleansing blood,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just in simple faith to plunge me neath a healing, cleansing flood",
-            "t0": 52.56,
-            "t1": 61.54,
-            "conf": 0.56,
-            "status": "check",
-            "alts": [
-              {
-                "text": "Just in simple faith to plunge me, me the healing cleansing flood",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "Just in simple faith to plunge me neath a healing, cleansing flood",
-              "asr_turbo": "just in simple faith to plunge me, me the healing cleansing flood."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, how I trust him,",
-            "t0": 62.54,
-            "t1": 67.22,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 3 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, how I trust him,",
-              "asr_turbo": "Jesus, Jesus, how I trust Him,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "How I've proved him o'er and o'er",
-            "t0": 67.22,
-            "t1": 72.14,
-            "conf": 0.56,
-            "status": "check",
-            "alts": [
-              {
-                "text": "How I proved Him o'er and o'er",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "How I've proved him o'er and o'er",
-              "asr_turbo": "how I proved Him o'er and o'er."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, precious Jesus,",
-            "t0": 72.58,
-            "t1": 77.62,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 4 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, precious Jesus,",
-              "asr_turbo": "Jesus, Jesus, precious Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "All for grace to trust him o'er",
-            "t0": 77.62,
-            "t1": 83.66,
-            "conf": 0.56,
-            "status": "check",
-            "alts": [
-              {
-                "text": "O for grace to trust Him more",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "All for grace to trust him o'er",
-              "asr_turbo": "O for grace to trust Him more."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Yes, it's sweet to trust in Jesus,",
-            "t0": 83.82,
-            "t1": 88.86,
-            "conf": 0.55,
-            "status": "check",
-            "alts": [
-              {
-                "text": "Yes, it is sweet to trust in Jesus,",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "Yes, it's sweet to trust in Jesus,",
-              "asr_turbo": "Yes, it is sweet to trust in Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just from sin and self to cease",
-            "t0": 88.86,
-            "t1": 93.79085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Just from sin and self to cease",
-              "asr_turbo": "just from sin and self to cease,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Just from Jesus simply taking life",
-            "t0": 93.850845,
-            "t1": 99.43085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Just from Jesus simply taking life",
-              "asr_turbo": "just from Jesus simply taking life"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "And rest and joy and peace",
-            "t0": 99.43085,
-            "t1": 103.89085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "And rest and joy and peace",
-              "asr_turbo": "and rest and joy and peace."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, how I trust him,",
-            "t0": 103.87085,
-            "t1": 109.43085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [
-              {
-                "text": "Jesus, Jesus, how I trust him, how",
-                "sources": [
-                  "this occurrence"
-                ]
-              }
-            ],
-            "why": "two listens agree; matched to 3 other occurrences",
-            "sources": {
-              "asr_large": "Jesus, Jesus, how I trust him, how",
-              "asr_turbo": "Jesus, Jesus, how I trust Him, how"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "How I've proved him o'er and o'er",
-            "t0": 109.43085,
-            "t1": 113.89085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [
-              {
-                "text": "I've proved him o'er and o'er",
-                "sources": [
-                  "this occurrence"
-                ]
-              }
-            ],
-            "why": "two listens agree; matched to 2 other occurrences",
-            "sources": {
-              "asr_large": "I've proved him o'er and o'er",
-              "asr_turbo": "I've proved Him o'er and o'er."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, precious Jesus,",
-            "t0": 113.87085,
-            "t1": 118.79085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 4 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, precious Jesus,",
-              "asr_turbo": "Jesus, Jesus, precious Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "All for grace to trust him more",
-            "t0": 118.79085,
-            "t1": 123.79085,
-            "conf": 0.54,
-            "status": "check",
-            "alts": [
-              {
-                "text": "O for grace to trust Him all",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "All for grace to trust him more",
-              "asr_turbo": "O for grace to trust Him all."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "I'm so glad I learned to trust thee,",
-            "t0": 125.09084,
-            "t1": 130.11084,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "I'm so glad I learned to trust thee,",
-              "asr_turbo": "I'm so glad I learned to trust Thee,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Precious Jesus, Savior, friend",
-            "t0": 130.11084,
-            "t1": 134.15085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Precious Jesus, Savior, friend",
-              "asr_turbo": "precious Jesus, Savior, friend."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "And I know that Thou art with me,",
-            "t0": 135.13084,
-            "t1": 140.19084,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "And I know that Thou art with me,",
-              "asr_turbo": "And I know that Thou art with me,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Wilt be with me to the end",
-            "t0": 140.19084,
-            "t1": 144.67084,
-            "conf": 0.55,
-            "status": "check",
-            "alts": [
-              {
-                "text": "Will be with me to the end",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "Wilt be with me to the end",
-              "asr_turbo": "Will be with me to the end."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, how I trust Him,",
-            "t0": 145.17084,
-            "t1": 149.85085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 3 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, how I trust Him,",
-              "asr_turbo": "Jesus, Jesus, how I trust Him,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "How I've proved Him o'er and o'er",
-            "t0": 149.85085,
-            "t1": 155.17084,
-            "conf": 0.55,
-            "status": "check",
-            "alts": [
-              {
-                "text": "How I proved Him o'er and o'er",
-                "sources": [
-                  "asr_turbo"
-                ]
-              }
-            ],
-            "why": "one witness only; sources disagree",
-            "sources": {
-              "asr_large": "How I've proved Him o'er and o'er",
-              "asr_turbo": "How I proved Him o'er and o'er."
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus, Jesus, precious Jesus",
-            "t0": 155.17084,
-            "t1": 159.57085,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree; sung 4x, 4 agree",
-            "sources": {
-              "asr_large": "Jesus, Jesus, precious Jesus",
-              "asr_turbo": "Jesus, Jesus, precious Jesus,"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Oh, for grace to trust Him more",
-            "t0": 160.17084,
-            "t1": 164.95084,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "two listens agree",
-            "sources": {
-              "asr_large": "Oh, for grace to trust Him more",
-              "asr_turbo": "O for grace to trust Him more"
-            },
-            "label": null,
-            "block": null
-          }
-        ],
-        "checks": [
-          {
-            "t0": 14.3,
-            "t1": 20.64,
-            "text": "Just to know the Savior, the Lord",
-            "options": [
-              "Just to know the Savior, the Lord",
-              "Just to know the saith the Lord"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 24.02,
-            "t1": 30.74,
-            "text": "How I've proved him all and all",
-            "options": [
-              "How I've proved him all and all",
-              "How I proved Him all and all"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 50.56,
-            "t1": 61.54,
-            "text": "Just in simple faith to plunge me neath a healing, cleansing flood",
-            "options": [
-              "Just in simple faith to plunge me neath a healing, cleansing flood",
-              "Just in simple faith to plunge me, me the healing cleansing flood"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 65.22,
-            "t1": 72.14,
-            "text": "How I've proved him o'er and o'er",
-            "options": [
-              "How I've proved him o'er and o'er",
-              "How I proved Him o'er and o'er"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 75.62,
-            "t1": 83.66,
-            "text": "All for grace to trust him o'er",
-            "options": [
-              "All for grace to trust him o'er",
-              "O for grace to trust Him more"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 81.82,
-            "t1": 88.86,
-            "text": "Yes, it's sweet to trust in Jesus,",
-            "options": [
-              "Yes, it's sweet to trust in Jesus,",
-              "Yes, it is sweet to trust in Jesus,"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 116.79085,
-            "t1": 123.79085,
-            "text": "All for grace to trust him more",
-            "options": [
-              "All for grace to trust him more",
-              "O for grace to trust Him all"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 138.19084,
-            "t1": 144.67084,
-            "text": "Wilt be with me to the end",
-            "options": [
-              "Wilt be with me to the end",
-              "Will be with me to the end"
-            ],
-            "why": "one witness only; sources disagree"
-          },
-          {
-            "t0": 147.85085,
-            "t1": 155.17084,
-            "text": "How I've proved Him o'er and o'er",
-            "options": [
-              "How I've proved Him o'er and o'er",
-              "How I proved Him o'er and o'er"
-            ],
-            "why": "one witness only; sources disagree"
-          }
-        ],
-        "report": {
-          "videoId": "UCtQMiNlTKk",
-          "sources": [
-            "asr_large",
-            "asr_turbo"
-          ],
-          "missing": [
-            "captions",
-            "library"
-          ],
-          "excluded": [
-            {
-              "t0": 184.81085,
-              "text": "You"
-            }
-          ],
-          "lines": 31,
-          "verified": 22,
-          "checks": 9,
-          "seconds": 0.0,
-          "generatedAt": "2026-10-04T23:17:35+00:00"
-        }
-      }
-    },
-    {
       "videoId": "do5jAvg8uZI",
       "url": "https://www.youtube.com/watch?v=do5jAvg8uZI",
       "title": "’Tis So Sweet to Trust in Jesus",
@@ -835,119 +106,778 @@
       "publishedAt": "20260110",
       "durationSec": 225,
       "duration": "3:45",
-      "views": 1123732,
+      "views": 1123765,
       "hasCaptions": true,
       "lyrics": [
         {
           "label": "Verse 1",
           "lines": [
-            "'Tis so sweet to trust Jesus",
-            "All my sins He did bear",
-            "He lifts my heart to heaven",
-            "And all my cares He bears"
-          ],
-          "times": [
-            11.5,
-            null,
-            null,
-            null
+            "1",
+            "'Tis so sweet to trust in Jesus",
+            "Just to take Him at His word",
+            "Just to rest upon His promise",
+            "Just to know, \"Thus saith the Lord\""
           ]
         },
         {
-          "label": "Refrain",
+          "label": "Chorus",
           "lines": [
-            "Jesus, how I trust Thee",
-            "How I've proved Thee, O Lord",
-            "Jesus, precious Jesus",
-            "Oh, for grace to trust Thee more"
-          ],
-          "times": [
-            29.5,
-            null,
-            80.1,
-            138.2
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him all and all",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
           ]
         },
         {
           "label": "Verse 2",
           "lines": [
-            "'Tis so sweet to trust Jesus",
-            "From sin and self I cease",
-            "He gives me life and rest",
-            "And peace beyond all measure"
-          ],
-          "times": [
-            144.6,
-            null,
-            null,
-            null
+            "O how sweet to trust in Jesus",
+            "Just to trust His cleansing blood",
+            "And in simple faith to plunge me",
+            "'Neath the healing, cleansing flood"
           ]
         },
         {
-          "label": "Refrain",
+          "label": "Chorus",
           "lines": [
-            "Jesus, how I trust Thee",
-            "How I've proved Thee, O Lord",
-            "Jesus, precious Jesus",
-            "Oh, for grace to trust Thee more"
-          ],
-          "times": [
-            146.6,
-            null,
-            174.2,
-            175.3
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
           ]
         },
         {
-          "label": "Bridge",
+          "label": "Chorus",
           "lines": [
-            "I'm so glad I learned to trust Thee",
-            "Precious Jesus, Savior, friend",
-            "And I know Thou art with me",
-            "Till the end, Thou wilt be"
-          ],
-          "times": [
-            null,
-            null,
-            null,
-            null
+            "'Tis so sweet to trust in Jesus",
+            "Just from sin and self to cease Just from Jesus simply",
+            "Taking Life and rest and joy and peace",
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
           ]
         },
         {
-          "label": "Refrain",
+          "label": "Verse 3",
           "lines": [
-            "Jesus, how I trust Thee",
-            "How I've proved Thee, O Lord",
-            "Jesus, precious Jesus",
-            "Oh, for grace to trust Thee more"
-          ],
-          "times": [
-            179.5,
-            null,
-            206.2,
-            207.3
+            "I'm so glad I learned to trust Him",
+            "Precious Jesus, Savior, Friend",
+            "And I know that Thou art with me",
+            "Wilt be with me 'til the end"
           ]
         },
         {
-          "label": "Refrain",
+          "label": "Chorus",
           "lines": [
-            "Jesus, how I trust Thee",
-            "How I've proved Thee, O Lord",
-            "Jesus, precious Jesus",
-            "Oh, for grace to trust Thee more"
-          ],
-          "times": [
-            null,
-            null,
-            null,
-            null
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
           ]
         }
       ],
-      "transcriptSource": "asr",
-      "confidence": 58,
-      "notes": "Transcript auto‑captions were garbled; verses were reconstructed from the known hymn ‘Tis So Sweet to Trust in Jesus. Refrain lines match the repeated sections clearly present in the caption text. Confidence moderate due to lack of exact lyric verification.",
-      "order": "Verse 1 · Refrain · Verse 2 · Refrain · Bridge · Refrain · Refrain"
+      "transcriptSource": "engine",
+      "confidence": 91,
+      "notes": "Bridge section reconstructed from garbled auto‑captions (lines 103‑124s). All other sections follow the reference wording; repeats are taken directly from the transcript order.",
+      "order": "Verse 1 · Chorus · Verse 2 · Chorus · Bridge · Chorus · Verse 3 · Chorus · Chorus",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "1",
+            "t0": 11.52,
+            "t1": 11.54,
+            "conf": 0.45,
+            "status": "check",
+            "alts": [
+              {
+                "text": "It",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "It",
+              "asr_large": "1",
+              "asr_prompted": "O for grace to trust Him more O for grace to trust Him more"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "'Tis so sweet to trust in Jesus",
+            "t0": 11.54,
+            "t1": 16.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "is so [music] sweet to trust",
+              "library": "'Tis so sweet to trust in Jesus",
+              "asr_large": "Tis so sweet to trust in Jesus,",
+              "asr_turbo": "Tis so sweet to trust in Jesus,",
+              "asr_prompted": "Tis so sweet to trust in Jesus"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Just to take Him at His word",
+            "t0": 16.58,
+            "t1": 20.6,
+            "conf": 0.94,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "him at his word,",
+              "library": "Just to take Him at His word",
+              "asr_large": "Just to take Him at His word,",
+              "asr_turbo": "just to take Him at His word,",
+              "asr_prompted": "Just to take Him at His word"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Just to rest upon His promise",
+            "t0": 21.44,
+            "t1": 25.76,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "just [music] to",
+              "library": "Just to rest upon His promise",
+              "asr_large": "Just to rest upon His promise",
+              "asr_turbo": "Just to rest upon His promise",
+              "asr_prompted": "Just to rest upon His promise"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Just to know, \"Thus saith the Lord\"",
+            "t0": 25.66,
+            "t1": 30.48,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "the Lord.",
+              "library": "Just to know, \"Thus saith the Lord\"",
+              "asr_large": "Just to know, thus saith the Lord",
+              "asr_turbo": "Just to know the saith the Lord",
+              "asr_prompted": "Just to know, \"'Thus saith the Lord'"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Jesus, Jesus, how I trust Him",
+            "t0": 30.24,
+            "t1": 35.82,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Jesus, [music] Jesus, how I trust him.",
+              "library": "Jesus, Jesus, how I trust Him",
+              "asr_large": "Jesus, Jesus, how I trust Him",
+              "asr_turbo": "Jesus, Jesus, how I trust Him",
+              "asr_prompted": "Jesus, Jesus, how I trust Him"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "How I've proved Him all and all",
+            "t0": 35.36,
+            "t1": 40.3,
+            "conf": 0.47,
+            "status": "check",
+            "alts": [
+              {
+                "text": "How I've proved Him o'er and o'er",
+                "sources": [
+                  "library",
+                  "asr_prompted"
+                ]
+              },
+              {
+                "text": "How I've proved",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "How I've proved",
+              "library": "How I've proved Him o'er and o'er",
+              "asr_large": "How I've proved Him all and all",
+              "asr_turbo": "How I've proved Him all and all",
+              "asr_prompted": "How I've proved Him o'er and o'er"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, precious Jesus",
+            "t0": 40.02,
+            "t1": 45.48,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Jesus, Jesus, [singing] preious [music] Jesus.",
+              "library": "Jesus, Jesus, precious Jesus",
+              "asr_large": "Jesus, Jesus, precious Jesus",
+              "asr_turbo": "Jesus, Jesus, precious Jesus",
+              "asr_prompted": "Jesus, Jesus, precious Jesus"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O for grace to trust Him more",
+            "t0": 46.08,
+            "t1": 50.46,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Oh, for grace to trust him more.",
+              "library": "O for grace to trust Him more",
+              "asr_large": "Oh, for grace to trust Him more",
+              "asr_turbo": "Oh, for grace to trust Him more",
+              "asr_prompted": "O for grace to trust Him more"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O how sweet to trust in Jesus",
+            "t0": 52.14,
+            "t1": 56.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Oh, how [music] sweet to trust in Jesus.",
+              "library": "O how sweet to trust in Jesus",
+              "asr_large": "Oh, how sweet to trust in Jesus",
+              "asr_turbo": "Oh, how sweet to trust in Jesus",
+              "asr_prompted": "O how sweet to trust in Jesus"
+            },
+            "label": "Verse 2",
+            "block": 2
+          },
+          {
+            "text": "Just to trust His cleansing blood",
+            "t0": 56.14,
+            "t1": 61.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Just to trust his cleansing blood",
+              "library": "Just to trust His cleansing blood",
+              "asr_large": "Just to trust His cleansing blood",
+              "asr_turbo": "Just to trust His cleansing blood",
+              "asr_prompted": "Just to trust His cleansing blood"
+            },
+            "label": "Verse 2",
+            "block": 2
+          },
+          {
+            "text": "And in simple faith to plunge me",
+            "t0": 61.1,
+            "t1": 66.62,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "and in simple faith [music and singing] to plunge meath",
+              "library": "And in simple faith to plunge me",
+              "asr_large": "And in simple faith to plunge me",
+              "asr_turbo": "And in simple faith to plunge me",
+              "asr_prompted": "And in simple faith to plunge me"
+            },
+            "label": "Verse 2",
+            "block": 2
+          },
+          {
+            "text": "'Neath the healing, cleansing flood",
+            "t0": 66.36,
+            "t1": 71.1,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "the healing cleansing blood.",
+              "library": "'Neath the healing, cleansing flood",
+              "asr_large": "Neath the healing, cleansing flood",
+              "asr_turbo": "Neath the healing, cleansing flood",
+              "asr_prompted": "Neath the healing, cleansing flood"
+            },
+            "label": "Verse 2",
+            "block": 2
+          },
+          {
+            "text": "Jesus, Jesus, how I trust Him",
+            "t0": 71.9,
+            "t1": 76.88,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Jesus. [music] and more. Jesus, [singing] Jesus, precious Jesus. Oh, for more. in Jesus. Just from sin and self [music] to cease just [singing] from Jesus simply taking life and rest and joy and [singing] peace. Jesus, [music] Jesus, how I trust him. How I proved him Jesus, Jesus, [singing] preious Jesus. I'm so glad [music and singing] I learned to trust thee, precious Jesus, And I know [singing] that thou art with me, [music] wilt be with me to the end. [singing] Jesus, [music] Jesus, how I trust him. [music] How I've proved him more [singing] and more. Jesus, [music] Jesus, precious Jesus. [music] Oh, Jesus, [music and singing] Jesus, how I trust him.",
+              "library": "Jesus, Jesus, how I trust Him",
+              "asr_large": "Jesus, Jesus, how I trust Him,",
+              "asr_turbo": "Jesus, Jesus, how I trust Him,",
+              "asr_prompted": "Jesus, Jesus, how I trust Him"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "How I've proved Him o'er and o'er",
+            "t0": 76.88,
+            "t1": 81.2,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "How I've proved him more and more.",
+              "library": "How I've proved Him o'er and o'er",
+              "asr_large": "How I've proved Him more and more",
+              "asr_turbo": "how I've proved Him o'er and o'er.",
+              "asr_prompted": "How I've proved Him o'er and o'er"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, precious Jesus",
+            "t0": 81.72,
+            "t1": 86.64,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Jesus, [singing] Jesus, precious Jesus.",
+              "library": "Jesus, Jesus, precious Jesus",
+              "asr_large": "Jesus, Jesus, precious Jesus,",
+              "asr_turbo": "Jesus, Jesus, precious Jesus,",
+              "asr_prompted": "Jesus, Jesus, precious Jesus"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O for grace to trust Him more",
+            "t0": 86.64,
+            "t1": 90.82,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "captions_auto": "Oh, for grace to trust him more.",
+              "library": "O for grace to trust Him more",
+              "asr_large": "Oh, for grace to trust Him more",
+              "asr_turbo": "oh for grace to trust Him more.",
+              "asr_prompted": "O for grace to trust Him more"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "'Tis so sweet to trust in Jesus",
+            "t0": 103.8,
+            "t1": 108.2,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "one witness only; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "library": "'Tis so sweet to trust in Jesus",
+              "asr_large": "Yes, it's sweet to trust in Jesus",
+              "asr_turbo": "Yes, it is sweet to trust in Jesus"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Just from sin and self to cease Just from Jesus simply",
+            "t0": 107.78,
+            "t1": 116.86966,
+            "conf": 0.79,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "Just from sin and self to cease Just from Jesus simply",
+              "asr_turbo": "Just from sin and self to cease Just from Jesus simply",
+              "asr_prompted": "Self to cease Just from Jesus simply"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Taking Life and rest and joy and peace",
+            "t0": 116.86966,
+            "t1": 123.28966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Taking Life and rest and joy and peace",
+              "asr_turbo": "taking Life and rest and joy and peace",
+              "asr_prompted": "taking Life and rest and joy and peace"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, Jesus, how I trust Him",
+            "t0": 122.78966,
+            "t1": 128.12965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, how I trust Him",
+              "asr_large": "Jesus, Jesus, how I trust Him",
+              "asr_turbo": "Jesus, Jesus, how I trust Him",
+              "asr_prompted": "Jesus, Jesus, how I trust Him"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "How I've proved Him o'er and o'er",
+            "t0": 127.90965,
+            "t1": 132.68965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 4x, 4 agree",
+            "sources": {
+              "library": "How I've proved Him o'er and o'er",
+              "asr_large": "How I've proved Him more and more",
+              "asr_turbo": "How I've proved Him more and more",
+              "asr_prompted": "How I've proved Him o'er and o'er"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, precious Jesus",
+            "t0": 133.38965,
+            "t1": 138.28966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, precious Jesus",
+              "asr_large": "Jesus, Jesus, precious Jesus,",
+              "asr_turbo": "Jesus, Jesus, precious Jesus,"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O for grace to trust Him more",
+            "t0": 138.28966,
+            "t1": 143.68965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "O for grace to trust Him more",
+              "asr_large": "Oh, for grace to trust Him more",
+              "asr_turbo": "oh for grace to trust Him more."
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "I'm so glad I learned to trust Him",
+            "t0": 144.44966,
+            "t1": 149.12965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "I'm so glad I learned to trust Him",
+              "asr_large": "I'm so glad I learned to trust Thee,",
+              "asr_turbo": "I'm so glad I learned to trust Thee,",
+              "asr_prompted": "To trust Thee,"
+            },
+            "label": "Verse 3",
+            "block": 6
+          },
+          {
+            "text": "Precious Jesus, Savior, Friend",
+            "t0": 149.12965,
+            "t1": 153.42966,
+            "conf": 0.98,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Precious Jesus, Savior, Friend",
+              "asr_large": "Precious Jesus, Savior, Friend",
+              "asr_turbo": "precious Jesus, Savior, friend.",
+              "asr_prompted": "precious Jesus Save your friend"
+            },
+            "label": "Verse 3",
+            "block": 6
+          },
+          {
+            "text": "And I know that Thou art with me",
+            "t0": 154.36966,
+            "t1": 159.36966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "And I know that Thou art with me",
+              "asr_large": "And I know that Thou art with me,",
+              "asr_turbo": "And I know that Thou art with me,",
+              "asr_prompted": "And I know that Thou art with me"
+            },
+            "label": "Verse 3",
+            "block": 6
+          },
+          {
+            "text": "Wilt be with me 'til the end",
+            "t0": 159.36966,
+            "t1": 163.78966,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words",
+            "sources": {
+              "library": "Wilt be with me 'til the end",
+              "asr_large": "Wilt be with me to the end",
+              "asr_turbo": "Wilt be with me to the end.",
+              "asr_prompted": "Wilt be with me to the end"
+            },
+            "label": "Verse 3",
+            "block": 6
+          },
+          {
+            "text": "Jesus, Jesus, how I trust Him",
+            "t0": 164.22966,
+            "t1": 168.72966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, how I trust Him",
+              "asr_large": "Jesus, Jesus, how I trust Him,",
+              "asr_turbo": "Jesus, Jesus, how I trust Him,",
+              "asr_prompted": "Jesus, Jesus, how I trust I trust Him"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "How I've proved Him o'er and o'er",
+            "t0": 168.72966,
+            "t1": 173.84966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 4x, 4 agree",
+            "sources": {
+              "library": "How I've proved Him o'er and o'er",
+              "asr_large": "How I've proved Him more and more",
+              "asr_turbo": "How I've proved Him more and more.",
+              "asr_prompted": "how I've proved Him o'er and o'er"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, precious Jesus",
+            "t0": 173.98965,
+            "t1": 179.10965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, precious Jesus",
+              "asr_large": "Jesus, Jesus, precious Jesus,",
+              "asr_turbo": "Jesus, Jesus, precious Jesus,",
+              "asr_prompted": "Jesus, Jesus, precious Jesus"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O for grace to trust Him more",
+            "t0": 179.10965,
+            "t1": 183.98965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "O for grace to trust Him more",
+              "asr_large": "Oh for grace to trust Him more",
+              "asr_turbo": "Oh, for grace to trust Him more.",
+              "asr_prompted": "O for grace to trust Him more"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, how I trust Him",
+            "t0": 196.16965,
+            "t1": 200.68967,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, how I trust Him",
+              "asr_large": "Jesus, Jesus, how I trust Him",
+              "asr_turbo": "Jesus, Jesus, how I trust Him,",
+              "asr_prompted": "Jesus, how I trust Him"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "How I've proved Him o'er and o'er",
+            "t0": 200.54965,
+            "t1": 205.42966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 4x, 4 agree",
+            "sources": {
+              "library": "How I've proved Him o'er and o'er",
+              "asr_large": "How I've proved Him o'er and o'er",
+              "asr_turbo": "how I've proved Him more and more.",
+              "asr_prompted": "How I've proved Him o'er and o'er"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "Jesus, Jesus, precious Jesus",
+            "t0": 205.04965,
+            "t1": 210.36966,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "Jesus, Jesus, precious Jesus",
+              "asr_large": "Jesus, Jesus, precious Jesus",
+              "asr_turbo": "Jesus, Jesus, precious Jesus,",
+              "asr_prompted": "Jesus, Jesus, precious Jesus"
+            },
+            "label": "Chorus",
+            "block": 1
+          },
+          {
+            "text": "O for grace to trust Him more",
+            "t0": 210.94965,
+            "t1": 215.48965,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 5x, 5 agree",
+            "sources": {
+              "library": "O for grace to trust Him more",
+              "asr_large": "Oh, for grace to trust Him more",
+              "asr_turbo": "oh for grace to trust Him more.",
+              "asr_prompted": "O for grace to trust Him more"
+            },
+            "label": "Chorus",
+            "block": 1
+          }
+        ],
+        "checks": [
+          {
+            "t0": 9.52,
+            "t1": 11.54,
+            "text": "1",
+            "options": [
+              "1",
+              "It"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 33.36,
+            "t1": 40.3,
+            "text": "How I've proved Him all and all",
+            "options": [
+              "How I've proved Him all and all",
+              "How I've proved Him o'er and o'er",
+              "How I've proved"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "do5jAvg8uZI",
+          "sources": [
+            "captions_auto",
+            "library",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [],
+          "asr_seconds": 13.3,
+          "lines": 36,
+          "verified": 33,
+          "checks": 2,
+          "seconds": 16.1,
+          "generatedAt": "2026-10-04T23:32:12+00:00"
+        }
+      }
     },
     {
       "videoId": "_B2TPZd4GQg",
@@ -959,11 +889,202 @@
       "duration": "6:17",
       "views": 375035,
       "hasCaptions": true,
-      "lyrics": null,
-      "transcriptSource": "none",
-      "confidence": 0,
-      "notes": "",
-      "order": ""
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "'Tis so sweet to trust in Jesus",
+            "Just to take Him at His word",
+            "Just to rest upon His promise",
+            "Just to know, Thus saith the Lord"
+          ],
+          "times": [
+            1.0,
+            22.5,
+            30.2,
+            38.3
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
+          ],
+          "times": [
+            45.9,
+            53.9,
+            61.7,
+            272.5
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "O how sweet to trust in Jesus",
+            "Just to trust His cleansing blood",
+            "And in simple faith to plunge me",
+            "'Neath the healing, cleansing flood"
+          ],
+          "times": [
+            318.9,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
+          ],
+          "times": [
+            324.2,
+            null,
+            325.7,
+            343.0
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "'Tis sweet to trust in Jesus",
+            "Just from sin and self to cease",
+            "Just from Jesus simply taking",
+            "Life and rest and joy and peace"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Jesus, Jesus, how I trust Him",
+            "How I've proved Him o'er and o'er",
+            "Jesus, Jesus, precious Jesus",
+            "O for grace to trust Him more"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I'm so glad I learned to trust Him",
+            "Precious Jesus, Savior, Friend",
+            "And I know that Thou art with me",
+            "Will be with me 'til the end"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Outro",
+          "lines": [
+            "You are with me, Lord",
+            "'Til the end",
+            "'Til the end"
+          ],
+          "times": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Precious Jesus"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Oh, for grace to trust Him more"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Jesus, Jesus"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "How I trust Him"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "How I've proved Him more"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I know"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Jesus, Jesus, precious Jesus, O for grace to trust Him more"
+          ],
+          "times": [
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Oh, for grace to trust Him more"
+          ],
+          "times": [
+            null
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 78,
+      "notes": "Verse 1 line 4 differs in transcript ('Just to know the Savior, the Lord') – kept reference wording. Bridge lines not in reference, taken from transcript. Tag lines are from the ending vamp not in reference. Some chorus repeats inferred from clear repeated lines; garbled sections were consolidated into full chorus blocks.",
+      "order": "Verse 1 · Chorus · Verse 2 · Chorus · Bridge · Chorus · Verse 3 · Outro · Tag"
     },
     {
       "videoId": "9MPcgmbbWj4",
@@ -973,7 +1094,7 @@
       "publishedAt": "20171026",
       "durationSec": 151,
       "duration": "2:31",
-      "views": 266961,
+      "views": 266962,
       "hasCaptions": true,
       "lyrics": null,
       "transcriptSource": "none",
@@ -989,7 +1110,23 @@
       "publishedAt": "20220810",
       "durationSec": 217,
       "duration": "3:37",
-      "views": 217780,
+      "views": 217776,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "V01TssqHqNM",
+      "url": "https://www.youtube.com/watch?v=V01TssqHqNM",
+      "title": "Tis So Sweet // Her Heart Sings",
+      "channel": "Sounds Like Reign",
+      "publishedAt": "20191217",
+      "durationSec": 225,
+      "duration": "3:45",
+      "views": 1054959,
       "hasCaptions": true,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1005,7 +1142,7 @@
       "publishedAt": "20090907",
       "durationSec": 310,
       "duration": "5:10",
-      "views": 26408152,
+      "views": 26408183,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1021,7 +1158,7 @@
       "publishedAt": "20080410",
       "durationSec": 188,
       "duration": "3:08",
-      "views": 2776852,
+      "views": 2776880,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1047,5 +1184,5 @@
     }
   ],
   "needsAudio": false,
-  "listenedAt": "2026-10-04T23:17:35+00:00"
+  "listenedAt": "2026-10-04T23:32:12+00:00"
 }

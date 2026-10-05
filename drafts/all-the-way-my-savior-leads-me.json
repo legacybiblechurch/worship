@@ -1,0 +1,464 @@
+{
+  "slug": "all-the-way-my-savior-leads-me",
+  "title": "All the Way My Savior Leads Me",
+  "input": "All the Way My Savior Leads Me",
+  "isNew": true,
+  "forced": null,
+  "signature": "f2dd36900d260a12",
+  "generatedAt": "2026-10-04T23:39:28+00:00",
+  "titleKey": "all the way my savior leads me",
+  "searchCandidates": [
+    {
+      "videoId": "AF3o3hzVGC4",
+      "url": "https://www.youtube.com/watch?v=AF3o3hzVGC4",
+      "title": "All The Way My Savior Leads Me | Fanny Crosby (For Lyrics Turn on Closed Captions)",
+      "channel": "Andrew Hostetler",
+      "publishedAt": "20230209",
+      "durationSec": 214,
+      "duration": "3:34",
+      "views": 442593,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "qwJZCMsRrT8",
+      "url": "https://www.youtube.com/watch?v=qwJZCMsRrT8",
+      "title": "All The Way My Savior Leads Me (lyrics) Nina Åström",
+      "channel": "None Should Perish",
+      "publishedAt": "20210618",
+      "durationSec": 241,
+      "duration": "4:01",
+      "views": 65059,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "7eyYyTdYWO4",
+      "url": "https://www.youtube.com/watch?v=7eyYyTdYWO4",
+      "title": "All the Way My Savior Leads Me (with lyrics) BEAUTIFUL Hymn",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20250723",
+      "durationSec": 298,
+      "duration": "4:58",
+      "views": 39844,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "GnEZyfzkJgs",
+      "url": "https://www.youtube.com/watch?v=GnEZyfzkJgs",
+      "title": "All the Way My Savior Leads Me",
+      "channel": "Martijn de Groot",
+      "publishedAt": "20160413",
+      "durationSec": 190,
+      "duration": "3:10",
+      "views": 866808,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "awQI1reZbzU",
+      "url": "https://www.youtube.com/watch?v=awQI1reZbzU",
+      "title": "All The Way My Savior Leads Me • Congregational",
+      "channel": "Daniel Baptist",
+      "publishedAt": "20191126",
+      "durationSec": 141,
+      "duration": "2:21",
+      "views": 368865,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "sVAWGrhHuMU",
+      "url": "https://www.youtube.com/watch?v=sVAWGrhHuMU",
+      "title": "Chris Tomlin - All the Way my Savior Leads Me with Lyrics",
+      "channel": "84rusha",
+      "publishedAt": "20121125",
+      "durationSec": 273,
+      "duration": "4:33",
+      "views": 244466,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "fgqEJE8EpAs",
+      "url": "https://www.youtube.com/watch?v=fgqEJE8EpAs",
+      "title": "All the Way My Savior Leads Me - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20241229",
+      "durationSec": 168,
+      "duration": "2:48",
+      "views": 169557,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "ekUELQCnQlM",
+      "url": "https://www.youtube.com/watch?v=ekUELQCnQlM",
+      "title": "All the Way My Saviour Leads Me",
+      "channel": "SE Samonte",
+      "publishedAt": "20110811",
+      "durationSec": 150,
+      "duration": "2:30",
+      "views": 2005890,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "7eyYyTdYWO4",
+      "url": "https://www.youtube.com/watch?v=7eyYyTdYWO4",
+      "title": "All the Way My Savior Leads Me (with lyrics) BEAUTIFUL Hymn",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20250723",
+      "durationSec": 298,
+      "duration": "4:58",
+      "views": 39844,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Chorus",
+          "lines": [
+            "All the way my Savior leads me"
+          ],
+          "times": [
+            0.0
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "What have I to ask beside",
+            "Can I doubt His tender mercy",
+            "Who through life has been my guide",
+            "Heavenly peace, divine comfort",
+            "Here by faith in Him I dwell"
+          ],
+          "times": [
+            16.6,
+            22.4,
+            28.4,
+            34.5,
+            40.5
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "For I know whate'er befall me",
+            "Jesus fashions all things well",
+            "For I know whate'er befall me",
+            "Jesus fashions all things well"
+          ],
+          "times": [
+            45.8,
+            52.4,
+            58.1,
+            63.9
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "All the way my Savior leads me"
+          ],
+          "times": [
+            69.4
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Cheers each winding path I tread",
+            "Gives me grace for every trial",
+            "Feeds me with the Living Bread",
+            "Though my weary steps may falter",
+            "And my soul athirst may be",
+            "Gushing from the rock before me",
+            "Lo, a spring of joy I see"
+          ],
+          "times": [
+            76.0,
+            82.1,
+            88.1,
+            94.5,
+            96.7,
+            105.8,
+            111.9
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Gushing from the rock before me",
+            "Lo, a spring of joy I see"
+          ],
+          "times": [
+            117.8,
+            123.8
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Gushing from the rock before me",
+            "Lo, a spring of joy I see"
+          ],
+          "times": [
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "All the way my Savior leads me"
+          ],
+          "times": [
+            189.2
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "O the fullness of His love",
+            "Perfect rest to me is promised",
+            "In my Father’s house above",
+            "When my spirit clothed immortal",
+            "Wings its flight to realms of day"
+          ],
+          "times": [
+            195.3,
+            202.7,
+            208.2,
+            213.8,
+            220.3
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "This my song",
+            "Through endless ages",
+            "Jesus led me all the way",
+            "This my song",
+            "Through endless ages",
+            "Jesus led me all the way"
+          ],
+          "times": [
+            225.8,
+            228.3,
+            231.1,
+            237.5,
+            240.3,
+            243.5
+          ]
+        }
+      ],
+      "transcriptSource": "subs",
+      "confidence": 82,
+      "notes": "No reference lyrics were available; used the human‑written transcript as the sole source. Structured sections according to clear repeats in the transcript. Repeated verses and tags are shown as separate blocks where the transcript shows them occurring again.",
+      "order": "Chorus · Verse 1 · Verse 2 · Chorus · Verse 3 · Tag · Tag · Chorus · Bridge · Tag"
+    },
+    {
+      "videoId": "qwJZCMsRrT8",
+      "url": "https://www.youtube.com/watch?v=qwJZCMsRrT8",
+      "title": "All The Way My Savior Leads Me (lyrics) Nina Åström",
+      "channel": "None Should Perish",
+      "publishedAt": "20210618",
+      "durationSec": 241,
+      "duration": "4:01",
+      "views": 65059,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "All the Way"
+          ],
+          "times": [
+            19.1
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "My Savior leads me onward",
+            "What have I to ask?",
+            "Can I doubt His tender mercy",
+            "Who through life guides me?",
+            "He gives heavenly peace divine",
+            "Comfort comes by faith in Him",
+            "I dwell in Him, knowing",
+            "Whatever comes before."
+          ],
+          "times": [
+            21.0,
+            25.9,
+            null,
+            30.8,
+            null,
+            42.0,
+            45.4,
+            49.1
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "All the Way my Savior leads me",
+            "Through each winding path I dread",
+            "He gives grace for every trial",
+            "Jesus does all things well."
+          ],
+          "times": [
+            62.0,
+            89.5,
+            94.5,
+            null
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Thirsting, I drink from the rock",
+            "The spring of joy flows from Him",
+            "I see the joy gushing forth",
+            "From the lowest spring of joy",
+            "All the Way my Savior leads me",
+            "All the fullness of His love",
+            "Perfect rest is promised there",
+            "In my Father’s house."
+          ],
+          "times": [
+            114.8,
+            118.7,
+            121.8,
+            125.7,
+            150.5,
+            155.4,
+            160.1,
+            165.1
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "When my spirit is clothed immortal",
+            "Wings take flight to realms above",
+            "This is my song through ages",
+            "Jesus led me all the way."
+          ],
+          "times": [
+            169.8,
+            174.7,
+            179.5,
+            184.5
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "You"
+          ],
+          "times": [
+            241.0
+          ]
+        }
+      ],
+      "transcriptSource": "asr",
+      "confidence": 45,
+      "notes": "Transcript was auto‑generated and highly garbled; no reference lyrics were available. Reconstructed lyrics using the few recognizable phrases (e.g., \"All the Way my Savior leads me\") and typical worship language. Structure inferred conservatively: intro, two verses, a chorus, bridge, and a final tag. Confidence is low due to uncertainty of exact wording and repeat placement.",
+      "order": "Intro · Verse 1 · Chorus · Verse 2 · Bridge · Tag"
+    },
+    {
+      "videoId": "AF3o3hzVGC4",
+      "url": "https://www.youtube.com/watch?v=AF3o3hzVGC4",
+      "title": "All The Way My Savior Leads Me | Fanny Crosby (For Lyrics Turn on Closed Captions)",
+      "channel": "Andrew Hostetler",
+      "publishedAt": "20230209",
+      "durationSec": 214,
+      "duration": "3:34",
+      "views": 442593,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "subs",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "GnEZyfzkJgs",
+      "url": "https://www.youtube.com/watch?v=GnEZyfzkJgs",
+      "title": "All the Way My Savior Leads Me",
+      "channel": "Martijn de Groot",
+      "publishedAt": "20160413",
+      "durationSec": 190,
+      "duration": "3:10",
+      "views": 866808,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "awQI1reZbzU",
+      "url": "https://www.youtube.com/watch?v=awQI1reZbzU",
+      "title": "All The Way My Savior Leads Me • Congregational",
+      "channel": "Daniel Baptist",
+      "publishedAt": "20191126",
+      "durationSec": 141,
+      "duration": "2:21",
+      "views": 368865,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "sVAWGrhHuMU",
+      "url": "https://www.youtube.com/watch?v=sVAWGrhHuMU",
+      "title": "Chris Tomlin - All the Way my Savior Leads Me with Lyrics",
+      "channel": "84rusha",
+      "publishedAt": "20121125",
+      "durationSec": 273,
+      "duration": "4:33",
+      "views": 244466,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "fgqEJE8EpAs",
+      "url": "https://www.youtube.com/watch?v=fgqEJE8EpAs",
+      "title": "All the Way My Savior Leads Me - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20241229",
+      "durationSec": 168,
+      "duration": "2:48",
+      "views": 169557,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "ekUELQCnQlM",
+      "url": "https://www.youtube.com/watch?v=ekUELQCnQlM",
+      "title": "All the Way My Saviour Leads Me",
+      "channel": "SE Samonte",
+      "publishedAt": "20110811",
+      "durationSec": 150,
+      "duration": "2:30",
+      "views": 2005890,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ]
+}
