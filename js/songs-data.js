@@ -1921,4 +1921,16 @@ const LEGACY_SONGS = {
     { label: "Verse 4", lines: ["Your love ran red", "Your love ran red"] }
   ]
   },
+  "blessed-assurance": {
+    title: "Blessed Assurance",
+    youtube: "https://www.youtube.com/watch?v=FfVPnEhjKB4",
+    lyrics: [
+    { label: "Verse 1", lines: ["Blessed assurance, Jesus is mine!", "O what a foretaste of glory divine!"] },
+    { label: "Verse 2", lines: ["Heir of salvation, purchase of God", "Born of His Spirit,", "Washed in His blood This", "Is my story, this", "This is my song", "Praising my Savior all", "The day long This", "Is my story,"] },
+    { label: "Verse 3", lines: ["This is my song", "Praising my Savior all the day long", "Perfect submission, perfect delight", "Visions of rapture now burst on my sight", "Angels descending bring from above", "Echoes of mercy, whispers of love"] },
+    { label: "Verse 4", lines: ["Is at rest", "I in my Savior am", "Happy and blest Watching and waiting,", "Looking above", "Filled with His goodness", "Lost in His love This", "Is my story, this", "This is my song"] },
+    { label: "Verse 5", lines: ["Praising my Savior all", "The day long This", "Is my story,", "This is my song", "Praising my Savior all", "All the day long", "This is my story,", "This is my song"] },
+    { label: "Verse 6", lines: ["Praising my Savior all the day long", "This is my story,", "This is my song", "Praising my Savior all the day long", "Praising my Savior all the day long"] }
+  ]
+  },
 };
