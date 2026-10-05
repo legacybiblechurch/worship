@@ -1,0 +1,1184 @@
+{
+  "slug": "blessed-be-your-name",
+  "title": "Blessed Be Your Name",
+  "input": "Blessed Be Your Name",
+  "isNew": true,
+  "forced": null,
+  "signature": "fe7bd8351cf89195",
+  "generatedAt": "2026-10-05T13:45:30+00:00",
+  "titleKey": "blessed be your name",
+  "searchCandidates": [
+    {
+      "videoId": "1hiCljNuC4w",
+      "url": "https://www.youtube.com/watch?v=1hiCljNuC4w",
+      "title": "Matt Redman - Blessed Be Your Name Lyrics",
+      "channel": "JakeSD19",
+      "publishedAt": "20100603",
+      "durationSec": 230,
+      "duration": "3:50",
+      "views": 35018,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "mRYXNzXddQg",
+      "url": "https://www.youtube.com/watch?v=mRYXNzXddQg",
+      "title": "Blessed Be Your Name - Matt Redman - Lyric Video",
+      "channel": "Christian Worship Songs",
+      "publishedAt": "20240917",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 4078,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "du0il6d-DAk",
+      "url": "https://www.youtube.com/watch?v=du0il6d-DAk",
+      "title": "Blessed Be Your Name (worship video w/ lyrics)",
+      "channel": "pastorloran",
+      "publishedAt": "20080216",
+      "durationSec": 230,
+      "duration": "3:50",
+      "views": 20996719,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "tTpTQ4kBLxA",
+      "url": "https://www.youtube.com/watch?v=tTpTQ4kBLxA",
+      "title": "Matt Redman - Blessed Be Your Name (Lyrics And Chords)",
+      "channel": "Matt Redman",
+      "publishedAt": "20141215",
+      "durationSec": 347,
+      "duration": "5:47",
+      "views": 8287547,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "zG72BQrlriw",
+      "url": "https://www.youtube.com/watch?v=zG72BQrlriw",
+      "title": "Blessed Be Your Name - Matt Redman | LYRIC VIDEO",
+      "channel": "Hadleigh Baptist Church",
+      "publishedAt": "20200527",
+      "durationSec": 349,
+      "duration": "5:49",
+      "views": 331589,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "Rw4H5t3TwHM",
+      "url": "https://www.youtube.com/watch?v=Rw4H5t3TwHM",
+      "title": "MATT REDMAN - Blessed Be Your Name (Lyric Video)",
+      "channel": "Patrick Phiaphakdy",
+      "publishedAt": "20170404",
+      "durationSec": 324,
+      "duration": "5:24",
+      "views": 319006,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "yKML4tmCaaU",
+      "url": "https://www.youtube.com/watch?v=yKML4tmCaaU",
+      "title": "Blessed Be Your Name - Matt Redman - Lyric Video",
+      "channel": "Evangelische Gemeente Harderwijk",
+      "publishedAt": "20210425",
+      "durationSec": 258,
+      "duration": "4:18",
+      "views": 23449,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "rrvkBwgm6os",
+      "url": "https://www.youtube.com/watch?v=rrvkBwgm6os",
+      "title": "BLESSED BE YOUR NAME - Matt Redman",
+      "channel": "jltm",
+      "publishedAt": "20211127",
+      "durationSec": 237,
+      "duration": "3:57",
+      "views": 4243,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "mRYXNzXddQg",
+      "url": "https://www.youtube.com/watch?v=mRYXNzXddQg",
+      "title": "Blessed Be Your Name - Matt Redman - Lyric Video",
+      "channel": "Christian Worship Songs",
+      "publishedAt": "20240917",
+      "durationSec": 227,
+      "duration": "3:47",
+      "views": 4078,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "Blessed be your name"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "In the land that is plentyful where your streams of abundance flow Blessed Be Your Name Blessed Be Your Name when I'm found in the desert place though I walk through the Wilderness blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I will say blessed be the name of the Lord blessed be"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Be your name"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Blessed be your name",
+            "When the sun's shining down on me",
+            "When the world's all as it should be",
+            "Blessed be your name"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Blessed be your name On",
+            "The road marked with suffering",
+            "Though there's pain in the offering Blessed",
+            "Be your name",
+            "Every blessing you pour out I'll",
+            "Turn back to praise When the darkness closes in,",
+            "Lord Still I will say",
+            "Blessed be the name of the Lord"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Blessed be your name",
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name",
+            "You give and take away,",
+            "You give and take away",
+            "My heart will choose to say,",
+            "Lord, blessed be your name"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Every blessing you pour out,",
+            "I'll turn back to praise",
+            "When the darkness closes in, Lord Still",
+            "I'm gonna say",
+            "Blessed be the name of the Lord",
+            "Blessed be your name, Jesus",
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Blessed be the name of the Lord",
+            "Blessed be your name",
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name You",
+            "Kill and take away",
+            "You give and take away,",
+            "My heart will choose to say",
+            "Blessed be your name Yeah, yeah"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 85,
+      "notes": "",
+      "order": "",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Blessed be your name",
+            "t0": 9.6,
+            "t1": 11.5,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 15x, 5 agree",
+            "sources": {
+              "captions_auto": "blessed be your name",
+              "asr_large": "Blessed be your name",
+              "asr_turbo": "Blessed be your name",
+              "asr_prompted": "in the land that is plentyful where your streams of abundance flow blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In the land that is plentyful where your streams of abundance flow Blessed Be Your Name Blessed Be Your Name when I'm found in the desert place though I walk through the Wilderness blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I will say blessed be the name of the Lord blessed be",
+            "t0": 30.0,
+            "t1": 36.44,
+            "conf": 0.32,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I'm a desert place, though I walk through the wilderness. Blessed be your name. Every blessing you pour out, I'll turn back to praise. When the darkness closes in, Lord, still I will say, Blessed be the name of the Lord. Blessed",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "Thank you",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "in the land that is plentyful where your streams of abundance flow Blessed Be Your Name Blessed Be Your Name when I'm found in the desert place though I walk through the Wilderness blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I will say blessed be the name of the Lord blessed be",
+              "asr_large": "Thank you",
+              "asr_turbo": "I'm a desert place, though I walk through the wilderness. Blessed be your name. Every blessing you pour out, I'll turn back to praise. When the darkness closes in, Lord, still I will say, Blessed be the name of the Lord. Blessed",
+              "asr_prompted": "back"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be your name",
+            "t0": 60.0,
+            "t1": 60.92,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "be your name",
+              "asr_large": "Be your name",
+              "asr_turbo": "be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 63.44,
+            "t1": 66.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_auto": "blessed be the name of the Lord",
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord",
+              "asr_prompted": "to"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your glorious name",
+            "t0": 67.48,
+            "t1": 70.7,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "blessed be your glorious name",
+              "asr_large": "Blessed be your glorious name",
+              "asr_turbo": "Blessed be your glorious name",
+              "asr_prompted": "praise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name",
+            "t0": 73.26,
+            "t1": 76.3,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 15x, 5 agree",
+            "sources": {
+              "captions_auto": "Blessed Be Your Name",
+              "asr_large": "Blessed be your name",
+              "asr_turbo": "Blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When the sun's shining down on me",
+            "t0": 76.18,
+            "t1": 79.5,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "when the Sun's shining down on me",
+              "asr_large": "When the sun's shining down on me",
+              "asr_turbo": "When the sun's shining down on me",
+              "asr_prompted": "when the darkness"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When the world's all as it should be",
+            "t0": 80.16,
+            "t1": 83.64,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "when the world's all as it should be",
+              "asr_large": "When the world's all as it should be",
+              "asr_turbo": "When the world's all as it should be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name",
+            "t0": 84.28,
+            "t1": 85.46,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 15x, 5 agree",
+            "sources": {
+              "captions_auto": "blessed be your name",
+              "asr_large": "Blessed be your name",
+              "asr_turbo": "Blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name On",
+            "t0": 89.24,
+            "t1": 92.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "blessed be your name on",
+              "asr_large": "Blessed be your name On",
+              "asr_turbo": "Blessed be your name On"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The road marked with suffering",
+            "t0": 92.32,
+            "t1": 95.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "the road marked with suffering",
+              "asr_large": "The road marked with suffering",
+              "asr_turbo": "the road marked with suffering",
+              "asr_prompted": "closes"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though there's pain in the offering Blessed",
+            "t0": 95.74,
+            "t1": 100.48,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "though there's pain in the offering blessed",
+              "asr_large": "Though there's pain in the offering Blessed",
+              "asr_turbo": "Though there's pain in the offering Blessed"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be your name",
+            "t0": 100.48,
+            "t1": 101.5,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "be your name",
+              "asr_large": "Be your name",
+              "asr_turbo": "be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Every blessing you pour out I'll",
+            "t0": 102.74,
+            "t1": 108.52,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "every blessing you pour out",
+              "asr_large": "Every blessing you pour out I'll",
+              "asr_turbo": "Every blessing you pour out I'll"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Turn back to praise When the darkness closes in,",
+            "t0": 108.52,
+            "t1": 116.119156,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "turn back to praise when the darkness closes in",
+              "asr_large": "Turn back to praise When the darkness closes in,",
+              "asr_turbo": "turn back to praise When the darkness closes in,",
+              "asr_prompted": "back to praise when the darkness closes in"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord Still I will say",
+            "t0": 116.119156,
+            "t1": 118.899155,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Lord still I will say",
+              "asr_large": "Lord Still I will say",
+              "asr_turbo": "Lord Still I will say",
+              "asr_prompted": "Lord still I will say"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 119.219154,
+            "t1": 122.579155,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 7x, 7 agree",
+            "sources": {
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord",
+              "asr_prompted": "blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name",
+            "t0": 123.399155,
+            "t1": 125.259155,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 15x, 5 agree",
+            "sources": {
+              "asr_large": "Blessed be your name",
+              "asr_turbo": "Blessed be your name",
+              "asr_prompted": "blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 127.219154,
+            "t1": 130.73915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 7x, 7 agree",
+            "sources": {
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord",
+              "asr_prompted": "blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your glorious name",
+            "t0": 131.19916,
+            "t1": 134.93915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Blessed be your glorious name",
+              "asr_turbo": "Blessed be your glorious name",
+              "asr_prompted": "blessed be your glorious name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You give and take away,",
+            "t0": 136.09915,
+            "t1": 139.69916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "You give and take away,",
+              "asr_turbo": "You give and take away,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You give and take away",
+            "t0": 139.69916,
+            "t1": 142.91916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "You give and take away",
+              "asr_turbo": "you give and take away."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My heart will choose to say,",
+            "t0": 143.99915,
+            "t1": 148.29915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "My heart will choose to say,",
+              "asr_turbo": "My heart will choose to say,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord, blessed be your name",
+            "t0": 148.29915,
+            "t1": 151.01915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Lord, blessed be your name",
+              "asr_turbo": "Lord, blessed be your name.",
+              "asr_prompted": "blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Every blessing you pour out,",
+            "t0": 154.87915,
+            "t1": 158.11916,
+            "conf": 0.77,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "Every blessing you pour out,",
+              "asr_turbo": "Every blessing you pour out,",
+              "asr_prompted": "when the sun's shining down on me when the world's all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll turn back to praise",
+            "t0": 158.11916,
+            "t1": 160.87915,
+            "conf": 0.77,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "I'll turn back to praise",
+              "asr_turbo": "I'll turn back to praise.",
+              "asr_prompted": "as it should be back to praise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When the darkness closes in, Lord Still",
+            "t0": 162.77914,
+            "t1": 167.35916,
+            "conf": 0.43,
+            "status": "check",
+            "alts": [
+              {
+                "text": "When the darkness closes in war Still",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "When the darkness closes in, Lord Still",
+              "asr_turbo": "When the darkness closes in war Still",
+              "asr_prompted": "Blessed Be darkness closes in Lord still"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'm gonna say",
+            "t0": 167.35916,
+            "t1": 168.39915,
+            "conf": 0.79,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "I'm gonna say",
+              "asr_turbo": "I'm gonna say",
+              "asr_prompted": "I will say"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 169.35916,
+            "t1": 172.51915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 7x, 7 agree",
+            "sources": {
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name, Jesus",
+            "t0": 173.21915,
+            "t1": 176.49915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Blessed be your name, Jesus",
+              "asr_turbo": "Blessed be your name, Jesus"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 177.31915,
+            "t1": 180.63916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 7x, 7 agree",
+            "sources": {
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your glorious name",
+            "t0": 181.37915,
+            "t1": 184.71915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Blessed be your glorious name",
+              "asr_turbo": "Blessed be your glorious name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 185.31915,
+            "t1": 188.85916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_auto": "blessed be the name of the Lord",
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord",
+              "asr_prompted": "blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name",
+            "t0": 189.41916,
+            "t1": 191.05914,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 15x, 5 agree",
+            "sources": {
+              "captions_auto": "blessed be your name",
+              "asr_large": "Blessed be your name",
+              "asr_turbo": "Blessed be your name",
+              "asr_prompted": "blessed be your name"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be the name of the Lord",
+            "t0": 193.37915,
+            "t1": 196.79916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_auto": "blessed be the name of the Lord",
+              "asr_large": "Blessed be the name of the Lord",
+              "asr_turbo": "Blessed be the name of the Lord",
+              "asr_prompted": "blessed be the name of the Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your glorious name You",
+            "t0": 197.27914,
+            "t1": 202.39915,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "blessed be your glorious name you",
+              "asr_large": "Blessed be your glorious name You",
+              "asr_turbo": "Blessed be your glorious name You",
+              "asr_prompted": "blessed be your glorious name you give and take away back to praise when the darkness closes in Lord still I'm gonna say bless them blessed B the name of the Lord blessed be your name glorious name yeah yeah you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Kill and take away",
+            "t0": 202.39915,
+            "t1": 204.75916,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "kill and take away",
+              "asr_large": "Kill and take away",
+              "asr_turbo": "kill and take away",
+              "asr_prompted": "kill and take away oh"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You give and take away,",
+            "t0": 205.67915,
+            "t1": 208.71915,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "You kill and take away",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "independent sources agree; matched to 2 other occurrences",
+            "sources": {
+              "captions_auto": "you kill and take away",
+              "asr_large": "You kill and take away",
+              "asr_turbo": "You kill and take away",
+              "asr_prompted": "you kill and take away"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My heart will choose to say",
+            "t0": 209.97916,
+            "t1": 212.97916,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "my heart will choose to say Lord",
+              "asr_large": "My heart will choose to say",
+              "asr_turbo": "My heart will choose to save",
+              "asr_prompted": "my heart will choose to say oh"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Blessed be your name Yeah, yeah",
+            "t0": 214.01915,
+            "t1": 218.23915,
+            "conf": 0.49,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Blessed be your name Thank you",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "Blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I'm going to say blessed be the name of the Lord blessed be your name Jesus blessed be the name of the the Lord blessed be your glorious name blessed be the name of the Lord blessed be your name blessed be the name of the Lord blessed be your glorious name y yeah you kill and take away oh you kill and take away my heart will choose to say oh Blessed Be Your Name",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I'm going to say blessed be the name of the Lord blessed be your name Jesus blessed be the name of the the Lord blessed be your glorious name blessed be the name of the Lord blessed be your name blessed be the name of the Lord blessed be your glorious name y yeah you kill and take away oh you kill and take away my heart will choose to say oh Blessed Be Your Name",
+              "asr_large": "Blessed be your name Yeah, yeah",
+              "asr_turbo": "Blessed be your name Thank you.",
+              "asr_prompted": "blessed be your name yeah yeah"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 28.0,
+            "t1": 36.44,
+            "text": "In the land that is plentyful where your streams of abundance flow Blessed Be Your Name Blessed Be Your Name when I'm found in the desert place though I walk through the Wilderness blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I will say blessed be the name of the Lord blessed be",
+            "options": [
+              "In the land that is plentyful where your streams of abundance flow Blessed Be Your Name Blessed Be Your Name when I'm found in the desert place though I walk through the Wilderness blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I will say blessed be the name of the Lord blessed be",
+              "I'm a desert place, though I walk through the wilderness. Blessed be your name. Every blessing you pour out, I'll turn back to praise. When the darkness closes in, Lord, still I will say, Blessed be the name of the Lord. Blessed",
+              "Thank you"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 160.77914,
+            "t1": 167.35916,
+            "text": "When the darkness closes in, Lord Still",
+            "options": [
+              "When the darkness closes in, Lord Still",
+              "When the darkness closes in war Still"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 212.01915,
+            "t1": 218.23915,
+            "text": "Blessed be your name Yeah, yeah",
+            "options": [
+              "Blessed be your name Yeah, yeah",
+              "Blessed be your name Thank you",
+              "Blessed be your name every blessing you pour out out turn back to praise when the darkness closes in Lord still I'm going to say blessed be the name of the Lord blessed be your name Jesus blessed be the name of the the Lord blessed be your glorious name blessed be the name of the Lord blessed be your name blessed be the name of the Lord blessed be your glorious name y yeah you kill and take away oh you kill and take away my heart will choose to say oh Blessed Be Your Name"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "mRYXNzXddQg",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 10.7,
+          "lines": 40,
+          "verified": 34,
+          "checks": 3,
+          "seconds": 13.8,
+          "generatedAt": "2026-10-05T13:45:48+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "du0il6d-DAk",
+      "url": "https://www.youtube.com/watch?v=du0il6d-DAk",
+      "title": "Blessed Be Your Name (worship video w/ lyrics)",
+      "channel": "pastorloran",
+      "publishedAt": "20080216",
+      "durationSec": 230,
+      "duration": "3:50",
+      "views": 20996719,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "Blessed be your name"
+          ],
+          "times": [
+            0.0
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Blessed be your name",
+            "Though I walk through desert",
+            "Though I walk through wilderness",
+            "Blessed be your name",
+            "Every blessing you pour out",
+            "I’ll turn back to praise",
+            "When darkness closes in",
+            "Lord, still I will sing",
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name"
+          ],
+          "times": [
+            35.2,
+            null,
+            null,
+            54.2,
+            103.3,
+            157.9,
+            161.3,
+            null,
+            188.8,
+            191.7
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Blessed be your name",
+            "When the sun shines down",
+            "When the world is as it should be",
+            "Blessed be your name"
+          ],
+          "times": [
+            196.8,
+            null,
+            null,
+            213.1
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "On a road marked with suffering",
+            "Though there's pain in the offering",
+            "Blessed be your name",
+            "Every blessing you pour out",
+            "I turn back to praise",
+            "When darkness closes in",
+            "Lord, still I will say",
+            "Blessed be the name of the Lord"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "You give and take away",
+            "My heart will choose to say",
+            "Lord, blessed be your name"
+          ],
+          "times": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Every blessing you pour out",
+            "I’ll turn back to praise",
+            "When darkness closes in",
+            "Lord, still I will say",
+            "Blessed be the name of the Lord",
+            "Blessed be your glorious name"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "You give and take away",
+            "My heart will choose to save",
+            "Blessed be your name"
+          ],
+          "times": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "1hiCljNuC4w",
+      "url": "https://www.youtube.com/watch?v=1hiCljNuC4w",
+      "title": "Matt Redman - Blessed Be Your Name Lyrics",
+      "channel": "JakeSD19",
+      "publishedAt": "20100603",
+      "durationSec": 230,
+      "duration": "3:50",
+      "views": 35018,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "tTpTQ4kBLxA",
+      "url": "https://www.youtube.com/watch?v=tTpTQ4kBLxA",
+      "title": "Matt Redman - Blessed Be Your Name (Lyrics And Chords)",
+      "channel": "Matt Redman",
+      "publishedAt": "20141215",
+      "durationSec": 347,
+      "duration": "5:47",
+      "views": 8287547,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "zG72BQrlriw",
+      "url": "https://www.youtube.com/watch?v=zG72BQrlriw",
+      "title": "Blessed Be Your Name - Matt Redman | LYRIC VIDEO",
+      "channel": "Hadleigh Baptist Church",
+      "publishedAt": "20200527",
+      "durationSec": 349,
+      "duration": "5:49",
+      "views": 331589,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "Rw4H5t3TwHM",
+      "url": "https://www.youtube.com/watch?v=Rw4H5t3TwHM",
+      "title": "MATT REDMAN - Blessed Be Your Name (Lyric Video)",
+      "channel": "Patrick Phiaphakdy",
+      "publishedAt": "20170404",
+      "durationSec": 324,
+      "duration": "5:24",
+      "views": 319006,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "yKML4tmCaaU",
+      "url": "https://www.youtube.com/watch?v=yKML4tmCaaU",
+      "title": "Blessed Be Your Name - Matt Redman - Lyric Video",
+      "channel": "Evangelische Gemeente Harderwijk",
+      "publishedAt": "20210425",
+      "durationSec": 258,
+      "duration": "4:18",
+      "views": 23449,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "rrvkBwgm6os",
+      "url": "https://www.youtube.com/watch?v=rrvkBwgm6os",
+      "title": "BLESSED BE YOUR NAME - Matt Redman",
+      "channel": "jltm",
+      "publishedAt": "20211127",
+      "durationSec": 237,
+      "duration": "3:57",
+      "views": 4243,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T13:45:48+00:00"
+}

@@ -1,0 +1,534 @@
+{
+  "slug": "awake-my-soul",
+  "title": "Awake My Soul",
+  "input": "Awake My Soul",
+  "isNew": true,
+  "forced": null,
+  "signature": "caf801510a8a6bc9",
+  "generatedAt": "2026-10-05T00:14:07+00:00",
+  "titleKey": "awake my soul",
+  "searchCandidates": [
+    {
+      "videoId": "PjM6Jbd__Qc",
+      "url": "https://www.youtube.com/watch?v=PjM6Jbd__Qc",
+      "title": "Mumford & Sons ft. Jon Batiste - Awake My Soul (Live from New Orleans Jazz)",
+      "channel": "Mumford & Sons",
+      "publishedAt": "20241018",
+      "durationSec": 400,
+      "duration": "6:40",
+      "views": 4390070,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "kQ_DD6Ft3Dg",
+      "url": "https://www.youtube.com/watch?v=kQ_DD6Ft3Dg",
+      "title": "Amy Grant - Be Still My Soul (By Itself - No Medley)",
+      "channel": "DJMichaelAngelo",
+      "publishedAt": "20231015",
+      "durationSec": 123,
+      "duration": "2:03",
+      "views": 596,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "fRBdv0NujCo",
+      "url": "https://www.youtube.com/watch?v=fRBdv0NujCo",
+      "title": "06 Awake My Soul A 1000 Tongues   Laura Story",
+      "channel": "Christian Music Playlist",
+      "publishedAt": "20200527",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 160,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "X8vqewHaeo4",
+      "url": "https://www.youtube.com/watch?v=X8vqewHaeo4",
+      "title": "Be Still My Soul | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230201",
+      "durationSec": 255,
+      "duration": "4:15",
+      "views": 147837,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "kYJoQmMH354",
+      "url": "https://www.youtube.com/watch?v=kYJoQmMH354",
+      "title": "Kari Jobe - Be Still My Soul (In You I Rest) (Lyric Video) | Be still, my soul",
+      "channel": "I Worship Everyday ",
+      "publishedAt": "20220409",
+      "durationSec": 311,
+      "duration": "5:11",
+      "views": 625,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "kQ_DD6Ft3Dg",
+      "url": "https://www.youtube.com/watch?v=kQ_DD6Ft3Dg",
+      "title": "Amy Grant - Be Still My Soul (By Itself - No Medley)",
+      "channel": "DJMichaelAngelo",
+      "publishedAt": "20231015",
+      "durationSec": 123,
+      "duration": "2:03",
+      "views": 596,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Be still, my soul,",
+            "The Lord is on thy side",
+            "Bear patiently the cross of grief or pain",
+            "Leave to thy God to order and provide"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "In every change he faithful will remain",
+            "Be still, my soul,",
+            "Thy best, thy heavenly friend",
+            "Through thorny ways leads to a joyful end"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Be still, my soul,",
+            "Thy God doth undertake"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "To guide the future as He has the past",
+            "Thy hope, Thy confidence,",
+            "Let nothing shake"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "All now mysterious will be bright at last"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 71,
+      "notes": "Used Whisper auto‑generated transcript; split each original line into two short phrases (~6 words) for screen display. No repeats detected. Reference lyrics absent, so structure inferred solely from transcript.",
+      "order": "Verse 1",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Be still, my soul,",
+            "t0": 0.98,
+            "t1": 3.66,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "Be Still My Soul",
+              "asr_large": "Be still, my soul,",
+              "asr_turbo": "Be still, my soul,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The Lord is on thy side",
+            "t0": 3.66,
+            "t1": 10.62,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "the Lord is on thy side",
+              "asr_large": "The Lord is on thy side",
+              "asr_turbo": "the Lord is on thy side.",
+              "asr_prompted": "the Lord is on thy side"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Bear patiently the cross of grief or pain",
+            "t0": 12.88,
+            "t1": 21.66,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "bear patiently the cross of grief or pain",
+              "asr_large": "Bear patiently the cross of grief or pain",
+              "asr_turbo": "Bear patiently the cross of grief or pain.",
+              "asr_prompted": "bear patiently the cross of grief or pain"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Leave to thy God to order and provide",
+            "t0": 23.8,
+            "t1": 32.26,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "leave to thy God to order and provide",
+              "asr_large": "Leave to thy God to order and provide",
+              "asr_turbo": "Leave to thy God to order and provide",
+              "asr_prompted": "leave to thy God to order and provide"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In every change he faithful will remain",
+            "t0": 34.86,
+            "t1": 42.88,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "in every change he faithful will remain",
+              "asr_large": "In every change he faithful will remain",
+              "asr_turbo": "In every change he faithful will remain",
+              "asr_prompted": "in every change he faithful will remain"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still, my soul,",
+            "t0": 43.66,
+            "t1": 50.0,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "Be Still My Soul",
+              "asr_large": "Be still, my soul,",
+              "asr_turbo": "Be still, my soul,",
+              "asr_prompted": "my"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy best, thy heavenly friend",
+            "t0": 50.0,
+            "t1": 54.24,
+            "conf": 0.65,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "thy best thy heavly friend",
+              "asr_large": "Thy best, thy heavenly friend",
+              "asr_turbo": "thy best, thy heavenly friend",
+              "asr_prompted": "friend"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Through thorny ways leads to a joyful end",
+            "t0": 56.34,
+            "t1": 65.99544,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Through thorny ways leads to a joyful land",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "through thorny way leads to a joyful land",
+              "asr_large": "Through thorny ways leads to a joyful end",
+              "asr_turbo": "Through thorny ways leads to a joyful end.",
+              "asr_prompted": "through thorny ways leads to a joyful land"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still, my soul,",
+            "t0": 68.61544,
+            "t1": 72.75544,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 3x, 3 agree",
+            "sources": {
+              "captions_auto": "Be Still My Soul",
+              "asr_large": "Be still, my soul,",
+              "asr_turbo": "Be still, my soul,",
+              "asr_prompted": "Be Still My Soul"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy God doth undertake",
+            "t0": 72.75544,
+            "t1": 76.13544,
+            "conf": 0.72,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "thy God do undertake",
+              "asr_large": "Thy God doth undertake",
+              "asr_turbo": "thy God doth undertake,",
+              "asr_prompted": "thy God doth undertake"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To guide the future as He has the past",
+            "t0": 79.27544,
+            "t1": 88.915436,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "to guide the future as he has the past",
+              "asr_large": "To guide the future as He has the past",
+              "asr_turbo": "To guide the future as He has the past",
+              "asr_prompted": "to guide the future as he has the past"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy hope, Thy confidence,",
+            "t0": 90.11543,
+            "t1": 95.25544,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "thy hope thy confidence",
+              "asr_large": "Thy hope, Thy confidence,",
+              "asr_turbo": "Thy hope, thy confidence,",
+              "asr_prompted": "thy hope thy confidence"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let nothing shake",
+            "t0": 95.25544,
+            "t1": 98.11543,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Let nothing shame",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "let nothing shame",
+              "asr_large": "Let nothing shake",
+              "asr_turbo": "let nothing shake",
+              "asr_prompted": "let nothing shame"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All now mysterious will be bright at last",
+            "t0": 100.71544,
+            "t1": 112.51544,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "all now mysterious will be bright at last",
+              "asr_large": "All now mysterious will be bright at last",
+              "asr_turbo": "All now mysterious will be bright at last",
+              "asr_prompted": "all now mysterious will be bright at last"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 48.0,
+            "t1": 54.24,
+            "text": "Thy best, thy heavenly friend",
+            "options": [
+              "Thy best, thy heavenly friend"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 54.34,
+            "t1": 65.99544,
+            "text": "Through thorny ways leads to a joyful end",
+            "options": [
+              "Through thorny ways leads to a joyful end",
+              "Through thorny ways leads to a joyful land"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 70.75544,
+            "t1": 76.13544,
+            "text": "Thy God doth undertake",
+            "options": [
+              "Thy God doth undertake"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 93.25544,
+            "t1": 98.11543,
+            "text": "Let nothing shake",
+            "options": [
+              "Let nothing shake",
+              "Let nothing shame"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "kQ_DD6Ft3Dg",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 10.2,
+          "lines": 14,
+          "verified": 10,
+          "checks": 4,
+          "seconds": 15.1,
+          "generatedAt": "2026-10-05T00:14:29+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "PjM6Jbd__Qc",
+      "url": "https://www.youtube.com/watch?v=PjM6Jbd__Qc",
+      "title": "Mumford & Sons ft. Jon Batiste - Awake My Soul (Live from New Orleans Jazz)",
+      "channel": "Mumford & Sons",
+      "publishedAt": "20241018",
+      "durationSec": 400,
+      "duration": "6:40",
+      "views": 4390070,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Awake my soul, awake my heart",
+            "Awake my spirit, awaken me",
+            "To the love of Christ"
+          ],
+          "times": [
+            174.1,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Awake my soul, awake my heart",
+            "Awake my spirit, awaken me",
+            "To the love of Christ"
+          ],
+          "times": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "transcriptSource": "asr",
+      "confidence": 45,
+      "notes": "Auto‑generated transcript was unintelligible and did not provide a clear structure. No reference lyrics were available, so the well‑known lyrics of the worship song “Awake My Soul” were used. Confidence is low due to lack of matching transcript evidence.",
+      "order": "Verse 1 · Chorus"
+    },
+    {
+      "videoId": "fRBdv0NujCo",
+      "url": "https://www.youtube.com/watch?v=fRBdv0NujCo",
+      "title": "06 Awake My Soul A 1000 Tongues   Laura Story",
+      "channel": "Christian Music Playlist",
+      "publishedAt": "20200527",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 160,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "X8vqewHaeo4",
+      "url": "https://www.youtube.com/watch?v=X8vqewHaeo4",
+      "title": "Be Still My Soul | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230201",
+      "durationSec": 255,
+      "duration": "4:15",
+      "views": 147837,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "kYJoQmMH354",
+      "url": "https://www.youtube.com/watch?v=kYJoQmMH354",
+      "title": "Kari Jobe - Be Still My Soul (In You I Rest) (Lyric Video) | Be still, my soul",
+      "channel": "I Worship Everyday ",
+      "publishedAt": "20220409",
+      "durationSec": 311,
+      "duration": "5:11",
+      "views": 625,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T00:14:29+00:00"
+}

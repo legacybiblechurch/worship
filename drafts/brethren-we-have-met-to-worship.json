@@ -1,0 +1,973 @@
+{
+  "slug": "brethren-we-have-met-to-worship",
+  "title": "Brethren We Have Met to Worship",
+  "input": "Brethren We Have Met to Worship",
+  "isNew": true,
+  "forced": null,
+  "signature": "b3ee65457be08a06",
+  "generatedAt": "2026-10-05T13:48:45+00:00",
+  "titleKey": "brethren we have met to worship",
+  "searchCandidates": [
+    {
+      "videoId": "i3JgiYluox0",
+      "url": "https://www.youtube.com/watch?v=i3JgiYluox0",
+      "title": "Brethren We Have Met To Worship // Sounds Like Reign",
+      "channel": "Sounds Like Reign",
+      "publishedAt": "20240418",
+      "durationSec": 224,
+      "duration": "3:44",
+      "views": 756297,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "u7ELWz80FXI",
+      "url": "https://www.youtube.com/watch?v=u7ELWz80FXI",
+      "title": "Brethren, We Have Met To Worship (Hymn 334)",
+      "channel": "Hymns of Grace",
+      "publishedAt": "20220708",
+      "durationSec": 196,
+      "duration": "3:16",
+      "views": 90074,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "RPGUg6ABYEw",
+      "url": "https://www.youtube.com/watch?v=RPGUg6ABYEw",
+      "title": "Brethren, We Have Met To Worship- Congregational Singing",
+      "channel": "stillamazed27",
+      "publishedAt": "20131112",
+      "durationSec": 111,
+      "duration": "1:51",
+      "views": 23533,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "ozYDIkvATHI",
+      "url": "https://www.youtube.com/watch?v=ozYDIkvATHI",
+      "title": "368 Brethren We Have Met to Worship",
+      "channel": "Basic Hymns",
+      "publishedAt": "20231125",
+      "durationSec": 154,
+      "duration": "2:34",
+      "views": 822,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "8V6FWEWVatE",
+      "url": "https://www.youtube.com/watch?v=8V6FWEWVatE",
+      "title": "Brethren, We Have Met to Worship - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20250921",
+      "durationSec": 180,
+      "duration": "3:00",
+      "views": 79039,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "D5x-y1GA-Bs",
+      "url": "https://www.youtube.com/watch?v=D5x-y1GA-Bs",
+      "title": "Brethren We Have Met To Worship",
+      "channel": "Christian Lyrics Videos",
+      "publishedAt": "20230706",
+      "durationSec": 179,
+      "duration": "2:59",
+      "views": 10326,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "xkoKDUHB7yA",
+      "url": "https://www.youtube.com/watch?v=xkoKDUHB7yA",
+      "title": "\"Brethren We Have Met to Worship\" • Congregational Hymn Singing • Crown Hymns #335",
+      "channel": "Temple Baptist Church",
+      "publishedAt": "20250303",
+      "durationSec": 186,
+      "duration": "3:06",
+      "views": 8421,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "RAWzJnbGbhQ",
+      "url": "https://www.youtube.com/watch?v=RAWzJnbGbhQ",
+      "title": "Hymn - Brethren We Have Met To Worship",
+      "channel": "Thankful Barabbas",
+      "publishedAt": "20220428",
+      "durationSec": 199,
+      "duration": "3:19",
+      "views": 6880,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "u7ELWz80FXI",
+      "url": "https://www.youtube.com/watch?v=u7ELWz80FXI",
+      "title": "Brethren, We Have Met To Worship (Hymn 334)",
+      "channel": "Hymns of Grace",
+      "publishedAt": "20220708",
+      "durationSec": 196,
+      "duration": "3:16",
+      "views": 90074,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Brethren, we have met to worship and adore the Lord our God",
+            "Will you pray with all your power While",
+            "We try to preach the word All",
+            "Is vain unless the spirit",
+            "Of the Holy One comes down",
+            "Brethren, pray and holy manna",
+            "Will be showered all around"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Brethren see poor sinners round you some bring",
+            "On the brink of war",
+            "Death is coming, hell is moving Can",
+            "You bear to let them go?",
+            "See our fathers and our mothers",
+            "And our children sinking down",
+            "Brethren, pray and holy manna will be showered all around let",
+            "Us love our God supremely"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Let us love each other too",
+            "Let us love and pray for sinners till our God makes",
+            "All things new",
+            "Then He'll call us home to heaven,",
+            "At His table we'll sit down",
+            "Christ will gird himself and serve us",
+            "With sweet manna all around Then",
+            "He'll call us home to heaven"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "At his table we'll sit down Christ",
+            "Will burn himself and serve us",
+            "With sweet man all around you"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 65,
+      "notes": "No reference lyrics; constructed from whisper transcript. Lines broken to ~6‑word phrases. Repeated chorus identified from transcript lines 142‑169.",
+      "order": "Intro · Verse 1 · Verse 2 · Refrain · Chorus · Chorus",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Brethren, we have met to worship and adore the Lord our God",
+            "t0": 12.42,
+            "t1": 22.24,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "brethren we have met to worship and adore the lord our god",
+              "asr_large": "Brethren, we have met to worship and adore the Lord our God",
+              "asr_turbo": "Brethren, we have met to worship and adore the Lord our God.",
+              "asr_prompted": "to worship and adore the lord our god"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will you pray with all your power While",
+            "t0": 22.98,
+            "t1": 28.8,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "will you pray with all your power while",
+              "asr_large": "Will you pray with all your power While",
+              "asr_turbo": "Will you pray with all your power While",
+              "asr_prompted": "will you pray with all your power while"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We try to preach the word All",
+            "t0": 28.8,
+            "t1": 34.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "we try to preach the word all",
+              "asr_large": "We try to preach the word All",
+              "asr_turbo": "we try to preach the word? All",
+              "asr_prompted": "we try to preach the word all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is vain unless the spirit",
+            "t0": 34.32,
+            "t1": 38.34,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "is reign on the spirit",
+              "asr_large": "Is vain unless the spirit",
+              "asr_turbo": "is vain unless the Spirit",
+              "asr_prompted": "is vain unless the spirit"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of the Holy One comes down",
+            "t0": 38.92,
+            "t1": 43.54,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "of the holy one comes down",
+              "asr_large": "Of the Holy One comes down",
+              "asr_turbo": "of the Holy One comes down.",
+              "asr_prompted": "of the holy one comes down"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Brethren, pray and holy manna",
+            "t0": 44.2,
+            "t1": 49.3,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "brethren pray and holy manna",
+              "asr_large": "Brethren, pray and holy manna",
+              "asr_turbo": "Brethren, pray and holy manna",
+              "asr_prompted": "brethren pray and holy manna"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will be showered all around",
+            "t0": 49.64,
+            "t1": 53.92,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "will be showered all around",
+              "asr_large": "Will be showered all around",
+              "asr_turbo": "Will be showered all around",
+              "asr_prompted": "will be showered all around"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Brethren see poor sinners round you some bring",
+            "t0": 64.28,
+            "t1": 71.02,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Brethren, see poor sinners round you Slumbering",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "asr_large": "Brethren, see poor sinners round you Slumbering",
+              "asr_turbo": "Brethren, see poor sinners round you Some bring",
+              "asr_prompted": "brethren see poor sinners round you some bring"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On the brink of war",
+            "t0": 71.02,
+            "t1": 74.24,
+            "conf": 0.74,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "the brink of more",
+              "asr_large": "On the brink of war",
+              "asr_turbo": "on the brink of war",
+              "asr_prompted": "on the brink of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Death is coming, hell is moving Can",
+            "t0": 74.76,
+            "t1": 80.84,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "death is coming hell is moving can",
+              "asr_large": "Death is coming, hell is moving Can",
+              "asr_turbo": "Death is coming, hell is moving Can",
+              "asr_prompted": "death is coming hell is moving can"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You bear to let them go?",
+            "t0": 80.84,
+            "t1": 85.04,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "you bear to let them go",
+              "asr_large": "You bear to let them go?",
+              "asr_turbo": "you bear to let them go?",
+              "asr_prompted": "you bear to let them go"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "See our fathers and our mothers",
+            "t0": 85.6,
+            "t1": 90.42,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "our fathers and our mothers",
+              "asr_large": "See our fathers and our mothers",
+              "asr_turbo": "See our fathers and our mothers",
+              "asr_prompted": "see our fathers and our mothers"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And our children sinking down",
+            "t0": 90.8,
+            "t1": 95.5,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and our children sinking down",
+              "asr_large": "And our children sinking down",
+              "asr_turbo": "And our children sinking down",
+              "asr_prompted": "and our children sinking down"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Brethren, pray and holy manna will be showered all around let",
+            "t0": 96.26,
+            "t1": 111.21144,
+            "conf": 0.8,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "brethren holy let",
+              "asr_large": "Brethren, pray and holy manna will be showered all around let",
+              "asr_turbo": "Brethren, ray and holy manna will be showered all around. Let",
+              "asr_prompted": "brethren pray and holy manna will be showered all around let"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Us love our God supremely",
+            "t0": 111.21144,
+            "t1": 115.611435,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "us supremely",
+              "asr_large": "Us love our God supremely",
+              "asr_turbo": "us love our God so preemly.",
+              "asr_prompted": "us love our god supremely"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let us love each other too",
+            "t0": 116.17143,
+            "t1": 120.73144,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "let us love each other too",
+              "asr_large": "Let us love each other too",
+              "asr_turbo": "Let us love each other too.",
+              "asr_prompted": "let us love each other too"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let us love and pray for sinners till our God makes",
+            "t0": 121.59144,
+            "t1": 129.53143,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "let us love and pray for our sins god makes",
+              "asr_large": "Let us love and pray for sinners till our God makes",
+              "asr_turbo": "Let us love and pray for sinners, till our God makes",
+              "asr_prompted": "love and pray for sinners till our god makes"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All things new",
+            "t0": 129.53143,
+            "t1": 131.57144,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "all things new",
+              "asr_large": "All things new",
+              "asr_turbo": "all things new.",
+              "asr_prompted": "all things new"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Then He'll call us home to heaven,",
+            "t0": 132.27144,
+            "t1": 137.23145,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "then he'll call us home to heaven",
+              "asr_large": "Then He'll call us home to heaven,",
+              "asr_turbo": "Then He'll call us home to heaven,",
+              "asr_prompted": "then he'll call us home to heaven"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "At His table we'll sit down",
+            "t0": 137.23145,
+            "t1": 142.29144,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "at his table we'll sit down",
+              "asr_large": "At His table we'll sit down",
+              "asr_turbo": "at His table we'll sit down.",
+              "asr_prompted": "at his table we'll sit down"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Christ will gird himself and serve us",
+            "t0": 142.89143,
+            "t1": 148.07144,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "christ will gird himself and serve us",
+              "asr_large": "Christ will gird himself and serve us",
+              "asr_turbo": "Christ will gird Himself and serve us",
+              "asr_prompted": "christ will gird himself and serve us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "With sweet manna all around Then",
+            "t0": 148.33144,
+            "t1": 154.19144,
+            "conf": 0.84,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "with",
+              "asr_large": "With sweet manna all around Then",
+              "asr_turbo": "with sweet manna all around. Then",
+              "asr_prompted": "with sweet manna all around then"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He'll call us home to heaven",
+            "t0": 154.19144,
+            "t1": 158.29144,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "home to heaven",
+              "asr_large": "He'll call us home to heaven",
+              "asr_turbo": "He'll call us home to heaven,",
+              "asr_prompted": "he'll call us home to heaven"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "At his table we'll sit down Christ",
+            "t0": 158.87143,
+            "t1": 164.87143,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "and his table will sit down christ",
+              "asr_large": "At his table we'll sit down Christ",
+              "asr_turbo": "at His table we'll sit down. Christ",
+              "asr_prompted": "at his table we'll sit down christ"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will burn himself and serve us",
+            "t0": 164.87143,
+            "t1": 169.41144,
+            "conf": 0.78,
+            "status": "check",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "will burn himself and serve us",
+              "asr_large": "Will gird himself and serve us",
+              "asr_turbo": "will burn Himself and serve us",
+              "asr_prompted": "will burn himself and serve us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "With sweet man all around you",
+            "t0": 169.47144,
+            "t1": 173.93143,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "With sweet manna all around. Thank you",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "With sweet manna all around",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "with sweet man all around you",
+              "asr_large": "With sweet manna all around",
+              "asr_turbo": "with sweet manna all around. Thank you.",
+              "asr_prompted": "with sweet man all around you"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 32.32,
+            "t1": 38.34,
+            "text": "Is vain unless the spirit",
+            "options": [
+              "Is vain unless the spirit"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 62.28,
+            "t1": 71.02,
+            "text": "Brethren see poor sinners round you some bring",
+            "options": [
+              "Brethren see poor sinners round you some bring",
+              "Brethren, see poor sinners round you Slumbering"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 69.02,
+            "t1": 74.24,
+            "text": "On the brink of war",
+            "options": [
+              "On the brink of war"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 109.21144,
+            "t1": 115.611435,
+            "text": "Us love our God supremely",
+            "options": [
+              "Us love our God supremely"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 119.59144,
+            "t1": 129.53143,
+            "text": "Let us love and pray for sinners till our God makes",
+            "options": [
+              "Let us love and pray for sinners till our God makes"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 152.19144,
+            "t1": 158.29144,
+            "text": "He'll call us home to heaven",
+            "options": [
+              "He'll call us home to heaven"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 156.87143,
+            "t1": 164.87143,
+            "text": "At his table we'll sit down Christ",
+            "options": [
+              "At his table we'll sit down Christ"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 162.87143,
+            "t1": 169.41144,
+            "text": "Will burn himself and serve us",
+            "options": [
+              "Will burn himself and serve us"
+            ],
+            "why": "independent sources agree"
+          },
+          {
+            "t0": 167.47144,
+            "t1": 173.93143,
+            "text": "With sweet man all around you",
+            "options": [
+              "With sweet man all around you",
+              "With sweet manna all around. Thank you",
+              "With sweet manna all around"
+            ],
+            "why": "independent sources agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "u7ELWz80FXI",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 7.5,
+          "lines": 26,
+          "verified": 17,
+          "checks": 9,
+          "seconds": 10.3,
+          "generatedAt": "2026-10-05T13:48:59+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "i3JgiYluox0",
+      "url": "https://www.youtube.com/watch?v=i3JgiYluox0",
+      "title": "Brethren We Have Met To Worship // Sounds Like Reign",
+      "channel": "Sounds Like Reign",
+      "publishedAt": "20240418",
+      "durationSec": 224,
+      "duration": "3:44",
+      "views": 756297,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "Brethren we have met to worship",
+            "And adore the Lord our God"
+          ],
+          "times": [
+            0.0,
+            null
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Will you pray with all power",
+            "While we try to preach word",
+            "All is vain unless spirit",
+            "Of the Holy One comes down"
+          ],
+          "times": [
+            27.1,
+            31.7,
+            36.2,
+            41.0
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Brethren pray and holy manna",
+            "Will be showered all around",
+            "Sisters will you join and help",
+            "Moses' sister aided him"
+          ],
+          "times": [
+            45.8,
+            51.5,
+            55.8,
+            69.8
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Will you help trembling mourners",
+            "Who are struggling hard with sin",
+            "Tell them all about Savior",
+            "Tell them He will be found"
+          ],
+          "times": [
+            73.8,
+            78.9,
+            83.0,
+            87.6
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Sisters pray and holy manna",
+            "Will be showered all around"
+          ],
+          "times": [
+            92.7,
+            98.4
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "Brother come and worship Brother come and worship"
+          ],
+          "times": [
+            102.5
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Let us love our God supremely",
+            "Let us love each other too",
+            "Let us love and pray for sinners",
+            "Till our God makes all things new",
+            "Then He'll call us home to heaven",
+            "At His table we'll sit down",
+            "Christ will gird Himself and serve us",
+            "With sweet manna all around"
+          ],
+          "times": [
+            117.4,
+            134.7,
+            138.9,
+            143.8,
+            148.1,
+            153.0,
+            157.6,
+            163.5
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Pray, rain, come and wash it",
+            "Pray, rain, come and wash it"
+          ],
+          "times": [
+            167.8,
+            176.2
+          ]
+        },
+        {
+          "label": "Outro",
+          "lines": [
+            "Oh pray pray come and worship",
+            "Come",
+            "You"
+          ],
+          "times": [
+            184.9,
+            191.7,
+            214.9
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 55,
+      "notes": "Transcript was auto‑generated and contains many garbled words. No reference lyrics were available, so wording was corrected for readability while preserving the recorded order. Repeated lines were kept only where the transcript showed them explicitly.",
+      "order": "Intro · Verse 1 · Verse 2 · Verse 3 · Verse 4 · Refrain · Bridge · Tag · Outro"
+    },
+    {
+      "videoId": "RPGUg6ABYEw",
+      "url": "https://www.youtube.com/watch?v=RPGUg6ABYEw",
+      "title": "Brethren, We Have Met To Worship- Congregational Singing",
+      "channel": "stillamazed27",
+      "publishedAt": "20131112",
+      "durationSec": 111,
+      "duration": "1:51",
+      "views": 23533,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "ozYDIkvATHI",
+      "url": "https://www.youtube.com/watch?v=ozYDIkvATHI",
+      "title": "368 Brethren We Have Met to Worship",
+      "channel": "Basic Hymns",
+      "publishedAt": "20231125",
+      "durationSec": 154,
+      "duration": "2:34",
+      "views": 822,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "8V6FWEWVatE",
+      "url": "https://www.youtube.com/watch?v=8V6FWEWVatE",
+      "title": "Brethren, We Have Met to Worship - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20250921",
+      "durationSec": 180,
+      "duration": "3:00",
+      "views": 79039,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "D5x-y1GA-Bs",
+      "url": "https://www.youtube.com/watch?v=D5x-y1GA-Bs",
+      "title": "Brethren We Have Met To Worship",
+      "channel": "Christian Lyrics Videos",
+      "publishedAt": "20230706",
+      "durationSec": 179,
+      "duration": "2:59",
+      "views": 10326,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "xkoKDUHB7yA",
+      "url": "https://www.youtube.com/watch?v=xkoKDUHB7yA",
+      "title": "\"Brethren We Have Met to Worship\" • Congregational Hymn Singing • Crown Hymns #335",
+      "channel": "Temple Baptist Church",
+      "publishedAt": "20250303",
+      "durationSec": 186,
+      "duration": "3:06",
+      "views": 8421,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "RAWzJnbGbhQ",
+      "url": "https://www.youtube.com/watch?v=RAWzJnbGbhQ",
+      "title": "Hymn - Brethren We Have Met To Worship",
+      "channel": "Thankful Barabbas",
+      "publishedAt": "20220428",
+      "durationSec": 199,
+      "duration": "3:19",
+      "views": 6880,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T13:48:59+00:00"
+}

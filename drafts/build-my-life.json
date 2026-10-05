@@ -1,0 +1,1299 @@
+{
+  "slug": "build-my-life",
+  "title": "Build My Life",
+  "input": "Build My Life",
+  "isNew": true,
+  "forced": null,
+  "signature": "4965f756625a47dd",
+  "generatedAt": "2026-10-05T03:33:00+00:00",
+  "titleKey": "build my life",
+  "searchCandidates": [
+    {
+      "videoId": "QZW4_8_zCBE",
+      "url": "https://www.youtube.com/watch?v=QZW4_8_zCBE",
+      "title": "Pat Barrett - Build My Life (Lyric Video) (ft. Cory Asbury)",
+      "channel": "Pat Barrett",
+      "publishedAt": "20190104",
+      "durationSec": 263,
+      "duration": "4:23",
+      "views": 10576816,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "xh86R7_w1_8",
+      "url": "https://www.youtube.com/watch?v=xh86R7_w1_8",
+      "title": "Build My Life - Lyric Video (Pat Barrett)",
+      "channel": "Worship Songs For God",
+      "publishedAt": "20210612",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 1319740,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "HnTsC0wzP0g",
+      "url": "https://www.youtube.com/watch?v=HnTsC0wzP0g",
+      "title": "Build My Life -  Pat Barrett [Lyric Video]",
+      "channel": "Debora Gomez",
+      "publishedAt": "20190223",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 53672,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "G5oim3KEnXk",
+      "url": "https://www.youtube.com/watch?v=G5oim3KEnXk",
+      "title": "Pat Barrett | Build My Life feat (Chris Tomlin) Lyrics",
+      "channel": "Voices of Heaven",
+      "publishedAt": "20190726",
+      "durationSec": 309,
+      "duration": "5:09",
+      "views": 49279,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "uNly2Sx-nHE",
+      "url": "https://www.youtube.com/watch?v=uNly2Sx-nHE",
+      "title": "Pat Barrett - Build My Life (with lyrics)(2018)",
+      "channel": "Gary McDuffee",
+      "publishedAt": "20200501",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 10649,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "GNtvB0JAiGM",
+      "url": "https://www.youtube.com/watch?v=GNtvB0JAiGM",
+      "title": "Build My Life - Pat Barrett feat. Chris Tomlin (Lyrics)",
+      "channel": "WMP Hymn Music",
+      "publishedAt": "20230817",
+      "durationSec": 309,
+      "duration": "5:09",
+      "views": 6965,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "EFoGe2la0Tk",
+      "url": "https://www.youtube.com/watch?v=EFoGe2la0Tk",
+      "title": "Pat Barrett Build My Life Lyrics",
+      "channel": "Believers' Fellowship Church",
+      "publishedAt": "20240615",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 1111,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "SWa2nY2mwBk",
+      "url": "https://www.youtube.com/watch?v=SWa2nY2mwBk",
+      "title": "Pat Barrett - Bulid my life Lyrics (lyric video)",
+      "channel": "Marc Joram Y. Bufa",
+      "publishedAt": "20240609",
+      "durationSec": 263,
+      "duration": "4:23",
+      "views": 629,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "G5oim3KEnXk",
+      "url": "https://www.youtube.com/watch?v=G5oim3KEnXk",
+      "title": "Pat Barrett | Build My Life feat (Chris Tomlin) Lyrics",
+      "channel": "Voices of Heaven",
+      "publishedAt": "20190726",
+      "durationSec": 309,
+      "duration": "5:09",
+      "views": 49279,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "Worthy of every song we could ever sing"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Worthy of all the praise we could ever bring"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Worthy of every breath we could ever breathe",
+            "We live for you",
+            "Oh, we live for you, Jesus Jesus,",
+            "The name above every other name Jesus,",
+            "The only one who could ever save Worthy,",
+            "Worthy of every breath we could ever breathe",
+            "We live for You,",
+            "We live for you"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Holy, there is no one like",
+            "You There is none beside You Open",
+            "Up my eyes in wonder Show me who You are and",
+            "Fill me with your heart and lead me in your love",
+            "To those around me"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Jesus, the name above every other name"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Jesus, the only one who could ever save Worthy,",
+            "Worthy of every breath we could ever breathe",
+            "Live for you, oh we live for you",
+            "And we sing, holy,",
+            "There is no one like you",
+            "There is none beside you Open",
+            "Up my eyes in wonder And",
+            "Show me who you are And"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Fill me with your heart And",
+            "Lead me in your love to those around me",
+            "I will build my life upon you"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "Oh, I will build my life upon your love It",
+            "Is a firm foundation",
+            "And I will put my trust in you alone And",
+            "I will not be shaken I",
+            "Will build my life upon your love It",
+            "Is a firm foundation",
+            "And I will put my trust in You alone And",
+            "I will not be shaken"
+          ]
+        },
+        {
+          "label": "Verse 6",
+          "lines": [
+            "Holy, there is no one like You There",
+            "Is none beside You Open",
+            "Up my eyes in wonder Show me who You are and",
+            "Fill me with your heart and lead me in your love. And",
+            "I will fill my life upon your love",
+            "Is a firm foundation",
+            "And I will put my trust in You alone And",
+            "I will not be shaken I"
+          ]
+        },
+        {
+          "label": "Verse 7",
+          "lines": [
+            "Will build my life upon Your love",
+            "Is a firm foundation",
+            "And I will put my trust in You alone And",
+            "I will not be shaken"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 85,
+      "notes": "",
+      "order": "",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Worthy of every song we could ever sing",
+            "t0": 10.26,
+            "t1": 13.66,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Worthy of every song we could ever sing",
+              "asr_turbo": "Worthy of every song we could ever sing"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Worthy of all the praise we could ever bring",
+            "t0": 16.6,
+            "t1": 20.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Worthy of all the praise we could ever bring",
+              "asr_turbo": "Worthy of all the praise we could ever bring"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Worthy of every breath we could ever breathe",
+            "t0": 23.2,
+            "t1": 26.92,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "Worthy of every breath we could ever breathe",
+              "asr_turbo": "Worthy of every breath we could ever bring"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We live for you",
+            "t0": 27.4,
+            "t1": 28.78,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "We live for you",
+              "asr_turbo": "We live for you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Oh, we live for you, Jesus Jesus,",
+            "t0": 30.4,
+            "t1": 37.4,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Oh, we live for you, Jesus Jesus,",
+              "asr_turbo": "Oh, we live for you, Jesus Jesus,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The name above every other name Jesus,",
+            "t0": 37.4,
+            "t1": 43.98,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The name above every other name Jesus,",
+              "asr_turbo": "the name above every other name Jesus,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The only one who could ever save Worthy,",
+            "t0": 43.98,
+            "t1": 49.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The only one who could ever save Worthy,",
+              "asr_turbo": "the only one who could ever say Worthy,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Worthy of every breath we could ever breathe",
+            "t0": 49.72,
+            "t1": 53.56,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "Worthy of every breath we could ever breathe",
+              "asr_turbo": "worthy of every breath we could ever breathe"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We live for You,",
+            "t0": 53.68,
+            "t1": 57.02,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "We live for You,",
+              "asr_turbo": "We live for you."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We live for you",
+            "t0": 57.02,
+            "t1": 58.92,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Oh we live for You",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 2 other occurrences",
+            "sources": {
+              "asr_large": "Oh we live for You",
+              "asr_turbo": "Oh, we live for you."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Holy, there is no one like",
+            "t0": 61.66,
+            "t1": 65.98,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Holy, there is no one like",
+              "asr_turbo": "Holy, there is no one like"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You There is none beside You Open",
+            "t0": 65.98,
+            "t1": 71.02,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "You There is none beside You Open",
+              "asr_turbo": "There is none beside you. Open"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Up my eyes in wonder Show me who You are and",
+            "t0": 71.02,
+            "t1": 78.3728,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Up my eyes in wonder Show me who You are and",
+              "asr_turbo": "up my eyes in wonder. And show me who you are and"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fill me with your heart and lead me in your love",
+            "t0": 78.3728,
+            "t1": 84.912796,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Fill me with your heart and lead me in your love",
+              "asr_turbo": "fill me with your heart and lead me in your love"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To those around me",
+            "t0": 84.912796,
+            "t1": 88.5728,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "To those around me",
+              "asr_turbo": "to those around me."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, the name above every other name",
+            "t0": 96.4928,
+            "t1": 100.5128,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Jesus, the name above every other name",
+              "asr_turbo": "Jesus, the name above every other name."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus, the only one who could ever save Worthy,",
+            "t0": 103.1128,
+            "t1": 109.8728,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Jesus the only one who could ever say Worthy Worthy",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Jesus, the only one who could ever save Worthy,",
+              "asr_turbo": "Jesus the only one who could ever say Worthy Worthy"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Worthy of every breath we could ever breathe",
+            "t0": 109.8728,
+            "t1": 114.3728,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Worthy of every breath we could ever breathe We",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 2 other occurrences",
+            "sources": {
+              "asr_large": "Worthy of every breath we could ever breathe We",
+              "asr_turbo": "Worthy of every breath we could ever breathe We"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Live for you, oh we live for you",
+            "t0": 114.3728,
+            "t1": 119.3728,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Live for you, oh we live for you",
+              "asr_turbo": "live for you Oh we live for you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And we sing, holy,",
+            "t0": 120.5728,
+            "t1": 123.312805,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And we sing, holy,",
+              "asr_turbo": "And we sing holy"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "There is no one like you",
+            "t0": 123.312805,
+            "t1": 126.452805,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "There is no one like you",
+              "asr_turbo": "There is no one like you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "There is none beside you Open",
+            "t0": 126.7928,
+            "t1": 131.0528,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "There is love beside you Open",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "There is none beside you Open",
+              "asr_turbo": "There is love beside you Open"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Up my eyes in wonder And",
+            "t0": 131.0528,
+            "t1": 135.1328,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Up my eyes and wonder",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Up my eyes in wonder And",
+              "asr_turbo": "up my eyes and wonder"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Show me who you are And",
+            "t0": 135.1328,
+            "t1": 138.47281,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Show me who you are And",
+              "asr_turbo": "Show me who you are And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fill me with your heart And",
+            "t0": 138.47281,
+            "t1": 142.0128,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Fill me with your heart And",
+              "asr_turbo": "fill me with your heart And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lead me in your love to those around me",
+            "t0": 142.0128,
+            "t1": 148.39279,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Lead me in your love to those around me",
+              "asr_turbo": "lead me in your love To those around me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will build my life upon you",
+            "t0": 148.7728,
+            "t1": 156.8656,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I will build my life upon you",
+              "asr_turbo": "I will build my life upon you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Oh, I will build my life upon your love It",
+            "t0": 161.4856,
+            "t1": 170.32559,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Oh, I will build my life upon your love It",
+              "asr_turbo": "Oh, I will build my life upon your love It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is a firm foundation",
+            "t0": 170.32559,
+            "t1": 174.4656,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Is a firm foundation",
+              "asr_turbo": "is a firm foundation"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I will put my trust in you alone And",
+            "t0": 175.1056,
+            "t1": 183.2856,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "And I will put my trust in you alone And",
+              "asr_turbo": "And I will put my trust in you alone And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will not be shaken I",
+            "t0": 183.2856,
+            "t1": 189.1656,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 2 agree",
+            "sources": {
+              "asr_large": "I will not be shaken I",
+              "asr_turbo": "I will not be shaken I"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will build my life upon your love It",
+            "t0": 189.1656,
+            "t1": 196.6656,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Will build my life upon your love It",
+              "asr_turbo": "will build my life upon your love It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is a firm foundation",
+            "t0": 196.6656,
+            "t1": 201.1456,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 3 agree",
+            "sources": {
+              "asr_large": "Is a firm foundation",
+              "asr_turbo": "is a firm foundation"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I will put my trust in You alone And",
+            "t0": 201.1656,
+            "t1": 210.2656,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "And I will put my trust in You alone And",
+              "asr_turbo": "And I will put my trust in you alone And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will not be shaken",
+            "t0": 210.2656,
+            "t1": 214.32559,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I will not be shaken",
+              "asr_turbo": "I will not be shaken"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Holy, there is no one like You There",
+            "t0": 215.18561,
+            "t1": 220.9856,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Holy, there is no one like You There",
+              "asr_turbo": "Holy, there is no one like you There"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is none beside You Open",
+            "t0": 220.9856,
+            "t1": 224.5256,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Is none beside You Open",
+              "asr_turbo": "is none beside you Open"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Up my eyes in wonder Show me who You are and",
+            "t0": 224.5256,
+            "t1": 231.88559,
+            "conf": 0.69,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Up my eyes in wonder Show me who You are and",
+              "asr_turbo": "up my eyes and want to Show me who You are and"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fill me with your heart and lead me in your love. And",
+            "t0": 231.88559,
+            "t1": 238.6984,
+            "conf": 0.69,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Fill me with your heart and lead me in your love. And",
+              "asr_turbo": "fill me with Your heart and lead me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will fill my life upon your love",
+            "t0": 238.6984,
+            "t1": 249.73839,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I will fill my life upon your love",
+              "asr_turbo": "I will fill my life upon your love. It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is a firm foundation",
+            "t0": 249.2784,
+            "t1": 254.0584,
+            "conf": 0.69,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "asr_large": "Is a firm foundation",
+              "asr_turbo": "is a foundation."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I will put my trust in You alone And",
+            "t0": 254.93839,
+            "t1": 263.6984,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "And I will put my trust in You alone And",
+              "asr_turbo": "And I will put my trust in You alone And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will not be shaken I",
+            "t0": 263.6984,
+            "t1": 269.27838,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I will not reach it again I",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I will not be shaken I",
+              "asr_turbo": "I will not reach it again I"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will build my life upon Your love",
+            "t0": 269.27838,
+            "t1": 275.77838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Will build my life upon Your love",
+              "asr_turbo": "will build my life upon Your love"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Is a firm foundation",
+            "t0": 276.0784,
+            "t1": 281.21838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "It is a firm foundation",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 3 other occurrences",
+            "sources": {
+              "asr_large": "It is a firm foundation",
+              "asr_turbo": "It is a firm foundation"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I will put my trust in You alone And",
+            "t0": 281.89838,
+            "t1": 291.0184,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 4x, 4 agree",
+            "sources": {
+              "asr_large": "And I will put my trust in You alone And",
+              "asr_turbo": "I will put my trust in you alone And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will not be shaken",
+            "t0": 291.0184,
+            "t1": 296.0184,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I will not be shaken",
+              "asr_turbo": "I will not be shaken"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 101.1128,
+            "t1": 109.8728,
+            "text": "Jesus, the only one who could ever save Worthy,",
+            "options": [
+              "Jesus, the only one who could ever save Worthy,",
+              "Jesus the only one who could ever say Worthy Worthy"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 124.7928,
+            "t1": 131.0528,
+            "text": "There is none beside you Open",
+            "options": [
+              "There is none beside you Open",
+              "There is love beside you Open"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 129.0528,
+            "t1": 135.1328,
+            "text": "Up my eyes in wonder And",
+            "options": [
+              "Up my eyes in wonder And",
+              "Up my eyes and wonder"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 222.5256,
+            "t1": 231.88559,
+            "text": "Up my eyes in wonder Show me who You are and",
+            "options": [
+              "Up my eyes in wonder Show me who You are and"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 229.88559,
+            "t1": 238.6984,
+            "text": "Fill me with your heart and lead me in your love. And",
+            "options": [
+              "Fill me with your heart and lead me in your love. And"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 247.2784,
+            "t1": 254.0584,
+            "text": "Is a firm foundation",
+            "options": [
+              "Is a firm foundation"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 261.6984,
+            "t1": 269.27838,
+            "text": "I will not be shaken I",
+            "options": [
+              "I will not be shaken I",
+              "I will not reach it again I"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "G5oim3KEnXk",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 9.0,
+          "excluded": [
+            {
+              "t0": 92.7128,
+              "text": "Sing Jesus"
+            },
+            {
+              "t0": 306.0984,
+              "text": "Thank you"
+            }
+          ],
+          "lines": 47,
+          "verified": 40,
+          "checks": 7,
+          "seconds": 23.7,
+          "generatedAt": "2026-10-05T03:33:27+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "uNly2Sx-nHE",
+      "url": "https://www.youtube.com/watch?v=uNly2Sx-nHE",
+      "title": "Pat Barrett - Build My Life (with lyrics)(2018)",
+      "channel": "Gary McDuffee",
+      "publishedAt": "20200501",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 10649,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "Worthy of every song we could ever sing",
+            "Worthy of all the praise we could ever win",
+            "Worthy of every breath we could ever breathe",
+            "We live for You",
+            "Oh we live for You"
+          ],
+          "times": [
+            0.0,
+            12.2,
+            18.9,
+            25.0,
+            28.4
+          ]
+        },
+        {
+          "label": "Verse",
+          "lines": [
+            "Jesus, the name above every other name",
+            "Jesus, the only one who could ever save"
+          ],
+          "times": [
+            34.6,
+            41.2
+          ]
+        },
+        {
+          "label": "Verse",
+          "lines": [
+            "Worthy of every breath we could ever breathe",
+            "We live for You"
+          ],
+          "times": [
+            48.1,
+            52.4
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Holy, there is no one like You",
+            "There is none beside You"
+          ],
+          "times": [
+            55.0,
+            112.1
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Open up my eyes in wonder",
+            "And show me who You are",
+            "And fill me with Your heart",
+            "Lead me in Your love to those around me"
+          ],
+          "times": [
+            117.6,
+            208.2,
+            216.1,
+            219.8
+          ]
+        },
+        {
+          "label": "Verse",
+          "lines": [
+            "Jesus, the name above every other name",
+            "Jesus, the only one who could ever save"
+          ],
+          "times": [
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Verse",
+          "lines": [
+            "Worthy of every breath we could ever breathe",
+            "We live for You",
+            "Oh we live for You"
+          ],
+          "times": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Holy, there is no one like You",
+            "There is none beside You",
+            "Open up my eyes in wonder",
+            "And show me who You are"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "Your love to those around me"
+          ],
+          "times": [
+            223.1
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "QZW4_8_zCBE",
+      "url": "https://www.youtube.com/watch?v=QZW4_8_zCBE",
+      "title": "Pat Barrett - Build My Life (Lyric Video) (ft. Cory Asbury)",
+      "channel": "Pat Barrett",
+      "publishedAt": "20190104",
+      "durationSec": 263,
+      "duration": "4:23",
+      "views": 10576816,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 403: error code: 1010\n",
+      "order": ""
+    },
+    {
+      "videoId": "xh86R7_w1_8",
+      "url": "https://www.youtube.com/watch?v=xh86R7_w1_8",
+      "title": "Build My Life - Lyric Video (Pat Barrett)",
+      "channel": "Worship Songs For God",
+      "publishedAt": "20210612",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 1319740,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "whisper",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "HnTsC0wzP0g",
+      "url": "https://www.youtube.com/watch?v=HnTsC0wzP0g",
+      "title": "Build My Life -  Pat Barrett [Lyric Video]",
+      "channel": "Debora Gomez",
+      "publishedAt": "20190223",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 53672,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (ERROR: [youtube] xh86R7_w1_8: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] HnTsC0wzP0g: Requested format is not available. Use --list-formats for a list of available formats).",
+      "order": ""
+    },
+    {
+      "videoId": "GNtvB0JAiGM",
+      "url": "https://www.youtube.com/watch?v=GNtvB0JAiGM",
+      "title": "Build My Life - Pat Barrett feat. Chris Tomlin (Lyrics)",
+      "channel": "WMP Hymn Music",
+      "publishedAt": "20230817",
+      "durationSec": 309,
+      "duration": "5:09",
+      "views": 6965,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "EFoGe2la0Tk",
+      "url": "https://www.youtube.com/watch?v=EFoGe2la0Tk",
+      "title": "Pat Barrett Build My Life Lyrics",
+      "channel": "Believers' Fellowship Church",
+      "publishedAt": "20240615",
+      "durationSec": 246,
+      "duration": "4:06",
+      "views": 1111,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "SWa2nY2mwBk",
+      "url": "https://www.youtube.com/watch?v=SWa2nY2mwBk",
+      "title": "Pat Barrett - Bulid my life Lyrics (lyric video)",
+      "channel": "Marc Joram Y. Bufa",
+      "publishedAt": "20240609",
+      "durationSec": 263,
+      "duration": "4:23",
+      "views": 629,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T03:33:27+00:00"
+}

@@ -1,0 +1,910 @@
+{
+  "slug": "be-still-and-know",
+  "title": "Be Still and Know",
+  "input": "Be Still and Know",
+  "isNew": true,
+  "forced": null,
+  "signature": "c3d37a12648b781a",
+  "generatedAt": "2026-10-05T00:15:56+00:00",
+  "titleKey": "be still and know",
+  "searchCandidates": [
+    {
+      "videoId": "Jvfo1r2Clwo",
+      "url": "https://www.youtube.com/watch?v=Jvfo1r2Clwo",
+      "title": "Be Still and Know (with lyrics) - The most Peaceful Hymn",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220928",
+      "durationSec": 256,
+      "duration": "4:16",
+      "views": 1294113,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "s4bK9KMUpBE",
+      "url": "https://www.youtube.com/watch?v=s4bK9KMUpBE",
+      "title": "Be Still & Know feat. DOE | Housefires (Official Music Video)",
+      "channel": "TRIBL",
+      "publishedAt": "20230609",
+      "durationSec": 524,
+      "duration": "8:44",
+      "views": 776265,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "TQHcSuvcmzg",
+      "url": "https://www.youtube.com/watch?v=TQHcSuvcmzg",
+      "title": "Be Still and Know (Psalm 46:10) | English Hebrew Messianic Worship Song | Songs of Elohim",
+      "channel": "Songs Of Elohim",
+      "publishedAt": "20260105",
+      "durationSec": 369,
+      "duration": "6:09",
+      "views": 118130,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "sCa0XWIhOVg",
+      "url": "https://www.youtube.com/watch?v=sCa0XWIhOVg",
+      "title": "Be Still and Know (Lyric Video) | CeCe Winans",
+      "channel": "PHIL CARLO",
+      "publishedAt": "20240731",
+      "durationSec": 243,
+      "duration": "4:03",
+      "views": 67234,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "F5EdmqHpPGI",
+      "url": "https://www.youtube.com/watch?v=F5EdmqHpPGI",
+      "title": "Be Still and Know – Songs of Nearness and Faith | English–Hebrew Messianic Worship Playlist",
+      "channel": "Elohim Songs",
+      "publishedAt": "20251009",
+      "durationSec": 6214,
+      "duration": "103:34",
+      "views": 238611,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "B0oVJIEEuVs",
+      "url": "https://www.youtube.com/watch?v=B0oVJIEEuVs",
+      "title": "Don Moen - Be Still & Know",
+      "channel": "Patrick Poon",
+      "publishedAt": "20170714",
+      "durationSec": 364,
+      "duration": "6:04",
+      "views": 11046707,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "3u7et5kpG9o",
+      "url": "https://www.youtube.com/watch?v=3u7et5kpG9o",
+      "title": "CeCe Winans - Be Still and Know (Official Lyric Video)",
+      "channel": "CeCe Winans",
+      "publishedAt": "20240426",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 2490615,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "BgaHaioAjyg",
+      "url": "https://www.youtube.com/watch?v=BgaHaioAjyg",
+      "title": "Be Still and Know - Steven Curtis Chapman - Worship Video w/lyrics",
+      "channel": "brotherearl1944",
+      "publishedAt": "20100516",
+      "durationSec": 199,
+      "duration": "3:19",
+      "views": 856050,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "Jvfo1r2Clwo",
+      "url": "https://www.youtube.com/watch?v=Jvfo1r2Clwo",
+      "title": "Be Still and Know (with lyrics) - The most Peaceful Hymn",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220928",
+      "durationSec": 256,
+      "duration": "4:16",
+      "views": 1294113,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Chorus",
+          "lines": [
+            "Be still and know that I am God",
+            "Be still and know that I am God",
+            "Be still and know that I am God"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "I am the Lord, that leadeth thee",
+            "I am the"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Lord, that leadeth thee I am the Lord, that leadeth thee"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "In thee, O Lord,",
+            "I put my trust",
+            "In thee, O Lord,",
+            "I put my trust In",
+            "Thee, O Lord, I put my trust"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "(saxophone"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Melody)"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Thank you"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Be still and know that I am God",
+            "Be still and know that I am God",
+            "Be still and know that I am God"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Be still and know that I am God"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 83,
+      "notes": "No reference lyrics available; used human‑written transcript to determine exact wording and repeat structure. Structured as three verses followed by a final refrain based on the repeated lines in the recording.",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Refrain",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Be still and know that I am God",
+            "t0": 0.24,
+            "t1": 9.38,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am God",
+              "asr_prompted": "that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 10.52,
+            "t1": 19.68,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am God",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 20.88,
+            "t1": 30.3,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am God",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I am the Lord, that leadeth thee",
+            "t0": 38.18,
+            "t1": 47.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I am the Lord, that leadeth thee",
+              "asr_large": "I am the Lord that leadeth thee",
+              "asr_turbo": "I am the Lord that leadeth thee",
+              "asr_prompted": "I am the Lord, that leadeth thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I am the",
+            "t0": 48.14,
+            "t1": 52.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I am the",
+              "asr_large": "I am the",
+              "asr_turbo": "I am the",
+              "asr_prompted": "I am the"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord, that leadeth thee I am the Lord, that leadeth thee",
+            "t0": 62.452923,
+            "t1": 68.39292,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "Lord, that leadeth thee I am the Lord, that leadeth thee",
+              "asr_large": "Lord that leadeth me",
+              "asr_turbo": "Lord that leadeth thee. I am the Lord that needed me",
+              "asr_prompted": "Lord, that leadeth thee I am the Lord, that leadeth thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In thee, O Lord,",
+            "t0": 77.45293,
+            "t1": 82.61292,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_manual": "In thee, O Lord,",
+              "asr_large": "In Thee, O Lord,",
+              "asr_turbo": "In Thee, O Lord,",
+              "asr_prompted": "In thee, O Lord,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I put my trust",
+            "t0": 82.61292,
+            "t1": 86.81292,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I put my trust",
+              "asr_large": "I put my trust",
+              "asr_turbo": "I put my trust",
+              "asr_prompted": "I put my trust"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In thee, O Lord,",
+            "t0": 87.81292,
+            "t1": 92.89292,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_manual": "In thee, O Lord,",
+              "asr_large": "In Thee, O Lord,",
+              "asr_turbo": "In Thee, O Lord,",
+              "asr_prompted": "In thee, O Lord,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I put my trust In",
+            "t0": 92.89292,
+            "t1": 98.71292,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "I put my trust In",
+              "asr_large": "I put my trust In",
+              "asr_turbo": "I put my trust In",
+              "asr_prompted": "I put my trust In"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thee, O Lord, I put my trust",
+            "t0": 98.71292,
+            "t1": 107.33292,
+            "conf": 0.91,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_manual": "thee, O Lord, I put my trust",
+              "asr_large": "Thee, O Lord, I put my trust",
+              "asr_turbo": "Thee alone I put my trust",
+              "asr_prompted": "thee, O Lord, I put my trust"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "(saxophone",
+            "t0": 116.91292,
+            "t1": 121.47292,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "captions_manual": "(saxophone",
+              "asr_large": "Thank",
+              "asr_turbo": "Amen.",
+              "asr_prompted": "In thee, O Lord, I put my trust I'm a lark I'm a lark I'm a lark I'm"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Melody)",
+            "t0": 127.32584,
+            "t1": 138.96585,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "You",
+                "sources": [
+                  "asr_large",
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_manual": "melody)",
+              "asr_large": "You",
+              "asr_turbo": "you.",
+              "asr_prompted": "a lark Piano playlist with intonation of Lullaby melody As it may not in the least give,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thank you",
+            "t0": 152.82584,
+            "t1": 160.32584,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "(violin melody)",
+                "sources": [
+                  "captions_manual"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_manual": "(violin melody)",
+              "asr_large": "Thank you",
+              "asr_turbo": "Thank you.",
+              "asr_prompted": "so the earth will speak. But Jesus gave to man the meaning of it. So the creation, he did, shall be. God sorgh tony, tat v'osgah, adai barav, vv'yvam and kwan ke diomun x'em."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 187.80585,
+            "t1": 197.21877,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am God.",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 198.33878,
+            "t1": 207.47878,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am God.",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 208.47878,
+            "t1": 217.63876,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am gone.",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be still and know that I am God",
+            "t0": 220.61877,
+            "t1": 234.43877,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 7x, 7 agree",
+            "sources": {
+              "captions_manual": "Be still and know that I am God",
+              "asr_large": "Be still and know that I am God",
+              "asr_turbo": "Be still and know that I am gone.",
+              "asr_prompted": "Be still and know that I am God"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 114.91292,
+            "t1": 121.47292,
+            "text": "(saxophone",
+            "options": [
+              "(saxophone"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 125.32584,
+            "t1": 138.96585,
+            "text": "Melody)",
+            "options": [
+              "Melody)",
+              "You"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 150.82584,
+            "t1": 160.32584,
+            "text": "Thank you",
+            "options": [
+              "Thank you",
+              "(violin melody)"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "Jvfo1r2Clwo",
+          "sources": [
+            "captions_manual",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 20.8,
+          "excluded": [
+            {
+              "t0": 237.81877,
+              "text": "You"
+            }
+          ],
+          "lines": 18,
+          "verified": 15,
+          "checks": 3,
+          "seconds": 23.3,
+          "generatedAt": "2026-10-05T00:16:25+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "s4bK9KMUpBE",
+      "url": "https://www.youtube.com/watch?v=s4bK9KMUpBE",
+      "title": "Be Still & Know feat. DOE | Housefires (Official Music Video)",
+      "channel": "TRIBL",
+      "publishedAt": "20230609",
+      "durationSec": 524,
+      "duration": "8:44",
+      "views": 776265,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "I will be still in your presence.",
+            "I will be still in your presence."
+          ],
+          "times": [
+            0.0,
+            16.5
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Help me to be still in your presence.",
+            "Quiet my heart, calm my spirit,",
+            "Peace to my mind, help me to be still.",
+            "Quiet my heart, quiet my spirit,",
+            "Peace to my mind.",
+            "Let my heart be satisfied.",
+            "For all my life you've been good.",
+            "Even in my darkest days.",
+            "You've always stayed.",
+            "You're so good.",
+            "Faithful friend.",
+            "It's who you've been.",
+            "So remind me, Lord, when I forget."
+          ],
+          "times": [
+            22.3,
+            26.1,
+            null,
+            39.8,
+            null,
+            48.2,
+            53.6,
+            58.8,
+            66.4,
+            69.2,
+            71.4,
+            77.8,
+            81.9
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "I will be still and know.",
+            "I will be still and know.",
+            "I will be still and know that your presence is all that I need.",
+            "It's enough."
+          ],
+          "times": [
+            87.6,
+            93.3,
+            99.6,
+            107.6
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Even in my sleepless eyes, you've seen you fight for me.",
+            "Picking up the broken things,",
+            "You breathe me back to life.",
+            "You're my faithful friend.",
+            "It's who you've been.",
+            "So remind me, Lord, when I forget.",
+            "And I will be still and know.",
+            "I will be still and know.",
+            "I will be still and know.",
+            "That your presence is all that I need is in love.",
+            "Come on, sing it again.",
+            "I will be still and know.",
+            "I will be still and know.",
+            "Help me to be still, God.",
+            "I'll be still and know that your presence is all that I need.",
+            "It's enough."
+          ],
+          "times": [
+            113.6,
+            125.6,
+            null,
+            137.3,
+            141.6,
+            145.0,
+            150.6,
+            156.1,
+            159.3,
+            165.7,
+            172.2,
+            175.6,
+            178.2,
+            185.9,
+            188.8,
+            196.1
+          ]
+        },
+        {
+          "label": "Prayer",
+          "lines": [
+            "So let my heart never forget the goodness of God.",
+            "Let my heart never forget the land you brought me from.",
+            "How you opened my eyes, you've given me life.",
+            "And now I'm forever satisfied.",
+            "How could I ever forget?",
+            "How could I ever?",
+            "How could I ever forget?"
+          ],
+          "times": [
+            201.4,
+            212.1,
+            223.2,
+            232.2,
+            237.8,
+            242.8,
+            244.8
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Come on, sing that again.",
+            "Let my heart never forget the goodness of God, let me never forget your goodness, let my heart never forget the land you brought me from."
+          ],
+          "times": [
+            247.8,
+            249.8
+          ]
+        },
+        {
+          "label": "Evidence",
+          "lines": [
+            "You've done too much for me.",
+            "You've done too much for me.",
+            "No, I will never, ever, ever forget.",
+            "You've done too much for me.",
+            "You've done too much for me.",
+            "No, I will never, never, never forget.",
+            "There's too much evidence all around me.",
+            "Of your faithfulness.",
+            "There's too much evidence all around me.",
+            "Of your faithfulness.",
+            "You've surrounded me with the evidence of your faithfulness.",
+            "Daily, you surround me with the evidence of your faithfulness.",
+            "I will never, ever, ever forget."
+          ],
+          "times": [
+            317.6,
+            320.2,
+            323.4,
+            328.0,
+            332.9,
+            336.1,
+            340.6,
+            349.6,
+            352.1,
+            355.8,
+            361.8,
+            366.8,
+            379.8
+          ]
+        },
+        {
+          "label": "Chaos Refrain",
+          "lines": [
+            "I will be still and know I will be still and know I will be still and know",
+            "In the chaos, in the chaos",
+            "I will be still and know",
+            "In the mountain, in the valley",
+            "I will be still and know",
+            "No matter where I am or what I'm going through",
+            "I will be still and know",
+            "When there's wars all around me",
+            "I'll be still and know",
+            "When it's hard and my heart is questioning",
+            "I'll be still and know",
+            "I'll be still and know"
+          ],
+          "times": [
+            384.8,
+            399.6,
+            403.3,
+            406.2,
+            409.7,
+            412.7,
+            416.1,
+            418.7,
+            422.3,
+            424.6,
+            428.1,
+            430.9
+          ]
+        },
+        {
+          "label": "Thanksgiving",
+          "lines": [
+            "We thank you, God, that we can lean on you.",
+            "We thank you, Lord, that we can rest in you.",
+            "We thank you that you're a good place to let down our anchors.",
+            "We thank you, Jesus, that you're our God."
+          ],
+          "times": [
+            438.2,
+            449.5,
+            455.4,
+            459.9
+          ]
+        },
+        {
+          "label": "Prayer Outro",
+          "lines": [
+            "I pray for every need and home and heart represented in this room.",
+            "Some of us are praying for family members as we're in worship.",
+            "We're praying we've got people on our minds, concerns weighing us down, and we brought them to your feet.",
+            "We declare today we will be still and know that you are God.",
+            "In Jesus' name.",
+            "Amen, amen, amen.",
+            "It is so, it is so, it is so, it is so, it is so I can be still and know.",
+            "In Jesus' name, amen."
+          ],
+          "times": [
+            464.3,
+            479.3,
+            482.0,
+            487.0,
+            498.3,
+            501.4,
+            503.4,
+            513.8
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 45,
+      "notes": "No reference lyrics were available; structure was inferred from the auto‑generated transcript, which is noisy and contains spoken interludes. Lines were broken into short phrases for screen display. Some long spoken sections were condensed into single blocks; repeats were kept only where clearly indicated in the transcript. Confidence is low due to transcript quality and uncertainty about which parts are sung versus spoken.",
+      "order": "Intro · Verse 1 · Refrain · Verse 2 · Prayer · Tag · Evidence · Chaos Refrain · Thanksgiving · Prayer Outro"
+    },
+    {
+      "videoId": "TQHcSuvcmzg",
+      "url": "https://www.youtube.com/watch?v=TQHcSuvcmzg",
+      "title": "Be Still and Know (Psalm 46:10) | English Hebrew Messianic Worship Song | Songs of Elohim",
+      "channel": "Songs Of Elohim",
+      "publishedAt": "20260105",
+      "durationSec": 369,
+      "duration": "6:09",
+      "views": 118130,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "sCa0XWIhOVg",
+      "url": "https://www.youtube.com/watch?v=sCa0XWIhOVg",
+      "title": "Be Still and Know (Lyric Video) | CeCe Winans",
+      "channel": "PHIL CARLO",
+      "publishedAt": "20240731",
+      "durationSec": 243,
+      "duration": "4:03",
+      "views": 67234,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "F5EdmqHpPGI",
+      "url": "https://www.youtube.com/watch?v=F5EdmqHpPGI",
+      "title": "Be Still and Know – Songs of Nearness and Faith | English–Hebrew Messianic Worship Playlist",
+      "channel": "Elohim Songs",
+      "publishedAt": "20251009",
+      "durationSec": 6214,
+      "duration": "103:34",
+      "views": 238611,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "B0oVJIEEuVs",
+      "url": "https://www.youtube.com/watch?v=B0oVJIEEuVs",
+      "title": "Don Moen - Be Still & Know",
+      "channel": "Patrick Poon",
+      "publishedAt": "20170714",
+      "durationSec": 364,
+      "duration": "6:04",
+      "views": 11046707,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "3u7et5kpG9o",
+      "url": "https://www.youtube.com/watch?v=3u7et5kpG9o",
+      "title": "CeCe Winans - Be Still and Know (Official Lyric Video)",
+      "channel": "CeCe Winans",
+      "publishedAt": "20240426",
+      "durationSec": 245,
+      "duration": "4:05",
+      "views": 2490615,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "BgaHaioAjyg",
+      "url": "https://www.youtube.com/watch?v=BgaHaioAjyg",
+      "title": "Be Still and Know - Steven Curtis Chapman - Worship Video w/lyrics",
+      "channel": "brotherearl1944",
+      "publishedAt": "20100516",
+      "durationSec": 199,
+      "duration": "3:19",
+      "views": 856050,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T00:16:25+00:00"
+}

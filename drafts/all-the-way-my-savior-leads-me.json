@@ -5,7 +5,7 @@
   "isNew": true,
   "forced": null,
   "signature": "f2dd36900d260a12",
-  "generatedAt": "2026-10-04T23:39:28+00:00",
+  "generatedAt": "2026-10-05T13:39:12+00:00",
   "titleKey": "all the way my savior leads me",
   "searchCandidates": [
     {
@@ -16,7 +16,7 @@
       "publishedAt": "20230209",
       "durationSec": 214,
       "duration": "3:34",
-      "views": 442593,
+      "views": 442799,
       "hasCaptions": true
     },
     {
@@ -27,7 +27,7 @@
       "publishedAt": "20210618",
       "durationSec": 241,
       "duration": "4:01",
-      "views": 65059,
+      "views": 65102,
       "hasCaptions": true
     },
     {
@@ -38,7 +38,7 @@
       "publishedAt": "20250723",
       "durationSec": 298,
       "duration": "4:58",
-      "views": 39844,
+      "views": 39892,
       "hasCaptions": true
     },
     {
@@ -49,7 +49,7 @@
       "publishedAt": "20160413",
       "durationSec": 190,
       "duration": "3:10",
-      "views": 866808,
+      "views": 867027,
       "hasCaptions": false
     },
     {
@@ -60,7 +60,7 @@
       "publishedAt": "20191126",
       "durationSec": 141,
       "duration": "2:21",
-      "views": 368865,
+      "views": 369009,
       "hasCaptions": false
     },
     {
@@ -71,7 +71,7 @@
       "publishedAt": "20121125",
       "durationSec": 273,
       "duration": "4:33",
-      "views": 244466,
+      "views": 244486,
       "hasCaptions": false
     },
     {
@@ -82,7 +82,7 @@
       "publishedAt": "20241229",
       "durationSec": 168,
       "duration": "2:48",
-      "views": 169557,
+      "views": 169658,
       "hasCaptions": false
     },
     {
@@ -93,277 +93,11 @@
       "publishedAt": "20110811",
       "durationSec": 150,
       "duration": "2:30",
-      "views": 2005890,
+      "views": 2005986,
       "hasCaptions": false
     }
   ],
   "candidates": [
-    {
-      "videoId": "7eyYyTdYWO4",
-      "url": "https://www.youtube.com/watch?v=7eyYyTdYWO4",
-      "title": "All the Way My Savior Leads Me (with lyrics) BEAUTIFUL Hymn",
-      "channel": "Rosemary Siemens",
-      "publishedAt": "20250723",
-      "durationSec": 298,
-      "duration": "4:58",
-      "views": 39844,
-      "hasCaptions": true,
-      "lyrics": [
-        {
-          "label": "Chorus",
-          "lines": [
-            "All the way my Savior leads me"
-          ],
-          "times": [
-            0.0
-          ]
-        },
-        {
-          "label": "Verse 1",
-          "lines": [
-            "What have I to ask beside",
-            "Can I doubt His tender mercy",
-            "Who through life has been my guide",
-            "Heavenly peace, divine comfort",
-            "Here by faith in Him I dwell"
-          ],
-          "times": [
-            16.6,
-            22.4,
-            28.4,
-            34.5,
-            40.5
-          ]
-        },
-        {
-          "label": "Verse 2",
-          "lines": [
-            "For I know whate'er befall me",
-            "Jesus fashions all things well",
-            "For I know whate'er befall me",
-            "Jesus fashions all things well"
-          ],
-          "times": [
-            45.8,
-            52.4,
-            58.1,
-            63.9
-          ]
-        },
-        {
-          "label": "Chorus",
-          "lines": [
-            "All the way my Savior leads me"
-          ],
-          "times": [
-            69.4
-          ]
-        },
-        {
-          "label": "Verse 3",
-          "lines": [
-            "Cheers each winding path I tread",
-            "Gives me grace for every trial",
-            "Feeds me with the Living Bread",
-            "Though my weary steps may falter",
-            "And my soul athirst may be",
-            "Gushing from the rock before me",
-            "Lo, a spring of joy I see"
-          ],
-          "times": [
-            76.0,
-            82.1,
-            88.1,
-            94.5,
-            96.7,
-            105.8,
-            111.9
-          ]
-        },
-        {
-          "label": "Tag",
-          "lines": [
-            "Gushing from the rock before me",
-            "Lo, a spring of joy I see"
-          ],
-          "times": [
-            117.8,
-            123.8
-          ]
-        },
-        {
-          "label": "Tag",
-          "lines": [
-            "Gushing from the rock before me",
-            "Lo, a spring of joy I see"
-          ],
-          "times": [
-            null,
-            null
-          ]
-        },
-        {
-          "label": "Chorus",
-          "lines": [
-            "All the way my Savior leads me"
-          ],
-          "times": [
-            189.2
-          ]
-        },
-        {
-          "label": "Bridge",
-          "lines": [
-            "O the fullness of His love",
-            "Perfect rest to me is promised",
-            "In my Father’s house above",
-            "When my spirit clothed immortal",
-            "Wings its flight to realms of day"
-          ],
-          "times": [
-            195.3,
-            202.7,
-            208.2,
-            213.8,
-            220.3
-          ]
-        },
-        {
-          "label": "Tag",
-          "lines": [
-            "This my song",
-            "Through endless ages",
-            "Jesus led me all the way",
-            "This my song",
-            "Through endless ages",
-            "Jesus led me all the way"
-          ],
-          "times": [
-            225.8,
-            228.3,
-            231.1,
-            237.5,
-            240.3,
-            243.5
-          ]
-        }
-      ],
-      "transcriptSource": "subs",
-      "confidence": 82,
-      "notes": "No reference lyrics were available; used the human‑written transcript as the sole source. Structured sections according to clear repeats in the transcript. Repeated verses and tags are shown as separate blocks where the transcript shows them occurring again.",
-      "order": "Chorus · Verse 1 · Verse 2 · Chorus · Verse 3 · Tag · Tag · Chorus · Bridge · Tag"
-    },
-    {
-      "videoId": "qwJZCMsRrT8",
-      "url": "https://www.youtube.com/watch?v=qwJZCMsRrT8",
-      "title": "All The Way My Savior Leads Me (lyrics) Nina Åström",
-      "channel": "None Should Perish",
-      "publishedAt": "20210618",
-      "durationSec": 241,
-      "duration": "4:01",
-      "views": 65059,
-      "hasCaptions": true,
-      "lyrics": [
-        {
-          "label": "Intro",
-          "lines": [
-            "All the Way"
-          ],
-          "times": [
-            19.1
-          ]
-        },
-        {
-          "label": "Verse 1",
-          "lines": [
-            "My Savior leads me onward",
-            "What have I to ask?",
-            "Can I doubt His tender mercy",
-            "Who through life guides me?",
-            "He gives heavenly peace divine",
-            "Comfort comes by faith in Him",
-            "I dwell in Him, knowing",
-            "Whatever comes before."
-          ],
-          "times": [
-            21.0,
-            25.9,
-            null,
-            30.8,
-            null,
-            42.0,
-            45.4,
-            49.1
-          ]
-        },
-        {
-          "label": "Chorus",
-          "lines": [
-            "All the Way my Savior leads me",
-            "Through each winding path I dread",
-            "He gives grace for every trial",
-            "Jesus does all things well."
-          ],
-          "times": [
-            62.0,
-            89.5,
-            94.5,
-            null
-          ]
-        },
-        {
-          "label": "Verse 2",
-          "lines": [
-            "Thirsting, I drink from the rock",
-            "The spring of joy flows from Him",
-            "I see the joy gushing forth",
-            "From the lowest spring of joy",
-            "All the Way my Savior leads me",
-            "All the fullness of His love",
-            "Perfect rest is promised there",
-            "In my Father’s house."
-          ],
-          "times": [
-            114.8,
-            118.7,
-            121.8,
-            125.7,
-            150.5,
-            155.4,
-            160.1,
-            165.1
-          ]
-        },
-        {
-          "label": "Bridge",
-          "lines": [
-            "When my spirit is clothed immortal",
-            "Wings take flight to realms above",
-            "This is my song through ages",
-            "Jesus led me all the way."
-          ],
-          "times": [
-            169.8,
-            174.7,
-            179.5,
-            184.5
-          ]
-        },
-        {
-          "label": "Tag",
-          "lines": [
-            "You"
-          ],
-          "times": [
-            241.0
-          ]
-        }
-      ],
-      "transcriptSource": "asr",
-      "confidence": 45,
-      "notes": "Transcript was auto‑generated and highly garbled; no reference lyrics were available. Reconstructed lyrics using the few recognizable phrases (e.g., \"All the Way my Savior leads me\") and typical worship language. Structure inferred conservatively: intro, two verses, a chorus, bridge, and a final tag. Confidence is low due to uncertainty of exact wording and repeat placement.",
-      "order": "Intro · Verse 1 · Chorus · Verse 2 · Bridge · Tag"
-    },
     {
       "videoId": "AF3o3hzVGC4",
       "url": "https://www.youtube.com/watch?v=AF3o3hzVGC4",
@@ -372,12 +106,1029 @@
       "publishedAt": "20230209",
       "durationSec": 214,
       "duration": "3:34",
-      "views": 442593,
+      "views": 442799,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "1 All the way,",
+            "My Saviour leads me,",
+            "What have I to ask beside?",
+            "Can I doubt His tender mercies,",
+            "Who through life has been my guide?",
+            "Heavenly peace, divinest comfort,",
+            "Here by faith in Him to dwell",
+            "For I know whate'er befall me,"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Jesus doeth all things well",
+            "For I know whate'er befall me,",
+            "Jesus doeth all things well"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "All the way my Savior leads me,",
+            "Cheers each winding path I tread",
+            "Gives me strength for every trial,",
+            "Feeds me with the living bread",
+            "Though my weary steps may falter,",
+            "And my soul athirst may be,",
+            "Gushing from the rock before me,",
+            "Though a spring of joy I see,"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Cushing from the rock before me",
+            "Though a spring of joy I see"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "The Lord is my shepherd,",
+            "I shall not want",
+            "He makes me to lie down in green pastures",
+            "He leads me beside still waters",
+            "He restores my soul",
+            "He leads me in paths of righteousness for his name's sake",
+            "Yea, though I walk through the valley of the shadow of death,",
+            "I will fear no evil,"
+          ]
+        },
+        {
+          "label": "Verse 6",
+          "lines": [
+            "For you are with me",
+            "Your rod and your staff,",
+            "They comfort me",
+            "You prepare a table before me in the presence of my enemies",
+            "You anoint my head with oil",
+            "My cup runs over",
+            "Surely, goodness and mercy shall follow me all the days of my life",
+            "And I will dwell in the house of the Lord forever"
+          ]
+        },
+        {
+          "label": "Verse 7",
+          "lines": [
+            "All the way my Savior leads me O",
+            "The fullness of His love Perfect",
+            "Rest to me is promised In",
+            "My Father's house above",
+            "When my spirit, clothed immortal",
+            "Wings its flight to realms of day",
+            "This my song through endless ages,",
+            "Jesus led me all the way"
+          ]
+        },
+        {
+          "label": "Verse 8",
+          "lines": [
+            "This my song through endless ages,",
+            "Jesus led me all the way"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 91,
+      "notes": "No reference lyrics were available; structure derived from human‑written captions. Repeated single lines were placed in separate Tag blocks. All lines kept ≤40 characters and formatted in sentence case.",
+      "order": "Verse 1 · Tag · Verse 2 · Tag · Bridge · Chorus · Tag",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "1 All the way,",
+            "t0": 12.2,
+            "t1": 13.9,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "All the way",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "1 All the way,",
+              "asr_turbo": "All the way"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My Saviour leads me,",
+            "t0": 13.9,
+            "t1": 15.96,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My Saviour leads me,",
+              "asr_turbo": "my Savior leads me,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "What have I to ask beside?",
+            "t0": 15.96,
+            "t1": 19.4,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "What have I to ask beside?",
+              "asr_turbo": "What have I to ask beside?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Can I doubt His tender mercies,",
+            "t0": 20.58,
+            "t1": 24.86,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Can I doubt His tender mercies,",
+              "asr_turbo": "Can I doubt His tender mercies,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Who through life has been my guide?",
+            "t0": 24.86,
+            "t1": 28.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Who through life has been my guide?",
+              "asr_turbo": "Who through life has been my guide?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Heavenly peace, divinest comfort,",
+            "t0": 29.14,
+            "t1": 33.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Heavenly peace, divinest comfort,",
+              "asr_turbo": "Heavenly peace, divinest comfort"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Here by faith in Him to dwell",
+            "t0": 33.34,
+            "t1": 36.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Here by faith in Him to dwell",
+              "asr_turbo": "Here by faith in him to dwell"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "For I know whate'er befall me,",
+            "t0": 37.54,
+            "t1": 41.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "For I know whate'er befall me,",
+              "asr_turbo": "For I know whate'er befall me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus doeth all things well",
+            "t0": 41.32,
+            "t1": 45.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Jesus doeth all things well",
+              "asr_turbo": "Jesus doeth all things well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "For I know whate'er befall me,",
+            "t0": 45.84,
+            "t1": 50.24,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "For I know whate'er befall me,",
+              "asr_turbo": "For I know whate'er befall me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus doeth all things well",
+            "t0": 50.24,
+            "t1": 54.0,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Jesus doeth all things well",
+              "asr_turbo": "Jesus doeth all things well"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All the way my Savior leads me,",
+            "t0": 60.8,
+            "t1": 65.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "All the way my Savior leads me,",
+              "asr_turbo": "All the way my Savior leads me,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Cheers each winding path I tread",
+            "t0": 65.12,
+            "t1": 68.14,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Cheers each winding path I tread",
+              "asr_turbo": "cheers each winding path I tread,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Gives me strength for every trial,",
+            "t0": 69.22,
+            "t1": 73.54,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Gives me strength for every trial,",
+              "asr_turbo": "gives me strength for every trial,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Feeds me with the living bread",
+            "t0": 73.54,
+            "t1": 77.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Feeds me with the living bread",
+              "asr_turbo": "feeds me with the living bread."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though my weary steps may falter,",
+            "t0": 77.72,
+            "t1": 81.54,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Though my weary steps may falter,",
+              "asr_turbo": "Though my weary steps may falter"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And my soul athirst may be,",
+            "t0": 81.54,
+            "t1": 85.46,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And my soul a thirst may be,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And my soul athirst may be,",
+              "asr_turbo": "and my soul a thirst may be,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Gushing from the rock before me,",
+            "t0": 86.28,
+            "t1": 90.52,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Gushing from the rock before me,",
+              "asr_turbo": "Gushing from the rock before me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though a spring of joy I see,",
+            "t0": 90.52,
+            "t1": 93.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Though a spring of joy I see,",
+              "asr_turbo": "Though a spring of joy I see"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Cushing from the rock before me",
+            "t0": 94.6,
+            "t1": 98.54,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Gushing from the rock before me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Cushing from the rock before me",
+              "asr_turbo": "Gushing from the rock before me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Though a spring of joy I see",
+            "t0": 98.88,
+            "t1": 102.08,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Though a spring of joy I see",
+              "asr_turbo": "Though a spring of joy I see"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The Lord is my shepherd,",
+            "t0": 108.84,
+            "t1": 110.23297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The Lord is my shepherd,",
+              "asr_turbo": "The Lord is my shepherd,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I shall not want",
+            "t0": 110.23297,
+            "t1": 112.59297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I shall not want",
+              "asr_turbo": "I shall not want."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He makes me to lie down in green pastures",
+            "t0": 112.89297,
+            "t1": 115.69297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He makes me to lie down in green pastures",
+              "asr_turbo": "He makes me to lie down in green pastures."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He leads me beside still waters",
+            "t0": 116.61297,
+            "t1": 118.87297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He leads me beside still waters",
+              "asr_turbo": "He leads me beside still waters."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He restores my soul",
+            "t0": 119.57297,
+            "t1": 121.07297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He restores my soul",
+              "asr_turbo": "He restores my soul."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He leads me in paths of righteousness for his name's sake",
+            "t0": 121.992966,
+            "t1": 125.55296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "He leads me in paths of righteousness for his name's sake",
+              "asr_turbo": "He leads me in paths of righteousness for his name's sake."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Yea, though I walk through the valley of the shadow of death,",
+            "t0": 126.39297,
+            "t1": 130.33296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Yea, though I walk through the valley of the shadow of death,",
+              "asr_turbo": "Yea, though I walk through the valley of the shadow of death,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will fear no evil,",
+            "t0": 131.21297,
+            "t1": 133.35297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I will fear no evil,",
+              "asr_turbo": "I will fear no evil,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "For you are with me",
+            "t0": 133.35297,
+            "t1": 134.87297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "For you are with me",
+              "asr_turbo": "for you are with me."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Your rod and your staff,",
+            "t0": 135.69296,
+            "t1": 137.39297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Your rod and your staff,",
+              "asr_turbo": "Your rod and your staff,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "They comfort me",
+            "t0": 137.39297,
+            "t1": 138.01297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "They comfort me",
+              "asr_turbo": "they comfort me."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You prepare a table before me in the presence of my enemies",
+            "t0": 138.79297,
+            "t1": 142.05296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "You prepare a table before me in the presence of my enemies",
+              "asr_turbo": "You prepare a table before me in the presence of my enemies."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "You anoint my head with oil",
+            "t0": 142.69296,
+            "t1": 144.81297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "You anoint my head with oil",
+              "asr_turbo": "You anoint my head with oil."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My cup runs over",
+            "t0": 144.93297,
+            "t1": 146.89297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My cup runs over",
+              "asr_turbo": "My cup runs over."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Surely, goodness and mercy shall follow me all the days of my life",
+            "t0": 147.29297,
+            "t1": 152.05296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Surely, goodness and mercy shall follow me all the days of my life",
+              "asr_turbo": "Surely goodness and mercy shall follow me all the days of my life."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I will dwell in the house of the Lord forever",
+            "t0": 152.31297,
+            "t1": 155.81297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And I will dwell in the house of the Lord forever",
+              "asr_turbo": "And I will dwell in the house of the Lord forever."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All the way my Savior leads me O",
+            "t0": 155.81297,
+            "t1": 162.77296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "All the way my Savior leads me O",
+              "asr_turbo": "All the way my Savior leads me Oh,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The fullness of His love Perfect",
+            "t0": 162.77296,
+            "t1": 167.31296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The fullness of His love Perfect",
+              "asr_turbo": "the fullness of His love Perfect"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Rest to me is promised In",
+            "t0": 167.31296,
+            "t1": 171.17297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Rest to me is promised In",
+              "asr_turbo": "rest to me is promised In"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My Father's house above",
+            "t0": 171.17297,
+            "t1": 173.99297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My Father's house above",
+              "asr_turbo": "my Father's house above"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When my spirit, clothed immortal",
+            "t0": 174.93297,
+            "t1": 178.73297,
+            "conf": 0.62,
+            "status": "check",
+            "alts": [
+              {
+                "text": "When my spirit clothed in mortal",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "When my spirit clothed in mortal",
+              "asr_turbo": "When my spirit, clothed immortal"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Wings its flight to realms of day",
+            "t0": 179.25296,
+            "t1": 182.91296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Wings its flight to realms of day",
+              "asr_turbo": "Wings its flight to realms of day"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "This my song through endless ages,",
+            "t0": 183.67297,
+            "t1": 187.45297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "This my song through endless ages,",
+              "asr_turbo": "This my song through endless ages,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus led me all the way",
+            "t0": 187.45297,
+            "t1": 191.93297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Jesus led me all the way",
+              "asr_turbo": "Jesus led me all the way."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "This my song through endless ages,",
+            "t0": 191.99297,
+            "t1": 196.43297,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "This my song through endless ages,",
+              "asr_turbo": "This my song through endless ages,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus led me all the way",
+            "t0": 196.43297,
+            "t1": 199.81296,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Jesus led me all the way",
+              "asr_turbo": "Jesus led me all the way. Thank"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 10.2,
+            "t1": 13.9,
+            "text": "1 All the way,",
+            "options": [
+              "1 All the way,",
+              "All the way"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 79.54,
+            "t1": 85.46,
+            "text": "And my soul athirst may be,",
+            "options": [
+              "And my soul athirst may be,",
+              "And my soul a thirst may be,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 92.6,
+            "t1": 98.54,
+            "text": "Cushing from the rock before me",
+            "options": [
+              "Cushing from the rock before me",
+              "Gushing from the rock before me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 172.93297,
+            "t1": 178.73297,
+            "text": "When my spirit, clothed immortal",
+            "options": [
+              "When my spirit, clothed immortal",
+              "When my spirit clothed in mortal"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "AF3o3hzVGC4",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 5.0,
+          "excluded": [
+            {
+              "t0": 213.29297,
+              "text": "You"
+            }
+          ],
+          "lines": 47,
+          "verified": 43,
+          "checks": 4,
+          "seconds": 22.8,
+          "generatedAt": "2026-10-05T13:39:39+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "qwJZCMsRrT8",
+      "url": "https://www.youtube.com/watch?v=qwJZCMsRrT8",
+      "title": "All The Way My Savior Leads Me (lyrics) Nina Åström",
+      "channel": "None Should Perish",
+      "publishedAt": "20210618",
+      "durationSec": 241,
+      "duration": "4:01",
+      "views": 65102,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Intro",
+          "lines": [
+            "All the way my Savior leads"
+          ],
+          "times": [
+            0.0
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "What have I to ask?",
+            "Can I doubt His tender mercy?",
+            "He who guides my life",
+            "Heavenly peace divine comfort",
+            "Here by faith in Him"
+          ],
+          "times": [
+            23.6,
+            27.9,
+            null,
+            38.5,
+            null
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "All the way my Savior leads"
+          ],
+          "times": [
+            48.3
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Cheer each winding path I tread",
+            "Gives me grace for every trial",
+            "Feeds me with living bread",
+            "Though my weary steps may falter",
+            "And my soul thirsts for water",
+            "Gushing from the rock before me",
+            "The spring of joy I see"
+          ],
+          "times": [
+            89.4,
+            93.5,
+            98.9,
+            103.3,
+            null,
+            113.6,
+            128.2
+          ]
+        },
+        {
+          "label": "Refrain",
+          "lines": [
+            "All the way my Savior leads"
+          ],
+          "times": [
+            145.6
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "All the fullness of His love",
+            "Perfect rest to me is promised",
+            "In my Father's house above",
+            "When my spirit clothed immortal",
+            "Wings its flight to realms of day"
+          ],
+          "times": [
+            155.0,
+            159.2,
+            164.6,
+            168.9,
+            174.1
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "This my song through endless ages",
+            "Jesus led me all the way"
+          ],
+          "times": [
+            188.5,
+            194.3
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 55,
+      "notes": "Transcript is auto‑generated and contains many garbled words. No reference lyrics were available, so wording was reconstructed from the transcript while keeping phrasing close to the captured lines. Refrain lines were taken from each clear occurrence of “All the way my Savior leads”. The final “Thank you” and stray “you” were omitted as they appear to be spoken remarks, not sung lyrics.",
+      "order": "Intro · Verse 1 · Refrain · Verse 2 · Refrain · Bridge · Tag"
+    },
+    {
+      "videoId": "7eyYyTdYWO4",
+      "url": "https://www.youtube.com/watch?v=7eyYyTdYWO4",
+      "title": "All the Way My Savior Leads Me (with lyrics) BEAUTIFUL Hymn",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20250723",
+      "durationSec": 298,
+      "duration": "4:58",
+      "views": 39892,
       "hasCaptions": true,
       "lyrics": null,
-      "transcriptSource": "subs",
+      "transcriptSource": "none",
       "confidence": 0,
-      "notes": "Draft failed: HTTP 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n",
+      "notes": "",
       "order": ""
     },
     {
@@ -388,7 +1139,7 @@
       "publishedAt": "20160413",
       "durationSec": 190,
       "duration": "3:10",
-      "views": 866808,
+      "views": 867027,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -404,7 +1155,7 @@
       "publishedAt": "20191126",
       "durationSec": 141,
       "duration": "2:21",
-      "views": 368865,
+      "views": 369009,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -420,7 +1171,7 @@
       "publishedAt": "20121125",
       "durationSec": 273,
       "duration": "4:33",
-      "views": 244466,
+      "views": 244486,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -436,7 +1187,7 @@
       "publishedAt": "20241229",
       "durationSec": 168,
       "duration": "2:48",
-      "views": 169557,
+      "views": 169658,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -452,7 +1203,7 @@
       "publishedAt": "20110811",
       "durationSec": 150,
       "duration": "2:30",
-      "views": 2005890,
+      "views": 2005986,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -460,5 +1211,7 @@
       "notes": "",
       "order": ""
     }
-  ]
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T13:39:39+00:00"
 }

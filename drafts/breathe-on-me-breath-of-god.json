@@ -1,0 +1,717 @@
+{
+  "slug": "breathe-on-me-breath-of-god",
+  "title": "Breathe on Me Breath of God",
+  "input": "Breathe on Me Breath of God",
+  "isNew": true,
+  "forced": null,
+  "signature": "f37755214c19286a",
+  "generatedAt": "2026-10-05T13:47:02+00:00",
+  "titleKey": "breathe on me breath of god",
+  "searchCandidates": [
+    {
+      "videoId": "MmkzSjs9eAw",
+      "url": "https://www.youtube.com/watch?v=MmkzSjs9eAw",
+      "title": "Breathe on me breath of God",
+      "channel": "Northern Baptist Association ",
+      "publishedAt": "20121012",
+      "durationSec": 135,
+      "duration": "2:15",
+      "views": 1137711,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "M5keJHZdWYM",
+      "url": "https://www.youtube.com/watch?v=M5keJHZdWYM",
+      "title": "Breathe on Me, Breath of God",
+      "channel": "SE Samonte",
+      "publishedAt": "20131028",
+      "durationSec": 139,
+      "duration": "2:19",
+      "views": 420784,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "NG7i2SDe-kE",
+      "url": "https://www.youtube.com/watch?v=NG7i2SDe-kE",
+      "title": "Breathe on me, Breath of God lyrics.",
+      "channel": "St Laurence's Church Chorley",
+      "publishedAt": "20210126",
+      "durationSec": 165,
+      "duration": "2:45",
+      "views": 344296,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "jzxqtzju47I",
+      "url": "https://www.youtube.com/watch?v=jzxqtzju47I",
+      "title": "Breathe On Me Breath of God (with lyrics) - The most Beautiful Hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220622",
+      "durationSec": 250,
+      "duration": "4:10",
+      "views": 109970,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "RzCbfqc9y7s",
+      "url": "https://www.youtube.com/watch?v=RzCbfqc9y7s",
+      "title": "Breathe on Me, Breath of God | Keith & Kristyn Getty | Official Lyric Video",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "20260807",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 97299,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "dYOGTlCrWSg",
+      "url": "https://www.youtube.com/watch?v=dYOGTlCrWSg",
+      "title": "Breathe on Me Breath of God | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "20200403",
+      "durationSec": 76,
+      "duration": "1:16",
+      "views": 47220,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "6ph-t8P2r_I",
+      "url": "https://www.youtube.com/watch?v=6ph-t8P2r_I",
+      "title": "Breathe on me, Breath of God",
+      "channel": "Cassie Thompson",
+      "publishedAt": "20170114",
+      "durationSec": 165,
+      "duration": "2:45",
+      "views": 251888,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "vfYLqnjnOZM",
+      "url": "https://www.youtube.com/watch?v=vfYLqnjnOZM",
+      "title": "Breathe on Me Breath of God | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230111",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 151500,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "M5keJHZdWYM",
+      "url": "https://www.youtube.com/watch?v=M5keJHZdWYM",
+      "title": "Breathe on Me, Breath of God",
+      "channel": "SE Samonte",
+      "publishedAt": "20131028",
+      "durationSec": 139,
+      "duration": "2:19",
+      "views": 420784,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Breathe on me, breath of God,",
+            "Fill me with life anew,",
+            "That I may love what Thou dost love,",
+            "And do what Thou wouldst do"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Breathe on me, breath of God,",
+            "Until my heart is pure,",
+            "Until with Thee I will one will to do and to endure"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Breathe on me, breath of God,",
+            "Till I am wholly Thine until this earthly part",
+            "Of me glows with Thy fire divine. divine"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Breathe on me",
+            "Breath of God, so shall I never die,",
+            "But live with thee the perfect life of thine eternity"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Amen"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 28,
+      "notes": "Auto‑generated captions were garbled; no reference lyrics were provided. Reconstructed the hymn using known wording and the fragmented transcript (e.g., \"pure until with thee\", \"till I am holy\", \"earthly part of me\", \"never die but live with the perfect life of the eternal\"). Structure inferred as Verse‑Chorus‑Verse‑Chorus‑Tag, but repeats are conservative. Confidence is low due to missing reliable source.",
+      "order": "Verse 1 · Chorus · Verse 2 · Tag",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Breathe on me, breath of God,",
+            "t0": 7.44,
+            "t1": 13.6,
+            "conf": 0.72,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "bre on Me Breath of God",
+              "asr_large": "Breathe on me, breath of God,",
+              "asr_turbo": "Breathe on me, breath of God,",
+              "asr_prompted": "you breathe on me breath of God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Fill me with life anew,",
+            "t0": 13.6,
+            "t1": 18.32,
+            "conf": 0.62,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "fill me with the on you",
+              "asr_large": "Fill me with life anew,",
+              "asr_turbo": "fill me with life anew,",
+              "asr_prompted": "fill me with life on you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "That I may love what Thou dost love,",
+            "t0": 19.72,
+            "t1": 27.46,
+            "conf": 0.62,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "that I may love what th us love",
+              "asr_large": "That I may love what Thou dost love,",
+              "asr_turbo": "That I may love what Thou dost love,",
+              "asr_prompted": "that I may love what thou how does love"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And do what Thou wouldst do",
+            "t0": 27.46,
+            "t1": 33.46,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and do what thou do",
+              "asr_large": "And do what Thou wouldst do",
+              "asr_turbo": "and do what Thou wouldst do.",
+              "asr_prompted": "and do what thou wouldst do"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Breathe on me, breath of God,",
+            "t0": 36.28,
+            "t1": 41.96,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Breath on me breath of God",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "breath on Me Breath of God",
+              "asr_large": "Breathe on me, breath of God,",
+              "asr_turbo": "Breathe on me, breath of God",
+              "asr_prompted": "breath on me breath of God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Until my heart is pure,",
+            "t0": 41.96,
+            "t1": 46.06,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "until my heart is pure",
+              "asr_large": "Until my heart is pure,",
+              "asr_turbo": "Until my heart is pure",
+              "asr_prompted": "until my heart is pure"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Until with Thee I will one will to do and to endure",
+            "t0": 46.14,
+            "t1": 59.28,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "until with thee I will one will to do and to and you",
+              "asr_large": "Until with Thee I will one will to do and to endure",
+              "asr_turbo": "Until with thee I will One will to do and to endure",
+              "asr_prompted": "until with thee I will one will to do and to and you will to do and to endure"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Breathe on me, breath of God,",
+            "t0": 62.42,
+            "t1": 68.5,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Brea on Me Breath of God",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "Brea on Me Breath of God",
+              "asr_large": "Breathe on me, breath of God,",
+              "asr_turbo": "Breathe on me, breath of God,",
+              "asr_prompted": "breath on me breath of God"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Till I am wholly Thine until this earthly part",
+            "t0": 68.5,
+            "t1": 79.37156,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Till I am Holy thy until this earthly part",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "till I am Holy thy until this Earthly part",
+              "asr_large": "Till I am wholly Thine until this earthly part",
+              "asr_turbo": "till I am wholly thine until this earthly part",
+              "asr_prompted": "till I am Holy thy until this earthly part"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of me glows with Thy fire divine. divine",
+            "t0": 79.37156,
+            "t1": 86.89156,
+            "conf": 0.72,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "of me cl with thy breath",
+              "asr_large": "Of me glows with Thy fire divine. divine",
+              "asr_turbo": "of me glows with thy fire divine",
+              "asr_prompted": "of me he glows with thy fire divine"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Breathe on me",
+            "t0": 90.23156,
+            "t1": 91.99156,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "On Me",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "on Me",
+              "asr_large": "Breathe on me",
+              "asr_turbo": "breathe on me",
+              "asr_prompted": "breath on me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Breath of God, so shall I never die,",
+            "t0": 92.09156,
+            "t1": 101.97156,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Breath of God so shall I never die",
+              "asr_large": "Breath of God, so shall I never die,",
+              "asr_turbo": "breath of God, so shall I never die,",
+              "asr_prompted": "breath of Gd so shall I never die"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But live with thee the perfect life of thine eternity",
+            "t0": 101.97156,
+            "t1": 115.25156,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "but live with the the perfect life of th etern",
+              "asr_large": "But live with thee the perfect life of thine eternity",
+              "asr_turbo": "but live with thee the perfect life of thine eternity.",
+              "asr_prompted": "but live with thee the perfect life of th me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Amen",
+            "t0": 124.49156,
+            "t1": 124.89156,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Oh",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "oh",
+              "asr_large": "Amen",
+              "asr_turbo": "Amen."
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 5.44,
+            "t1": 13.6,
+            "text": "Breathe on me, breath of God,",
+            "options": [
+              "Breathe on me, breath of God,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 11.6,
+            "t1": 18.32,
+            "text": "Fill me with life anew,",
+            "options": [
+              "Fill me with life anew,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 17.72,
+            "t1": 27.46,
+            "text": "That I may love what Thou dost love,",
+            "options": [
+              "That I may love what Thou dost love,"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 34.28,
+            "t1": 41.96,
+            "text": "Breathe on me, breath of God,",
+            "options": [
+              "Breathe on me, breath of God,",
+              "Breath on me breath of God"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 60.42,
+            "t1": 68.5,
+            "text": "Breathe on me, breath of God,",
+            "options": [
+              "Breathe on me, breath of God,",
+              "Brea on Me Breath of God"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 66.5,
+            "t1": 79.37156,
+            "text": "Till I am wholly Thine until this earthly part",
+            "options": [
+              "Till I am wholly Thine until this earthly part",
+              "Till I am Holy thy until this earthly part"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 77.37156,
+            "t1": 86.89156,
+            "text": "Of me glows with Thy fire divine. divine",
+            "options": [
+              "Of me glows with Thy fire divine. divine"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 88.23156,
+            "t1": 91.99156,
+            "text": "Breathe on me",
+            "options": [
+              "Breathe on me",
+              "On Me"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 99.97156,
+            "t1": 115.25156,
+            "text": "But live with thee the perfect life of thine eternity",
+            "options": [
+              "But live with thee the perfect life of thine eternity"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 122.49156,
+            "t1": 124.89156,
+            "text": "Amen",
+            "options": [
+              "Amen",
+              "Oh"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "M5keJHZdWYM",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 6.3,
+          "lines": 14,
+          "verified": 4,
+          "checks": 10,
+          "seconds": 9.4,
+          "generatedAt": "2026-10-05T13:47:15+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "MmkzSjs9eAw",
+      "url": "https://www.youtube.com/watch?v=MmkzSjs9eAw",
+      "title": "Breathe on me breath of God",
+      "channel": "Northern Baptist Association ",
+      "publishedAt": "20121012",
+      "durationSec": 135,
+      "duration": "2:15",
+      "views": 1137711,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Be not afraid, Lord is near",
+            "As You love, I love too",
+            "We breathe God, hearts made pure",
+            "My will aligns with Yours, enduring"
+          ],
+          "times": [
+            1.0,
+            20.2,
+            null,
+            34.7
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "O God, make me holy",
+            "Close me in Your heavenly eye",
+            "With only breath, O God",
+            "So shall I ever die"
+          ],
+          "times": [
+            64.0,
+            75.4,
+            89.8,
+            98.2
+          ]
+        },
+        {
+          "label": "Bridge",
+          "lines": [
+            "But live with You, perfect",
+            "Of Your eternal love"
+          ],
+          "times": [
+            104.2,
+            null
+          ]
+        },
+        {
+          "label": "Outro",
+          "lines": [
+            "Thank You, Lord"
+          ],
+          "times": [
+            117.4
+          ]
+        }
+      ],
+      "transcriptSource": "whisper",
+      "confidence": 35,
+      "notes": "Transcript was auto‑generated and highly garbled; no reference lyrics were available. Lines were re‑phrased for clarity and to fit the required short‑line format. Structure (Verse/Bridge/Outro) is inferred and may not match the original recording.",
+      "order": "Verse 1 · Verse 2 · Bridge · Outro"
+    },
+    {
+      "videoId": "NG7i2SDe-kE",
+      "url": "https://www.youtube.com/watch?v=NG7i2SDe-kE",
+      "title": "Breathe on me, Breath of God lyrics.",
+      "channel": "St Laurence's Church Chorley",
+      "publishedAt": "20210126",
+      "durationSec": 165,
+      "duration": "2:45",
+      "views": 344296,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "jzxqtzju47I",
+      "url": "https://www.youtube.com/watch?v=jzxqtzju47I",
+      "title": "Breathe On Me Breath of God (with lyrics) - The most Beautiful Hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "20220622",
+      "durationSec": 250,
+      "duration": "4:10",
+      "views": 109970,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "RzCbfqc9y7s",
+      "url": "https://www.youtube.com/watch?v=RzCbfqc9y7s",
+      "title": "Breathe on Me, Breath of God | Keith & Kristyn Getty | Official Lyric Video",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "20260807",
+      "durationSec": 202,
+      "duration": "3:22",
+      "views": 97299,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "dYOGTlCrWSg",
+      "url": "https://www.youtube.com/watch?v=dYOGTlCrWSg",
+      "title": "Breathe on Me Breath of God | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "20200403",
+      "durationSec": 76,
+      "duration": "1:16",
+      "views": 47220,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "6ph-t8P2r_I",
+      "url": "https://www.youtube.com/watch?v=6ph-t8P2r_I",
+      "title": "Breathe on me, Breath of God",
+      "channel": "Cassie Thompson",
+      "publishedAt": "20170114",
+      "durationSec": 165,
+      "duration": "2:45",
+      "views": 251888,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "vfYLqnjnOZM",
+      "url": "https://www.youtube.com/watch?v=vfYLqnjnOZM",
+      "title": "Breathe on Me Breath of God | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20230111",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 151500,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T13:47:15+00:00"
+}

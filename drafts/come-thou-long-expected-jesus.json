@@ -1,0 +1,676 @@
+{
+  "slug": "come-thou-long-expected-jesus",
+  "title": "Come Thou Long Expected Jesus",
+  "input": "Come Thou Long Expected Jesus",
+  "isNew": true,
+  "forced": null,
+  "signature": "0f0cfe6ae9eed98b",
+  "generatedAt": "2026-10-05T06:25:10+00:00",
+  "titleKey": "come thou long expected jesus",
+  "searchCandidates": [
+    {
+      "videoId": "5lwtbnU-1Tw",
+      "url": "https://www.youtube.com/watch?v=5lwtbnU-1Tw",
+      "title": "Come, Thou Long Expected Jesus | Celtic Worship",
+      "channel": "Celtic Worship",
+      "publishedAt": "20231221",
+      "durationSec": 226,
+      "duration": "3:46",
+      "views": 373539,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "pFloWX1yuyQ",
+      "url": "https://www.youtube.com/watch?v=pFloWX1yuyQ",
+      "title": "Come Thou Long Expected Jesus | Christmas Lyric Video | Reawaken Hymns",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20211118",
+      "durationSec": 133,
+      "duration": "2:13",
+      "views": 276187,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "z6uBCkYoMX8",
+      "url": "https://www.youtube.com/watch?v=z6uBCkYoMX8",
+      "title": "Come, Thou Long-Expected Jesus - Christmas piano instrumental with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20211219",
+      "durationSec": 142,
+      "duration": "2:22",
+      "views": 79462,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "xIOY0dXQh9w",
+      "url": "https://www.youtube.com/watch?v=xIOY0dXQh9w",
+      "title": "Come Thou Long Expected Jesus  (Lyrics)",
+      "channel": "Extended Life Worship",
+      "publishedAt": "20160327",
+      "durationSec": 216,
+      "duration": "3:36",
+      "views": 35840,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "8DHJiPFlcWs",
+      "url": "https://www.youtube.com/watch?v=8DHJiPFlcWs",
+      "title": "Come, Thou Long-Expected Jesus | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "20200403",
+      "durationSec": 123,
+      "duration": "2:03",
+      "views": 27159,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "NOxJFN-9_vs",
+      "url": "https://www.youtube.com/watch?v=NOxJFN-9_vs",
+      "title": "Meredith Andrews - Come Thou Long Expected Jesus (Official Lyric Video)",
+      "channel": "meredithandrewsmusic",
+      "publishedAt": "20171027",
+      "durationSec": 254,
+      "duration": "4:14",
+      "views": 1108775,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "0dmO8UPlWoo",
+      "url": "https://www.youtube.com/watch?v=0dmO8UPlWoo",
+      "title": "Come, Thou Long Expected Jesus - Fernando Ortega",
+      "channel": "Scott Bacher",
+      "publishedAt": "20131125",
+      "durationSec": 184,
+      "duration": "3:04",
+      "views": 430742,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "WBGx_4PxO3g",
+      "url": "https://www.youtube.com/watch?v=WBGx_4PxO3g",
+      "title": "Come, Thou Long Expected Jesus (Tune: Cross of Jesus - 4vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20201109",
+      "durationSec": 126,
+      "duration": "2:06",
+      "views": 62486,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "pFloWX1yuyQ",
+      "url": "https://www.youtube.com/watch?v=pFloWX1yuyQ",
+      "title": "Come Thou Long Expected Jesus | Christmas Lyric Video | Reawaken Hymns",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "20211118",
+      "durationSec": 133,
+      "duration": "2:13",
+      "views": 276187,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "1 Come, thou long-expected Jesus,",
+            "Born to set thy people free",
+            "From our fears and sins release us Let",
+            "Us find our rest in Thee",
+            "Israel, strength and consolation Hope",
+            "Of all the earth, Thou art",
+            "Dear desire of every nation Joy",
+            "Of every longing heart"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Born thy people to deliver",
+            "Born a child and yet a king",
+            "Born to reign in us forever",
+            "Now Thy gracious kingdom reigns",
+            "By Thine own eternal Spirit",
+            "Rule in all our hearts alone",
+            "By Thine all-sufficient merit Raise",
+            "Us to Thy glorious throne Thank you"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 75,
+      "notes": "Transcript was auto‑generated and contained several garbled phrases (e.g., \"From our fears and sins\" and \"Born thy people to deliver\"). Used known hymn text to correct wording while preserving the order indicated by timestamps. No reference lyrics were provided; structure inferred as three verses based on typical hymn layout.",
+      "order": "Verse 1 · Verse 2 · Verse 3",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "1 Come, thou long-expected Jesus,",
+            "t0": 14.72,
+            "t1": 20.28,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "come thou long expected jesus",
+              "asr_large": "1 Come, thou long-expected Jesus,",
+              "asr_turbo": "Come Thou Long-Expected Long-Expected Jesus",
+              "asr_prompted": "jesus"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Born to set thy people free",
+            "t0": 20.28,
+            "t1": 25.3,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "born to set thy people free",
+              "asr_large": "Born to set thy people free",
+              "asr_turbo": "Born to set Thy people free",
+              "asr_prompted": "born to set thy people free"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "From our fears and sins release us Let",
+            "t0": 26.5,
+            "t1": 32.74,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "from our fears and since release us let",
+              "asr_large": "From our fears and sins release us Let",
+              "asr_turbo": "From our fears and sins release us Let",
+              "asr_prompted": "from our fears and sins release us let"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Us find our rest in Thee",
+            "t0": 32.74,
+            "t1": 37.78,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "us find our rest in thee",
+              "asr_large": "Us find our rest in Thee",
+              "asr_turbo": "us find our rest in thee",
+              "asr_prompted": "us find our rest in thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Israel, strength and consolation Hope",
+            "t0": 38.34,
+            "t1": 45.18,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Israel's strength and consolation hope",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "israel's strength and consolation",
+              "asr_large": "Israel, strength and consolation Hope",
+              "asr_turbo": "Israel strength and consolation Hope",
+              "asr_prompted": "israel's strength and consolation hope"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of all the earth, Thou art",
+            "t0": 45.18,
+            "t1": 49.18,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Of all the earth, Thou art",
+              "asr_turbo": "of all the earth thou art",
+              "asr_prompted": "of all the earth thou art"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Dear desire of every nation Joy",
+            "t0": 50.1,
+            "t1": 56.7,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "desire of every nation joy",
+              "asr_large": "Dear desire of every nation Joy",
+              "asr_turbo": "Dear desire of every nation, joy",
+              "asr_prompted": "dear desire of every nation joy"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of every longing heart",
+            "t0": 56.7,
+            "t1": 61.08,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "of every longing heart",
+              "asr_large": "Of every longing heart",
+              "asr_turbo": "of every longing heart.",
+              "asr_prompted": "of every longing heart you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Born thy people to deliver",
+            "t0": 72.2755,
+            "t1": 76.915504,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "born thy people to deliver",
+              "asr_large": "Born thy people to deliver",
+              "asr_turbo": "Born Thy people to deliver",
+              "asr_prompted": "born thy people to deliver"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Born a child and yet a king",
+            "t0": 77.6955,
+            "t1": 82.9755,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "born a child and yet a king",
+              "asr_large": "Born a child and yet a king",
+              "asr_turbo": "Born a child and yet a king",
+              "asr_prompted": "born a child and yet a king"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Born to reign in us forever",
+            "t0": 83.9155,
+            "t1": 88.6955,
+            "conf": 0.66,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "born to",
+              "asr_large": "Born to reign in us forever",
+              "asr_turbo": "Born to reign in us forever",
+              "asr_prompted": "born to vain in us forever"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Now Thy gracious kingdom reigns",
+            "t0": 89.7955,
+            "t1": 95.3355,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Now Thy gracious kingdom ring",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "asr_large": "Now Thy gracious kingdom reigns",
+              "asr_turbo": "Now Thy gracious kingdom ring",
+              "asr_prompted": "now thy gracious kingdom"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "By Thine own eternal Spirit",
+            "t0": 95.8955,
+            "t1": 100.8755,
+            "conf": 0.83,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "eternal",
+              "asr_large": "By Thine own eternal Spirit",
+              "asr_turbo": "By Thine own eternal spirit",
+              "asr_prompted": "by thine own eternal spirit"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Rule in all our hearts alone",
+            "t0": 101.7555,
+            "t1": 106.5755,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Rule in all our hearts alone",
+              "asr_turbo": "Rule in all our hearts alone",
+              "asr_prompted": "rule in all our hearts alone"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "By Thine all-sufficient merit Raise",
+            "t0": 107.5755,
+            "t1": 114.5755,
+            "conf": 0.83,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "raise",
+              "asr_large": "By Thine all-sufficient merit Raise",
+              "asr_turbo": "By Thine all-sufficient all-sufficient merit Raise",
+              "asr_prompted": "by thine all-sufficient all-sufficient merit raise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Us to Thy glorious throne Thank you",
+            "t0": 114.5755,
+            "t1": 130.9555,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Us to thy glorious throne you",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "us to thy glorious you",
+              "asr_large": "Us to Thy glorious throne Thank you",
+              "asr_turbo": "us to Thy glorious throne Thank you.",
+              "asr_prompted": "us to thy glorious throne you"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 36.34,
+            "t1": 45.18,
+            "text": "Israel, strength and consolation Hope",
+            "options": [
+              "Israel, strength and consolation Hope",
+              "Israel's strength and consolation hope"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 81.9155,
+            "t1": 88.6955,
+            "text": "Born to reign in us forever",
+            "options": [
+              "Born to reign in us forever"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 87.7955,
+            "t1": 95.3355,
+            "text": "Now Thy gracious kingdom reigns",
+            "options": [
+              "Now Thy gracious kingdom reigns",
+              "Now Thy gracious kingdom ring"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 112.5755,
+            "t1": 130.9555,
+            "text": "Us to Thy glorious throne Thank you",
+            "options": [
+              "Us to Thy glorious throne Thank you",
+              "Us to thy glorious throne you"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "pFloWX1yuyQ",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 7.1,
+          "lines": 16,
+          "verified": 12,
+          "checks": 4,
+          "seconds": 341.4,
+          "generatedAt": "2026-10-05T06:30:55+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "xIOY0dXQh9w",
+      "url": "https://www.youtube.com/watch?v=xIOY0dXQh9w",
+      "title": "Come Thou Long Expected Jesus  (Lyrics)",
+      "channel": "Extended Life Worship",
+      "publishedAt": "20160327",
+      "durationSec": 216,
+      "duration": "3:36",
+      "views": 35840,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Come, Thou long expected Jesus",
+            "Born to set Thy people free",
+            "From our fears and sins release us",
+            "Let us find our rest in Thee"
+          ],
+          "times": [
+            13.2,
+            16.3,
+            23.0,
+            29.6
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "O Thou who for our sins' sake",
+            "Didst bear the cross, the crown",
+            "Now we pray Thee, O Redeemer",
+            "Bring us to Thy throne"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            168.0
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "O Jesus, Thou the promised One",
+            "Hope of all the earth",
+            "Our dear desire of every nation",
+            "Joy of every heart"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "O blessed hope of all the world",
+            "Promise of the ages",
+            "We sing Thy name with grateful hearts",
+            "And praise Thee through the ages"
+          ],
+          "times": [
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "transcriptSource": "asr",
+      "confidence": 35,
+      "notes": "Auto‑generated captions are heavily garbled and do not provide a clear structure. No reference lyrics were supplied, so the well‑known hymn text was used. The order follows the traditional verses of \"Come Thou Long Expected Jesus.\"",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Verse 4"
+    },
+    {
+      "videoId": "5lwtbnU-1Tw",
+      "url": "https://www.youtube.com/watch?v=5lwtbnU-1Tw",
+      "title": "Come, Thou Long Expected Jesus | Celtic Worship",
+      "channel": "Celtic Worship",
+      "publishedAt": "20231221",
+      "durationSec": 226,
+      "duration": "3:46",
+      "views": 373539,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "asr",
+      "confidence": 0,
+      "notes": "Draft failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m18dmdvmett95e5ktz9wvgyd` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199350, Requested 1387. Please try again in 5m18.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "order": ""
+    },
+    {
+      "videoId": "z6uBCkYoMX8",
+      "url": "https://www.youtube.com/watch?v=z6uBCkYoMX8",
+      "title": "Come, Thou Long-Expected Jesus - Christmas piano instrumental with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "20211219",
+      "durationSec": 142,
+      "duration": "2:22",
+      "views": 79462,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] z6uBCkYoMX8: Requested format is not available. Use --list-formats for a list of available formats).",
+      "order": ""
+    },
+    {
+      "videoId": "8DHJiPFlcWs",
+      "url": "https://www.youtube.com/watch?v=8DHJiPFlcWs",
+      "title": "Come, Thou Long-Expected Jesus | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "20200403",
+      "durationSec": 123,
+      "duration": "2:03",
+      "views": 27159,
+      "hasCaptions": true,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "NOxJFN-9_vs",
+      "url": "https://www.youtube.com/watch?v=NOxJFN-9_vs",
+      "title": "Meredith Andrews - Come Thou Long Expected Jesus (Official Lyric Video)",
+      "channel": "meredithandrewsmusic",
+      "publishedAt": "20171027",
+      "durationSec": 254,
+      "duration": "4:14",
+      "views": 1108775,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "0dmO8UPlWoo",
+      "url": "https://www.youtube.com/watch?v=0dmO8UPlWoo",
+      "title": "Come, Thou Long Expected Jesus - Fernando Ortega",
+      "channel": "Scott Bacher",
+      "publishedAt": "20131125",
+      "durationSec": 184,
+      "duration": "3:04",
+      "views": 430742,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "WBGx_4PxO3g",
+      "url": "https://www.youtube.com/watch?v=WBGx_4PxO3g",
+      "title": "Come, Thou Long Expected Jesus (Tune: Cross of Jesus - 4vv) [with lyrics for congregations]",
+      "channel": "Chet Valley Hymns and Songs",
+      "publishedAt": "20201109",
+      "durationSec": 126,
+      "duration": "2:06",
+      "views": 62486,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-05T06:30:55+00:00"
+}
