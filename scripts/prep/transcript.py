@@ -224,6 +224,7 @@ def _ytdlp_captions(url: str) -> dict | None:
                 "--write-info-json",
                 "--extractor-args", client,
                 "--no-warnings", "--no-progress",
+                *(["--proxy", os.environ["YT_PROXY"]] if os.environ.get("YT_PROXY", "").strip() else []),
                 "-o", f"{tmp}/v.%(ext)s", url,
             ])
             d = Path(tmp)
