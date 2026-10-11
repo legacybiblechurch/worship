@@ -847,8 +847,12 @@ const LEGACY_SONGS = {
     youtube: "https://www.youtube.com/watch?v=2D4gg03f0DM",
     lyrics: [
     { label: "Verse 1", lines: ["Holy, holy, holy", "Lord, God Almighty", "Early in the morning our song shall rise to Thee", "Holy, holy, holy", "Merciful and mighty", "God in three persons blessed Trinity"] },
-    { label: "Verse 2", lines: ["Holy, holy, holy", "Though the darkness hide Thee", "Though the eye of sinful man thy glory may not see", "Only Thou art holy; there is none beside Thee", "Perfect in power, in love, and purity"] },
-    { label: "Verse 3", lines: ["Holy, holy, holy", "Lord, God Almighty", "All Thy works shall praise Thy name in earth and sky and sea", "Holy, holy, holy", "Merciful and mighty", "God in three persons blessed Trinity"] }
+    { label: "Verse 2", lines: ["Holy, holy, holy", "All the Saints adore thee", "Casting down their golden crowns around the glassy sea", "Cherubim and Seraphim falling down before Thee,", "Who were and art and evermore shalt be"] },
+    { label: "", lines: ["Holy, holy, holy! Though the darkness hide Thee,", "Though the eye of sinful man Thy glory may not see"] },
+    { label: "", lines: ["Only Thou art holy, there is none beside Thee,", "Perfect in power, in love and purity"] },
+    { label: "", lines: ["Holy, holy, holy!", "Lord God Almighty!", "All thy works shall praise Thy name", "In earth and sky and sea"] },
+    { label: "", lines: ["Holy, holy, holy! Merciful and mighty!", "God in three Persons, blessed Trinity!"] },
+    { label: "", lines: ["God in Three Persons, blessed Trinity"] }
   ]
   },
   "how-beautiful": {
