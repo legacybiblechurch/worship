@@ -1,5 +1,7 @@
 # The livestream overlay
 
+> **The stream now runs in OBS on the worship laptop.** Setup is in `OBS-SETUP.md`; Sunday is `/obs/`. OBS captures this same page from a green window Control opens, so nothing below about PRISM is needed unless the iPad is the encoder again.
+
 The TV shows lyrics and the laptop plays the songs. The YouTube stream comes from the iPad, which sees neither. One web page fixes the lyrics half. It loads once as a web widget in PRISM and then runs itself.
 
 **Hand-off page for whoever runs the stream:** https://worship.legacybiblechurch.com/stream/setup/

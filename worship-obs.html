@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run the stream — Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @font-face { font-family: 'Priestacy'; src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display: swap; }
+    :root {
+      --bg: #0d0d0f; --panel: #141416; --panel-2: #1b1b1e; --line: #2a2a2e; --line-soft: #202024;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #62626a; --gold: #c9a84c; --good: #7bb37e;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; padding: 40px 20px 60px; }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    .back { display: inline-block; font-size: 13px; color: var(--ink-dim); text-decoration: none; margin-bottom: 18px; }
+    .brand { font-family: 'Priestacy', var(--font); font-size: 40px; line-height: 1; }
+    .brand-sub { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 22px; }
+    .lede { margin-top: 22px; font-size: 15.5px; color: var(--ink-dim); }
+    .lede b { color: var(--ink); font-weight: 600; }
+    h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin: 36px 0 10px; }
+    .step { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+    .step:last-child { border-bottom: 0; }
+    .step .n { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); color: var(--ink-dim); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+    .step .t { font-size: 15.5px; }
+    .step .t b { font-weight: 600; }
+    .step .t small { display: block; font-size: 13px; color: var(--ink-dim); margin-top: 3px; }
+    .box { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+    .box .row { display: flex; gap: 14px; padding: 13px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
+    .box .row:last-child { border-bottom: 0; }
+    .box .when { flex-shrink: 0; width: 118px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); padding-top: 3px; }
+    .box .row span:last-child { color: var(--ink-dim); }
+    .box .row span:last-child b { color: var(--ink); font-weight: 600; }
+    .foot { margin-top: 36px; font-size: 13px; color: var(--ink-faint); }
+    .foot a { color: var(--ink-dim); }
+    @media (max-width: 480px) { body { padding: 24px 14px 44px; } .brand { font-size: 34px; } .box .when { width: 92px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="worship.html">&larr; Worship</a>
+    <div class="brand">Run the stream</div>
+    <div class="brand-sub">Legacy Bible Church &middot; Sunday morning</div>
+
+    <p class="lede">The stream runs from the church laptop in OBS. <b>Everything is already set up.</b> The countdown and the song words come from the laptop by themselves. You check the picture and press one button.</p>
+
+    <h2>Before the service (5 minutes)</h2>
+    <div class="step"><div class="n">1</div><div class="t">On the laptop, make sure <b>Worship Control</b> is open and its <b>Open stream window</b> has been clicked once. A window with a green background appears. Leave it open, behind everything.<small>Whoever runs the words usually does this. If the green window is there, you are good.</small></div></div>
+    <div class="step"><div class="n">2</div><div class="t">Open <b>OBS</b>. Look at the big preview. You should see the room, with the countdown over it.<small>No room? The camera cable. No countdown? The green window from step 1.</small></div></div>
+    <div class="step"><div class="n">3</div><div class="t">Say a word near the shirt mic and watch the <b>Mic</b> meter at the bottom bounce green.</div></div>
+    <div class="step"><div class="n">4</div><div class="t">Click <b>Start Streaming</b>. Bottom right. That's it.</div></div>
+
+    <h2>During the service</h2>
+    <div class="box">
+      <div class="row"><span class="when">Countdown</span><span><b>Runs itself.</b> It fades away at 10:30.</span></div>
+      <div class="row"><span class="when">Songs</span><span><b>Run themselves.</b> The words appear when the laptop puts a slide up and vanish when it blanks.</span></div>
+      <div class="row"><span class="when">A video</span><span>When it starts on the TV, click the <b>Video</b> scene on the left. When it ends, click <b>Service</b>. The mic is quiet on its own during Video.</span></div>
+      <div class="row"><span class="when">Sermon</span><span><b>Nothing to do.</b></span></div>
+    </div>
+
+    <h2>After</h2>
+    <div class="step"><div class="n">&#10003;</div><div class="t">Click <b>Stop Streaming</b>. YouTube keeps the recording by itself.</div></div>
+
+    <p class="foot">If OBS is not on this laptop yet, or something looks wrong, the one-time setup is in <a href="https://github.com/legacybiblechurch/worship/blob/main/OBS-SETUP.md">OBS-SETUP.md</a>. Still streaming from the iPad with PRISM? <a href="worship-stream-setup.html">That page is here.</a> Questions: Quaid.</p>
+  </div>
+</body>
+</html>

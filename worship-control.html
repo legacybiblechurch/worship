@@ -239,7 +239,7 @@
       .wordmark::after { content: 'Control'; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); }
       .wordmark { font-size: 0 !important; font-family: var(--font); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
       #header a.display-link[href="worship.html"] { padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
-      #header a[href="worship-display.html"], #disp-pill, #phone-btn { display: none; }
+      #header a[href="worship-display.html"], #header a[target="lbc-stream"], #disp-pill, #phone-btn { display: none; }
       body.remote #remote-pill { flex-shrink: 0; margin: 0; }
       body:not(.remote) #phone-btn { display: inline-block; padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
       #phone-panel { right: 10px; left: 10px; width: auto; }
@@ -286,6 +286,7 @@
     <span class="disp-pill off" id="disp-pill" title="Is the congregation screen open?"><span class="dot"></span><span id="disp-pill-text">Display not open</span></span>
     <span class="kbd-hint"><span class="kbd">&larr;</span><span class="kbd">&rarr;</span> move &nbsp;<span class="kbd">B</span> blank &nbsp;<span class="kbd">F</span> fade out &nbsp;<span class="kbd">N</span> fade to next</span>
     <a href="worship-display.html" target="_blank" class="display-link">Open display &nearr;</a>
+    <a href="worship-stream.html?bg=green" target="lbc-stream" class="display-link" title="The window OBS captures for the stream: words and countdown on green">Open stream window &nearr;</a>
   </div>
 
   <div id="layout">
