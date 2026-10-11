@@ -5,7 +5,7 @@ The TV shows lyrics and the laptop plays the songs. The YouTube stream comes fro
 **Hand-off page for whoever runs the stream:** https://worship.legacybiblechurch.com/stream/setup/
 It has the address, a Copy button, the three taps, and a live preview. Nothing else is needed.
 
-**The page itself:** `worship-stream.html`, short address `https://worship.legacybiblechurch.com/stream/`
+**The page itself:** `worship-stream.html`, short address `worship.legacybiblechurch.com/stream/` (the setup page shows it without `https://`, because PRISM's URL box already starts with that)
 
 ## What it does
 
