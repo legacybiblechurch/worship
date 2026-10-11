@@ -1203,11 +1203,11 @@ const LEGACY_SONGS = {
   },
   "the-king-of-glory-psalm-24": {
     title: "The King of Glory (Psalm 24)",
-    youtube: "https://www.youtube.com/results?search_query=The+King+of+Glory+Psalm+24+worship+official",
+    youtube: "https://www.youtube.com/watch?v=FsOZ3UsUbNA",
     lyrics: [
     { label: "", lines: ["The King of glory reigns", "Over all the world", "His mighty hand sustains", "The heavens and the earth"] },
-    { label: "", lines: ["Who may come to Him", "Into His holy place?"] },
-    { label: "", lines: ["The just, the pure in heart", "All whose hands are clean", "And those who love His name", "Above all other things"] },
+    { label: "", lines: ["Who may come to Him", "And seek His holy face?"] },
+    { label: "", lines: ["He calls, the pure in heart", "All whose hands are clean", "And those who love His name", "Above all other things"] },
     { label: "", lines: ["Humbly I will bow", "And Jesus' name confess"] },
     { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore"] },
     { label: "", lines: ["Swing wide you ancient gates", "Let the King come in", "His glory never fades", "Our hearts delight in Him"] },
