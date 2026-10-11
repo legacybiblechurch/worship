@@ -1,1 +1,4 @@
-<!DOCTYPE html><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=../worship-stream.html"><title>Legacy Bible Church</title><script>location.replace("../worship-stream.html"+location.search)</script>
+<!DOCTYPE html><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=../worship-stream.html"><title>Legacy Bible Church</title><script>
+// a fresh copy of the overlay every time PRISM opens it, so a change to the
+// page never waits on a cached one (Pages caches for 10 minutes, PRISM longer)
+location.replace("../worship-stream.html?t="+Date.now()+(location.search?"&"+location.search.slice(1):""))</script>

@@ -298,7 +298,12 @@
       s.onload = cb; s.onerror = cb;
       document.head.appendChild(s);
     }
-    var SIGS = ['js/songs-data.js', 'js/worship-songs.js'], base = {};
+    // this page checks itself too, so a change to it reaches a widget that is already open
+    var SIGS = ['js/songs-data.js', 'js/worship-songs.js', 'worship-stream.html'], base = {};
+    function fresh() {   // reload with a new cache-buster, keeping every other setting
+      var p = new URLSearchParams(location.search); p.set('t', Date.now());
+      location.replace(location.pathname + '?' + p.toString());
+    }
     function sig(u) {
       return fetch(u, { method: 'HEAD', cache: 'no-store' }).then(function (r) {
         return r.headers.get('etag') || r.headers.get('last-modified') || r.headers.get('content-length') || '';
@@ -318,7 +323,7 @@
       // the set or the words republished while this is open? reload so they match
       Promise.all(SIGS.map(sig)).then(function (s) { SIGS.forEach(function (u, i) { base[u] = s[i]; }); });
       setInterval(function () {
-        SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) location.reload(); }); });
+        SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
     load('js/sheet.js?v=13', function () {
