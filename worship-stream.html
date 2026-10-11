@@ -55,9 +55,9 @@
     #lines { transition: opacity 0.18s ease; }
     #lines.swap { opacity: 0; }
 
-    /* panel (default): big words on a dark panel in the middle of the picture.
-       The rest of the page stays transparent, so the widget can be any size and
-       a gap left for PRISM's own buttons never shows on the stream. */
+    /* ?mode=panel  big words on a dark panel in the middle of the picture, the
+       rest transparent, so the widget can be any size and a gap left for
+       PRISM's own buttons never shows on the stream. */
     body.panel #plate, body.black #plate {
       top: 0;
       padding: 4vh 4vw;
@@ -72,8 +72,8 @@
     }
     body.panel .line, body.black .line { font-weight: 400; text-shadow: none; }
 
-    /* ?mode=black  the whole widget black, like the TV. Only looks right if the
-       widget covers the entire picture, which PRISM's editor fights. */
+    /* black (default): the whole widget black with the words centred, like the
+       TV. Stretch the widget as close to the full picture as PRISM allows. */
     body.black #plate { background: #000; }
 
     /* ── the starting-soon card, above the words ── */
@@ -137,7 +137,7 @@
     var DEBUG = qs.has('debug');                                  // status box
     var bg    = (qs.get('bg') || '').toLowerCase();
     if (bg === 'green' || bg === 'solid') document.body.classList.add('bg-' + bg);
-    var MODE  = (qs.get('mode') || 'panel').toLowerCase();              // panel (default) | black | lower
+    var MODE  = (qs.get('mode') || 'black').toLowerCase();              // black (default) | panel | lower
     if (MODE === 'full') MODE = 'black';                                  // the old name for black
     if (MODE !== 'black' && MODE !== 'lower') MODE = 'panel';
     var FULL  = MODE !== 'lower';

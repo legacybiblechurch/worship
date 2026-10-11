@@ -10,7 +10,7 @@ It has the address, a Copy button, the three taps, and a live preview. Nothing e
 ## What it does
 
 - **Sunday before 10:30 AM** — a full-screen card: the logo drawn on, "Service begins shortly", the time, and a countdown for the last hour. At 10:30 it says "We are about to begin" for two minutes, then fades out by itself.
-- **While Control has a slide up** — the words, big, on a dark panel in the middle of the picture. Everything outside the panel stays transparent, so the widget can be any size: PRISM's editor cannot reach its own buttons when a widget covers the whole screen, so a gap has to be left, and the gap never shows. Between slides only the text fades; the panel stays, so the camera never flashes through mid-song.
+- **While Control has a slide up** — the words, full screen on black, like the TV. The pulpit is empty while we sing, so there is nothing worth keeping from the camera. Between slides only the text fades; the black stays, so the camera never flashes through mid-song. PRISM's editor cannot reach its own buttons once a widget covers the whole screen, so stretch it as far as PRISM allows; a sliver of camera at one edge is the trade-off, and `mode=panel` is there if that ever bothers anyone.
 - **Otherwise** — nothing. The page is transparent and the camera shows through.
 - **Any other day** — the card shows for 20 seconds after the page loads, so whoever is setting it up sees it worked, then the camera.
 
@@ -38,8 +38,8 @@ Only for testing. The hand-off address has none.
 - `pin=1` the card never fades
 - `card=0` no card at all, words only
 - `at=10:30` the service time, 24-hour clock
-- `mode=lower` a lower third over the camera instead of the panel
-- `mode=black` the whole widget black like the TV. Only looks right if the widget covers the entire picture, which PRISM's editor fights
+- `mode=panel` big words on a dark panel in the middle, everything else transparent, so the widget can be any size
+- `mode=lower` a lower third over the camera
 - `room=CODE` listen to a different room code
 - `bg=green` / `bg=solid` a green or black background, if PRISM ever cannot do a transparent page
 - `music=ADDRESS` play an audio file while the card is up, `vol=0.5` its volume. PRISM may silence sound from a web widget; its own music mixer is the safer route. Mind copyright: YouTube checks livestreams, so use public-domain or licensed music and keep the licence note.
