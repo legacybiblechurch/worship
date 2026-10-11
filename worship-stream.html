@@ -7,14 +7,17 @@
   <title>Stream lyrics — Legacy Bible Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* The livestream's lyrics. Load this page as a web widget in PRISM (or a
-       browser source in OBS). It follows Worship Control. When a slide is up
-       it shows the words: full screen on black by default (the pulpit is empty
-       while we sing), or as a lower third over the camera with ?mode=lower.
-       When Control is blank or between songs it draws nothing and the camera
-       shows through. See STREAM.md for URL options. */
+    /* The livestream overlay. Load this one page as a web widget in PRISM,
+       stretched over the whole picture, and leave it. It needs no settings:
+         - before the service on Sunday it shows "Service begins shortly" with a
+           countdown, and fades away by itself at the service time
+         - whenever Worship Control has a slide up it shows the words, full
+           screen on black (the pulpit is empty while we sing)
+         - the rest of the time it draws nothing and the camera shows through
+       It follows Control through the church's room code (js/sheet.js), the
+       same relay the phone remote uses. STREAM.md lists the optional settings. */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
@@ -29,8 +32,9 @@
     body.bg-green { background: #00ff00; }   /* ?bg=green  for a chroma-key filter */
     body.bg-solid { background: #000; }      /* ?bg=solid  when transparency is not available */
 
+    /* ── the words ── */
     #plate {
-      position: fixed; left: 0; right: 0; bottom: 0;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 1;
       padding: 0.55em 1.2em 0.7em;
       text-align: center;
       line-height: 1.28;
@@ -41,13 +45,11 @@
     #plate.on { opacity: 1; }
     body.bg-green #plate { background: none; }
     body.bg-solid #plate { background: #000; }
-
     .line {
       font-weight: 500;
       color: #fff;
       text-shadow: 0 0.06em 0.22em rgba(0,0,0,0.9), 0 0 0.05em rgba(0,0,0,0.9);
     }
-
     /* full screen (default): the whole frame, words centred on black, like the TV */
     body.full #plate {
       top: 0;
@@ -57,7 +59,38 @@
     }
     body.full .line { font-weight: 400; text-shadow: none; }
 
-    /* ?debug=1  small status box for the dry run */
+    /* ── the starting-soon card, above the words ── */
+    #card {
+      position: fixed; inset: 0; z-index: 2;
+      background: #000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 4vh 6vw;
+      opacity: 0; pointer-events: none;
+      transition: opacity 1.6s ease;
+    }
+    #card.on { opacity: 1; }
+    #logo {
+      height: 32vh; width: auto; max-width: 78vw;
+      opacity: 0;
+      -webkit-mask-image: linear-gradient(to right, #000 0 44%, rgba(0,0,0,0) 49%);
+              mask-image: linear-gradient(to right, #000 0 44%, rgba(0,0,0,0) 49%);
+      -webkit-mask-repeat: no-repeat;          mask-repeat: no-repeat;
+      -webkit-mask-size: 235% 100%;            mask-size: 235% 100%;
+      -webkit-mask-position: 100% 0;           mask-position: 100% 0;
+    }
+    #card.on #logo { animation: draw 2.6s cubic-bezier(0.62, 0.03, 0.24, 1) 0.2s forwards; }
+    @keyframes draw {
+      0%   { opacity: 0; -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+      6%   { opacity: 1; }
+      100% { opacity: 1; -webkit-mask-position: 0% 0;   mask-position: 0% 0; }
+    }
+    #l1 { margin-top: 5vh; font-size: clamp(16px, 4.6vmin, 64px); font-weight: 300; letter-spacing: 0.02em; color: #f1efe9; }
+    #l2 { margin-top: 1.8vh; font-size: clamp(11px, 2.1vmin, 28px); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #C9A84C; }
+    #count { margin-top: 4.5vh; min-height: 1.3em; font-size: clamp(14px, 3vmin, 40px); font-weight: 300; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); font-variant-numeric: tabular-nums; }
+
+    /* ?debug=1  small status box for a dry run */
     #hud {
       position: fixed; top: 8px; left: 8px; z-index: 9;
       font: 12px/1.5 ui-monospace, Menlo, monospace;
@@ -70,47 +103,61 @@
 <body>
 
   <div id="plate"><div id="lines"></div></div>
+
+  <div id="card">
+    <img id="logo" src="images/logo-dark.png" alt="Legacy Bible Church">
+    <div id="l1">Service begins shortly</div>
+    <div id="l2"></div>
+    <div id="count"></div>
+  </div>
+
   <div id="hud"></div>
 
   <script>
   (function () {
-    var qs     = new URLSearchParams(location.search);
-    var TEST   = qs.has('test');    // always show a sample slide, ignore Control
-    var DEBUG  = qs.has('debug');   // status box
-    var bg     = (qs.get('bg') || '').toLowerCase();
+    var qs    = new URLSearchParams(location.search);
+    var TEST  = qs.has('test');                                   // always show a sample slide, ignore Control
+    var DEBUG = qs.has('debug');                                  // status box
+    var bg    = (qs.get('bg') || '').toLowerCase();
     if (bg === 'green' || bg === 'solid') document.body.classList.add('bg-' + bg);
-    var FULL   = (qs.get('mode') || 'full').toLowerCase() !== 'lower';   // ?mode=lower for a lower third
+    var FULL  = (qs.get('mode') || 'full').toLowerCase() !== 'lower';   // ?mode=lower for a lower third
     if (FULL) document.body.classList.add('full');
 
-    // room code: ?room=ABC123, else the one Control saved in this browser
-    var code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-    if (!code) { try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {} }
-    var topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';
+    // the starting-soon card
+    var CARD  = qs.get('card') !== '0';                           // ?card=0 turns it off
+    var TZ    = qs.get('tz') || 'America/Los_Angeles';
+    var parts = (qs.get('at') || '10:30').split(':');
+    var AT    = (+parts[0] || 0) * 3600 + (+parts[1] || 0) * 60;  // service start, seconds into the day
+    var IN    = qs.has('in') ? parseFloat(qs.get('in')) : null;   // rehearsal: pretend it starts in N minutes
+    var HOLD  = qs.has('hold') ? parseFloat(qs.get('hold')) : 2;  // minutes to stay up after the start time
+    var INTRO = qs.has('intro') ? parseFloat(qs.get('intro')) : 20; // seconds the card shows on a day with no service
+    var PIN   = qs.has('pin');                                    // never fade
+    var MUSIC = qs.get('music') || '';                            // optional audio file while the card is up
+    var VOL   = qs.has('vol') ? parseFloat(qs.get('vol')) : 0.5;
 
     var SAMPLE = ['Amazing grace, how sweet the sound', 'That saved a wretch like me', 'I once was lost, but now am found', 'Was blind, but now I see'];
 
-    var SONGS = [], ready = false, pending = null;
-    var last = null, lastAt = 0, lastFrom = '-', relay = 'off';
     var plate = document.getElementById('plate'), lines = document.getElementById('lines');
+    var card = document.getElementById('card'), l1 = document.getElementById('l1'), l2 = document.getElementById('l2'), count = document.getElementById('count');
+    var SONGS = [], ready = false, pending = null;
+    var last = null, lastAt = 0, lastFrom = '-', lastRelayT = 0, relay = 'off';
+    var code = '', topic = '';
     var tok = 0, cur = '';
+    var hudNote = '';
 
     function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
-    // largest size that fits the box, so the widget can be any size
+    // ── the words ──────────────────────────────────────────────────────────
+    // largest size that fits, so the widget can be any size
     function fit() {
       var vw = window.innerWidth, vh = window.innerHeight, n = 0;
       var size = FULL ? Math.min(vw * 0.052, vh * 0.092) : Math.min(vw * 0.030, vh * 0.052);
       var limit = FULL ? vh * 0.84 : vh * 0.97;
       function h() { return FULL ? lines.offsetHeight : plate.offsetHeight; }
       plate.style.fontSize = size + 'px';
-      while (h() > limit && size > 10 && n++ < 60) {
-        size *= 0.94;
-        plate.style.fontSize = size + 'px';
-      }
+      while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
-
     function hide() { tok++; cur = ''; plate.classList.remove('on'); }
-
     function show(arr) {
       var key = arr.join('\n');
       if (key === cur && plate.classList.contains('on')) return;
@@ -118,22 +165,16 @@
       function swap() {
         if (my !== tok) return;
         lines.innerHTML = arr.map(function (l) { return '<div class="line">' + esc(l) + '</div>'; }).join('');
-        fit();
-        cur = key;
-        plate.classList.add('on');
+        fit(); cur = key; plate.classList.add('on');
       }
-      if (plate.classList.contains('on')) { plate.classList.remove('on'); setTimeout(swap, 230); }
-      else swap();
+      if (plate.classList.contains('on')) { plate.classList.remove('on'); setTimeout(swap, 230); } else swap();
     }
-
     function apply(st) {
       if (!st || st.blank || st.songIndex == null) return hide();
       var song = SONGS[st.songIndex], slide = song && song.slides[st.slideIndex];
       if (!slide || !slide.lines || !slide.lines.length) return hide();
       show(slide.lines);
     }
-
-    var lastRelayT = 0;   // server time (s) of the newest relay message applied
     function handle(d, from, t) {
       if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
       last = { songIndex: d.songIndex, slideIndex: d.slideIndex, blank: !!d.blank };
@@ -143,7 +184,7 @@
       apply(last);
     }
 
-    // ── Control in this browser (same machine)
+    // Control in this browser (same machine)
     try {
       var ch = new BroadcastChannel('lbc-worship');
       ch.onmessage = function (e) {
@@ -153,11 +194,10 @@
       };
     } catch (e) {}
 
-    // ── Control anywhere (the iPad, another browser): the same relay the phone remote uses
-    if (topic) {
-      // On load and on every reconnect, ask for the slide Control is on now (only if it is
-      // recent). Covers a page opened mid-service and any message missed while connecting.
-      var syncLast = function () {
+    // Control anywhere (the iPad, another browser): the relay the phone remote uses
+    function listen() {
+      if (!topic) return;
+      var syncLast = function () {   // the slide Control is on now, if recent; covers a page opened mid-service
         fetch('https://ntfy.sh/' + topic + '/json?poll=1&since=2h').then(function (r) { return r.text(); }).then(function (t) {
           var rows = t.trim().split('\n').filter(Boolean);
           for (var i = rows.length - 1; i >= 0; i--) {
@@ -168,24 +208,72 @@
           }
         }).catch(function () {});
       };
-
       (function connect() {
         var es = new EventSource('https://ntfy.sh/' + topic + '/sse');
         es.onopen = function () { relay = 'on'; syncLast(); };
         es.onmessage = function (ev) {
-          try {
-            var m = JSON.parse(ev.data), d = JSON.parse(m.message);
-            if (d.type === 'state') handle(d, 'relay', m.time);
-          } catch (x) {}
+          try { var m = JSON.parse(ev.data), d = JSON.parse(m.message); if (d.type === 'state') handle(d, 'relay', m.time); } catch (x) {}
         };
         es.onerror = function () { relay = 'off'; es.close(); setTimeout(connect, 3000); };
       })();
     }
 
-    // ── this Sunday's songs (fresh copy every load, never a cached one)
+    // ── the starting-soon card ─────────────────────────────────────────────
+    var t0 = Date.now(), cardDone = false, cardState = 'off', rem = null, musicState = MUSIC ? 'waiting' : 'none', audio = null;
+    function ptNow() {
+      var o = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour12: false, weekday: 'short', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+        .formatToParts(new Date()).forEach(function (x) { o[x.type] = x.value; });
+      return { dow: o.weekday, secs: (+o.hour % 24) * 3600 + (+o.minute) * 60 + (+o.second) };
+    }
+    function remaining() {   // seconds until the service (negative once it has started), or null on a day with none
+      if (IN !== null) return IN * 60 - (Date.now() - t0) / 1000;
+      var p = ptNow();
+      return p.dow === 'Sun' ? AT - p.secs : null;
+    }
+    function clock() {
+      var h = Math.floor(AT / 3600), m = Math.floor((AT % 3600) / 60), ap = h >= 12 ? 'PM' : 'AM';
+      return (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + ' ' + ap;
+    }
+    function mmss(s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+    function startMusic() {
+      if (!MUSIC || audio) return;
+      audio = new Audio(MUSIC); audio.loop = true; audio.volume = Math.max(0, Math.min(1, VOL));
+      audio.play().then(function () { musicState = 'playing'; }).catch(function () {
+        musicState = 'blocked (needs a tap)';
+        var retry = function () { audio.play().then(function () { musicState = 'playing'; }).catch(function () {}); };
+        ['click', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, retry, { once: true }); });
+      });
+    }
+    function stopMusic() {
+      if (!audio) return;
+      var a = audio, v = a.volume, step = v / 30;
+      var iv = setInterval(function () { v -= step; if (v <= 0.01) { clearInterval(iv); a.pause(); musicState = 'stopped'; } else a.volume = v; }, 100);
+    }
+    function cardOn() { if (!card.classList.contains('on')) { card.classList.add('on'); startMusic(); } }
+    function cardOff() { cardDone = true; card.classList.remove('on'); stopMusic(); }
+    function tick() {
+      if (cardDone) return;
+      rem = remaining();
+      if (rem === null) {
+        // no service today: a short welcome so whoever is setting the widget up sees it loaded
+        if ((Date.now() - t0) / 1000 < INTRO || PIN) { cardState = 'intro'; l2.textContent = 'Sundays · ' + clock(); count.textContent = ''; cardOn(); }
+        else { cardState = 'off'; cardOff(); }
+      } else if (rem > 0 || PIN) {
+        cardState = 'before'; l2.textContent = 'Sunday · ' + clock();
+        l1.textContent = rem > 10 ? 'Service begins shortly' : 'We are about to begin';
+        count.textContent = rem > 0 && rem <= 3600 ? 'Starting in ' + mmss(rem) : '';
+        cardOn();
+      } else if (rem > -HOLD * 60) {
+        cardState = 'starting'; l1.textContent = 'We are about to begin'; count.textContent = ''; cardOn();
+      } else { cardState = 'finished'; cardOff(); }
+    }
+    if (CARD && !(TEST && IN === null)) { tick(); setInterval(tick, 500); } else { cardState = 'off'; }
+
+    // ── load: the shared module first (it holds the room code), then this Sunday's songs ──
     function load(src, cb) {
       var s = document.createElement('script');
-      s.src = src + (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now();
+      s.src = src + (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now();   // fresh copy every load, never a cached one
       s.onload = cb; s.onerror = cb;
       document.head.appendChild(s);
     }
@@ -195,9 +283,8 @@
         return r.headers.get('etag') || r.headers.get('last-modified') || r.headers.get('content-length') || '';
       }).catch(function () { return ''; });
     }
-
     function start() {
-      if (!window.LBCSheet) { hudNote = 'songs failed to load'; return; }
+      if (!window.LBCSheet) { hudNote = 'sheet.js failed to load'; return; }
       LBCSheet.loadSongs(function (items) {
         SONGS = items.map(function (it) {
           if (!it.lyrics || !it.lyrics.length) return { title: it.title, slides: [] };
@@ -207,40 +294,40 @@
         if (TEST) show(SAMPLE);
         else if (pending) { apply(pending); pending = null; }
       });
-      // Control was told "Ready for Sunday" after this page loaded? Reload so the words match.
+      // the set or the words republished while this is open? reload so they match
       Promise.all(SIGS.map(sig)).then(function (s) { SIGS.forEach(function (u, i) { base[u] = s[i]; }); });
       setInterval(function () {
-        SIGS.forEach(function (u) {
-          sig(u).then(function (v) { if (v && base[u] && v !== base[u]) location.reload(); });
-        });
+        SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) location.reload(); }); });
       }, 90000);
     }
-
-    load('js/songs-data.js', function () {
-      load('js/worship-songs.js', function () {
-        load('js/sheet.js?v=12', start);
-      });
+    load('js/sheet.js?v=13', function () {
+      code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if (!code && window.LBCSheet) code = LBCSheet.ROOM;
+      topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';
+      listen();
+      load('js/songs-data.js', function () { load('js/worship-songs.js', start); });
     });
 
     window.addEventListener('resize', function () { if (plate.classList.contains('on')) fit(); });
 
-    // ── status box
-    var hudNote = '';
+    // ── status box ─────────────────────────────────────────────────────────
     if (DEBUG) {
       var hud = document.getElementById('hud');
       hud.style.display = 'block';
       setInterval(function () {
         var age = lastAt ? Math.round((Date.now() - lastAt) / 1000) + 's ago' : 'nothing heard yet';
         var s = last ? ('song ' + (last.songIndex == null ? '-' : last.songIndex + 1) + ' slide ' + ((last.slideIndex || 0) + 1) + (last.blank ? ' (blank)' : '')) : '-';
-        var bad = !code && !TEST;
-        hud.className = bad ? 'bad' : '';
+        hud.className = (!code && !TEST) ? 'bad' : '';
         hud.textContent =
-          'room   ' + (code || 'NONE - add ?room=CODE') + '\n' +
+          'room   ' + (code || 'none') + '\n' +
           'relay  ' + (topic ? relay : 'no room') + '\n' +
           'songs  ' + (ready ? SONGS.length + ' loaded' : 'loading') + '\n' +
           'last   ' + s + '  (' + lastFrom + ', ' + age + ')\n' +
-          'mode   ' + (TEST ? 'test (sample slide)' : 'live') + (bg ? '  bg=' + bg : '') + (hudNote ? '\n' + hudNote : '');
-      }, 1000);
+          'words  ' + (plate.classList.contains('on') ? 'showing' : 'hidden') + (FULL ? ' · full screen' : ' · lower third') + '\n' +
+          'card   ' + cardState + (rem !== null && cardState !== 'off' ? ' · ' + Math.round(rem) + ' s' : '') + (IN !== null ? ' · rehearsal' : '') + (CARD ? '' : ' (off)') + '\n' +
+          'music  ' + musicState +
+          (TEST ? '\nmode   test (sample slide)' : '') + (bg ? '\nbg     ' + bg : '') + (hudNote ? '\n' + hudNote : '');
+      }, 500);
     }
   })();
   </script>

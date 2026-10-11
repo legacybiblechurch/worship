@@ -34,7 +34,13 @@ That's it. Words wrong somewhere? Click the song, fix it in the **Words** box, *
 - Opening song ends → click **Fade out** (or **F**).
 - Closing songs → click **Fade into next →** (or **N**): the music crossfades and the slides move to the next song, in one press.
 
-**From a phone instead:** on the laptop click **Phone remote** and note the 6-letter code. On the phone go to **worship.legacybiblechurch.com/remote**, enter the code. The phone now moves the TV and can Play / Fade the songs on the laptop. Leave Control open on the laptop.
+**From a phone instead:** on the phone go to **worship.legacybiblechurch.com/remote** and tap **Connect**. The phone now moves the TV and can Play / Fade the songs on the laptop. Leave Control open on the laptop.
+
+---
+
+## The livestream
+
+Nothing to do. The lyrics page is already in PRISM on the iPad (set up once from **worship.legacybiblechurch.com/stream/setup/**). Whoever runs the stream opens PRISM and goes live. Before 10:30 the stream shows "Service begins shortly"; when you put a slide up it shows the words; when you blank, it shows the camera.
 
 ---
 

@@ -44,6 +44,7 @@
     .act h2 { font-size: 19px; font-weight: 600; }
     .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
     .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
+    .act.wide { grid-column: 1 / -1; min-height: 0; }
 
     .links { margin-top: 30px; display: flex; gap: 18px; font-size: 13px; }
     .links a { color: var(--ink-dim); text-decoration: none; }
@@ -72,6 +73,11 @@
         <h2>Run the service</h2>
         <p>Open this on the laptop, then click “Open display” for the TV.</p>
       </a>
+      <a class="act wide" href="worship-stream-setup.html">
+        <div class="k">Livestream · one-time setup</div>
+        <h2>Lyrics on the stream</h2>
+        <p>Three taps in PRISM on the iPad. After that the words appear on the stream by themselves every Sunday.</p>
+      </a>
     </div>
 
     <div class="links">
@@ -82,7 +88,7 @@
 
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
-  <script src="js/sheet.js?v=12"></script>
+  <script src="js/sheet.js?v=13"></script>
   <script>
     LBCSheet.loadSongs(function (songs) {
       var box = document.getElementById('songs'), st = document.getElementById('state');

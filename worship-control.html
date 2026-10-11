@@ -307,7 +307,7 @@
     <b>Run the slides from a phone</b><br>
     Point the phone's camera at this code. It connects by itself.
     <div class="qr" id="phone-qr"></div>
-    Or open <span class="url">worship.legacybiblechurch.com/remote</span> on the phone and type:
+    Or open <span class="url">worship.legacybiblechurch.com/remote</span> on the phone and tap <b>Connect</b>. The code is already filled in:
     <div class="code" id="phone-code"></div>
     The phone then moves the slides on this computer's Display, and its Play / Fade buttons drive the audio playing here. Leave this window open.
   </div>
@@ -335,7 +335,7 @@
 
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
-  <script src="js/sheet.js?v=12"></script>
+  <script src="js/sheet.js?v=13"></script>
   <script>
 
     var songs = [], songIdx = 0, slideIdx = 0, isBlank = false;
@@ -498,8 +498,9 @@
       if (qs.get('main') === '1') { mainHere = true; try { localStorage.setItem('lbc-main-device', '1'); } catch (e) {} }
       if (!isRemote && phone && !mainHere) { location.replace('remote.html?from=control'); }
       var code = (qs.get('remote') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-      if (!code && !isRemote) { try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {} }
-      if (!code) { code = Array.from({ length: 6 }, function () { return 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 31)]; }).join(''); }
+      // one fixed code for the church (js/sheet.js): the phone remote and the livestream
+      // lyrics follow this Control with nothing typed in anywhere
+      if (!code) code = LBCSheet.ROOM;
       // the laptop's own room is 'lbc-room'; a phone remembers the code it typed separately,
       // so the code screen never offers a phone its own stale room as if it were the laptop's
       try { localStorage.setItem(isRemote ? 'lbc-remote-code' : 'lbc-room', code); } catch (e) {}

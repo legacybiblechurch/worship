@@ -215,7 +215,14 @@
     }).filter(Boolean);
   }
 
+  // The church's one room code. Control publishes each slide change to the
+  // relay under this code, and the phone remote and the livestream lyrics
+  // listen to it, so none of them needs a code typed in. Change it here if it
+  // ever has to change, and every page follows.
+  var ROOM = '8BSWX2H4DF';
+
   global.LBCSheet = {
+    ROOM: ROOM,
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, videoId: videoId,
     loadSongs: loadSongs,

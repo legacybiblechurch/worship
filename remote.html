@@ -16,15 +16,16 @@
 </style></head><body>
 <div class="box">
   <h1>Phone remote</h1>
-  <p>On the church computer, open Worship Control and click <b>Phone remote</b>. Type the code it shows.</p>
+  <p>Have Worship Control open on the church computer, then tap <b>Connect</b>.</p>
   <input id="code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder="CODE" inputmode="text">
   <button id="go">Connect</button>
   <div class="hint">The phone moves the slides on the TV and can play / fade the songs on the computer.</div>
   <div class="hint" id="mainhint" style="display:none">No laptop today? <a href="worship-control.html?main=1" style="color:#c9a84c">Use this phone as the main computer</a> instead.</div>
 </div>
+<script src="js/sheet.js?v=13"></script>
 <script>
   var i=document.getElementById('code');
-  try{ var saved=localStorage.getItem('lbc-remote-code'); if(saved) i.value=saved; }catch(e){}
+  i.value=LBCSheet.ROOM;   // the church's one code: nothing to type, just Connect
   function go(){ var c=i.value.trim().toUpperCase().replace(/[^A-Z0-9]/g,''); if(c.length<4) return; location.href='worship-control.html?remote='+c; }
   document.getElementById('go').onclick=go; i.onkeydown=function(e){ if(e.key==='Enter') go(); };
   if(new URLSearchParams(location.search).get('from')==='control') document.getElementById('mainhint').style.display='';
