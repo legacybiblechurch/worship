@@ -65,8 +65,8 @@
     <div class="actions">
       <a class="act primary" href="worship-studio.html">
         <div class="k">Before Sunday</div>
-        <h2>Prepare the songs</h2>
-        <p>Type the song names. The words are found and laid out for you.</p>
+        <h2>Prepare Sunday</h2>
+        <p>The songs, the reading, the sermon points, the Lord's Table — in order. Words are found and laid out for you.</p>
       </a>
       <a class="act" href="worship-control.html">
         <div class="k">Sunday morning</div>
@@ -88,19 +88,20 @@
 
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
-  <script src="js/sheet.js?v=13"></script>
+  <script src="js/worship-service.js"></script>
+  <script src="js/sheet.js?v=14"></script>
   <script>
-    LBCSheet.loadSongs(function (songs) {
+    LBCSheet.loadService(function (songs) {
       var box = document.getElementById('songs'), st = document.getElementById('state');
       if (!songs.length) {
-        box.innerHTML = '<div class="empty">No songs set yet. Tap <b>Prepare the songs</b> to add them.</div>';
+        box.innerHTML = '<div class="empty">Nothing set yet. Tap <b>Prepare Sunday</b> to build the service.</div>';
         st.textContent = 'Not set'; st.className = 'card-state warn'; return;
       }
-      var bad = songs.filter(function (s) { return !s.ready; }).length;
+      var bad = songs.filter(function (s) { return !s.ready; }).length, TN = LBCSheet.TYPE_NAMES || {};
       box.innerHTML = songs.map(function (s, i) {
         var d = document.createElement('div');
         d.className = 'row';
-        d.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="dot' + (s.ready ? '' : ' warn') + '"></span><span class="t"></span><span class="s">' + (s.ready ? '' : 'no words') + '</span>';
+        d.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="dot' + (s.ready ? '' : ' warn') + '"></span><span class="t"></span><span class="s">' + (s.ready ? (s.type !== 'song' ? (TN[s.type] || s.type) : '') : 'not ready') + '</span>';
         d.querySelector('.t').textContent = s.title;
         return d.outerHTML;
       }).join('');

@@ -127,6 +127,9 @@
       padding: 0 4px; margin-left: 4px; white-space: nowrap;
     }
     .song-count { font-size: 11px; color: var(--ink-faint); flex-shrink: 0; font-variant-numeric: tabular-nums; padding-top: 1px; }
+    .song-name .ty { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+    .thumb-label .kick { color: var(--ink-faint); font-weight: 500; letter-spacing: 0.04em; text-transform: none; }
+    .thumb-lines .cue { color: var(--ink-faint); font-style: italic; }
 
     /* ── main / slide grid ──────────────────── */
     #main { flex: 1; overflow-y: auto; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
@@ -292,7 +295,7 @@
 
   <div id="layout">
     <aside id="sidebar">
-      <div class="sidebar-head">Today's songs</div>
+      <div class="sidebar-head">Today's service</div>
       <div id="song-list"></div>
     </aside>
     <main id="main">
@@ -337,22 +340,17 @@
 
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
-  <script src="js/sheet.js?v=13"></script>
+  <script src="js/worship-service.js"></script>
+  <script src="js/sheet.js?v=14"></script>
   <script>
 
+    // `songs` is every item of the service in order - songs, readings, the
+    // sermon, the Lord's Table, videos, the logo - each already built into
+    // slides by LBCSheet. The name stayed so the relay state fields did too.
     var songs = [], songIdx = 0, slideIdx = 0, isBlank = false;
     var channel = new BroadcastChannel('lbc-worship');
 
-    function buildSongs(items) {
-      return items.map(function (it) {
-        if (!it.lyrics || !it.lyrics.length) {
-          return { title: it.title, ready: false, youtube: it.youtube || '',
-                   slides: [{ label: '', lines: ['No words yet — open Studio to fix this song'] }] };
-        }
-        return { title: it.title, ready: true, youtube: it.youtube || '',
-                 slides: LBCSheet.buildSlides(it.lyrics) };
-      });
-    }
+    function buildSongs(items) { return items; }
 
     function broadcast() {
       var state = { songIndex: songIdx, slideIndex: slideIdx, blank: isBlank };
@@ -398,7 +396,8 @@
       broadcast();
     }
 
-    function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function s_type(s) { return s && s.type !== 'song' ? ((LBCSheet.TYPE_NAMES || {})[s.type] || s.type) : ''; }
 
     function render() {
       if (!songs.length) {
@@ -413,19 +412,21 @@
         return;
       }
       var song = songs[songIdx];
+      var TN = LBCSheet.TYPE_NAMES || {};
       document.getElementById('song-list').innerHTML = songs.map(function (s, i) {
         return '<div class="song-item' + (i === songIdx ? ' active' : '') + (s.ready ? '' : ' pending') + '" onclick="goTo(' + i + ',0)">' +
           '<span class="song-num">' + (i + 1) + '</span>' +
-          '<span class="song-name">' + esc(s.title) + (s.ready ? '' : ' <span class="pend-tag">no words</span>') + '</span>' +
+          '<span class="song-name">' + (s.type !== 'song' ? '<span class="ty">' + esc(TN[s.type] || s.type) + '</span> ' : '') + esc(s.title) + (s.ready ? '' : ' <span class="pend-tag">not ready</span>') + '</span>' +
           '<span class="song-count">' + s.slides.length + '</span></div>';
       }).join('');
 
-      document.getElementById('main-song-title').textContent = song.title;
+      document.getElementById('main-song-title').textContent = (s_type(song) ? s_type(song) + ' · ' : '') + song.title;
 
       var yt = document.getElementById('yt-link');
       yt.href = song.youtube || '#';
       yt.className = 'yt-link' + (song.youtube ? '' : ' missing');
       var pb = document.getElementById('play-btn');
+      pb.style.display = song.type === 'song' ? '' : 'none';   // only a song has something to play
       pb.disabled = !song.youtube;
       pb.onclick = function () { Deck.playSong(songIdx); };
       Deck.paintButton();
@@ -435,9 +436,10 @@
         var isActive = i === slideIdx;
         // every line of the slide, exactly as the TV shows it, so the operator never has to look up
         var preview = slide.lines.map(function (l) { return '<span class="tl">' + esc(l) + '</span>'; }).join('');
+        if (slide.cue) preview += '<span class="tl cue">' + esc(slide.cue) + '</span>';
         return '<div class="slide-thumb' + (isActive ? ' active' : '') + '" onclick="goTo(' + songIdx + ',' + i + ')">' +
           (isActive ? '<div class="live-badge">Live</div>' : '') +
-          '<div class="thumb-label">' + esc(slide.label) + '</div>' +
+          '<div class="thumb-label">' + esc(slide.label || '') + (slide.kicker && slide.kicker !== slide.label ? '<span class="kick"> · ' + esc(slide.kicker) + '</span>' : '') + '</div>' +
           '<div class="thumb-lines">' + preview + '</div></div>';
       }).join('');
 
@@ -484,7 +486,7 @@
       if (Net.isRemote) Net.last(function (d) { goTo(Math.min(d.songIndex || 0, songs.length - 1), d.slideIndex || 0); });
     }
 
-    LBCSheet.loadSongs(init);
+    LBCSheet.loadService(init);
 
     // ── Net: the same slides from any device ─────────────────────────────
     // BroadcastChannel only reaches windows in one browser. For a phone across
@@ -675,6 +677,8 @@
         // so asking again here would start a second, hard-cut swap
         var wasPlaying = isPlaying();
         goTo(from + 1, 0);
+        // the next thing isn't a song (a reading, the sermon…): the music ends here
+        if (songs[from + 1].type !== 'song') { if (wasPlaying) fadeOut(); return; }
         if (!wasPlaying) playSong(from + 1);
       }
       function toggle() {
@@ -698,7 +702,8 @@
         el('deck-pause').textContent = isPlaying() ? 'Pause' : 'Play';
         var nx = el('deck-next'), from = playingIdx >= 0 ? playingIdx : songIdx;
         nx.disabled = from + 1 >= songs.length;
-        nx.innerHTML = nx.disabled ? 'Last song' : 'Fade into next &rarr;';
+        var after = songs[from + 1];
+        nx.innerHTML = nx.disabled ? 'Last item' : (after && after.type !== 'song' ? 'Fade out, then next &rarr;' : 'Fade into next &rarr;');
       }
       setInterval(function () {
         if (!ready || playingIdx < 0) return;

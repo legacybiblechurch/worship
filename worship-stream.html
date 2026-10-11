@@ -50,6 +50,11 @@
       color: #fff;
       text-shadow: 0 0.06em 0.22em rgba(0,0,0,0.9), 0 0 0.05em rgba(0,0,0,0.9);
     }
+    /* a reading's reference or the sermon title: small, gold, above the words */
+    .kicker {
+      font-size: 0.42em; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #C9A84C; margin-bottom: 0.6em;
+    }
     /* only the text fades between slides; the panel behind it stays put, so the
        camera never flashes through mid-song */
     #lines { transition: opacity 0.18s ease; }
@@ -178,13 +183,13 @@
       while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
     function hide() { tok++; cur = ''; plate.classList.remove('on'); lines.classList.remove('swap'); }
-    function show(arr) {
+    function show(arr, firstIsKicker) {
       var key = arr.join('\n');
       if (key === cur && plate.classList.contains('on')) return;
       var my = ++tok;
       function swap() {
         if (my !== tok) return;
-        lines.innerHTML = arr.map(function (l) { return '<div class="line">' + esc(l) + '</div>'; }).join('');
+        lines.innerHTML = arr.map(function (l, i) { return '<div class="' + (firstIsKicker && i === 0 ? 'kicker' : 'line') + '">' + esc(l) + '</div>'; }).join('');
         fit(); cur = key; plate.classList.add('on'); lines.classList.remove('swap');
       }
       // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
@@ -193,8 +198,8 @@
     function apply(st) {
       if (!st || st.blank || st.songIndex == null) return hide();
       var song = SONGS[st.songIndex], slide = song && song.slides[st.slideIndex];
-      if (!slide || !slide.lines || !slide.lines.length) return hide();
-      show(slide.lines);
+      if (!slide || slide.logo || !slide.lines || !slide.lines.length) return hide();   // a video cue or logo slot: camera
+      show(slide.kicker ? [slide.kicker].concat(slide.lines) : slide.lines, !!slide.kicker);
     }
     function handle(d, from, t) {
       if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
@@ -299,7 +304,7 @@
       document.head.appendChild(s);
     }
     // this page checks itself too, so a change to it reaches a widget that is already open
-    var SIGS = ['js/songs-data.js', 'js/worship-songs.js', 'worship-stream.html'], base = {};
+    var SIGS = ['js/songs-data.js', 'js/worship-songs.js', 'js/worship-service.js', 'worship-stream.html'], base = {};
     function fresh() {   // reload with a new cache-buster, keeping every other setting
       var p = new URLSearchParams(location.search); p.set('t', Date.now());
       location.replace(location.pathname + '?' + p.toString());
@@ -311,11 +316,8 @@
     }
     function start() {
       if (!window.LBCSheet) { hudNote = 'sheet.js failed to load'; return; }
-      LBCSheet.loadSongs(function (items) {
-        SONGS = items.map(function (it) {
-          if (!it.lyrics || !it.lyrics.length) return { title: it.title, slides: [] };
-          return { title: it.title, slides: LBCSheet.buildSlides(it.lyrics) };
-        });
+      LBCSheet.loadService(function (items) {
+        SONGS = items;   // every item of the service, slides already built
         ready = true;
         if (TEST) show(SAMPLE);
         else if (pending) { apply(pending); pending = null; }
@@ -326,12 +328,12 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=13', function () {
+    load('js/sheet.js?v=14', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';
       listen();
-      load('js/songs-data.js', function () { load('js/worship-songs.js', start); });
+      load('js/songs-data.js', function () { load('js/worship-songs.js', function () { load('js/worship-service.js', start); }); });
     });
 
     window.addEventListener('resize', function () { if (plate.classList.contains('on')) fit(); });

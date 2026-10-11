@@ -5,19 +5,24 @@ Everything is a website. Nothing to install. Bookmark this:
 
 ---
 
-## Before Sunday — get the songs ready (10 minutes)
+## Before Sunday — build the service (10 minutes)
 
-1. Open the page above → **Prepare the songs**.
+The whole Sunday is one list, top to bottom: songs, the reading, the sermon, the Lord's Table, a video, the logo. Most weeks the list stays and you change what changed.
+
+1. Open the page above → **Prepare Sunday**.
 2. First time on a new computer only: click **Connect this computer** (top right) and follow the six steps. It's a one-time password so the site can save. Never again after that.
-3. Remove last week's songs: hover a song on the left, click **✕**.
-4. Add this week's: type a name in **Add a song**.
+3. **Songs:** type a name in the **Add** box.
    - A song we've done before appears in the list — click it. Done.
-   - A new song: click **Find "…" on YouTube**. Wait 1–3 minutes ("Finding the song… Listening to the recording…"). It shows you the videos it found — click **Use this one** on the one that sounds right.
-   - If it asks a **Quick check**, listen to the clip and tap the words you hear.
-5. Put them in order with ▲ ▼.
-6. Click **Ready for Sunday**. If it complains, it tells you exactly which song needs what.
+   - A new song: click **Find "…" on YouTube**. Wait 1–3 minutes. It shows you the videos it found — click **Use this one** on the one that sounds right. If it asks a **Quick check**, listen to the clip and tap the words you hear.
+   - Words wrong? Click the song, fix the **Words** box, **Save**.
+4. **Reading:** click **Reading**, type the passage ("Psalm 24", "John 3:16-21"), click **Get the verses**. For the NASB, get the verses first for the numbers, then paste the NASB words over them from a Bible app and set the version to NASB.
+5. **Sermon:** click **Sermon**. Title, passage, and the points one per line. Each point is its own slide.
+6. **Lord's Table:** click **Lord's Table**. The words are written once and kept.
+7. **Video** or **Logo** are spots in the order: the TV shows the logo there, and Control shows a note about the video.
+8. Put everything in order with ▲ ▼. Remove with ✕.
+9. Click **Ready for Sunday**. If it complains, it tells you exactly what needs what.
 
-That's it. Words wrong somewhere? Click the song, fix it in the **Words** box, **Save**. The right pane shows exactly what the TV will show.
+The right pane always shows exactly what the TV will show.
 
 ---
 

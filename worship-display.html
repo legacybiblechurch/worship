@@ -176,18 +176,15 @@
 
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
-  <script src="js/sheet.js?v=13"></script>
+  <script src="js/worship-service.js"></script>
+  <script src="js/sheet.js?v=14"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
     var pendingState = null;
 
-    function buildSongs(items) {
-      return items.map(function (it) {
-        if (!it.lyrics || !it.lyrics.length) return { title: it.title, slides: [{ label: '', lines: [] }] };
-        return { title: it.title, slides: LBCSheet.buildSlides(it.lyrics) };
-      });
-    }
+    // every item of the service, already built into slides by LBCSheet
+    function buildSongs(items) { return items; }
 
     function onSongsReady(items) {
       SONGS_BUILT = buildSongs(items);
@@ -201,7 +198,7 @@
     // If this window is refreshed mid-service, resume the current slide instead of
     // dropping to standby until the operator presses a key.
     try { pendingState = JSON.parse(localStorage.getItem('lbc-worship-state') || 'null'); } catch (e) {}
-    LBCSheet.loadSongs(onSongsReady);
+    LBCSheet.loadService(onSongsReady);
 
     var channel    = new BroadcastChannel('lbc-worship');
     var standby    = document.getElementById('standby');
@@ -238,16 +235,21 @@
       var slide = song && song.slides[slideIdx];
       if (!song || !slide) { showStandby(); return; }
 
+      // a video cue or a logo slot in the order: the TV shows the logo, same as B
+      if (slide.logo) { blankEl.classList.add('active'); standby.classList.add('hidden'); songTitle.textContent = ''; return; }
+
       // Fade out current content, swap, fade back in
       slideWrap.classList.remove('visible');
       standby.classList.add('hidden');
 
       setTimeout(function () {
-        slideLabel.textContent = '';   // no "Verse 1 / Chorus" on the congregation's screen
+        // no "Verse 1 / Chorus" on the congregation's screen - but a reading's
+        // reference or a sermon's title does belong there, small and gold
+        slideLabel.textContent = slide.kicker || '';
         slideLines.innerHTML = slide.lines
           .map(function(l){ return '<div class="slide-line">' + esc(l) + '</div>'; })
           .join('');
-        songTitle.textContent = song.title;
+        songTitle.textContent = song.type === 'song' ? song.title : '';
         slideWrap.classList.add('visible');
       }, 340);
     }

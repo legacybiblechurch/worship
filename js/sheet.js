@@ -215,6 +215,125 @@
     }).filter(Boolean);
   }
 
+  // ─────────────────────────────────────────── the order of service
+  // js/worship-service.js (written by the Studio) holds the whole Sunday in
+  // order: songs, readings, the sermon, the Lord's Table, videos, the logo.
+  // An older set that only has songs (WORSHIP_SETLIST) still works.
+  function service() {
+    if (Array.isArray(global.WORSHIP_SERVICE)) return global.WORSHIP_SERVICE.map(function (it) { return JSON.parse(JSON.stringify(it)); });
+    return setlist().map(function (s) { return { type: 'song', slug: s }; });
+  }
+  // words written once and kept (the Lord's Table…), published alongside the service
+  function saved() { return global.WORSHIP_SAVED && typeof global.WORSHIP_SAVED === 'object' ? global.WORSHIP_SAVED : {}; }
+
+  var TYPE_NAMES = { song: 'Song', scripture: 'Reading', sermon: 'Sermon', words: 'Words', video: 'Video', logo: 'Logo' };
+  function itemTitle(it) {
+    switch (it.type) {
+      case 'song': return titleOf(it.slug);
+      case 'scripture': return it.ref || 'Scripture reading';
+      case 'sermon': return it.title || 'Sermon';
+      case 'words': var w = saved()[it.id]; return (w && w.title) || it.id || 'Words';
+      case 'video': return it.title || 'Video';
+      case 'logo': return it.title || 'Logo';
+    }
+    return it.type || '';
+  }
+
+  // verses -> slides: a few verses per slide, numbered, long verses split at
+  // natural breaks like lyrics. The reference and version become the small
+  // gold line above the words, so the congregation always knows where it is.
+  function buildScriptureSlides(it) {
+    var verses = (it.verses || []).filter(function (v) { return v && String(v.text || '').trim(); });
+    if (!verses.length) return [];
+    var base = String(it.ref || '').replace(/:\s*[\d\s,–-]+$/, '').trim();
+    var slides = [], cur = [], nums = [], chars = 0;
+    function flush() {
+      if (!cur.length) return;
+      var a = nums[0], b = nums[nums.length - 1], range = a === b ? String(a) : a + '–' + b;
+      slides.push({ label: 'v. ' + range, kicker: (base ? base + ':' + range : 'v. ' + range) + (it.version ? ' · ' + it.version : ''), lines: cur });
+      cur = []; nums = []; chars = 0;
+    }
+    verses.forEach(function (v) {
+      var txt = String(v.text).replace(/\s+/g, ' ').trim();
+      var parts = splitLine(txt, 56);
+      parts[0] = v.n + '  ' + parts[0];
+      if (cur.length && (chars + txt.length > 230 || cur.length + parts.length > 5)) flush();
+      cur = cur.concat(parts); nums.push(v.n); chars += txt.length;
+    });
+    flush();
+    return slides;
+  }
+  // sermon -> a title slide, then one slide per point, the title riding above each
+  function buildSermonSlides(it) {
+    var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'] }];
+    (it.points || []).forEach(function (p, i) {
+      if (String(p).trim()) slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: splitLine(String(p).trim(), 56) });
+    });
+    return slides;
+  }
+
+  // one item of the service, with its slides. The ONE place every page agrees on
+  // what a reading, a sermon point or a video cue looks like.
+  function buildItem(it) {
+    var out = { type: it.type, title: itemTitle(it), ready: true, youtube: '', slides: [] };
+    if (it.type === 'song') {
+      var d = library()[it.slug];
+      out.slug = it.slug;
+      out.ready = !!(d && d.lyrics && d.lyrics.length);
+      out.youtube = (d && d.youtube && videoId(d.youtube)) ? d.youtube : '';
+      out.slides = out.ready ? buildSlides(d.lyrics) : [{ label: '', lines: ['No words yet — open Studio to fix this song'] }];
+    } else if (it.type === 'scripture') {
+      out.slides = buildScriptureSlides(it);
+      out.ready = out.slides.length > 0;
+      if (!out.ready) out.slides = [{ label: '', kicker: it.ref || '', lines: ['No verses yet — open Studio'] }];
+    } else if (it.type === 'sermon') {
+      out.slides = buildSermonSlides(it);
+      out.ready = !!(it.title && String(it.title).trim());
+    } else if (it.type === 'words') {
+      var w = saved()[it.id];
+      out.ready = !!(w && w.lyrics && w.lyrics.length);
+      out.slides = out.ready ? buildSlides(w.lyrics) : [{ label: '', lines: ['No words yet — open Studio'] }];
+    } else if (it.type === 'video') {
+      out.slides = [{ label: 'Video', lines: [], logo: true, cue: 'Play “' + (it.title || 'the video') + '” on the TV' + (it.note ? ' — ' + it.note : '') }];
+    } else {
+      out.slides = [{ label: 'Logo', lines: [], logo: true, cue: 'The TV shows the church logo' }];
+    }
+    return out;
+  }
+  // the whole service, each item with its slides, in order (async like loadSongs)
+  function loadService(resolve) {
+    setTimeout(function () { resolve(service().map(buildItem)); }, 0);
+  }
+
+  // the reading editor's plain-text format: one verse per line, its number first
+  function versesToText(verses) {
+    return (verses || []).map(function (v) { return v.n + ' ' + String(v.text || '').replace(/\s+/g, ' ').trim(); }).join('\n');
+  }
+  function textToVerses(text) {
+    var n = 0, out = [];
+    String(text || '').replace(/\r/g, '').split('\n').forEach(function (line) {
+      var s = line.trim(); if (!s) return;
+      var m = s.match(/^(\d+)[.:)]?\s+(.*)$/);
+      if (m) { n = +m[1]; s = m[2]; } else n++;
+      if (s) out.push({ n: n, text: s });
+    });
+    return out;
+  }
+  // a passage from bible-api.com: free, no key, public-domain texts (WEB, KJV).
+  // NASB is not served by anyone for free; the person pastes it from a Bible app.
+  function fetchPassage(ref, translation) {
+    var t = String(translation || 'web').toLowerCase();
+    return fetch('https://bible-api.com/' + encodeURIComponent(String(ref).trim()) + '?translation=' + encodeURIComponent(t))
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status === 404 ? 'That reference was not found. Try it like “Psalm 24” or “John 3:16-21”.' : 'The Bible service did not answer (' + r.status + '). Try again in a moment.');
+        return r.json();
+      })
+      .then(function (j) {
+        return { ref: j.reference || ref, version: String(j.translation_id || t).toUpperCase(),
+                 verses: (j.verses || []).map(function (v) { return { n: v.verse, text: String(v.text || '').replace(/\s+/g, ' ').trim() }; }) };
+      });
+  }
+
   // The church's one room code. Control publishes each slide change to the
   // relay under this code, and the phone remote and the livestream lyrics
   // listen to it, so none of them needs a code typed in. Change it here if it
@@ -226,6 +345,10 @@
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, videoId: videoId,
     loadSongs: loadSongs,
+    service: service, saved: saved, TYPE_NAMES: TYPE_NAMES, itemTitle: itemTitle,
+    buildItem: buildItem, loadService: loadService,
+    buildScriptureSlides: buildScriptureSlides, buildSermonSlides: buildSermonSlides,
+    versesToText: versesToText, textToVerses: textToVerses, fetchPassage: fetchPassage,
     buildSlides: buildSlides, splitLine: splitLine, tidyBlocks: tidyBlocks,
     blocksToText: blocksToText, textToBlocks: textToBlocks
   };
