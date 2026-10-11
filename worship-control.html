@@ -431,7 +431,8 @@
       var grid = document.getElementById('slide-grid');
       grid.innerHTML = song.slides.map(function (slide, i) {
         var isActive = i === slideIdx;
-        var preview = slide.lines.slice(0, 3).map(function (l) { return '<span class="tl">' + esc(l) + '</span>'; }).join('');
+        // every line of the slide, exactly as the TV shows it, so the operator never has to look up
+        var preview = slide.lines.map(function (l) { return '<span class="tl">' + esc(l) + '</span>'; }).join('');
         return '<div class="slide-thumb' + (isActive ? ' active' : '') + '" onclick="goTo(' + songIdx + ',' + i + ')">' +
           (isActive ? '<div class="live-badge">Live</div>' : '') +
           '<div class="thumb-label">' + esc(slide.label) + '</div>' +
