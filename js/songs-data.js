@@ -1213,9 +1213,9 @@ const LEGACY_SONGS = {
     { label: "", lines: ["Swing wide you ancient gates", "Let the King come in", "His glory never fades", "Our hearts delight in Him"] },
     { label: "", lines: ["Ev'ry knee will bow", "Ev'ry tongue confess"] },
     { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore"] },
-    { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore", "Who is this King of glory?", "The Lord strong and mighty", "He bore the cross of shame", "Sing Hosanna!"] },
+    { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore", "Who is this King of glory?", "The Lord strong and mighty", "He bore our cross of shame", "Sing Hosanna!"] },
     { label: "", lines: ["Who is this King of glory?", "The Lord strong and mighty", "He rose up from the grave", "Sing Hosanna!"] },
-    { label: "", lines: ["Who is this King of glory?", "The Lord strong and mighty", "He bore the cross of shame", "Sing Hosanna!"] },
+    { label: "", lines: ["Who is this King of glory?", "The Lord strong and mighty", "He bore the cross our shame", "Sing Hosanna!"] },
     { label: "", lines: ["Who is this King of glory?", "The Lord strong and mighty", "He rose up from the grave", "Sing Hosanna!"] },
     { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore"] },
     { label: "", lines: ["He reigns, He reigns", "Jesus, the Lord", "He reigns, He reigns", "Forevermore"] }
