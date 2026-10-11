@@ -9,7 +9,7 @@ It has the address, a Copy button, the three taps, and a live preview. Nothing e
 
 ## What it does
 
-- **Sunday before 10:30 AM** — a full-screen card: the logo drawn on, "Service begins shortly", the time, and a countdown for the last hour. At 10:30 it says "We are about to begin" for two minutes, then fades out by itself.
+- **Sunday before 10:30 AM** — a full-screen card: the logo drawn on, "Service begins shortly", the time, and a countdown for the last hour. At 10:30 it fades out by itself (after a 15-second grace, since the iPad's clock and the room's never quite agree). If the service runs late the stream simply shows the room until it starts, like any other livestream.
 - **While Control has a slide up** — the words, full screen on black, like the TV. The pulpit is empty while we sing, so there is nothing worth keeping from the camera. Between slides only the text fades; the black stays, so the camera never flashes through mid-song. PRISM's editor cannot reach its own buttons once a widget covers the whole screen, so stretch it as far as PRISM allows; a sliver of camera at one edge is the trade-off, and `mode=panel` is there if that ever bothers anyone.
 - **Otherwise** — nothing. The page is transparent and the camera shows through.
 - **Any other day** — the card shows for 20 seconds after the page loads, so whoever is setting it up sees it worked, then the camera.
@@ -33,7 +33,7 @@ Only for testing. The hand-off address has none.
 - `test=1` always show a sample slide, ignore Control (also skips the card on a weekday)
 - `debug=1` a status box: room, relay, songs, last slide heard, words, card, music
 - `in=MINUTES` rehearse the card: pretend the service starts that many minutes from now
-- `hold=2` minutes the card stays up after the start time
+- `hold=0.25` minutes the card stays up after the start time (15 s by default)
 - `intro=20` seconds the card shows on a day with no service (`intro=0` for none)
 - `pin=1` the card never fades
 - `card=0` no card at all, words only

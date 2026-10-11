@@ -149,7 +149,7 @@
     var parts = (qs.get('at') || '10:30').split(':');
     var AT    = (+parts[0] || 0) * 3600 + (+parts[1] || 0) * 60;  // service start, seconds into the day
     var IN    = qs.has('in') ? parseFloat(qs.get('in')) : null;   // rehearsal: pretend it starts in N minutes
-    var HOLD  = qs.has('hold') ? parseFloat(qs.get('hold')) : 2;  // minutes to stay up after the start time
+    var HOLD  = qs.has('hold') ? parseFloat(qs.get('hold')) : 0.25;  // minutes to stay up after the start time (15 s: clocks differ a little)
     var INTRO = qs.has('intro') ? parseFloat(qs.get('intro')) : 20; // seconds the card shows on a day with no service
     var PIN   = qs.has('pin');                                    // never fade
     var MUSIC = qs.get('music') || '';                            // optional audio file while the card is up
