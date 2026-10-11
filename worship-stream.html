@@ -50,14 +50,31 @@
       color: #fff;
       text-shadow: 0 0.06em 0.22em rgba(0,0,0,0.9), 0 0 0.05em rgba(0,0,0,0.9);
     }
-    /* full screen (default): the whole frame, words centred on black, like the TV */
-    body.full #plate {
+    /* only the text fades between slides; the panel behind it stays put, so the
+       camera never flashes through mid-song */
+    #lines { transition: opacity 0.18s ease; }
+    #lines.swap { opacity: 0; }
+
+    /* panel (default): big words on a dark panel in the middle of the picture.
+       The rest of the page stays transparent, so the widget can be any size and
+       a gap left for PRISM's own buttons never shows on the stream. */
+    body.panel #plate, body.black #plate {
       top: 0;
-      padding: 6vh 8vw;
+      padding: 4vh 4vw;
       display: flex; align-items: center; justify-content: center;
-      background: #000;
+      background: none;
     }
-    body.full .line { font-weight: 400; text-shadow: none; }
+    body.panel #lines {
+      background: rgba(0, 0, 0, 0.74);
+      border-radius: 0.5em;
+      padding: 0.7em 1.1em 0.8em;
+      max-width: 92%;
+    }
+    body.panel .line, body.black .line { font-weight: 400; text-shadow: none; }
+
+    /* ?mode=black  the whole widget black, like the TV. Only looks right if the
+       widget covers the entire picture, which PRISM's editor fights. */
+    body.black #plate { background: #000; }
 
     /* ── the starting-soon card, above the words ── */
     #card {
@@ -120,8 +137,11 @@
     var DEBUG = qs.has('debug');                                  // status box
     var bg    = (qs.get('bg') || '').toLowerCase();
     if (bg === 'green' || bg === 'solid') document.body.classList.add('bg-' + bg);
-    var FULL  = (qs.get('mode') || 'full').toLowerCase() !== 'lower';   // ?mode=lower for a lower third
-    if (FULL) document.body.classList.add('full');
+    var MODE  = (qs.get('mode') || 'panel').toLowerCase();              // panel (default) | black | lower
+    if (MODE === 'full') MODE = 'black';                                  // the old name for black
+    if (MODE !== 'black' && MODE !== 'lower') MODE = 'panel';
+    var FULL  = MODE !== 'lower';
+    document.body.classList.add(MODE);
 
     // the starting-soon card
     var CARD  = qs.get('card') !== '0';                           // ?card=0 turns it off
@@ -157,7 +177,7 @@
       plate.style.fontSize = size + 'px';
       while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
-    function hide() { tok++; cur = ''; plate.classList.remove('on'); }
+    function hide() { tok++; cur = ''; plate.classList.remove('on'); lines.classList.remove('swap'); }
     function show(arr) {
       var key = arr.join('\n');
       if (key === cur && plate.classList.contains('on')) return;
@@ -165,9 +185,10 @@
       function swap() {
         if (my !== tok) return;
         lines.innerHTML = arr.map(function (l) { return '<div class="line">' + esc(l) + '</div>'; }).join('');
-        fit(); cur = key; plate.classList.add('on');
+        fit(); cur = key; plate.classList.add('on'); lines.classList.remove('swap');
       }
-      if (plate.classList.contains('on')) { plate.classList.remove('on'); setTimeout(swap, 230); } else swap();
+      // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
+      if (plate.classList.contains('on')) { lines.classList.add('swap'); setTimeout(swap, 190); } else swap();
     }
     function apply(st) {
       if (!st || st.blank || st.songIndex == null) return hide();
@@ -323,7 +344,7 @@
           'relay  ' + (topic ? relay : 'no room') + '\n' +
           'songs  ' + (ready ? SONGS.length + ' loaded' : 'loading') + '\n' +
           'last   ' + s + '  (' + lastFrom + ', ' + age + ')\n' +
-          'words  ' + (plate.classList.contains('on') ? 'showing' : 'hidden') + (FULL ? ' · full screen' : ' · lower third') + '\n' +
+          'words  ' + (plate.classList.contains('on') ? 'showing' : 'hidden') + ' · ' + (MODE === 'lower' ? 'lower third' : MODE) + '\n' +
           'card   ' + cardState + (rem !== null && cardState !== 'off' ? ' · ' + Math.round(rem) + ' s' : '') + (IN !== null ? ' · rehearsal' : '') + (CARD ? '' : ' (off)') + '\n' +
           'music  ' + musicState +
           (TEST ? '\nmode   test (sample slide)' : '') + (bg ? '\nbg     ' + bg : '') + (hudNote ? '\n' + hudNote : '');
