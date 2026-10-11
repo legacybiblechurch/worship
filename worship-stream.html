@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream lyrics — Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* The livestream's lyrics. Load this page as a web widget in PRISM (or a
+       browser source in OBS). It follows Worship Control and draws only the
+       words, bottom-centre, on a clear background: when Control is blank or
+       between songs it draws nothing and the camera shows through.
+       See STREAM.md for URL options. */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: transparent;
+      overflow: hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      cursor: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    body.bg-green { background: #00ff00; }   /* ?bg=green  for a chroma-key filter */
+    body.bg-solid { background: #000; }      /* ?bg=solid  when transparency is not available */
+
+    #plate {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      padding: 0.55em 1.2em 0.7em;
+      text-align: center;
+      line-height: 1.28;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.66) 70%, rgba(0,0,0,0) 100%);
+    }
+    #plate.on { opacity: 1; }
+    body.bg-green #plate { background: none; }
+    body.bg-solid #plate { background: #000; }
+
+    .line {
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 0 0.06em 0.22em rgba(0,0,0,0.9), 0 0 0.05em rgba(0,0,0,0.9);
+    }
+
+    /* ?debug=1  small status box for the dry run */
+    #hud {
+      position: fixed; top: 8px; left: 8px; z-index: 9;
+      font: 12px/1.5 ui-monospace, Menlo, monospace;
+      background: rgba(0,0,0,0.78); color: #9fe39f;
+      padding: 6px 10px; border-radius: 6px; display: none; white-space: pre;
+    }
+    #hud.bad { color: #ffb3a8; }
+  </style>
+</head>
+<body>
+
+  <div id="plate"><div id="lines"></div></div>
+  <div id="hud"></div>
+
+  <script>
+  (function () {
+    var qs     = new URLSearchParams(location.search);
+    var TEST   = qs.has('test');    // always show a sample slide, ignore Control
+    var DEBUG  = qs.has('debug');   // status box
+    var bg     = (qs.get('bg') || '').toLowerCase();
+    if (bg === 'green' || bg === 'solid') document.body.classList.add('bg-' + bg);
+
+    // room code: ?room=ABC123, else the one Control saved in this browser
+    var code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (!code) { try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {} }
+    var topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';
+
+    var SAMPLE = ['Amazing grace, how sweet the sound', 'That saved a wretch like me', 'I once was lost, but now am found', 'Was blind, but now I see'];
+
+    var SONGS = [], ready = false, pending = null;
+    var last = null, lastAt = 0, lastFrom = '-', relay = 'off';
+    var plate = document.getElementById('plate'), lines = document.getElementById('lines');
+    var tok = 0, cur = '';
+
+    function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+    // largest size that fits the box, so the widget can be any size
+    function fit() {
+      var vw = window.innerWidth, vh = window.innerHeight, n = 0;
+      var size = Math.min(vw * 0.030, vh * 0.052);
+      plate.style.fontSize = size + 'px';
+      while (plate.offsetHeight > vh * 0.97 && size > 10 && n++ < 60) {
+        size *= 0.94;
+        plate.style.fontSize = size + 'px';
+      }
+    }
+
+    function hide() { tok++; cur = ''; plate.classList.remove('on'); }
+
+    function show(arr) {
+      var key = arr.join('\n');
+      if (key === cur && plate.classList.contains('on')) return;
+      var my = ++tok;
+      function swap() {
+        if (my !== tok) return;
+        lines.innerHTML = arr.map(function (l) { return '<div class="line">' + esc(l) + '</div>'; }).join('');
+        fit();
+        cur = key;
+        plate.classList.add('on');
+      }
+      if (plate.classList.contains('on')) { plate.classList.remove('on'); setTimeout(swap, 230); }
+      else swap();
+    }
+
+    function apply(st) {
+      if (!st || st.blank || st.songIndex == null) return hide();
+      var song = SONGS[st.songIndex], slide = song && song.slides[st.slideIndex];
+      if (!slide || !slide.lines || !slide.lines.length) return hide();
+      show(slide.lines);
+    }
+
+    var lastRelayT = 0;   // server time (s) of the newest relay message applied
+    function handle(d, from, t) {
+      if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
+      last = { songIndex: d.songIndex, slideIndex: d.slideIndex, blank: !!d.blank };
+      lastAt = Date.now(); lastFrom = from;
+      if (TEST) return;
+      if (!ready) { pending = last; return; }
+      apply(last);
+    }
+
+    // ── Control in this browser (same machine)
+    try {
+      var ch = new BroadcastChannel('lbc-worship');
+      ch.onmessage = function (e) {
+        var d = e.data;
+        if (!d || d.type === 'ping' || d.type === 'cmd' || d.songIndex === undefined) return;
+        handle(d, 'local');
+      };
+    } catch (e) {}
+
+    // ── Control anywhere (the iPad, another browser): the same relay the phone remote uses
+    if (topic) {
+      // On load and on every reconnect, ask for the slide Control is on now (only if it is
+      // recent). Covers a page opened mid-service and any message missed while connecting.
+      var syncLast = function () {
+        fetch('https://ntfy.sh/' + topic + '/json?poll=1&since=2h').then(function (r) { return r.text(); }).then(function (t) {
+          var rows = t.trim().split('\n').filter(Boolean);
+          for (var i = rows.length - 1; i >= 0; i--) {
+            try {
+              var m = JSON.parse(rows[i]), d = JSON.parse(m.message);
+              if (d.type === 'state') { if (m.time > lastRelayT) handle(d, 'relay (resumed)', m.time); return; }
+            } catch (x) {}
+          }
+        }).catch(function () {});
+      };
+
+      (function connect() {
+        var es = new EventSource('https://ntfy.sh/' + topic + '/sse');
+        es.onopen = function () { relay = 'on'; syncLast(); };
+        es.onmessage = function (ev) {
+          try {
+            var m = JSON.parse(ev.data), d = JSON.parse(m.message);
+            if (d.type === 'state') handle(d, 'relay', m.time);
+          } catch (x) {}
+        };
+        es.onerror = function () { relay = 'off'; es.close(); setTimeout(connect, 3000); };
+      })();
+    }
+
+    // ── this Sunday's songs (fresh copy every load, never a cached one)
+    function load(src, cb) {
+      var s = document.createElement('script');
+      s.src = src + (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now();
+      s.onload = cb; s.onerror = cb;
+      document.head.appendChild(s);
+    }
+    var SIGS = ['js/songs-data.js', 'js/worship-songs.js'], base = {};
+    function sig(u) {
+      return fetch(u, { method: 'HEAD', cache: 'no-store' }).then(function (r) {
+        return r.headers.get('etag') || r.headers.get('last-modified') || r.headers.get('content-length') || '';
+      }).catch(function () { return ''; });
+    }
+
+    function start() {
+      if (!window.LBCSheet) { hudNote = 'songs failed to load'; return; }
+      LBCSheet.loadSongs(function (items) {
+        SONGS = items.map(function (it) {
+          if (!it.lyrics || !it.lyrics.length) return { title: it.title, slides: [] };
+          return { title: it.title, slides: LBCSheet.buildSlides(it.lyrics) };
+        });
+        ready = true;
+        if (TEST) show(SAMPLE);
+        else if (pending) { apply(pending); pending = null; }
+      });
+      // Control was told "Ready for Sunday" after this page loaded? Reload so the words match.
+      Promise.all(SIGS.map(sig)).then(function (s) { SIGS.forEach(function (u, i) { base[u] = s[i]; }); });
+      setInterval(function () {
+        SIGS.forEach(function (u) {
+          sig(u).then(function (v) { if (v && base[u] && v !== base[u]) location.reload(); });
+        });
+      }, 90000);
+    }
+
+    load('js/songs-data.js', function () {
+      load('js/worship-songs.js', function () {
+        load('js/sheet.js?v=12', start);
+      });
+    });
+
+    window.addEventListener('resize', function () { if (plate.classList.contains('on')) fit(); });
+
+    // ── status box
+    var hudNote = '';
+    if (DEBUG) {
+      var hud = document.getElementById('hud');
+      hud.style.display = 'block';
+      setInterval(function () {
+        var age = lastAt ? Math.round((Date.now() - lastAt) / 1000) + 's ago' : 'nothing heard yet';
+        var s = last ? ('song ' + (last.songIndex == null ? '-' : last.songIndex + 1) + ' slide ' + ((last.slideIndex || 0) + 1) + (last.blank ? ' (blank)' : '')) : '-';
+        var bad = !code && !TEST;
+        hud.className = bad ? 'bad' : '';
+        hud.textContent =
+          'room   ' + (code || 'NONE - add ?room=CODE') + '\n' +
+          'relay  ' + (topic ? relay : 'no room') + '\n' +
+          'songs  ' + (ready ? SONGS.length + ' loaded' : 'loading') + '\n' +
+          'last   ' + s + '  (' + lastFrom + ', ' + age + ')\n' +
+          'mode   ' + (TEST ? 'test (sample slide)' : 'live') + (bg ? '  bg=' + bg : '') + (hudNote ? '\n' + hudNote : '');
+      }, 1000);
+    }
+  })();
+  </script>
+</body>
+</html>
