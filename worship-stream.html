@@ -81,6 +81,25 @@
        TV. Stretch the widget as close to the full picture as PRISM allows. */
     body.black #plate { background: #000; }
 
+    /* a sermon slide: the preacher stays in the picture and the title or the
+       point sits in a bar at the bottom left, like a broadcast caption.
+       (?third=sermon,scripture puts readings there too; ?third=none turns it off) */
+    body.third #plate {
+      top: auto; bottom: 0; left: 0; right: 0;
+      display: block; padding: 0 5vw 6vh 5vw;
+      text-align: left; background: none;
+    }
+    body.third #lines {
+      display: inline-block; max-width: 72vw;
+      background: rgba(0, 0, 0, 0.82);
+      border-left: 0.16em solid #C9A84C;
+      border-radius: 0 0.22em 0.22em 0;
+      padding: 0.5em 1.1em 0.55em 0.9em;
+    }
+    body.bg-green.third #lines { background: #0a0a0a; }   /* solid, so the key never eats the bar */
+    body.third .kicker { font-size: 0.46em; margin-bottom: 0.3em; }
+    body.third .line { font-weight: 500; text-shadow: none; line-height: 1.22; }
+
     /* ── the starting-soon card, above the words ── */
     #card {
       position: fixed; inset: 0; z-index: 2;
@@ -145,8 +164,10 @@
     var MODE  = (qs.get('mode') || 'black').toLowerCase();              // black (default) | panel | lower
     if (MODE === 'full') MODE = 'black';                                  // the old name for black
     if (MODE !== 'black' && MODE !== 'lower') MODE = 'panel';
-    var FULL  = MODE !== 'lower';
     document.body.classList.add(MODE);
+    // which items show as a bottom-left bar with the camera still up: the sermon, by default
+    var THIRD = (qs.get('third') === null ? 'sermon' : qs.get('third')).toLowerCase().split(',').filter(Boolean);
+    function isFull() { return MODE !== 'lower' && !document.body.classList.contains('third'); }
 
     // the starting-soon card
     var CARD  = qs.get('card') !== '0';                           // ?card=0 turns it off
@@ -175,10 +196,10 @@
     // ── the words ──────────────────────────────────────────────────────────
     // largest size that fits, so the widget can be any size
     function fit() {
-      var vw = window.innerWidth, vh = window.innerHeight, n = 0;
+      var vw = window.innerWidth, vh = window.innerHeight, n = 0, FULL = isFull(), THIRD_ON = document.body.classList.contains('third');
       var size = FULL ? Math.min(vw * 0.052, vh * 0.092) : Math.min(vw * 0.030, vh * 0.052);
-      var limit = FULL ? vh * 0.84 : vh * 0.97;
-      function h() { return FULL ? lines.offsetHeight : plate.offsetHeight; }
+      var limit = FULL ? vh * 0.84 : THIRD_ON ? vh * 0.36 : vh * 0.97;
+      function h() { return FULL || THIRD_ON ? lines.offsetHeight : plate.offsetHeight; }
       plate.style.fontSize = size + 'px';
       while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
@@ -195,11 +216,24 @@
       // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
       if (plate.classList.contains('on')) { lines.classList.add('swap'); setTimeout(swap, 190); } else swap();
     }
+    // full black for a song, a bar for the sermon: when the layout changes the
+    // whole plate fades out and back in, never a jump between the two
+    function layout(third) {
+      var was = document.body.classList.contains('third');
+      if (was === third) return 0;
+      var on = plate.classList.contains('on');
+      if (on) hide();
+      setTimeout(function () { document.body.classList.toggle('third', third); }, on ? 290 : 0);
+      return on ? 300 : 0;
+    }
     function apply(st) {
       if (!st || st.blank || st.songIndex == null) return hide();
       var song = SONGS[st.songIndex], slide = song && song.slides[st.slideIndex];
       if (!slide || slide.logo || !slide.lines || !slide.lines.length) return hide();   // a video cue or logo slot: camera
-      show(slide.kicker ? [slide.kicker].concat(slide.lines) : slide.lines, !!slide.kicker);
+      var wait = layout(THIRD.indexOf(song.type) >= 0);
+      var arr = slide.kicker ? [slide.kicker].concat(slide.lines) : slide.lines, my = ++tok;
+      if (wait) setTimeout(function () { if (my === tok) show(arr, !!slide.kicker); }, wait);
+      else show(arr, !!slide.kicker);
     }
     function handle(d, from, t) {
       if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
@@ -319,7 +353,8 @@
       LBCSheet.loadService(function (items) {
         SONGS = items;   // every item of the service, slides already built
         ready = true;
-        if (TEST) show(SAMPLE);
+        if (TEST && qs.get('test') === 'sermon') { layout(true); show(['The King of Glory', 'Clean hands and a pure heart'], true); }   // ?test=sermon: the bar
+        else if (TEST) show(SAMPLE);
         else if (pending) { apply(pending); pending = null; }
       });
       // the set or the words republished while this is open? reload so they match
@@ -351,7 +386,7 @@
           'relay  ' + (topic ? relay : 'no room') + '\n' +
           'songs  ' + (ready ? SONGS.length + ' loaded' : 'loading') + '\n' +
           'last   ' + s + '  (' + lastFrom + ', ' + age + ')\n' +
-          'words  ' + (plate.classList.contains('on') ? 'showing' : 'hidden') + ' · ' + (MODE === 'lower' ? 'lower third' : MODE) + '\n' +
+          'words  ' + (plate.classList.contains('on') ? 'showing' : 'hidden') + ' · ' + (document.body.classList.contains('third') ? 'bar' : MODE === 'lower' ? 'lower third' : MODE) + '\n' +
           'card   ' + cardState + (rem !== null && cardState !== 'off' ? ' · ' + Math.round(rem) + ' s' : '') + (IN !== null ? ' · rehearsal' : '') + (CARD ? '' : ' (off)') + '\n' +
           'music  ' + musicState +
           (TEST ? '\nmode   test (sample slide)' : '') + (bg ? '\nbg     ' + bg : '') + (hudNote ? '\n' + hudNote : '');

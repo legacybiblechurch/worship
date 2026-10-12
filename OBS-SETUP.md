@@ -18,7 +18,7 @@ On the church laptop these are already in place in OBS's folder. On any other Ma
 
 ## How the words get in with no internet in the loop
 
-Control has an **Open stream window** button next to Open display. It opens the overlay page on a green background. That window follows Control inside the same browser, exactly like Display does. OBS captures that window and keys out the green. Words on black during a song, the countdown before the service, nothing (so, camera) the rest of the time. No relay, nothing cached, nothing to rate-limit. The phone remote still uses the relay; the stream does not.
+Control has an **Open stream window** button next to Open display. It opens the overlay page on a green background. That window follows Control inside the same browser, exactly like Display does. OBS captures that window and keys out the green. Words on black during a song, the countdown before the service, a bottom-left bar with the title or the point during the sermon (the preacher stays in the picture), nothing (so, camera) the rest of the time. No relay, nothing cached, nothing to rate-limit. The phone remote still uses the relay; the stream does not.
 
 ## The build
 
@@ -75,6 +75,5 @@ Built and tested on 2026-10-11 on the church MacBook Pro (M5), OBS 32.0.1, on an
 
 ## Later
 
-- **Sermon title and points** as a lower third, typed in the Studio — the next build.
 - **Advanced Scene Switcher** (free OBS plugin) can switch to Video when QuickTime goes full screen and back when it closes, removing the two clicks.
 - The PTZ camera for the building: plugs in by USB, replaces the Camera device, nothing else changes.

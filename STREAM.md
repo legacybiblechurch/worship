@@ -13,6 +13,7 @@ It has the address, a Copy button, the three taps, and a live preview. Nothing e
 
 - **Sunday before 10:30 AM** — a full-screen card: the logo drawn on, "Service begins shortly", the time, and a countdown for the last hour. At 10:30 it fades out by itself (after a 15-second grace, since the iPad's clock and the room's never quite agree). If the service runs late the stream simply shows the room until it starts, like any other livestream.
 - **While Control has a slide up** — the words, full screen on black, like the TV. The pulpit is empty while we sing, so there is nothing worth keeping from the camera. Between slides only the text fades; the black stays, so the camera never flashes through mid-song. PRISM's editor cannot reach its own buttons once a widget covers the whole screen, so stretch it as far as PRISM allows; a sliver of camera at one edge is the trade-off, and `mode=panel` is there if that ever bothers anyone.
+- **During the sermon** — the preacher stays in the picture. The title, then each point, sits in a bar at the bottom left with a gold edge, like a broadcast caption. A song after the sermon goes back to full black.
 - **Otherwise** — nothing. The page is transparent and the camera shows through.
 - **Any other day** — the card shows for 20 seconds after the page loads, so whoever is setting it up sees it worked, then the camera.
 
@@ -42,6 +43,8 @@ Only for testing. The hand-off address has none.
 - `at=10:30` the service time, 24-hour clock
 - `mode=panel` big words on a dark panel in the middle, everything else transparent, so the widget can be any size
 - `mode=lower` a lower third over the camera
+- `third=sermon` which items use the bottom-left bar instead of full screen: `sermon` by default, `sermon,scripture` to put readings there too, `none` for full screen always
+- `test=sermon` a sample sermon bar, to see the look
 - `room=CODE` listen to a different room code
 - `bg=green` / `bg=solid` a green or black background, if PRISM ever cannot do a transparent page
 - `music=ADDRESS` play an audio file while the card is up, `vol=0.5` its volume. PRISM may silence sound from a web widget; its own music mixer is the safer route. Mind copyright: YouTube checks livestreams, so use public-domain or licensed music and keep the licence note.
