@@ -474,7 +474,7 @@
       // the full list, with arrows and remove, and the video and logo spots: folded away unless wanted
       var foot = el('div', 'rail-foot');
       var more = document.createElement('button'); more.className = 'more-btn';
-      more.textContent = moreOpen ? '▾ The whole list, in order' : '▸ The whole list, in order. Add a video or the logo';
+      more.textContent = moreOpen ? '▾ Full order' : '▸ Full order and extras';
       more.onclick = function () { moreOpen = !moreOpen; renderRail(); };
       foot.appendChild(more);
       if (moreOpen) {

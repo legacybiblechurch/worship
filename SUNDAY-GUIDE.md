@@ -20,7 +20,7 @@ The whole Sunday is one list, top to bottom, always in this shape: the reading, 
 6. **Lord's Table:** click the row and type what the TV shows during the Table. Typed once and kept.
 7. **Ready for Sunday:** the last row. Click it when the rest is green. If it complains, it tells you exactly what needs what.
 
-Everything lands in its place by itself. To see the whole list in order, add a video or the logo, or move something, open **The whole list, in order** at the bottom of the left side. The bar at the top fills as rows go green.
+Everything lands in its place by itself. To see the whole list in order, add a video or the logo, or move something, open **Full order and extras** at the bottom of the left side. The bar at the top fills as rows go green.
 
 The right pane always shows exactly what the TV will show.
 
