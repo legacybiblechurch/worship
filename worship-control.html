@@ -97,7 +97,11 @@
     .st-btn:not(.done) .ok::before { content: 'Click to open ↗'; }
     #start .st-foot { display: flex; align-items: center; gap: 12px; margin-top: 8px; font-size: 12.5px; color: var(--ink-dim); }
     #start .st-foot b { color: var(--ink); }
-    #start .st-skip { margin-left: auto; font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-decoration: underline; }
+    #start .st-skip, #start .st-min button { margin-left: auto; font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-decoration: underline; }
+    #start .st-min { display: none; align-items: center; gap: 12px; font-size: 12.5px; color: var(--ink-dim); }
+    #start.min { padding: 8px 16px; }
+    #start.min .st-title, #start.min .st-row, #start.min .st-foot { display: none; }
+    #start.min .st-min { display: flex; }
     .remote-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gold); margin-right: 6px; }
     .remote-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
     #phone-panel { position: fixed; top: calc(var(--header-h) + 8px); right: 16px; width: 320px; z-index: 120; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: none; font-size: 13px; color: var(--ink-dim); line-height: 1.55; }
@@ -263,7 +267,7 @@
       .wordmark::after { content: 'Control'; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); }
       .wordmark { font-size: 0 !important; font-family: var(--font); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
       #header a.display-link[href="worship.html"] { padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
-      #header a[href="worship-display.html"], #header a[target="lbc-stream"], #disp-pill, #phone-btn, #st-show { display: none !important; }
+      #header a[href="worship-display.html"], #header a[target="lbc-stream"], #disp-pill, #phone-btn { display: none; }
       body.start #start { display: none; }   /* a phone never opens the TV */
       body.start #layout { top: var(--header-h); }
       body.remote #remote-pill { flex-shrink: 0; margin: 0; }
@@ -309,7 +313,6 @@
     <span class="header-spacer"></span>
     <span class="remote-pill" id="remote-pill" style="display:none"><span class="dot"></span>Phone remote</span>
     <button class="display-link" id="phone-btn" style="font-weight:500;color:var(--ink-dim)">Phone remote</button>
-    <button class="display-link" id="st-show" style="display:none;color:var(--gold);border-color:var(--gold)" title="The two buttons that open the TV and the stream window">Before the service</button>
     <span class="disp-pill off" id="disp-pill" title="Is the congregation screen open?"><span class="dot"></span><span id="disp-pill-text">Display not open</span></span>
     <span class="kbd-hint"><span class="kbd">&larr;</span><span class="kbd">&rarr;</span> move &nbsp;<span class="kbd">B</span> blank &nbsp;<span class="kbd">F</span> fade out &nbsp;<span class="kbd">N</span> fade to next</span>
     <a href="worship-display.html" target="lbc-display" class="display-link" title="The TV window" onclick="openTV(); return false;">Open the TV &nearr;</a>
@@ -325,6 +328,7 @@
       <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A green Chrome window pops up. Click it once so it fills a screen, then leave it. OBS watches it.</small></span><span class="ok"></span></button>
     </div>
     <div class="st-foot"><span>Then press <b>Next</b> when the service starts. <b>B</b> blanks the TV.</span><button class="st-skip" id="st-skip">Hide this</button></div>
+    <div class="st-min"><span>The two buttons that open the TV and the stream window are hidden.</span><button id="st-show">Show again</button></div>
   </div>
 
   <div id="layout">
@@ -415,8 +419,8 @@
       paintStart(on && st);
     }, 1000);
     function paintStart(allOpen) {
-      document.body.classList.toggle('start', !startHidden && !allOpen);
-      document.getElementById('st-show').style.display = startHidden && !allOpen ? '' : 'none';
+      document.body.classList.toggle('start', !allOpen);
+      document.getElementById('start').classList.toggle('min', startHidden);
       fitStart();
     }
     // the strip's text wraps on narrower screens: the page below starts wherever it ends
