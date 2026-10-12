@@ -111,6 +111,8 @@
     .fields label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); }
     .fields input, .fields select { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 9px 11px; }
     .fields input:focus, .fields select:focus { outline: none; border-color: var(--ink-faint); }
+    /* keys look hidden without being password fields, so Chrome never offers to save them as logins */
+    .masked { -webkit-text-security: disc; }
     .fields .row { display: flex; gap: 8px; align-items: center; }
     .fields .row > * { flex: 1; min-width: 0; }
     .fields .row .btn, .fields .row select { flex: 0 0 auto; width: auto; }
@@ -224,7 +226,7 @@
         <li><b>Generate token</b>, copy it, paste it here.</li>
       </ol>
       <div class="token-row">
-        <input id="tokenInput" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
+        <input id="tokenInput" class="masked" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
         <button class="btn primary" id="tokenSave">Connect</button>
       </div>
       <div class="gate-msg" id="gateMsg"></div>
@@ -880,11 +882,11 @@
         '<div class="panes"><div class="pane">' +
           '<div class="fields">' +
             '<label>Passage</label>' +
-            '<div class="row"><input id="refIn" placeholder="Psalm 24, or John 3:16-21" spellcheck="false">' +
+            '<div class="row"><input id="refIn" placeholder="Psalm 24, or John 3:16-21" autocomplete="off" spellcheck="false">' +
               '<select id="verIn"></select>' +
               '<button class="btn primary" id="fetchBtn">Get the verses</button></div>' +
             '<div class="note" id="refNote"></div>' +
-            '<div class="row" id="keyRow" style="display:none"><input id="keyIn" type="password" placeholder="API.Bible key" autocomplete="off" spellcheck="false"><button class="btn" id="keySave">Add the key</button></div>' +
+            '<div class="row" id="keyRow" style="display:none"><input id="keyIn" class="masked" placeholder="API.Bible key" autocomplete="off" spellcheck="false"><button class="btn" id="keySave">Add the key</button></div>' +
           '</div>' +
           '<div class="pane-head">Verses<span class="hint">one verse per line, number first</span></div>' +
           '<textarea class="box" id="verseBox" spellcheck="false" placeholder="1 The earth is the LORD’s, and all it contains…"></textarea>' +
