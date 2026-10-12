@@ -83,15 +83,18 @@
     body.start #layout { top: calc(var(--header-h) + var(--start-h, 128px)); }   /* --start-h is measured */
     #start .st-row { display: flex; gap: 12px; align-items: stretch; }
     #start .st-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
-    .st-btn { flex: 1; display: flex; align-items: center; gap: 14px; text-align: left; font: inherit; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
-    .st-btn:hover { border-color: var(--ink-faint); }
+    .st-btn { flex: 1; display: flex; align-items: center; gap: 14px; text-align: left; font: inherit; color: var(--ink); background: rgba(201,168,76,0.10); border: 1.5px solid var(--gold); border-radius: 10px; padding: 12px 14px; cursor: pointer; transition: background 0.15s; }
+    .st-btn:hover { background: rgba(201,168,76,0.22); }
+    .st-btn:active { background: rgba(201,168,76,0.32); }
     .st-btn .n { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--bg); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
     .st-btn b { display: block; font-size: 15px; font-weight: 600; }
     .st-btn small { display: block; font-size: 12.5px; color: var(--ink-dim); margin-top: 2px; line-height: 1.4; }
-    .st-btn .ok { margin-left: auto; flex-shrink: 0; font-size: 12px; font-weight: 700; color: #7bb37e; opacity: 0; }
-    .st-btn.done { border-color: #3d5a3f; }
+    .st-btn .ok { margin-left: auto; flex-shrink: 0; font-size: 13px; font-weight: 700; color: var(--bg); background: var(--gold); border-radius: 999px; padding: 8px 16px; white-space: nowrap; }
+    .st-btn.done { border-color: #3d5a3f; background: var(--panel-2); }
     .st-btn.done .n { background: #7bb37e; }
-    .st-btn.done .ok { opacity: 1; }
+    .st-btn.done .ok { background: #7bb37e; }
+    .st-btn.done .ok::before { content: 'Open ✓'; }
+    .st-btn:not(.done) .ok::before { content: 'Click to open ↗'; }
     #start .st-foot { display: flex; align-items: center; gap: 12px; margin-top: 8px; font-size: 12.5px; color: var(--ink-dim); }
     #start .st-foot b { color: var(--ink); }
     #start .st-skip { margin-left: auto; font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-decoration: underline; }
@@ -317,8 +320,8 @@
   <div id="start">
     <div class="st-title">Before the service</div>
     <div class="st-row">
-      <button class="st-btn" id="st-tv" onclick="openTV()"><span class="n">1</span><span><b>Open the TV</b><small>A second Chrome window pops up. Drag it onto the TV and click it once. It fills the TV.</small></span><span class="ok">Open ✓</span></button>
-      <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A green Chrome window pops up. Click it once so it fills a screen, then leave it. OBS watches it.</small></span><span class="ok">Open ✓</span></button>
+      <button class="st-btn" id="st-tv" onclick="openTV()"><span class="n">1</span><span><b>Open the TV</b><small>A second Chrome window pops up. Drag it onto the TV and click it once. It fills the TV.</small></span><span class="ok"></span></button>
+      <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A green Chrome window pops up. Click it once so it fills a screen, then leave it. OBS watches it.</small></span><span class="ok"></span></button>
     </div>
     <div class="st-foot"><span>Then press <b>Next</b> when the service starts. <b>B</b> blanks the TV.</span><button class="st-skip" id="st-skip">Hide this</button></div>
   </div>
