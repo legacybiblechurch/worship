@@ -402,6 +402,7 @@
     function openTV() { window.open('worship-display.html', 'lbc-display', 'popup,width=1280,height=720'); }
     function openStream() { window.open('worship-stream.html?bg=green', 'lbc-stream', 'popup,width=1920,height=1080'); }
     var displaySeen = 0, streamSeen = 0, startHidden = false;
+    if (/Win/.test(navigator.platform)) document.querySelector('#st-stream small').textContent = 'A green Chrome window pops up. Leave it open behind the others. Never minimize it. OBS watches it.';
     try { startHidden = sessionStorage.getItem('lbc-start-hidden') === '1'; } catch (e) {}
     channel.onmessage = function (e) {
       if (!e.data || e.data.type !== 'ping') return;

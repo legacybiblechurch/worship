@@ -29,7 +29,7 @@ The right pane always shows exactly what the TV will show.
 ## Sunday morning — running it (2 minutes to set up)
 
 1. On the church laptop, open the page above → **Run Sunday**.
-2. Two buttons at the top. **1 Open the TV**: a second Chrome window pops up with the words on black; drag it onto the TV and click it once, it fills the TV. **2 Open the stream window**: a second Chrome window pops up, all green; click it once, it fills a screen, leave it alone. If nothing pops up, Chrome blocked it: click the little icon at the right end of the address bar, Allow, click the button again.
+2. Two buttons at the top. **1 Open the TV**: a second Chrome window pops up with the words on black; drag it onto the TV and click it once, it fills the TV. **2 Open the stream window**: a second Chrome window pops up, all green. On the Windows laptop leave it open behind the others and never minimize it. On a Mac click it once and it fills a screen. If nothing pops up, Chrome blocked it: click the little icon at the right end of the address bar, Allow, click the button again.
 3. When both are open the buttons go green and disappear. That's set up.
 
 **During the service:**

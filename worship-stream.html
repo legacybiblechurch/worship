@@ -259,14 +259,24 @@
       if (bg) { ch.postMessage({ type: 'ping', from: 'stream' }); setInterval(function () { ch.postMessage({ type: 'ping', from: 'stream' }); }, 1500); }
     } catch (e) {}
 
-    // the OBS window: one click fills a screen (its own desktop on a Mac), nothing to remember
+    // the OBS window. On a Mac one click fills a screen and the window gets its own
+    // desktop. On Windows a full-screen window would cover Control, so there the
+    // window simply stays open (Chrome runs with the flag that keeps a covered
+    // window drawing; OBS-SETUP.md) and the hint says so, then goes away.
     if (bg) {
-      var fillHint = document.getElementById('fill');
-      var fill = function () { var el = document.documentElement; if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen().catch(function () {}); };
-      var paintFill = function () { fillHint.style.display = document.fullscreenElement ? 'none' : 'block'; }
-      document.addEventListener('click', fill);
-      document.addEventListener('fullscreenchange', paintFill);
-      paintFill();
+      var fillHint = document.getElementById('fill'), WIN = /Win/.test(navigator.platform);
+      if (WIN) {
+        fillHint.textContent = 'Leave this window open. Behind the others is fine. Never minimize it.';
+        fillHint.style.display = 'block';
+        setTimeout(function () { fillHint.style.display = 'none'; }, 12000);
+        document.addEventListener('click', function () { fillHint.style.display = 'none'; });
+      } else {
+        var fill = function () { var el = document.documentElement; if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen().catch(function () {}); };
+        var paintFill = function () { fillHint.style.display = document.fullscreenElement ? 'none' : 'block'; };
+        document.addEventListener('click', fill);
+        document.addEventListener('fullscreenchange', paintFill);
+        paintFill();
+      }
     }
 
     // Control anywhere (the iPad, another browser): the relay the phone remote uses
