@@ -14,7 +14,26 @@ In this repo, `obs/`:
 - `profile/basic.ini` — 1080p, 30 fps, Apple hardware encoder, 4500 kbps.
 - `profile/service.json` — YouTube, no key (you add the account).
 
-On the church laptop these are already in place in OBS's folder. On any other Mac: Scene Collection → Import → `obs/Legacy_Stream.json`, then Profile → Import → `obs/profile`.
+On any Mac: Scene Collection → Import → `obs/Legacy_Stream.json`, then Profile → Import → `obs/profile`.
+
+**The church's media laptop is Windows.** Its files are in `obs/windows/`: the same two scenes with Windows sources (DirectShow camera, Windows window capture, WASAPI mic, Application Audio Capture for Chrome, Display Capture for the TV, desktop audio for a video) and a profile with the x264 software encoder at 720p so a laptop without a graphics card keeps up. The Windows build is its own section below. The Mac steps are kept for the Mac.
+
+## On the Windows laptop (the church's media laptop)
+
+About half an hour, once, by someone who can sign in to the church YouTube.
+
+1. **Install OBS** from obsproject.com (OBS 30 or newer). First launch: if the Auto-Configuration Wizard appears, **Cancel** it.
+2. **Get the two files.** On GitHub open `obs/windows/Legacy_Stream.json`, click the download icon, and do the same for `obs/windows/profile/basic.ini` and `obs/windows/profile/service.json` (put those two in a folder called `Legacy_Stream`). In OBS: **Scene Collection → Import** → the json. **Profile → Import** → the folder. Then pick both from those menus so the top bar says Legacy Stream twice.
+3. **Chrome, once.** Chrome stops drawing a window that is completely covered by other windows, and OBS would stream a frozen frame. Right-click the Chrome icon on the taskbar → right-click **Google Chrome** → **Properties**. In **Target**, after the closing quote, add a space and `--disable-backgrounding-occluded-windows`. OK. Close every Chrome window and open Chrome from that taskbar icon from now on. (Same flag on the desktop shortcut if that is what gets used.)
+4. **The green window.** In Chrome, Worship Control → **Open the stream window**. It pops up as its own window. Leave it open; it can sit behind Control and OBS. Never minimize it. In OBS double-click **Lyrics (green window)**, Window: pick *[chrome.exe]: Stream lyrics — Legacy Bible Church - Google Chrome*, Capture Method **Windows 10 (1903 and up)**, Window Match Priority **Window title must match**. The main preview shows the countdown or the words over black with the green keyed out. (On Windows 10 a yellow border may show around a captured window on the laptop's own screen; it is not in the stream.)
+5. **Camera.** Double-click **Camera**, pick the device. A USB webcam, or the iPad through PRISM Lens for PC if that is what the church has. Resolution 1920x1080 if offered.
+6. **Mic.** Plug the Lark USB-C receiver in. Double-click **Mic (shirt mic)**, pick it. Speak; the Mic meter bounces.
+7. **Songs.** Double-click **Songs (Chrome audio)**: Window: any *chrome.exe* entry, Match Priority **Executable name must match**. Press Play on a song in Control; the Songs meter lights. Pull its fader to about −10 dB.
+8. **YouTube.** Settings → Stream → Service YouTube → **Connect Account**, sign in as the church.
+9. **Video.** Click the **Video** scene. Double-click **Video (the TV screen)**, pick the TV's display. **Video sound (desktop audio)** is already the laptop's output, so whatever plays on the laptop is heard. Gear under the mixer → **Advanced Audio Properties** → Video sound: Track **1** ticked, Monitoring **Monitor Off**. Click **Service**.
+10. **Test stream**, Unlisted. Picture, countdown, words, a song, the mic, the sermon bar. Stop.
+
+Then the Sunday card at `/obs/` is the same on either laptop. The TV window works the same on Windows: drag it to the TV, click it once, it fills the TV.
 
 ## How the words get in with no internet in the loop
 
