@@ -539,36 +539,34 @@
       function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + '” needs its words' : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
       function songOk(it) { return !!it && itemReady(it) && !finding[it.slug] && !dirty[it.slug]; }
       function addBox() { var a = document.getElementById('addName'); if (a) { a.focus(); a.scrollIntoView({ block: 'center' }); } }
-      function rowFor(it, ok, needs, make, where) {
-        return { done: ok && inPlace(it), note: ok && !inPlace(it) ? 'Out of order: click to move it ' + where : needs,
-                 go: function () { if (it && ok && !inPlace(it)) { placeItem(it); select(it.key); } else if (it) select(it.key); else if (make) { var n = addItem(make()); select(n.key); } else addBox(); } };
+      function rowFor(title, it, ok, needs, doneNote, make, where) {
+        var placed = !!it && inPlace(it);
+        return { title: title, done: ok && placed,
+                 note: ok && placed ? doneNote : ok ? 'Out of order: click to move it ' + where : needs,
+                 go: function () { if (it && ok && !placed) { placeItem(it); select(it.key); } else if (it) select(it.key); else if (make) { var n = addItem(make()); select(n.key); } else addBox(); } };
       }
+      function songRow(title, it, where) { return rowFor(title, it, songOk(it), !it ? 'Type the song name in Add, below' : songNote(it), it ? itemTitle(it) : '', null, where); }
       var set = samePlan() && order.length > 0;
-      var r1 = rowFor(reading, !!(reading && itemReady(reading)), !reading ? 'Click here, then type the passage' : 'Type the passage and click Get the verses', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }, 'to the top');
-      var r2 = rowFor(opening, songOk(opening), !opening ? 'Type the song name in Add, below' : songNote(opening), null, 'under the reading');
-      var r3 = rowFor(sermon, !!(sermon && itemReady(sermon)), !sermon ? 'Click here: the title and the points' : 'Needs a title', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }, 'under the opening song');
-      var r4 = rowFor(table, !!(table && itemReady(table)), !table ? 'Click here. The words are kept from week to week' : 'Needs its words', function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }, 'under the sermon');
-      var closeBad = closing.filter(function (it) { return !songOk(it); });
-      var closeOk = closing.length >= 2 && !closeBad.length && closing.every(inPlace);
-      var r5 = { done: closeOk,
-        note: closeBad.length ? songNote(closeBad[0]) : closing.length < 2 ? (closing.length ? 'One more: type the song name in Add, below' : 'Type the two song names in Add, below') : closing.some(function (it) { return !inPlace(it); }) ? 'Out of order: click to move them after the Lord’s Table' : closing.map(itemTitle).join(' · '),
-        go: function () { if (closeBad.length) select(closeBad[0].key); else if (closing.length < 2) addBox(); else if (closing.some(function (it) { return !inPlace(it); })) placeItem(); else select(closing[0].key); } };
-      var allIn = r1.done && r2.done && r3.done && r4.done && r5.done;
       var steps = [
-        { title: 'The reading', row: r1 }, { title: 'The opening song', row: r2 }, { title: 'The sermon', row: r3 },
-        { title: 'The Lord’s Table', row: r4 }, { title: 'Two songs to close', row: r5 },
-        { title: 'This computer is connected', row: { done: !!connected, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } } },
-        { title: 'Ready for Sunday', row: { done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish } }
+        rowFor('Scripture Reading', reading, !!(reading && itemReady(reading)), !reading ? 'Click here, then type the passage' : 'Type the passage and click Get the verses',
+               reading ? (reading.ref || 'Reading') + ' · ' + (reading.version || '') : '', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }, 'to the top'),
+        songRow('Opening Song', opening, 'under the reading'),
+        rowFor('Sermon', sermon, !!(sermon && itemReady(sermon)), !sermon ? 'Click here: the title and the points' : 'Needs a title',
+               sermon ? sermon.title + (sermon.points && sermon.points.filter(String).length ? ' · ' + sermon.points.filter(String).length + ' points' : '') : '', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }, 'under the opening song'),
+        rowFor('Lord’s Table', table, !!(table && itemReady(table)), !table ? 'Click here. The words are kept from week to week' : 'Needs its words', 'Words in',
+               function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }, 'under the sermon'),
+        songRow('Closing Song 1', closing[0], 'after the Lord’s Table'),
+        songRow('Closing Song 2', closing[1], 'after Closing Song 1')
       ];
+      var allIn = steps.every(function (st) { return st.done; });
+      steps.push({ title: 'Computer is Connected', done: !!connected, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
+      steps.push({ title: 'Ready for Sunday', done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish });
       steps.forEach(function (st, i) {
-        var done = st.row.done;
         var b = document.createElement('button');
-        b.className = 'ck' + (done ? ' done' : '');
-        b.appendChild(el('span', 'n', done ? '✓' : String(i + 1)));
-        var tx = el('span', 'tx'); tx.appendChild(el('b', '', st.title));
-        var note = done ? (i === 0 ? (reading.ref || 'Reading') + ' · ' + (reading.version || '') : i === 1 ? itemTitle(opening) : i === 2 ? sermon.title + (sermon.points && sermon.points.filter(String).length ? ' · ' + sermon.points.filter(String).length + ' points' : '') : i === 3 ? 'Words in' : st.row.note) : st.row.note;
-        tx.appendChild(el('small', '', note)); b.appendChild(tx);
-        b.onclick = st.row.go;
+        b.className = 'ck' + (st.done ? ' done' : '');
+        b.appendChild(el('span', 'n', st.done ? '✓' : String(i + 1)));
+        var tx = el('span', 'tx'); tx.appendChild(el('b', '', st.title)); tx.appendChild(el('small', '', st.note)); b.appendChild(tx);
+        b.onclick = st.go;
         box.appendChild(b);
       });
     }
