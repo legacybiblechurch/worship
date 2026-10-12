@@ -383,7 +383,8 @@
     return bibleCall('/bibles?language=eng', key).then(function (j) {
       var seen = {};
       return (j.data || []).map(function (b) {
-        return { id: b.id, abbr: String(b.abbreviation || '').replace(/^eng/, '').toUpperCase(), name: b.name };
+        // the label people see: API.Bible says NASB1995, the church says NASB
+        return { id: b.id, abbr: String(b.abbreviation || '').replace(/^eng/, '').toUpperCase().replace(/^NASB1995$/, 'NASB'), name: b.name };
       }).filter(function (b) { if (!b.abbr || seen[b.abbr]) return false; seen[b.abbr] = true; return true; });
     });
   }
