@@ -238,7 +238,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=14"></script>
+  <script src="js/sheet.js?v=15"></script>
   <script>
   (function () {
     'use strict';
@@ -281,6 +281,20 @@
     // ───────────────────────────── GitHub
     function token() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; } }
     function setToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch (e) {} }
+    // The church's API.Bible key, for the NASB. Same rule as the token: this browser only, never the site.
+    var BIBLE_KEY = 'lbc-bible-key', BIBLES_KEY = 'lbc-bibles', WANT_VERSION = /^(NASB|ESV|NIV|NKJV|CSB|NLT)/;
+    function bibleKey() { try { return localStorage.getItem(BIBLE_KEY) || ''; } catch (e) { return ''; } }
+    function setBibleKey(k) { try { k ? localStorage.setItem(BIBLE_KEY, k) : localStorage.removeItem(BIBLE_KEY); } catch (e) {} }
+    function bibles() { try { return JSON.parse(localStorage.getItem(BIBLES_KEY) || '[]'); } catch (e) { return []; } }
+    function loadBibles() {
+      return S.bibleList(bibleKey()).then(function (list) {
+        var keep = list.filter(function (b) { return WANT_VERSION.test(b.abbr); });
+        try { localStorage.setItem(BIBLES_KEY, JSON.stringify(keep)); } catch (e) {}
+        return keep;
+      });
+    }
+    function bibleFor(abbr) { return bibles().filter(function (b) { return b.abbr === abbr; })[0] || null; }
+    function defaultVersion() { var n = bibles().filter(function (b) { return /^NASB/.test(b.abbr); })[0]; return n ? n.abbr : 'WEB'; }
     var NEEDS_WRITE = 'This computer can see the site but not save to it. On github.com/settings/personal-access-tokens open the token and set Contents and Actions to "Read and write".';
     var NEEDS_ACTIONS = 'Finding new songs needs one more permission: on github.com/settings/personal-access-tokens open the token and set Actions to "Read and write".';
 
@@ -440,7 +454,7 @@
       rail.appendChild(wrap);
       wireAdd(inp, sugg);
       var addRow = el('div', 'add-row');
-      [['Reading', function () { return { type: 'scripture', ref: '', version: 'WEB', verses: [] }; }],
+      [['Reading', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }],
        ['Sermon', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }],
        ['Lord’s Table', function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }],
        ['Video', function () { return { type: 'video', title: '', note: '' }; }],
@@ -867,34 +881,59 @@
           '<div class="fields">' +
             '<label>Passage</label>' +
             '<div class="row"><input id="refIn" placeholder="Psalm 24, or John 3:16-21" spellcheck="false">' +
-              '<select id="verIn"><option value="WEB">WEB</option><option value="KJV">KJV</option><option value="NASB">NASB</option></select>' +
+              '<select id="verIn"></select>' +
               '<button class="btn primary" id="fetchBtn">Get the verses</button></div>' +
-            '<div class="note" id="refNote">WEB and KJV come in on their own. For the NASB, get the verses first for the numbers, then paste the NASB words over them from a Bible app and set the version to NASB.</div>' +
+            '<div class="note" id="refNote"></div>' +
+            '<div class="row" id="keyRow" style="display:none"><input id="keyIn" type="password" placeholder="API.Bible key" autocomplete="off" spellcheck="false"><button class="btn" id="keySave">Add the key</button></div>' +
           '</div>' +
           '<div class="pane-head">Verses<span class="hint">one verse per line, number first</span></div>' +
           '<textarea class="box" id="verseBox" spellcheck="false" placeholder="1 The earth is the LORD’s, and all it contains…"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Reading' + (it.ref ? ' · ' + it.ref : '');
       var ref = document.getElementById('refIn'), ver = document.getElementById('verIn'), box = document.getElementById('verseBox'), note = document.getElementById('refNote');
-      ref.value = it.ref || ''; ver.value = it.version || 'WEB'; box.value = S.versesToText(it.verses);
+      var keyRow = document.getElementById('keyRow'), keyIn = document.getElementById('keyIn');
+      // the versions on offer: the two free ones, then whatever the church's key unlocks
+      var list = ['WEB', 'KJV'].concat(bibles().map(function (b) { return b.abbr; }));
+      if (it.version && list.indexOf(it.version) < 0) list.push(it.version);
+      ver.innerHTML = list.map(function (a) { return '<option value="' + a + '">' + a + '</option>'; }).join('');
+      ref.value = it.ref || ''; ver.value = it.version || defaultVersion(); box.value = S.versesToText(it.verses);
+      function askKey(msg) { note.textContent = msg; keyRow.style.display = ''; keyIn.focus(); }
+      function hint() {
+        var nasb = bibles().filter(function (b) { return /^NASB/.test(b.abbr); })[0];
+        if (nasb) note.textContent = 'Type the passage and get the verses. The ' + nasb.abbr + ' comes straight from API.Bible.';
+        else if (bibleKey()) note.textContent = 'WEB and KJV come in on their own. The key is in, but the NASB is not on it yet: check the Plan tab on api.bible.';
+        else askKey('WEB and KJV come in on their own. For the NASB, paste the church’s API.Bible key here once (api.bible → the Legacy Bible Church Worship app → API Key).');
+      }
+      hint();
       ref.oninput = function () { it.ref = ref.value.trim(); main.querySelector('.main-title').textContent = 'Reading' + (it.ref ? ' · ' + it.ref : ''); touched(); paintItemPreview(it); };
       ver.onchange = function () { it.version = ver.value; touched(); paintItemPreview(it); };
       box.oninput = function () { it.verses = S.textToVerses(box.value); touched(); paintItemPreview(it); };
       function go() {
         if (!ref.value.trim()) { ref.focus(); return; }
-        var want = ver.value === 'NASB' ? 'web' : ver.value.toLowerCase();
+        var v = ver.value, bible = bibleFor(v);
+        if (!bible && v !== 'WEB' && v !== 'KJV') { askKey('The ' + v + ' needs the church’s API.Bible key. Paste it here once.'); return; }
         var b = document.getElementById('fetchBtn'); b.disabled = true; b.textContent = 'Getting…';
-        S.fetchPassage(ref.value, want).then(function (p) {
-          it.ref = p.ref; it.verses = p.verses; if (ver.value !== 'NASB') it.version = p.version;
+        (bible ? S.fetchPassageBible(ref.value, bible, bibleKey()) : S.fetchPassage(ref.value, v.toLowerCase())).then(function (p) {
+          it.ref = p.ref; it.verses = p.verses; it.version = p.version;
           ref.value = p.ref; box.value = S.versesToText(p.verses);
           main.querySelector('.main-title').textContent = 'Reading · ' + p.ref;
-          note.textContent = p.verses.length + (p.verses.length === 1 ? ' verse' : ' verses') + ' from the ' + p.version + (ver.value === 'NASB' ? '. Now paste the NASB words over them, keeping the numbers.' : '.');
+          note.textContent = p.verses.length + (p.verses.length === 1 ? ' verse' : ' verses') + ' from the ' + p.version + '.';
           touched(); paintItemPreview(it);
-        }).catch(function (e) { note.textContent = e.message; })
+        }).catch(function (e) { if (/key/.test(e.message)) askKey(e.message); else note.textContent = e.message; })
           .then(function () { b.disabled = false; b.textContent = 'Get the verses'; });
       }
       document.getElementById('fetchBtn').onclick = go;
       ref.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } };
+      document.getElementById('keySave').onclick = function () {
+        var k = keyIn.value.trim(); if (!k) { keyIn.focus(); return; }
+        note.textContent = 'Checking the key…'; setBibleKey(k);
+        loadBibles().then(function (keep) {
+          if (!it.verses.length && it.version === 'WEB') it.version = defaultVersion();
+          toast(keep.length ? 'Key added. ' + keep.map(function (b) { return b.abbr; }).join(', ') + ' now come in on their own.' : 'Key added, but no NASB on it yet.', 'ok');
+          renderReading(it);
+        }).catch(function (e) { setBibleKey(''); askKey(e.message); });
+      };
+      keyIn.onkeydown = function (e) { if (e.key === 'Enter') document.getElementById('keySave').click(); };
       paintItemPreview(it);
       if (!it.ref) setTimeout(function () { ref.focus(); }, 30);
     }
@@ -1107,6 +1146,8 @@
       checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); })
         .catch(function () { connected = false; paintConn(); });
     }
+    // the key's Bible list refreshes quietly, so a newly licensed NASB shows up on the next Reading
+    if (bibleKey()) loadBibles().catch(function () {});
   })();
   </script>
 </body>

@@ -320,7 +320,7 @@
     return out;
   }
   // a passage from bible-api.com: free, no key, public-domain texts (WEB, KJV).
-  // NASB is not served by anyone for free; the person pastes it from a Bible app.
+  // Licensed texts (the NASB) come from API.Bible with the church's key, below.
   function fetchPassage(ref, translation) {
     var t = String(translation || 'web').toLowerCase();
     return fetch('https://bible-api.com/' + encodeURIComponent(String(ref).trim()) + '?translation=' + encodeURIComponent(t))
@@ -331,6 +331,75 @@
       .then(function (j) {
         return { ref: j.reference || ref, version: String(j.translation_id || t).toUpperCase(),
                  verses: (j.verses || []).map(function (v) { return { n: v.verse, text: String(v.text || '').replace(/\s+/g, ' ').trim() }; }) };
+      });
+  }
+
+  // ── Scripture from API.Bible, for the texts bible-api.com cannot serve.
+  // Needs the church's API.Bible key (the Studio keeps it in this browser only).
+  // A reference like "Psalm 24" or "1 John 3:16-18" becomes a passage id like
+  // PSA.24 or 1JN.3.16-1JN.3.18. Book names: the full name first, then the
+  // short forms people type; matching ignores spaces, dots and case.
+  var BIBLE_API = 'https://rest.api.bible/v1';
+  var BOOKS = ('GEN genesis gen ge gn|EXO exodus exo ex exod|LEV leviticus lev le lv|NUM numbers num nu nm nb|DEU deuteronomy deut deu de dt|' +
+    'JOS joshua josh jos jsh|JDG judges judg jdg jg jdgs|RUT ruth rut ru rth|1SA 1samuel 1sam 1sa 1sm|2SA 2samuel 2sam 2sa 2sm|' +
+    '1KI 1kings 1kgs 1ki 1kin|2KI 2kings 2kgs 2ki 2kin|1CH 1chronicles 1chron 1chr 1ch|2CH 2chronicles 2chron 2chr 2ch|EZR ezra ezr|' +
+    'NEH nehemiah neh ne|EST esther est es esth|JOB job jb|PSA psalms psalm ps psa pss psm pslm|PRO proverbs prov pro pr prv|' +
+    'ECC ecclesiastes eccl ecc ec eccles qoh|SNG songofsolomon songofsongs song sos so canticles cant sng|ISA isaiah isa is|JER jeremiah jer je jr|' +
+    'LAM lamentations lam la|EZK ezekiel ezek eze ezk|DAN daniel dan da dn|HOS hosea hos ho|JOL joel jol jl|AMO amos amo am|OBA obadiah obad oba ob|' +
+    'JON jonah jon jnh|MIC micah mic mc|NAM nahum nah na nam|HAB habakkuk hab hb|ZEP zephaniah zeph zep zp|HAG haggai hag hg|' +
+    'ZEC zechariah zech zec zc|MAL malachi mal ml|MAT matthew matt mat mt|MRK mark mrk mk mr|LUK luke luk lk|JHN john jhn jn joh|' +
+    'ACT acts act ac|ROM romans rom ro rm|1CO 1corinthians 1cor 1co|2CO 2corinthians 2cor 2co|GAL galatians gal ga|EPH ephesians eph ep|' +
+    'PHP philippians phil php philip pp|COL colossians col co|1TH 1thessalonians 1thess 1thes 1th|2TH 2thessalonians 2thess 2thes 2th|' +
+    '1TI 1timothy 1tim 1ti|2TI 2timothy 2tim 2ti|TIT titus tit ti|PHM philemon philem phm phlm pm|HEB hebrews heb he|JAS james jas jm ja|' +
+    '1PE 1peter 1pet 1pe 1pt|2PE 2peter 2pet 2pe 2pt|1JN 1john 1jn 1jhn 1jo|2JN 2john 2jn 2jhn 2jo|3JN 3john 3jn 3jhn 3jo|JUD jude jud jd|' +
+    'REV revelation revelations rev re apocalypse').split('|').map(function (s) { var p = s.split(' '); return { id: p[0], names: p.slice(1) }; });
+  function parseRef(ref) {
+    var s = String(ref || '').trim().replace(/[–—]/g, '-')
+      .replace(/^(first|1st|i)\s+/i, '1 ').replace(/^(second|2nd|ii)\s+/i, '2 ').replace(/^(third|3rd|iii)\s+/i, '3 ');
+    var m = s.match(/^([1-3]?\s*[a-z][a-z .]*?)\s*(\d+)(?::(\d+))?(?:\s*-\s*(?:(\d+):)?(\d+))?$/i);
+    if (!m) return null;
+    var key = m[1].toLowerCase().replace(/[^a-z0-9]/g, ''), book = null, starts = [];
+    for (var i = 0; i < BOOKS.length && !book; i++) {
+      if (BOOKS[i].names.indexOf(key) >= 0) book = BOOKS[i];
+      else if (BOOKS[i].names[0].indexOf(key) === 0) starts.push(BOOKS[i]);
+    }
+    if (!book && starts.length === 1) book = starts[0];
+    if (!book) return null;
+    var ch = +m[2], v1 = m[3] ? +m[3] : 0, ch2 = m[4] ? +m[4] : ch, v2 = m[5] ? +m[5] : 0, id = book.id + '.' + ch;
+    if (v1) { id += '.' + v1; if (v2) id += '-' + book.id + '.' + ch2 + '.' + v2; }
+    else if (v2) id += '-' + book.id + '.' + v2;   // "Psalm 1-3" is chapters
+    return { bookId: book.id, chapter: ch, verse: v1, id: id };
+  }
+  function bibleCall(path, key) {
+    return fetch(BIBLE_API + path, { headers: { 'api-key': key } }).then(function (r) {
+      if (r.status === 401 || r.status === 403) throw new Error('That API.Bible key did not work. Check it on api.bible and paste it again.');
+      if (r.status === 404) throw new Error('That reference was not found. Try it like “Psalm 24” or “John 3:16-21”.');
+      if (!r.ok) throw new Error('API.Bible did not answer (' + r.status + '). Try again in a moment.');
+      return r.json();
+    });
+  }
+  // the English Bibles this key may read: [{id, abbr, name}]
+  function bibleList(key) {
+    return bibleCall('/bibles?language=eng', key).then(function (j) {
+      var seen = {};
+      return (j.data || []).map(function (b) {
+        return { id: b.id, abbr: String(b.abbreviation || '').replace(/^eng/, '').toUpperCase(), name: b.name };
+      }).filter(function (b) { if (!b.abbr || seen[b.abbr]) return false; seen[b.abbr] = true; return true; });
+    });
+  }
+  // the same shape fetchPassage gives, from API.Bible: {ref, version, verses}
+  function fetchPassageBible(ref, bible, key) {
+    var p = parseRef(ref);
+    if (!p) return Promise.reject(new Error('Write the reference like “Psalm 24” or “John 3:16-21”.'));
+    return bibleCall('/bibles/' + bible.id + '/passages/' + p.id + '?content-type=text&include-verse-numbers=true', key)
+      .then(function (j) {
+        var d = j.data || {}, text = String(d.content || ''), verses = [], re = /\[(\d+)\]\s*([^\[]*)/g, m;
+        while ((m = re.exec(text))) { var t = m[2].replace(/\s+/g, ' ').trim(); if (t) verses.push({ n: +m[1], text: t }); }
+        if (!verses.length && text.trim()) verses.push({ n: p.verse || 1, text: text.replace(/\s+/g, ' ').trim() });
+        // API.Bible asks that each fetched passage register once (their FUMS pixel)
+        var pix = j.meta && j.meta.fumsNoScript && String(j.meta.fumsNoScript).match(/src="([^"]+)"/);
+        if (pix) { var im = new Image(); im.src = pix[1]; }
+        return { ref: String(d.reference || ref).replace(/^Psalms\b/, 'Psalm'), version: bible.abbr, verses: verses };
       });
   }
 
@@ -349,6 +418,7 @@
     buildItem: buildItem, loadService: loadService,
     buildScriptureSlides: buildScriptureSlides, buildSermonSlides: buildSermonSlides,
     versesToText: versesToText, textToVerses: textToVerses, fetchPassage: fetchPassage,
+    parseRef: parseRef, bibleList: bibleList, fetchPassageBible: fetchPassageBible,
     buildSlides: buildSlides, splitLine: splitLine, tidyBlocks: tidyBlocks,
     blocksToText: blocksToText, textToBlocks: textToBlocks
   };
