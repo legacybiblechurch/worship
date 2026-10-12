@@ -7,9 +7,9 @@ Everything is a website. Nothing to install. Bookmark this:
 
 ## Before Sunday — build the service (10 minutes)
 
-The whole Sunday is one list, top to bottom: songs, the reading, the sermon, the Lord's Table, a video, the logo. Most weeks the list stays and you change what changed.
+The whole Sunday is one list, top to bottom, always in this shape: the reading, one song, the sermon, the Lord's Table, two songs to close. Most weeks the list stays and you change what changed. Anything you add drops into its slot by itself.
 
-1. Open the page above → **Prepare Sunday**. The list at the top left, **Set up Sunday**, is the whole job: six rows, each turns green by itself when that part is done, and clicking a row takes you to it. When all six are green, you are done.
+1. Open the page above → **Prepare Sunday**. The list at the top left, **Set up Sunday**, is the whole job: seven rows in the order of the service, each turns green by itself when that part is done, and clicking a row takes you to it (or adds it, or moves it back into place). When all seven are green, you are done.
 2. First time on a new computer only: click **Connect this computer** (top right) and follow the six steps. It's a one-time password so the site can save. Never again after that.
 3. **Songs:** type a name in the **Add** box.
    - A song we've done before appears in the list — click it. Done.
