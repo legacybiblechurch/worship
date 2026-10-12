@@ -80,7 +80,7 @@
     /* ── the start strip: the two things to do before the service, until both are done ── */
     #start { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 90; background: var(--panel); border-bottom: 1px solid var(--line); padding: 12px 16px 10px; }
     body.start #start { display: block; }
-    body.start #layout { top: calc(var(--header-h) + 128px); }
+    body.start #layout { top: calc(var(--header-h) + var(--start-h, 128px)); }   /* --start-h is measured */
     #start .st-row { display: flex; gap: 12px; align-items: stretch; }
     #start .st-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
     .st-btn { flex: 1; display: flex; align-items: center; gap: 14px; text-align: left; font: inherit; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
@@ -317,8 +317,8 @@
   <div id="start">
     <div class="st-title">Before the service</div>
     <div class="st-row">
-      <button class="st-btn" id="st-tv" onclick="openTV()"><span class="n">1</span><span><b>Open the TV</b><small>A second Chrome window pops up with the words on black. Drag it onto the TV and click it once. It fills the TV.</small></span><span class="ok">Open ✓</span></button>
-      <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A second Chrome window pops up, all green. Click it once so it fills a screen, then leave it alone. OBS watches it.</small></span><span class="ok">Open ✓</span></button>
+      <button class="st-btn" id="st-tv" onclick="openTV()"><span class="n">1</span><span><b>Open the TV</b><small>A second Chrome window pops up. Drag it onto the TV and click it once. It fills the TV.</small></span><span class="ok">Open ✓</span></button>
+      <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A green Chrome window pops up. Click it once so it fills a screen, then leave it. OBS watches it.</small></span><span class="ok">Open ✓</span></button>
     </div>
     <div class="st-foot"><span>Then press <b>Next</b> when the service starts. <b>B</b> blanks the TV.</span><button class="st-skip" id="st-skip">Hide this</button></div>
   </div>
@@ -408,7 +408,11 @@
       document.getElementById('st-tv').classList.toggle('done', on);
       document.getElementById('st-stream').classList.toggle('done', st);
       document.body.classList.toggle('start', !startHidden && !(on && st));
+      fitStart();
     }, 1000);
+    // the strip's text wraps on narrower screens: the page below starts wherever it ends
+    function fitStart() { document.documentElement.style.setProperty('--start-h', document.getElementById('start').offsetHeight + 'px'); }
+    window.addEventListener('resize', fitStart);
 
     function goTo(si, li) {
       if (!songs.length) return;
