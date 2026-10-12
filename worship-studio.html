@@ -4,7 +4,7 @@
   <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worship Studio — LBC</title>
+  <title>Worship Studio · LBC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -253,7 +253,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=16"></script>
+  <script src="js/sheet.js?v=17"></script>
   <script>
   (function () {
     'use strict';
@@ -553,7 +553,7 @@
         songRow('Opening Song', opening, 'under the reading'),
         rowFor('Sermon', sermon, !!(sermon && itemReady(sermon)), !sermon ? 'Click here: the title and the points' : 'Needs a title',
                sermon ? sermon.title + (sermon.points && sermon.points.filter(String).length ? ' · ' + sermon.points.filter(String).length + ' points' : '') : '', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }, 'under the opening song'),
-        rowFor('Lord’s Table', table, !!(table && itemReady(table)), !table ? 'Click here. The words are kept from week to week' : 'Needs its words', 'Words in',
+        rowFor('Lord’s Table', table, !!(table && itemReady(table)), !table ? 'Click here and type what the TV shows during the Table' : 'Type what the TV shows during the Table. It is kept from week to week', 'Words in',
                function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }, 'under the sermon'),
         songRow('Closing Song 1', closing[0], 'after the Lord’s Table'),
         songRow('Closing Song 2', closing[1], 'after Closing Song 1')
@@ -582,9 +582,9 @@
       if (!order.length) { n.textContent = ''; n.className = 'ready-note'; return; }
       if (busy.length) { n.textContent = 'Still finding ' + busy.length + (busy.length === 1 ? ' song' : ' songs') + '…'; n.className = 'ready-note'; return; }
       if (problems.length) { n.textContent = problems.length + (problems.length === 1 ? ' item isn’t' : ' items aren’t') + ' ready yet'; n.className = 'ready-note warn'; return; }
-      if (anyDirty()) { n.textContent = 'Unsaved song edits — save first'; n.className = 'ready-note warn'; return; }
+      if (anyDirty()) { n.textContent = 'Unsaved song edits. Save first'; n.className = 'ready-note warn'; return; }
       if (samePlan()) { n.textContent = 'Control and Display are showing this service'; n.className = 'ready-note good'; return; }
-      n.textContent = order.length + (order.length === 1 ? ' item' : ' items') + ' — click when it’s right'; n.className = 'ready-note';
+      n.textContent = order.length + (order.length === 1 ? ' item' : ' items') + '. Click when it is right'; n.className = 'ready-note';
     }
 
     function move(i, d) {
@@ -653,7 +653,7 @@
         inp.value = ''; sugg.className = 'sugg';
         if (!hasSong(slug)) addItem({ type: 'song', slug: slug });
         select(slug);
-        toast('Added “' + title + '” — it already has its words.', 'ok');
+        toast('Added “' + title + '”. It already has its words.', 'ok');
       }
     }
 
@@ -765,10 +765,10 @@
         '<div class="chk">' +
           '<div class="chk-prog">Quick check ' + (pc.i + 1) + ' of ' + pc.checks.length + '</div>' +
           (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '?start=' + Math.floor(ch.t0) + '&autoplay=1&rel=0" allow="autoplay; encrypted-media"></iframe>' : '') +
-          '<div class="chk-q">Listen — which is it?</div>' +
+          '<div class="chk-q">Listen. Which is it?</div>' +
           '<div class="chk-opts">' + opts.map(function (o, i) { return '<button class="chk-opt" data-i="' + i + '"></button>'; }).join('') + '</div>' +
           '<div class="chk-own"><input id="chkOwn" placeholder="Or type what you hear"><button class="btn" id="chkOwnBtn">Use this</button></div>' +
-          '<div class="chk-foot"><span>' + esc(ch.why || '') + '</span><button class="btn quiet" id="chkSkip">Not sure — skip</button></div>' +
+          '<div class="chk-foot"><span>' + esc(ch.why || '') + '</span><button class="btn quiet" id="chkSkip">Not sure, skip</button></div>' +
         '</div>';
       main.querySelector('.main-title').textContent = s.title;
       var btns = main.querySelectorAll('.chk-opt');
@@ -817,7 +817,7 @@
       var main = document.getElementById('main'), it = curItem();
       if (!it) {
         main.innerHTML = '<div class="center"><h2>' + (order.length ? 'Pick something on the left' : 'Build this Sunday') + '</h2>' +
-          '<p>' + (order.length ? '' : 'Add the songs by name, then the reading, the sermon, the Lord’s Table — in the order they happen. Next Sunday, change what changed.') + '</p></div>';
+          '<p>' + (order.length ? '' : 'Add the songs by name, then the reading, the sermon, the Lord’s Table, in the order they happen. Next Sunday, change what changed.') + '</p></div>';
         return;
       }
       if (it.type === 'scripture') { renderReading(it); return; }
@@ -857,18 +857,18 @@
       if (!cands.length) {
         html += '<div class="center"><h2>Couldn’t find good words for this one</h2>' +
                 '<p>' + (d.error === 'took too long' ? 'It took longer than usual and gave up.' : 'That title didn’t turn up a recording with usable words.') +
-                ' You can paste the YouTube link and the words in yourself — it’s saved for good after that.</p>' +
+                ' You can paste the YouTube link and the words in yourself. It is saved for good after that.</p>' +
                 '<button class="btn primary" id="blankBtn">Paste them in</button></div>';
       } else {
         html += '<div class="cands">' + cands.map(function (c, i) {
           var conf = c.confidence || 0, src = c.transcriptSource || 'none', eng = c.engine || null;
           var v = eng ? eng.verdict : '';
-          var how = eng ? (v === 'verified' ? 'Every line verified — the listens, and the words we already had, agree'
-                          : v === 'check' ? (eng.checks || []).length + ' line' + ((eng.checks || []).length === 1 ? '' : 's') + ' to confirm by ear — the rest is verified'
-                          : 'Hard to hear — the words will need a look')
+          var how = eng ? (v === 'verified' ? 'Every line verified. The listens and the words we already had agree'
+                          : v === 'check' ? (eng.checks || []).length + ' line' + ((eng.checks || []).length === 1 ? '' : 's') + ' to confirm by ear. The rest is verified'
+                          : 'Hard to hear. The words will need a look')
                   : (src === 'subs' || src === 'asr' || src === 'whisper') ? 'words heard from this recording'
-                  : src === 'description' ? 'words from the video description — check the order'
-                  : 'words from memory, not this recording — check every line';
+                  : src === 'description' ? 'words from the video description. Check the order'
+                  : 'words from memory, not this recording. Check every line';
           var badge = eng ? '<span class="verdict ' + v + '">' + (v === 'verified' ? 'Verified' : v === 'check' ? 'Quick check' : 'Unclear') + '</span> ' : '';
           return '<div class="cand' + (i === 0 ? ' best' : '') + '">' +
             '<a href="' + esc(c.url) + '" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/' + esc(c.videoId) + '/mqdefault.jpg" alt=""></a>' +
@@ -899,7 +899,7 @@
         '<div class="panes">' +
           '<div class="pane">' +
             '<div class="video-strip">' +
-              (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet — paste a YouTube link below</div>') +
+              (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
             '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span></div>' +
             '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>' +
@@ -1037,9 +1037,9 @@
         '<div class="panes"><div class="pane">' +
           '<div class="fields">' +
             '<label>Title</label><input id="titleIn" placeholder="The sermon’s title">' +
-            '<label>Passage</label><input id="passIn" placeholder="Psalm 24:1–10" spellcheck="false">' +
+            '<label>Passage</label><input id="passIn" placeholder="Psalm 24:1-10" spellcheck="false">' +
           '</div>' +
-          '<div class="pane-head">Points<span class="hint">one per line — each becomes its own slide, in order</span></div>' +
+          '<div class="pane-head">Points<span class="hint">one per line. Each becomes its own slide, in order</span></div>' +
           '<textarea class="box" id="pointBox" placeholder="The earth belongs to the Lord&#10;Who may ascend His hill?&#10;The King of glory comes in"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
@@ -1058,9 +1058,9 @@
       var w = saved[it.id];
       main.innerHTML = head() +
         '<div class="panes"><div class="pane">' +
-          '<div class="fields"><label>Title</label><input id="wTitle"><div class="note">Written once and kept. Next Sunday it’s already here.</div></div>' +
+          '<div class="fields"><label>Title</label><input id="wTitle"><div class="note">What the TV shows during the Table, like the words from 1 Corinthians 11. Type it once and it stays. Next Sunday it is already here.</div></div>' +
           '<div class="pane-head">Words<span class="hint">blank line = new slide</span></div>' +
-          '<textarea class="box" id="wBox" spellcheck="true" placeholder="The words you read every week."></textarea>' +
+          '<textarea class="box" id="wBox" spellcheck="true" placeholder="This is My body, which is for you…"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = w.title || it.id;
       var t = document.getElementById('wTitle'), box = document.getElementById('wBox');
@@ -1108,7 +1108,7 @@
     function saveSong(slug) {
       if (saving) return;
       var s = songOf(slug);
-      if (!s.lyrics.length) { toast('Nothing to save yet — add the words first.', 'err'); return; }
+      if (!s.lyrics.length) { toast('Nothing to save yet. Add the words first.', 'err'); return; }
       if (!connected) { openConnect('Saving needs this computer connected first.'); return; }
       saving = true;
       var btn = document.getElementById('saveBtn'); if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
@@ -1149,7 +1149,7 @@
       if (publishing) return;
       if (!order.length) { toast('Add at least one thing first.', 'err'); return; }
       var busy = order.filter(function (it) { return it.type === 'song' && finding[it.slug]; });
-      if (busy.length) { toast('Still finding “' + songOf(busy[0].slug).title + '” — give it a minute.', 'err'); return; }
+      if (busy.length) { toast('Still finding “' + songOf(busy[0].slug).title + '”. Give it a minute.', 'err'); return; }
       var missing = order.filter(function (it) { return !itemReady(it); });
       if (missing.length) {
         var m0 = missing[0]; select(m0.key);

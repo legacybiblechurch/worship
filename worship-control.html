@@ -4,7 +4,7 @@
   <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worship Control — LBC</title>
+  <title>Worship Control · LBC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -356,8 +356,8 @@
       <input type="range" id="deck-vol" min="0" max="100" value="100" title="Volume">
     </div>
     <div class="row">
-      <button id="deck-fade" title="F — end the song, silence after">Fade out</button>
-      <button id="deck-next" title="N — fade into the next song" class="gold">Fade into next &rarr;</button>
+      <button id="deck-fade" title="F. End the song, silence after">Fade out</button>
+      <button id="deck-next" title="N. Fade into the next song" class="gold">Fade into next &rarr;</button>
     </div>
   </div>
 
@@ -371,7 +371,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=16"></script>
+  <script src="js/sheet.js?v=17"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -484,7 +484,7 @@
           '<div class="thumb-lines">' + preview + '</div></div>';
       }).join('');
 
-      document.getElementById('position-song').textContent = song.title + ' — ';
+      document.getElementById('position-song').textContent = song.title + ' · ';
       document.getElementById('position-slide').textContent = 'slide ' + (slideIdx + 1) + ' of ' + song.slides.length;
 
       setTimeout(function () {

@@ -249,7 +249,7 @@
     var slides = [], cur = [], nums = [], chars = 0;
     function flush() {
       if (!cur.length) return;
-      var a = nums[0], b = nums[nums.length - 1], range = a === b ? String(a) : a + '–' + b;
+      var a = nums[0], b = nums[nums.length - 1], range = a === b ? String(a) : a + '-' + b;
       slides.push({ label: 'v. ' + range, kicker: (base ? base + ':' + range : 'v. ' + range) + (it.version ? ' · ' + it.version : ''), lines: cur });
       cur = []; nums = []; chars = 0;
     }
@@ -281,20 +281,20 @@
       out.slug = it.slug;
       out.ready = !!(d && d.lyrics && d.lyrics.length);
       out.youtube = (d && d.youtube && videoId(d.youtube)) ? d.youtube : '';
-      out.slides = out.ready ? buildSlides(d.lyrics) : [{ label: '', lines: ['No words yet — open Studio to fix this song'] }];
+      out.slides = out.ready ? buildSlides(d.lyrics) : [{ label: '', lines: ['No words yet. Open Studio to fix this song'] }];
     } else if (it.type === 'scripture') {
       out.slides = buildScriptureSlides(it);
       out.ready = out.slides.length > 0;
-      if (!out.ready) out.slides = [{ label: '', kicker: it.ref || '', lines: ['No verses yet — open Studio'] }];
+      if (!out.ready) out.slides = [{ label: '', kicker: it.ref || '', lines: ['No verses yet. Open Studio'] }];
     } else if (it.type === 'sermon') {
       out.slides = buildSermonSlides(it);
       out.ready = !!(it.title && String(it.title).trim());
     } else if (it.type === 'words') {
       var w = saved()[it.id];
       out.ready = !!(w && w.lyrics && w.lyrics.length);
-      out.slides = out.ready ? buildSlides(w.lyrics) : [{ label: '', lines: ['No words yet — open Studio'] }];
+      out.slides = out.ready ? buildSlides(w.lyrics) : [{ label: '', lines: ['No words yet. Open Studio'] }];
     } else if (it.type === 'video') {
-      out.slides = [{ label: 'Video', lines: [], logo: true, cue: 'Play “' + (it.title || 'the video') + '” on the TV' + (it.note ? ' — ' + it.note : '') }];
+      out.slides = [{ label: 'Video', lines: [], logo: true, cue: 'Play “' + (it.title || 'the video') + '” on the TV' + (it.note ? '. ' + it.note : '') }];
     } else {
       out.slides = [{ label: 'Logo', lines: [], logo: true, cue: 'The TV shows the church logo' }];
     }
