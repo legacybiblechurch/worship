@@ -44,6 +44,20 @@
 
     #work { flex: 1; display: grid; grid-template-columns: 290px 1fr; min-height: 0; }
 
+    /* ── set up Sunday: a list that ticks itself. Each row goes green when that
+       part is done and clicking it takes you to that part. ── */
+    #check { display: flex; flex-direction: column; gap: 5px; margin-bottom: 6px; }
+    .ck { display: flex; align-items: center; gap: 10px; text-align: left; font: inherit; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; cursor: pointer; min-width: 0; width: 100%; }
+    .ck:hover { border-color: var(--ink-faint); }
+    .ck .n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: var(--bg); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    .ck .tx { min-width: 0; flex: 1; }
+    .ck b { display: block; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ck small { display: block; font-size: 11px; color: var(--ink-dim); margin-top: 1px; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ck.done { border-color: #3d5a3f; }
+    .ck.done .n { background: var(--good); }
+    .ck.done small { color: var(--ink-faint); }
+    .ck.soft .n { background: var(--line); color: var(--ink-dim); }
+
     /* ── rail ─────────────────────────────────── */
     .rail { border-right: 1px solid var(--line); overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 6px; }
     .rail-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); margin: 8px 2px 4px; display: flex; align-items: center; }
@@ -416,6 +430,8 @@
     function renderRail() {
       var rail = document.getElementById('rail');
       rail.innerHTML = '';
+      rail.appendChild(el('div', 'rail-label', 'Set up Sunday'));
+      var check = el('div', ''); check.id = 'check'; rail.appendChild(check);
       var lbl = el('div', 'rail-label', 'This Sunday');
       if (!samePlan()) lbl.appendChild(el('span', 'sub', 'not published yet'));
       rail.appendChild(lbl);
@@ -478,6 +494,54 @@
       foot.appendChild(el('div', 'ready-note', '')); foot.lastChild.id = 'readyNote';
       rail.appendChild(foot);
       paintReadyNote();
+      paintCheck();
+    }
+    // the set-up list: one row per part of a Sunday, in the order it is built
+    function firstOf(type) { return order.filter(function (it) { return it.type === type; })[0]; }
+    function goType(type, make) {
+      var it = order.filter(function (x) { return x.type === type && !itemReady(x); })[0] || firstOf(type);
+      if (!it) it = addItem(make());
+      select(it.key);
+    }
+    function paintCheck() {
+      var box = document.getElementById('check'); if (!box) return;
+      var songsIn = order.filter(function (it) { return it.type === 'song'; });
+      var busy = songsIn.filter(function (it) { return finding[it.slug]; });
+      var noWords = songsIn.filter(function (it) { return !finding[it.slug] && !itemReady(it); });
+      var unsaved = songsIn.filter(function (it) { return dirty[it.slug]; });
+      var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words');
+      var songsOk = songsIn.length > 0 && !busy.length && !noWords.length && !unsaved.length;
+      var readingOk = !!(reading && itemReady(reading)), sermonOk = !!(sermon && itemReady(sermon)), tableOk = !!(table && itemReady(table));
+      var set = samePlan() && order.length > 0;
+      var steps = [
+        { title: 'The songs', done: songsOk,
+          note: !songsIn.length ? 'Type a song name in Add, below' : busy.length ? 'Finding “' + itemTitle(busy[0]) + '”… about a minute' : noWords.length ? '“' + itemTitle(noWords[0]) + '” needs its words' : unsaved.length ? '“' + itemTitle(unsaved[0]) + '” has edits to save' : songsIn.length + (songsIn.length === 1 ? ' song, words in' : ' songs, words in'),
+          go: function () { var it = noWords[0] || unsaved[0]; if (it) select(it.key); else { var a = document.getElementById('addName'); if (a) { a.focus(); a.scrollIntoView({ block: 'center' }); } } } },
+        { title: 'The reading', done: readingOk,
+          note: !reading ? 'Click Reading below, type the passage' : !readingOk ? 'Type the passage and click Get the verses' : (reading.ref || 'Reading') + ' · ' + (reading.version || ''),
+          go: function () { goType('scripture', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }); } },
+        { title: 'The sermon', done: sermonOk,
+          note: !sermon ? 'Click Sermon below: the title and the points' : !sermonOk ? 'Needs a title' : sermon.title + (sermon.points && sermon.points.filter(String).length ? ' · ' + sermon.points.filter(String).length + ' points' : ''),
+          go: function () { goType('sermon', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }); } },
+        { title: 'The Lord’s Table', done: tableOk, soft: !table,
+          note: !table ? 'Click Lord’s Table below, if there is one this week' : !tableOk ? 'Needs its words' : 'Words in',
+          go: function () { goType('words', function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }); } },
+        { title: 'This computer is connected', done: !!connected,
+          note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes',
+          go: function () { if (!connected) openConnect(); } },
+        { title: 'Ready for Sunday', done: set,
+          note: set ? 'Control and the TV show this service' : (order.length && order.every(itemReady) && !busy.length && !unsaved.length && connected) ? 'Click here and Sunday is set' : 'Goes green when the rest is',
+          go: publish }
+      ];
+      box.innerHTML = '';
+      steps.forEach(function (st, i) {
+        var b = document.createElement('button');
+        b.className = 'ck' + (st.done ? ' done' : st.soft ? ' soft' : '');
+        b.appendChild(el('span', 'n', st.done ? '✓' : String(i + 1)));
+        var tx = el('span', 'tx'); tx.appendChild(el('b', '', st.title)); tx.appendChild(el('small', '', st.note)); b.appendChild(tx);
+        b.onclick = st.go;
+        box.appendChild(b);
+      });
     }
     function el(tag, cls, text) { var d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; }
     function icoBtn(ch, disabled, fn) {
@@ -1110,6 +1174,7 @@
 
     // ───────────────────────────── connection
     function paintConn() {
+      paintCheck();
       document.getElementById('connPill').className = 'pill ' + (connected ? 'on' : 'off');
       document.getElementById('connText').textContent = connected ? 'Connected' : 'Connect this computer';
     }

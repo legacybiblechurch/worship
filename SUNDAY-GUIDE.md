@@ -9,7 +9,7 @@ Everything is a website. Nothing to install. Bookmark this:
 
 The whole Sunday is one list, top to bottom: songs, the reading, the sermon, the Lord's Table, a video, the logo. Most weeks the list stays and you change what changed.
 
-1. Open the page above → **Prepare Sunday**.
+1. Open the page above → **Prepare Sunday**. The list at the top left, **Set up Sunday**, is the whole job: six rows, each turns green by itself when that part is done, and clicking a row takes you to it. When all six are green, you are done.
 2. First time on a new computer only: click **Connect this computer** (top right) and follow the six steps. It's a one-time password so the site can save. Never again after that.
 3. **Songs:** type a name in the **Add** box.
    - A song we've done before appears in the list — click it. Done.
