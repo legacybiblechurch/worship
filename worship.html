@@ -44,8 +44,9 @@
     .act h2 { font-size: 19px; font-weight: 600; }
     .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
     .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
-    .act.wide { grid-column: 1 / -1; min-height: 0; }
 
+    .stream-link { display: block; margin-top: 16px; font-size: 13.5px; color: var(--ink-dim); text-decoration: none; padding: 12px 18px; border: 1px solid var(--line-soft); border-radius: 10px; }
+    .stream-link:hover { color: var(--ink); border-color: var(--line); }
     .links { margin-top: 30px; display: flex; gap: 18px; font-size: 13px; }
     .links a { color: var(--ink-dim); text-decoration: none; }
     .links a:hover { color: var(--ink); }
@@ -62,24 +63,20 @@
       <div id="songs"><div class="empty">Loading…</div></div>
     </div>
 
-    <!-- on a Sunday the two morning cards come first and Run Sunday is the gold one; the script below reorders -->
+    <!-- two choices. On a Sunday the morning one comes first and is gold; the script below swaps them -->
     <div class="actions" id="actions">
       <a class="act primary" id="act-prep" href="worship-studio.html">
         <div class="k">Before Sunday</div>
         <h2>Prepare Sunday</h2>
-        <p>The songs, the reading, the sermon points, the Lord's Table in order. Words are found and laid out for you.</p>
+        <p>Go down the list until it is all green.</p>
       </a>
       <a class="act" id="act-run" href="worship-control.html">
         <div class="k">Sunday morning</div>
         <h2>Run Sunday</h2>
-        <p>Two buttons open the TV and the stream window. Then <b>Next</b> moves the words.</p>
-      </a>
-      <a class="act wide" id="act-stream" href="worship-obs.html">
-        <div class="k">Sunday morning · the stream</div>
-        <h2>Run the stream</h2>
-        <p>Open OBS, check the picture, press Start Streaming. The countdown and the words run themselves.</p>
+        <p>Two buttons open the screens. Then Next.</p>
       </a>
     </div>
+    <a class="stream-link" href="worship-obs.html">Running the stream? The OBS steps are here &rarr;</a>
 
     <div class="links">
       <a href="songs.html">All songs</a>
@@ -97,9 +94,9 @@
       var sunday = /sunday/.test(location.search) ||
         new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short' }).format(new Date()) === 'Sun';
       if (!sunday) return;
-      var box = document.getElementById('actions'), prep = document.getElementById('act-prep'), run = document.getElementById('act-run'), stream = document.getElementById('act-stream');
-      prep.className = 'act wide'; run.className = 'act primary'; stream.className = 'act';
-      box.appendChild(run); box.appendChild(stream); box.appendChild(prep);
+      var box = document.getElementById('actions'), prep = document.getElementById('act-prep'), run = document.getElementById('act-run');
+      prep.className = 'act'; run.className = 'act primary';
+      box.appendChild(run); box.appendChild(prep);
     })();
     LBCSheet.loadService(function (songs) {
       var box = document.getElementById('songs'), st = document.getElementById('state');
