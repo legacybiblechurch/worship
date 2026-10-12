@@ -378,7 +378,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=17', function () {
+    load('js/sheet.js?v=18', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

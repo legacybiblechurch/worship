@@ -285,7 +285,7 @@
     } else if (it.type === 'scripture') {
       out.slides = buildScriptureSlides(it);
       out.ready = out.slides.length > 0;
-      if (!out.ready) out.slides = [{ label: '', kicker: it.ref || '', lines: ['No verses yet. Open Studio'] }];
+      if (!out.ready) out.slides = [{ label: '', kicker: it.ref || '', lines: ['No passage yet. Open Studio'] }];
     } else if (it.type === 'sermon') {
       out.slides = buildSermonSlides(it);
       out.ready = !!(it.title && String(it.title).trim());

@@ -253,7 +253,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=17"></script>
+  <script src="js/sheet.js?v=18"></script>
   <script>
   (function () {
     'use strict';
@@ -477,7 +477,7 @@
         var nm = el('span', 'nm', itemTitle(it));
         if (slug && finding[slug]) nm.appendChild(el('small', '', finding[slug].phase === 'listening' ? 'listening to the recording…' : 'finding the song…'));
         else if (slug && found[slug]) nm.appendChild(el('small', '', 'pick a video'));
-        else if (!itemReady(it)) nm.appendChild(el('small', '', it.type === 'scripture' ? 'no verses yet' : it.type === 'sermon' ? 'no title yet' : 'no words yet'));
+        else if (!itemReady(it)) nm.appendChild(el('small', '', it.type === 'scripture' ? 'no passage yet' : it.type === 'sermon' ? 'no title yet' : 'no words yet'));
         row.appendChild(nm);
         if (slug && dirty[slug]) row.appendChild(el('span', 'unsaved', '•'));
         var ctl = el('span', 'ctl');
@@ -548,7 +548,7 @@
       function songRow(title, it, where) { return rowFor(title, it, songOk(it), !it ? 'Type the song name in Add, below' : songNote(it), it ? itemTitle(it) : '', null, where); }
       var set = samePlan() && order.length > 0;
       var steps = [
-        rowFor('Scripture Reading', reading, !!(reading && itemReady(reading)), !reading ? 'Click here, then type the passage' : 'Type the passage and click Get the verses',
+        rowFor('Scripture Reading', reading, !!(reading && itemReady(reading)), !reading ? 'Click here, then type the passage' : 'Type it in, like Psalm 24, and click Get the passage',
                reading ? (reading.ref || 'Reading') + ' · ' + (reading.version || '') : '', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }, 'to the top'),
         songRow('Opening Song', opening, 'under the reading'),
         rowFor('Sermon', sermon, !!(sermon && itemReady(sermon)), !sermon ? 'Click here: the title and the points' : 'Needs a title',
@@ -975,11 +975,11 @@
             '<label>Passage</label>' +
             '<div class="row"><input id="refIn" placeholder="Psalm 24, or John 3:16-21" autocomplete="off" spellcheck="false">' +
               '<select id="verIn"></select>' +
-              '<button class="btn primary" id="fetchBtn">Get the verses</button></div>' +
+              '<button class="btn primary" id="fetchBtn">Get the passage</button></div>' +
             '<div class="note" id="refNote"></div>' +
             '<div class="row" id="keyRow" style="display:none"><input id="keyIn" class="masked" placeholder="API.Bible key" autocomplete="off" spellcheck="false"><button class="btn" id="keySave">Add the key</button></div>' +
           '</div>' +
-          '<div class="pane-head">Verses<span class="hint">one verse per line, number first</span></div>' +
+          '<div class="pane-head">The passage<span class="hint">one line per number, the number first</span></div>' +
           '<textarea class="box" id="verseBox" spellcheck="false" placeholder="1 The earth is the LORD’s, and all it contains…"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Reading' + (it.ref ? ' · ' + it.ref : '');
@@ -993,7 +993,7 @@
       function askKey(msg) { note.textContent = msg; keyRow.style.display = ''; keyIn.focus(); }
       function hint() {
         var nasb = bibles().filter(function (b) { return /^NASB/.test(b.abbr); })[0];
-        if (nasb) note.textContent = 'Type the passage and get the verses. The ' + nasb.abbr + ' comes straight from API.Bible.';
+        if (nasb) note.textContent = 'Type the passage, like Psalm 24 or John 3:16-21, and click Get the passage. The ' + nasb.abbr + ' comes straight in.';
         else if (bibleKey()) note.textContent = 'WEB and KJV come in on their own. The key is in, but the NASB is not on it yet: check the Plan tab on api.bible.';
         else askKey('WEB and KJV come in on their own. For the NASB, paste the church’s API.Bible key here once (api.bible → the Legacy Bible Church Worship app → API Key).');
       }
@@ -1010,10 +1010,10 @@
           it.ref = p.ref; it.verses = p.verses; it.version = p.version;
           ref.value = p.ref; box.value = S.versesToText(p.verses);
           main.querySelector('.main-title').textContent = 'Reading · ' + p.ref;
-          note.textContent = p.verses.length + (p.verses.length === 1 ? ' verse' : ' verses') + ' from the ' + p.version + '.';
+          note.textContent = p.ref + ' is in, from the ' + p.version + '.';
           touched(); paintItemPreview(it);
         }).catch(function (e) { if (/key/.test(e.message)) askKey(e.message); else note.textContent = e.message; })
-          .then(function () { b.disabled = false; b.textContent = 'Get the verses'; });
+          .then(function () { b.disabled = false; b.textContent = 'Get the passage'; });
       }
       document.getElementById('fetchBtn').onclick = go;
       ref.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } };
@@ -1154,7 +1154,7 @@
       if (missing.length) {
         var m0 = missing[0]; select(m0.key);
         toast(m0.type === 'song' ? '“' + songOf(m0.slug).title + '” has no words yet.'
-            : m0.type === 'scripture' ? 'The reading has no verses yet.'
+            : m0.type === 'scripture' ? 'The reading has no passage yet.'
             : m0.type === 'sermon' ? 'The sermon needs a title.'
             : '“' + itemTitle(m0) + '” has no words yet.', 'err');
         return;
