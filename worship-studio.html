@@ -55,6 +55,7 @@
     .ck small { display: block; font-size: 11px; color: var(--ink-dim); margin-top: 1px; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .ck.done { border-color: #3d5a3f; }
     .ck.done .n { background: var(--good); }
+    .ck.picking { border-color: var(--gold); }
     .ck.done small { color: var(--ink-faint); }
 
     /* ── rail ─────────────────────────────────── */
@@ -90,6 +91,12 @@
     .sugg .tag { margin-left: auto; font-size: 11px; color: var(--ink-faint); white-space: nowrap; }
     .sugg .find { color: var(--gold); }
     .rail-foot { margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .prog { height: 5px; border-radius: 3px; background: var(--line-soft); margin: 2px 2px 8px; overflow: hidden; }
+    .prog i { display: block; height: 100%; width: 0; background: var(--gold); border-radius: 3px; transition: width 0.35s ease, background 0.35s; }
+    .prog.all i { background: var(--good); }
+    .rail-label .sub.good { color: var(--good); }
+    .more-btn { font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-align: left; padding: 10px 2px 4px; }
+    .more-btn:hover { color: var(--ink); }
     .ready-note { font-size: 12px; color: var(--ink-faint); text-align: center; min-height: 18px; }
     .ready-note.warn { color: var(--warn); }
     .ready-note.good { color: var(--good); }
@@ -454,73 +461,63 @@
     }
 
     // ───────────────────────────── rail
+    var moreOpen = false, pick = null;   // pick: which song slot the main pane is filling
     function renderRail() {
       var rail = document.getElementById('rail');
       rail.innerHTML = '';
-      rail.appendChild(el('div', 'rail-label', 'Set up Sunday'));
-      var check = el('div', ''); check.id = 'check'; rail.appendChild(check);
-      var lbl = el('div', 'rail-label', 'This Sunday');
-      if (!samePlan()) lbl.appendChild(el('span', 'sub', 'not published yet'));
+      var lbl = el('div', 'rail-label', 'Set up Sunday');
+      lbl.appendChild(el('span', 'sub', '')); lbl.lastChild.id = 'progText';
       rail.appendChild(lbl);
+      var prog = el('div', 'prog'); prog.id = 'prog'; prog.appendChild(document.createElement('i')); rail.appendChild(prog);
+      var check = el('div', ''); check.id = 'check'; rail.appendChild(check);
 
-      if (!order.length) {
-        var none = el('div', '', 'Nothing yet. Add the first thing below.');
-        none.style.cssText = 'font-size:13px;color:var(--ink-faint);padding:6px 10px 10px';
-        rail.appendChild(none);
-      }
-      order.forEach(function (it, i) {
-        var slug = it.type === 'song' ? it.slug : null;
-        var row = el('div', 'song-row' + (it.key === current ? ' active' : ''));
-        var st = slug && finding[slug] ? 'busy' : itemReady(it) ? '' : 'warn';
-        row.appendChild(el('span', 'dot ' + st));
-        if (it.type !== 'song') row.appendChild(el('span', 'ty', S.TYPE_NAMES[it.type] || it.type));
-        var nm = el('span', 'nm', itemTitle(it));
-        if (slug && finding[slug]) nm.appendChild(el('small', '', finding[slug].phase === 'listening' ? 'listening to the recording…' : 'finding the song…'));
-        else if (slug && found[slug]) nm.appendChild(el('small', '', 'pick a video'));
-        else if (!itemReady(it)) nm.appendChild(el('small', '', it.type === 'scripture' ? 'no passage yet' : it.type === 'sermon' ? 'no title yet' : 'no words yet'));
-        row.appendChild(nm);
-        if (slug && dirty[slug]) row.appendChild(el('span', 'unsaved', '•'));
-        var ctl = el('span', 'ctl');
-        ctl.appendChild(icoBtn('▲', i === 0, function () { move(i, -1); }));
-        ctl.appendChild(icoBtn('▼', i === order.length - 1, function () { move(i, 1); }));
-        var x = icoBtn('✕', false, function () { remove(it.key); }); x.classList.add('x');
-        ctl.appendChild(x);
-        row.appendChild(ctl);
-        row.onclick = function () { select(it.key); };
-        rail.appendChild(row);
-      });
-
-      rail.appendChild(el('div', 'rail-label', 'Add'));
-      var wrap = el('div', 'add-wrap');
-      var inp = document.createElement('input');
-      inp.id = 'addName'; inp.placeholder = 'A song: type its name'; inp.autocomplete = 'off';
-      var sugg = el('div', 'sugg'); sugg.id = 'sugg';
-      wrap.appendChild(inp); wrap.appendChild(sugg);
-      rail.appendChild(wrap);
-      wireAdd(inp, sugg);
-      var addRow = el('div', 'add-row');
-      [['Reading', function () { return { type: 'scripture', ref: '', version: defaultVersion(), verses: [] }; }],
-       ['Sermon', function () { return { type: 'sermon', title: '', passage: '', points: [] }; }],
-       ['Lord’s Table', function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }],
-       ['Video', function () { return { type: 'video', title: '', note: '' }; }],
-       ['Logo', function () { return { type: 'logo' }; }]
-      ].forEach(function (pair) {
-        var b = document.createElement('button'); b.textContent = pair[0];
-        b.onclick = function () { var it = addItem(pair[1]()); select(it.key); };
-        addRow.appendChild(b);
-      });
-      rail.appendChild(addRow);
-
+      // the full list, with arrows and remove, and the video and logo spots: folded away unless wanted
       var foot = el('div', 'rail-foot');
-      var readyBtn = document.createElement('button');
-      readyBtn.className = 'btn big ' + (samePlan() && order.length ? 'good' : 'primary');
-      readyBtn.id = 'readyBtn';
-      readyBtn.textContent = samePlan() && order.length ? '✓ Ready for Sunday' : 'Ready for Sunday';
-      readyBtn.onclick = publish;
-      foot.appendChild(readyBtn);
-      foot.appendChild(el('div', 'ready-note', '')); foot.lastChild.id = 'readyNote';
+      var more = document.createElement('button'); more.className = 'more-btn';
+      more.textContent = moreOpen ? '▾ The whole list, in order' : '▸ The whole list, in order. Add a video or the logo';
+      more.onclick = function () { moreOpen = !moreOpen; renderRail(); };
+      foot.appendChild(more);
+      if (moreOpen) {
+        var lbl2 = el('div', 'rail-label', 'This Sunday');
+        if (!samePlan()) lbl2.appendChild(el('span', 'sub', 'not published yet'));
+        foot.appendChild(lbl2);
+        if (!order.length) {
+          var none = el('div', '', 'Nothing yet.');
+          none.style.cssText = 'font-size:13px;color:var(--ink-faint);padding:6px 10px 10px';
+          foot.appendChild(none);
+        }
+        order.forEach(function (it, i) {
+          var slug = it.type === 'song' ? it.slug : null;
+          var row = el('div', 'song-row' + (it.key === current ? ' active' : ''));
+          var st = slug && finding[slug] ? 'busy' : itemReady(it) ? '' : 'warn';
+          row.appendChild(el('span', 'dot ' + st));
+          if (it.type !== 'song') row.appendChild(el('span', 'ty', S.TYPE_NAMES[it.type] || it.type));
+          var nm = el('span', 'nm', itemTitle(it));
+          if (slug && finding[slug]) nm.appendChild(el('small', '', finding[slug].phase === 'listening' ? 'listening to the recording…' : 'finding the song…'));
+          else if (slug && found[slug]) nm.appendChild(el('small', '', 'pick a video'));
+          else if (!itemReady(it)) nm.appendChild(el('small', '', it.type === 'scripture' ? 'no passage yet' : it.type === 'sermon' ? 'no title yet' : 'no words yet'));
+          row.appendChild(nm);
+          if (slug && dirty[slug]) row.appendChild(el('span', 'unsaved', '•'));
+          var ctl = el('span', 'ctl');
+          ctl.appendChild(icoBtn('▲', i === 0, function () { move(i, -1); }));
+          ctl.appendChild(icoBtn('▼', i === order.length - 1, function () { move(i, 1); }));
+          var x = icoBtn('✕', false, function () { remove(it.key); }); x.classList.add('x');
+          ctl.appendChild(x);
+          row.appendChild(ctl);
+          row.onclick = function () { select(it.key); };
+          foot.appendChild(row);
+        });
+        var addRow = el('div', 'add-row');
+        [['Video', function () { return { type: 'video', title: '', note: '' }; }],
+         ['Logo', function () { return { type: 'logo' }; }]
+        ].forEach(function (pair) {
+          var b = document.createElement('button'); b.textContent = pair[0];
+          b.onclick = function () { var it = addItem(pair[1]()); select(it.key); };
+          addRow.appendChild(b);
+        });
+        foot.appendChild(addRow);
+      }
       rail.appendChild(foot);
-      paintReadyNote();
       paintCheck();
     }
     // the set-up list: one row per part of a Sunday, in the order it is built
@@ -538,14 +535,15 @@
       var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words');
       function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + '” needs its words' : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
       function songOk(it) { return !!it && itemReady(it) && !finding[it.slug] && !dirty[it.slug]; }
-      function addBox() { var a = document.getElementById('addName'); if (a) { a.focus(); a.scrollIntoView({ block: 'center' }); } }
+      function pickSong(title) { pick = title; current = null; renderRail(); renderMain(); }
       function rowFor(title, it, ok, needs, doneNote, make, where) {
+        var self = title;
         var placed = !!it && inPlace(it);
         return { title: title, done: ok && placed,
                  note: ok && placed ? doneNote : ok ? 'Out of order: click to move it ' + where : needs,
-                 go: function () { if (it && ok && !placed) { placeItem(it); select(it.key); } else if (it) select(it.key); else if (make) { var n = addItem(make()); select(n.key); } else addBox(); } };
+                 go: function () { if (it && ok && !placed) { placeItem(it); select(it.key); } else if (it) select(it.key); else if (make) { var n = addItem(make()); select(n.key); } else pickSong(self); } };
       }
-      function songRow(title, it, where) { return rowFor(title, it, songOk(it), !it ? 'Type the song name in Add, below' : songNote(it), it ? itemTitle(it) : '', null, where); }
+      function songRow(title, it, where) { return rowFor(title, it, songOk(it), !it ? 'Click here and type the song name' : songNote(it), it ? itemTitle(it) : '', null, where); }
       var set = samePlan() && order.length > 0;
       var steps = [
         rowFor('Scripture Reading', reading, !!(reading && itemReady(reading)), !reading ? 'Click here, then type the passage' : 'Type it in, like Psalm 24, and click Get the passage',
@@ -567,8 +565,13 @@
         b.appendChild(el('span', 'n', st.done ? '✓' : String(i + 1)));
         var tx = el('span', 'tx'); tx.appendChild(el('b', '', st.title)); tx.appendChild(el('small', '', st.note)); b.appendChild(tx);
         b.onclick = st.go;
+        if (pick && st.title === pick && !st.done) b.classList.add('picking');
         box.appendChild(b);
       });
+      var done = steps.filter(function (st) { return st.done; }).length;
+      var pt = document.getElementById('progText'), pb = document.getElementById('prog');
+      if (pt) { pt.textContent = done + ' of ' + steps.length; pt.className = 'sub' + (done === steps.length ? ' good' : ''); }
+      if (pb) { pb.className = 'prog' + (done === steps.length ? ' all' : ''); pb.firstChild.style.width = Math.round(done / steps.length * 100) + '%'; }
     }
     function el(tag, cls, text) { var d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; }
     function icoBtn(ch, disabled, fn) {
@@ -576,7 +579,7 @@
       b.onclick = function (e) { e.stopPropagation(); fn(); }; return b;
     }
     function paintReadyNote() {
-      var n = document.getElementById('readyNote'); if (!n) return;
+      var n = document.getElementById('readyNote'); if (!n) return;   // the old footer; the list's last row says this now
       var busy = order.filter(function (it) { return it.type === 'song' && finding[it.slug]; });
       var problems = order.filter(function (it) { return !itemReady(it) && !(it.type === 'song' && finding[it.slug]); });
       if (!order.length) { n.textContent = ''; n.className = 'ready-note'; return; }
@@ -810,14 +813,22 @@
     // select by an item's key, or by a song's slug (the song flows think in slugs)
     function select(x) {
       var k = order.some(function (it) { return it.key === x; }) ? x : keyOfSong(x);
-      current = k || null; renderRail(); renderMain();
+      current = k || null; pick = null; renderRail(); renderMain();
     }
 
     function renderMain() {
       var main = document.getElementById('main'), it = curItem();
       if (!it) {
-        main.innerHTML = '<div class="center"><h2>' + (order.length ? 'Pick something on the left' : 'Build this Sunday') + '</h2>' +
-          '<p>' + (order.length ? '' : 'Add the songs by name, then the reading, the sermon, the Lord’s Table, in the order they happen. Next Sunday, change what changed.') + '</p></div>';
+        if (pick) {
+          main.innerHTML = head() + '<div class="center"><h2>' + esc(pick) + '</h2>' +
+            '<p>Type the song name. Songs we have sung come up as you type. A new one is found on YouTube and its words come with it.</p>' +
+            '<div class="add-wrap" style="width:min(460px,100%);text-align:left"><input id="addName" placeholder="Type the song name" autocomplete="off"><div class="sugg" id="sugg"></div></div></div>';
+          main.querySelector('.main-title').textContent = pick;
+          wireAdd(document.getElementById('addName'), document.getElementById('sugg'));
+          setTimeout(function () { document.getElementById('addName').focus(); }, 30);
+          return;
+        }
+        main.innerHTML = '<div class="center"><h2>Go down the list on the left</h2><p>Each row goes green when it is done. When all eight are green, Sunday is set.</p></div>';
         return;
       }
       if (it.type === 'scripture') { renderReading(it); return; }
@@ -895,6 +906,7 @@
       main.innerHTML =
         '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
           '<span class="save-state" id="saveState"></span>' +
+          '<button class="btn quiet" id="rmBtn">Remove from Sunday</button>' +
           '<button class="btn primary" id="saveBtn">Save</button></div></div>' +
         '<div class="panes">' +
           '<div class="pane">' +
@@ -963,8 +975,9 @@
       if (!typing) renderRail(); else paintReadyNote();
     }
     function head(title, right) {
-      return '<div class="main-head"><span class="main-title"></span><div class="main-actions">' + (right || '') + '</div></div>';
+      return '<div class="main-head"><span class="main-title"></span><div class="main-actions">' + (right || '') + (current ? '<button class="btn quiet" id="rmBtn">Remove from Sunday</button>' : '') + '</div></div>';
     }
+    document.getElementById('main').addEventListener('click', function (e) { if (e.target && e.target.id === 'rmBtn' && current) remove(current); });
     function previewPane() { return '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>'; }
 
     function renderReading(it) {
