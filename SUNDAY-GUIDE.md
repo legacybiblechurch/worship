@@ -28,9 +28,9 @@ The right pane always shows exactly what the TV will show.
 
 ## Sunday morning — running it (2 minutes to set up)
 
-1. On the church laptop, open the page above → **Run the service**.
-2. Click **Open display** (top right). Drag that window onto the TV, press **F11** (or the green button) for full screen.
-3. Back on Control you'll see a green **Display connected**.
+1. On the church laptop, open the page above → **Run Sunday**.
+2. Two buttons at the top. **1 Open the TV**: a window opens; drag it onto the TV and click it once, it fills the screen. **2 Open the stream window**: a green window opens; click it once, it fills a screen, leave it.
+3. When both are open the buttons go green and disappear. That's set up.
 
 **During the service:**
 - **→** or **Next** = next slide.  **←** or **Prev** = back.
@@ -45,14 +45,14 @@ The right pane always shows exactly what the TV will show.
 
 ## The livestream
 
-Nothing to do. The lyrics page is already in PRISM on the iPad (set up once from **worship.legacybiblechurch.com/stream/setup/**). Whoever runs the stream opens PRISM and goes live. Before 10:30 the stream shows "Service begins shortly"; when you put a slide up it shows the words; when you blank, it shows the camera.
+Whoever runs the stream opens **OBS** on the laptop, checks the picture, presses **Start Streaming**. The steps are on **Run the stream** on the page above. Before 10:30 the stream shows "Service begins shortly"; a song shows the words full screen; the sermon shows the title and each point in a bar at the bottom with the preacher still in the picture; blank shows the camera.
 
 ---
 
 ## If something looks wrong
 
 - **TV shows old songs?** Press **Cmd+Shift+R** on Control and on Display.
-- **Display says "not open"?** Click **Open display** again.
+- **TV says "not open"?** Click **Open the TV** again.
 - **Closed a window by accident?** Just reopen it — it comes back on the same slide.
 - **A word is wrong on the TV?** Fix it in the Studio (Words box → Save). About a minute later, reload Control and Display.
 - **Nothing plays when you press Play?** Click anywhere on the Control page once, then press Play again (browsers need one real click before they'll play sound).

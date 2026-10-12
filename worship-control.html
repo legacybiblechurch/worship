@@ -77,6 +77,24 @@
     .disp-pill.off #disp-pill-text { color: var(--warn); }
     .empty-service { padding: 60px 24px; text-align: center; color: var(--ink-dim); font-size: 15px; line-height: 1.7; }
     .empty-service a { color: var(--ink); }
+    /* ── the start strip: the two things to do before the service, until both are done ── */
+    #start { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 90; background: var(--panel); border-bottom: 1px solid var(--line); padding: 12px 16px 10px; }
+    body.start #start { display: block; }
+    body.start #layout { top: calc(var(--header-h) + 128px); }
+    #start .st-row { display: flex; gap: 12px; align-items: stretch; }
+    #start .st-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+    .st-btn { flex: 1; display: flex; align-items: center; gap: 14px; text-align: left; font: inherit; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
+    .st-btn:hover { border-color: var(--ink-faint); }
+    .st-btn .n { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--bg); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .st-btn b { display: block; font-size: 15px; font-weight: 600; }
+    .st-btn small { display: block; font-size: 12.5px; color: var(--ink-dim); margin-top: 2px; line-height: 1.4; }
+    .st-btn .ok { margin-left: auto; flex-shrink: 0; font-size: 12px; font-weight: 700; color: #7bb37e; opacity: 0; }
+    .st-btn.done { border-color: #3d5a3f; }
+    .st-btn.done .n { background: #7bb37e; }
+    .st-btn.done .ok { opacity: 1; }
+    #start .st-foot { display: flex; align-items: center; gap: 12px; margin-top: 8px; font-size: 12.5px; color: var(--ink-dim); }
+    #start .st-foot b { color: var(--ink); }
+    #start .st-skip { margin-left: auto; font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-decoration: underline; }
     .remote-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gold); margin-right: 6px; }
     .remote-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
     #phone-panel { position: fixed; top: calc(var(--header-h) + 8px); right: 16px; width: 320px; z-index: 120; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: none; font-size: 13px; color: var(--ink-dim); line-height: 1.55; }
@@ -243,6 +261,8 @@
       .wordmark { font-size: 0 !important; font-family: var(--font); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
       #header a.display-link[href="worship.html"] { padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
       #header a[href="worship-display.html"], #header a[target="lbc-stream"], #disp-pill, #phone-btn { display: none; }
+      body.start #start { display: none; }   /* a phone never opens the TV */
+      body.start #layout { top: var(--header-h); }
       body.remote #remote-pill { flex-shrink: 0; margin: 0; }
       body:not(.remote) #phone-btn { display: inline-block; padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
       #phone-panel { right: 10px; left: 10px; width: auto; }
@@ -288,9 +308,19 @@
     <button class="display-link" id="phone-btn" style="font-weight:500;color:var(--ink-dim)">Phone remote</button>
     <span class="disp-pill off" id="disp-pill" title="Is the congregation screen open?"><span class="dot"></span><span id="disp-pill-text">Display not open</span></span>
     <span class="kbd-hint"><span class="kbd">&larr;</span><span class="kbd">&rarr;</span> move &nbsp;<span class="kbd">B</span> blank &nbsp;<span class="kbd">F</span> fade out &nbsp;<span class="kbd">N</span> fade to next</span>
-    <a href="worship-display.html" target="_blank" class="display-link">Open display &nearr;</a>
+    <a href="worship-display.html" target="lbc-display" class="display-link" title="The TV window" onclick="openTV(); return false;">Open the TV &nearr;</a>
     <a href="worship-stream.html?bg=green" target="lbc-stream" class="display-link" title="The window OBS captures for the stream: words and countdown on green"
-       onclick="window.open(this.href, 'lbc-stream', 'popup,width=1280,height=720'); return false;">Open stream window &nearr;</a>
+       onclick="openStream(); return false;">Open the stream window &nearr;</a>
+  </div>
+
+  <!-- before the service: two buttons, each opens a window; click the window once and it fills its screen -->
+  <div id="start">
+    <div class="st-title">Before the service</div>
+    <div class="st-row">
+      <button class="st-btn" id="st-tv" onclick="openTV()"><span class="n">1</span><span><b>Open the TV</b><small>A window opens. Drag it onto the TV and click it once. It fills the screen.</small></span><span class="ok">Open ✓</span></button>
+      <button class="st-btn" id="st-stream" onclick="openStream()"><span class="n">2</span><span><b>Open the stream window</b><small>A green window opens. Click it once so it fills a screen, then leave it. OBS finds it.</small></span><span class="ok">Open ✓</span></button>
+    </div>
+    <div class="st-foot"><span>Then press <b>Next</b> when the service starts. <b>B</b> blanks the TV.</span><button class="st-skip" id="st-skip">Hide this</button></div>
   </div>
 
   <div id="layout">
@@ -359,14 +389,25 @@
       if (!applyingRemote) Net.send({ type: 'state', songIndex: songIdx, slideIndex: slideIdx, blank: isBlank });
     }
 
-    var displaySeen = 0;
+    // the TV and the stream window each open as their own window and say hello every
+    // couple of seconds; the start strip stays until both have, or it is hidden
+    function openTV() { window.open('worship-display.html', 'lbc-display', 'popup,width=1280,height=720'); }
+    function openStream() { window.open('worship-stream.html?bg=green', 'lbc-stream', 'popup,width=1920,height=1080'); }
+    var displaySeen = 0, streamSeen = 0, startHidden = false;
+    try { startHidden = sessionStorage.getItem('lbc-start-hidden') === '1'; } catch (e) {}
     channel.onmessage = function (e) {
-      if (e.data && e.data.type === 'ping' && e.data.from === 'display') displaySeen = Date.now();
+      if (!e.data || e.data.type !== 'ping') return;
+      if (e.data.from === 'display') displaySeen = Date.now();
+      if (e.data.from === 'stream') streamSeen = Date.now();
     };
+    document.getElementById('st-skip').onclick = function () { startHidden = true; try { sessionStorage.setItem('lbc-start-hidden', '1'); } catch (e) {} };
     setInterval(function () {
-      var on = Date.now() - displaySeen < 4000;
+      var on = Date.now() - displaySeen < 4000, st = Date.now() - streamSeen < 4000;
       document.getElementById('disp-pill').className = 'disp-pill ' + (on ? 'on' : 'off');
-      document.getElementById('disp-pill-text').textContent = on ? 'Display connected' : 'Display not open';
+      document.getElementById('disp-pill-text').textContent = on ? 'TV connected' : 'TV not open';
+      document.getElementById('st-tv').classList.toggle('done', on);
+      document.getElementById('st-stream').classList.toggle('done', st);
+      document.body.classList.toggle('start', !startHidden && !(on && st));
     }, 1000);
 
     function goTo(si, li) {

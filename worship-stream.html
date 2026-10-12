@@ -139,6 +139,8 @@
       padding: 6px 10px; border-radius: 6px; display: none; white-space: pre;
     }
     #hud.bad { color: #ffb3a8; }
+    /* the OBS window before it is full screen */
+    #fill { display: none; position: fixed; top: 4vh; left: 50%; transform: translateX(-50%); z-index: 9; font-size: clamp(13px, 1.6vw, 20px); font-weight: 500; color: #111; background: rgba(255,255,255,0.85); border-radius: 999px; padding: 0.55em 1.3em; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -153,6 +155,7 @@
   </div>
 
   <div id="hud"></div>
+  <div id="fill">Click once to fill the screen, then leave this window alone</div>
 
   <script>
   (function () {
@@ -252,7 +255,19 @@
         if (!d || d.type === 'ping' || d.type === 'cmd' || d.songIndex === undefined) return;
         handle(d, 'local');
       };
+      // tell Control this window is open (its start strip ticks "stream window")
+      if (bg) { ch.postMessage({ type: 'ping', from: 'stream' }); setInterval(function () { ch.postMessage({ type: 'ping', from: 'stream' }); }, 1500); }
     } catch (e) {}
+
+    // the OBS window: one click fills a screen (its own desktop on a Mac), nothing to remember
+    if (bg) {
+      var fillHint = document.getElementById('fill');
+      var fill = function () { var el = document.documentElement; if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen().catch(function () {}); };
+      var paintFill = function () { fillHint.style.display = document.fullscreenElement ? 'none' : 'block'; }
+      document.addEventListener('click', fill);
+      document.addEventListener('fullscreenchange', paintFill);
+      paintFill();
+    }
 
     // Control anywhere (the iPad, another browser): the relay the phone remote uses
     function listen() {
