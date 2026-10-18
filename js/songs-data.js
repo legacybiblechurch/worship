@@ -1937,4 +1937,21 @@ const LEGACY_SONGS = {
     { label: "Verse 6", lines: ["Praising my Savior all the day long", "This is my story,", "This is my song", "Praising my Savior all the day long", "Praising my Savior all the day long"] }
   ]
   },
+  "only-a-holy-god": {
+    title: "only a holy god",
+    youtube: "https://youtu.be/BNsGW_EHIrw?si=eAx1CzcleGjQ-5OX",
+    lyrics: [
+    { label: "", lines: ["Who else commands all the hosts of heaven?", "Who else could make every king bow down?", "Who else can whisper and darkness trembles?", "Only a Holy God"] },
+    { label: "", lines: ["What other beauty demands such praises?", "What other splendor outshines the sun?", "What other majesty rules with justice?", "Only a Holy God"] },
+    { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy", "Forever a Holy God", "Come and worship the Holy God"] },
+    { label: "", lines: ["What other glory consumes like fire?", "What other power can raise the dead?", "What other name remains undefeated?", "Only a Holy God"] },
+    { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy"] },
+    { label: "", lines: ["Forever a Holy God", "Come and worship the Holy God"] },
+    { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy"] },
+    { label: "", lines: ["Forever a Holy God", "Come and worship the Holy God"] },
+    { label: "", lines: ["Who else could rescue me from my failing?", "Who else would offer His only Son?", "Who else invites me to call Him Father?", "Only a Holy God", "Only my Holy God"] },
+    { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy", "Forever a Holy God", "Come and worship the Holy God", "Come and behold Him", "The One and the Only", "Cry out, sing holy", "Forever a Holy God", "Come and worship the Holy God", "Come and worship the Holy God"] },
+    { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy", "Forever a Holy God", "Come and worship the Holy God"] }
+  ]
+  },
 };
