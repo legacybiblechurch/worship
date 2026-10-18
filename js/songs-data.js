@@ -572,12 +572,18 @@ const LEGACY_SONGS = {
   },
   "crown-him-with-many-crowns": {
     title: "Crown Him with Many Crowns",
-    youtube: "https://www.youtube.com/watch?v=YuMh_ept-Js",
+    youtube: "https://youtu.be/ENRmO5pDsj4?si=74jxSF-aVtwzhcJu",
     lyrics: [
-    { label: "Verse 1", lines: ["Crown Him with many crowns", "The Lamb upon His throne", "Hark! how the heav'nly anthem drowns", "All music but its own", "Awake my soul and sing", "Of Him who died for thee", "And hail Him as thy matchless King", "Through all eternity"] },
-    { label: "Verse 2", lines: ["Crown Him the Lord of love", "Behold His hands and side", "Rich wounds, yet visible above", "In beauty glorified", "No angel in the sky", "Can fully bear that sight", "But downward bends his wand'ring eye", "At mysteries so bright"] },
-    { label: "Verse 3", lines: ["Crown Him the Lord of life", "Who triumphed o'er the grave", "And rose victorious in the strife", "For those He came to save", "His glories now we sing", "Who died, and rose on high", "Who died, eternal life to bring", "And lives that death may die"] },
-    { label: "Verse 4", lines: ["All hail, Redeemer, hail!", "For Thou hast died for me", "Thy praise shall never, never fail", "Throughout eternity"] }
+    { label: "", lines: ["Crown Him the Lord of Love, behold His hands and side", "Rich wounds yet visible above in beauty glorified"] },
+    { label: "", lines: ["No angel in the sky can fully bear that sight", "But downward bends his burning eye at mysteries so bright"] },
+    { label: "", lines: ["Crown him the Lord of life who triumphed o'er the grave", "And rose victorious in the strife for those he came to save"] },
+    { label: "", lines: ["His glories now we sing, who died and rose on high"] },
+    { label: "", lines: ["Who died, eternal life to bring and lives that death may die"] },
+    { label: "", lines: ["Crown him with many crowns, the Lamb upon his throne", "Hark! how the heavenly anthem drowns all music but its own"] },
+    { label: "", lines: ["Awake, my soul, and sing of him who died for me", "And hail Him as thy matchless king through all eternity"] },
+    { label: "", lines: ["With yonder sacred throng, we at His feet may fall"] },
+    { label: "", lines: ["We'll join the everlasting song, and crown Him Lord of all"] },
+    { label: "", lines: ["We'll join the everlasting song, and crown Him Lord", "Crown Him Lord, we'll crown Him Lord of all"] }
   ]
   },
   "the-cup-was-not-removed": {
