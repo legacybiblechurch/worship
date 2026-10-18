@@ -70,10 +70,10 @@ window.WORSHIP_SERVICE = [
     "title": "\"Purify Your Hands and Heart for the King of Glory, Pt 2\"",
     "passage": "Psalm 24",
     "points": [
-      "1. The King's  __AUTHORITY__  (1-2)",
-      "2. The Worshiper's  __CONDITION__  (3-4)",
-      "3. The Worshiper's  __BLESSING__  (5-6)",
-      "4. The King's  ____________   (7-10)"
+      "1. The King's  AUTHORITY  (1-2)",
+      "2. The Worshiper's  CONDITION  (3-4)",
+      "3. The Worshiper's  BLESSING (5-6)",
+      "4. The King's  GLORY  (7-10)"
     ]
   },
   {
