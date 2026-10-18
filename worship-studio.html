@@ -322,9 +322,14 @@
       return JSON.stringify(order.map(plain)) === JSON.stringify(published.map(plain)) && JSON.stringify(saved) === JSON.stringify(S.saved());
     }
 
+    // A draft kept on this computer only counts while nobody has published since it
+    // was made. The moment someone else publishes, the published service wins, so a
+    // stale draft on one laptop can never hide what the church actually set.
+    var BASE_KEY = 'lbc-studio-base';
     try {
-      var o = JSON.parse(localStorage.getItem(ORDER_KEY) || 'null');
-      if (Array.isArray(o) && o.length) order = o.map(function (x) { return withKey(typeof x === 'string' ? { type: 'song', slug: x } : x); });
+      var o = JSON.parse(localStorage.getItem(ORDER_KEY) || 'null'), base = localStorage.getItem(BASE_KEY);
+      if (Array.isArray(o) && o.length && base === JSON.stringify(published.map(plain))) order = o.map(function (x) { return withKey(typeof x === 'string' ? { type: 'song', slug: x } : x); });
+      else localStorage.removeItem(ORDER_KEY);
     } catch (e) {}
     try { finding = JSON.parse(localStorage.getItem(FIND_KEY) || '{}') || {}; } catch (e) {}
 
@@ -450,7 +455,7 @@
       return S.itemTitle(it);
     }
     function anyDirty() { return Object.keys(dirty).some(function (k) { return dirty[k]; }); }
-    function persistOrder() { try { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); } catch (e) {} }
+    function persistOrder() { try { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); localStorage.setItem(BASE_KEY, JSON.stringify(published.map(plain))); } catch (e) {} }
     function persistFinding() { try { localStorage.setItem(FIND_KEY, JSON.stringify(finding)); } catch (e) {} }
 
     function toast(msg, kind, sticky) {
@@ -1206,6 +1211,7 @@
         }).catch(function () {});
       }).then(function () {
         published = order.map(plain);
+        persistOrder();
         window.WORSHIP_SAVED = JSON.parse(JSON.stringify(saved));
         toast('Sunday is set. Control and Display will show this service within a minute.', 'ok');
       }).catch(function (e) { toast(e.message, 'err', true); })
