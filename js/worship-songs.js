@@ -1,11 +1,11 @@
 /**
  * LBC Sunday Setlist
  * ──────────────────
- * Set in Worship Studio.
+ * The songs of the service, in order. Set in Worship Studio.
  */
 
 window.WORSHIP_SETLIST = [
-  'holy-holy-holy',
   'the-king-of-glory-psalm-24',
-  'before-the-throne-of-god-above',
+  'crown-him-with-many-crowns',
+  'only-a-holy-god',
 ];
