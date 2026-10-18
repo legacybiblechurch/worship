@@ -134,4 +134,5 @@ window.SUNG_SONGS = [
   'wonderful-merciful-savior',
   'yet-not-i-but-through-christ-in-me',
   'as-the-deer',
+  'only-a-holy-god',
 ];
