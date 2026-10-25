@@ -1974,7 +1974,7 @@ const LEGACY_SONGS = {
     title: "Blessed Be the Tie that Binds",
     youtube: "https://youtu.be/RCbSQWeDbIU?si=kkSo4P3E1jgkymMI",
     lyrics: [
-    { label: "", lines: ["Blessed Be the Tie that Binds", "-John Fawcett (1772)"] },
+    { label: "", lines: ["Blessed Be the Tie that Binds", "- John Fawcett (1772)"] },
     { label: "Verse 1", lines: ["Blest be the tie that binds", "Our hearts in Christian love;"] },
     { label: "", lines: ["The fellowship of kindred minds", "Is like to that above."] },
     { label: "Verse 2", lines: ["Before our Father’s throne,", "We pour our ardent prayers;"] },
