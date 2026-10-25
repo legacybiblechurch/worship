@@ -4,6 +4,13 @@
  "title": "Take My Life and Let it Be",
  "lyrics": [
   {
+   "label": "",
+   "lines": [
+    "Take My Life and Let it Be",
+    "- Frances Ridley Havergal (1874)"
+   ]
+  },
+  {
    "label": "Verse 1",
    "lines": [
     "Take my life, and let it be",
@@ -229,6 +236,6 @@
    "t1": 221.47845
   }
  ],
- "verifiedAt": "2026-10-25T15:06:26.628Z",
+ "verifiedAt": "2026-10-25T16:34:56.462Z",
  "by": "worship studio"
 }
