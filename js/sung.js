@@ -135,4 +135,6 @@ window.SUNG_SONGS = [
   'yet-not-i-but-through-christ-in-me',
   'as-the-deer',
   'only-a-holy-god',
+  'take-my-life-and-let-it-be',
+  'blessed-be-the-tie-that-binds',
 ];
