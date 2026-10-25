@@ -4,6 +4,12 @@
  "title": "Speak, O Lord",
  "lyrics": [
   {
+   "label": "",
+   "lines": [
+    "Speak, O Lord"
+   ]
+  },
+  {
    "label": "Verse 1",
    "lines": [
     "Speak, O Lord, as we come to You,",
@@ -89,6 +95,6 @@
   }
  ],
  "lines": [],
- "verifiedAt": "2026-10-25T15:12:05.317Z",
+ "verifiedAt": "2026-10-25T16:32:07.643Z",
  "by": "worship studio"
 }
