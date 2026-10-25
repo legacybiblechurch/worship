@@ -1734,6 +1734,7 @@ const LEGACY_SONGS = {
     title: "Speak, O Lord",
     youtube: "https://www.youtube.com/watch?v=jKtJVv5ffdw",
     lyrics: [
+    { label: "", lines: ["Speak, O Lord"] },
     { label: "Verse 1", lines: ["Speak, O Lord, as we come to You,", "To receive the food of Your holy word;"] },
     { label: "", lines: ["Take Your truth, plant it deep in us;", "Shape and fashion us in Your likeness,"] },
     { label: "", lines: ["That the light of Christ might be seen today", "In our acts of love and our deeds of faith;"] },
