@@ -1988,6 +1988,7 @@ const LEGACY_SONGS = {
     title: "Take My Life and Let it Be",
     youtube: "https://youtu.be/P6XnZ6KFv-g?si=b9FyCFl7kbvgimjZ",
     lyrics: [
+    { label: "", lines: ["Take My Life and Let it Be", "- Frances Ridley Havergal (1874)"] },
     { label: "Verse 1", lines: ["Take my life, and let it be", "Consecrated, Lord, to Thee;"] },
     { label: "", lines: ["Take my moments and my days,", "Let them flow in ceaseless praise,", "Let them flow in ceaseless praise."] },
     { label: "Verse 2", lines: ["Take my hands, and let them move", "At the impulse of Thy love;"] },
