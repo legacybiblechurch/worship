@@ -69,7 +69,7 @@ window.WORSHIP_SERVICE = [
       "In preparation for the soon-coming end, pray, love and serve so that God will be glorified.",
       "1. REMEMBER the imminent return of Christ (7a); therefore ...",
       "The end of all things is near; therefore, be of sound judgment and sober spirit for the purpose of prayer. - 1 Peter 4:7",
-      "2. Pray with DISCERNMENT (7b), and ...",
+      "2. Pray with SOBRIETY & DISCERNMENT (7b), and ...",
       "Above all, keep fervent in your love for one another, because love covers a multitude of sins. - 1 Peter 4:8",
       "3. Love with sin-COVERING fervor (8), and ...",
       "Be hospitable to one another without complaint. - 1 Peter 4:9",
