@@ -1,0 +1,651 @@
+{
+  "slug": "blessed-be-the-tie-that-binds",
+  "title": "Blessed Be the Tie that Binds",
+  "input": "Blessed Be the Tie that Binds",
+  "isNew": true,
+  "forced": null,
+  "signature": "84831422bdd7e3f4",
+  "generatedAt": "2026-10-25T14:33:57+00:00",
+  "titleKey": "blessed be the tie that binds",
+  "searchCandidates": [
+    {
+      "videoId": "GMYiTuOBJqw",
+      "url": "https://www.youtube.com/watch?v=GMYiTuOBJqw",
+      "title": "Brent Cobb - Blessed Be The Tie That Binds (Lyrics)",
+      "channel": "Lyrics Park",
+      "publishedAt": "2022-10-25T13:46:25Z",
+      "durationSec": 62,
+      "duration": "1:02",
+      "views": 212,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "TQ0Epw1rwbc",
+      "url": "https://www.youtube.com/watch?v=TQ0Epw1rwbc",
+      "title": "Blest be the tie that binds | lyric video",
+      "channel": "Gryphon Hall (Hal Guerrero)",
+      "publishedAt": "2020-08-09T03:27:55Z",
+      "durationSec": 132,
+      "duration": "2:12",
+      "views": 175253,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "N_AYrlHRm5c",
+      "url": "https://www.youtube.com/watch?v=N_AYrlHRm5c",
+      "title": "Blest Be the Tie That Binds - Hymn Lyric Video",
+      "channel": "Darby Hughes",
+      "publishedAt": "2020-03-24T15:17:52Z",
+      "durationSec": 210,
+      "duration": "3:30",
+      "views": 89502,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "_RUu93KoX-0",
+      "url": "https://www.youtube.com/watch?v=_RUu93KoX-0",
+      "title": "Blest Be the Tie That Binds Praise and Harmony Loving God. For more,  www.praiseandharmony.com",
+      "channel": "The Acappella Company",
+      "publishedAt": "2021-07-22T13:00:09Z",
+      "durationSec": 192,
+      "duration": "3:12",
+      "views": 75775,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "unoNFZm9jqs",
+      "url": "https://www.youtube.com/watch?v=unoNFZm9jqs",
+      "title": "Blest Be the Tie that Binds Hymn with Lyrics",
+      "channel": "Old Hymns with Lyrics",
+      "publishedAt": "2022-05-17T23:17:00Z",
+      "durationSec": 107,
+      "duration": "1:47",
+      "views": 14549,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "ujp5gwBpa3k",
+      "url": "https://www.youtube.com/watch?v=ujp5gwBpa3k",
+      "title": "Blest Be The Tie That Binds",
+      "channel": "roldz75",
+      "publishedAt": "2021-04-24T15:08:15Z",
+      "durationSec": 153,
+      "duration": "2:33",
+      "views": 11842,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "G2cda_cOXH4",
+      "url": "https://www.youtube.com/watch?v=G2cda_cOXH4",
+      "title": "Blest Be the Tie That Binds",
+      "channel": "jack terrell-wilkes",
+      "publishedAt": "2021-01-30T00:13:43Z",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 625,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "0gJ1i44Y2L4",
+      "url": "https://www.youtube.com/watch?v=0gJ1i44Y2L4",
+      "title": "Blest Be the Tie that Binds | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "2020-07-10T06:00:01Z",
+      "durationSec": 86,
+      "duration": "1:26",
+      "views": 54676,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "GMYiTuOBJqw",
+      "url": "https://www.youtube.com/watch?v=GMYiTuOBJqw",
+      "title": "Brent Cobb - Blessed Be The Tie That Binds (Lyrics)",
+      "channel": "Lyrics Park",
+      "publishedAt": "2022-10-25T13:46:25Z",
+      "durationSec": 62,
+      "duration": "1:02",
+      "views": 212,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Blessed be the tie that binds our hearts in Christian love",
+            "The fellowship of kindred minds is like to that above",
+            "When we asunder part,",
+            "It gives us inward pain,",
+            "But we shall still be joined in heart and hope to meet again"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 100,
+      "notes": "Auto‑generated captions were garbled and did not provide a usable structure. No reference lyrics were available, so the standard hymn 'Blessed Be the Tie That Binds' was used as a fallback. Confidence is low due to lack of reliable source data.",
+      "order": "Verse 1 · Verse 2 · Verse 3",
+      "engine": {
+        "verdict": "verified",
+        "lines": [
+          {
+            "text": "Blessed be the tie that binds our hearts in Christian love",
+            "t0": 7.42,
+            "t1": 18.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Blessed be the tie that binds our hearts in Christian love",
+              "asr_turbo": "Blessed be the tie that binds our hearts in Christian love."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The fellowship of kindred minds is like to that above",
+            "t0": 18.82,
+            "t1": 29.5,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The fellowship of kindred minds is like to that above",
+              "asr_turbo": "The fellowship of kindred minds is like to that above."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When we asunder part,",
+            "t0": 31.06,
+            "t1": 35.94,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "When we asunder part,",
+              "asr_turbo": "When we asunder part,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It gives us inward pain,",
+            "t0": 35.94,
+            "t1": 42.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It gives us inward pain,",
+              "asr_turbo": "it gives us inward pain."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But we shall still be joined in heart and hope to meet again",
+            "t0": 42.1,
+            "t1": 52.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "But we shall still be joined in heart and hope to meet again",
+              "asr_turbo": "But we shall still be joined in heart and hope to meet again. Thank"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [],
+        "report": {
+          "videoId": "GMYiTuOBJqw",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 1.1,
+          "excluded": [
+            {
+              "t0": 60.14,
+              "text": "You"
+            }
+          ],
+          "lines": 5,
+          "verified": 5,
+          "checks": 0,
+          "seconds": 1.1,
+          "generatedAt": "2026-10-25T14:34:21+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "TQ0Epw1rwbc",
+      "url": "https://www.youtube.com/watch?v=TQ0Epw1rwbc",
+      "title": "Blest be the tie that binds | lyric video",
+      "channel": "Gryphon Hall (Hal Guerrero)",
+      "publishedAt": "2020-08-09T03:27:55Z",
+      "durationSec": 132,
+      "duration": "2:12",
+      "views": 175253,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Bless me the tie that binds our hearts in Christian love,",
+            "The fellowship of kindred minds is like to that above"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Before our Father's throne we pour our ardent prayers",
+            "Our fears, our hopes,",
+            "Our aims, our one,",
+            "Our comforts, and our cares",
+            "We share our mutual woes,",
+            "Our mutual burdens spare,",
+            "And often for each other flows",
+            "The sympathizing tear"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "When we asunder part,",
+            "It gives us inward pain,",
+            "But we shall still be joined in heart",
+            "And hope to meet again"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 85,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d).",
+      "order": "",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Bless me the tie that binds our hearts in Christian love,",
+            "t0": 11.64,
+            "t1": 23.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Bless me the tie that binds our hearts in Christian love,",
+              "asr_turbo": "Ooooooooh Bless me the tie that binds our hearts in Christian love"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The fellowship of kindred minds is like to that above",
+            "t0": 23.26,
+            "t1": 36.62,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The fellowship of kindred minds is like to that above",
+              "asr_turbo": "The fellowship of kindred minds is like to that above."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Before our Father's throne we pour our ardent prayers",
+            "t0": 39.6,
+            "t1": 51.74,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Before our Father's throne we pour our ardent prayers",
+              "asr_turbo": "Before our Father's throne we pour our ardent prayers."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our fears, our hopes,",
+            "t0": 51.26,
+            "t1": 55.42,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Our fears, our hopes,",
+              "asr_turbo": "Our fears, our hopes,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our aims, our one,",
+            "t0": 55.42,
+            "t1": 59.84,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Our veins, our one,",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Our veins, our one,",
+              "asr_turbo": "our aims, our one,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our comforts, and our cares",
+            "t0": 59.84,
+            "t1": 66.36147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Our comforts, and our cares",
+              "asr_turbo": "our comforts and our cares."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We share our mutual woes,",
+            "t0": 67.261475,
+            "t1": 73.72147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "We share our mutual woes,",
+              "asr_turbo": "We share our mutual woes,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our mutual burdens spare,",
+            "t0": 73.80147,
+            "t1": 78.621475,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Our mutual burdens spare,",
+              "asr_turbo": "Our mutual burdens spare,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And often for each other flows",
+            "t0": 79.70147,
+            "t1": 87.04147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And often for each other flows",
+              "asr_turbo": "And often for each other flows"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The sympathizing tear",
+            "t0": 87.621475,
+            "t1": 92.88147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "The sympathizing tear",
+              "asr_turbo": "the sympathizing tear."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When we asunder part,",
+            "t0": 95.861465,
+            "t1": 102.42147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "When we asunder part,",
+              "asr_turbo": "When we asunder part,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It gives us inward pain,",
+            "t0": 102.84147,
+            "t1": 109.54147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It gives us inward pain,",
+              "asr_turbo": "it gives us inward pain,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But we shall still be joined in heart",
+            "t0": 109.44147,
+            "t1": 117.04147,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "But we shall still be joined in heart",
+              "asr_turbo": "but we shall still be joined in heart"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And hope to meet again",
+            "t0": 117.34147,
+            "t1": 121.721466,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And hope to me again",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And hope to meet again",
+              "asr_turbo": "and hope to me again."
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 53.42,
+            "t1": 59.84,
+            "text": "Our aims, our one,",
+            "options": [
+              "Our aims, our one,",
+              "Our veins, our one,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 115.34147,
+            "t1": 121.721466,
+            "text": "And hope to meet again",
+            "options": [
+              "And hope to meet again",
+              "And hope to me again"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "TQ0Epw1rwbc",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 1.6,
+          "excluded": [
+            {
+              "t0": 126.50147,
+              "text": "Amen"
+            }
+          ],
+          "lines": 14,
+          "verified": 12,
+          "checks": 2,
+          "seconds": 1.6,
+          "generatedAt": "2026-10-25T14:34:42+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "N_AYrlHRm5c",
+      "url": "https://www.youtube.com/watch?v=N_AYrlHRm5c",
+      "title": "Blest Be the Tie That Binds - Hymn Lyric Video",
+      "channel": "Darby Hughes",
+      "publishedAt": "2020-03-24T15:17:52Z",
+      "durationSec": 210,
+      "duration": "3:30",
+      "views": 89502,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "_RUu93KoX-0",
+      "url": "https://www.youtube.com/watch?v=_RUu93KoX-0",
+      "title": "Blest Be the Tie That Binds Praise and Harmony Loving God. For more,  www.praiseandharmony.com",
+      "channel": "The Acappella Company",
+      "publishedAt": "2021-07-22T13:00:09Z",
+      "durationSec": 192,
+      "duration": "3:12",
+      "views": 75775,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "unoNFZm9jqs",
+      "url": "https://www.youtube.com/watch?v=unoNFZm9jqs",
+      "title": "Blest Be the Tie that Binds Hymn with Lyrics",
+      "channel": "Old Hymns with Lyrics",
+      "publishedAt": "2022-05-17T23:17:00Z",
+      "durationSec": 107,
+      "duration": "1:47",
+      "views": 14549,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "ujp5gwBpa3k",
+      "url": "https://www.youtube.com/watch?v=ujp5gwBpa3k",
+      "title": "Blest Be The Tie That Binds",
+      "channel": "roldz75",
+      "publishedAt": "2021-04-24T15:08:15Z",
+      "durationSec": 153,
+      "duration": "2:33",
+      "views": 11842,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "G2cda_cOXH4",
+      "url": "https://www.youtube.com/watch?v=G2cda_cOXH4",
+      "title": "Blest Be the Tie That Binds",
+      "channel": "jack terrell-wilkes",
+      "publishedAt": "2021-01-30T00:13:43Z",
+      "durationSec": 211,
+      "duration": "3:31",
+      "views": 625,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "0gJ1i44Y2L4",
+      "url": "https://www.youtube.com/watch?v=0gJ1i44Y2L4",
+      "title": "Blest Be the Tie that Binds | Hymn with Lyrics | Dementia friendly",
+      "channel": "Spiritual Eldercare",
+      "publishedAt": "2020-07-10T06:00:01Z",
+      "durationSec": 86,
+      "duration": "1:26",
+      "views": 54676,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] TQ0Epw1rwbc: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-25T14:34:42+00:00"
+}
