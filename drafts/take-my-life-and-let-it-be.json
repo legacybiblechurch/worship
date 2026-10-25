@@ -1,0 +1,1364 @@
+{
+  "slug": "take-my-life-and-let-it-be",
+  "title": "Take My Life and Let it Be",
+  "input": "Take My Life and Let it Be",
+  "isNew": true,
+  "forced": null,
+  "signature": "0922ade869454f5c",
+  "generatedAt": "2026-10-25T08:51:45+00:00",
+  "titleKey": "take my life and let it be",
+  "searchCandidates": [
+    {
+      "videoId": "lQ93HVuYd5Y",
+      "url": "https://www.youtube.com/watch?v=lQ93HVuYd5Y",
+      "title": "Take my life and let it be hymn",
+      "channel": "Islington Baptist Church",
+      "publishedAt": "2011-05-13T19:40:43Z",
+      "durationSec": 228,
+      "duration": "3:48",
+      "views": 2858338,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "9speOjVQ3ZA",
+      "url": "https://www.youtube.com/watch?v=9speOjVQ3ZA",
+      "title": "Take My Life and Let It Be (Hymn Charts with Lyrics, Contemporary)",
+      "channel": "CelebratingHolidays",
+      "publishedAt": "2015-01-14T21:34:02Z",
+      "durationSec": 188,
+      "duration": "3:08",
+      "views": 2096142,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "y3gWwGDGgVA",
+      "url": "https://www.youtube.com/watch?v=y3gWwGDGgVA",
+      "title": "Take My Life and Let It Be | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "2022-10-19T13:57:12Z",
+      "durationSec": 254,
+      "duration": "4:14",
+      "views": 1135178,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "bJpv2lIy8eo",
+      "url": "https://www.youtube.com/watch?v=bJpv2lIy8eo",
+      "title": "Take My Life and Let It Be - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "2022-09-04T21:00:22Z",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 406651,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "UKk5G0qAsLk",
+      "url": "https://www.youtube.com/watch?v=UKk5G0qAsLk",
+      "title": "Take My Life and Let It Be | from &quot;Reawaken: Live At Home Again&quot; | Tommy Walker",
+      "channel": "Tommy Walker Ministries",
+      "publishedAt": "2026-03-10T05:00:34Z",
+      "durationSec": 409,
+      "duration": "6:49",
+      "views": 85500,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "qQfxc_zhlvA",
+      "url": "https://www.youtube.com/watch?v=qQfxc_zhlvA",
+      "title": "Take My Life and Let it Be Lyrics",
+      "channel": "Peter King",
+      "publishedAt": "2017-08-08T08:30:23Z",
+      "durationSec": 232,
+      "duration": "3:52",
+      "views": 62556,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "1ssmJLRmQeQ",
+      "url": "https://www.youtube.com/watch?v=1ssmJLRmQeQ",
+      "title": "TAKE MY LIFE AND LET IT BE || HYMNAL WORSHIP",
+      "channel": "BRIDE OF CHRIST MINISTRY",
+      "publishedAt": "2026-10-12T16:43:00Z",
+      "durationSec": 266,
+      "duration": "4:26",
+      "views": 10269,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "pdOzE7HBOjU",
+      "url": "https://www.youtube.com/watch?v=pdOzE7HBOjU",
+      "title": "Take my life and let it be   Brian Doerksen",
+      "channel": "John Paré",
+      "publishedAt": "2016-01-07T21:23:55Z",
+      "durationSec": 228,
+      "duration": "3:48",
+      "views": 3714,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "lQ93HVuYd5Y",
+      "url": "https://www.youtube.com/watch?v=lQ93HVuYd5Y",
+      "title": "Take my life and let it be hymn",
+      "channel": "Islington Baptist Church",
+      "publishedAt": "2011-05-13T19:40:43Z",
+      "durationSec": 228,
+      "duration": "3:48",
+      "views": 2858338,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Take my life and let it be,",
+            "Consecrated, Lord, to Thee",
+            "Take my hands and let them move at the impulse of",
+            "Thy love, at the impulse of Thy love"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Take my feet and let them be",
+            "Swift and beautiful for Thee Take",
+            "My voice and let me sing",
+            "Always only for my King",
+            "Always only for my King"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Take my lips and let them be",
+            "Filled with messages for Thee Take",
+            "My silver and my gold",
+            "Not of my good I withhold Not of my good I withhold",
+            "Not a mite would I withhold"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Take my love my",
+            "God I pour at",
+            "Thy feet His treasure store",
+            "Take myself and I will be",
+            "Ever only all for Thee",
+            "Ever only all for Thee"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "Take my life and let it be Consecrated,",
+            "Lord, to Thee Take",
+            "Myself and I will be",
+            "Ever only all for Thee",
+            "Ever only all for Thee",
+            "Take myself and I will be Ever",
+            "Ever only all for Thee",
+            "Ever only all for Thee"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 82,
+      "notes": "Based on common hymn version; confidence low",
+      "order": "Verse 1, Verse 2, Verse 3, Verse 4",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Take my life and let it be,",
+            "t0": 7.48,
+            "t1": 14.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my life and let it be,",
+              "asr_turbo": "Take my life and let it be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Consecrated, Lord, to Thee",
+            "t0": 14.32,
+            "t1": 20.18,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Consecrated, Lord, to me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Consecrated, Lord, to Thee",
+              "asr_turbo": "consecrated, Lord, to me."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my hands and let them move at the impulse of",
+            "t0": 20.96,
+            "t1": 32.26,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my hands and let them move at the impulse of",
+              "asr_turbo": "Take my hands and let them move At the impulse of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy love, at the impulse of Thy love",
+            "t0": 32.26,
+            "t1": 40.66,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Thy love, at the impulse of Thy love",
+              "asr_turbo": "Thy love At the impulse of Thy love"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my feet and let them be",
+            "t0": 46.66,
+            "t1": 52.38,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my feet and let them be",
+              "asr_turbo": "Take my feet and let them be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Swift and beautiful for Thee Take",
+            "t0": 53.32,
+            "t1": 61.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Swift and beautiful for Thee Take",
+              "asr_turbo": "Swift and beautiful for Thee Take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My voice and let me sing",
+            "t0": 61.12,
+            "t1": 66.06,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My voice and let me sing",
+              "asr_turbo": "my voice and let me sing"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Always only for my King",
+            "t0": 67.24,
+            "t1": 72.72,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Always only for my King",
+              "asr_turbo": "Always only for my King"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Always only for my King",
+            "t0": 73.94,
+            "t1": 79.6,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Always only for my King",
+              "asr_turbo": "Always only for my King"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my lips and let them be",
+            "t0": 85.6,
+            "t1": 91.5,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my lips and let them be",
+              "asr_turbo": "Take my lips and let them be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Filled with messages for Thee Take",
+            "t0": 92.58,
+            "t1": 100.38,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Filled with messages for Thee Take",
+              "asr_turbo": "Filled with messages for Thee Take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My silver and my gold",
+            "t0": 100.38,
+            "t1": 105.34,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My silver and my gold",
+              "asr_turbo": "my silver and my gold"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Not of my good I withhold Not of my good I withhold",
+            "t0": 106.36,
+            "t1": 111.81847,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Not of my wood I withhold Not of mine",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Not of my good I withhold Not of my good I withhold",
+              "asr_turbo": "Not of my wood I withhold Not of mine"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Not a mite would I withhold",
+            "t0": 112.918465,
+            "t1": 118.65846,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Would I withhold",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Not a mite would I withhold",
+              "asr_turbo": "Would I withhold"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my love my",
+            "t0": 125.15846,
+            "t1": 128.53847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my love my",
+              "asr_turbo": "Take my love My"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "God I pour at",
+            "t0": 128.53847,
+            "t1": 132.95847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "God I pour at",
+              "asr_turbo": "God I pour At"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy feet His treasure store",
+            "t0": 132.95847,
+            "t1": 137.71846,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Thy feet It's treasured store",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Thy feet His treasure store",
+              "asr_turbo": "Thy feet It's treasured store"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take myself and I will be",
+            "t0": 138.89847,
+            "t1": 145.01846,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take myself and I will be",
+              "asr_turbo": "Take myself and I will be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 145.81847,
+            "t1": 151.95847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 6x, 5 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 152.69847,
+            "t1": 159.15846,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 6x, 5 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my life and let it be Consecrated,",
+            "t0": 164.91846,
+            "t1": 175.77847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my life and let it be Consecrated,",
+              "asr_turbo": "Take my life and let it be Consecrated,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord, to Thee Take",
+            "t0": 175.77847,
+            "t1": 179.61847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Lord, to Thee Take",
+              "asr_turbo": "Lord, to Thee Take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Myself and I will be",
+            "t0": 179.61847,
+            "t1": 185.01846,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Myself and I will be",
+              "asr_turbo": "myself and I will be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 186.57846,
+            "t1": 191.83847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 6x, 5 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 192.67847,
+            "t1": 199.01846,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 6x, 5 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take myself and I will be Ever",
+            "t0": 199.81847,
+            "t1": 208.11847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take myself and I will be Ever",
+              "asr_turbo": "Take myself and I will be Ever"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 208.11847,
+            "t1": 213.45847,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Only all for Thee",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 5 other occurrences",
+            "sources": {
+              "asr_large": "Only all for Thee",
+              "asr_turbo": "only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 214.11847,
+            "t1": 221.47845,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Ever only up for Thee",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only up for Thee."
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 12.32,
+            "t1": 20.18,
+            "text": "Consecrated, Lord, to Thee",
+            "options": [
+              "Consecrated, Lord, to Thee",
+              "Consecrated, Lord, to me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 104.36,
+            "t1": 111.81847,
+            "text": "Not of my good I withhold Not of my good I withhold",
+            "options": [
+              "Not of my good I withhold Not of my good I withhold",
+              "Not of my wood I withhold Not of mine"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 110.918465,
+            "t1": 118.65846,
+            "text": "Not a mite would I withhold",
+            "options": [
+              "Not a mite would I withhold",
+              "Would I withhold"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 130.95847,
+            "t1": 137.71846,
+            "text": "Thy feet His treasure store",
+            "options": [
+              "Thy feet His treasure store",
+              "Thy feet It's treasured store"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 212.11847,
+            "t1": 221.47845,
+            "text": "Ever only all for Thee",
+            "options": [
+              "Ever only all for Thee",
+              "Ever only up for Thee"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "lQ93HVuYd5Y",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 2.2,
+          "lines": 28,
+          "verified": 23,
+          "checks": 5,
+          "seconds": 2.2,
+          "generatedAt": "2026-10-25T08:52:15+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "9speOjVQ3ZA",
+      "url": "https://www.youtube.com/watch?v=9speOjVQ3ZA",
+      "title": "Take My Life and Let It Be (Hymn Charts with Lyrics, Contemporary)",
+      "channel": "CelebratingHolidays",
+      "publishedAt": "2015-01-14T21:34:02Z",
+      "durationSec": 188,
+      "duration": "3:08",
+      "views": 2096142,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "1 Take my life and let it be consecrated more to Thee",
+            "Take my moments and my days,",
+            "Let them flow in ceaseless praise",
+            "Let them flow in ceaseless praise"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Take my voice and let me sing Always",
+            "Only for my King Take",
+            "My lips and let them be",
+            "Filled with messages from Thee",
+            "Filled with messages from Thee"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Take my love, my Lord, I pour",
+            "At Thy feet, its treasure store Take myself and I will",
+            "Ever only all for Thee",
+            "Ever only all for Thee",
+            "Ever only all for Thee",
+            "Ever only all for Thee",
+            "Ever only all for Thee",
+            "Take my will and make it Thine It"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Shall be no longer thine",
+            "Take my heart, it is Thine own It",
+            "Shall be Thy royal throne",
+            "It shall be Thy royal throne"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "It shall be Thy royal throne Take",
+            "My heart, it is Thine own",
+            "It shall be Thy royal throne It",
+            "Shall be Thy royal throne"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 80,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": "",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "1 Take my life and let it be consecrated more to Thee",
+            "t0": 20.2,
+            "t1": 28.98,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "1 Take my life and let it be consecrated more to Thee",
+              "asr_turbo": "Take my life and let it be Consecrated, Lord, to Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my moments and my days,",
+            "t0": 29.52,
+            "t1": 34.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my moments and my days,",
+              "asr_turbo": "Take my moments and my days"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let them flow in ceaseless praise",
+            "t0": 34.32,
+            "t1": 38.76,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Let them flow in ceaseless praise",
+              "asr_turbo": "Let them flow in ceaseless praise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let them flow in ceaseless praise",
+            "t0": 39.12,
+            "t1": 43.18,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Let them flow in ceaseless praise",
+              "asr_turbo": "Let them flow in ceaseless praise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my voice and let me sing Always",
+            "t0": 51.88,
+            "t1": 57.64,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my voice and let me sing Always",
+              "asr_turbo": "Take thy voice and let me sing Always"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Only for my King Take",
+            "t0": 57.64,
+            "t1": 61.94,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Only for my being Take",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Only for my King Take",
+              "asr_turbo": "only for my being Take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My lips and let them be",
+            "t0": 61.94,
+            "t1": 65.4,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My lips and let them be",
+              "asr_turbo": "my lips and let them be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Filled with messages from Thee",
+            "t0": 66.06,
+            "t1": 70.32,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Filled with messages from me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Filled with messages from Thee",
+              "asr_turbo": "Filled with messages from me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Filled with messages from Thee",
+            "t0": 70.54,
+            "t1": 75.26,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Filled with messages from me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Filled with messages from Thee",
+              "asr_turbo": "Filled with messages from me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my love, my Lord, I pour",
+            "t0": 83.66,
+            "t1": 87.84,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my love, my Lord, I pour",
+              "asr_turbo": "Take my love, my Lord, I pour"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "At Thy feet, its treasure store Take myself and I will",
+            "t0": 88.5,
+            "t1": 96.644035,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "At Thy feet is treasure stored Take myself and I will",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "At Thy feet, its treasure store Take myself and I will",
+              "asr_turbo": "At Thy feet is treasure stored Take myself and I will"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 96.644035,
+            "t1": 102.04404,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Be Ever only all for Thee",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 4 other occurrences",
+            "sources": {
+              "asr_large": "Be Ever only all for Thee",
+              "asr_turbo": "be Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 102.504036,
+            "t1": 107.424034,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 4 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 109.464035,
+            "t1": 114.74403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 4 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for Thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 116.66403,
+            "t1": 121.38403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 4 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Ever only all for Thee",
+            "t0": 122.604034,
+            "t1": 128.24403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 4 agree",
+            "sources": {
+              "asr_large": "Ever only all for Thee",
+              "asr_turbo": "Ever only all for thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my will and make it Thine It",
+            "t0": 128.24403,
+            "t1": 137.16403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my will and make it Thine It",
+              "asr_turbo": "Take my will and make it thine It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Shall be no longer thine",
+            "t0": 137.16403,
+            "t1": 140.70404,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Shall be no longer mine",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Shall be no longer thine",
+              "asr_turbo": "shall be no longer mine"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my heart, it is Thine own It",
+            "t0": 141.32404,
+            "t1": 146.58403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Take my heart, it is Thine own It",
+              "asr_turbo": "Take my heart, it is thine own It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Shall be Thy royal throne",
+            "t0": 146.58403,
+            "t1": 149.74403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 2 agree",
+            "sources": {
+              "asr_large": "Shall be Thy royal throne",
+              "asr_turbo": "shall be thy royal throne"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It shall be Thy royal throne",
+            "t0": 150.72403,
+            "t1": 154.62402,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It shall be Thy royal throne",
+              "asr_turbo": "It shall be thy royal throne"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It shall be Thy royal throne Take",
+            "t0": 157.80403,
+            "t1": 166.24403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It shall be Thy royal throne Take",
+              "asr_turbo": "It shall be thy royal throne Take"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My heart, it is Thine own",
+            "t0": 166.24403,
+            "t1": 170.20404,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My heart, it is Thine own",
+              "asr_turbo": "my heart, it is thine own"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It shall be Thy royal throne It",
+            "t0": 170.82404,
+            "t1": 175.94403,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It shall be Thy royal throne It",
+              "asr_turbo": "It shall be thy royal throne It"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Shall be Thy royal throne",
+            "t0": 175.94403,
+            "t1": 180.54404,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 5x, 2 agree",
+            "sources": {
+              "asr_large": "Shall be Thy royal throne",
+              "asr_turbo": "shall be thy royal throne"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 55.64,
+            "t1": 61.94,
+            "text": "Only for my King Take",
+            "options": [
+              "Only for my King Take",
+              "Only for my being Take"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 64.06,
+            "t1": 70.32,
+            "text": "Filled with messages from Thee",
+            "options": [
+              "Filled with messages from Thee",
+              "Filled with messages from me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 68.54,
+            "t1": 75.26,
+            "text": "Filled with messages from Thee",
+            "options": [
+              "Filled with messages from Thee",
+              "Filled with messages from me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 86.5,
+            "t1": 96.644035,
+            "text": "At Thy feet, its treasure store Take myself and I will",
+            "options": [
+              "At Thy feet, its treasure store Take myself and I will",
+              "At Thy feet is treasure stored Take myself and I will"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 135.16403,
+            "t1": 140.70404,
+            "text": "Shall be no longer thine",
+            "options": [
+              "Shall be no longer thine",
+              "Shall be no longer mine"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "9speOjVQ3ZA",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 2.2,
+          "lines": 25,
+          "verified": 20,
+          "checks": 5,
+          "seconds": 2.2,
+          "generatedAt": "2026-10-25T08:52:31+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "y3gWwGDGgVA",
+      "url": "https://www.youtube.com/watch?v=y3gWwGDGgVA",
+      "title": "Take My Life and Let It Be | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "2022-10-19T13:57:12Z",
+      "durationSec": 254,
+      "duration": "4:14",
+      "views": 1135178,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "bJpv2lIy8eo",
+      "url": "https://www.youtube.com/watch?v=bJpv2lIy8eo",
+      "title": "Take My Life and Let It Be - piano instrumental hymn with lyrics",
+      "channel": "Kaleb Brasee",
+      "publishedAt": "2022-09-04T21:00:22Z",
+      "durationSec": 205,
+      "duration": "3:25",
+      "views": 406651,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "UKk5G0qAsLk",
+      "url": "https://www.youtube.com/watch?v=UKk5G0qAsLk",
+      "title": "Take My Life and Let It Be | from &quot;Reawaken: Live At Home Again&quot; | Tommy Walker",
+      "channel": "Tommy Walker Ministries",
+      "publishedAt": "2026-03-10T05:00:34Z",
+      "durationSec": 409,
+      "duration": "6:49",
+      "views": 85500,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "qQfxc_zhlvA",
+      "url": "https://www.youtube.com/watch?v=qQfxc_zhlvA",
+      "title": "Take My Life and Let it Be Lyrics",
+      "channel": "Peter King",
+      "publishedAt": "2017-08-08T08:30:23Z",
+      "durationSec": 232,
+      "duration": "3:52",
+      "views": 62556,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "1ssmJLRmQeQ",
+      "url": "https://www.youtube.com/watch?v=1ssmJLRmQeQ",
+      "title": "TAKE MY LIFE AND LET IT BE || HYMNAL WORSHIP",
+      "channel": "BRIDE OF CHRIST MINISTRY",
+      "publishedAt": "2026-10-12T16:43:00Z",
+      "durationSec": 266,
+      "duration": "4:26",
+      "views": 10269,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "pdOzE7HBOjU",
+      "url": "https://www.youtube.com/watch?v=pdOzE7HBOjU",
+      "title": "Take my life and let it be   Brian Doerksen",
+      "channel": "John Paré",
+      "publishedAt": "2016-01-07T21:23:55Z",
+      "durationSec": 228,
+      "duration": "3:48",
+      "views": 3714,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-10-25T08:52:31+00:00"
+}
