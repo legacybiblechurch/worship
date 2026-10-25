@@ -1960,4 +1960,11 @@ const LEGACY_SONGS = {
     { label: "", lines: ["Come and behold Him", "The One and the Only", "Cry out, sing holy", "Forever a Holy God", "Come and worship the Holy God"] }
   ]
   },
+  "blessed-be-the-tie-that-binds": {
+    title: "Blessed Be the Tie that Binds",
+    youtube: "https://www.youtube.com/watch?v=GMYiTuOBJqw",
+    lyrics: [
+    { label: "Verse 1", lines: ["Blessed be the tie that binds our hearts in Christian love", "The fellowship of kindred minds is like to that above", "When we asunder part,", "It gives us inward pain,", "But we shall still be joined in heart and hope to meet again"] }
+  ]
+  },
 };
