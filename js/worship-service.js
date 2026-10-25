@@ -8,72 +8,72 @@
 window.WORSHIP_SERVICE = [
   {
     "type": "scripture",
-    "ref": "Hebrews 12:18-29",
+    "ref": "1 Peter 4:1-11",
     "version": "WEB",
     "verses": [
       {
-        "n": 18,
-        "text": "For you have not come to a mountain that can be touched and to a blazing fire, and to darkness and gloom and whirlwind,"
+        "n": 1,
+        "text": "Therefore, since Christ has [a]suffered in the flesh, arm yourselves also with the same purpose, because he who has [b]suffered in the flesh has ceased from sin,"
       },
       {
-        "n": 19,
-        "text": "and to the blast of a trumpet and the sound of words which sound was such that those who heard begged that no further word be spoken to them."
+        "n": 2,
+        "text": "so as to live the rest of the time in the flesh no longer for the lusts of men, but for the will of God."
       },
       {
-        "n": 20,
-        "text": "For they could not bear the command, “If even a beast touches the mountain, it will be stoned.”"
+        "n": 3,
+        "text": "For the time already past is sufficient for you to have carried out the desire of the Gentiles, [c]having pursued a course of sensuality, lusts, drunkenness, carousing, drinking parties and [d]abominable idolatries."
       },
       {
-        "n": 21,
-        "text": "And so terrible was the sight, that Moses said, “I am full of fear and trembling.”"
+        "n": 4,
+        "text": "In all this, they are surprised that you do not run with them into the same excesses of dissipation, and they malign you;"
       },
       {
-        "n": 22,
-        "text": "But you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem, and to myriads of [a]angels,"
+        "n": 5,
+        "text": "but they will give account to Him who is ready to judge the living and the dead."
       },
       {
-        "n": 23,
-        "text": "to the general assembly and church of the firstborn who are enrolled in heaven, and to God, the Judge of all, and to the spirits of the righteous made perfect,"
+        "n": 6,
+        "text": "For the gospel has for this purpose been [e]preached even to those who are dead, that though they are judged in the flesh as men, they may live in the spirit according to the will of God."
       },
       {
-        "n": 24,
-        "text": "and to Jesus, the mediator of a new covenant, and to the sprinkled blood, which speaks better than the blood of Abel."
+        "n": 7,
+        "text": "The end of all things [f]is near; therefore, be of sound judgment and sober spirit for the purpose of [g]prayer."
       },
       {
-        "n": 25,
-        "text": "See to it that you do not refuse Him who is speaking. For if those did not escape when they refused him who warned them on earth, [b]much less will we escape who turn away from Him who warns from heaven."
+        "n": 8,
+        "text": "Above all, keep fervent in your love for one another, because love covers a multitude of sins."
       },
       {
-        "n": 26,
-        "text": "And His voice shook the earth then, but now He has promised, saying, “Yet once more I will shake not only the earth, but also the heaven.”"
+        "n": 9,
+        "text": "Be hospitable to one another without complaint."
       },
       {
-        "n": 27,
-        "text": "This expression, “Yet once more,” denotes the removing of those things which can be shaken, as of created things, so that those things which cannot be shaken may remain."
+        "n": 10,
+        "text": "As each one has received a special gift, employ it in serving one another as good stewards of the manifold grace of God."
       },
       {
-        "n": 28,
-        "text": "Therefore, since we receive a kingdom which cannot be shaken, let us [c]show gratitude, by which we may offer to God an acceptable service with reverence and awe;"
-      },
-      {
-        "n": 29,
-        "text": "for our God is a consuming fire."
+        "n": 11,
+        "text": "Whoever speaks, is to do so [h]as one who is speaking the utterances of God; whoever serves is to do so as one who is serving [i]by the strength which God supplies; so that in all things God may be glorified through Jesus Christ, to whom belongs the glory and dominion forever and ever. Amen."
       }
     ]
   },
   {
     "type": "song",
-    "slug": "the-king-of-glory-psalm-24"
+    "slug": "speak-o-lord"
   },
   {
     "type": "sermon",
-    "title": "\"Purify Your Hands and Heart for the King of Glory, Pt 2\"",
-    "passage": "Psalm 24",
+    "title": "\"God's Glory in You, Pt. 1\"",
+    "passage": "1 Peter 4:7-11",
     "points": [
-      "1. The King's  AUTHORITY  (1-2)",
-      "2. The Worshiper's  CONDITION  (3-4)",
-      "3. The Worshiper's  BLESSING (5-6)",
-      "4. The King's  GLORY  (7-10)"
+      "In preparation for the soon-coming end, pray, love and serve so that God will be glorified.",
+      "1. REMEMBER the imminent return of Christ (7a); therefore ...",
+      "The end of all things is near; therefore, be of sound judgment and sober spirit for the purpose of prayer. - 1 Peter 4:7",
+      "2. Pray with DISCERNMENT (7b), and ...",
+      "Above all, keep fervent in your love for one another, because love covers a multitude of sins. - 1 Peter 4:8",
+      "3. Love with sin-COVERING fervor (8), and ...",
+      "Be hospitable to one another without complaint. - 1 Peter 4:9",
+      "4. Serve STRANGERS without complaint (9), and..."
     ]
   },
   {
@@ -82,11 +82,11 @@ window.WORSHIP_SERVICE = [
   },
   {
     "type": "song",
-    "slug": "crown-him-with-many-crowns"
+    "slug": "take-my-life-and-let-it-be"
   },
   {
     "type": "song",
-    "slug": "only-a-holy-god"
+    "slug": "blessed-be-the-tie-that-binds"
   }
 ];
 
