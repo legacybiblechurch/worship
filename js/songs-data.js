@@ -1962,9 +1962,16 @@ const LEGACY_SONGS = {
   },
   "blessed-be-the-tie-that-binds": {
     title: "Blessed Be the Tie that Binds",
-    youtube: "https://www.youtube.com/watch?v=GMYiTuOBJqw",
+    youtube: "https://youtu.be/RCbSQWeDbIU?si=kkSo4P3E1jgkymMI",
     lyrics: [
-    { label: "Verse 1", lines: ["Blessed be the tie that binds our hearts in Christian love", "The fellowship of kindred minds is like to that above", "When we asunder part,", "It gives us inward pain,", "But we shall still be joined in heart and hope to meet again"] }
+    { label: "Verse 1", lines: ["Blest be the tie that binds", "Our hearts in Christian love;"] },
+    { label: "", lines: ["The fellowship of kindred minds", "Is like to that above."] },
+    { label: "Verse 2", lines: ["Before our Father’s throne,", "We pour our ardent prayers;"] },
+    { label: "", lines: ["Our fears, our hopes, our aims are one,", "Our comforts, and our cares."] },
+    { label: "Verse 3", lines: ["We share our mutual woes,", "Our mutual burdens bear;"] },
+    { label: "", lines: ["And often for each other flows", "The sympathizing tear."] },
+    { label: "Verse 4", lines: ["When we asunder part,", "It gives us inward pain;"] },
+    { label: "", lines: ["But we shall still be joined in heart,", "And hope to meet again."] }
   ]
   },
 };
