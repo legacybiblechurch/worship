@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'the-king-of-glory-psalm-24',
-  'crown-him-with-many-crowns',
-  'only-a-holy-god',
+  'speak-o-lord',
+  'take-my-life-and-let-it-be',
+  'blessed-be-the-tie-that-binds',
 ];
