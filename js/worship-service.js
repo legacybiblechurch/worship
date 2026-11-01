@@ -74,7 +74,7 @@ window.WORSHIP_SERVICE = [
       "3. Love with sin-COVERING fervor (8), and ...",
       "Be hospitable to one another without complaint. - 1 Peter 4:9",
       "4. Serve STRANGERS without complaint (9), and...",
-      "5. Serve one another with your GRACE gifts (10),",
+      "5. Serve one another with your GRACE-gifts (10),",
       "a. if speaking, with God's AUTHORITY (11a)",
       "b. if serving, with God's STRENGTH (11b)",
       "6. doing all things for God's GLORY (11c)"
