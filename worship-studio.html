@@ -260,7 +260,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=19"></script>
+  <script src="js/sheet.js?v=20"></script>
   <script>
   (function () {
     'use strict';
@@ -966,7 +966,7 @@
         var d = el('div', 'pv');
         if (sl.kicker) d.appendChild(el('div', 'pv-kicker', sl.kicker));
         else if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
-        sl.lines.forEach(function (line) { d.appendChild(el('div', 'pv-line', line)); });
+        sl.lines.forEach(function (line) { var ln = el('div', 'pv-line', ''); if (sl.rich) ln.innerHTML = S.markup(line); else ln.textContent = line; d.appendChild(ln); });
         if (sl.cue) d.appendChild(el('div', 'pv-cue', sl.cue));
         pv.appendChild(d);
       });

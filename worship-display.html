@@ -182,7 +182,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=19"></script>
+  <script src="js/sheet.js?v=20"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -252,7 +252,7 @@
         // reference or a sermon's title does belong there, small and gold
         slideLabel.textContent = slide.kicker || '';
         slideLines.innerHTML = slide.lines
-          .map(function(l){ return '<div class="slide-line">' + esc(l) + '</div>'; })
+          .map(function(l){ return '<div class="slide-line">' + (slide.rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; })
           .join('');
         songTitle.textContent = song.type === 'song' ? song.title : '';
         slideWrap.classList.add('visible');

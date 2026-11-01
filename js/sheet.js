@@ -272,7 +272,7 @@
       if (!ls.length) return;
       var lines = [];
       ls.forEach(function (l) { lines = lines.concat(splitLine(l, 56)); });
-      slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: lines });
+      slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: lines, rich: true });
     });
     return slides;
   }
@@ -415,7 +415,17 @@
   // ever has to change, and every page follows.
   var ROOM = '8BSWX2H4DF';
 
+  // sermon lines drawn like the printed worship guide: the KEY WORDS the
+  // preacher typed in capitals are underlined, and a. / b. sub-points are indented
+  function escHtml(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function markup(line) {
+    var t = escHtml(line);
+    t = t.replace(/\b([A-Z][A-Z'’-]{2,}[A-Z])\b/g, '<u>$1</u>');
+    if (/^\s*[a-h]\.\s/.test(line)) t = '<span class="sub">&emsp;&emsp;' + t + '</span>';
+    return t;
+  }
   global.LBCSheet = {
+    markup: markup,
     ROOM: ROOM,
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, videoId: videoId,

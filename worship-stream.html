@@ -207,13 +207,13 @@
       while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
     function hide() { tok++; cur = ''; plate.classList.remove('on'); lines.classList.remove('swap'); }
-    function show(arr, firstIsKicker) {
+    function show(arr, firstIsKicker, rich) {
       var key = arr.join('\n');
       if (key === cur && plate.classList.contains('on')) return;
       var my = ++tok;
       function swap() {
         if (my !== tok) return;
-        lines.innerHTML = arr.map(function (l, i) { return '<div class="' + (firstIsKicker && i === 0 ? 'kicker' : 'line') + '">' + esc(l) + '</div>'; }).join('');
+        lines.innerHTML = arr.map(function (l, i) { return '<div class="' + (firstIsKicker && i === 0 ? 'kicker' : 'line') + '">' + (rich && !(firstIsKicker && i === 0) ? LBCSheet.markup(l) : esc(l)) + '</div>'; }).join('');
         fit(); cur = key; plate.classList.add('on'); lines.classList.remove('swap');
       }
       // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
@@ -235,8 +235,8 @@
       if (!slide || slide.logo || !slide.lines || !slide.lines.length) return hide();   // a video cue or logo slot: camera
       var wait = layout(THIRD.indexOf(song.type) >= 0);
       var arr = slide.kicker ? [slide.kicker].concat(slide.lines) : slide.lines, my = ++tok;
-      if (wait) setTimeout(function () { if (my === tok) show(arr, !!slide.kicker); }, wait);
-      else show(arr, !!slide.kicker);
+      if (wait) setTimeout(function () { if (my === tok) show(arr, !!slide.kicker, !!slide.rich); }, wait);
+      else show(arr, !!slide.kicker, !!slide.rich);
     }
     function handle(d, from, t) {
       if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
@@ -388,7 +388,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=18', function () {
+    load('js/sheet.js?v=20', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

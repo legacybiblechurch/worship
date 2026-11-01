@@ -379,7 +379,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=19"></script>
+  <script src="js/sheet.js?v=20"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -494,7 +494,7 @@
       grid.innerHTML = song.slides.map(function (slide, i) {
         var isActive = i === slideIdx;
         // every line of the slide, exactly as the TV shows it, so the operator never has to look up
-        var preview = slide.lines.map(function (l) { return '<span class="tl">' + esc(l) + '</span>'; }).join('');
+        var preview = slide.lines.map(function (l) { return '<span class="tl">' + (slide.rich ? LBCSheet.markup(l) : esc(l)) + '</span>'; }).join('');
         if (slide.cue) preview += '<span class="tl cue">' + esc(slide.cue) + '</span>';
         return '<div class="slide-thumb' + (isActive ? ' active' : '') + '" onclick="goTo(' + songIdx + ',' + i + ')">' +
           (isActive ? '<div class="live-badge">Live</div>' : '') +
