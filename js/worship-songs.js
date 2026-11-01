@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'speak-o-lord',
+  'to-god-be-the-glory',
   'take-my-life-and-let-it-be',
-  'blessed-be-the-tie-that-binds',
+  'all-i-have-is-christ',
 ];
