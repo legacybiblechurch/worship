@@ -2003,4 +2003,17 @@ const LEGACY_SONGS = {
     { label: "Verse 6", lines: ["Take myself and I will be", "Ever only all for Thee", "Ever only all for Thee"] }
   ]
   },
+  "to-god-be-the-glory": {
+    title: "To God Be the Glory",
+    youtube: "https://www.youtube.com/watch?v=0IRrqCCkkFo",
+    lyrics: [
+    { label: "Verse 1", lines: ["To God be the glory", "Great things He hath done", "Loved He the world That", "He gave us His Son", "Who yielded His life An", "Atonement for sin And", "Opened the life-gate life-gate That", "All may go in praise"] },
+    { label: "Chorus", lines: ["The Lord praise the Lord", "Let the earth hear his voice", "Praise the Lord Praise the Lord", "Let the people rejoice", "Oh come to the Father Through Jesus the Son", "And give Him the glory", "Great things He hath done"] },
+    { label: "Verse 2", lines: ["O perfect redemption The", "Purchase of blood To", "Ev'ry believer the", "Promise of God The", "Vilest offender Who", "Truly believes That", "Moment from Jesus", "A pardon receives Praise the Lord"] },
+    { label: "Chorus", lines: ["Let the earth hear his voice", "Praise the Lord Praise the Lord", "Let the earth hear His voice", "Praise the Lord, praise the Lord,", "People rejoice", "O come to the Father Through Jesus the Son", "And give Him the glory", "Great things He hath done"] },
+    { label: "Verse 3", lines: ["Great things He hath taught us", "Great things He hath done", "And great our rejoicing Through Jesus the Son", "But purer, and higher And greater will be", "Our wonder, our worship", "When Jesus we see", "Praise the Lord Praise the Lord", "Let the earth hear His voice"] },
+    { label: "Chorus", lines: ["Praise the Lord Praise the Lord", "Let the people rejoice", "O come to the Father", "Through Jesus the Son", "And give Him the glory", "Great things He hath done", "Praise the Lord Praise the Lord", "Let the earth hear His voice"] },
+    { label: "Chorus", lines: ["Praise the Lord Praise the Lord", "Let the people rejoice", "Oh come To the Father", "Through Jesus the Son", "And give Him the glory", "Great things He have done"] }
+  ]
+  },
 };
