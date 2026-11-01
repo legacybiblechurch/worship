@@ -59,9 +59,12 @@ const LEGACY_SONGS = {
     { label: "Verse 3", lines: ["But as I ran my hell-bound race", "Indifferent to the cost", "You looked upon my helpless state", "And led me to the cross"] },
     { label: "Verse 4", lines: ["And I beheld God's love displayed", "You suffered in my place", "You bore the wrath reserved for me", "Now all I know is grace"] },
     { label: "Chorus", lines: ["Hallelujah! All I have is Christ", "Hallelujah! Jesus is my life"] },
+    { label: "", lines: ["Hallelujah! All I have is Christ", "Hallelujah! Jesus is my life"] },
     { label: "Verse 5", lines: ["Now, Lord, I would be Yours alone", "And live so all might see", "The strength to follow Your commands", "Could never come from me"] },
-    { label: "Verse 6", lines: ["Oh, Father, use my ransomed life", "In any way You choose", "And let my song forever be", "\"My only boast is You!\""] },
-    { label: "Chorus", lines: ["Hallelujah! All I have is Christ", "Hallelujah! Jesus is my life"] }
+    { label: "Verse 6", lines: ["Oh, Father, use my ransomed life", "In any way You choose", "Oh, Father, use my ransomed life", "In any way You choose", "And let my song forever be", "\"My only boast is You!\""] },
+    { label: "Chorus", lines: ["Hallelujah! All I have is Christ", "Hallelujah! Jesus is my life"] },
+    { label: "", lines: ["Hallelujah! All I have is Christ", "Hallelujah! Jesus is my life"] },
+    { label: "", lines: ["Jesus is my life", "Jesus is my life"] }
   ]
   },
   "almost-home": {
