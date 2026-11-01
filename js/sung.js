@@ -137,4 +137,5 @@ window.SUNG_SONGS = [
   'only-a-holy-god',
   'take-my-life-and-let-it-be',
   'blessed-be-the-tie-that-binds',
+  'to-god-be-the-glory',
 ];
