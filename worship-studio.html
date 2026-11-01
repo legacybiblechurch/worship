@@ -260,7 +260,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=18"></script>
+  <script src="js/sheet.js?v=19"></script>
   <script>
   (function () {
     'use strict';
@@ -1057,15 +1057,15 @@
             '<label>Title</label><input id="titleIn" placeholder="The sermon’s title">' +
             '<label>Passage</label><input id="passIn" placeholder="Psalm 24:1-10" spellcheck="false">' +
           '</div>' +
-          '<div class="pane-head">Points<span class="hint">one per line. Each becomes its own slide, in order</span></div>' +
+          '<div class="pane-head">Points<span class="hint">blank line = new slide. Lines without a blank between them share a slide</span></div>' +
           '<textarea class="box" id="pointBox" placeholder="The earth belongs to the Lord&#10;Who may ascend His hill?&#10;The King of glory comes in"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
       var t = document.getElementById('titleIn'), p = document.getElementById('passIn'), box = document.getElementById('pointBox');
-      t.value = it.title || ''; p.value = it.passage || ''; box.value = (it.points || []).join('\n');
+      t.value = it.title || ''; p.value = it.passage || ''; box.value = (it.points || []).join('\n\n');
       t.oninput = function () { it.title = t.value.trim(); main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : ''); touched(); paintItemPreview(it); };
       p.oninput = function () { it.passage = p.value.trim(); touched(); paintItemPreview(it); };
-      box.oninput = function () { it.points = box.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean); touched(); paintItemPreview(it); };
+      box.oninput = function () { it.points = box.value.replace(/\r/g, '').split(/\n\s*\n/).map(function (g) { return g.split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); }).filter(Boolean); touched(); paintItemPreview(it); };
       paintItemPreview(it);
       if (!it.title) setTimeout(function () { t.focus(); }, 30);
     }

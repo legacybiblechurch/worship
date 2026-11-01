@@ -264,10 +264,15 @@
     return slides;
   }
   // sermon -> a title slide, then one slide per point, the title riding above each
+  // a point may hold several lines (a heading and its verse); they stay on one slide
   function buildSermonSlides(it) {
     var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'] }];
     (it.points || []).forEach(function (p, i) {
-      if (String(p).trim()) slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: splitLine(String(p).trim(), 56) });
+      var ls = String(p).split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+      if (!ls.length) return;
+      var lines = [];
+      ls.forEach(function (l) { lines = lines.concat(splitLine(l, 56)); });
+      slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: lines });
     });
     return slides;
   }
