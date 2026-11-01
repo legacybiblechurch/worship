@@ -9,11 +9,11 @@ window.WORSHIP_SERVICE = [
   {
     "type": "scripture",
     "ref": "1 Peter 4:1-11",
-    "version": "WEB",
+    "version": "NASB",
     "verses": [
       {
         "n": 1,
-        "text": "Therefore, since Christ has [a]suffered in the flesh, arm yourselves also with the same purpose, because he who has [b]suffered in the flesh has ceased from sin,"
+        "text": "Therefore, since Christ has suffered in the flesh, arm yourselves also with the same purpose, because he who has suffered in the flesh has ceased from sin,"
       },
       {
         "n": 2,
@@ -21,7 +21,7 @@ window.WORSHIP_SERVICE = [
       },
       {
         "n": 3,
-        "text": "For the time already past is sufficient for you to have carried out the desire of the Gentiles, [c]having pursued a course of sensuality, lusts, drunkenness, carousing, drinking parties and [d]abominable idolatries."
+        "text": "For the time already past is sufficient for you to have carried out the desire of the Gentiles, having pursued a course of sensuality, lusts, drunkenness, carousing, drinking parties and abominable idolatries."
       },
       {
         "n": 4,
@@ -33,11 +33,11 @@ window.WORSHIP_SERVICE = [
       },
       {
         "n": 6,
-        "text": "For the gospel has for this purpose been [e]preached even to those who are dead, that though they are judged in the flesh as men, they may live in the spirit according to the will of God."
+        "text": "For the gospel has for this purpose been preached even to those who are dead, that though they are judged in the flesh as men, they may live in the spirit according to the will of God."
       },
       {
         "n": 7,
-        "text": "The end of all things [f]is near; therefore, be of sound judgment and sober spirit for the purpose of [g]prayer."
+        "text": "The end of all things is near; therefore, be of sound judgment and sober spirit for the purpose of prayer."
       },
       {
         "n": 8,
@@ -53,17 +53,17 @@ window.WORSHIP_SERVICE = [
       },
       {
         "n": 11,
-        "text": "Whoever speaks, is to do so [h]as one who is speaking the utterances of God; whoever serves is to do so as one who is serving [i]by the strength which God supplies; so that in all things God may be glorified through Jesus Christ, to whom belongs the glory and dominion forever and ever. Amen."
+        "text": "Whoever speaks, is to do so as one who is speaking the utterances of God; whoever serves is to do so as one who is serving by the strength which God supplies; so that in all things God may be glorified through Jesus Christ, to whom belongs the glory and dominion forever and ever. Amen."
       }
     ]
   },
   {
     "type": "song",
-    "slug": "speak-o-lord"
+    "slug": "to-god-be-the-glory"
   },
   {
     "type": "sermon",
-    "title": "\"God's Glory in You, Pt. 1\"",
+    "title": "\"God's Glory in You, Pt. 2\"",
     "passage": "1 Peter 4:7-11",
     "points": [
       "In preparation for the soon-coming end, pray, love and serve so that God will be glorified.",
@@ -73,7 +73,11 @@ window.WORSHIP_SERVICE = [
       "Above all, keep fervent in your love for one another, because love covers a multitude of sins. - 1 Peter 4:8",
       "3. Love with sin-COVERING fervor (8), and ...",
       "Be hospitable to one another without complaint. - 1 Peter 4:9",
-      "4. Serve STRANGERS without complaint (9), and..."
+      "4. Serve STRANGERS without complaint (9), and...",
+      "5. Serve one another with your GRACE gifts (10),",
+      "a. if speaking, with God's AUTHORITY (11a)",
+      "b. if serving, with God's STRENGTH (11b)",
+      "6. doing all things for God's GLORY (11c)"
     ]
   },
   {
@@ -86,7 +90,7 @@ window.WORSHIP_SERVICE = [
   },
   {
     "type": "song",
-    "slug": "blessed-be-the-tie-that-binds"
+    "slug": "all-i-have-is-christ"
   }
 ];
 
