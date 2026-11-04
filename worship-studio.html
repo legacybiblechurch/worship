@@ -943,9 +943,9 @@
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
             (asText
-              ? '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
+              ? '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span><button class="btn quiet mode" id="modeBtn">Edit screen by screen</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
-              : '<div class="pane-head">Slides<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
+              : '<div class="pane-head">Screens<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
                 '<div class="points" id="cards"></div>') +
           '</div>' +
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
@@ -987,6 +987,7 @@
       s.lyrics.forEach(function (b, i) {
         var c = el('div', 'pt'); c.dataset.block = i;
         var h = el('div', 'pt-head');
+        h.appendChild(el('span', '', 'Screen ' + (i + 1)));
         var name = document.createElement('input'); name.value = b.label || ''; name.placeholder = 'Verse 1, Chorus…'; name.className = 'pt-name';
         name.oninput = function () { b.label = name.value.trim(); changed(); paintPreview(s); };
         h.appendChild(name); h.appendChild(el('span', 'sp', ''));
@@ -996,7 +997,7 @@
         rm.onclick = function () { s.lyrics.splice(i, 1); changed(); paintPreview(s); paintCards(slug, s, changed, Math.min(i, s.lyrics.length - 1)); };
         h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
         var ta = document.createElement('textarea'); ta.value = (b.lines || []).join('\n'); ta.rows = Math.max(2, (b.lines || []).length + 1);
-        ta.placeholder = 'The lines of this slide';
+        ta.placeholder = 'The words on this screen';
         function here() {
           var before = ta.value.slice(0, ta.selectionStart).replace(/\r/g, ''), rows = before.split('\n');
           var li = rows.slice(0, -1).filter(function (l) { return l.trim(); }).length;     // typed lines above, blanks skipped
@@ -1004,7 +1005,7 @@
           var wi = !toks.length ? 0 : /\s$/.test(cur) ? toks.length : toks.length - 1;
           lightWord(s, i, li, wi); markHere('.pt', i);
           var warn = c.querySelector('.pt-warn'), nSlides = S.buildSlides([b]).length;
-          warn.textContent = nSlides > 1 ? 'Too many lines for one screen: the TV will split this into ' + nSlides + '. Add a slide and move some lines down.' : '';
+          warn.textContent = nSlides > 1 ? 'Too many lines to fit on the TV at once. It will split into ' + nSlides + '. Add a screen and move some lines down.' : '';
         }
         ta.oninput = function () { b.lines = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean); changed(); paintPreview(s); here(); };
         ['click', 'keyup', 'focus'].forEach(function (ev) { ta.addEventListener(ev, here); });
@@ -1012,7 +1013,7 @@
         c.appendChild(el('small', 'pt-warn', ''));
         list.appendChild(c);
       });
-      var add = el('button', 'addpt', '+ Add a slide');
+      var add = el('button', 'addpt', '+ Add a screen');
       add.onclick = function () { s.lyrics.push({ label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, s.lyrics.length - 1); };
       list.appendChild(add);
       if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
@@ -1203,7 +1204,7 @@
             '<label>Passage</label><input id="passIn" placeholder="1 Peter 4:7-11" spellcheck="false">' +
             '<label>So that</label><textarea id="thesisIn" rows="2" placeholder="In preparation for the soon-coming end, pray, love, and serve so that God will be glorified."></textarea>' +
           '</div>' +
-          '<div class="pane-head">Points<span class="hint">one card = one slide on the TV. Words in CAPITALS come out underlined</span></div>' +
+          '<div class="pane-head">Points<span class="hint">CAPITAL words come out underlined</span></div>' +
           '<div class="points" id="points"></div>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
@@ -1217,7 +1218,7 @@
       function slideOf(i) { return 1 + (it.thesis ? 1 : 0) + i; }
       function card(i) {
         var c = el('div', 'pt'); c.dataset.block = i;
-        var h = el('div', 'pt-head'); h.appendChild(el('span', '', 'Slide ' + (slideOf(i) + 1)));
+        var h = el('div', 'pt-head'); h.appendChild(el('span', '', 'Screen ' + (slideOf(i) + 1)));
         h.appendChild(el('span', 'sp', ''));
         var up = el('button', '', '▲'), dn = el('button', '', '▼'), rm = el('button', '', 'Remove');
         up.title = 'Move up'; dn.title = 'Move down';
@@ -1230,13 +1231,13 @@
         ta.oninput = function () { it.points[i] = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); touched(); paintItemPreview(it); markHere('.pv', slideOf(i)); markHere('.pt', i); };
         ta.onfocus = function () { markHere('.pv', slideOf(i)); markHere('.pt', i); };
         c.appendChild(ta);
-        c.appendChild(el('small', '', 'The point on the first line. A verse or a sub-point (a., b.) on the lines under it stays on the same slide.'));
+        c.appendChild(el('small', '', 'Everything in this box is on the TV at the same time.'));
         return c;
       }
       function paint(focusIdx) {
         list.innerHTML = '';
         it.points.forEach(function (_, i) { list.appendChild(card(i)); });
-        var add = el('button', 'addpt', '+ Add a point');
+        var add = el('button', 'addpt', '+ Add a screen');
         add.onclick = function () { it.points.push(''); touched(); paint(it.points.length - 1); };
         list.appendChild(add);
         paintItemPreview(it);
