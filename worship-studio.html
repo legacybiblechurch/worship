@@ -125,6 +125,8 @@
     .pv-line.here { color: var(--gold); font-weight: 600; }
     .here-word { color: var(--gold); font-weight: 600; border-bottom: 2px solid var(--gold); }
     .pt-warn { color: var(--warn); }
+    .pt-tag { color: var(--gold); }
+    .pt-tag em { font-style: normal; color: var(--ink-faint); font-weight: 500; letter-spacing: 0; text-transform: none; margin-left: 6px; }
     .pt-name { width: 160px !important; min-height: 0 !important; padding: 4px 8px !important; font-size: 12px !important; letter-spacing: 0; text-transform: none; font-weight: 500; }
     .pane-head .mode { margin-left: auto; padding: 4px 10px; font-size: 11.5px; letter-spacing: 0; text-transform: none; font-weight: 500; }
     /* sermon: one card per slide */
@@ -282,7 +284,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=21"></script>
+  <script src="js/sheet.js?v=22"></script>
   <script>
   (function () {
     'use strict';
@@ -943,9 +945,9 @@
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
             (asText
-              ? '<div class="pane-head">Words<span class="hint">a blank line starts a new screen &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit screen by screen</button></div>' +
+              ? '<div class="pane-head">Words<span class="hint">a blank line starts a new slide &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
-              : '<div class="pane-head">Screens<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
+              : '<div class="pane-head">Slides<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
                 '<div class="points" id="cards"></div>') +
           '</div>' +
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
@@ -987,7 +989,7 @@
       s.lyrics.forEach(function (b, i) {
         var c = el('div', 'pt'); c.dataset.block = i;
         var h = el('div', 'pt-head');
-        h.appendChild(el('span', '', 'Screen ' + (i + 1)));
+        h.appendChild(el('span', '', 'Slide ' + (i + 1)));
         var name = document.createElement('input'); name.value = b.label || ''; name.placeholder = 'Verse 1, Chorus…'; name.className = 'pt-name';
         name.oninput = function () { b.label = name.value.trim(); changed(); paintPreview(s); };
         h.appendChild(name); h.appendChild(el('span', 'sp', ''));
@@ -997,7 +999,7 @@
         rm.onclick = function () { s.lyrics.splice(i, 1); changed(); paintPreview(s); paintCards(slug, s, changed, Math.min(i, s.lyrics.length - 1)); };
         h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
         var ta = document.createElement('textarea'); ta.value = (b.lines || []).join('\n'); ta.rows = Math.max(2, (b.lines || []).length + 1);
-        ta.placeholder = 'The words on this screen';
+        ta.placeholder = 'The words on this slide';
         function here() {
           var before = ta.value.slice(0, ta.selectionStart).replace(/\r/g, ''), rows = before.split('\n');
           var li = rows.slice(0, -1).filter(function (l) { return l.trim(); }).length;     // typed lines above, blanks skipped
@@ -1005,7 +1007,7 @@
           var wi = !toks.length ? 0 : /\s$/.test(cur) ? toks.length : toks.length - 1;
           lightWord(s, i, li, wi); markHere('.pt', i);
           var warn = c.querySelector('.pt-warn'), nSlides = S.buildSlides([b]).length;
-          warn.textContent = nSlides > 1 ? 'Too many lines to fit on the TV at once. It will split into ' + nSlides + '. Add a screen and move some lines down.' : '';
+          warn.textContent = nSlides > 1 ? 'Too many lines to fit on the TV at once. It will split into ' + nSlides + '. Add a slide and move some lines down.' : '';
         }
         ta.oninput = function () { b.lines = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean); changed(); paintPreview(s); here(); };
         ['click', 'keyup', 'focus'].forEach(function (ev) { ta.addEventListener(ev, here); });
@@ -1013,7 +1015,7 @@
         c.appendChild(el('small', 'pt-warn', ''));
         list.appendChild(c);
       });
-      var add = el('button', 'addpt', '+ Add a screen');
+      var add = el('button', 'addpt', '+ Add a slide');
       add.onclick = function () { s.lyrics.push({ label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, s.lyrics.length - 1); };
       list.appendChild(add);
       if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
@@ -1107,7 +1109,7 @@
       pv.innerHTML = '';
       slides.forEach(function (sl, si) {
         var d = el('div', 'pv'); d.dataset.block = si;
-        if (sl.kicker) d.appendChild(el('div', 'pv-kicker', sl.kicker));
+        if (sl.kicker) d.appendChild(el('div', 'pv-kicker', (sl.pointName ? sl.pointName + ' · ' : '') + sl.kicker));
         else if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
         sl.lines.forEach(function (line) { var ln = el('div', 'pv-line', ''); if (sl.rich) ln.innerHTML = S.markup(line); else ln.textContent = line; d.appendChild(ln); });
         if (sl.cue) d.appendChild(el('div', 'pv-cue', sl.cue));
@@ -1216,9 +1218,23 @@
       th.onfocus = function () { markHere('.pv', it.thesis ? 1 : -1); };
       var list = document.getElementById('points');
       function slideOf(i) { return 1 + (it.thesis ? 1 : 0) + i; }
+      // what to call each card, read off its first line: "1." -> Point 1, "a." -> Point 1a,
+      // anything else (a verse, a quote) belongs to the point before it
+      function pointName(i) {
+        var num = '', name = 'Intro';
+        for (var k = 0; k <= i; k++) {
+          var first = String(it.points[k] || '').split('\n')[0].trim(), m;
+          if ((m = first.match(/^(\d+)[.)]/))) { num = m[1]; name = 'Point ' + num; }
+          else if (num && (m = first.match(/^([a-h])[.)]\s/i))) { name = 'Point ' + num + m[1].toLowerCase(); }
+          else if (num) { name = 'Point ' + num + ' · verse'; }
+          else name = 'Intro';
+        }
+        return name;
+      }
+      function renameCards() { list.querySelectorAll('.pt').forEach(function (c, i) { var t = c.querySelector('.pt-tag'); if (t) t.innerHTML = pointName(i) + ' <em>slide ' + (slideOf(i) + 1) + '</em>'; }); }
       function card(i) {
         var c = el('div', 'pt'); c.dataset.block = i;
-        var h = el('div', 'pt-head'); h.appendChild(el('span', '', 'Screen ' + (slideOf(i) + 1)));
+        var h = el('div', 'pt-head'); var tag = el('span', 'pt-tag', ''); tag.innerHTML = pointName(i) + ' <em>slide ' + (slideOf(i) + 1) + '</em>'; h.appendChild(tag);
         h.appendChild(el('span', 'sp', ''));
         var up = el('button', '', '▲'), dn = el('button', '', '▼'), rm = el('button', '', 'Remove');
         up.title = 'Move up'; dn.title = 'Move down';
@@ -1228,7 +1244,7 @@
         h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
         var ta = document.createElement('textarea'); ta.value = it.points[i]; ta.rows = Math.max(2, it.points[i].split('\n').length);
         ta.placeholder = '1. REMEMBER the imminent return of Christ (7a), therefore . . .';
-        ta.oninput = function () { it.points[i] = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); touched(); paintItemPreview(it); markHere('.pv', slideOf(i)); markHere('.pt', i); };
+        ta.oninput = function () { it.points[i] = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); touched(); paintItemPreview(it); markHere('.pv', slideOf(i)); markHere('.pt', i); renameCards(); };
         ta.onfocus = function () { markHere('.pv', slideOf(i)); markHere('.pt', i); };
         c.appendChild(ta);
         c.appendChild(el('small', '', 'Everything in this box is on the TV at the same time.'));
@@ -1237,7 +1253,7 @@
       function paint(focusIdx) {
         list.innerHTML = '';
         it.points.forEach(function (_, i) { list.appendChild(card(i)); });
-        var add = el('button', 'addpt', '+ Add a screen');
+        var add = el('button', 'addpt', '+ Add a slide');
         add.onclick = function () { it.points.push(''); touched(); paint(it.points.length - 1); };
         list.appendChild(add);
         paintItemPreview(it);
@@ -1254,7 +1270,7 @@
       main.innerHTML = head() +
         '<div class="panes"><div class="pane">' +
           '<div class="fields"><label>Title</label><input id="wTitle"><div class="note">What the TV shows during the Table, like the words from 1 Corinthians 11. Type it once and it stays. Next Sunday it is already here.</div></div>' +
-          '<div class="pane-head">Words<span class="hint">a blank line starts a new screen</span></div>' +
+          '<div class="pane-head">Words<span class="hint">a blank line starts a new slide</span></div>' +
           '<textarea class="box" id="wBox" spellcheck="true" placeholder="This is My body, which is for you…"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = w.title || it.id;

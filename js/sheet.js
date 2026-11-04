@@ -268,12 +268,17 @@
   function buildSermonSlides(it) {
     var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'] }];
     if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: splitLine(String(it.thesis).trim(), 56), rich: true });
+    var num = '', name = 'Intro';
     (it.points || []).forEach(function (p, i) {
       var ls = String(p).split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
       if (!ls.length) return;
+      var m;
+      if ((m = ls[0].match(/^(\d+)[.)]/))) { num = m[1]; name = 'Point ' + num; }
+      else if (num && (m = ls[0].match(/^([a-h])[.)]\s/i))) { name = 'Point ' + num + m[1].toLowerCase(); }
+      else if (num) { name = 'Point ' + num + ' · verse'; }
       var lines = [];
       ls.forEach(function (l) { lines = lines.concat(splitLine(l, 56)); });
-      slides.push({ label: 'Point ' + (i + 1), kicker: it.title || '', lines: lines, rich: true });
+      slides.push({ label: name, pointName: name, kicker: it.title || '', lines: lines, rich: true });
     });
     return slides;
   }
