@@ -58,7 +58,7 @@ Only for testing. The hand-off address has none.
 
 ## Song audio (not this page)
 
-Plan: a small USB mixer between the iPad and the room. The shirt mic receiver into one channel, the laptop's audio into another, one USB feed to the iPad. The laptop plays to the TV and the mixer at once through a Multi-Output Device in Audio MIDI Setup. During songs pull the shirt mic fader down so the TV does not echo through it.
+Done without a mixer (2026-11-04): OBS has a **Songs** scene that is Service minus the mic. During singing Marco clicks Songs and the stream hears Chrome's clean recording; Service brings the mic back. A USB mixer is only worth buying if a physical fader is wanted later.
 
 Not tested yet: whether PRISM on the iPad accepts the mixer as its audio input.
 

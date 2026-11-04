@@ -8,15 +8,16 @@ This file is the one-time build. About half an hour.
 
 In this repo, `obs/`:
 
-- `Legacy_Stream.json` — the scene collection. Two scenes:
-  - **Service**: Camera, the green lyrics window keyed out, the shirt mic, Chrome's audio (the songs).
+- `Legacy_Stream.json` — the scene collection. Three scenes:
+  - **Service**: Camera, the green lyrics window keyed out, the shirt mic, Chrome's audio (the songs). The only scene with the mic.
+  - **Songs**: the same without the mic. During singing the stream hears Chrome's clean recording instead of the TV echoing through the shirt mic.
   - **Video**: the QuickTime window and QuickTime's audio. No mic, so the room's copy of the video never echoes under the stream's.
 - `profile/basic.ini` — 1080p, 30 fps, Apple hardware encoder, 4500 kbps.
 - `profile/service.json` — YouTube, no key (you add the account).
 
 On any Mac: Scene Collection → Import → `obs/Legacy_Stream.json`, then Profile → Import → `obs/profile`.
 
-**The church's media laptop is Windows.** Its files are in `obs/windows/`: the same two scenes with Windows sources (DirectShow camera, Windows window capture, WASAPI mic, Application Audio Capture for Chrome, Display Capture for the TV, desktop audio for a video) and a profile with the x264 software encoder at 720p so a laptop without a graphics card keeps up. The Windows build is its own section below. The Mac steps are kept for the Mac.
+**The church's media laptop is Windows.** Its files are in `obs/windows/`: the same three scenes with Windows sources (DirectShow camera, Windows window capture, WASAPI mic, Application Audio Capture for Chrome, Display Capture for the TV, desktop audio for a video) and a profile with the x264 software encoder at 720p so a laptop without a graphics card keeps up. The Windows build is its own section below. The Mac steps are kept for the Mac.
 
 ## On the Windows laptop (the church's media laptop)
 
