@@ -122,6 +122,9 @@
     .pv-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
     .pv-cue { font-size: 13px; color: var(--ink-faint); font-style: italic; }
     .pv.here { border-color: var(--gold); background: rgba(201,168,76,0.09); }
+    .pv-line.here { color: var(--gold); font-weight: 600; }
+    .pt-name { width: 160px !important; min-height: 0 !important; padding: 4px 8px !important; font-size: 12px !important; letter-spacing: 0; text-transform: none; font-weight: 500; }
+    .pane-head .mode { margin-left: auto; padding: 4px 10px; font-size: 11.5px; letter-spacing: 0; text-transform: none; font-weight: 500; }
     /* sermon: one card per slide */
     .points { flex: 1; overflow-y: auto; padding: 12px 16px 24px; }
     .pt { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px 12px; margin-bottom: 10px; background: var(--panel); }
@@ -923,8 +926,10 @@
       var bl = document.getElementById('blankBtn'); if (bl) bl.onclick = function () { useBlank(slug); };
     }
 
+    var textMode = {};   // slug -> true while the song is being edited as one block of text
     function renderEditor(slug) {
       var main = document.getElementById('main'), s = songOf(slug), vid = S.videoId(s.youtube);
+      var asText = !!textMode[slug] || !(s.lyrics && s.lyrics.length);   // a brand-new song starts as a paste box
       main.innerHTML =
         '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
           '<span class="save-state" id="saveState"></span>' +
@@ -935,8 +940,11 @@
             '<div class="video-strip">' +
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
-            '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span></div>' +
-            '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>' +
+            (asText
+              ? '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
+                '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
+              : '<div class="pane-head">Slides<span class="hint">one card = what the church sees</span><button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
+                '<div class="points" id="cards"></div>') +
           '</div>' +
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
         '</div>';
@@ -944,42 +952,91 @@
       var vidIn = document.getElementById('vidInput');
       vidIn.value = s.youtube || '';
       vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
-      var box = document.getElementById('lyricBox');
-      box.value = S.blocksToText(s.lyrics);
-      box.oninput = function () {
-        s.lyrics = S.textToBlocks(box.value); dirty[slug] = true;
-        paintPreview(s); paintSaveState(); followCaret(box, s);
+      document.getElementById('modeBtn').onclick = function () { textMode[slug] = !asText; renderEditor(slug); };
+      document.getElementById('saveBtn').onclick = function () { saveSong(slug); };
+      function changed() {
+        dirty[slug] = true; paintSaveState();
         var active = document.querySelector('.song-row.active');
         if (active && !active.querySelector('.unsaved')) renderRail();
-      };
-      ['click', 'keyup', 'focus'].forEach(function (ev) { box.addEventListener(ev, function () { followCaret(box, s); }); });
-      document.getElementById('saveBtn').onclick = function () { saveSong(slug); };
+      }
+      if (asText) {
+        var box = document.getElementById('lyricBox');
+        box.value = S.blocksToText(s.lyrics);
+        box.oninput = function () { s.lyrics = S.textToBlocks(box.value); changed(); paintPreview(s); followCaret(box, s); };
+        ['click', 'keyup', 'focus'].forEach(function (ev) { box.addEventListener(ev, function () { followCaret(box, s); }); });
+      } else {
+        paintCards(slug, s, changed);
+      }
       paintPreview(s); paintSaveState();
+    }
+    // the song as cards: one card per slide, with its name and its lines
+    function paintCards(slug, s, changed, focusIdx) {
+      var list = document.getElementById('cards'); if (!list) return;
+      list.innerHTML = '';
+      s.lyrics.forEach(function (b, i) {
+        var c = el('div', 'pt'); c.dataset.block = i;
+        var h = el('div', 'pt-head');
+        var name = document.createElement('input'); name.value = b.label || ''; name.placeholder = 'Verse 1, Chorus…'; name.className = 'pt-name';
+        name.oninput = function () { b.label = name.value.trim(); changed(); paintPreview(s); };
+        h.appendChild(name); h.appendChild(el('span', 'sp', ''));
+        var up = el('button', '', '▲'), dn = el('button', '', '▼'), rm = el('button', '', 'Remove');
+        up.onclick = function () { if (i > 0) { s.lyrics.splice(i - 1, 0, s.lyrics.splice(i, 1)[0]); changed(); paintPreview(s); paintCards(slug, s, changed, i - 1); } };
+        dn.onclick = function () { if (i < s.lyrics.length - 1) { s.lyrics.splice(i + 1, 0, s.lyrics.splice(i, 1)[0]); changed(); paintPreview(s); paintCards(slug, s, changed, i + 1); } };
+        rm.onclick = function () { s.lyrics.splice(i, 1); changed(); paintPreview(s); paintCards(slug, s, changed, Math.min(i, s.lyrics.length - 1)); };
+        h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
+        var ta = document.createElement('textarea'); ta.value = (b.lines || []).join('\n'); ta.rows = Math.max(2, (b.lines || []).length + 1);
+        ta.placeholder = 'The lines of this slide';
+        function here() { lightLine(s, i, ta.value.slice(0, ta.selectionStart).split('\n').length - 1); markHere('.pt', i); }
+        ta.oninput = function () { b.lines = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean); changed(); paintPreview(s); here(); };
+        ['click', 'keyup', 'focus'].forEach(function (ev) { ta.addEventListener(ev, here); });
+        c.appendChild(ta);
+        list.appendChild(c);
+      });
+      var add = el('button', 'addpt', '+ Add a slide');
+      add.onclick = function () { s.lyrics.push({ label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, s.lyrics.length - 1); };
+      list.appendChild(add);
+      if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
     }
     function paintPreview(s) {
       var pv = document.getElementById('preview'), n = 0;
       pv.innerHTML = '';
-      // one block of text can become more than one slide; remember which block each slide came from
-      S.tidyBlocks(s.lyrics).forEach(function (block, bi) {
+      // one card can become more than one slide on the TV (long ones split), and one
+      // typed line can wrap into two. Tag every shown line with the card and the typed line it came from.
+      (s.lyrics || []).forEach(function (block, bi) {
+        var src = [];   // shown line -> typed line
+        (block.lines || []).forEach(function (l, li) { if (String(l).trim()) S.splitLine(String(l).trim()).forEach(function () { src.push(li); }); });
+        var k = 0;
         S.buildSlides([block]).forEach(function (sl) {
           var d = el('div', 'pv'); d.dataset.block = bi;
           if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
-          sl.lines.forEach(function (line) { d.appendChild(el('div', 'pv-line', line)); });
+          sl.lines.forEach(function (line) { var ln = el('div', 'pv-line', line); ln.dataset.block = bi; ln.dataset.src = src[k++]; d.appendChild(ln); });
           pv.appendChild(d); n++;
         });
       });
       document.getElementById('pvCount').textContent = n ? n + (n === 1 ? ' slide' : ' slides') : '';
     }
-    // which block of the words box the caret is in -> light up that slide on the right
+    // light the one line on the right that the cursor is on
+    function lightLine(s, bi, li) {
+      var first = null;
+      document.querySelectorAll('.pv-line').forEach(function (d) {
+        var on = +d.dataset.block === bi && +d.dataset.src === li;
+        d.classList.toggle('here', on); if (on && !first) first = d;
+      });
+      document.querySelectorAll('.pv').forEach(function (d) { d.classList.toggle('here', false); });
+      if (first) first.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    // which block and line of the big words box the caret is in
     function followCaret(box, s) {
       var before = box.value.slice(0, box.selectionStart).replace(/\r/g, '');
-      var chunks = before.split(/\n\s*\n/), bi = -1;
+      var chunks = before.split(/\n\s*\n/), bi = -1, li = 0;
       chunks.forEach(function (c, i) {
-        var lines = c.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
-        if (i < chunks.length - 1) { if (lines.length && !(lines.length === 1 && /^\[.*\]$/.test(lines[0]))) bi++; }
-        else bi++;   // the chunk the caret is in, even while it is still empty
+        var lines = c.split('\n');
+        var real = lines.map(function (l) { return l.trim(); }).filter(Boolean);
+        var labelled = real.length && /^\[.*\]$/.test(real[0]);
+        if (i < chunks.length - 1) { if (real.length && !(real.length === 1 && labelled)) bi++; }
+        else { bi++; li = Math.max(0, real.length - (labelled ? 1 : 0) - 1); if (/\n\s*$/.test(c) || !c.trim()) li = Math.max(0, real.length - (labelled ? 1 : 0)); }
       });
-      markHere('.pv', bi);
+      lightLine(s, bi, li);
     }
     function markHere(sel, idx) {
       var first = null;
