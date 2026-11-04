@@ -963,7 +963,11 @@
       }
       if (!asText) {
         // one card = one slide on the TV, exactly: split anything the TV would split itself
-        var one = S.buildSlides(s.lyrics).map(function (sl) { return { label: sl.label || '', lines: sl.lines.slice() }; });
+        var one = s.lyrics, guard = 0;
+        do {
+          var next = S.buildSlides(one).map(function (sl) { return { label: sl.label || '', lines: sl.lines.slice() }; });
+          var same = JSON.stringify(next) === JSON.stringify(one); one = next;
+        } while (!same && ++guard < 6);          // a chunk can re-split once its own line lengths are measured; settle it
         if (JSON.stringify(one) !== JSON.stringify(s.lyrics)) { s.lyrics = one; }
       }
       if (asText) {
