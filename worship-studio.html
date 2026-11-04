@@ -943,7 +943,7 @@
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
             (asText
-              ? '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span><button class="btn quiet mode" id="modeBtn">Edit screen by screen</button></div>' +
+              ? '<div class="pane-head">Words<span class="hint">a blank line starts a new screen &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit screen by screen</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
               : '<div class="pane-head">Screens<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
                 '<div class="points" id="cards"></div>') +
@@ -1254,7 +1254,7 @@
       main.innerHTML = head() +
         '<div class="panes"><div class="pane">' +
           '<div class="fields"><label>Title</label><input id="wTitle"><div class="note">What the TV shows during the Table, like the words from 1 Corinthians 11. Type it once and it stays. Next Sunday it is already here.</div></div>' +
-          '<div class="pane-head">Words<span class="hint">blank line = new slide</span></div>' +
+          '<div class="pane-head">Words<span class="hint">a blank line starts a new screen</span></div>' +
           '<textarea class="box" id="wBox" spellcheck="true" placeholder="This is My body, which is for you…"></textarea>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = w.title || it.id;
