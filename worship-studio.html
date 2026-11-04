@@ -121,6 +121,21 @@
     .pv-line { font-size: 14px; }
     .pv-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
     .pv-cue { font-size: 13px; color: var(--ink-faint); font-style: italic; }
+    .pv.here { border-color: var(--gold); background: rgba(201,168,76,0.09); }
+    /* sermon: one card per slide */
+    .points { flex: 1; overflow-y: auto; padding: 12px 16px 24px; }
+    .pt { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px 12px; margin-bottom: 10px; background: var(--panel); }
+    .pt.here { border-color: var(--gold); }
+    .pt-head { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); }
+    .pt-head .sp { flex: 1; }
+    .pt-head button { font: inherit; font-size: 11px; letter-spacing: 0; text-transform: none; font-weight: 500; background: none; border: 1px solid var(--line); color: var(--ink-dim); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+    .pt-head button:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .pt textarea, .pt input { width: 100%; font: inherit; font-size: 14px; line-height: 1.55; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; resize: vertical; min-height: 60px; }
+    .pt input { min-height: 0; }
+    .pt textarea:focus, .pt input:focus { outline: none; border-color: var(--ink-faint); }
+    .pt small { display: block; color: var(--ink-faint); font-size: 11.5px; margin-top: 6px; }
+    .addpt { width: 100%; font: inherit; font-size: 13.5px; font-weight: 600; background: none; border: 1px dashed var(--line); color: var(--ink-dim); border-radius: 8px; padding: 12px; cursor: pointer; }
+    .addpt:hover { color: var(--ink); border-color: var(--ink-faint); }
 
     /* the order of service: every kind of item */
     .song-row .ty { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); flex-shrink: 0; min-width: 46px; }
@@ -129,6 +144,8 @@
     .add-row button:hover { color: var(--ink); border-color: var(--ink-faint); }
     .fields { padding: 12px 16px; border-bottom: 1px solid var(--line-soft); display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
     .fields label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); }
+    .fields textarea { width: 100%; font: inherit; font-size: 14px; line-height: 1.5; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 9px 11px; resize: vertical; }
+    .fields textarea:focus { outline: none; border-color: var(--ink-faint); }
     .fields input, .fields select { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 9px 11px; }
     .fields input:focus, .fields select:focus { outline: none; border-color: var(--ink-faint); }
     /* keys look hidden without being password fields, so Chrome never offers to save them as logins */
@@ -260,7 +277,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=20"></script>
+  <script src="js/sheet.js?v=21"></script>
   <script>
   (function () {
     'use strict';
@@ -931,23 +948,47 @@
       box.value = S.blocksToText(s.lyrics);
       box.oninput = function () {
         s.lyrics = S.textToBlocks(box.value); dirty[slug] = true;
-        paintPreview(s); paintSaveState();
+        paintPreview(s); paintSaveState(); followCaret(box, s);
         var active = document.querySelector('.song-row.active');
         if (active && !active.querySelector('.unsaved')) renderRail();
       };
+      ['click', 'keyup', 'focus'].forEach(function (ev) { box.addEventListener(ev, function () { followCaret(box, s); }); });
       document.getElementById('saveBtn').onclick = function () { saveSong(slug); };
       paintPreview(s); paintSaveState();
     }
     function paintPreview(s) {
-      var slides = S.buildSlides(s.lyrics), pv = document.getElementById('preview');
+      var pv = document.getElementById('preview'), n = 0;
       pv.innerHTML = '';
-      slides.forEach(function (sl) {
-        var d = el('div', 'pv');
-        if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
-        sl.lines.forEach(function (line) { d.appendChild(el('div', 'pv-line', line)); });
-        pv.appendChild(d);
+      // one block of text can become more than one slide; remember which block each slide came from
+      S.tidyBlocks(s.lyrics).forEach(function (block, bi) {
+        S.buildSlides([block]).forEach(function (sl) {
+          var d = el('div', 'pv'); d.dataset.block = bi;
+          if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
+          sl.lines.forEach(function (line) { d.appendChild(el('div', 'pv-line', line)); });
+          pv.appendChild(d); n++;
+        });
       });
-      document.getElementById('pvCount').textContent = slides.length ? slides.length + (slides.length === 1 ? ' slide' : ' slides') : '';
+      document.getElementById('pvCount').textContent = n ? n + (n === 1 ? ' slide' : ' slides') : '';
+    }
+    // which block of the words box the caret is in -> light up that slide on the right
+    function followCaret(box, s) {
+      var before = box.value.slice(0, box.selectionStart).replace(/\r/g, '');
+      var chunks = before.split(/\n\s*\n/), bi = -1;
+      chunks.forEach(function (c, i) {
+        var lines = c.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+        if (i < chunks.length - 1) { if (lines.length && !(lines.length === 1 && /^\[.*\]$/.test(lines[0]))) bi++; }
+        else bi++;   // the chunk the caret is in, even while it is still empty
+      });
+      markHere('.pv', bi);
+    }
+    function markHere(sel, idx) {
+      var first = null;
+      document.querySelectorAll(sel).forEach(function (d) {
+        var on = +d.dataset.block === idx;
+        d.classList.toggle('here', on);
+        if (on && !first) first = d;
+      });
+      if (first) first.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
     function paintSaveState() {
       var e = document.getElementById('saveState'); if (!e) return;
@@ -962,8 +1003,8 @@
       var pv = document.getElementById('preview'); if (!pv) return;
       var slides = S.buildItem(plain(it)).slides;
       pv.innerHTML = '';
-      slides.forEach(function (sl) {
-        var d = el('div', 'pv');
+      slides.forEach(function (sl, si) {
+        var d = el('div', 'pv'); d.dataset.block = si;
         if (sl.kicker) d.appendChild(el('div', 'pv-kicker', sl.kicker));
         else if (sl.label) d.appendChild(el('div', 'pv-label', sl.label));
         sl.lines.forEach(function (line) { var ln = el('div', 'pv-line', ''); if (sl.rich) ln.innerHTML = S.markup(line); else ln.textContent = line; d.appendChild(ln); });
@@ -1051,22 +1092,56 @@
 
     function renderSermon(it) {
       var main = document.getElementById('main');
+      if (!Array.isArray(it.points)) it.points = [];
+      // older sermons kept the so-that sentence as the first point; lift it out once
+      if (!it.thesis && it.points.length && /so that/i.test(it.points[0]) && !/^\s*(\d+|[a-z])[.)]/.test(it.points[0])) it.thesis = it.points.shift();
       main.innerHTML = head() +
         '<div class="panes"><div class="pane">' +
           '<div class="fields">' +
             '<label>Title</label><input id="titleIn" placeholder="The sermon’s title">' +
-            '<label>Passage</label><input id="passIn" placeholder="Psalm 24:1-10" spellcheck="false">' +
+            '<label>Passage</label><input id="passIn" placeholder="1 Peter 4:7-11" spellcheck="false">' +
+            '<label>So that</label><textarea id="thesisIn" rows="2" placeholder="In preparation for the soon-coming end, pray, love, and serve so that God will be glorified."></textarea>' +
           '</div>' +
-          '<div class="pane-head">Points<span class="hint">blank line = new slide. Lines without a blank between them share a slide</span></div>' +
-          '<textarea class="box" id="pointBox" placeholder="The earth belongs to the Lord&#10;Who may ascend His hill?&#10;The King of glory comes in"></textarea>' +
+          '<div class="pane-head">Points<span class="hint">one card = one slide on the TV. Words in CAPITALS come out underlined</span></div>' +
+          '<div class="points" id="points"></div>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
-      var t = document.getElementById('titleIn'), p = document.getElementById('passIn'), box = document.getElementById('pointBox');
-      t.value = it.title || ''; p.value = it.passage || ''; box.value = (it.points || []).join('\n\n');
+      var t = document.getElementById('titleIn'), p = document.getElementById('passIn'), th = document.getElementById('thesisIn');
+      t.value = it.title || ''; p.value = it.passage || ''; th.value = it.thesis || '';
       t.oninput = function () { it.title = t.value.trim(); main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : ''); touched(); paintItemPreview(it); };
       p.oninput = function () { it.passage = p.value.trim(); touched(); paintItemPreview(it); };
-      box.oninput = function () { it.points = box.value.replace(/\r/g, '').split(/\n\s*\n/).map(function (g) { return g.split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); }).filter(Boolean); touched(); paintItemPreview(it); };
-      paintItemPreview(it);
+      th.oninput = function () { it.thesis = th.value.replace(/\s+/g, ' ').trim(); touched(); paintItemPreview(it); markHere('.pv', 1); };
+      th.onfocus = function () { markHere('.pv', it.thesis ? 1 : -1); };
+      var list = document.getElementById('points');
+      function slideOf(i) { return 1 + (it.thesis ? 1 : 0) + i; }
+      function card(i) {
+        var c = el('div', 'pt'); c.dataset.block = i;
+        var h = el('div', 'pt-head'); h.appendChild(el('span', '', 'Slide ' + (slideOf(i) + 1)));
+        h.appendChild(el('span', 'sp', ''));
+        var up = el('button', '', '▲'), dn = el('button', '', '▼'), rm = el('button', '', 'Remove');
+        up.title = 'Move up'; dn.title = 'Move down';
+        up.onclick = function () { if (i > 0) { var x = it.points[i - 1]; it.points[i - 1] = it.points[i]; it.points[i] = x; touched(); paint(i - 1); } };
+        dn.onclick = function () { if (i < it.points.length - 1) { var x = it.points[i + 1]; it.points[i + 1] = it.points[i]; it.points[i] = x; touched(); paint(i + 1); } };
+        rm.onclick = function () { it.points.splice(i, 1); touched(); paint(Math.min(i, it.points.length - 1)); };
+        h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
+        var ta = document.createElement('textarea'); ta.value = it.points[i]; ta.rows = Math.max(2, it.points[i].split('\n').length);
+        ta.placeholder = '1. REMEMBER the imminent return of Christ (7a), therefore . . .';
+        ta.oninput = function () { it.points[i] = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean).join('\n'); touched(); paintItemPreview(it); markHere('.pv', slideOf(i)); markHere('.pt', i); };
+        ta.onfocus = function () { markHere('.pv', slideOf(i)); markHere('.pt', i); };
+        c.appendChild(ta);
+        c.appendChild(el('small', '', 'The point on the first line. A verse or a sub-point (a., b.) on the lines under it stays on the same slide.'));
+        return c;
+      }
+      function paint(focusIdx) {
+        list.innerHTML = '';
+        it.points.forEach(function (_, i) { list.appendChild(card(i)); });
+        var add = el('button', 'addpt', '+ Add a point');
+        add.onclick = function () { it.points.push(''); touched(); paint(it.points.length - 1); };
+        list.appendChild(add);
+        paintItemPreview(it);
+        if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
+      }
+      paint();
       if (!it.title) setTimeout(function () { t.focus(); }, 30);
     }
 

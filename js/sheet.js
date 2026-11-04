@@ -267,6 +267,7 @@
   // a point may hold several lines (a heading and its verse); they stay on one slide
   function buildSermonSlides(it) {
     var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'] }];
+    if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: splitLine(String(it.thesis).trim(), 56), rich: true });
     (it.points || []).forEach(function (p, i) {
       var ls = String(p).split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
       if (!ls.length) return;
