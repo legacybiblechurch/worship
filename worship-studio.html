@@ -123,6 +123,8 @@
     .pv-cue { font-size: 13px; color: var(--ink-faint); font-style: italic; }
     .pv.here { border-color: var(--gold); background: rgba(201,168,76,0.09); }
     .pv-line.here { color: var(--gold); font-weight: 600; }
+    .here-word { color: var(--gold); font-weight: 600; border-bottom: 2px solid var(--gold); }
+    .pt-warn { color: var(--warn); }
     .pt-name { width: 160px !important; min-height: 0 !important; padding: 4px 8px !important; font-size: 12px !important; letter-spacing: 0; text-transform: none; font-weight: 500; }
     .pane-head .mode { margin-left: auto; padding: 4px 10px; font-size: 11.5px; letter-spacing: 0; text-transform: none; font-weight: 500; }
     /* sermon: one card per slide */
@@ -943,7 +945,7 @@
             (asText
               ? '<div class="pane-head">Words<span class="hint">blank line = new slide &nbsp;·&nbsp; [Chorus] names a slide</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
-              : '<div class="pane-head">Slides<span class="hint">one card = what the church sees</span><button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
+              : '<div class="pane-head">Slides<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
                 '<div class="points" id="cards"></div>') +
           '</div>' +
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
@@ -958,6 +960,11 @@
         dirty[slug] = true; paintSaveState();
         var active = document.querySelector('.song-row.active');
         if (active && !active.querySelector('.unsaved')) renderRail();
+      }
+      if (!asText) {
+        // one card = one slide on the TV, exactly: split anything the TV would split itself
+        var one = S.buildSlides(s.lyrics).map(function (sl) { return { label: sl.label || '', lines: sl.lines.slice() }; });
+        if (JSON.stringify(one) !== JSON.stringify(s.lyrics)) { s.lyrics = one; }
       }
       if (asText) {
         var box = document.getElementById('lyricBox');
@@ -986,10 +993,19 @@
         h.appendChild(up); h.appendChild(dn); h.appendChild(rm); c.appendChild(h);
         var ta = document.createElement('textarea'); ta.value = (b.lines || []).join('\n'); ta.rows = Math.max(2, (b.lines || []).length + 1);
         ta.placeholder = 'The lines of this slide';
-        function here() { lightLine(s, i, ta.value.slice(0, ta.selectionStart).split('\n').length - 1); markHere('.pt', i); }
+        function here() {
+          var before = ta.value.slice(0, ta.selectionStart).replace(/\r/g, ''), rows = before.split('\n');
+          var li = rows.slice(0, -1).filter(function (l) { return l.trim(); }).length;     // typed lines above, blanks skipped
+          var cur = rows[rows.length - 1], toks = cur.trim() ? cur.trimStart().split(/\s+/) : [];
+          var wi = !toks.length ? 0 : /\s$/.test(cur) ? toks.length : toks.length - 1;
+          lightWord(s, i, li, wi); markHere('.pt', i);
+          var warn = c.querySelector('.pt-warn'), nSlides = S.buildSlides([b]).length;
+          warn.textContent = nSlides > 1 ? 'Too many lines for one screen: the TV will split this into ' + nSlides + '. Add a slide and move some lines down.' : '';
+        }
         ta.oninput = function () { b.lines = ta.value.replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); }).filter(Boolean); changed(); paintPreview(s); here(); };
         ['click', 'keyup', 'focus'].forEach(function (ev) { ta.addEventListener(ev, here); });
         c.appendChild(ta);
+        c.appendChild(el('small', 'pt-warn', ''));
         list.appendChild(c);
       });
       var add = el('button', 'addpt', '+ Add a slide');
@@ -1014,6 +1030,30 @@
         });
       });
       document.getElementById('pvCount').textContent = n ? n + (n === 1 ? ' slide' : ' slides') : '';
+    }
+    // light the one word on the right that the cursor is on
+    function lightWord(s, bi, li, wi) {
+      var lines = [].filter.call(document.querySelectorAll('.pv-line'), function (d) { return +d.dataset.block === bi && +d.dataset.src === li; });
+      document.querySelectorAll('.pv-line').forEach(function (d) {
+        d.classList.remove('here');
+        if (d.dataset.text != null && lines.indexOf(d) === -1) { d.textContent = d.dataset.text; delete d.dataset.text; }
+      });
+      document.querySelectorAll('.pv').forEach(function (d) { d.classList.remove('here'); });
+      var seen = 0, lit = null;
+      lines.forEach(function (d) {
+        var text = d.dataset.text != null ? d.dataset.text : d.textContent;
+        d.dataset.text = text;
+        var words = text.split(/(\s+)/), html = '', n = 0;
+        words.forEach(function (w) {
+          if (!w || /^\s+$/.test(w)) { html += esc(w); return; }
+          var idx = seen + n; n++;
+          html += (idx === wi) ? '<span class="here-word">' + esc(w) + '</span>' : esc(w);
+        });
+        seen += n;
+        d.innerHTML = html;
+        if (!lit && d.querySelector('.here-word')) lit = d;
+      });
+      if (lit) lit.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
     // light the one line on the right that the cursor is on
     function lightLine(s, bi, li) {
