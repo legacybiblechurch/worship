@@ -58,6 +58,10 @@
     /* only the text fades between slides; the panel behind it stays put, so the
        camera never flashes through mid-song */
     #lines { transition: opacity 0.18s ease; }
+    #lines.prose { text-align: left; width: min(92%, 34ch); margin: 0 auto; }
+    #lines.prose .kicker { text-align: center; }
+    #lines.prose .line { text-wrap: pretty; line-height: 1.32; margin-bottom: 0.45em; font-size: 0.9em; }
+    #lines.prose .vn { font-size: 0.5em; font-weight: 700; color: #C9A84C; vertical-align: 0.55em; margin-right: 0.4em; }
     #lines.swap { opacity: 0; }
 
     /* ?mode=panel  big words on a dark panel in the middle of the picture, the
@@ -207,13 +211,14 @@
       while (h() > limit && size > 10 && n++ < 60) { size *= 0.94; plate.style.fontSize = size + 'px'; }
     }
     function hide() { tok++; cur = ''; plate.classList.remove('on'); lines.classList.remove('swap'); }
-    function show(arr, firstIsKicker, rich) {
+    function show(arr, firstIsKicker, rich, prose) {
       var key = arr.join('\n');
       if (key === cur && plate.classList.contains('on')) return;
       var my = ++tok;
       function swap() {
         if (my !== tok) return;
-        lines.innerHTML = arr.map(function (l, i) { return '<div class="' + (firstIsKicker && i === 0 ? 'kicker' : 'line') + '">' + (rich && !(firstIsKicker && i === 0) ? LBCSheet.markup(l) : esc(l)) + '</div>'; }).join('');
+        lines.classList.toggle('prose', !!prose);
+        lines.innerHTML = arr.map(function (l, i) { var k = firstIsKicker && i === 0; return '<div class="' + (k ? 'kicker' : 'line') + '">' + (k ? esc(l) : prose ? LBCSheet.proseLine(l) : rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; }).join('');
         fit(); cur = key; plate.classList.add('on'); lines.classList.remove('swap');
       }
       // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
@@ -235,8 +240,8 @@
       if (!slide || slide.logo || !slide.lines || !slide.lines.length) return hide();   // a video cue or logo slot: camera
       var wait = layout(THIRD.indexOf(song.type) >= 0);
       var arr = slide.kicker ? [slide.kicker].concat(slide.lines) : slide.lines, my = ++tok;
-      if (wait) setTimeout(function () { if (my === tok) show(arr, !!slide.kicker, !!slide.rich); }, wait);
-      else show(arr, !!slide.kicker, !!slide.rich);
+      if (wait) setTimeout(function () { if (my === tok) show(arr, !!slide.kicker, !!slide.rich, !!slide.prose); }, wait);
+      else show(arr, !!slide.kicker, !!slide.rich, !!slide.prose);
     }
     function handle(d, from, t) {
       if (t) { if (t < lastRelayT) return; lastRelayT = t; }   // never let an older relay message win
@@ -388,7 +393,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=23', function () {
+    load('js/sheet.js?v=24', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

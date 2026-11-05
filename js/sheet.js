@@ -251,15 +251,15 @@
     function flush() {
       if (!cur.length) return;
       var a = nums[0], b = nums[nums.length - 1], range = a === b ? String(a) : a + '-' + b;
-      slides.push({ label: 'v. ' + range, kicker: (base ? base + ':' + range : 'v. ' + range) + (it.version ? ' · ' + it.version : ''), lines: cur });
+      slides.push({ label: 'v. ' + range, kicker: (base ? base + ':' + range : 'v. ' + range) + (it.version ? ' · ' + it.version : ''), lines: cur, prose: true });
       cur = []; nums = []; chars = 0;
     }
+    // one line per verse, whole. The screen wraps it as a paragraph (left-aligned,
+    // measured column) instead of us guessing where the breaks go.
     verses.forEach(function (v) {
       var txt = String(v.text).replace(/\s+/g, ' ').trim();
-      var parts = splitLine(txt, 56);
-      parts[0] = v.n + '  ' + parts[0];
-      if (cur.length && (chars + txt.length > 230 || cur.length + parts.length > 5)) flush();
-      cur = cur.concat(parts); nums.push(v.n); chars += txt.length;
+      if (cur.length && (chars + txt.length > 260 || cur.length >= 3)) flush();
+      cur.push(v.n + ' ' + txt); nums.push(v.n); chars += txt.length;
     });
     flush();
     if (slides.length && it.who && String(it.who).trim()) slides[0].kicker += ' · ' + String(it.who).trim();
@@ -429,6 +429,11 @@
   // sermon lines drawn like the printed worship guide: the KEY WORDS the
   // preacher typed in capitals are underlined, and a. / b. sub-points are indented
   function escHtml(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  // a verse as a paragraph: the number small and gold, the words left to wrap naturally
+  function proseLine(line) {
+    var m = String(line).match(/^(\d+)\s+([\s\S]*)$/);
+    return m ? '<span class="vn">' + m[1] + '</span>' + escHtml(m[2]) : escHtml(line);
+  }
   function markup(line) {
     var t = escHtml(line);
     t = t.replace(/\b([A-Z][A-Z'’-]{2,}[A-Z])\b/g, '<u>$1</u>');
@@ -436,7 +441,7 @@
     return t;
   }
   global.LBCSheet = {
-    markup: markup,
+    markup: markup, proseLine: proseLine,
     ROOM: ROOM,
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, videoId: videoId,

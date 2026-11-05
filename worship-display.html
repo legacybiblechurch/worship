@@ -95,6 +95,11 @@
       line-height: 1.3;
       color: #ffffff;
     }
+    /* a reading: each verse is a paragraph in a measured column, wrapped by the
+       browser evenly, read left to right like a page */
+    .slide-lines.prose { align-items: stretch; text-align: left; width: min(92vw, 34ch); margin: 0 auto; gap: 0.55em; font-size: clamp(26px, 3.6vw, 58px); }
+    .slide-lines.prose .slide-line { font-size: 1em; line-height: 1.34; text-wrap: pretty; }
+    .slide-lines.prose .vn { font-size: 0.5em; font-weight: 600; color: #C9A84C; vertical-align: 0.55em; margin-right: 0.45em; }
 
     /* ── SONG TITLE FOOTER ──────────────────────── */
     #song-title {
@@ -182,7 +187,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=23"></script>
+  <script src="js/sheet.js?v=24"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -251,8 +256,9 @@
         // no "Verse 1 / Chorus" on the congregation's screen - but a reading's
         // reference or a sermon's title does belong there, small and gold
         slideLabel.textContent = slide.kicker || '';
+        slideLines.classList.toggle('prose', !!slide.prose);
         slideLines.innerHTML = slide.lines
-          .map(function(l){ return '<div class="slide-line">' + (slide.rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; })
+          .map(function(l){ return '<div class="slide-line">' + (slide.prose ? LBCSheet.proseLine(l) : slide.rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; })
           .join('');
         songTitle.textContent = song.type === 'song' ? song.title : '';
         slideWrap.classList.add('visible');
