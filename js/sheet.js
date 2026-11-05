@@ -258,7 +258,7 @@
     // measured column) instead of us guessing where the breaks go.
     verses.forEach(function (v) {
       var txt = String(v.text).replace(/\s+/g, ' ').trim();
-      if (cur.length && (chars + txt.length > 260 || cur.length >= 3)) flush();
+      if (cur.length && (chars + txt.length > 210 || cur.length >= 2)) flush();
       cur.push(v.n + ' ' + txt); nums.push(v.n); chars += txt.length;
     });
     flush();
