@@ -86,6 +86,9 @@
     .add-wrap input { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 11px 12px; }
     .add-wrap input:focus { outline: none; border-color: var(--ink-faint); }
     .add-wrap input::placeholder { color: var(--ink-faint); }
+    .swap-wrap { position: relative; display: none; flex: 1; max-width: 420px; }
+    .swap-wrap.open { display: block; }
+    .swap-wrap input { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--gold); border-radius: 8px; padding: 8px 12px; outline: none; }
     .sugg { position: absolute; left: 0; right: 0; top: 100%; margin-top: 4px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; z-index: 20; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; }
     .sugg.show { display: block; }
     .sugg button { display: flex; width: 100%; text-align: left; align-items: center; gap: 9px; background: none; border: 0; color: var(--ink); padding: 10px 12px; cursor: pointer; font-size: 13.5px; border-bottom: 1px solid var(--line-soft); }
@@ -652,7 +655,7 @@
     }
 
     // ───────────────────────────── add a song (autocomplete)
-    function wireAdd(inp, sugg) {
+    function wireAdd(inp, sugg, onPick, onFind) {
       var hi = -1, items = [];
       function paint() {
         var q = inp.value.trim();
@@ -673,7 +676,7 @@
           f.innerHTML = '<span class="find"></span><span class="tag">find it</span>';
           f.firstChild.textContent = 'Find “' + q + '” on YouTube';
           if (hi === items.length) f.classList.add('hi');
-          f.onmousedown = function (e) { e.preventDefault(); findNew(q); };
+          f.onmousedown = function (e) { e.preventDefault(); if (onFind) onFind(q); else findNew(q); };
           sugg.appendChild(f);
         }
         sugg.className = 'sugg show';
@@ -690,15 +693,30 @@
           var q = inp.value.trim(); if (!q) return;
           if (hi >= 0 && sugg.children[hi]) { sugg.children[hi].onmousedown(e); return; }
           var top = S.searchLibrary(q, 1)[0];
-          if (top && top.score >= 80) choose(top.slug, top.title); else findNew(q);
+          if (top && top.score >= 80) choose(top.slug, top.title); else if (onFind) onFind(q); else findNew(q);
         } else if (e.key === 'Escape') { inp.value = ''; paint(); }
       };
       function choose(slug, title) {
         inp.value = ''; sugg.className = 'sugg';
+        if (onPick) { onPick(slug, title); return; }
         if (!hasSong(slug)) addItem({ type: 'song', slug: slug });
         select(slug);
         toast('Added “' + title + '”. It already has its words.', 'ok');
       }
+    }
+    // swap the song in this slot for another, same place in the order
+    function swapSong(it, slug, title) {
+      if (!it || it.type !== 'song') return;
+      it.slug = slug; it.key = 's:' + slug + ':' + (++keyN) + ':' + Date.now().toString(36);
+      persistOrder(); renderRail(); select(slug);
+      toast('Swapped in “' + title + '”.', 'ok');
+    }
+    function swapSongNew(it, name) {
+      if (!it || it.type !== 'song') return;
+      var slug = S.slugify(name); if (!slug) return;
+      it.slug = slug; it.key = 's:' + slug + ':' + (++keyN) + ':' + Date.now().toString(36);
+      persistOrder(); renderRail();
+      findNew(name);          // the slot already holds this slug, so the find fills it rather than adding another
     }
 
     // ───────────────────────────── find a brand-new song (runs the Action)
@@ -948,8 +966,11 @@
       var main = document.getElementById('main'), s = songOf(slug), vid = S.videoId(s.youtube);
       var asText = !!textMode[slug] || !(s.lyrics && s.lyrics.length);   // a brand-new song starts as a paste box
       main.innerHTML =
-        '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
+        '<div class="main-head"><span class="main-title"></span>' +
+          '<span class="swap-wrap" id="swapWrap"><input id="swapIn" placeholder="Type another song’s name" autocomplete="off" spellcheck="false"><div class="sugg" id="swapSugg"></div></span>' +
+          '<div class="main-actions">' +
           '<span class="save-state" id="saveState"></span>' +
+          '<button class="btn quiet" id="swapBtn">Change song</button>' +
           '<button class="btn quiet" id="rmBtn">Remove from Sunday</button>' +
           '<button class="btn primary" id="saveBtn">Save</button></div></div>' +
         '<div class="panes">' +
@@ -970,6 +991,16 @@
       vidIn.value = s.youtube || '';
       vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
       document.getElementById('modeBtn').onclick = function () { textMode[slug] = !asText; renderEditor(slug); };
+      // Change song: the picker appears in the header; pick one and it takes this slot
+      var swapWrap = document.getElementById('swapWrap'), swapIn = document.getElementById('swapIn');
+      document.getElementById('swapBtn').onclick = function () {
+        var open = swapWrap.classList.toggle('open');
+        if (open) { swapIn.value = ''; setTimeout(function () { swapIn.focus(); }, 30); }
+      };
+      wireAdd(swapIn, document.getElementById('swapSugg'),
+        function (pickSlug, title) { swapWrap.classList.remove('open'); swapSong(curItem(), pickSlug, title); },
+        function (name) { swapWrap.classList.remove('open'); swapSongNew(curItem(), name); });
+      swapIn.addEventListener('keydown', function (e) { if (e.key === 'Escape') swapWrap.classList.remove('open'); });
       document.getElementById('saveBtn').onclick = function () { saveSong(slug); };
       function changed() {
         dirty[slug] = true; paintSaveState();
