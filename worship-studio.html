@@ -1458,16 +1458,38 @@
     function linesFromDocx(buf) {
       return loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js').then(function () {
         return JSZip.loadAsync(buf);
-      }).then(function (zip) { return zip.file('word/document.xml').async('string'); }).then(function (xml) {
-        var doc = new DOMParser().parseFromString(xml, 'application/xml'), out = [];
+      }).then(function (zip) {
+        var numbering = zip.file('word/numbering.xml');
+        return Promise.all([zip.file('word/document.xml').async('string'), numbering ? numbering.async('string') : '']);
+      }).then(function (parts) {
         var W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+        var val = function (e) { return e.getAttributeNS(W, 'val') || e.getAttribute('w:val') || ''; };
+        // Word keeps "1. 2. 3." and "a. b." as separate lists; numbering.xml says which is which
+        var fmtOf = {};
+        if (parts[1]) {
+          var nd = new DOMParser().parseFromString(parts[1], 'application/xml'), abs = {};
+          var absList = nd.getElementsByTagNameNS(W, 'abstractNum');
+          for (var a = 0; a < absList.length; a++) {
+            var lv = absList[a].getElementsByTagNameNS(W, 'lvl'), fm = {};
+            for (var q = 0; q < lv.length; q++) { var nf = lv[q].getElementsByTagNameNS(W, 'numFmt')[0]; fm[val(lv[q]) || lv[q].getAttribute('w:ilvl')] = nf ? val(nf) : ''; }
+            abs[absList[a].getAttributeNS(W, 'abstractNumId') || absList[a].getAttribute('w:abstractNumId')] = fm;
+          }
+          var nums = nd.getElementsByTagNameNS(W, 'num');
+          for (var b = 0; b < nums.length; b++) { var ai = nums[b].getElementsByTagNameNS(W, 'abstractNumId')[0]; fmtOf[nums[b].getAttributeNS(W, 'numId') || nums[b].getAttribute('w:numId')] = ai ? abs[val(ai)] || {} : {}; }
+        }
+        var doc = new DOMParser().parseFromString(parts[0], 'application/xml'), out = [];
         var ps = doc.getElementsByTagNameNS(W, 'p');
         for (var i = 0; i < ps.length; i++) {
           var p = ps[i], text = '';
           var ts = p.getElementsByTagNameNS(W, 't');
           for (var k = 0; k < ts.length; k++) text += ts[k].textContent;
           var num = p.getElementsByTagNameNS(W, 'numPr')[0], level = null;
-          if (num) { var il = num.getElementsByTagNameNS(W, 'ilvl')[0]; level = il ? parseInt(il.getAttributeNS(W, 'val') || il.getAttribute('w:val') || '0', 10) : 0; }
+          if (num) {
+            var il = num.getElementsByTagNameNS(W, 'ilvl')[0], ni = num.getElementsByTagNameNS(W, 'numId')[0];
+            level = il ? parseInt(val(il) || '0', 10) : 0;
+            var fmt = ni && fmtOf[val(ni)] ? fmtOf[val(ni)][String(level)] : '';
+            if (/letter|roman/i.test(fmt || '')) level = Math.max(level, 1);   // a. b. c. is a sub-point whatever list it sits in
+          }
           out.push({ text: text.replace(/\s+/g, ' ').trim(), level: level });
         }
         return out;
