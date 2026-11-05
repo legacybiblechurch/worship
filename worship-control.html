@@ -56,7 +56,9 @@
       padding: 0 18px;
       z-index: 100;
     }
-    .wordmark { font-family: 'Priestacy', var(--font); font-size: 22px; color: var(--ink); }
+    .wordmark { font-family: 'Priestacy', var(--font); font-size: 22px; color: var(--ink); white-space: nowrap; }
+    @media (max-width: 1500px) { .kbd-hint { display: none; } }
+    #header .display-link { white-space: nowrap; }
     .header-spacer { flex: 1; }
     .kbd-hint { font-size: 12px; color: var(--ink-faint); display: flex; align-items: center; gap: 6px; }
     .kbd {
@@ -417,6 +419,10 @@
       document.getElementById('disp-pill-text').textContent = on ? 'TV connected' : 'TV not open';
       document.getElementById('st-tv').classList.toggle('done', on);
       document.getElementById('st-stream').classList.toggle('done', st);
+      // once a window is up its button only needs to be a way back to it
+      var tvA = document.querySelector('#header a[target="lbc-display"]'), stA = document.querySelector('#header a[target="lbc-stream"]');
+      if (tvA) tvA.innerHTML = on ? 'TV &nearr;' : 'Open the TV &nearr;';
+      if (stA) stA.innerHTML = st ? 'Stream &nearr;' : 'Open the stream window &nearr;';
       paintStart(on && st);
     }, 1000);
     function paintStart(allOpen) {
@@ -487,7 +493,7 @@
       var pb = document.getElementById('play-btn');
       pb.style.display = song.type === 'song' ? '' : 'none';   // only a song has something to play
       pb.disabled = !song.youtube;
-      pb.onclick = function () { Deck.playSong(songIdx); };
+      pb.onclick = function () { Deck.playSong(songIdx); };   // paintButton refines this once the deck knows its state
       Deck.paintButton();
 
       var grid = document.getElementById('slide-grid');
@@ -751,9 +757,11 @@
       function paint() {
         var pb = el('play-btn');
         if (pb) {
-          var here = playingIdx === songIdx && isPlaying();
+          var here = playingIdx === songIdx && isPlaying(), pausedHere = playingIdx === songIdx && !isPlaying() && playingIdx >= 0;
           pb.className = 'play-btn' + (here ? ' playing' : '');
-          pb.innerHTML = here ? '&#9646;&#9646;&nbsp; Playing' : (playingIdx >= 0 && isPlaying() ? '&#9654;&nbsp; Switch to this' : '&#9654;&nbsp; Play');
+          pb.innerHTML = here ? '&#9646;&#9646;&nbsp; Pause' : pausedHere ? '&#9654;&nbsp; Resume' : (playingIdx >= 0 && isPlaying() ? '&#9654;&nbsp; Switch to this' : '&#9654;&nbsp; Play');
+          // the same button pauses and resumes the song it started
+          pb.onclick = (here || pausedHere) ? function () { api.toggle(); } : function () { api.playSong(songIdx); };
         }
         var now = el('deck-now');
         if (playingIdx >= 0 && songs[playingIdx]) now.innerHTML = (isPlaying() ? 'Playing ' : 'Paused ') + '<b></b>', now.querySelector('b').textContent = songs[playingIdx].title;
