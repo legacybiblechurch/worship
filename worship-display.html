@@ -99,6 +99,8 @@
        browser evenly, read left to right like a page */
     .slide-lines.prose { align-items: stretch; text-align: left; width: min(92vw, 34ch); margin: 0 auto; gap: 0.55em; font-size: clamp(26px, 3.6vw, 58px); }
     .slide-lines.prose .slide-line { font-size: 1em; line-height: 1.34; text-wrap: pretty; }
+    .slide-lines.rich .slide-line { text-wrap: balance; max-width: min(90vw, 30ch); margin-left: auto; margin-right: auto; }
+    .slide-lines.rich .cite { display: block; font-size: 0.48em; font-weight: 600; letter-spacing: 0.08em; color: #C9A84C; margin-top: 0.5em; }
     .slide-lines.prose .vn { font-size: 0.5em; font-weight: 600; color: #C9A84C; vertical-align: 0.55em; margin-right: 0.45em; }
 
     /* ── SONG TITLE FOOTER ──────────────────────── */
@@ -187,7 +189,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=25"></script>
+  <script src="js/sheet.js?v=26"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -257,6 +259,7 @@
         // reference or a sermon's title does belong there, small and gold
         slideLabel.textContent = slide.kicker || '';
         slideLines.classList.toggle('prose', !!slide.prose);
+        slideLines.classList.toggle('rich', !!slide.rich);
         slideLines.innerHTML = slide.lines
           .map(function(l){ return '<div class="slide-line">' + (slide.prose ? LBCSheet.proseLine(l) : slide.rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; })
           .join('');

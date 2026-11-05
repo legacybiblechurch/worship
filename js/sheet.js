@@ -269,7 +269,7 @@
   // a point may hold several lines (a heading and its verse); they stay on one slide
   function buildSermonSlides(it) {
     var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'].concat(it.who && String(it.who).trim() ? [String(it.who).trim()] : []) }];
-    if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: splitLine(String(it.thesis).trim(), 56), rich: true });
+    if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: [String(it.thesis).trim()], rich: true });
     var num = '', name = 'Intro';
     (it.points || []).forEach(function (p, i) {
       var ls = String(p).split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
@@ -278,9 +278,7 @@
       if ((m = ls[0].match(/^(\d+)[.)]/))) { num = m[1]; name = 'Point ' + num; }
       else if (num && (m = ls[0].match(/^([a-h])[.)]\s/i))) { name = 'Point ' + num + m[1].toLowerCase(); }
       else if (num) { name = 'Point ' + num + ' · verse'; }
-      var lines = [];
-      ls.forEach(function (l) { lines = lines.concat(splitLine(l, 56)); });
-      slides.push({ label: name, pointName: name, kicker: it.title || '', lines: lines, rich: true });
+      slides.push({ label: name, pointName: name, kicker: it.title || '', lines: ls, rich: true });   // whole lines; the screen wraps them evenly
     });
     return slides;
   }
@@ -434,10 +432,14 @@
     var m = String(line).match(/^(\d+)\s+([\s\S]*)$/);
     return m ? '<span class="vn">' + m[1] + '</span>' + escHtml(m[2]) : escHtml(line);
   }
+  var CITE = /\s+[-–—]\s*((?:[1-3]\s)?[A-Z][a-z]+\.?\s\d+(?:[:.]\d+(?:[-–]\d+)?)?)\s*$/;
   function markup(line) {
+    var cite = '', m = String(line).match(CITE);
+    if (m) { cite = m[1]; line = String(line).slice(0, m.index); }
     var t = escHtml(line);
     t = t.replace(/\b([A-Z][A-Z'’-]{2,}[A-Z])\b/g, '<u>$1</u>');
     if (/^\s*[a-h]\.\s/.test(line)) t = '<span class="sub">&emsp;&emsp;' + t + '</span>';
+    if (cite) t += '<span class="cite">' + escHtml(cite) + '</span>';   // the reference on its own small line
     return t;
   }
   global.LBCSheet = {
