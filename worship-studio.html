@@ -60,6 +60,9 @@
 
     /* ── rail ─────────────────────────────────── */
     .rail { border-right: 1px solid var(--line); overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 6px; }
+    .import-btn { width: 100%; margin: 0 0 10px; font: inherit; font-size: 12.5px; font-weight: 600; background: none; border: 1px dashed var(--line); color: var(--ink-dim); border-radius: 8px; padding: 9px 10px; cursor: pointer; }
+    .import-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .import-btn.busy { color: var(--gold); border-color: var(--gold); cursor: progress; }
     .rail-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); margin: 8px 2px 4px; display: flex; align-items: center; }
     .rail-label .sub { margin-left: auto; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--warn); }
     .song-row { display: flex; align-items: center; gap: 6px; border: 1px solid transparent; border-radius: 7px; padding: 4px 4px 4px 10px; color: var(--ink-dim); cursor: pointer; }
@@ -252,6 +255,7 @@
   </header>
 
   <div id="work">
+    <input type="file" id="guideFile" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display:none">
     <div class="rail" id="rail"></div>
     <div class="main" id="main"></div>
   </div>
@@ -498,6 +502,11 @@
       var lbl = el('div', 'rail-label', 'Set up Sunday');
       lbl.appendChild(el('span', 'sub', '')); lbl.lastChild.id = 'progText';
       rail.appendChild(lbl);
+      // the whole Sunday from the worship guide in one go
+      var imp = el('button', 'import-btn', 'Import the worship guide');
+      imp.title = 'Choose the week\u2019s worship guide (PDF or Word). The reading, songs, sermon and prayer fill themselves in.';
+      imp.onclick = function () { document.getElementById('guideFile').click(); };
+      rail.appendChild(imp);
       var prog = el('div', 'prog'); prog.id = 'prog'; prog.appendChild(document.createElement('i')); rail.appendChild(prog);
       var check = el('div', ''); check.id = 'check'; rail.appendChild(check);
 
@@ -1432,6 +1441,132 @@
       }).catch(function (e) { toast(e.message, 'err', true); })
         .then(function () { publishing = false; renderRail(); });
     }
+
+    // ───────────────────────────── import the worship guide
+    // The guide is the same every week: headings in capitals (SCRIPTURE READING,
+    // SINGING, MESSAGE, SO THAT, OUTLINE, THE LORD'S TABLE, SINGING & GIVING,
+    // PRAYER, FELLOWSHIP) with the week's details on the lines under them. We
+    // read the lines out of the PDF or the Word file and fill the Sunday in.
+    function loadScript(src) {
+      return new Promise(function (res, rej) {
+        if (document.querySelector('script[src="' + src + '"]')) return res();
+        var t = document.createElement('script'); t.src = src; t.onload = res; t.onerror = function () { rej(new Error('Could not load ' + src)); };
+        document.head.appendChild(t);
+      });
+    }
+    // -> [{text, level}] level: 0/1 for a numbered line, null otherwise
+    function linesFromDocx(buf) {
+      return loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js').then(function () {
+        return JSZip.loadAsync(buf);
+      }).then(function (zip) { return zip.file('word/document.xml').async('string'); }).then(function (xml) {
+        var doc = new DOMParser().parseFromString(xml, 'application/xml'), out = [];
+        var W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+        var ps = doc.getElementsByTagNameNS(W, 'p');
+        for (var i = 0; i < ps.length; i++) {
+          var p = ps[i], text = '';
+          var ts = p.getElementsByTagNameNS(W, 't');
+          for (var k = 0; k < ts.length; k++) text += ts[k].textContent;
+          var num = p.getElementsByTagNameNS(W, 'numPr')[0], level = null;
+          if (num) { var il = num.getElementsByTagNameNS(W, 'ilvl')[0]; level = il ? parseInt(il.getAttributeNS(W, 'val') || il.getAttribute('w:val') || '0', 10) : 0; }
+          out.push({ text: text.replace(/\s+/g, ' ').trim(), level: level });
+        }
+        return out;
+      });
+    }
+    function linesFromPdf(buf) {
+      var base = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+      return loadScript(base + 'pdf.min.js').then(function () {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = base + 'pdf.worker.min.js';
+        return window.pdfjsLib.getDocument({ data: buf }).promise;
+      }).then(function (pdf) {
+        var jobs = []; for (var n = 1; n <= pdf.numPages; n++) jobs.push(pdf.getPage(n).then(function (pg) { return pg.getTextContent(); }));
+        return Promise.all(jobs);
+      }).then(function (pages) {
+        var out = [];
+        pages.forEach(function (tc) {
+          var rows = {};   // y -> items
+          tc.items.forEach(function (it) { if (!it.str.trim()) return; var y = Math.round(it.transform[5] / 3) * 3; (rows[y] = rows[y] || []).push(it); });
+          Object.keys(rows).map(Number).sort(function (a, b) { return b - a; }).forEach(function (y) {
+            var items = rows[y].sort(function (a, b) { return a.transform[4] - b.transform[4]; });
+            var text = items.map(function (i) { return i.str; }).join(' ').replace(/\s+/g, ' ').trim();
+            var m = text.match(/^(\d+)[.)]\s+/), m2 = text.match(/^([a-h])[.)]\s+/i), level = m ? 0 : m2 ? 1 : null;
+            out.push({ text: text, level: level, numbered: !!(m || m2) });
+          });
+        });
+        return out;
+      });
+    }
+    var HEADS = { 'SCRIPTURE READING': 'reading', 'SINGING': 'sing1', 'MESSAGE': 'message', 'INTRO': 'intro', 'SO THAT': 'sothat', 'OUTLINE': 'outline',
+                  "THE LORD'S TABLE": 'table', 'THE LORD’S TABLE': 'table', 'SINGING & GIVING': 'sing2', 'SINGING AND GIVING': 'sing2', 'PRAYER': 'prayer', 'FELLOWSHIP': 'end', 'MINISTRY MATTERS': 'mm' };
+    function headOf(t) { var k = t.toUpperCase().replace(/\s+/g, ' ').trim(); return HEADS[k] || null; }
+    function readGuide(lines) {
+      var g = { reading: null, reader: '', songs1: [], songs2: [], title: '', passage: '', thesis: '', points: [], prayer: '' };
+      var sec = null, n = 0, sub = 0, seenMessage = false;
+      lines.forEach(function (ln) {
+        var t = ln.text; if (!t) return;
+        var h = headOf(t);
+        if (h) { sec = h; if (h === 'message') seenMessage = true; if (h === 'prayer' && !seenMessage) sec = null; return; }
+        if (/^_{4,}$/.test(t)) return;
+        switch (sec) {
+          case 'reading': if (!g.reading) { var parts = t.split(/,\s*/); g.reading = parts[0].trim(); g.reader = parts.slice(1).join(', ').trim(); } break;
+          case 'sing1': if (!/^song$/i.test(t)) g.songs1.push(t); break;
+          case 'sing2': if (!/^song$/i.test(t)) g.songs2.push(t); break;
+          case 'message': if (!g.title) g.title = t.replace(/^[“"]|[”"]$/g, '').trim(); else if (!g.passage) g.passage = t; break;
+          case 'sothat': case 'outline': case 'intro':
+            if (ln.level == null && !ln.numbered && sec === 'sothat' && !g.points.length) { g.thesis = (g.thesis + ' ' + t).trim(); break; }
+            // a point: give it the guide's number or letter if the text lacks one
+            var text = t;
+            if (ln.level === 1 || /^[a-h][.)]\s/i.test(t)) { if (!/^[a-h][.)]\s/i.test(text)) text = String.fromCharCode(97 + (sub++)) + '. ' + text; }
+            else { n++; sub = 0; if (!/^\d+[.)]\s/.test(text)) text = n + '. ' + text; }
+            g.points.push(text); break;
+          case 'prayer': if (!g.prayer && !/^(prayer|fellowship)$/i.test(t)) g.prayer = t; break;
+        }
+      });
+      return g;
+    }
+    function applyGuide(g) {
+      var report = [];
+      order = [];
+      if (g.reading) { addItem({ type: 'scripture', ref: g.reading, who: g.reader, version: defaultVersion(), verses: [] }); report.push('the reading (' + g.reading + ')'); }
+      function addSongs(names) {
+        names.forEach(function (name) {
+          var top = S.searchLibrary(name, 1)[0];
+          if (top && top.score >= 80) { if (!hasSong(top.slug)) addItem({ type: 'song', slug: top.slug }); report.push('“' + top.title + '”'); }
+          else { report.push('“' + name + '” (new: it will be found)'); setTimeout(function () { findNew(name); }, 50); }
+        });
+      }
+      addSongs(g.songs1);
+      if (g.title || g.points.length) { addItem({ type: 'sermon', title: g.title, passage: g.passage, thesis: g.thesis, points: g.points }); report.push('the sermon with ' + g.points.length + ' points'); }
+      if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] };
+      addItem({ type: 'words', id: 'lords-table' });
+      addSongs(g.songs2);
+      if (g.prayer) { addItem({ type: 'prayer', who: g.prayer }); report.push('closing prayer (' + g.prayer + ')'); }
+      order = canonical(); persistOrder();
+      var reading = firstOf('scripture');
+      if (reading) autoFetch(reading);
+      renderRail(); select(reading ? reading.key : (order[0] && order[0].key));
+      toast('Imported ' + report.join(', ') + '. Check each row, then Ready for Sunday.', 'ok', true);
+    }
+    function autoFetch(it) {
+      var v = it.version || 'WEB', bible = bibleFor(v);
+      if (!bible && v !== 'WEB' && v !== 'KJV') return;
+      (bible ? S.fetchPassageBible(it.ref, bible, bibleKey()) : S.fetchPassage(it.ref, v.toLowerCase())).then(function (p) {
+        it.ref = p.ref; it.verses = p.verses; it.version = p.version; persistOrder(); renderRail(); if (current === it.key) renderMain();
+      }).catch(function () {});
+    }
+    document.getElementById('guideFile').addEventListener('change', function () {
+      var f = this.files && this.files[0]; this.value = ''; if (!f) return;
+      var btn = document.querySelector('.import-btn'); if (btn) { btn.classList.add('busy'); btn.textContent = 'Reading the guide…'; }
+      var isPdf = /\.pdf$/i.test(f.name) || f.type === 'application/pdf';
+      f.arrayBuffer().then(function (buf) { return isPdf ? linesFromPdf(buf) : linesFromDocx(buf); })
+        .then(function (lines) {
+          var g = readGuide(lines);
+          if (!g.reading && !g.title && !g.songs1.length) throw new Error('That file doesn’t look like the worship guide. Nothing was changed.');
+          applyGuide(g);
+        })
+        .catch(function (e) { toast(e.message, 'err', true); })
+        .then(function () { if (btn) { btn.classList.remove('busy'); btn.textContent = 'Import the worship guide'; } });
+    });
 
     // ───────────────────────────── connection
     function paintConn() {
