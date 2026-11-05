@@ -103,6 +103,7 @@
     body.third .kicker { font-size: 0.4em; letter-spacing: 0.22em; margin-bottom: 0.42em; opacity: 0.95; }
     body.third .line { font-weight: 500; text-shadow: none; line-height: 1.24; text-wrap: balance; }
     body.third .line + .line { margin-top: 0.28em; }
+    .nb { white-space: nowrap; }
     .cite { display: block; font-size: 0.5em; font-weight: 600; letter-spacing: 0.08em; color: #C9A84C; margin-top: 0.45em; }
     .line, .slide-line { text-wrap: balance; }
 
@@ -418,7 +419,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=26', function () {
+    load('js/sheet.js?v=27', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

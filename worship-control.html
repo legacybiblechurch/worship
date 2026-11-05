@@ -201,7 +201,7 @@
     #deck .row button.gold { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 600; flex: 1; }
     #deck .row button:disabled { opacity: 0.35; cursor: default; }
     #deck input[type=range] { flex: 1; accent-color: var(--gold); }
-    #deck .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+    #deck .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 6px; overflow: hidden; cursor: pointer; padding: 5px 0; background-clip: content-box; box-sizing: content-box; }  /* a fat hit area, a thin line */
     #deck .bar i { display: block; height: 100%; width: 0; background: var(--gold); }
     #deck .fading { color: var(--warn); }
     #slide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); gap: 10px; }
@@ -381,7 +381,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=26"></script>
+  <script src="js/sheet.js?v=27"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -779,6 +779,21 @@
           el('deck-bar').style.width = d ? (100 * c / d) + '%' : '0';
         } catch (x) {}
       }, 500);
+      // click or drag along the bar to move within the song
+      function seekAt(e) {
+        if (!ready || playingIdx < 0) return;
+        var bar = el('deck-bar').parentNode, r = bar.getBoundingClientRect();
+        var f = Math.min(1, Math.max(0, ((e.touches ? e.touches[0].clientX : e.clientX) - r.left) / r.width));
+        try { var p = players[active], d = p.getDuration() || 0; if (d) { p.seekTo(f * d, true); el('deck-bar').style.width = (100 * f) + '%'; } } catch (x) {}
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var bar = el('deck-bar').parentNode, down = false;
+        bar.addEventListener('mousedown', function (e) { down = true; seekAt(e); e.preventDefault(); });
+        window.addEventListener('mousemove', function (e) { if (down) seekAt(e); });
+        window.addEventListener('mouseup', function () { down = false; });
+        bar.addEventListener('touchstart', seekAt, { passive: true }); bar.addEventListener('touchmove', seekAt, { passive: true });
+        bar.title = 'Click or drag to move within the song';
+      });
 
       // the buttons call whichever API this device gets (laptop: real, phone: commands)
       var api;

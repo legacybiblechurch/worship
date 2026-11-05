@@ -430,13 +430,13 @@
   // a verse as a paragraph: the number small and gold, the words left to wrap naturally
   function proseLine(line) {
     var m = String(line).match(/^(\d+)\s+([\s\S]*)$/);
-    return m ? '<span class="vn">' + m[1] + '</span>' + escHtml(m[2]) : escHtml(line);
+    return m ? '<span class="vn">' + m[1] + '</span>' + escHtml(m[2]).replace(/(\S+-\S+)/g, '<span class="nb">$1</span>') : escHtml(line);
   }
   var CITE = /\s+[-–—]\s*((?:[1-3]\s)?[A-Z][a-z]+\.?\s\d+(?:[:.]\d+(?:[-–]\d+)?)?)\s*$/;
   function markup(line) {
     var cite = '', m = String(line).match(CITE);
     if (m) { cite = m[1]; line = String(line).slice(0, m.index); }
-    var t = escHtml(line);
+    var t = escHtml(line).replace(/(\S+-\S+)/g, '<span class="nb">$1</span>');   // keep soon-coming on one line
     t = t.replace(/\b([A-Z][A-Z'’-]{2,}[A-Z])\b/g, '<u>$1</u>');
     if (/^\s*[a-h]\.\s/.test(line)) t = '<span class="sub">&emsp;&emsp;' + t + '</span>';
     if (cite) t += '<span class="cite">' + escHtml(cite) + '</span>';   // the reference on its own small line
