@@ -127,9 +127,9 @@
       6%   { opacity: 1; }
       100% { opacity: 1; -webkit-mask-position: 0% 0;   mask-position: 0% 0; }
     }
-    #l1 { margin-top: 5vh; font-size: clamp(16px, 4.6vmin, 64px); font-weight: 300; letter-spacing: 0.02em; color: #f1efe9; }
-    #l2 { margin-top: 1.8vh; font-size: clamp(11px, 2.1vmin, 28px); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #C9A84C; }
-    #count { margin-top: 4.5vh; min-height: 1.3em; font-size: clamp(14px, 3vmin, 40px); font-weight: 300; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); font-variant-numeric: tabular-nums; }
+    /* just the logo and the time left: nothing else to read */
+    #l1, #l2 { display: none; }
+    #count { margin-top: 6vh; min-height: 1.3em; font-size: clamp(18px, 5.2vmin, 72px); font-weight: 200; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); font-variant-numeric: tabular-nums; }
 
     /* ?debug=1  small status box for a dry run */
     #hud {
@@ -347,7 +347,7 @@
       } else if (rem > 0 || PIN) {
         cardState = 'before'; l2.textContent = 'Sunday · ' + clock();
         l1.textContent = rem > 10 ? 'Service begins shortly' : 'We are about to begin';
-        count.textContent = rem > 0 && rem <= 3600 ? 'Starting in ' + mmss(rem) : '';
+        count.textContent = rem > 0 && rem <= 3600 ? mmss(rem) : '';
         cardOn();
       } else if (rem > -HOLD * 60) {
         cardState = 'starting'; l1.textContent = 'We are about to begin'; count.textContent = ''; cardOn();
