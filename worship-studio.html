@@ -86,6 +86,16 @@
     .add-wrap input { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 11px 12px; }
     .add-wrap input:focus { outline: none; border-color: var(--ink-faint); }
     .add-wrap input::placeholder { color: var(--ink-faint); }
+    .alt-row { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+    .alt-row .hint { font-size: 11.5px; color: var(--ink-faint); }
+    .alts { display: none; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .alts.open { display: flex; }
+    .alt { display: grid; grid-template-columns: 120px 1fr auto; gap: 12px; align-items: center; background: var(--panel); border: 1px solid var(--line-soft); border-radius: 8px; padding: 8px; }
+    .alt img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; background: #000; display: block; }
+    .alt .t { font-size: 13px; font-weight: 500; }
+    .alt .f { font-size: 11.5px; color: var(--ink-dim); margin-top: 2px; }
+    .alt .acts { display: flex; flex-direction: column; gap: 5px; }
+    .alt .acts .btn { padding: 5px 9px; font-size: 12px; }
     .swap-wrap { position: relative; display: none; flex: 1; max-width: 420px; }
     .swap-wrap.open { display: block; }
     .swap-wrap input { width: 100%; font: inherit; font-size: 14px; background: var(--panel); color: var(--ink); border: 1px solid var(--gold); border-radius: 8px; padding: 8px 12px; outline: none; }
@@ -704,6 +714,64 @@
         toast('Added “' + title + '”. It already has its words.', 'ok');
       }
     }
+    // other recordings of the same song: what the finder saw (drafts/<slug>.json), or a fresh look
+    function showAlternatives(slug, s, fresh) {
+      var box = document.getElementById('alts'); if (!box) return;
+      box.className = 'alts open'; box.innerHTML = '<div class="hint">' + (fresh ? 'Looking on YouTube… about a minute.' : 'Looking…') + '</div>';
+      var cur = S.videoId(s.youtube);
+      function render(d) {
+        var cands = ((d && d.candidates) || []).filter(function (c) { return c.videoId && c.videoId !== cur; });
+        box.innerHTML = '';
+        if (!cands.length) {
+          box.innerHTML = '<div class="hint">No other recordings on file for this song yet.</div>';
+          var more = el('button', 'btn quiet', 'Find more recordings'); more.onclick = function () { findMore(slug, s); };
+          box.appendChild(more);
+          return;
+        }
+        var rank = { verified: 0, check: 1, unverified: 2 };
+        cands.sort(function (a, b) { return (rank[(a.engine || {}).verdict] ?? 3) - (rank[(b.engine || {}).verdict] ?? 3); });
+        cands.forEach(function (c) {
+          var v = (c.engine || {}).verdict, row = el('div', 'alt');
+          row.innerHTML = '<img src="https://i.ytimg.com/vi/' + esc(c.videoId) + '/mqdefault.jpg" alt="">' +
+            '<div><div class="t"></div><div class="f">' + esc(S.decodeEntities(c.channel || '')) + (c.duration ? ' · ' + esc(c.duration) : '') +
+            (v ? ' · <span class="verdict ' + v + '">' + (v === 'verified' ? 'Words verified' : v === 'check' ? 'Words need a check' : 'Words unclear') + '</span>' : '') + '</div></div>' +
+            '<div class="acts"></div>';
+          row.querySelector('.t').textContent = S.decodeEntities(c.title || '');
+          var acts = row.querySelector('.acts');
+          var use = el('button', 'btn primary', 'Use this recording');
+          use.onclick = function () { s.youtube = c.url || ('https://www.youtube.com/watch?v=' + c.videoId); dirty[slug] = true; renderRail(); renderEditor(slug); toast('Recording changed. The words are as they were; Save when you’re happy.', 'ok'); };
+          acts.appendChild(use);
+          if (c.lyrics && c.lyrics.length) {
+            var words = el('button', 'btn quiet', 'Use its words too');
+            words.onclick = function () { s.youtube = c.url || ('https://www.youtube.com/watch?v=' + c.videoId); s.lyrics = JSON.parse(JSON.stringify(c.lyrics)); dirty[slug] = true; textMode[slug] = false; renderRail(); renderEditor(slug); toast('Recording and words changed. Check the slides, then Save.', 'ok'); };
+            acts.appendChild(words);
+          }
+          var listen = document.createElement('a'); listen.className = 'btn quiet'; listen.textContent = 'Listen ↗'; listen.target = '_blank'; listen.rel = 'noopener'; listen.href = c.url || ('https://www.youtube.com/watch?v=' + c.videoId);
+          acts.appendChild(listen);
+          box.appendChild(row);
+        });
+        var more = el('button', 'btn quiet', 'Find more recordings'); more.onclick = function () { findMore(slug, s); };
+        box.appendChild(more);
+        var close = el('button', 'btn quiet', 'Close'); close.onclick = function () { box.className = 'alts'; box.innerHTML = ''; };
+        box.appendChild(close);
+      }
+      fetch('drafts/' + slug + '.json?cb=' + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(render);
+    }
+    // ask the finder for a fresh set of recordings, then show them
+    function findMore(slug, s) {
+      if (!connected) { openConnect('Finding recordings needs this computer connected first.'); return; }
+      var started = Date.now();
+      showAlternatives(slug, s, true);
+      gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
+        body: JSON.stringify({ ref: 'main', inputs: { song: s.title, video: '' } }) })
+      .then(function poll() {
+        return fetch('drafts/' + slug + '.json?cb=' + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+          if (d && Date.parse(d.generatedAt || 0) > started - 60000) { showAlternatives(slug, s); return; }
+          if (Date.now() - started > 5 * 60000) { toast('That took too long. Try Search YouTube and paste the link.', 'err'); showAlternatives(slug, s); return; }
+          return new Promise(function (res) { setTimeout(res, 6000); }).then(poll);
+        });
+      }).catch(function (e) { toast(e.message, 'err'); });
+    }
     // swap the song in this slot for another, same place in the order
     function swapSong(it, slug, title) {
       if (!it || it.type !== 'song') return;
@@ -977,7 +1045,11 @@
           '<div class="pane">' +
             '<div class="video-strip">' +
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
-              '<input id="vidInput" placeholder="YouTube link" spellcheck="false"></div>' +
+              '<input id="vidInput" placeholder="YouTube link" spellcheck="false">' +
+              '<div class="alt-row"><button class="btn quiet" id="altBtn">Other recordings</button>' +
+              '<a class="btn quiet" id="ytSearch" target="_blank" rel="noopener">Search YouTube &nearr;</a>' +
+              '<span class="hint">or paste any YouTube link above</span></div>' +
+              '<div class="alts" id="alts"></div></div>' +
             (asText
               ? '<div class="pane-head">Words<span class="hint">a blank line starts a new slide &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
@@ -991,6 +1063,8 @@
       vidIn.value = s.youtube || '';
       vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
       document.getElementById('modeBtn').onclick = function () { textMode[slug] = !asText; renderEditor(slug); };
+      document.getElementById('ytSearch').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(s.title + ' lyrics');
+      document.getElementById('altBtn').onclick = function () { showAlternatives(slug, s); };
       // Change song: the picker appears in the header; pick one and it takes this slot
       var swapWrap = document.getElementById('swapWrap'), swapIn = document.getElementById('swapIn');
       document.getElementById('swapBtn').onclick = function () {
