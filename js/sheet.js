@@ -226,7 +226,7 @@
   // words written once and kept (the Lord's Table…), published alongside the service
   function saved() { return global.WORSHIP_SAVED && typeof global.WORSHIP_SAVED === 'object' ? global.WORSHIP_SAVED : {}; }
 
-  var TYPE_NAMES = { song: 'Song', scripture: 'Reading', sermon: 'Sermon', words: 'Words', video: 'Video', logo: 'Logo' };
+  var TYPE_NAMES = { song: 'Song', scripture: 'Reading', sermon: 'Sermon', words: 'Words', video: 'Video', logo: 'Logo', prayer: 'Prayer' };
   function itemTitle(it) {
     switch (it.type) {
       case 'song': return titleOf(it.slug);
@@ -235,6 +235,7 @@
       case 'words': var w = saved()[it.id]; return (w && w.title) || it.id || 'Words';
       case 'video': return it.title || 'Video';
       case 'logo': return it.title || 'Logo';
+      case 'prayer': return 'Closing Prayer' + (it.who ? ' · ' + it.who : '');
     }
     return it.type || '';
   }
@@ -261,12 +262,13 @@
       cur = cur.concat(parts); nums.push(v.n); chars += txt.length;
     });
     flush();
+    if (slides.length && it.who && String(it.who).trim()) slides[0].kicker += ' · ' + String(it.who).trim();
     return slides;
   }
   // sermon -> a title slide, then one slide per point, the title riding above each
   // a point may hold several lines (a heading and its verse); they stay on one slide
   function buildSermonSlides(it) {
-    var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'] }];
+    var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'].concat(it.who && String(it.who).trim() ? [String(it.who).trim()] : []) }];
     if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: splitLine(String(it.thesis).trim(), 56), rich: true });
     var num = '', name = 'Intro';
     (it.points || []).forEach(function (p, i) {
@@ -304,6 +306,9 @@
       var w = saved()[it.id];
       out.ready = !!(w && w.lyrics && w.lyrics.length);
       out.slides = out.ready ? buildSlides(w.lyrics) : [{ label: '', lines: ['No words yet. Open Studio'] }];
+    } else if (it.type === 'prayer') {
+      out.ready = !!(it.who && String(it.who).trim());
+      out.slides = [{ label: 'Closing Prayer', kicker: 'Closing Prayer', lines: [out.ready ? String(it.who).trim() : 'Who is praying? Open Studio'] }];
     } else if (it.type === 'video') {
       out.slides = [{ label: 'Video', lines: [], logo: true, cue: 'Play “' + (it.title || 'the video') + '” on the TV' + (it.note ? '. ' + it.note : '') }];
     } else {

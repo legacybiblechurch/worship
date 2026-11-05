@@ -284,7 +284,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=22"></script>
+  <script src="js/sheet.js?v=23"></script>
   <script>
   (function () {
     'use strict';
@@ -316,7 +316,7 @@
     // The shape of a Sunday here: the reading, one song, the sermon, the Lord's
     // Table, two songs to close. A new item drops into its slot; videos and the
     // logo stay wherever they were put.
-    var RANK = { scripture: 0, sermon: 2, words: 3 };
+    var RANK = { scripture: 0, sermon: 2, words: 3, prayer: 4.5 };
     function isMedia(it) { return it.type === 'video' || it.type === 'logo'; }
     function rankOf(it) {
       if (it.type === 'song') { var first = order.filter(function (x) { return x.type === 'song'; })[0]; return first && first.key === it.key ? 1 : 4; }
@@ -471,6 +471,7 @@
       if (it.type === 'scripture') return !!(it.verses && it.verses.length);
       if (it.type === 'sermon') return !!(it.title && it.title.trim());
       if (it.type === 'words') { var w = saved[it.id]; return !!(w && w.lyrics && w.lyrics.length); }
+      if (it.type === 'prayer') return !!(it.who && it.who.trim());
       return true;
     }
     function itemTitle(it) {
@@ -561,7 +562,7 @@
       box.innerHTML = '';
       var songsIn = order.filter(function (it) { return it.type === 'song'; });
       var opening = songsIn[0], closing = songsIn.slice(1);
-      var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words');
+      var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words'), prayer = firstOf('prayer');
       function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + '” needs its words' : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
       function songOk(it) { return !!it && itemReady(it) && !finding[it.slug] && !dirty[it.slug]; }
       function pickSong(title) { pick = title; current = null; renderRail(); renderMain(); }
@@ -583,7 +584,9 @@
         rowFor('Lord’s Table', table, !!(table && itemReady(table)), !table ? 'Click here and type what the TV shows during the Table' : 'Type what the TV shows during the Table. It is kept from week to week', 'Words in',
                function () { if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] }; return { type: 'words', id: 'lords-table' }; }, 'under the sermon'),
         songRow('Closing Song 1', closing[0], 'after the Lord’s Table'),
-        songRow('Closing Song 2', closing[1], 'after Closing Song 1')
+        songRow('Closing Song 2', closing[1], 'after Closing Song 1'),
+        rowFor('Closing Prayer', prayer, !!(prayer && itemReady(prayer)), !prayer ? 'Click here and type who is praying' : 'Type who is praying',
+               prayer ? prayer.who : '', function () { return { type: 'prayer', who: '' }; }, 'after Closing Song 2')
       ];
       var allIn = steps.every(function (st) { return st.done; });
       steps.push({ title: 'Computer is Connected', done: !!connected, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
@@ -865,6 +868,7 @@
       if (it.type === 'words') { renderWords(it); return; }
       if (it.type === 'video') { renderVideo(it); return; }
       if (it.type === 'logo') { renderLogo(it); return; }
+      if (it.type === 'prayer') { renderPrayer(it); return; }
       var slug = it.slug;
       if (finding[slug]) {
         var listening = finding[slug].phase === 'listening';
@@ -1140,6 +1144,7 @@
               '<select id="verIn"></select>' +
               '<button class="btn primary" id="fetchBtn">Get the passage</button></div>' +
             '<div class="note" id="refNote"></div>' +
+            '<label>Read by</label><input id="readerIn" placeholder="Marko Mircetic">' +
             '<div class="row" id="keyRow" style="display:none"><input id="keyIn" class="masked" placeholder="API.Bible key" autocomplete="off" spellcheck="false"><button class="btn" id="keySave">Add the key</button></div>' +
           '</div>' +
           '<div class="pane-head">The passage<span class="hint">one line per number, the number first</span></div>' +
@@ -1190,6 +1195,8 @@
         }).catch(function (e) { setBibleKey(''); askKey(e.message); });
       };
       keyIn.onkeydown = function (e) { if (e.key === 'Enter') document.getElementById('keySave').click(); };
+      var reader = document.getElementById('readerIn'); reader.value = it.who || '';
+      reader.oninput = function () { it.who = reader.value.trim(); touched(); paintItemPreview(it); };
       paintItemPreview(it);
       if (!it.ref) setTimeout(function () { ref.focus(); }, 30);
     }
@@ -1204,14 +1211,16 @@
           '<div class="fields">' +
             '<label>Title</label><input id="titleIn" placeholder="The sermon’s title">' +
             '<label>Passage</label><input id="passIn" placeholder="1 Peter 4:7-11" spellcheck="false">' +
+            '<label>Preacher</label><input id="whoIn" placeholder="Todd Barnett">' +
             '<label>So that</label><textarea id="thesisIn" rows="2" placeholder="In preparation for the soon-coming end, pray, love, and serve so that God will be glorified."></textarea>' +
           '</div>' +
           '<div class="pane-head">Points<span class="hint">CAPITAL words come out underlined</span></div>' +
           '<div class="points" id="points"></div>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
-      var t = document.getElementById('titleIn'), p = document.getElementById('passIn'), th = document.getElementById('thesisIn');
-      t.value = it.title || ''; p.value = it.passage || ''; th.value = it.thesis || '';
+      var t = document.getElementById('titleIn'), p = document.getElementById('passIn'), th = document.getElementById('thesisIn'), who = document.getElementById('whoIn');
+      t.value = it.title || ''; p.value = it.passage || ''; th.value = it.thesis || ''; who.value = it.who || '';
+      who.oninput = function () { it.who = who.value.trim(); touched(); paintItemPreview(it); markHere('.pv', 0); };
       t.oninput = function () { it.title = t.value.trim(); main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : ''); touched(); paintItemPreview(it); };
       p.oninput = function () { it.passage = p.value.trim(); touched(); paintItemPreview(it); };
       th.oninput = function () { it.thesis = th.value.replace(/\s+/g, ' ').trim(); touched(); paintItemPreview(it); markHere('.pv', 1); };
@@ -1300,6 +1309,19 @@
       if (!it.title) setTimeout(function () { t.focus(); }, 30);
     }
 
+    function renderPrayer(it) {
+      var main = document.getElementById('main');
+      main.innerHTML = head() +
+        '<div class="panes"><div class="pane"><div class="fields">' +
+          '<label>Who is praying</label><input id="whoIn" placeholder="Todd Barnett">' +
+          '<div class="note">The TV shows “Closing Prayer” and the name. Comes after the last song.</div>' +
+        '</div></div>' + previewPane() + '</div>';
+      main.querySelector('.main-title').textContent = 'Closing Prayer';
+      var w = document.getElementById('whoIn'); w.value = it.who || '';
+      w.oninput = function () { it.who = w.value.trim(); touched(); paintItemPreview(it); renderRail(); };
+      paintItemPreview(it);
+      if (!it.who) setTimeout(function () { w.focus(); }, 30);
+    }
     function renderLogo(it) {
       var main = document.getElementById('main');
       main.innerHTML = head() +
