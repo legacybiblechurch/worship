@@ -5,7 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'to-god-be-the-glory',
-  'take-my-life-and-let-it-be',
-  'all-i-have-is-christ',
+  'may-the-peoples-praise-you',
+  'let-me-be',
+  'i-asked-the-lord-that-i-might-grow',
 ];
