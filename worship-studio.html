@@ -147,6 +147,17 @@
     .pane-head .mode { margin-left: auto; padding: 4px 10px; font-size: 11.5px; letter-spacing: 0; text-transform: none; font-weight: 500; }
     /* sermon: one card per slide */
     .points { flex: 1; overflow-y: auto; padding: 12px 16px 24px; }
+    /* the whole editing column scrolls as one, so the video and the fields slide up out of the way */
+    .pane.scroll { overflow-y: auto; }
+    .pane.scroll .points { flex: none; overflow: visible; min-height: 60vh; }
+    .pane.scroll .pane-head { position: sticky; top: 0; background: var(--bg); z-index: 2; }
+    .pane-head .addpt { width: auto; margin-left: auto; padding: 5px 11px; font-size: 12px; border-style: solid; }
+    .pane-head .addpt + .mode { margin-left: 8px; }
+    .pt { cursor: grab; }
+    .pt textarea, .pt input { cursor: text; }
+    .pt button { cursor: pointer; }
+    .pt.drag { opacity: 0.55; border-color: var(--gold); cursor: grabbing; }
+    body.dragging, body.dragging * { user-select: none !important; cursor: grabbing !important; }
     .pt { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px 12px; margin-bottom: 10px; background: var(--panel); }
     .pt.here { border-color: var(--gold); }
     .pt-head { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); }
@@ -1068,7 +1079,7 @@
           '<button class="btn quiet" id="rmBtn">Remove from Sunday</button>' +
           '<button class="btn primary" id="saveBtn">Save</button></div></div>' +
         '<div class="panes">' +
-          '<div class="pane">' +
+          '<div class="pane scroll">' +
             '<div class="video-strip">' +
               (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false">' +
@@ -1079,7 +1090,7 @@
             (asText
               ? '<div class="pane-head">Words<span class="hint">a blank line starts a new slide &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
-              : '<div class="pane-head">Slides<button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
+              : '<div class="pane-head">Slides<button class="addpt" id="addCard">+ Add a slide</button><button class="btn quiet mode" id="modeBtn">Paste all the words</button></div>' +
                 '<div class="points" id="cards"></div>') +
           '</div>' +
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
@@ -1159,10 +1170,44 @@
         c.appendChild(el('small', 'pt-warn', ''));
         list.appendChild(c);
       });
-      var add = el('button', 'addpt', '+ Add a slide');
-      add.onclick = function () { s.lyrics.push({ label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, s.lyrics.length - 1); };
-      list.appendChild(add);
+      var add = document.getElementById('addCard');
+      if (add) add.onclick = function () {
+        // the new slide goes right after the one you are in, or at the end
+        var cur = list.querySelector('.pt.here'), at = cur ? +cur.dataset.block + 1 : s.lyrics.length;
+        s.lyrics.splice(at, 0, { label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, at);
+        var c = list.querySelectorAll('.pt')[at]; if (c) c.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      };
+      sortable(list, function (order) {
+        s.lyrics = order.map(function (i) { return s.lyrics[i]; });
+        changed(); paintPreview(s); paintCards(slug, s, changed);
+      });
       if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
+    }
+    // grab a card anywhere outside its text and drag it to a new place
+    function sortable(list, onReorder) {
+      list.onpointerdown = function (e) {
+        if (e.button !== 0) return;
+        if (e.target.closest('textarea, input, button, a, select')) return;
+        var card = e.target.closest('.pt'); if (!card || card.parentNode !== list) return;
+        var startY = e.clientY, started = false, pane = list.closest('.pane') || list;
+        function move(ev) {
+          if (!started) { if (Math.abs(ev.clientY - startY) < 5) return; started = true; card.classList.add('drag'); document.body.classList.add('dragging'); }
+          var y = ev.clientY, cards = [].slice.call(list.querySelectorAll('.pt')).filter(function (c) { return c !== card; }), before = null;
+          for (var i = 0; i < cards.length; i++) { var r = cards[i].getBoundingClientRect(); if (y < r.top + r.height / 2) { before = cards[i]; break; } }
+          if (before) { if (card.nextSibling !== before) list.insertBefore(card, before); }
+          else if (card !== list.lastElementChild) list.appendChild(card);
+          var pr = pane.getBoundingClientRect();                 // keep the list moving when you drag near the top or bottom
+          if (y < pr.top + 50) pane.scrollTop -= 12; else if (y > pr.bottom - 50) pane.scrollTop += 12;
+        }
+        function up() {
+          window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up);
+          if (!started) return;
+          card.classList.remove('drag'); document.body.classList.remove('dragging');
+          var order = [].slice.call(list.querySelectorAll('.pt')).map(function (c) { return +c.dataset.block; });
+          if (order.some(function (v, i) { return v !== i; })) onReorder(order);
+        }
+        window.addEventListener('pointermove', move); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
+      };
     }
     function paintPreview(s) {
       var pv = document.getElementById('preview'), n = 0;
@@ -1347,14 +1392,14 @@
       // older sermons kept the so-that sentence as the first point; lift it out once
       if (!it.thesis && it.points.length && /so that/i.test(it.points[0]) && !/^\s*(\d+|[a-z])[.)]/.test(it.points[0])) it.thesis = it.points.shift();
       main.innerHTML = head() +
-        '<div class="panes"><div class="pane">' +
+        '<div class="panes"><div class="pane scroll">' +
           '<div class="fields">' +
             '<label>Title</label><input id="titleIn" placeholder="The sermon’s title">' +
             '<label>Passage</label><input id="passIn" placeholder="1 Peter 4:7-11" spellcheck="false">' +
             '<label>Preacher</label><input id="whoIn" placeholder="Todd Barnett">' +
             '<label>So that</label><textarea id="thesisIn" rows="2" placeholder="In preparation for the soon-coming end, pray, love, and serve so that God will be glorified."></textarea>' +
           '</div>' +
-          '<div class="pane-head">Points<span class="hint">CAPITAL words come out underlined</span></div>' +
+          '<div class="pane-head">Points<span class="hint">CAPITAL words come out underlined</span><button class="addpt" id="addPt">+ Add a slide</button></div>' +
           '<div class="points" id="points"></div>' +
         '</div>' + previewPane() + '</div>';
       main.querySelector('.main-title').textContent = 'Sermon' + (it.title ? ' · ' + it.title : '');
@@ -1402,9 +1447,12 @@
       function paint(focusIdx) {
         list.innerHTML = '';
         it.points.forEach(function (_, i) { list.appendChild(card(i)); });
-        var add = el('button', 'addpt', '+ Add a slide');
-        add.onclick = function () { it.points.push(''); touched(); paint(it.points.length - 1); };
-        list.appendChild(add);
+        document.getElementById('addPt').onclick = function () {
+          var cur = list.querySelector('.pt.here'), at = cur ? +cur.dataset.block + 1 : it.points.length;
+          it.points.splice(at, 0, ''); touched(); paint(at);
+          var c = list.querySelectorAll('.pt')[at]; if (c) c.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        };
+        sortable(list, function (order) { it.points = order.map(function (i) { return it.points[i]; }); touched(); paint(); });
         paintItemPreview(it);
         if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
       }
