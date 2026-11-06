@@ -85,7 +85,7 @@ window.WORSHIP_SERVICE = [
   },
   {
     "type": "song",
-    "slug": "i-asked-the-lord-that-i-might-grow"
+    "slug": "before-the-throne-of-god-above"
   },
   {
     "type": "prayer",
