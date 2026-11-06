@@ -8,77 +8,72 @@
 window.WORSHIP_SERVICE = [
   {
     "type": "scripture",
-    "ref": "1 Peter 4:1-11",
+    "ref": "Ephesians 4:7-16",
+    "who": "Quaid Barnett",
     "version": "NASB",
     "verses": [
       {
-        "n": 1,
-        "text": "Therefore, since Christ has suffered in the flesh, arm yourselves also with the same purpose, because he who has suffered in the flesh has ceased from sin,"
-      },
-      {
-        "n": 2,
-        "text": "so as to live the rest of the time in the flesh no longer for the lusts of men, but for the will of God."
-      },
-      {
-        "n": 3,
-        "text": "For the time already past is sufficient for you to have carried out the desire of the Gentiles, having pursued a course of sensuality, lusts, drunkenness, carousing, drinking parties and abominable idolatries."
-      },
-      {
-        "n": 4,
-        "text": "In all this, they are surprised that you do not run with them into the same excesses of dissipation, and they malign you;"
-      },
-      {
-        "n": 5,
-        "text": "but they will give account to Him who is ready to judge the living and the dead."
-      },
-      {
-        "n": 6,
-        "text": "For the gospel has for this purpose been preached even to those who are dead, that though they are judged in the flesh as men, they may live in the spirit according to the will of God."
-      },
-      {
         "n": 7,
-        "text": "The end of all things is near; therefore, be of sound judgment and sober spirit for the purpose of prayer."
+        "text": "But to each one of us grace was given according to the measure of Christ’s gift."
       },
       {
         "n": 8,
-        "text": "Above all, keep fervent in your love for one another, because love covers a multitude of sins."
+        "text": "Therefore it says, “When He ascended on high, He led captive a host of captives, And He gave gifts to men.”"
       },
       {
         "n": 9,
-        "text": "Be hospitable to one another without complaint."
+        "text": "(Now this expression, “He ascended,” what does it mean except that He also had descended into the lower parts of the earth?"
       },
       {
         "n": 10,
-        "text": "As each one has received a special gift, employ it in serving one another as good stewards of the manifold grace of God."
+        "text": "He who descended is Himself also He who ascended far above all the heavens, so that He might fill all things.)"
       },
       {
         "n": 11,
-        "text": "Whoever speaks, is to do so as one who is speaking the utterances of God; whoever serves is to do so as one who is serving by the strength which God supplies; so that in all things God may be glorified through Jesus Christ, to whom belongs the glory and dominion forever and ever. Amen."
+        "text": "And He gave some as apostles, and some as prophets, and some as evangelists, and some as pastors and teachers,"
+      },
+      {
+        "n": 12,
+        "text": "for the equipping of the saints for the work of service, to the building up of the body of Christ;"
+      },
+      {
+        "n": 13,
+        "text": "until we all attain to the unity of the faith, and of the knowledge of the Son of God, to a mature man, to the measure of the stature which belongs to the fullness of Christ."
+      },
+      {
+        "n": 14,
+        "text": "As a result, we are no longer to be children, tossed here and there by waves and carried about by every wind of doctrine, by the trickery of men, by craftiness in deceitful scheming;"
+      },
+      {
+        "n": 15,
+        "text": "but speaking the truth in love, we are to grow up in all aspects into Him who is the head, even Christ,"
+      },
+      {
+        "n": 16,
+        "text": "from whom the whole body, being fitted and held together by what every joint supplies, according to the proper working of each individual part, causes the growth of the body for the building up of itself in love."
       }
     ]
   },
   {
     "type": "song",
-    "slug": "to-god-be-the-glory"
+    "slug": "may-the-peoples-praise-you"
   },
   {
     "type": "sermon",
-    "title": "\"God's Glory in You, Pt. 2\"",
+    "title": "God’s Glory in You, Pt 3",
     "passage": "1 Peter 4:7-11",
+    "thesis": "In preparation for the soon-coming end, pray, love, and serve so that God will be glorified.",
     "points": [
-      "In preparation for the soon-coming end, pray, love and serve so that God will be glorified.",
-      "1. REMEMBER the imminent return of Christ (7a); therefore ...",
-      "The end of all things is near; therefore, be of sound judgment and sober spirit for the purpose of prayer. - 1 Peter 4:7",
-      "2. Pray with DISCERNMENT & SOBRIETY (7b), and ...",
-      "Above all, keep fervent in your love for one another, because love covers a multitude of sins. - 1 Peter 4:8",
-      "3. Love with sin-COVERING fervor (8), and ...",
-      "Be hospitable to one another without complaint. - 1 Peter 4:9",
-      "4. Serve STRANGERS without complaint (9), and...",
+      "1. REMEMBER the imminent return of Christ (7a), therefore . . .",
+      "2. pray with DISCERNMENT and SOBRIETY (7b), and . . .",
+      "3. love with sin-COVERING fervor (8), and . . .",
+      "4. serve STRANGERS without complaint (9), and . . .",
       "5. Serve one another with your GRACE-gifts (10),",
-      "a. if speaking, with God's AUTHORITY (11a)",
-      "b. if serving, with God's STRENGTH (11b)",
-      "6. doing all things for God's GLORY (11c)"
-    ]
+      "a. if speaking, with God’s AUTHORITY (11a),",
+      "b. if serving, with God’s ________________ (11b),",
+      "6. doing all things for God’s _______________ (11c)."
+    ],
+    "who": "Todd Barnett"
   },
   {
     "type": "words",
@@ -86,11 +81,15 @@ window.WORSHIP_SERVICE = [
   },
   {
     "type": "song",
-    "slug": "take-my-life-and-let-it-be"
+    "slug": "let-me-be"
   },
   {
     "type": "song",
-    "slug": "all-i-have-is-christ"
+    "slug": "i-asked-the-lord-that-i-might-grow"
+  },
+  {
+    "type": "prayer",
+    "who": "Dan Alley"
   }
 ];
 
