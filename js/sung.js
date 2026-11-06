@@ -138,4 +138,5 @@ window.SUNG_SONGS = [
   'take-my-life-and-let-it-be',
   'blessed-be-the-tie-that-binds',
   'to-god-be-the-glory',
+  'may-the-peoples-praise-you',
 ];
