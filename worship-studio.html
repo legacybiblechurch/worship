@@ -153,7 +153,13 @@
     .pane.scroll .pane-head { position: sticky; top: 0; background: var(--bg); z-index: 2; }
     .pane-head .addpt { width: auto; margin-left: auto; padding: 5px 11px; font-size: 12px; border-style: solid; }
     .pane-head .addpt + .mode { margin-left: 8px; }
-    .pt { cursor: grab; }
+    .pt { cursor: grab; position: relative; }
+    /* a quiet + on the top and bottom edge of a card, shown when you hover it: a new slide above or below */
+    .pt .ins { position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%); width: 22px; height: 22px; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: var(--panel-2); color: var(--ink-dim); font: inherit; font-size: 15px; line-height: 20px; text-align: center; opacity: 0; transition: opacity 150ms, color 150ms, border-color 150ms; z-index: 3; cursor: pointer; }
+    .pt .ins.bot { top: auto; bottom: 0; transform: translate(-50%, 50%); }
+    .pt:hover .ins, .pt .ins:focus-visible { opacity: 1; }
+    .pt .ins:hover { color: var(--ink); border-color: var(--gold); }
+    .points.sorting .pt .ins { opacity: 0 !important; }
     .pt textarea, .pt input { cursor: text; }
     .pt button { cursor: pointer; }
     /* dragging a card, the way the Finder moves a row: it floats under the cursor, the others slide to open a gap */
@@ -193,7 +199,10 @@
     .fields .note { font-size: 12px; color: var(--ink-faint); line-height: 1.5; }
     .box { flex: 1; width: 100%; resize: none; font: inherit; font-size: 15px; line-height: 1.72; background: var(--bg); color: var(--ink); border: 0; padding: 16px 20px; outline: none; }
     .video-strip { padding: 12px 16px; border-bottom: 1px solid var(--line-soft); flex-shrink: 0; }
-    .video-strip iframe { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 6px; background: #000; display: block; }
+    .video-strip .vwrap { position: relative; aspect-ratio: 16/9; }
+    .video-strip iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; background: #000; display: block; }
+    /* scrolled past the video: it keeps playing, small, in the corner of this column */
+    .video-strip iframe.mini { position: fixed; inset: auto; width: 300px; height: 169px; z-index: 40; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 16px 44px rgba(0,0,0,0.65); }
     .video-strip .novid { aspect-ratio: 16/9; border: 1px dashed var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--ink-faint); font-size: 13px; }
     .video-strip input { width: 100%; margin-top: 8px; font: inherit; font-size: 12.5px; font-family: var(--mono); background: var(--panel); color: var(--ink-dim); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; }
 
@@ -1084,7 +1093,7 @@
         '<div class="panes">' +
           '<div class="pane scroll">' +
             '<div class="video-strip">' +
-              (vid ? '<iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
+              (vid ? '<div class="vwrap"><iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe></div>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false">' +
               '<div class="alt-row"><button class="btn quiet" id="altBtn">Other recordings</button>' +
               '<a class="btn quiet" id="ytSearch" target="_blank" rel="noopener">Search YouTube for different options &nearr;</a>' +
@@ -1099,6 +1108,7 @@
           '<div class="pane"><div class="pane-head">On the screen<span class="right" id="pvCount"></span></div><div class="preview" id="preview"></div></div>' +
         '</div>';
       main.querySelector('.main-title').textContent = s.title;
+      miniPlayer(main);
       var vidIn = document.getElementById('vidInput');
       vidIn.value = s.youtube || '';
       vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
@@ -1140,6 +1150,30 @@
       }
       paintPreview(s); paintSaveState();
     }
+    // once the video scrolls out of view it carries on, small, in the bottom corner of the editing column
+    function miniPlayer(main) {
+      var pane = main.querySelector('.pane.scroll'), wrap = main.querySelector('.vwrap'), frame = wrap && wrap.querySelector('iframe');
+      if (!pane || !frame || !window.IntersectionObserver) return;
+      function place() {
+        var r = pane.getBoundingClientRect();
+        frame.style.left = Math.round(r.right - 16 - 300) + 'px'; frame.style.top = Math.round(r.bottom - 16 - 169) + 'px';
+      }
+      new IntersectionObserver(function (en) {
+        var mini = en[0].intersectionRatio < 0.3;
+        if (mini) place();
+        frame.classList.toggle('mini', mini);
+        if (!mini) { frame.style.left = ''; frame.style.top = ''; }
+      }, { root: pane, threshold: [0, 0.3, 1] }).observe(wrap);
+      window.addEventListener('resize', function () { if (frame.classList.contains('mini')) place(); });
+    }
+    // the + on a card's edge: a new slide above or below it
+    function insertButtons(card, i, insertAt) {
+      var a = el('button', 'ins top', '+'), b = el('button', 'ins bot', '+');
+      a.title = 'Add a slide above'; b.title = 'Add a slide below'; a.type = b.type = 'button';
+      a.onclick = function (e) { e.stopPropagation(); insertAt(i); };
+      b.onclick = function (e) { e.stopPropagation(); insertAt(i + 1); };
+      card.appendChild(a); card.appendChild(b);
+    }
     // the song as cards: one card per slide, with its name and its lines
     function paintCards(slug, s, changed, focusIdx) {
       var list = document.getElementById('cards'); if (!list) return;
@@ -1171,6 +1205,7 @@
         ['click', 'keyup', 'focus'].forEach(function (ev) { ta.addEventListener(ev, here); });
         c.appendChild(ta);
         c.appendChild(el('small', 'pt-warn', ''));
+        insertButtons(c, i, function (at) { s.lyrics.splice(at, 0, { label: '', lines: [] }); changed(); paintPreview(s); paintCards(slug, s, changed, at); });
         list.appendChild(c);
       });
       var add = document.getElementById('addCard');
@@ -1483,6 +1518,7 @@
         ta.onfocus = function () { markHere('.pv', slideOf(i)); markHere('.pt', i); };
         c.appendChild(ta);
         c.appendChild(el('small', '', 'Everything in this box is on the TV at the same time.'));
+        insertButtons(c, i, function (at) { it.points.splice(at, 0, ''); touched(); paint(at); });
         return c;
       }
       function paint(focusIdx) {
