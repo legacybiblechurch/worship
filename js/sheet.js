@@ -268,7 +268,9 @@
       cur.push(v.n + ' ' + txt); nums.push(v.n); chars += txt.length;
     });
     flush();
-    if (slides.length && it.who && String(it.who).trim()) slides[0].kicker += ' · ' + String(it.who).trim();
+    // a plain card first, for while the reader walks up: Scripture Reading, the passage, the name
+    var who = it.who && String(it.who).trim();
+    slides.unshift({ label: 'Title', kicker: 'Scripture Reading', lines: [String(it.ref || '').trim() || 'Scripture Reading'].concat(who ? [who] : []) });
     return slides;
   }
   // sermon -> a title slide, then one slide per point, the title riding above each
