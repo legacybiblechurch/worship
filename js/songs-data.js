@@ -2019,4 +2019,27 @@ const LEGACY_SONGS = {
     { label: "Chorus", lines: ["Praise the Lord Praise the Lord", "Let the people rejoice", "Oh come To the Father", "Through Jesus the Son", "And give Him the glory", "Great things He have done"] }
   ]
   },
+  "may-the-peoples-praise-you": {
+    title: "May the Peoples Praise You",
+    youtube: "https://www.youtube.com/watch?v=7BrfkjHdKVI",
+    lyrics: [
+    { label: "Verse 1", lines: ["You have called us out of darkest night into your glorious light", "That we may shake the wonders of the risen Christ"] },
+    { label: "Verse 1", lines: ["You have called us out of darkest night", "With boundless love, their deepest joy"] },
+    { label: "Verse 1", lines: ["With endless light", "May the peoples praise you"] },
+    { label: "Verse 1", lines: ["Let the nations be glad", "All your blessing comes that we may praise"] },
+    { label: "Tag", lines: ["Name of Jesus"] },
+    { label: "Verse 2", lines: ["All the earth is yours and all within", "Each harvest is your own", "And from your hand we give"] },
+    { label: "Verse 2", lines: ["to you to make Christ known", "May the seeds of mercy grow in us for those who", "Have not heard"] },
+    { label: "Verse 2", lines: ["May songs of praise,", "The lives of grace to spread your word", "May the peoples praise you"] },
+    { label: "Chorus", lines: ["Let the nations be glad", "All your blessing comes that we may praise", "May we praise the name of Jesus"] },
+    { label: "Verse 3", lines: ["It's a holy privilege", "to declare your praises and your name", "To every nation, tribe,"] },
+    { label: "Verse 3", lines: ["And tongue your church proclaims", "May the peoples praise you,", "Let the nations be glad"] },
+    { label: "Verse 3", lines: ["All your blessing comes that we may praise,", "May we praise the name of Jesus", "Holy, holy is the Lord Almighty"] },
+    { label: "Verse 4", lines: ["Worthy, worthy is the Lamb who was slain", "Holy holy is the lord almighty all creation praise", "Your glorious name"] },
+    { label: "Verse 4", lines: ["Praise your glorious name may the peoples praise you", "Let the nations be glad", "All your blessing comes that we may praise"] },
+    { label: "Verse 4", lines: ["May praise the name of Jesus", "May the people praise you Let"] },
+    { label: "Chorus", lines: ["Let the nations be glad", "All your blessing comes that we may praise"] },
+    { label: "Chorus", lines: ["May praise the name of Jesus", "We'll be right back"] }
+  ]
+  },
 };
