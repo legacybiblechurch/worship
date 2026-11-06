@@ -156,11 +156,11 @@
     .pt { cursor: grab; }
     .pt textarea, .pt input { cursor: text; }
     .pt button { cursor: pointer; }
-    /* dragging a card: the card lifts under the cursor, a quiet slot marks where it will land */
-    .pt-ghost { opacity: 0.3; border: 1px dashed var(--gold); background: transparent; }
-    .pt-ghost > * { visibility: hidden; }
-    .pt-lift { box-shadow: 0 22px 60px rgba(0,0,0,0.6), 0 3px 10px rgba(0,0,0,0.4); border-color: var(--gold); transform: scale(1.02); opacity: 1 !important; cursor: grabbing; transition: transform 120ms ease, box-shadow 120ms ease; }
-    .pt-chosen { user-select: none; }
+    /* dragging a card, the way the Finder moves a row: it floats under the cursor, the others slide to open a gap */
+    .points.sorting .pt { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
+    .points.sorting .pt.lift { transition: none; position: relative; z-index: 5; opacity: 0.92; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-color: var(--gold); }
+    .points.sorting .pt.lift.settle { transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    body.sorting, body.sorting * { user-select: none !important; cursor: grabbing !important; }
     .pt { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px 12px; margin-bottom: 10px; background: var(--panel); }
     .pt.here { border-color: var(--gold); }
     .pt-head { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-faint); }
@@ -316,7 +316,6 @@
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
   <script src="js/sheet.js?v=28"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" defer></script>
   <script>
   (function () {
     'use strict';
@@ -1187,43 +1186,66 @@
       });
       if (focusIdx != null && focusIdx >= 0) { var tas = list.querySelectorAll('textarea'); if (tas[focusIdx]) tas[focusIdx].focus(); }
     }
-    // grab a card anywhere outside its text and drag it to a new place, the way you move a file in a folder
+    // grab a card anywhere outside its text and drag it, the way the Finder moves a row:
+    // the card floats under the cursor, the others slide out of its way, and it drops into the gap
     function sortable(list, onReorder) {
       if (list._sortable) return;
-      function order() { return [].slice.call(list.querySelectorAll('.pt')).map(function (c) { return +c.dataset.block; }); }
-      function changedOrder(o) { return o.some(function (v, i) { return v !== i; }); }
-      if (window.Sortable) {
-        list._sortable = new Sortable(list, {
-          draggable: '.pt', filter: 'textarea, input, button, a, select', preventOnFilter: false,
-          animation: 180, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
-          forceFallback: true, fallbackTolerance: 4, fallbackOnBody: true,
-          ghostClass: 'pt-ghost', dragClass: 'pt-lift', chosenClass: 'pt-chosen',
-          scroll: true, scrollSensitivity: 70, scrollSpeed: 14, bubbleScroll: true,
-          onEnd: function () { var o = order(); if (changedOrder(o)) onReorder(o); }
-        });
-        return;
-      }
-      // no internet for the drag library: a plain version that still works
       list._sortable = true;
+      var GAP = 10;                                              // the margin between cards
       list.onpointerdown = function (e) {
-        if (e.button !== 0) return;
-        if (e.target.closest('textarea, input, button, a, select')) return;
+        if (e.button !== 0 || e.target.closest('textarea, input, button, a, select')) return;
         var card = e.target.closest('.pt'); if (!card || card.parentNode !== list) return;
-        var startY = e.clientY, started = false, pane = list.closest('.pane') || list;
+        var pane = list.closest('.pane') || list, cards = [].slice.call(list.querySelectorAll('.pt'));
+        var d = cards.indexOf(card), startY = e.clientY, startScroll = pane.scrollTop, started = false, raf = 0, lastY = startY;
+        var tops = [], mids = [], hs = [];
+        function measure() {
+          cards.forEach(function (c, i) { var r = c.getBoundingClientRect(); tops[i] = r.top + pane.scrollTop; hs[i] = r.height; mids[i] = tops[i] + r.height / 2; });
+        }
+        var shifted = [];                                        // which cards have slid out of the way
+        function place(y) {                                      // y: pointer, in page coordinates that scroll with the pane
+          var dy = y - startY + (pane.scrollTop - startScroll);
+          card.style.transform = 'translateY(' + dy + 'px)';
+          var center = mids[d] + dy, H = hs[d] + GAP;
+          cards.forEach(function (c, i) {
+            if (i === d) return;
+            var on = i < d ? center < mids[i] : center > mids[i];
+            if (on !== !!shifted[i]) { shifted[i] = on; c.style.transform = on ? 'translateY(' + (i < d ? H : -H) + 'px)' : ''; }
+          });
+        }
+        function tick() {                                        // keep the list moving when the cursor sits near an edge
+          var pr = pane.getBoundingClientRect(), v = 0;
+          if (lastY < pr.top + 60) v = -Math.ceil((pr.top + 60 - lastY) / 6); else if (lastY > pr.bottom - 60) v = Math.ceil((lastY - (pr.bottom - 60)) / 6);
+          if (v) { pane.scrollTop += v; place(lastY); }
+          raf = requestAnimationFrame(tick);
+        }
         function move(ev) {
-          if (!started) { if (Math.abs(ev.clientY - startY) < 5) return; started = true; card.classList.add('pt-lift'); }
-          var y = ev.clientY, cards = [].slice.call(list.querySelectorAll('.pt')).filter(function (c) { return c !== card; }), before = null;
-          for (var i = 0; i < cards.length; i++) { var r = cards[i].getBoundingClientRect(); if (y < r.top + r.height / 2) { before = cards[i]; break; } }
-          if (before) { if (card.nextSibling !== before) list.insertBefore(card, before); }
-          else if (card !== list.lastElementChild) list.appendChild(card);
-          var pr = pane.getBoundingClientRect();
-          if (y < pr.top + 50) pane.scrollTop -= 12; else if (y > pr.bottom - 50) pane.scrollTop += 12;
+          lastY = ev.clientY;
+          if (!started) {
+            if (Math.abs(ev.clientY - startY) < 4) return;
+            started = true; measure();
+            list.classList.add('sorting'); card.classList.add('lift'); document.body.classList.add('sorting');
+            try { card.setPointerCapture(ev.pointerId); } catch (x) {}
+            raf = requestAnimationFrame(tick);
+          }
+          place(ev.clientY);
         }
         function up() {
           window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up);
           if (!started) return;
-          card.classList.remove('pt-lift');
-          var o = order(); if (changedOrder(o)) onReorder(o);
+          cancelAnimationFrame(raf);
+          // where the gap is now: slide the card into it, then make the order real
+          var to = d, offset = 0;
+          cards.forEach(function (c, i) { if (!shifted[i]) return; if (i < d) { to--; offset -= hs[i] + GAP; } else { to++; offset += hs[i] + GAP; } });
+          card.classList.add('settle'); card.style.transform = 'translateY(' + offset + 'px)';
+          setTimeout(function () {
+            cards.forEach(function (c) { c.style.transform = ''; });
+            list.classList.remove('sorting'); card.classList.remove('lift', 'settle'); document.body.classList.remove('sorting');
+            if (to !== d) {
+              var order = cards.map(function (c) { return +c.dataset.block; }), moved = order.splice(d, 1)[0]; order.splice(to, 0, moved);
+              onReorder(order);
+              var landed = list.querySelectorAll('.pt')[to]; if (landed) { markHere('.pt', +landed.dataset.block); }
+            }
+          }, 190);
         }
         window.addEventListener('pointermove', move); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
       };
