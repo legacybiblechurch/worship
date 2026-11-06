@@ -301,7 +301,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=27"></script>
+  <script src="js/sheet.js?v=28"></script>
   <script>
   (function () {
     'use strict';
@@ -311,6 +311,19 @@
     var S = LBCSheet;
 
     var LIB = S.library();
+    // songs the finder already heard, waiting in drafts/ (filled in at load; titles made from the file names)
+    var FOUND_TITLES = {};
+    function titleFromSlug(slug) {
+      var small = { the: 1, a: 1, an: 1, of: 1, in: 1, and: 1, to: 1, for: 1, on: 1, my: 1, is: 1, o: 1, with: 1, at: 1, by: 1 };
+      return slug.split('-').map(function (w, i) { return (!i || !small[w]) ? w.charAt(0).toUpperCase() + w.slice(1) : w; }).join(' ');
+    }
+    fetch('https://api.github.com/repos/' + REPO + '/contents/drafts').then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        (list || []).forEach(function (f) {
+          var m = /^([a-z0-9-]+)\.json$/.exec(f.name || '');
+          if (m && m[1] !== 'status' && !LIB[m[1]]) FOUND_TITLES[m[1]] = titleFromSlug(m[1]);
+        });
+      }).catch(function () {});
     var saved = JSON.parse(JSON.stringify(S.saved()));   // words written once and kept (the Lord's Table…)
     var published = S.service();            // what Sunday currently is (on the site): [{type, …}]
     var order = published.map(withKey);     // what this person is arranging: every item of the service, in order
@@ -670,6 +683,7 @@
       function paint() {
         var q = inp.value.trim();
         items = q ? S.searchLibrary(q, 7) : [];
+        var pre = q ? S.searchTitles(q, FOUND_TITLES, 3).filter(function (it) { return it.score >= 70 && !LIB[it.slug]; }) : [];
         sugg.innerHTML = '';
         if (!q) { sugg.className = 'sugg'; return; }
         items.forEach(function (it, i) {
@@ -680,7 +694,17 @@
           b.onmousedown = function (e) { e.preventDefault(); choose(it.slug, it.title); };
           sugg.appendChild(b);
         });
-        var exact = items.length && S.searchLibrary(q, 1)[0] && S.searchLibrary(q, 1)[0].score >= 99;
+        // found ahead of time: the recording is heard, the words still want a quick check
+        pre.forEach(function (it, i) {
+          var b = document.createElement('button');
+          b.innerHTML = '<span></span><span class="tag">' + (hasSong(it.slug) ? 'already in' : 'found, needs a check') + '</span>';
+          b.firstChild.textContent = it.title;
+          if (items.length + i === hi) b.classList.add('hi');
+          b.onmousedown = function (e) { e.preventDefault(); inp.value = ''; sugg.className = 'sugg'; if (onFind) onFind(it.title); else findNew(it.title); };
+          sugg.appendChild(b);
+        });
+        items = items.concat(pre);
+        var exact = items.length && items[0].score >= 99;
         if (!exact) {
           var f = document.createElement('button');
           f.innerHTML = '<span class="find"></span><span class="tag">find it</span>';
@@ -702,8 +726,10 @@
           e.preventDefault();
           var q = inp.value.trim(); if (!q) return;
           if (hi >= 0 && sugg.children[hi]) { sugg.children[hi].onmousedown(e); return; }
-          var top = S.searchLibrary(q, 1)[0];
-          if (top && top.score >= 80) choose(top.slug, top.title); else if (onFind) onFind(q); else findNew(q);
+          var top = S.searchLibrary(q, 1)[0], pre = S.searchTitles(q, FOUND_TITLES, 1)[0];
+          if (top && top.score >= 80) choose(top.slug, top.title);
+          else if (pre && pre.score >= 80 && !LIB[pre.slug]) { if (onFind) onFind(pre.title); else findNew(pre.title); }
+          else if (onFind) onFind(q); else findNew(q);
         } else if (e.key === 'Escape') { inp.value = ''; paint(); }
       };
       function choose(slug, title) {

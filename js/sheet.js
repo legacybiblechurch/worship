@@ -64,18 +64,24 @@
   // contains, then a loose "all the typed letters appear in order" match that
   // survives a misspelling or two.
   function searchLibrary(query, limit) {
-    var L = library(), q = normTitle(query);
+    var L = library(), titles = {};
+    for (var slug in L) titles[slug] = L[slug].title || slug;
+    return searchTitles(query, titles, limit);
+  }
+  // score a query against any slug -> title map (the library, or songs found ahead of time)
+  function searchTitles(query, titles, limit) {
+    var q = normTitle(query), out = [];
     limit = limit || 8;
     if (!q) return [];
-    var qWords = q.split(' '), out = [];
-    for (var slug in L) {
-      var t = normTitle(L[slug].title || slug), score = 0;
+    var qWords = q.split(' ');
+    for (var slug in titles) {
+      var t = normTitle(titles[slug] || slug), score = 0;
       if (t === q) score = 100;
       else if (t.indexOf(q) === 0) score = 90;
       else if (qWords.every(function (w) { return t.split(' ').some(function (tw) { return tw.indexOf(w) === 0; }); })) score = 80;
       else if (t.indexOf(q) !== -1) score = 70;
       else if (subsequence(q.replace(/ /g, ''), t.replace(/ /g, ''))) score = 30;
-      if (score) out.push({ slug: slug, title: titleOf(slug), score: score - t.length / 200 });
+      if (score) out.push({ slug: slug, title: titles[slug] || slug, score: score - t.length / 200 });
     }
     return out.sort(function (a, b) { return b.score - a.score; }).slice(0, limit);
   }
@@ -446,7 +452,7 @@
     markup: markup, proseLine: proseLine,
     ROOM: ROOM,
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
-    slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, videoId: videoId,
+    slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, searchTitles: searchTitles, videoId: videoId,
     loadSongs: loadSongs,
     service: service, saved: saved, TYPE_NAMES: TYPE_NAMES, itemTitle: itemTitle,
     buildItem: buildItem, loadService: loadService,
