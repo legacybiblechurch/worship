@@ -7,5 +7,5 @@
 window.WORSHIP_SETLIST = [
   'may-the-peoples-praise-you',
   'let-me-be',
-  'i-asked-the-lord-that-i-might-grow',
+  'before-the-throne-of-god-above',
 ];
