@@ -267,9 +267,12 @@
       var was = document.body.classList.contains('third');
       if (was === third) return 0;
       var on = plate.classList.contains('on');
-      if (on) hide();
-      setTimeout(function () { document.body.classList.toggle('third', third); }, on ? 290 : 0);
-      return on ? 300 : 0;
+      // nothing showing: switch at once, so the words that follow are measured for the right layout
+      // (switching a beat later sized the first sermon card for the full screen, hence the giant title card)
+      if (!on) { document.body.classList.toggle('third', third); return 0; }
+      hide();
+      setTimeout(function () { document.body.classList.toggle('third', third); if (plate.classList.contains('on')) fit(); }, 290);
+      return 300;
     }
     function apply(st) {
       if (!st || st.blank || st.songIndex == null) return hide();
