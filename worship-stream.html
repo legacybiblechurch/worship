@@ -294,6 +294,7 @@
       var ch = new BroadcastChannel('lbc-worship');
       ch.onmessage = function (e) {
         var d = e.data;
+        if (d && d.type === 'who') { if (bg) ch.postMessage({ type: 'ping', from: 'stream' }); return; }
         if (!d || d.type === 'ping' || d.type === 'cmd' || d.songIndex === undefined) return;
         handle(d, 'local');
       };

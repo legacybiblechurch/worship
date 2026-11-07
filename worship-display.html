@@ -353,6 +353,7 @@
 
     // Live updates from control page
     channel.onmessage = function(e) {
+      if (e.data && e.data.type === 'who') { channel.postMessage({ type: 'ping', from: 'display' }); return; }
       if (!e.data || e.data.type === 'ping') return;
       localStorage.setItem('lbc-worship-state', JSON.stringify(e.data));
       if (songsReady) {

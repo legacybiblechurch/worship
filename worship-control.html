@@ -411,10 +411,13 @@
       if (e.data.from === 'display') displaySeen = Date.now();
       if (e.data.from === 'stream') streamSeen = Date.now();
     };
+    // ask, don't wait: a window Chrome has pushed behind the others slows its own clock
+    // to a crawl, so its pings dry up. A question gets answered straight away regardless.
+    setInterval(function () { try { channel.postMessage({ type: 'who' }); } catch (e) {} }, 1000);
     document.getElementById('st-skip').onclick = function () { startHidden = true; try { sessionStorage.setItem('lbc-start-hidden', '1'); } catch (e) {} paintStart(); };
     document.getElementById('st-show').onclick = function () { startHidden = false; try { sessionStorage.removeItem('lbc-start-hidden'); } catch (e) {} paintStart(); };
     setInterval(function () {
-      var on = Date.now() - displaySeen < 4000, st = Date.now() - streamSeen < 4000;
+      var on = Date.now() - displaySeen < 6000, st = Date.now() - streamSeen < 6000;
       document.getElementById('disp-pill').className = 'disp-pill ' + (on ? 'on' : 'off');
       document.getElementById('disp-pill-text').textContent = on ? 'TV connected' : 'TV not open';
       document.getElementById('st-tv').classList.toggle('done', on);
