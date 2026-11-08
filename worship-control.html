@@ -387,7 +387,10 @@
     // `songs` is every item of the service in order - songs, readings, the
     // sermon, the Lord's Table, videos, the logo - each already built into
     // slides by LBCSheet. The name stayed so the relay state fields did too.
-    var songs = [], songIdx = 0, slideIdx = 0, isBlank = false;
+// Old iPads (Safari before 15.4) have no BroadcastChannel. Give them a quiet stand-in so the page still runs; the relay does the talking.
+    if (typeof BroadcastChannel === 'undefined') { window.BroadcastChannel = function () { this.onmessage = null; }; BroadcastChannel.prototype.postMessage = function () {}; BroadcastChannel.prototype.close = function () {}; }
+    if (window.NodeList && !NodeList.prototype.forEach) NodeList.prototype.forEach = Array.prototype.forEach;
+        var songs = [], songIdx = 0, slideIdx = 0, isBlank = false;
     var channel = new BroadcastChannel('lbc-worship');
 
     function buildSongs(items) { return items; }
