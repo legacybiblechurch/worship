@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set up Sunday · Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @font-face { font-family: 'Priestacy'; src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display: swap; }
+    :root {
+      --bg: #0d0d0f; --panel: #141416; --panel-2: #1b1b1e; --line: #2a2a2e; --line-soft: #202024;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #62626a; --gold: #c9a84c; --good: #7bb37e; --warn: #d8a657;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; padding: 40px 20px 80px; }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    .back { display: inline-block; font-size: 13px; color: var(--ink-dim); text-decoration: none; margin-bottom: 18px; }
+    .brand { font-family: 'Priestacy', var(--font); font-size: 40px; line-height: 1; }
+    .brand-sub { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 22px; }
+    .lede { margin-top: 22px; font-size: 15.5px; color: var(--ink-dim); }
+    .lede b { color: var(--ink); font-weight: 600; }
+
+    .prog { position: sticky; top: 0; z-index: 3; background: var(--bg); padding: 14px 0 12px; margin-top: 18px; }
+    .prog-row { display: flex; align-items: baseline; gap: 12px; font-size: 13px; color: var(--ink-dim); }
+    .prog-row b { color: var(--ink); font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; }
+    .prog-row button { margin-left: auto; background: none; border: 1px solid var(--line); color: var(--ink-dim); font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 999px; cursor: pointer; }
+    .prog-row button:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .bar { height: 4px; border-radius: 2px; background: var(--line-soft); margin-top: 10px; overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 0; background: var(--gold); transition: width 260ms ease; }
+    .bar.done i { background: var(--good); }
+
+    h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin: 34px 0 8px; display: flex; align-items: baseline; gap: 10px; }
+    h2 small { font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--ink-faint); font-size: 11px; margin-left: auto; font-variant-numeric: tabular-nums; }
+    .box { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+    label.it { display: flex; gap: 14px; align-items: flex-start; padding: 13px 16px; border-bottom: 1px solid var(--line-soft); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    label.it:last-child { border-bottom: 0; }
+    label.it:hover { background: var(--panel-2); }
+    label.it input { position: absolute; opacity: 0; pointer-events: none; }
+    .chk { flex-shrink: 0; width: 22px; height: 22px; margin-top: 1px; border-radius: 7px; border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; transition: background 160ms, border-color 160ms; }
+    .chk svg { width: 13px; height: 13px; opacity: 0; transform: scale(.6); transition: opacity 160ms, transform 160ms; }
+    .it input:checked ~ .chk { background: var(--gold); border-color: var(--gold); }
+    .it input:checked ~ .chk svg { opacity: 1; transform: scale(1); }
+    .t { font-size: 15.5px; flex: 1; min-width: 0; }
+    .t b { font-weight: 600; }
+    .t small { display: block; font-size: 13px; color: var(--ink-dim); margin-top: 2px; }
+    .it input:checked ~ .t { color: var(--ink-faint); }
+    .it input:checked ~ .t b { color: var(--ink-dim); }
+    .it input:checked ~ .t small { color: var(--ink-faint); }
+    .warnbox { margin-top: 10px; padding: 11px 16px; border: 1px solid #3a2f16; border-radius: 10px; background: #17140c; font-size: 13.5px; color: var(--warn); }
+    .warnbox b { font-weight: 600; }
+    .fin { margin-top: 36px; padding: 22px 20px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); text-align: center; font-size: 15px; color: var(--ink-dim); }
+    .fin.yes { border-color: var(--good); color: var(--ink); }
+    .fin.yes b { color: var(--good); }
+    .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
+    .foot a { color: var(--ink-dim); }
+    @media (max-width: 480px) { body { padding: 24px 14px 64px; } .brand { font-size: 34px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="worship.html">&larr; Worship</a>
+    <div class="brand">Set up Sunday</div>
+    <div class="brand-sub">Legacy Bible Church &middot; Sunday morning</div>
+
+    <p class="lede">Go top to bottom. Tap a line when it is done. <b>The list clears itself every morning</b> so it is always fresh.</p>
+
+    <div class="prog">
+      <div class="prog-row"><b id="count">0 of 0</b><span id="word">to go</span><button type="button" id="reset">Start over</button></div>
+      <div class="bar" id="bar"><i></i></div>
+    </div>
+
+    <div id="list"></div>
+
+    <div class="fin" id="fin">Keep going. The last line is Start Streaming.</div>
+
+    <p class="foot">During the service the scene switching is on <a href="worship-obs.html">Run the stream</a>. Screens act up? <a href="worship-control.html">Worship Control</a> says which window is missing. Questions: Quaid.</p>
+  </div>
+
+  <script>
+    // The list. Every line is one thing with your hands. Hints are short because they are read standing up.
+    var GROUPS = [
+      ['Power and cables', [
+        ['Laptop on the stand at the media table. <b>Charger plugged in.</b>'],
+        ['<b>Hub</b> plugged into the laptop.'],
+        ['<b>Monitor</b> HDMI into the hub. Monitor on.'],
+        ['<b>Projector</b> HDMI into the hub. The long 50 foot one.'],
+        ['Projector on. Lens cap off. Give it a minute to warm up.', 'Too dark? Picture Mode to Bright. Lamp Mode to Normal. Curtains closed.'],
+        ['<b>Three screens show the desktop.</b> Laptop. Monitor. Projector. None is a copy of another.', 'If two match: System Settings, Displays, pick the projector, Use as Extended Display.']
+      ]],
+      ['Sound', [
+        ['<b>Bluetooth speaker</b> on. Set it where the room can hear it.'],
+        ['Pair it. Control Center at the top right, Bluetooth, tap the speaker.'],
+        ['System Settings, Sound, <b>Output: the speaker.</b>', 'Songs now play into the room.'],
+        ['<b>Headphone chip</b> into the Mac. Headphones on and powered.'],
+        ['<b>Mic receiver</b> into the Mac. The USB-C one. Not the Lightning one.'],
+        ['Clip mic on. Lights solid. <b>Clipped to the preacher</b> a hand below the chin.']
+      ]],
+      ['Camera', [
+        ['<b>Phone</b> plugged into the Mac. Open <b>Camo</b> on the phone.'],
+        ['Phone on the tripod aimed at the pulpit. <b>Do Not Disturb on.</b>'],
+        ['Open <b>Camo Studio</b> on the Mac. It shows the stage.', 'Zoom with the lens buttons. Telephoto 2.5x is the most it will do. Move the tripod closer if you need more.']
+      ]],
+      ['Screens', [
+        ['Double-click <b>Open Chrome for Sunday</b> on the Desktop.', 'This closes Chrome and opens it the right way. Control comes up by itself.'],
+        ['In Control: <b>Open the TV.</b> Drag it to the projector. Click it once.', 'Stuck full screen on the wrong screen? Esc. Then Ctrl+Cmd+F if it is still stuck.'],
+        ['In Control: <b>Open the stream window.</b> Click it. <b>Ctrl+Cmd+F.</b>', 'It has to be full screen or OBS goes stale.'],
+        ['Control says <b>TV connected</b> and <b>Stream connected</b>.']
+      ]],
+      ['OBS', [
+        ['Open <b>OBS</b>.', 'Opened on the projector? Window menu, Move to Built-in Display.'],
+        ['Double-click <b>Lyrics</b>. Pick the <b>Stream lyrics</b> window. OK.', 'OBS forgets this every time Chrome restarts. It is not you.'],
+        ['Right-click Lyrics. Transform. <b>Fit to screen.</b> Same for Camera.'],
+        ['<b>Camera shows the room.</b> Not Camo menus. Not the phone screen.', 'Wrong picture? Double-click Camera. Device: Camo Camera.'],
+        ['Double-click <b>Mic</b>. Device: <b>the mic receiver</b>. OK.'],
+        ['Settings, Audio, Advanced. <b>Monitoring Device: the headphones.</b> OK.'],
+        ['Mixer gear on Mic. Advanced Audio Properties. Mic and Songs both <b>Monitor and Output</b>. Close.'],
+        ['Talk. <b>Mic meter bounces.</b> You hear yourself in the headphones.'],
+        ['Play a song slide. <b>Songs meter bounces.</b> The speaker plays in the room.']
+      ]],
+      ['Practice run', [
+        ['Control: Next five times. <b>OBS follows.</b> The gold line is moving.', 'OBS behind or frozen? Click the stream window once and Ctrl+Cmd+F again.'],
+        ['<b>Projector</b> shows the same slide.'],
+        ['Scenes. <b>Service. Songs. Video. Service.</b> Each one looks right.']
+      ]],
+      ['Go live', [
+        ['OBS Settings, Stream. <b>The key is in.</b> YouTube event is scheduled.'],
+        ['<b>Start Streaming.</b> Bottom right.'],
+        ['On your phone: YouTube shows the preview and you hear sound. <b>You are live.</b>']
+      ]]
+    ];
+
+    var KEY = 'lbc-setup-' + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+    var state = {};
+    try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+    function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+    var TICK = '<svg viewBox="0 0 16 16" fill="none" stroke="#16130a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>';
+    var list = document.getElementById('list'), total = 0, n = 0;
+    GROUPS.forEach(function (g, gi) {
+      var h = document.createElement('h2'); h.innerHTML = g[0] + '<small data-g="' + gi + '"></small>'; list.appendChild(h);
+      var box = document.createElement('div'); box.className = 'box';
+      g[1].forEach(function (it) {
+        var id = 'i' + (n++); total++;
+        var l = document.createElement('label'); l.className = 'it';
+        l.innerHTML = '<input type="checkbox" id="' + id + '"' + (state[id] ? ' checked' : '') + '><span class="chk">' + TICK + '</span><span class="t">' + it[0] + (it[1] ? '<small>' + it[1] + '</small>' : '') + '</span>';
+        l.setAttribute('data-g', gi);
+        box.appendChild(l);
+      });
+      list.appendChild(box);
+      if (gi === 1) { var w = document.createElement('div'); w.className = 'warnbox'; w.innerHTML = '<b>Never</b> point OBS monitoring at the speaker. The mic goes into the room and squeals.'; list.appendChild(w); }
+    });
+
+    function paint() {
+      var done = 0, per = {};
+      list.querySelectorAll('input').forEach(function (c) { var g = c.closest('label').getAttribute('data-g'); per[g] = per[g] || [0, 0]; per[g][1]++; if (c.checked) { done++; per[g][0]++; } });
+      document.getElementById('count').textContent = done + ' of ' + total;
+      document.getElementById('word').textContent = done === total ? 'done' : (total - done) + ' to go';
+      var bar = document.getElementById('bar'); bar.querySelector('i').style.width = (100 * done / total) + '%'; bar.className = 'bar' + (done === total ? ' done' : '');
+      list.querySelectorAll('h2 small').forEach(function (s) { var p = per[s.getAttribute('data-g')] || [0, 0]; s.textContent = p[0] === p[1] ? 'done' : p[0] + ' / ' + p[1]; });
+      var fin = document.getElementById('fin');
+      if (done === total) { fin.className = 'fin yes'; fin.innerHTML = '<b>All set.</b> Go run the service. Scenes are on Run the stream.'; }
+      else { fin.className = 'fin'; fin.textContent = 'Keep going. The last line is Start Streaming.'; }
+    }
+    list.addEventListener('change', function (e) { if (e.target.type === 'checkbox') { state[e.target.id] = e.target.checked; if (!e.target.checked) delete state[e.target.id]; save(); paint(); } });
+    document.getElementById('reset').addEventListener('click', function () { state = {}; save(); list.querySelectorAll('input').forEach(function (c) { c.checked = false; }); paint(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    paint();
+  </script>
+</body>
+</html>

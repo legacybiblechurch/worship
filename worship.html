@@ -37,10 +37,17 @@
     .row .s { font-size: 12px; color: var(--ink-faint); }
     .empty { padding: 18px; font-size: 14px; color: var(--ink-dim); }
 
-    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
     .act { display: block; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; min-height: 124px; }
     .act:active { background: var(--panel-2); }
     .act.primary { background: var(--gold); border-color: var(--gold); color: #16130a; }
+    .act.setup { margin-top: 18px; min-height: 0; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .act.setup .k { width: 100%; margin-bottom: 4px; }
+    .act.setup h2 { font-size: 17px; }
+    .act.setup p { margin: 0; margin-left: auto; font-size: 13px; text-align: right; }
+    .act.setup.going { border-color: var(--gold); }
+    .act.setup.going p { color: var(--gold); opacity: 1; }
+    .act.setup.done p { color: var(--good); opacity: 1; }
     .act h2 { font-size: 19px; font-weight: 600; }
     .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
     .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
@@ -62,6 +69,13 @@
       <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
       <div id="songs"><div class="empty">Loading…</div></div>
     </div>
+
+    <!-- the room checklist. Sunday morning it is the first thing to tap -->
+    <a class="act setup" id="act-setup" href="worship-setup.html">
+      <div class="k">Sunday morning &middot; first</div>
+      <h2>Set up the room</h2>
+      <p id="setup-p">Cables. Speaker. Headphones. Mic. Camera. Screens. OBS. Tap each line as you go.</p>
+    </a>
 
     <!-- two choices. On a Sunday the morning one comes first and is gold; the script below swaps them -->
     <div class="actions" id="actions">
@@ -97,6 +111,16 @@
       var box = document.getElementById('actions'), prep = document.getElementById('act-prep'), run = document.getElementById('act-run');
       prep.className = 'act'; run.className = 'act primary';
       box.appendChild(run); box.appendChild(prep);
+    })();
+    // How far along this morning's room checklist is, on this laptop
+    (function () {
+      var key = 'lbc-setup-' + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date()), st = {};
+      try { st = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (e) { return; }
+      var done = Object.keys(st).filter(function (k) { return st[k]; }).length, TOTAL = 34;
+      if (!done) return;
+      var a = document.getElementById('act-setup'), p = document.getElementById('setup-p');
+      if (done >= TOTAL) { a.className = 'act setup done'; p.textContent = 'All set. ' + TOTAL + ' of ' + TOTAL + ' done.'; }
+      else { a.className = 'act setup going'; p.textContent = done + ' of ' + TOTAL + ' done. Keep going.'; }
     })();
     LBCSheet.loadService(function (songs) {
       var box = document.getElementById('songs'), st = document.getElementById('state');
