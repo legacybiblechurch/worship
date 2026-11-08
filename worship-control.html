@@ -566,7 +566,10 @@
       var isRemote = qs.has('remote');
       // A phone that opens Control directly becomes its own player and controls
       // nothing. Phones belong on the code screen unless told otherwise.
+      // An iPad too: iPadOS calls itself a Mac but a real Mac has no touch points.
       var phone = navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) < 700;
+      var tablet = navigator.maxTouchPoints > 1 && (/iPad|MacIntel/.test(navigator.platform) || /Android/.test(navigator.userAgent));
+      phone = phone || tablet;
       var mainHere = false; try { mainHere = localStorage.getItem('lbc-main-device') === '1'; } catch (e) {}
       if (qs.get('main') === '1') { mainHere = true; try { localStorage.setItem('lbc-main-device', '1'); } catch (e) {} }
       if (!isRemote && phone && !mainHere) { location.replace('remote.html?from=control'); }

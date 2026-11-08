@@ -116,7 +116,7 @@
     (function () {
       var key = 'lbc-setup-' + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date()), st = {};
       try { st = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (e) { return; }
-      var done = Object.keys(st).filter(function (k) { return st[k]; }).length, TOTAL = 34;
+      var done = Object.keys(st).filter(function (k) { return st[k]; }).length, TOTAL = 35;
       if (!done) return;
       var a = document.getElementById('act-setup'), p = document.getElementById('setup-p');
       if (done >= TOTAL) { a.className = 'act setup done'; p.textContent = 'All set. ' + TOTAL + ' of ' + TOTAL + ' done.'; }
