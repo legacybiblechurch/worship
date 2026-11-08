@@ -98,3 +98,7 @@ Built and tested on 2026-10-11 on the church MacBook Pro (M5), OBS 32.0.1, on an
 
 - **Advanced Scene Switcher** (free OBS plugin) can switch to Video when QuickTime goes full screen and back when it closes, removing the two clicks.
 - The PTZ camera for the building: plugs in by USB, replaces the Camera device, nothing else changes.
+
+### Where the words land
+
+The stream window lays everything out inside a 16:9 box in the middle of the window. The Mac's screens are 16:10, so a full-screen window has a thin band top and bottom. Tell OBS to fill the canvas with the box: right-click **Lyrics (green window)** → Transform → **Edit Transform** → Bounding Box Type **Scale to outer bounds**, size **1920 × 1080**, Position **0, 0**, Positional Alignment **Top Left**. Do the same in every scene that has it (Service and Songs). After that a point sits bottom-centre and a reading fills the frame on any screen, full screen or not. Never use Fit to screen for this source; that leaves the words small with camera showing round them.

@@ -32,9 +32,15 @@
     body.bg-green { background: #00ff00; }   /* ?bg=green  for a chroma-key filter */
     body.bg-solid { background: #000; }      /* ?bg=solid  when transparency is not available */
 
+    /* ── the stage: a 16:9 box centred in the window. OBS's canvas is 16:9 but the Mac's
+       screens are 16:10, so a full-screen window has bands top and bottom. Every word and
+       the countdown lay out inside the stage, and OBS fills its canvas with the stage
+       (Transform: scale to outer bounds), so a point sits where it should on every screen. */
+    #stage { position: fixed; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; }
+
     /* ── the words ── */
     #plate {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 1;
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
       padding: 0.55em 1.2em 0.7em;
       text-align: center;
       line-height: 1.28;
@@ -69,7 +75,7 @@
        PRISM's own buttons never shows on the stream. */
     body.panel #plate, body.black #plate {
       top: 0;
-      padding: 4vh 4vw;
+      padding: calc(var(--sh, 100vh) * 0.04) calc(var(--sw, 100vw) * 0.04);
       display: flex; align-items: center; justify-content: center;
       background: none;
     }
@@ -90,11 +96,11 @@
        (?third=sermon,scripture puts readings there too; ?third=none turns it off) */
     body.third #plate {
       top: auto; bottom: 0; left: 0; right: 0;
-      display: block; padding: 0 5vw 6vh 5vw;
+      display: block; padding: 0 calc(var(--sw, 100vw) * 0.05) calc(var(--sh, 100vh) * 0.06);
       text-align: left; background: none;
     }
     body.third #lines {
-      display: inline-block; max-width: 64vw;
+      display: inline-block; max-width: calc(var(--sw, 100vw) * 0.64);
       background: #0e0e0d;                       /* solid on purpose: anything translucent gets eaten by the key */
       border-radius: 0.32em;
       padding: 0.62em 1.25em 0.7em 1.25em;
@@ -124,7 +130,7 @@
        Sunday · 10:30 AM top right, "Worship begins in" and the big thin time,
        and a 2px gold hairline that drains toward the start. */
     #card {
-      position: fixed; inset: 0; z-index: 2;
+      position: absolute; inset: 0; z-index: 2;
       background: #0B0B0A; color: #F5F3EE;
       font-family: 'Inter', system-ui, sans-serif;
       opacity: 0; pointer-events: none;
@@ -173,6 +179,7 @@
 </head>
 <body>
 
+  <div id="stage">
   <div id="plate"><div id="lines"></div></div>
 
   <div id="card">
@@ -189,6 +196,7 @@
         <div id="track"><div id="fillbar"><div class="clip"><div class="flow"></div></div><div class="head"></div></div></div>
       </div>
     </div>
+  </div>
   </div>
 
   <div id="hud"></div>
@@ -226,7 +234,13 @@
     var plate = document.getElementById('plate'), lines = document.getElementById('lines');
     var card = document.getElementById('card'), l1 = document.getElementById('l1'), l2 = document.getElementById('l2'), count = document.getElementById('count');
     var board = document.getElementById('board'), fillbar = document.getElementById('fillbar');
-    function fitBoard() { board.style.setProperty('--k', Math.min(window.innerWidth / 1280, window.innerHeight / 720)); }
+    var stage = document.getElementById('stage');
+    function fitStage() {
+      var W = window.innerWidth, H = window.innerHeight, w = Math.min(W, H * 16 / 9), h = w * 9 / 16;
+      stage.style.width = w + 'px'; stage.style.height = h + 'px'; stage.style.left = (W - w) / 2 + 'px'; stage.style.top = (H - h) / 2 + 'px';
+      document.documentElement.style.setProperty('--sw', w + 'px'); document.documentElement.style.setProperty('--sh', h + 'px');
+    }
+    function fitBoard() { fitStage(); board.style.setProperty('--k', Math.min(stage.clientWidth / 1280, stage.clientHeight / 720)); }
     fitBoard(); window.addEventListener('resize', fitBoard);
     var WINDOW = 30 * 60;   // the hairline is full half an hour out and empty at the start
     var SONGS = [], ready = false, pending = null;
@@ -240,7 +254,8 @@
     // ── the words ──────────────────────────────────────────────────────────
     // largest size that fits, so the widget can be any size
     function fit() {
-      var vw = window.innerWidth, vh = window.innerHeight, n = 0, FULL = isFull(), THIRD_ON = document.body.classList.contains('third');
+      fitStage();
+      var vw = stage.clientWidth, vh = stage.clientHeight, n = 0, FULL = isFull(), THIRD_ON = document.body.classList.contains('third');
       var size = FULL ? Math.min(vw * 0.052, vh * 0.092) : Math.min(vw * 0.030, vh * 0.052);
       var limit = FULL ? vh * 0.84 : THIRD_ON ? vh * 0.36 : vh * 0.97;
       function h() { return FULL || THIRD_ON ? lines.offsetHeight : plate.offsetHeight; }
