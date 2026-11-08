@@ -262,7 +262,7 @@
                         "name": "Camera",
                         "source_uuid": "5639456c-dbef-496b-808b-a88995752ce8",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "align": 5,
                         "bounds_type": 3,
@@ -295,13 +295,25 @@
                         "hide_transition": {
                             "duration": 0
                         },
-                        "private_settings": {}
+                        "private_settings": {},
+                        "pos_rel": {
+                            "x": -1.7777777777777777,
+                            "y": -1.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555555555554,
+                            "y": 2.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        }
                     },
                     {
                         "name": "Lyrics (green window)",
                         "source_uuid": "292eb9bd-b90f-4763-bf7b-cbe5feda5834",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "align": 5,
                         "bounds_type": 3,
@@ -334,7 +346,19 @@
                         "hide_transition": {
                             "duration": 0
                         },
-                        "private_settings": {}
+                        "private_settings": {},
+                        "pos_rel": {
+                            "x": -1.7777777777777777,
+                            "y": -1.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555555555554,
+                            "y": 2.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        }
                     },
                     {
                         "name": "Mic (shirt mic)",
@@ -458,7 +482,7 @@
                         "name": "Camera",
                         "source_uuid": "5639456c-dbef-496b-808b-a88995752ce8",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "align": 5,
                         "bounds_type": 3,
@@ -491,13 +515,25 @@
                         "hide_transition": {
                             "duration": 0
                         },
-                        "private_settings": {}
+                        "private_settings": {},
+                        "pos_rel": {
+                            "x": -1.7777777777777777,
+                            "y": -1.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555555555554,
+                            "y": 2.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        }
                     },
                     {
                         "name": "Lyrics (green window)",
                         "source_uuid": "292eb9bd-b90f-4763-bf7b-cbe5feda5834",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "align": 5,
                         "bounds_type": 3,
@@ -530,7 +566,19 @@
                         "hide_transition": {
                             "duration": 0
                         },
-                        "private_settings": {}
+                        "private_settings": {},
+                        "pos_rel": {
+                            "x": -1.7777777777777777,
+                            "y": -1.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555555555554,
+                            "y": 2.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        }
                     },
                     {
                         "name": "Songs (Chrome audio)",
