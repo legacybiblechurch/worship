@@ -324,7 +324,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=30"></script>
+  <script src="js/sheet.js?v=31"></script>
   <script>
   (function () {
     'use strict';
@@ -485,6 +485,7 @@
         return '    { label: ' + emitStr(b.label || '') + ', lines: [' + (b.lines || []).map(emitStr).join(', ') + '] }';
       }).join(',\n');
       return '  ' + emitStr(slug) + ': {\n    title: ' + emitStr(song.title) + ',\n    youtube: ' + emitStr(song.youtube || '') +
+             (song.writer ? ',\n    writer: ' + emitStr(song.writer) : '') +
              ',\n    lyrics: [\n' + blocks + '\n  ]\n  }';
     }
     function spliceSong(fileText, slug, song) {
@@ -1095,6 +1096,7 @@
             '<div class="video-strip">' +
               (vid ? '<div class="vwrap"><iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media"></iframe></div>' : '<div class="novid">No video yet. Paste a YouTube link below</div>') +
               '<input id="vidInput" placeholder="YouTube link" spellcheck="false">' +
+              '<input id="byInput" placeholder="Written by (optional). Shows on the song’s title slide" spellcheck="false">' +
               '<div class="alt-row"><button class="btn quiet" id="altBtn">Other recordings</button>' +
               '<a class="btn quiet" id="ytSearch" target="_blank" rel="noopener">Search YouTube for different options &nearr;</a>' +
               '<span class="hint">or paste any YouTube link above</span></div>' +
@@ -1112,6 +1114,9 @@
       var vidIn = document.getElementById('vidInput');
       vidIn.value = s.youtube || '';
       vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
+      var byIn = document.getElementById('byInput');
+      byIn.value = s.writer || '';
+      byIn.onchange = function () { s.writer = byIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
       document.getElementById('modeBtn').onclick = function () { textMode[slug] = !asText; renderEditor(slug); };
       document.getElementById('ytSearch').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(s.title + ' lyrics');
       document.getElementById('altBtn').onclick = function () { showAlternatives(slug, s); };

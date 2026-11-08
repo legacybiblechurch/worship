@@ -270,13 +270,13 @@
     flush();
     // a plain card first, for while the reader walks up: Scripture Reading, the passage, the name
     var who = it.who && String(it.who).trim();
-    slides.unshift({ label: 'Title', kicker: 'Scripture Reading', lines: [String(it.ref || '').trim() || 'Scripture Reading'].concat(who ? [who] : []) });
+    slides.unshift({ label: 'Title', title: true, kicker: 'Scripture Reading', lines: [String(it.ref || '').trim() || 'Scripture Reading'].concat(who ? [who] : []) });
     return slides;
   }
   // sermon -> a title slide, then one slide per point, the title riding above each
   // a point may hold several lines (a heading and its verse); they stay on one slide
   function buildSermonSlides(it) {
-    var slides = [{ label: 'Title', kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'].concat(it.who && String(it.who).trim() ? [String(it.who).trim()] : []) }];
+    var slides = [{ label: 'Title', title: true, kicker: it.passage || 'Sermon', lines: [it.title || 'Sermon'].concat(it.who && String(it.who).trim() ? [String(it.who).trim()] : []) }];
     if (it.thesis && String(it.thesis).trim()) slides.push({ label: 'So that', kicker: 'So that', lines: [String(it.thesis).trim()], rich: true });
     var num = '', name = 'Intro';
     (it.points || []).forEach(function (p, i) {
@@ -291,6 +291,13 @@
     return slides;
   }
 
+  // the first slide of every song: its name, and who wrote it when the Studio knows.
+  // No writer typed in means no writer shown. Nothing is guessed.
+  function songTitleSlide(slug, d) {
+    var by = d && d.writer ? String(d.writer).trim() : '';
+    return { label: 'Title', title: true, kicker: by ? 'Written by ' + by : '', lines: [titleOf(slug)] };
+  }
+
   // one item of the service, with its slides. The ONE place every page agrees on
   // what a reading, a sermon point or a video cue looks like.
   function buildItem(it) {
@@ -300,7 +307,7 @@
       out.slug = it.slug;
       out.ready = !!(d && d.lyrics && d.lyrics.length);
       out.youtube = (d && d.youtube && videoId(d.youtube)) ? d.youtube : '';
-      out.slides = out.ready ? buildSlides(d.lyrics) : [{ label: '', lines: ['No words yet. Open Studio to fix this song'] }];
+      out.slides = out.ready ? [songTitleSlide(it.slug, d)].concat(buildSlides(d.lyrics)) : [{ label: '', lines: ['No words yet. Open Studio to fix this song'] }];
     } else if (it.type === 'scripture') {
       out.slides = buildScriptureSlides(it);
       out.ready = out.slides.length > 0;

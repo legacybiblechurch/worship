@@ -415,7 +415,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=30"></script>
+  <script src="js/sheet.js?v=31"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -537,6 +537,8 @@
       Deck.paintButton();
 
       var grid = document.getElementById('slide-grid');
+      // a song's cards are Title, Slide 1, Slide 2… Readings and the sermon keep their own names
+      function thumbLabel(slide, i) { return song.type !== 'song' ? (slide.label || '') : slide.title ? 'Title' : 'Slide ' + i; }
       grid.innerHTML = song.slides.map(function (slide, i) {
         var isActive = i === slideIdx;
         // every line of the slide, exactly as the TV shows it, so the operator never has to look up
@@ -544,7 +546,7 @@
         if (slide.cue) preview += '<span class="tl cue">' + esc(slide.cue) + '</span>';
         return '<div class="slide-thumb' + (isActive ? ' active' : '') + '" onclick="goTo(' + songIdx + ',' + i + ')">' +
           (isActive ? '<div class="live-badge">Live</div>' : '') +
-          '<div class="thumb-label">' + esc(slide.label || '') + (slide.kicker && slide.kicker !== slide.label ? '<span class="kick"> · ' + esc(slide.kicker) + '</span>' : '') + '</div>' +
+          '<div class="thumb-label">' + esc(thumbLabel(slide, i)) + (slide.kicker && slide.kicker !== slide.label ? '<span class="kick"> · ' + esc(slide.kicker) + '</span>' : '') + '</div>' +
           '<div class="thumb-lines">' + preview + '</div></div>';
       }).join('');
 
@@ -692,7 +694,7 @@
     })();
 
     var Deck = (function () {
-      var FADE_MS = 3500, TICK = 80;
+      var CROSS_MS = 6000, OUT_MS = 8000, TICK = 80;   // song to song in six seconds, out to silence in eight: nothing abrupt
       var players = {}, ready = false, active = null, other = null;
       var volume = 100, fadeTimer = null, playingIdx = -1, pendingIdx = -1;
       var el = function (id) { return document.getElementById(id); };
@@ -748,7 +750,7 @@
         clearInterval(fadeTimer);
         var t0 = Date.now();
         fadeTimer = setInterval(function () {
-          var k = Math.min(1, (Date.now() - t0) / FADE_MS);
+          var k = Math.min(1, (Date.now() - t0) / CROSS_MS);
           var ease = k * k * (3 - 2 * k);
           if (outP) outP.setVolume(Math.round(volume * (1 - ease)));
           inP.setVolume(Math.round(volume * ease));
@@ -761,7 +763,7 @@
         clearInterval(fadeTimer);
         var p = players[active], t0 = Date.now();
         fadeTimer = setInterval(function () {
-          var k = Math.min(1, (Date.now() - t0) / FADE_MS);
+          var k = Math.min(1, (Date.now() - t0) / OUT_MS);
           p.setVolume(Math.round(volume * (1 - k)));
           if (k >= 1) { clearInterval(fadeTimer); fadeTimer = null; p.stopVideo(); playingIdx = -1; paint(); }
         }, TICK);

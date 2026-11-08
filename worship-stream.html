@@ -110,14 +110,16 @@
     @property --trace-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
     body.third #lines { position: relative; }
     body.third #lines::after {
-      content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 0.16em; pointer-events: none;
-      background: conic-gradient(from var(--trace-angle), transparent 0deg, transparent 290deg, rgba(201,168,76,0.3) 300deg, #C9A84C 335deg, #f6e3a1 350deg, transparent 360deg);
+      content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 0.07em; pointer-events: none; opacity: 0;
+      background: conic-gradient(from var(--trace-angle), transparent 0deg, transparent 300deg, rgba(201,168,76,0.45) 332deg, #e9d28f 350deg, transparent 360deg);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
               mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-      animation: trace-spin 6s linear infinite;
     }
+    /* each new card: the sliver goes round twice and fades, then the box is quiet */
+    body.third #lines.go::after { animation: trace-spin 4.5s linear 2, trace-show 9s linear forwards; }
     @keyframes trace-spin { to { --trace-angle: 360deg; } }
+    @keyframes trace-show { 0%, 86% { opacity: 1; } 100% { opacity: 0; } }
     body.third .kicker { font-size: 0.4em; letter-spacing: 0.22em; margin-bottom: 0.42em; opacity: 0.95; }
     body.third .line { font-weight: 500; text-shadow: none; line-height: 1.24; text-wrap: balance; }
     body.third .line + .line { margin-top: 0.28em; }
@@ -147,6 +149,12 @@
     #board .top { display: flex; justify-content: space-between; align-items: flex-start; }
     #logo { width: 170px; height: auto; display: block; }
     #l2 { font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #8A8780; padding-top: 18px; }
+    /* the QR code: one scan gets the worship guide and giving. ?qr=0 hides it */
+    #board .right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 26px; }
+    #qr img { width: 128px; height: 128px; display: block; margin-left: auto; border-radius: 8px; }
+    #qr .q1 { margin-top: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #C9A84C; }
+    #qr .q2 { margin-top: 5px; font-size: 12px; letter-spacing: 0.04em; color: #8A8780; }
+    body.noqr #qr { display: none; }
     #board .bottom { display: flex; flex-direction: column; gap: 28px; }
     #board .row { display: flex; justify-content: space-between; align-items: flex-end; }
     #l1 { font-size: 30px; font-weight: 300; letter-spacing: -0.01em; color: #CFCBC2; padding-bottom: 18px; }
@@ -186,7 +194,10 @@
     <div id="board">
       <div class="top">
         <img id="logo" src="images/logo-dark.png" alt="Legacy Bible Church">
-        <div id="l2">Sunday · 10:30 AM</div>
+        <div class="right">
+          <div id="l2">Sunday · 10:30 AM</div>
+          <div id="qr"><img src="images/qr-links.svg" alt=""><div class="q1">Worship guide · Give</div><div class="q2">Scan, or see the description</div></div>
+        </div>
       </div>
       <div class="bottom">
         <div class="row">
@@ -219,6 +230,7 @@
 
     // the starting-soon card
     var CARD  = qs.get('card') !== '0';                           // ?card=0 turns it off
+    if (qs.get('qr') === '0') document.body.classList.add('noqr');  // ?qr=0 hides the QR code on the card
     var TZ    = qs.get('tz') || 'America/Los_Angeles';
     var parts = (qs.get('at') || '10:30').split(':');
     var AT    = (+parts[0] || 0) * 3600 + (+parts[1] || 0) * 60;  // service start, seconds into the day
@@ -272,6 +284,7 @@
         lines.classList.toggle('prose', !!prose);
         lines.innerHTML = arr.map(function (l, i) { var k = firstIsKicker && i === 0; return '<div class="' + (k ? 'kicker' : 'line') + '">' + (k ? esc(l) : prose ? LBCSheet.proseLine(l) : rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; }).join('');
         fit(); cur = key; plate.classList.add('on'); lines.classList.remove('swap');
+        lines.classList.remove('go'); void lines.offsetWidth; lines.classList.add('go');   // restart the gold trace for this card
       }
       // slide to slide: fade only the text, the panel stays. Hidden to showing: fade the whole plate in.
       if (plate.classList.contains('on')) { lines.classList.add('swap'); setTimeout(swap, 190); } else swap();
@@ -367,7 +380,11 @@
       var h = Math.floor(AT / 3600), m = Math.floor((AT % 3600) / 60), ap = h >= 12 ? 'PM' : 'AM';
       return (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + ' ' + ap;
     }
-    function mmss(s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+    function hms(s) {   // 1:37:05 with hours, 37:05 without
+      s = Math.max(0, Math.ceil(s));
+      var h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), p = function (n) { return ('0' + n).slice(-2); };
+      return (h ? h + ':' + p(m) : String(m)) + ':' + p(s % 60);
+    }
     function startMusic() {
       if (!MUSIC || audio) return;
       audio = new Audio(MUSIC); audio.loop = true; audio.volume = Math.max(0, Math.min(1, VOL));
@@ -393,8 +410,8 @@
         else { cardState = 'off'; cardOff(); }
       } else if (rem > 0 || PIN) {
         cardState = 'before'; l2.textContent = 'Sunday · ' + clock();
-        if (rem > 99 * 60) { l1.textContent = 'Worship begins at'; count.textContent = clock().replace(/ [AP]M$/, ''); }
-        else { l1.textContent = 'Worship begins in'; count.textContent = mmss(rem); }
+        if (rem > 6 * 3600) { l1.textContent = 'Worship begins at'; count.textContent = clock().replace(/ [AP]M$/, ''); }
+        else { l1.textContent = 'Worship begins in'; count.textContent = hms(rem); }
         fillbar.style.width = (Math.min(1, Math.max(0, rem / WINDOW)) * 100).toFixed(2) + '%';
         cardOn();
       } else if (rem > -HOLD * 60) {
@@ -436,7 +453,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=30', function () {
+    load('js/sheet.js?v=31', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

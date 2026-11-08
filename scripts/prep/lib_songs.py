@@ -25,7 +25,7 @@ _HEADER = (
     "\n"
     "const LEGACY_SONGS = {\n"
 )
-_BARE_KEYS = ("title", "youtube", "lyrics", "label", "lines")
+_BARE_KEYS = ("title", "youtube", "writer", "lyrics", "label", "lines")
 
 
 # ---------------------------------------------------------------- read
@@ -80,6 +80,8 @@ def _emit_song(slug: str, song: dict) -> str:
     out = [f'  {_emit_str(slug)}: {{']
     out.append(f'    title: {_emit_str(song["title"])},')
     out.append(f'    youtube: {_emit_str(song.get("youtube", ""))},')
+    if song.get("writer"):
+        out.append(f'    writer: {_emit_str(song["writer"])},')
     out.append("    lyrics: [")
     blocks = []
     for b in song["lyrics"]:
