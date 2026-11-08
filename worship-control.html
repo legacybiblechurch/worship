@@ -245,7 +245,7 @@
     .nav-btn:hover { border-color: var(--ink-faint); background: var(--panel-3); }
     .nav-btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
     .nav-btn.primary:hover { background: #fff; }
-    #position-info { flex: 1; text-align: center; font-size: 13px; color: var(--ink-faint); pointer-events: none; }
+    #position-info { flex: 1; text-align: left; font-size: 13px; color: var(--ink-faint); pointer-events: none; }
     #position-song { font-weight: 600; color: var(--ink-dim); }
     .blank-btn {
       background: transparent; border: 1px solid var(--line);
@@ -257,6 +257,38 @@
 
     ::-webkit-scrollbar { width: 7px; }
     ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+    /* ── a remote (phone or iPad): the TV lives on the computer, so nothing that opens or watches it ── */
+    body.remote .kbd-hint, body.remote #header a[href="worship-display.html"], body.remote #header a[target="lbc-stream"],
+    body.remote #disp-pill, body.remote #phone-btn, body.remote #start { display: none !important; }
+    body.remote.start #layout { top: var(--header-h); }
+    /* the audio deck never sits on top of the last slide. On the laptop it floats at the right and the
+       grid gets room under it; on a remote or a phone it is a strip above the footer that takes its own
+       space, so the grid ends above it. --deck-h is measured in the script. */
+    #main { padding-bottom: calc(32px + var(--deck-h, 0px)); }
+    body.remote #deck { left: 0; right: 0; width: auto; bottom: var(--footer-h); border-radius: 0; border-left: 0; border-right: 0; border-bottom: 0; padding: 9px 18px; }
+    body.remote #deck.on { display: flex; align-items: center; gap: 12px; }
+    body.remote #deck .now, body.remote #deck .row { margin: 0; }
+    body.remote #deck .now { flex: 1; }
+    body.remote #deck .row button { padding: 9px 14px; font-size: 13px; }
+    body.remote #deck .row button.gold { flex: none; }
+    body.remote #layout { bottom: calc(var(--footer-h) + var(--deck-h, 0px)); }
+    body.remote #main { padding-bottom: 20px; }
+
+    /* ── a tablet or any finger-driven screen wider than a phone ── */
+    @media (pointer: coarse) and (min-width: 761px) {
+      :root { --footer-h: 74px; --sidebar-w: 230px; }
+      .kbd-hint { display: none; }
+      .song-item { padding: 12px 14px 12px 16px; }
+      .song-name { font-size: 14px; }
+      #slide-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+      .slide-thumb { padding: 15px 16px; min-height: 124px; gap: 8px; }
+      .thumb-lines { font-size: 14px; line-height: 1.5; }
+      .thumb-label { font-size: 10.5px; }
+      .nav-btn { padding: 15px 28px; font-size: 16px; border-radius: 8px; }
+      .blank-btn { padding: 15px 18px; font-size: 14px; border-radius: 8px; }
+      #deck .row button { padding: 10px 12px; font-size: 13.5px; }
+    }
 
     /* ── mobile ─────────────────────────────── */
     @media (max-width: 760px) {
@@ -286,14 +318,16 @@
       .song-name { -webkit-line-clamp: 1; font-size: 13px; }
       .song-count::before { content: '· '; }
 
-      #main { padding: 12px 12px 190px; }
+      #main { padding: 12px 12px 16px !important; }
       .song-bar { gap: 8px; }
       .yt-link { display: none; }
       #slide-grid { grid-template-columns: 1fr; gap: 8px; }
       .slide-thumb { min-height: 0; padding: 12px 14px; }
 
-      /* the audio deck becomes a full-width strip above the footer */
-      #deck { left: 10px; right: 10px; width: auto; bottom: calc(var(--footer-h) + 8px); padding: 8px 10px; }
+      /* the audio deck becomes a full-width strip above the footer, in its own space */
+      #deck { left: 0; right: 0; width: auto; bottom: var(--footer-h); padding: 8px 10px; border-radius: 0; border-left: 0; border-right: 0; border-bottom: 0; }
+      body.remote #deck.on { display: block; }
+      #layout { bottom: calc(var(--footer-h) + var(--deck-h, 0px)); }
       #deck .vids { display: none; }
       #deck .row button { padding: 10px 10px; font-size: 13px; flex: 1; }
       #deck .row button.gold { flex: 1.6; }
@@ -372,8 +406,8 @@
   </div>
 
   <div id="footer">
-    <button class="nav-btn" id="btn-prev">&larr; Prev</button>
     <div id="position-info"><span id="position-song"></span><span id="position-slide"></span></div>
+    <button class="nav-btn" id="btn-prev">&larr; Previous</button>
     <button class="nav-btn primary" id="btn-next">Next &rarr;</button>
     <button class="blank-btn" id="btn-blank">Blank</button>
   </div>
@@ -647,6 +681,16 @@
     // Two YouTube players. Pressing Play on a song (or stepping into a new song
     // while one is playing) fades the current one out over a few seconds while
     // the next fades in - no tab-switching, no hand on the volume.
+    // room under the slides for the audio strip, so the last slide is never behind it
+    (function () {
+      var deck = document.getElementById('deck'), last = -1;
+      function fit() {
+        var h = deck.classList.contains('on') ? deck.offsetHeight : 0;
+        if (h !== last) { last = h; document.documentElement.style.setProperty('--deck-h', h + 'px'); }
+      }
+      setInterval(fit, 400); window.addEventListener('resize', fit);
+    })();
+
     var Deck = (function () {
       var FADE_MS = 3500, TICK = 80;
       var players = {}, ready = false, active = null, other = null;
