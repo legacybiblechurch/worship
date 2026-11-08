@@ -381,7 +381,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=29"></script>
+  <script src="js/sheet.js?v=30"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -561,9 +561,8 @@
 
     // ── Net: the same slides from any device ─────────────────────────────
     // BroadcastChannel only reaches windows in one browser. For a phone across
-    // the room we relay through ntfy.sh (a free public pub/sub: a topic is just
-    // a long random name, so the code on this screen is the only key). The
-    // laptop remains the one that plays audio; a phone sends it commands.
+    // the room we go through the relay in js/sheet.js. The laptop remains the
+    // one that plays audio; a phone sends it commands.
     var Net = (function () {
       var qs = new URLSearchParams(location.search);
       var isRemote = qs.has('remote');
@@ -583,29 +582,10 @@
       // the laptop's own room is 'lbc-room'; a phone remembers the code it typed separately,
       // so the code screen never offers a phone its own stale room as if it were the laptop's
       try { localStorage.setItem(isRemote ? 'lbc-remote-code' : 'lbc-room', code); } catch (e) {}
-      var topic = 'lbc-worship-' + code.toLowerCase() + '-7f3a';
-      var me = Math.random().toString(36).slice(2), es = null, onMsg = null;
-      function send(obj) {
-        obj.from = me;
-        fetch('https://ntfy.sh/' + topic, { method: 'POST', body: JSON.stringify(obj) }).catch(function () {});
-      }
-      function connect() {
-        if (es) es.close();
-        es = new EventSource('https://ntfy.sh/' + topic + '/sse');
-        es.onmessage = function (e) {
-          try { var d = JSON.parse(JSON.parse(e.data).message); if (d.from !== me && onMsg) onMsg(d); } catch (x) {}
-        };
-        es.onerror = function () { setTimeout(connect, 3000); };
-      }
-      function listen(fn) { onMsg = fn; connect(); }
-      function last(fn) {
-        fetch('https://ntfy.sh/' + topic + '/json?poll=1&since=12h').then(function (r) { return r.text(); }).then(function (t) {
-          var lines = t.trim().split('\n').filter(Boolean);
-          for (var i = lines.length - 1; i >= 0; i--) {
-            try { var d = JSON.parse(JSON.parse(lines[i]).message); if (d.type === 'state') { fn(d); return; } } catch (x) {}
-          }
-        }).catch(function () {});
-      }
+      var r = LBCSheet.relay(code);
+      function send(obj) { r.send(obj); }
+      function listen(fn) { r.listen(fn); }
+      function last(fn) { r.last(fn, '12h'); }
       return { code: code, send: send, listen: listen, last: last, isRemote: isRemote };
     })();
     if (Net.isRemote) {

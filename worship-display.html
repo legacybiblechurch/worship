@@ -190,7 +190,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=29"></script>
+  <script src="js/sheet.js?v=30"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -316,21 +316,12 @@
       try { code = localStorage.getItem('lbc-room') || ''; } catch (e) {}
       if (!code) code = (window.LBCSheet && LBCSheet.ROOM) || '';
       if (!code) return;
-      var topic = 'lbc-worship-' + code.toLowerCase() + '-7f3a', es;
-      function connect() {
-        es = new EventSource('https://ntfy.sh/' + topic + '/sse');
-        es.onmessage = function (e) {
-          try {
-            var d = JSON.parse(JSON.parse(e.data).message);
-            if (d.type !== 'state') return;
-            var st = { songIndex: d.songIndex, slideIndex: d.slideIndex, blank: !!d.blank };
-            localStorage.setItem('lbc-worship-state', JSON.stringify(st));
-            if (songsReady) renderState(st); else pendingState = st;
-          } catch (x) {}
-        };
-        es.onerror = function () { es.close(); setTimeout(connect, 3000); };
-      }
-      connect();
+      LBCSheet.relay(code).listen(function (d) {
+        if (d.type !== 'state') return;
+        var st = { songIndex: d.songIndex, slideIndex: d.slideIndex, blank: !!d.blank };
+        localStorage.setItem('lbc-worship-state', JSON.stringify(st));
+        if (songsReady) renderState(st); else pendingState = st;
+      });
     })();
 
     // one click fills the screen, so nobody has to know F11. A hint says so until it is done.

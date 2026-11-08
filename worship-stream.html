@@ -328,25 +328,11 @@
     // Control anywhere (the iPad, another browser): the relay the phone remote uses
     function listen() {
       if (!topic) return;
-      var syncLast = function () {   // the slide Control is on now, if recent; covers a page opened mid-service
-        fetch('https://ntfy.sh/' + topic + '/json?poll=1&since=2h').then(function (r) { return r.text(); }).then(function (t) {
-          var rows = t.trim().split('\n').filter(Boolean);
-          for (var i = rows.length - 1; i >= 0; i--) {
-            try {
-              var m = JSON.parse(rows[i]), d = JSON.parse(m.message);
-              if (d.type === 'state') { if (m.time > lastRelayT) handle(d, 'relay (resumed)', m.time); return; }
-            } catch (x) {}
-          }
-        }).catch(function () {});
-      };
-      (function connect() {
-        var es = new EventSource('https://ntfy.sh/' + topic + '/sse');
-        es.onopen = function () { relay = 'on'; syncLast(); };
-        es.onmessage = function (ev) {
-          try { var m = JSON.parse(ev.data), d = JSON.parse(m.message); if (d.type === 'state') handle(d, 'relay', m.time); } catch (x) {}
-        };
-        es.onerror = function () { relay = 'off'; es.close(); setTimeout(connect, 3000); };
-      })();
+      var r = LBCSheet.relay(code);
+      r.listen(function (d, when) { if (d.type === 'state') handle(d, 'relay', when); });
+      // the slide Control is on now, if recent; covers a page opened mid-service
+      r.last(function (d, when) { if (when > lastRelayT) handle(d, 'relay (resumed)', when); });
+      setInterval(function () { relay = r.online() ? 'on' : 'off'; }, 1000);
     }
 
     // ── the starting-soon card ─────────────────────────────────────────────
@@ -435,7 +421,7 @@
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=29', function () {
+    load('js/sheet.js?v=30', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

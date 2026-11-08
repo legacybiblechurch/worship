@@ -430,7 +430,54 @@
   // relay under this code, and the phone remote and the livestream lyrics
   // listen to it, so none of them needs a code typed in. Change it here if it
   // ever has to change, and every page follows.
-  var ROOM = '8BSWX2H4DF';
+  var ROOM = 'LEGACY';
+
+  // The relay. ntfy servers: a topic is a long name and anyone holding it hears it.
+  // ntfy.sh itself allows only 250 messages a day from one address (a Sunday can
+  // pass that; a practice day did), so the first two are public servers that allow
+  // 17,280. A page posts to the first server that takes it and listens to all of
+  // them, so whichever one the message landed on, every page hears it.
+  var RELAYS = ['https://ntfy.envs.net', 'https://ntfy.adminforge.de', 'https://ntfy.sh'];
+  function relayTopic(code) { return 'lbc-worship-' + String(code || ROOM).toLowerCase() + '-7f3a'; }
+  function relay(code) {
+    var topic = relayTopic(code), me = Math.random().toString(36).slice(2), seq = 0, seen = {}, fns = [], sources = [], status = {};
+    function send(obj, i) {
+      i = i || 0;
+      if (i === 0) { obj.from = me; obj.n = ++seq; }
+      if (i >= RELAYS.length) return;
+      fetch(RELAYS[i] + '/' + topic, { method: 'POST', body: JSON.stringify(obj) })
+        .then(function (r) { if (!r.ok) send(obj, i + 1); })
+        .catch(function () { send(obj, i + 1); });
+    }
+    function deliver(d, when) {
+      if (!d || d.from === me) return;
+      var k = d.from + ':' + d.n;                 // the same message heard twice (a retry) is handled once
+      if (d.n != null) { if (seen[k]) return; seen[k] = 1; }
+      fns.forEach(function (f) { try { f(d, when); } catch (e) {} });
+    }
+    function connect(i) {
+      var es;
+      try { es = new EventSource(RELAYS[i] + '/' + topic + '/sse'); } catch (e) { return; }
+      sources[i] = es;
+      es.onopen = function () { status[i] = 'on'; };
+      es.onmessage = function (e) { try { var m = JSON.parse(e.data); deliver(JSON.parse(m.message), m.time); } catch (x) {} };
+      es.onerror = function () { status[i] = 'off'; es.close(); setTimeout(function () { connect(i); }, 3000 + 2000 * i); };
+    }
+    function listen(fn) { fns.push(fn); if (!sources.length) RELAYS.forEach(function (_, i) { connect(i); }); }
+    // the newest 'state' any server holds (a page opened mid-service catches up)
+    function last(fn, since) {
+      var best = null, left = RELAYS.length;
+      RELAYS.forEach(function (base) {
+        fetch(base + '/' + topic + '/json?poll=1&since=' + (since || '2h')).then(function (r) { return r.text(); }).then(function (t) {
+          t.trim().split('\n').filter(Boolean).forEach(function (line) {
+            try { var m = JSON.parse(line), d = JSON.parse(m.message); if (d.type === 'state' && (!best || m.time > best.time)) best = { time: m.time, d: d }; } catch (x) {}
+          });
+        }).catch(function () {}).then(function () { if (--left === 0 && best) fn(best.d, best.time); });
+      });
+    }
+    function online() { for (var i = 0; i < RELAYS.length; i++) if (status[i] === 'on') return true; return false; }
+    return { topic: topic, me: me, send: send, listen: listen, last: last, online: online };
+  }
 
   // sermon lines drawn like the printed worship guide: the KEY WORDS the
   // preacher typed in capitals are underlined, and a. / b. sub-points are indented
@@ -452,7 +499,7 @@
   }
   global.LBCSheet = {
     markup: markup, proseLine: proseLine,
-    ROOM: ROOM,
+    ROOM: ROOM, RELAYS: RELAYS, relay: relay, relayTopic: relayTopic,
     library: library, setlist: setlist, titleOf: titleOf, decodeEntities: decodeEntities,
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, searchTitles: searchTitles, videoId: videoId,
     loadSongs: loadSongs,
