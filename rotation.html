@@ -46,6 +46,7 @@
     .how { padding: 14px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
     .how:last-child { border-bottom: 0; }
     .how b { display: block; font-weight: 600; margin-bottom: 4px; }
+    .how > div { margin-top: 6px; }
     .how ol { margin: 4px 0 0 18px; color: var(--ink-dim); }
     .how li { margin: 3px 0; }
     .how a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
@@ -102,7 +103,7 @@
       <div class="k">This Sunday</div>
       <div class="d" id="now-date"></div>
       <div class="jobs">
-        <div class="job"><div class="j">Slides</div><div class="who" id="now-slides"></div><div class="what">The guide into the Studio this week. Control on Sunday.</div></div>
+        <div class="job"><div class="j">Guide &amp; Slides</div><div class="who" id="now-slides"></div><div class="what">The guide into the Studio. Print it. Run the slides.</div></div>
         <div class="job"><div class="j">Stream</div><div class="who" id="now-stream"></div><div class="what">OBS, the camera, the sound. Go live.</div></div>
         <div class="job"><div class="j">Table</div><div class="who" id="now-table"></div><div class="what">The Lord&rsquo;s Table elements.</div></div>
       </div>
@@ -113,36 +114,25 @@
     <h2>The three jobs</h2>
     <div class="box">
       <div class="how">
-        <b>Slides</b>
-        <ol>
-          <li><b style="display:inline">Wednesday.</b> Open the newest guide in <a href="https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67" target="_blank" rel="noopener">Worship Guides</a>. Pastor Todd saves it there from Word.</li>
-          <li>Put Sunday into the <a href="worship-studio.html">Studio</a>: the songs, the reading, the sermon title and passage, who prays. Green all the way down.</li>
-          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a> with Stream. Slides takes the screens and Control.</li>
-          <li><a href="worship-control.html">Run Sunday</a>. Next, Next, Next. Play the closing song the moment the prayer ends.</li>
-        </ol>
+        <b>Guide &amp; Slides</b>
+        Get the worship guide from Pastor Todd, put Sunday into the Studio, print the guide and hand it out, run the slides.
+        <div><a href="jobs/slides/">Everything you need &rarr;</a></div>
       </div>
       <div class="how">
         <b>Stream</b>
-        <ol>
-          <li><b style="display:inline">Saturday.</b> Schedule Sunday&rsquo;s stream in YouTube Studio. In the description paste the worship guide link and the giving link from <a href="https://legacybiblechurch.github.io/legacy-bible-church/links.html" target="_blank" rel="noopener">the links page</a>.</li>
-          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a> with Slides. Stream takes the sound, the camera, the headphones and OBS.</li>
-          <li><a href="worship-obs.html">Run the stream</a>. Start Streaming before the countdown ends. Service, Songs, Video.</li>
-          <li>After: Stop Streaming. Put the recording in <a href="https://drive.google.com/drive/folders/1tqi9liAfvPcmQcp9CJdDfvAARS5gDzK4" target="_blank" rel="noopener">Sermon Recordings</a> for Marco.</li>
-        </ol>
+        Schedule the YouTube stream Saturday with the links in the description, set up sound and camera and OBS Sunday, go live, save the recording.
+        <div><a href="jobs/stream/">Everything you need &rarr;</a></div>
       </div>
       <div class="how">
         <b>Table</b>
-        <ol>
-          <li>Bring the elements. Set the table before the service.</li>
-          <li>Hand them out during the Lord&rsquo;s Table.</li>
-        </ol>
+        Bring the elements, set the table before the service, hand them out during the Lord&rsquo;s Table.
+        <div><a href="jobs/table/">Everything you need &rarr;</a></div>
       </div>
     </div>
-
     <h2>The weeks ahead <small id="order"></small></h2>
     <div class="box" id="weeks"></div>
 
-    <p class="foot">Order: <span id="order2"></span>. Each job goes down the list one Sunday at a time. Nobody has two jobs the same week. Your turn comes as Slides, then two weeks later Table, then two weeks later Stream. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
+    <p class="foot">Order: <span id="order2"></span>. Each job goes down the list one Sunday at a time. Nobody has two jobs the same week. Your turn comes as Guide &amp; Slides, then two weeks later Table, then two weeks later Stream. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
   </div>
 
   <script src="js/rotation-data.js"></script>
@@ -168,7 +158,7 @@
       el('now-note').hidden = !now.note; el('now-note').textContent = now.note || '';
       el('next').innerHTML = nxt.off
         ? '<span>Next Sunday, ' + esc(R.label(nxt.date)) + ': <b>no service</b>' + (nxt.note ? ' · ' + esc(nxt.note) : '') + '</span>'
-        : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Slides <b>' + esc(nxt.slides) + '</b></span><span>Stream <b>' + esc(nxt.stream) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
+        : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Guide <b>' + esc(nxt.slides) + '</b></span><span>Stream <b>' + esc(nxt.stream) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
       el('order').textContent = ''; el('order2').textContent = (c.people || []).join(', ');
 
       var html = token() ? '' : '<div class="nokey">Changes are saved from the Studio laptop, where the site connection lives. Anywhere else, text Quaid.</div>';
@@ -176,7 +166,7 @@
         var marks = w.changed ? '<span class="mark">' + (w.off ? 'off' : 'changed') + (w.note ? ' · ' + esc(w.note) : '') + '</span>' : '';
         html += '<div class="wk' + (i === 0 ? ' is-now' : '') + (w.off ? ' off' : '') + '" data-date="' + w.date + '">' +
           '<span class="dt">' + esc(R.label(w.date)) + '</span>' +
-          '<span class="nm"><small>Slides</small>' + esc(w.off ? '—' : w.slides) + '</span>' +
+          '<span class="nm"><small>Guide</small>' + esc(w.off ? '—' : w.slides) + '</span>' +
           '<span class="nm"><small>Stream</small>' + esc(w.off ? '—' : w.stream) + '</span>' +
           '<span class="nm"><small>Table</small>' + esc(w.off ? '—' : w.table) + '</span>' +
           '<span>' + marks + (token() ? ' <button type="button" class="ch" data-date="' + w.date + '">Change</button>' : '') + '</span></div>';
@@ -187,7 +177,7 @@
     function editor(w) {
       var c = R.cfg(), opts = function (sel) { return (c.people || []).map(function (p) { return '<option' + (p === sel ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
       return '<div class="edit" id="edit">' +
-        '<div><label>Slides<select id="e-slides">' + opts(w.slides) + '</select></label></div>' +
+        '<div><label>Guide &amp; Slides<select id="e-slides">' + opts(w.slides) + '</select></label></div>' +
         '<div><label>Stream<select id="e-stream">' + opts(w.stream) + '</select></label></div>' +
         '<div><label>Table<select id="e-table">' + opts(w.table) + '</select></label></div>' +
         '<div class="full"><label>Note (optional)<input type="text" id="e-note" placeholder="Marco away" value="' + esc(w.note || '') + '"></label></div>' +
