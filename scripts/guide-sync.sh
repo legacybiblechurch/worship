@@ -136,11 +136,17 @@ log "installed. source=$SRC dest=$DST"
 bash "$SELF" --sync
 n_src="$(ls "$SRC" | grep -c 'Worship Guide')"; n_dst="$(ls "$DST" | grep -c 'Worship Guide')"
 say "In his folder: $n_src   In Drive: $n_dst"
+if [ "$n_src" != "$n_dst" ]; then
+  say "Not in Drive yet:"
+  diff <(ls "$SRC" | grep 'Worship Guide') <(ls "$DST" | grep 'Worship Guide') | grep '^<' | sed 's/^< /   /'
+  say "Last log lines:"; tail -3 "$LOG" | sed 's/^/   /'
+fi
 
-# 5. start the watcher
+# 5. start the watcher, then judge it by what IT writes, not by old log lines
+before="$(wc -l < "$LOG" 2>/dev/null || echo 0)"
 launchctl bootstrap "gui/$(id -u)" "$PLIST" 2>/dev/null || launchctl load "$PLIST"
-sleep 4
-if grep -q 'Operation not permitted' "$LOG" 2>/dev/null; then
+sleep 6
+if tail -n +"$((before + 1))" "$LOG" 2>/dev/null | grep -q 'Operation not permitted'; then
   say ""
   say "One more step. macOS is blocking the background copy from reading his folder."
   say "System Settings, Privacy & Security, Full Disk Access, the + button,"
