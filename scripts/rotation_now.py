@@ -5,10 +5,10 @@ Reads js/rotation-data.js (the same rules rotation.html uses) and writes
 rotation/now.json:
 
   {"sunday": "2026-11-16", "label": "Sunday, November 16",
-   "slides": "Quaid", "table": "Marco", "off": false, "note": "",
+   "slides": "Quaid", "stream": "Cole", "table": "Michael", "off": false, "note": "",
    "guide": "<Drive folder>"}
 
-The Wednesday text on Quaid's iPhone fetches this and messages the two names.
+The Wednesday text on Quaid's iPhone fetches this and messages the three names.
 Run by .github/workflows/rotation-now.yml every morning and whenever the data
 file changes. Nothing to install; standard library only.
 """
@@ -38,20 +38,20 @@ def who(cfg: dict, sunday: dt.date) -> dict:
     n = len(people)
     start = dt.date.fromisoformat(cfg["start"])
     weeks = round((sunday - start).days / 7)
+    jobs = cfg.get("jobs") or {"slides": 0, "stream": 1, "table": 3}
     out = {"sunday": sunday.isoformat(), "label": sunday.strftime("%A, %B %-d"),
-           "slides": "", "table": "", "off": False, "note": "", "guide": cfg.get("guide", "")}
+           "slides": "", "stream": "", "table": "", "off": False, "note": "", "guide": cfg.get("guide", "")}
     if n:
         i = weeks % n
-        out["slides"] = people[i]
-        out["table"] = people[(i + int(cfg.get("tableOffset", 0))) % n]
+        for job, off in jobs.items():
+            out[job] = people[(i + int(off)) % n]
     ch = (cfg.get("changes") or {}).get(sunday.isoformat())
     if ch:
         if ch.get("off"):
             out["off"] = True
-        if ch.get("slides"):
-            out["slides"] = ch["slides"]
-        if ch.get("table"):
-            out["table"] = ch["table"]
+        for job in jobs:
+            if ch.get(job):
+                out[job] = ch[job]
         if ch.get("note"):
             out["note"] = ch["note"]
     return out
@@ -65,10 +65,10 @@ def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=2) + "\n"
     if OUT.exists() and OUT.read_text(encoding="utf-8") == text:
-        print("unchanged:", data["sunday"], data["slides"], data["table"])
+        print("unchanged:", data["sunday"], data["slides"], data["stream"], data["table"])
         return
     OUT.write_text(text, encoding="utf-8")
-    print("wrote:", data["sunday"], data["slides"], data["table"])
+    print("wrote:", data["sunday"], data["slides"], data["stream"], data["table"])
 
 
 if __name__ == "__main__":

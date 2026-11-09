@@ -75,7 +75,7 @@
     <a class="act setup who" id="act-who" href="rotation.html">
       <div class="k">Who&rsquo;s up</div>
       <h2 id="who-h">This Sunday</h2>
-      <p id="who-p">Slides and the Table, by name.</p>
+      <p id="who-p">Slides, Stream and the Table, by name.</p>
     </a>
 
     <!-- the room checklist. Sunday morning it is the first thing to tap -->
@@ -118,8 +118,8 @@
       try {
         var w = LBCRotation.at(), h = document.getElementById('who-h'), p = document.getElementById('who-p');
         h.textContent = LBCRotation.label(w.date);
-        p.innerHTML = w.off ? 'No service' : 'Slides <b></b> &nbsp;·&nbsp; Table <b></b>';
-        if (!w.off) { var b = p.querySelectorAll('b'); b[0].textContent = w.slides; b[1].textContent = w.table; }
+        p.innerHTML = w.off ? 'No service' : 'Slides <b></b> &nbsp;·&nbsp; Stream <b></b> &nbsp;·&nbsp; Table <b></b>';
+        if (!w.off) { var b = p.querySelectorAll('b'); b[0].textContent = w.slides; b[1].textContent = w.stream; b[2].textContent = w.table; }
       } catch (e) {}
     })();
     // Sunday: the gold card is the one for the morning. Any other day it is the one for getting ready.

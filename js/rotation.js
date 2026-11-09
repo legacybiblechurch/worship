@@ -1,7 +1,8 @@
 /* Legacy Bible Church · who is up which Sunday.
  * Reads window.LBC_ROTATION (js/rotation-data.js) and answers for any Sunday.
  *   LBCRotation.sunday(d)       the Sunday a date belongs to (Mon..Sun -> that week's coming Sunday)
- *   LBCRotation.at('2026-11-16') { date, slides, table, off, note, changed }
+ *   LBCRotation.at('2026-11-15') { date, slides, stream, table, off, note, changed }
+ *   LBCRotation.JOBS            ['slides', 'stream', 'table']
  *   LBCRotation.list(from, n)   n Sundays from a date
  *   LBCRotation.label(date)     "Nov 16"
  * Dates are strings YYYY-MM-DD, counted in Los Angeles.
@@ -9,7 +10,8 @@
 (function (global) {
   'use strict';
   var TZ = 'America/Los_Angeles';
-  function cfg() { return global.LBC_ROTATION || { people: [], start: '2026-11-15', tableOffset: 2, changes: {} }; }
+  var JOBS = ['slides', 'stream', 'table'];
+  function cfg() { return global.LBC_ROTATION || { people: [], start: '2026-11-15', jobs: { slides: 0, stream: 1, table: 3 }, changes: {} }; }
   function parse(s) { var p = String(s).split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }     // midnight UTC stands in for the calendar day
   function fmt(ms) { var d = new Date(ms); return d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2); }
   function todayLA() { return new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date()); }
@@ -21,18 +23,16 @@
   function at(dateStr) {
     var c = cfg(), people = c.people || [], n = people.length, date = sunday(dateStr);
     var weeks = Math.round((parse(date) - parse(c.start)) / (7 * 864e5));
-    var out = { date: date, slides: '', table: '', off: false, note: '', changed: false };
+    var out = { date: date, slides: '', stream: '', table: '', off: false, note: '', changed: false }, jobs = c.jobs || {};
     if (n) {
       var i = ((weeks % n) + n) % n;
-      out.slides = people[i];
-      out.table = people[(i + (c.tableOffset || 0)) % n];
+      JOBS.forEach(function (j) { out[j] = people[(i + (jobs[j] || 0)) % n]; });
     }
     var ch = (c.changes || {})[date];
     if (ch) {
       out.changed = true;
       if (ch.off) out.off = true;
-      if (ch.slides) out.slides = ch.slides;
-      if (ch.table) out.table = ch.table;
+      JOBS.forEach(function (j) { if (ch[j]) out[j] = ch[j]; });
       if (ch.note) out.note = ch.note;
     }
     return out;
@@ -50,5 +50,5 @@
     var d = new Date(parse(dateStr));
     return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric' }).format(d);
   }
-  global.LBCRotation = { cfg: cfg, sunday: sunday, at: at, list: list, label: label, longLabel: longLabel, today: todayLA, TZ: TZ };
+  global.LBCRotation = { JOBS: JOBS, cfg: cfg, sunday: sunday, at: at, list: list, label: label, longLabel: longLabel, today: todayLA, TZ: TZ };
 })(window);

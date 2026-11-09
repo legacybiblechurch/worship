@@ -27,10 +27,10 @@
     .now { margin-top: 26px; border: 1px solid var(--gold); border-radius: 14px; background: var(--panel); padding: 20px 20px 18px; }
     .now .k { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
     .now .d { font-size: 15px; color: var(--ink-dim); margin-top: 2px; }
-    .jobs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .jobs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 16px; }
     .job { background: var(--panel-2); border-radius: 10px; padding: 14px 16px; }
     .job .j { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
-    .job .who { font-size: 26px; font-weight: 600; margin-top: 4px; line-height: 1.15; }
+    .job .who { font-size: 22px; font-weight: 600; margin-top: 4px; line-height: 1.15; }
     .job .what { font-size: 12.5px; color: var(--ink-dim); margin-top: 6px; }
     .now.off .who { color: var(--ink-faint); }
     .note { margin-top: 12px; font-size: 13.5px; color: var(--warn); }
@@ -52,7 +52,7 @@
     .how a:hover { border-color: var(--ink-dim); }
 
     /* the weeks ahead */
-    .wk { display: grid; grid-template-columns: 76px 1fr 1fr auto; gap: 10px; align-items: center; padding: 11px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
+    .wk { display: grid; grid-template-columns: 62px 1fr 1fr 1fr auto; gap: 10px; align-items: center; padding: 11px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
     .wk:last-child { border-bottom: 0; }
     .wk.is-now { background: var(--panel-2); }
     .wk .dt { color: var(--ink-dim); font-variant-numeric: tabular-nums; }
@@ -65,7 +65,7 @@
     .wk .mark { font-size: 11px; color: var(--warn); }
 
     /* editing one Sunday */
-    .edit { padding: 12px 18px 14px; border-bottom: 1px solid var(--line-soft); background: #121214; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .edit { padding: 12px 18px 14px; border-bottom: 1px solid var(--line-soft); background: #121214; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     .edit label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); display: block; }
     .edit select, .edit input[type=text] { width: 100%; margin-top: 4px; background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; }
     .edit .full { grid-column: 1 / -1; }
@@ -83,8 +83,12 @@
     .foot a { color: var(--ink-dim); }
     @media (max-width: 480px) {
       body { padding: 24px 14px 64px; } .brand { font-size: 34px; }
-      .wk { grid-template-columns: 62px 1fr 1fr auto; gap: 8px; padding: 11px 14px; font-size: 14px; }
-      .job .who { font-size: 22px; }
+      .wk { grid-template-columns: 50px 1fr 1fr 1fr auto; gap: 6px; padding: 11px 12px; font-size: 13px; }
+      .wk .ch { padding: 3px 5px; font-size: 11px; }
+      .jobs { grid-template-columns: 1fr; gap: 8px; }
+      .job { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding: 11px 14px; }
+      .job .j { width: 52px; } .job .who { font-size: 20px; margin: 0; } .job .what { width: 100%; margin-top: 2px; }
+      .edit { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -98,22 +102,32 @@
       <div class="k">This Sunday</div>
       <div class="d" id="now-date"></div>
       <div class="jobs">
-        <div class="job"><div class="j">Slides</div><div class="who" id="now-slides"></div><div class="what">Worship guide into the Studio this week. Control on Sunday.</div></div>
+        <div class="job"><div class="j">Slides</div><div class="who" id="now-slides"></div><div class="what">The guide into the Studio this week. Control on Sunday.</div></div>
+        <div class="job"><div class="j">Stream</div><div class="who" id="now-stream"></div><div class="what">OBS, the camera, the sound. Go live.</div></div>
         <div class="job"><div class="j">Table</div><div class="who" id="now-table"></div><div class="what">The Lord&rsquo;s Table elements.</div></div>
       </div>
       <div class="note" id="now-note" hidden></div>
     </div>
     <div class="next" id="next"></div>
 
-    <h2>The two jobs</h2>
+    <h2>The three jobs</h2>
     <div class="box">
       <div class="how">
         <b>Slides</b>
         <ol>
           <li><b style="display:inline">Wednesday.</b> Open the newest guide in <a href="https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67" target="_blank" rel="noopener">Worship Guides</a>. Pastor Todd saves it there from Word.</li>
           <li>Put Sunday into the <a href="worship-studio.html">Studio</a>: the songs, the reading, the sermon title and passage, who prays. Green all the way down.</li>
-          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a>, top to bottom.</li>
+          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a> with Stream. Slides takes the screens and Control.</li>
           <li><a href="worship-control.html">Run Sunday</a>. Next, Next, Next. Play the closing song the moment the prayer ends.</li>
+        </ol>
+      </div>
+      <div class="how">
+        <b>Stream</b>
+        <ol>
+          <li><b style="display:inline">Saturday.</b> Schedule Sunday&rsquo;s stream in YouTube Studio. In the description paste the worship guide link and the giving link from <a href="https://legacybiblechurch.github.io/legacy-bible-church/links.html" target="_blank" rel="noopener">the links page</a>.</li>
+          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a> with Slides. Stream takes the sound, the camera, the headphones and OBS.</li>
+          <li><a href="worship-obs.html">Run the stream</a>. Start Streaming before the countdown ends. Service, Songs, Video.</li>
+          <li>After: Stop Streaming. Put the recording in <a href="https://drive.google.com/drive/folders/1tqi9liAfvPcmQcp9CJdDfvAARS5gDzK4" target="_blank" rel="noopener">Sermon Recordings</a> for Marco.</li>
         </ol>
       </div>
       <div class="how">
@@ -128,7 +142,7 @@
     <h2>The weeks ahead <small id="order"></small></h2>
     <div class="box" id="weeks"></div>
 
-    <p class="foot">Order: <span id="order2"></span>. One Sunday each, round and round, so everyone is up every fifth week on each job and nobody has both the same week. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
+    <p class="foot">Order: <span id="order2"></span>. Each job goes down the list one Sunday at a time. Nobody has two jobs the same week. Your turn comes as Slides, then two weeks later Table, then two weeks later Stream. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
   </div>
 
   <script src="js/rotation-data.js"></script>
@@ -148,12 +162,13 @@
       var c = R.cfg(), rows = R.list(TODAY, WEEKS), now = rows[0], nxt = rows[1];
       el('now-date').textContent = R.longLabel(now.date);
       el('now-slides').textContent = now.off ? 'No service' : now.slides;
+      el('now-stream').textContent = now.off ? '' : now.stream;
       el('now-table').textContent = now.off ? '' : now.table;
       el('now').className = 'now' + (now.off ? ' off' : '');
       el('now-note').hidden = !now.note; el('now-note').textContent = now.note || '';
       el('next').innerHTML = nxt.off
         ? '<span>Next Sunday, ' + esc(R.label(nxt.date)) + ': <b>no service</b>' + (nxt.note ? ' · ' + esc(nxt.note) : '') + '</span>'
-        : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Slides <b>' + esc(nxt.slides) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
+        : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Slides <b>' + esc(nxt.slides) + '</b></span><span>Stream <b>' + esc(nxt.stream) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
       el('order').textContent = ''; el('order2').textContent = (c.people || []).join(', ');
 
       var html = token() ? '' : '<div class="nokey">Changes are saved from the Studio laptop, where the site connection lives. Anywhere else, text Quaid.</div>';
@@ -162,6 +177,7 @@
         html += '<div class="wk' + (i === 0 ? ' is-now' : '') + (w.off ? ' off' : '') + '" data-date="' + w.date + '">' +
           '<span class="dt">' + esc(R.label(w.date)) + '</span>' +
           '<span class="nm"><small>Slides</small>' + esc(w.off ? '—' : w.slides) + '</span>' +
+          '<span class="nm"><small>Stream</small>' + esc(w.off ? '—' : w.stream) + '</span>' +
           '<span class="nm"><small>Table</small>' + esc(w.off ? '—' : w.table) + '</span>' +
           '<span>' + marks + (token() ? ' <button type="button" class="ch" data-date="' + w.date + '">Change</button>' : '') + '</span></div>';
         if (editing === w.date) html += editor(w);
@@ -172,6 +188,7 @@
       var c = R.cfg(), opts = function (sel) { return (c.people || []).map(function (p) { return '<option' + (p === sel ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
       return '<div class="edit" id="edit">' +
         '<div><label>Slides<select id="e-slides">' + opts(w.slides) + '</select></label></div>' +
+        '<div><label>Stream<select id="e-stream">' + opts(w.stream) + '</select></label></div>' +
         '<div><label>Table<select id="e-table">' + opts(w.table) + '</select></label></div>' +
         '<div class="full"><label>Note (optional)<input type="text" id="e-note" placeholder="Marco away" value="' + esc(w.note || '') + '"></label></div>' +
         '<div class="full"><label class="off"><input type="checkbox" id="e-off"' + (w.off ? ' checked' : '') + '> No service this Sunday</label></div>' +
@@ -194,10 +211,12 @@
     function serialize(cfg) {
       var head = '// Legacy Bible Church · the Sunday rotation\n' +
         '// Strict JSON between the braces: rotation.html edits it, scripts/rotation_now.py reads it.\n' +
-        '//   people   the order. Slides goes down the list one Sunday each; Table runs the same\n' +
-        '//            list tableOffset places behind, so nobody has both jobs the same week.\n' +
-        '//   start    the Sunday people[0] has Slides and people[tableOffset] has Table.\n' +
-        '//   changes  one Sunday done differently: {"slides": "Cole"}, {"table": "Joel"},\n' +
+        '//   people   the order. Each job walks down the list one Sunday at a time.\n' +
+        '//   jobs     each job\'s offset into the list. Different offsets mean nobody has\n' +
+        '//            two jobs the same Sunday. With five people and 0, 1, 3 a person has\n' +
+        '//            Slides, two weeks later Table, two weeks later Stream, then round again.\n' +
+        '//   start    the Sunday people[0] has Slides.\n' +
+        '//   changes  one Sunday done differently: {"slides": "Cole"}, {"stream": "Joel"},\n' +
         '//            {"off": true, "note": "No service"}. Set from the page.\n';
       return head + 'window.LBC_ROTATION = ' + JSON.stringify(cfg, null, 2) + ';\n';
     }
@@ -208,7 +227,7 @@
         if (!m) throw new Error('The rotation file looks damaged. Nothing was changed.');
         var cfg = JSON.parse(m[1]); cfg.changes = cfg.changes || {};
         if (change) cfg.changes[date] = change; else delete cfg.changes[date];
-        var label = change ? (change.off ? 'no service' : ('Slides ' + change.slides + ', Table ' + change.table)) : 'back to normal';
+        var w = R.at(date), label = change ? (change.off ? 'no service' : ('Slides ' + (change.slides || w.slides) + ', Stream ' + (change.stream || w.stream) + ', Table ' + (change.table || w.table))) : 'back to normal';
         return gh('/repos/' + REPO + '/contents/' + PATH, { method: 'PUT', body: JSON.stringify({ message: 'rotation: ' + date + ' ' + label, content: b64e(serialize(cfg)), sha: j.sha, branch: 'main' }) })
           .then(function () { window.LBC_ROTATION = cfg; editing = null; paint(); });
       }).catch(function (e) { msg.className = 'msg bad'; msg.textContent = e.message; el('e-save').disabled = false; });
@@ -220,11 +239,12 @@
       if (t.id === 'e-cancel') { editing = null; paint(); return; }
       if (t.id === 'e-reset') { save(editing, null); return; }
       if (t.id === 'e-save') {
-        var base = R.at(editing), off = el('e-off').checked, s = el('e-slides').value, tb = el('e-table').value, note = el('e-note').value.trim();
-        if (!off && s === tb) { el('e-msg').className = 'msg bad'; el('e-msg').textContent = 'One person cannot have both jobs.'; return; }
+        var base = R.at(editing), off = el('e-off').checked, s = el('e-slides').value, st = el('e-stream').value, tb = el('e-table').value, note = el('e-note').value.trim();
+        if (!off && (s === tb || s === st || st === tb)) { el('e-msg').className = 'msg bad'; el('e-msg').textContent = 'One person cannot have two jobs the same Sunday.'; return; }
         var ch = {};
         if (off) ch.off = true;
         if (!off && s !== base.slides) ch.slides = s;
+        if (!off && st !== base.stream) ch.stream = st;
         if (!off && tb !== base.table) ch.table = tb;
         if (note) ch.note = note;
         // nothing different from the normal rotation: just clear the override
