@@ -134,11 +134,12 @@ say ""
 say "Copying the guides to Drive now…"
 log "installed. source=$SRC dest=$DST"
 bash "$SELF" --sync
-n_src="$(ls "$SRC" | grep -c 'Worship Guide')"; n_dst="$(ls "$DST" | grep -c 'Worship Guide')"
+# Word's ~$ lock files are not guides and are never copied, so they do not count
+n_src="$(ls "$SRC" | grep 'Worship Guide' | grep -vc '^~\$')"; n_dst="$(ls "$DST" | grep 'Worship Guide' | grep -vc '^~\$')"
 say "In his folder: $n_src   In Drive: $n_dst"
 if [ "$n_src" != "$n_dst" ]; then
   say "Not in Drive yet:"
-  diff <(ls "$SRC" | grep 'Worship Guide') <(ls "$DST" | grep 'Worship Guide') | grep '^<' | sed 's/^< /   /'
+  diff <(ls "$SRC" | grep 'Worship Guide' | grep -v '^~\$') <(ls "$DST" | grep 'Worship Guide' | grep -v '^~\$') | grep '^<' | sed 's/^< /   /'
   say "Last log lines:"; tail -3 "$LOG" | sed 's/^/   /'
 fi
 
