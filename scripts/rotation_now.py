@@ -56,9 +56,9 @@ def who(cfg: dict, sunday: dt.date) -> dict:
             out["note"] = ch["note"]
     # the Wednesday texts, word for word. Change them here and the phone sends the new words next week.
     site = "worship.legacybiblechurch.com"
-    out["msg_slides"] = f"Hey {out['slides']}, reminder that you'll be handling the worship guide and slides this Sunday. Here's everything you'll need: https://{site}/jobs/slides/"
-    out["msg_stream"] = f"Hey {out['stream']}, reminder that you'll be handling the livestream this Sunday. Here's everything you'll need: https://{site}/jobs/stream/"
-    out["msg_table"] = f"Hey {out['table']}, reminder that you'll be handling the Lord's Table this Sunday. Here's everything you'll need: https://{site}/jobs/table/"
+    out["msg_slides"] = f"Hey {out['slides']}, reminder that you'll be doing the worship guide and slides this Sunday. Here's everything you need to know: https://{site}/jobs/slides/"
+    out["msg_stream"] = f"Hey {out['stream']}, reminder that you'll be doing the livestream this Sunday. Here's everything you need to know: https://{site}/jobs/stream/"
+    out["msg_table"] = f"Hey {out['table']}, reminder that you'll be doing the Lord's Table this Sunday. Here's everything you need to know: https://{site}/jobs/table/"
     return out
 
 
