@@ -4,7 +4,7 @@
   <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Who's up · Legacy Bible Church</title>
+  <title>Sunday Rotation · Legacy Bible Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,6 +47,9 @@
     .how:last-child { border-bottom: 0; }
     .how b { display: block; font-weight: 600; margin-bottom: 4px; }
     .how > div { margin-top: 6px; }
+    a.how.link { display: flex; justify-content: space-between; align-items: center; color: var(--ink); text-decoration: none; font-weight: 500; padding: 13px 18px; }
+    a.how.link:hover { background: var(--panel-2); }
+    a.how.link .arrow { color: var(--ink-faint); }
     .how ol { margin: 4px 0 0 18px; color: var(--ink-dim); }
     .how li { margin: 3px 0; }
     .how a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
@@ -96,43 +99,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="worship.html">&larr; Worship</a>
-    <div class="brand">Who's up</div>
-    <div class="brand-sub">Legacy Bible Church &middot; the Sunday rotation</div>
+    <div class="brand">Sunday Rotation</div>
+    <div class="brand-sub">Legacy Bible Church</div>
 
     <div class="now" id="now">
       <div class="k">This Sunday</div>
       <div class="d" id="now-date"></div>
       <div class="jobs">
-        <div class="job"><div class="j">Guide &amp; Slides</div><div class="who" id="now-slides"></div><div class="what">The guide into the Studio. Print it. Run the slides.</div></div>
-        <div class="job"><div class="j">Stream</div><div class="who" id="now-stream"></div><div class="what">OBS, the camera, the sound. Go live.</div></div>
-        <div class="job"><div class="j">Table</div><div class="who" id="now-table"></div><div class="what">The Lord&rsquo;s Table elements.</div></div>
+        <div class="job"><div class="j">Guide &amp; Slides</div><div class="who" id="now-slides"></div></div>
+        <div class="job"><div class="j">Stream</div><div class="who" id="now-stream"></div></div>
+        <div class="job"><div class="j">Table</div><div class="who" id="now-table"></div></div>
       </div>
       <div class="note" id="now-note" hidden></div>
     </div>
     <div class="next" id="next"></div>
 
-    <h2>The three jobs</h2>
+    <h2>The jobs</h2>
     <div class="box">
-      <div class="how">
-        <b>Guide &amp; Slides</b>
-        Get the worship guide from Pastor Todd, put Sunday into the Studio, print the guide and hand it out, run the slides.
-        <div><a href="jobs/slides/">Everything you need &rarr;</a></div>
-      </div>
-      <div class="how">
-        <b>Stream</b>
-        Schedule the YouTube stream Saturday with the links in the description, set up sound and camera and OBS Sunday, go live, save the recording.
-        <div><a href="jobs/stream/">Everything you need &rarr;</a></div>
-      </div>
-      <div class="how">
-        <b>Table</b>
-        Bring the elements, set the table before the service, hand them out during the Lord&rsquo;s Table.
-        <div><a href="jobs/table/">Everything you need &rarr;</a></div>
-      </div>
+      <a class="how link" href="jobs/slides/"><span>Guide &amp; Slides</span><span class="arrow">&rarr;</span></a>
+      <a class="how link" href="jobs/stream/"><span>Stream</span><span class="arrow">&rarr;</span></a>
+      <a class="how link" href="jobs/table/"><span>Table</span><span class="arrow">&rarr;</span></a>
     </div>
     <h2>The weeks ahead <small id="order"></small></h2>
     <div class="box" id="weeks"></div>
 
-    <p class="foot">Order: <span id="order2"></span>. Each job goes down the list one Sunday at a time. Nobody has two jobs the same week. Your turn comes as Guide &amp; Slides, then two weeks later Table, then two weeks later Stream. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
+    <p class="foot">Order: <span id="order2"></span>. Each job moves down the list one Sunday at a time. Away that week? Tap Change on that Sunday.</p>
   </div>
 
   <script src="js/rotation-data.js"></script>
@@ -161,7 +152,7 @@
         : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Guide <b>' + esc(nxt.slides) + '</b></span><span>Stream <b>' + esc(nxt.stream) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
       el('order').textContent = ''; el('order2').textContent = (c.people || []).join(', ');
 
-      var html = token() ? '' : '<div class="nokey">Changes are saved from the Studio laptop, where the site connection lives. Anywhere else, text Quaid.</div>';
+      var html = token() ? '' : '<div class="nokey">Changes are made from the Studio laptop.</div>';
       rows.forEach(function (w, i) {
         var marks = w.changed ? '<span class="mark">' + (w.off ? 'off' : 'changed') + (w.note ? ' · ' + esc(w.note) : '') + '</span>' : '';
         html += '<div class="wk' + (i === 0 ? ' is-now' : '') + (w.off ? ' off' : '') + '" data-date="' + w.date + '">' +
