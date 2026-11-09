@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who's up · Legacy Bible Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @font-face { font-family: 'Priestacy'; src: url('fonts/Priestacy.woff') format('woff'), url('fonts/Priestacy.otf') format('opentype'); font-display: swap; }
+    :root {
+      --bg: #0d0d0f; --panel: #141416; --panel-2: #1b1b1e; --line: #2a2a2e; --line-soft: #202024;
+      --ink: #ececed; --ink-dim: #9a9a9e; --ink-faint: #62626a; --gold: #c9a84c; --good: #7bb37e; --warn: #d8a657;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; padding: 40px 20px 80px; }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    .back { display: inline-block; font-size: 13px; color: var(--ink-dim); text-decoration: none; margin-bottom: 18px; }
+    .brand { font-family: 'Priestacy', var(--font); font-size: 40px; line-height: 1; }
+    .brand-sub { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 22px; }
+
+    /* this Sunday: two names, big */
+    .now { margin-top: 26px; border: 1px solid var(--gold); border-radius: 14px; background: var(--panel); padding: 20px 20px 18px; }
+    .now .k { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .now .d { font-size: 15px; color: var(--ink-dim); margin-top: 2px; }
+    .jobs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .job { background: var(--panel-2); border-radius: 10px; padding: 14px 16px; }
+    .job .j { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+    .job .who { font-size: 26px; font-weight: 600; margin-top: 4px; line-height: 1.15; }
+    .job .what { font-size: 12.5px; color: var(--ink-dim); margin-top: 6px; }
+    .now.off .who { color: var(--ink-faint); }
+    .note { margin-top: 12px; font-size: 13.5px; color: var(--warn); }
+
+    .next { margin-top: 10px; padding: 12px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); font-size: 14px; color: var(--ink-dim); display: flex; gap: 14px; flex-wrap: wrap; }
+    .next b { color: var(--ink); font-weight: 600; }
+
+    h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin: 34px 0 8px; display: flex; align-items: baseline; gap: 10px; }
+    h2 small { font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--ink-faint); font-size: 11px; margin-left: auto; }
+    .box { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+
+    /* the two jobs, spelled out */
+    .how { padding: 14px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
+    .how:last-child { border-bottom: 0; }
+    .how b { display: block; font-weight: 600; margin-bottom: 4px; }
+    .how ol { margin: 4px 0 0 18px; color: var(--ink-dim); }
+    .how li { margin: 3px 0; }
+    .how a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .how a:hover { border-color: var(--ink-dim); }
+
+    /* the weeks ahead */
+    .wk { display: grid; grid-template-columns: 76px 1fr 1fr auto; gap: 10px; align-items: center; padding: 11px 18px; border-bottom: 1px solid var(--line-soft); font-size: 14.5px; }
+    .wk:last-child { border-bottom: 0; }
+    .wk.is-now { background: var(--panel-2); }
+    .wk .dt { color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+    .wk.is-now .dt { color: var(--gold); font-weight: 600; }
+    .wk .nm { font-weight: 500; }
+    .wk .nm small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+    .wk.off .nm { color: var(--ink-faint); text-decoration: line-through; }
+    .wk .ch { font-size: 12px; color: var(--ink-faint); background: none; border: 1px solid transparent; font: inherit; padding: 3px 8px; border-radius: 999px; cursor: pointer; }
+    .wk:hover .ch { border-color: var(--line); color: var(--ink-dim); }
+    .wk .mark { font-size: 11px; color: var(--warn); }
+
+    /* editing one Sunday */
+    .edit { padding: 12px 18px 14px; border-bottom: 1px solid var(--line-soft); background: #121214; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .edit label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); display: block; }
+    .edit select, .edit input[type=text] { width: 100%; margin-top: 4px; background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; }
+    .edit .full { grid-column: 1 / -1; }
+    .edit .off { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-dim); text-transform: none; letter-spacing: 0; font-weight: 500; }
+    .edit .btns { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; }
+    .btn { background: var(--gold); color: #16130a; border: 0; font: inherit; font-weight: 600; font-size: 13.5px; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+    .btn.quiet { background: none; color: var(--ink-dim); border: 1px solid var(--line); font-weight: 500; }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    .msg { font-size: 12.5px; color: var(--ink-dim); margin-left: auto; }
+    .msg.bad { color: var(--warn); }
+    .nokey { padding: 12px 18px; font-size: 13px; color: var(--ink-dim); border-bottom: 1px solid var(--line-soft); background: #121214; }
+    .nokey a { color: var(--ink); }
+
+    .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
+    .foot a { color: var(--ink-dim); }
+    @media (max-width: 480px) {
+      body { padding: 24px 14px 64px; } .brand { font-size: 34px; }
+      .wk { grid-template-columns: 62px 1fr 1fr auto; gap: 8px; padding: 11px 14px; font-size: 14px; }
+      .job .who { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="worship.html">&larr; Worship</a>
+    <div class="brand">Who's up</div>
+    <div class="brand-sub">Legacy Bible Church &middot; the Sunday rotation</div>
+
+    <div class="now" id="now">
+      <div class="k">This Sunday</div>
+      <div class="d" id="now-date"></div>
+      <div class="jobs">
+        <div class="job"><div class="j">Slides</div><div class="who" id="now-slides"></div><div class="what">Worship guide into the Studio this week. Control on Sunday.</div></div>
+        <div class="job"><div class="j">Table</div><div class="who" id="now-table"></div><div class="what">The Lord&rsquo;s Table elements.</div></div>
+      </div>
+      <div class="note" id="now-note" hidden></div>
+    </div>
+    <div class="next" id="next"></div>
+
+    <h2>The two jobs</h2>
+    <div class="box">
+      <div class="how">
+        <b>Slides</b>
+        <ol>
+          <li><b style="display:inline">Wednesday.</b> Open the newest guide in <a href="https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67" target="_blank" rel="noopener">Worship Guides</a>. Pastor Todd saves it there from Word.</li>
+          <li>Put Sunday into the <a href="worship-studio.html">Studio</a>: the songs, the reading, the sermon title and passage, who prays. Green all the way down.</li>
+          <li><b style="display:inline">Sunday, 9:30.</b> <a href="worship-setup.html">Set up the room</a>, top to bottom.</li>
+          <li><a href="worship-control.html">Run Sunday</a>. Next, Next, Next. Play the closing song the moment the prayer ends.</li>
+        </ol>
+      </div>
+      <div class="how">
+        <b>Table</b>
+        <ol>
+          <li>Bring the elements. Set the table before the service.</li>
+          <li>Hand them out during the Lord&rsquo;s Table.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2>The weeks ahead <small id="order"></small></h2>
+    <div class="box" id="weeks"></div>
+
+    <p class="foot">Order: <span id="order2"></span>. One Sunday each, round and round, so everyone is up every fifth week on each job and nobody has both the same week. Travelling? Tap Change on that Sunday. Questions: Quaid.</p>
+  </div>
+
+  <script src="js/rotation-data.js"></script>
+  <script src="js/rotation.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var R = LBCRotation, REPO = 'legacybiblechurch/worship', PATH = 'js/rotation-data.js', TOKEN_KEY = 'lbc-gh-token';
+    var qs = new URLSearchParams(location.search);
+    var TODAY = qs.get('today') || R.today();          // ?today=2026-12-20 to look at another week
+    var WEEKS = 14, editing = null;
+    function el(id) { return document.getElementById(id); }
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function token() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; } }
+
+    function paint() {
+      var c = R.cfg(), rows = R.list(TODAY, WEEKS), now = rows[0], nxt = rows[1];
+      el('now-date').textContent = R.longLabel(now.date);
+      el('now-slides').textContent = now.off ? 'No service' : now.slides;
+      el('now-table').textContent = now.off ? '' : now.table;
+      el('now').className = 'now' + (now.off ? ' off' : '');
+      el('now-note').hidden = !now.note; el('now-note').textContent = now.note || '';
+      el('next').innerHTML = nxt.off
+        ? '<span>Next Sunday, ' + esc(R.label(nxt.date)) + ': <b>no service</b>' + (nxt.note ? ' · ' + esc(nxt.note) : '') + '</span>'
+        : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Slides <b>' + esc(nxt.slides) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
+      el('order').textContent = ''; el('order2').textContent = (c.people || []).join(', ');
+
+      var html = token() ? '' : '<div class="nokey">Changes are saved from the Studio laptop, where the site connection lives. Anywhere else, text Quaid.</div>';
+      rows.forEach(function (w, i) {
+        var marks = w.changed ? '<span class="mark">' + (w.off ? 'off' : 'changed') + (w.note ? ' · ' + esc(w.note) : '') + '</span>' : '';
+        html += '<div class="wk' + (i === 0 ? ' is-now' : '') + (w.off ? ' off' : '') + '" data-date="' + w.date + '">' +
+          '<span class="dt">' + esc(R.label(w.date)) + '</span>' +
+          '<span class="nm"><small>Slides</small>' + esc(w.off ? '—' : w.slides) + '</span>' +
+          '<span class="nm"><small>Table</small>' + esc(w.off ? '—' : w.table) + '</span>' +
+          '<span>' + marks + (token() ? ' <button type="button" class="ch" data-date="' + w.date + '">Change</button>' : '') + '</span></div>';
+        if (editing === w.date) html += editor(w);
+      });
+      el('weeks').innerHTML = html;
+    }
+    function editor(w) {
+      var c = R.cfg(), opts = function (sel) { return (c.people || []).map(function (p) { return '<option' + (p === sel ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
+      return '<div class="edit" id="edit">' +
+        '<div><label>Slides<select id="e-slides">' + opts(w.slides) + '</select></label></div>' +
+        '<div><label>Table<select id="e-table">' + opts(w.table) + '</select></label></div>' +
+        '<div class="full"><label>Note (optional)<input type="text" id="e-note" placeholder="Marco away" value="' + esc(w.note || '') + '"></label></div>' +
+        '<div class="full"><label class="off"><input type="checkbox" id="e-off"' + (w.off ? ' checked' : '') + '> No service this Sunday</label></div>' +
+        '<div class="btns"><button type="button" class="btn" id="e-save">Save</button>' +
+        '<button type="button" class="btn quiet" id="e-reset" title="Back to the normal rotation for this Sunday">Back to normal</button>' +
+        '<button type="button" class="btn quiet" id="e-cancel">Cancel</button><span class="msg" id="e-msg"></span></div></div>';
+    }
+
+    // ── saving a change: rewrite js/rotation-data.js on GitHub, same connection the Studio uses
+    function gh(path, opts) {
+      opts = opts || {};
+      return fetch('https://api.github.com' + path, { method: opts.method || 'GET', body: opts.body,
+        headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token(), 'X-GitHub-Api-Version': '2022-11-28' } })
+        .then(function (r) { return r.text().then(function (t) { var j = null; try { j = JSON.parse(t); } catch (e) {}
+          if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? 'This computer is not allowed to save. Connect it in the Studio.' : r.status === 409 ? 'Someone else just saved. Reload and try again.' : (j && j.message) || ('HTTP ' + r.status));
+          return j; }); });
+    }
+    function b64e(str) { var b = new TextEncoder().encode(str), s = ''; for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); return btoa(s); }
+    function b64d(b64) { var bin = atob(String(b64).replace(/\s/g, '')), b = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) b[i] = bin.charCodeAt(i); return new TextDecoder().decode(b); }
+    function serialize(cfg) {
+      var head = '// Legacy Bible Church · the Sunday rotation\n' +
+        '// Strict JSON between the braces: rotation.html edits it, scripts/rotation_now.py reads it.\n' +
+        '//   people   the order. Slides goes down the list one Sunday each; Table runs the same\n' +
+        '//            list tableOffset places behind, so nobody has both jobs the same week.\n' +
+        '//   start    the Sunday people[0] has Slides and people[tableOffset] has Table.\n' +
+        '//   changes  one Sunday done differently: {"slides": "Cole"}, {"table": "Joel"},\n' +
+        '//            {"off": true, "note": "No service"}. Set from the page.\n';
+      return head + 'window.LBC_ROTATION = ' + JSON.stringify(cfg, null, 2) + ';\n';
+    }
+    function save(date, change) {
+      var msg = el('e-msg'); msg.className = 'msg'; msg.textContent = 'Saving…'; el('e-save').disabled = true;
+      gh('/repos/' + REPO + '/contents/' + PATH + '?ref=main&cb=' + Date.now()).then(function (j) {
+        var text = b64d(j.content), m = text.match(/window\.LBC_ROTATION\s*=\s*(\{[\s\S]*\});?\s*$/);
+        if (!m) throw new Error('The rotation file looks damaged. Nothing was changed.');
+        var cfg = JSON.parse(m[1]); cfg.changes = cfg.changes || {};
+        if (change) cfg.changes[date] = change; else delete cfg.changes[date];
+        var label = change ? (change.off ? 'no service' : ('Slides ' + change.slides + ', Table ' + change.table)) : 'back to normal';
+        return gh('/repos/' + REPO + '/contents/' + PATH, { method: 'PUT', body: JSON.stringify({ message: 'rotation: ' + date + ' ' + label, content: b64e(serialize(cfg)), sha: j.sha, branch: 'main' }) })
+          .then(function () { window.LBC_ROTATION = cfg; editing = null; paint(); });
+      }).catch(function (e) { msg.className = 'msg bad'; msg.textContent = e.message; el('e-save').disabled = false; });
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.classList.contains('ch')) { editing = editing === t.dataset.date ? null : t.dataset.date; paint(); return; }
+      if (t.id === 'e-cancel') { editing = null; paint(); return; }
+      if (t.id === 'e-reset') { save(editing, null); return; }
+      if (t.id === 'e-save') {
+        var base = R.at(editing), off = el('e-off').checked, s = el('e-slides').value, tb = el('e-table').value, note = el('e-note').value.trim();
+        if (!off && s === tb) { el('e-msg').className = 'msg bad'; el('e-msg').textContent = 'One person cannot have both jobs.'; return; }
+        var ch = {};
+        if (off) ch.off = true;
+        if (!off && s !== base.slides) ch.slides = s;
+        if (!off && tb !== base.table) ch.table = tb;
+        if (note) ch.note = note;
+        // nothing different from the normal rotation: just clear the override
+        save(editing, Object.keys(ch).length ? ch : null);
+      }
+    });
+    paint();
+  })();
+  </script>
+</body>
+</html>

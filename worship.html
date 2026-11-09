@@ -48,6 +48,7 @@
     .act.setup.going { border-color: var(--gold); }
     .act.setup.going p { color: var(--gold); opacity: 1; }
     .act.setup.done p { color: var(--good); opacity: 1; }
+    .act.who p b { color: var(--ink); font-weight: 600; }
     .act h2 { font-size: 19px; font-weight: 600; }
     .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
     .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
@@ -69,6 +70,13 @@
       <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
       <div id="songs"><div class="empty">Loading…</div></div>
     </div>
+
+    <!-- who has the two jobs this Sunday -->
+    <a class="act setup who" id="act-who" href="rotation.html">
+      <div class="k">Who&rsquo;s up</div>
+      <h2 id="who-h">This Sunday</h2>
+      <p id="who-p">Slides and the Table, by name.</p>
+    </a>
 
     <!-- the room checklist. Sunday morning it is the first thing to tap -->
     <a class="act setup" id="act-setup" href="worship-setup.html">
@@ -102,7 +110,18 @@
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
   <script src="js/sheet.js?v=31"></script>
+  <script src="js/rotation-data.js"></script>
+  <script src="js/rotation.js"></script>
   <script>
+    // who has Slides and the Table this coming Sunday
+    (function () {
+      try {
+        var w = LBCRotation.at(), h = document.getElementById('who-h'), p = document.getElementById('who-p');
+        h.textContent = LBCRotation.label(w.date);
+        p.innerHTML = w.off ? 'No service' : 'Slides <b></b> &nbsp;·&nbsp; Table <b></b>';
+        if (!w.off) { var b = p.querySelectorAll('b'); b[0].textContent = w.slides; b[1].textContent = w.table; }
+      } catch (e) {}
+    })();
     // Sunday: the gold card is the one for the morning. Any other day it is the one for getting ready.
     (function () {
       var sunday = /sunday/.test(location.search) ||

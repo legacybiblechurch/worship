@@ -1,0 +1,39 @@
+name: Rotation now
+
+# Writes rotation/now.json: who has Slides and who has the Table this coming
+# Sunday. Quaid's phone reads it on Wednesday morning and sends the two texts.
+# Runs every morning (both candidate UTC hours, so it is 6 AM in Redlands in
+# summer and winter) and whenever the rotation data changes.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 6 AM Pacific Daylight Time
+    - cron: "0 14 * * *"   # 6 AM Pacific Standard Time
+  push:
+    branches: [main]
+    paths: ["js/rotation-data.js", "scripts/rotation_now.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rotation-now
+  cancel-in-progress: false
+
+jobs:
+  now:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python scripts/rotation_now.py
+      - name: Commit if it changed
+        run: |
+          git config user.name "lbc-worship-bot"
+          git config user.email "worship-bot@users.noreply.github.com"
+          git add rotation/now.json
+          git diff --cached --quiet && exit 0
+          git commit -m "rotation: this Sunday [skip ci]"
+          git push
