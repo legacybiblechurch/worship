@@ -117,7 +117,7 @@
 
     <!-- two choices. On a Sunday the morning one comes first and is gold; the script below swaps them -->
     <div class="actions" id="actions">
-      <a class="act primary rise" style="--i:4" id="act-prep" href="worship-studio.html">
+      <a class="act rise" style="--i:4" id="act-prep" href="worship-studio.html">
         <span class="go" aria-hidden="true">&rarr;</span>
         <div class="k">Before Sunday</div>
         <h2>Prepare Sunday</h2>
@@ -151,13 +151,12 @@
         if (!w.off) { var b = p.querySelectorAll('b'); b[0].textContent = w.slides; b[1].textContent = w.stream; b[2].textContent = w.table; }
       } catch (e) {}
     })();
-    // Sunday: the gold card is the one for the morning. Any other day it is the one for getting ready.
+    // Sunday: the morning card comes first. Any other day the getting-ready one does.
     (function () {
       var sunday = /sunday/.test(location.search) ||
         new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short' }).format(new Date()) === 'Sun';
       if (!sunday) return;
       var box = document.getElementById('actions'), prep = document.getElementById('act-prep'), run = document.getElementById('act-run');
-      prep.classList.remove('primary'); run.classList.add('primary');
       box.appendChild(run); box.appendChild(prep);
     })();
     // How far along this morning's room checklist is, on this laptop
