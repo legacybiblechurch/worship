@@ -68,7 +68,6 @@
 
     <div class="card">
       <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
-      <div id="songs"><div class="empty">Loading…</div></div>
     </div>
 
     <!-- who has the two jobs this Sunday -->
@@ -140,20 +139,10 @@
       else { a.className = 'act setup going'; p.textContent = done + ' of ' + TOTAL + ' done. Keep going.'; }
     })();
     LBCSheet.loadService(function (songs) {
-      var box = document.getElementById('songs'), st = document.getElementById('state');
-      if (!songs.length) {
-        box.innerHTML = '<div class="empty">Nothing set yet. Tap <b>Prepare Sunday</b> to build the service.</div>';
-        st.textContent = 'Not set'; st.className = 'card-state warn'; return;
-      }
-      var bad = songs.filter(function (s) { return !s.ready; }).length, TN = LBCSheet.TYPE_NAMES || {};
-      box.innerHTML = songs.map(function (s, i) {
-        var d = document.createElement('div');
-        d.className = 'row';
-        d.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="dot' + (s.ready ? '' : ' warn') + '"></span><span class="t"></span><span class="s">' + (s.ready ? (s.type !== 'song' ? (TN[s.type] || s.type) : '') : 'not ready') + '</span>';
-        d.querySelector('.t').textContent = s.title;
-        return d.outerHTML;
-      }).join('');
-      st.textContent = bad ? bad + ' need attention' : 'Ready';
+      var st = document.getElementById('state');
+      if (!songs.length) { st.textContent = 'Not ready'; st.className = 'card-state warn'; return; }
+      var bad = songs.filter(function (s) { return !s.ready; }).length;
+      st.textContent = bad ? 'Not ready' : 'Ready';
       st.className = 'card-state ' + (bad ? 'warn' : 'good');
     });
   </script>
