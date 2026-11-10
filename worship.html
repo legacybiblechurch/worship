@@ -22,7 +22,7 @@
     .brand { font-family: 'Priestacy', var(--font); font-size: 40px; line-height: 1; }
     .brand-sub { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 22px; }   /* the script's descenders reach down this far */
 
-    .card { margin-top: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+    .card { margin-top: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
     .card-head { padding: 13px 18px; border-bottom: 1px solid var(--line-soft); display: flex; align-items: center; gap: 10px; }
     .card-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
     .card-state { margin-left: auto; font-size: 12.5px; font-weight: 600; }
@@ -38,47 +38,82 @@
     .empty { padding: 18px; font-size: 14px; color: var(--ink-dim); }
 
     .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .act { display: block; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; min-height: 124px; }
-    .act:active { background: var(--panel-2); }
-    .act.primary { background: var(--gold); border-color: var(--gold); color: #16130a; }
-    .act.setup { margin-top: 18px; min-height: 0; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
-    .act.setup .k { width: 100%; margin-bottom: 4px; }
-    .act.setup h2 { font-size: 17px; }
+    @property --trace { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+    .act { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; min-height: 104px; margin-top: 12px; overflow: hidden;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease, box-shadow .35s ease, background .35s ease; }
+    .actions .act { margin-top: 0; }
+    /* a soft gold light that follows the pointer */
+    .act::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .35s ease;
+      background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(201,168,76,0.11), transparent 65%); }
+    .act:hover::before { opacity: 1; }
+    .act:hover { transform: translateY(-2px); border-color: rgba(201,168,76,0.38); background: #17171a; box-shadow: 0 14px 32px -18px rgba(0,0,0,0.9), 0 0 0 1px rgba(201,168,76,0.06); }
+    .act:active { transform: translateY(0) scale(.99); transition-duration: .12s; }
+    .act:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    /* the arrow slides in on hover */
+    .act .go { position: absolute; top: 18px; right: 20px; font-size: 16px; color: var(--gold); opacity: 0; transform: translateX(-8px); transition: opacity .3s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
+    .act:hover .go, .act:focus-visible .go { opacity: 1; transform: translateX(0); }
+    /* the card for right now: same as the rest, with a gold sliver tracing its edge */
+    .act.primary { border-color: rgba(201,168,76,0.22); }
+    .act.primary .k { color: var(--gold); opacity: 1; }
+    .act.primary::after { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1.5px; pointer-events: none;
+      background: conic-gradient(from var(--trace), transparent 0deg, transparent 290deg, rgba(201,168,76,0.35) 320deg, #f0d585 350deg, transparent 360deg);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+              mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+      animation: trace 6s linear infinite; }
+    @keyframes trace { to { --trace: 360deg; } }
+    .act.setup { flex-direction: row; flex-wrap: wrap; align-items: baseline; align-content: center; gap: 2px 12px; }
+    .act.setup .k { width: 100%; }
     .act.setup p { margin: 0; margin-left: auto; font-size: 13px; text-align: right; }
-    .act.setup.going { border-color: var(--gold); }
+    .act.setup.going { border-color: rgba(201,168,76,0.45); }
     .act.setup.going p { color: var(--gold); opacity: 1; }
     .act.setup.done p { color: var(--good); opacity: 1; }
     .act.who p b { color: var(--ink); font-weight: 600; }
-    .act h2 { font-size: 19px; font-weight: 600; }
+    .act h2 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
     .act p { font-size: 13px; margin-top: 6px; opacity: 0.8; }
-    .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
+    .act .k { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; transition: color .35s ease; }
+    .act:hover .k { color: var(--ink-dim); }
+    .act.primary:hover .k { color: #e2c46a; }
 
-    .stream-link { display: block; margin-top: 16px; font-size: 13.5px; color: var(--ink-dim); text-decoration: none; padding: 12px 18px; border: 1px solid var(--line-soft); border-radius: 10px; }
+    /* everything rises in, one after another */
+    .rise { opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--i, 0) * 70ms + 60ms); }
+    @keyframes rise { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .rise { animation: none; opacity: 1; }
+      .act, .act .go { transition: none; }
+      .act:hover { transform: none; }
+      .act.primary::after { animation: none; }
+    }
+
+    .stream-link { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; font-size: 13.5px; color: var(--ink-dim); text-decoration: none; padding: 14px 22px; border: 1px solid var(--line-soft); border-radius: 14px; transition: color .3s ease, border-color .3s ease; }
+    .stream-link span { display: inline-block; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
     .stream-link:hover { color: var(--ink); border-color: var(--line); }
+    .stream-link:hover span { transform: translateX(4px); color: var(--gold); }
     .links { margin-top: 30px; display: flex; gap: 18px; font-size: 13px; }
-    .links a { color: var(--ink-dim); text-decoration: none; }
+    .links a { color: var(--ink-dim); text-decoration: none; transition: color .25s ease; }
     .links a:hover { color: var(--ink); }
-    @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } body { padding: 24px 14px 44px; } .brand { font-size: 34px; } .act { min-height: 0; padding: 18px 16px; } }
+    @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } body { padding: 24px 14px 44px; } .brand { font-size: 34px; } .act { min-height: 88px; padding: 18px; } }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="brand">Worship</div>
-    <div class="brand-sub">Legacy Bible Church</div>
+    <div class="brand rise" style="--i:0">Worship</div>
+    <div class="brand-sub rise" style="--i:0">Legacy Bible Church</div>
 
-    <div class="card">
+    <div class="card rise" style="--i:1">
       <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
     </div>
 
     <!-- who has the two jobs this Sunday -->
-    <a class="act setup who" id="act-who" href="rotation.html">
+    <a class="act setup who rise" style="--i:2" id="act-who" href="rotation.html">
+      <span class="go" aria-hidden="true">&rarr;</span>
       <div class="k">Sunday Rotation</div>
       <h2 id="who-h">This Sunday</h2>
       <p id="who-p"></p>
     </a>
 
     <!-- the room checklist. Sunday morning it is the first thing to tap -->
-    <a class="act setup" id="act-setup" href="worship-setup.html">
+    <a class="act setup rise" style="--i:3" id="act-setup" href="worship-setup.html">
+      <span class="go" aria-hidden="true">&rarr;</span>
       <div class="k">Sunday morning &middot; first</div>
       <h2>Livestream Checklist</h2>
       <p id="setup-p"></p>
@@ -86,18 +121,20 @@
 
     <!-- two choices. On a Sunday the morning one comes first and is gold; the script below swaps them -->
     <div class="actions" id="actions">
-      <a class="act primary" id="act-prep" href="worship-studio.html">
+      <a class="act primary rise" style="--i:4" id="act-prep" href="worship-studio.html">
+        <span class="go" aria-hidden="true">&rarr;</span>
         <div class="k">Before Sunday</div>
         <h2>Prepare Sunday</h2>
       </a>
-      <a class="act" id="act-run" href="worship-control.html">
+      <a class="act rise" style="--i:5" id="act-run" href="worship-control.html">
+        <span class="go" aria-hidden="true">&rarr;</span>
         <div class="k">Sunday morning</div>
         <h2>Run Sunday</h2>
       </a>
     </div>
-    <a class="stream-link" href="worship-obs.html">Running the stream? The OBS steps are here &rarr;</a>
+    <a class="stream-link rise" style="--i:6" href="worship-obs.html">Running the stream? The OBS steps are here <span aria-hidden="true">&rarr;</span></a>
 
-    <div class="links">
+    <div class="links rise" style="--i:7">
       <a href="songs.html">All songs</a>
       <a href="setlist.html">Song videos</a>
     </div>
@@ -125,7 +162,7 @@
         new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short' }).format(new Date()) === 'Sun';
       if (!sunday) return;
       var box = document.getElementById('actions'), prep = document.getElementById('act-prep'), run = document.getElementById('act-run');
-      prep.className = 'act'; run.className = 'act primary';
+      prep.classList.remove('primary'); run.classList.add('primary');
       box.appendChild(run); box.appendChild(prep);
     })();
     // How far along this morning's room checklist is, on this laptop
@@ -135,9 +172,17 @@
       var done = Object.keys(st).filter(function (k) { return st[k]; }).length, TOTAL = 37;
       if (!done) return;
       var a = document.getElementById('act-setup'), p = document.getElementById('setup-p');
-      if (done >= TOTAL) { a.className = 'act setup done'; p.textContent = 'All set. ' + TOTAL + ' of ' + TOTAL + ' done.'; }
-      else { a.className = 'act setup going'; p.textContent = done + ' of ' + TOTAL + ' done. Keep going.'; }
+      if (done >= TOTAL) { a.classList.add('done'); p.textContent = 'All set. ' + TOTAL + ' of ' + TOTAL + ' done.'; }
+      else { a.classList.add('going'); p.textContent = done + ' of ' + TOTAL + ' done. Keep going.'; }
     })();
+    // the gold light on each card follows the pointer
+    document.querySelectorAll('.act').forEach(function (a) {
+      a.addEventListener('pointermove', function (e) {
+        var r = a.getBoundingClientRect();
+        a.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        a.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
     LBCSheet.loadService(function (songs) {
       var st = document.getElementById('state');
       if (!songs.length) { st.textContent = 'Not ready'; st.className = 'card-state warn'; return; }
