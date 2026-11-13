@@ -1745,8 +1745,8 @@
       var last = 0;
       function tick(now) {
         var dt = last ? Math.min(now - last, 250) : 16; last = now;
-        target = Math.min(target + 0.05 * dt / 1000, ceil);
-        shown += (target - shown) * (1 - Math.exp(-dt / 170));
+        target = Math.min(target + 0.1 * dt / 1000, ceil);
+        shown += (target - shown) * (1 - Math.exp(-dt / 100));
         fill.style.transform = 'scaleX(' + shown.toFixed(4) + ')';
         pct.textContent = Math.round(shown * 100) + '%';
         raf = requestAnimationFrame(tick);
@@ -1762,10 +1762,10 @@
           step.textContent = text;
         },
         done: function () {
-          var wait = Math.max(0, 1300 - (Date.now() - t0));
+          var wait = Math.max(0, 650 - (Date.now() - t0));
           setTimeout(function () {
             ceil = 1; target = 1; step.textContent = 'Done';
-            setTimeout(function () { cancelAnimationFrame(raf); show('done'); closeT = setTimeout(close, 2600); }, 520);
+            setTimeout(function () { cancelAnimationFrame(raf); show('done'); closeT = setTimeout(close, 2600); }, 300);
           }, wait);
         },
         fail: function (msg) { cancelAnimationFrame(raf); $('rsErr').textContent = msg || 'Check the connection and try again.'; show('fail'); }
@@ -1776,9 +1776,9 @@
     if (/[?&]try=ready\b/.test(location.search)) setTimeout(function () {
       RS.ask('A preview · nothing is saved', function () {
         RS.stage(0, 'Saving the order of service');
-        setTimeout(function () { RS.stage(1, 'Updating the songs'); }, 1100);
-        setTimeout(function () { RS.stage(2, 'Finishing up'); }, 2000);
-        setTimeout(function () { RS.done(); }, 2600);
+        setTimeout(function () { RS.stage(1, 'Updating the songs'); }, 450);
+        setTimeout(function () { RS.stage(2, 'Finishing up'); }, 850);
+        setTimeout(function () { RS.done(); }, 1100);
       });
     }, 700);
 
