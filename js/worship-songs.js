@@ -5,7 +5,4 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'may-the-peoples-praise-you',
-  'let-me-be',
-  'before-the-throne-of-god-above',
 ];
