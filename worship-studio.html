@@ -1772,6 +1772,16 @@
       };
     })();
 
+    // worship-studio.html?try=ready plays the Ready for Sunday window with a pretend save. Nothing is published.
+    if (/[?&]try=ready\b/.test(location.search)) setTimeout(function () {
+      RS.ask('A preview · nothing is saved', function () {
+        RS.stage(0, 'Saving the order of service');
+        setTimeout(function () { RS.stage(1, 'Updating the songs'); }, 1100);
+        setTimeout(function () { RS.stage(2, 'Finishing up'); }, 2000);
+        setTimeout(function () { RS.done(); }, 2600);
+      });
+    }, 700);
+
     // "Ready for Sunday" = validate, then publish the set to Control/Display
     var publishing = false;
     function publish() {
