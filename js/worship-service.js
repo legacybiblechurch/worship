@@ -8,59 +8,63 @@
 window.WORSHIP_SERVICE = [
   {
     "type": "scripture",
-    "ref": "Ephesians 4:7-16",
-    "who": "Quaid Barnett",
-    "version": "NASB",
+    "ref": "Romans 11:33-12:8",
+    "who": "Michael Hooks",
+    "version": "KJV",
     "verses": [
       {
+        "n": 33,
+        "text": "O the depth of the riches both of the wisdom and knowledge of God! how unsearchable are his judgments, and his ways past finding out!"
+      },
+      {
+        "n": 34,
+        "text": "For who hath known the mind of the Lord? or who hath been his counsellor?"
+      },
+      {
+        "n": 35,
+        "text": "Or who hath first given to him, and it shall be recompensed unto him again?"
+      },
+      {
+        "n": 36,
+        "text": "For of him, and through him, and to him, are all things: to whom be glory for ever. Amen."
+      },
+      {
+        "n": 1,
+        "text": "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service."
+      },
+      {
+        "n": 2,
+        "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God."
+      },
+      {
+        "n": 3,
+        "text": "For I say, through the grace given unto me, to every man that is among you, not to think of himself more highly than he ought to think; but to think soberly, according as God hath dealt to every man the measure of faith."
+      },
+      {
+        "n": 4,
+        "text": "For as we have many members in one body, and all members have not the same office:"
+      },
+      {
+        "n": 5,
+        "text": "So we, being many, are one body in Christ, and every one members one of another."
+      },
+      {
+        "n": 6,
+        "text": "Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith;"
+      },
+      {
         "n": 7,
-        "text": "But to each one of us grace was given according to the measure of Christ’s gift."
+        "text": "Or ministry, let us wait on our ministering: or he that teacheth, on teaching;"
       },
       {
         "n": 8,
-        "text": "Therefore it says, “When He ascended on high, He led captive a host of captives, And He gave gifts to men.”"
-      },
-      {
-        "n": 9,
-        "text": "(Now this expression, “He ascended,” what does it mean except that He also had descended into the lower parts of the earth?"
-      },
-      {
-        "n": 10,
-        "text": "He who descended is Himself also He who ascended far above all the heavens, so that He might fill all things.)"
-      },
-      {
-        "n": 11,
-        "text": "And He gave some as apostles, and some as prophets, and some as evangelists, and some as pastors and teachers,"
-      },
-      {
-        "n": 12,
-        "text": "for the equipping of the saints for the work of service, to the building up of the body of Christ;"
-      },
-      {
-        "n": 13,
-        "text": "until we all attain to the unity of the faith, and of the knowledge of the Son of God, to a mature man, to the measure of the stature which belongs to the fullness of Christ."
-      },
-      {
-        "n": 14,
-        "text": "As a result, we are no longer to be children, tossed here and there by waves and carried about by every wind of doctrine, by the trickery of men, by craftiness in deceitful scheming;"
-      },
-      {
-        "n": 15,
-        "text": "but speaking the truth in love, we are to grow up in all aspects into Him who is the head, even Christ,"
-      },
-      {
-        "n": 16,
-        "text": "from whom the whole body, being fitted and held together by what every joint supplies, according to the proper working of each individual part, causes the growth of the body for the building up of itself in love."
+        "text": "Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness."
       }
     ]
   },
   {
-    "type": "song",
-    "slug": "may-the-peoples-praise-you"
-  },
-  {
     "type": "sermon",
-    "title": "God’s Glory in You, Pt 3",
+    "title": "God’s Glory in You, Pt 4",
     "passage": "1 Peter 4:7-11",
     "thesis": "In preparation for the soon-coming end, pray, love, and serve so that God will be glorified.",
     "points": [
@@ -70,7 +74,7 @@ window.WORSHIP_SERVICE = [
       "4. serve STRANGERS without complaint (9), and . . .",
       "5. Serve one another with your GRACE-gifts (10),",
       "a. if speaking, with God’s AUTHORITY (11a),",
-      "b. if serving, with God’s ________________ (11b),",
+      "b. if serving, with God’s STRENGTH (11b),",
       "6. doing all things for God’s _______________ (11c)."
     ],
     "who": "Todd Barnett"
@@ -80,16 +84,8 @@ window.WORSHIP_SERVICE = [
     "id": "lords-table"
   },
   {
-    "type": "song",
-    "slug": "let-me-be"
-  },
-  {
-    "type": "song",
-    "slug": "before-the-throne-of-god-above"
-  },
-  {
     "type": "prayer",
-    "who": "Dan Alley"
+    "who": "Quaid Barnett"
   }
 ];
 
