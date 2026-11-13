@@ -277,6 +277,54 @@
       .cand { grid-template-columns: 1fr; }
       .song-row .ctl { display: inline-flex; }
     }
+
+    /* ── Ready for Sunday: ask, then a bar that follows the real save, then a check ── */
+    .rs { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(6,6,7,0.62); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
+    .rs.open { opacity: 1; pointer-events: auto; }
+    .rs-card { position: relative; width: 100%; max-width: 400px; background: #151517; border: 1px solid var(--line); border-radius: 18px; padding: 30px 28px 24px; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.85); transform: translateY(12px) scale(.97); transition: transform .45s cubic-bezier(.2,.9,.25,1.05); overflow: clip; }
+    .rs.open .rs-card { transform: none; }
+    .rs-view { display: none; flex-direction: column; align-items: center; text-align: center; }
+    .rs[data-stage="ask"] .rs-ask, .rs[data-stage="work"] .rs-work, .rs[data-stage="done"] .rs-done, .rs[data-stage="fail"] .rs-fail { display: flex; animation: rsIn .4s cubic-bezier(.2,.8,.2,1); }
+    @keyframes rsIn { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+    .rs h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+    .rs p { font-size: 14px; color: var(--ink-dim); margin-top: 8px; line-height: 1.5; }
+    .rs .rs-meta { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .rs-btns { display: flex; gap: 10px; width: 100%; margin-top: 24px; }
+    .rs-btns button { flex: 1; font: inherit; font-size: 14px; font-weight: 600; border-radius: 10px; padding: 12px 14px; cursor: pointer; transition: transform .2s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .rs-btns button:active { transform: scale(.97); }
+    .rs-no { background: transparent; color: var(--ink-dim); border: 1px solid var(--line); }
+    .rs-no:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .rs-yes { background: var(--gold); color: #16130a; border: 1px solid var(--gold); }
+    .rs-yes:hover { background: #d6b75c; box-shadow: 0 8px 24px -10px rgba(201,168,76,0.7); }
+    .rs-btns button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .rs-bar { position: relative; width: 100%; height: 6px; border-radius: 6px; background: #232326; overflow: hidden; margin-top: 22px; }
+    .rs-fill { position: absolute; inset: 0; transform-origin: left; transform: scaleX(0); border-radius: inherit; background: linear-gradient(90deg, #8f7631, #c9a84c 60%, #f0d585); box-shadow: 0 0 16px rgba(201,168,76,0.45); }
+    .rs-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,245,210,0.75), transparent); width: 40%; animation: rsShine 1.3s ease-in-out infinite; }
+    @keyframes rsShine { from { transform: translateX(-120%); } to { transform: translateX(320%); } }
+    .rs-step { font-size: 13px; color: var(--ink-dim); margin-top: 14px; min-height: 20px; transition: opacity .2s ease; }
+    .rs-pct { font-size: 12px; color: var(--ink-faint); margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .rs-check { width: 76px; height: 76px; margin-bottom: 18px; position: relative; }
+    .rs-check svg { width: 76px; height: 76px; display: block; }
+    .rs-check .ring { fill: none; stroke: var(--gold); stroke-width: 2.5; stroke-dasharray: 214; stroke-dashoffset: 214; transform: rotate(-90deg); transform-origin: 38px 38px; }
+    .rs-check .tick { fill: none; stroke: #f0d585; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 48; stroke-dashoffset: 48; }
+    .rs[data-stage="done"] .ring { animation: rsDraw .55s cubic-bezier(.65,0,.35,1) forwards; }
+    .rs[data-stage="done"] .tick { animation: rsDraw .35s cubic-bezier(.65,0,.35,1) .45s forwards; }
+    @keyframes rsDraw { to { stroke-dashoffset: 0; } }
+    .rs-check::before, .rs-check::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(240,213,133,0.6); opacity: 0; }
+    .rs[data-stage="done"] .rs-check::before { animation: rsRing 1s cubic-bezier(.2,.8,.2,1) .55s forwards; }
+    .rs[data-stage="done"] .rs-check::after { animation: rsRing 1s cubic-bezier(.2,.8,.2,1) .75s forwards; }
+    @keyframes rsRing { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.9); } }
+    .rs-glow { position: absolute; left: 0; right: 0; top: -110px; height: 220px; background: radial-gradient(closest-side, rgba(201,168,76,0.22), transparent); opacity: 0; pointer-events: none; transition: opacity .8s ease; }
+    .rs[data-stage="done"] .rs-glow { opacity: 1; }
+    .rs-done h3, .rs-done p { opacity: 0; animation: rsIn .5s cubic-bezier(.2,.8,.2,1) .6s forwards; }
+    .rs-done p { animation-delay: .7s; }
+    .rs-fail h3 { color: var(--bad); }
+    @media (prefers-reduced-motion: reduce) {
+      .rs, .rs-card, .rs-fill { transition: none !important; }
+      .rs-fill::after, .rs-check::before, .rs-check::after { animation: none; }
+      .rs[data-stage] .rs-view, .rs-done h3, .rs-done p { animation: none; opacity: 1; }
+      .rs[data-stage="done"] .ring, .rs[data-stage="done"] .tick { animation: none; stroke-dashoffset: 0; }
+    }
   </style>
 </head>
 <body>
@@ -296,6 +344,33 @@
     <div class="main" id="main"></div>
   </div>
 
+  <div class="rs" id="rs" aria-hidden="true">
+    <div class="rs-card" role="dialog" aria-modal="true" aria-labelledby="rsTitle">
+      <div class="rs-glow"></div>
+      <div class="rs-view rs-ask">
+        <div class="rs-meta" id="rsMeta"></div>
+        <h3 id="rsTitle">Set this as Sunday?</h3>
+        <p>Control and the TV will switch to this service.</p>
+        <div class="rs-btns"><button class="rs-no" id="rsNo" type="button">Not yet</button><button class="rs-yes" id="rsYes" type="button">Yes, set Sunday</button></div>
+      </div>
+      <div class="rs-view rs-work">
+        <h3>Setting Sunday</h3>
+        <div class="rs-bar"><div class="rs-fill" id="rsFill"></div></div>
+        <div class="rs-step" id="rsStep"></div>
+        <div class="rs-pct" id="rsPct">0%</div>
+      </div>
+      <div class="rs-view rs-done">
+        <div class="rs-check"><svg viewBox="0 0 76 76" aria-hidden="true"><circle class="ring" cx="38" cy="38" r="34"></circle><path class="tick" d="M24 39.5l9.5 9.5L53 29.5"></path></svg></div>
+        <h3>Sunday is ready</h3>
+        <p>Control and the TV show this service.</p>
+      </div>
+      <div class="rs-view rs-fail">
+        <h3>That didn’t go through</h3>
+        <p id="rsErr"></p>
+        <div class="rs-btns"><button class="rs-no" id="rsClose" type="button">Close</button></div>
+      </div>
+    </div>
+  </div>
   <div id="toast"></div>
 
   <div id="connect">
@@ -1646,6 +1721,57 @@
         }).catch(function () { /* the library save already succeeded; this memory is best effort */ });
     }
 
+
+    // The Ready for Sunday window: ask first, then a bar that moves with each real step, then a check
+    var RS = (function () {
+      var box, fill, step, pct, t0 = 0, shown = 0, raf = 0, target = 0, ceil = 0, onYes = null, closeT = 0;
+      var CAPS = [0.42, 0.78, 0.94];
+      function $(id) { return document.getElementById(id); }
+      function init() {
+        if (box) return;
+        box = $('rs'); fill = $('rsFill'); step = $('rsStep'); pct = $('rsPct');
+        $('rsNo').onclick = close; $('rsClose').onclick = close;
+        $('rsYes').onclick = function () { var f = onYes; onYes = null; if (f) f(); };
+        box.addEventListener('click', function (e) { if (e.target === box && box.dataset.stage !== 'work') close(); });
+        document.addEventListener('keydown', function (e) {
+          if (!box.classList.contains('open')) return;
+          if (e.key === 'Escape' && box.dataset.stage !== 'work') close();
+          if (e.key === 'Enter' && box.dataset.stage === 'ask') { e.preventDefault(); $('rsYes').click(); }
+        });
+      }
+      function show(stage) { box.dataset.stage = stage; box.classList.add('open'); box.setAttribute('aria-hidden', 'false'); }
+      function close() { clearTimeout(closeT); cancelAnimationFrame(raf); box.classList.remove('open'); box.setAttribute('aria-hidden', 'true'); onYes = null; }
+      // ease the bar toward the target every frame; it creeps while a step is running
+      var last = 0;
+      function tick(now) {
+        var dt = last ? Math.min(now - last, 250) : 16; last = now;
+        target = Math.min(target + 0.05 * dt / 1000, ceil);
+        shown += (target - shown) * (1 - Math.exp(-dt / 170));
+        fill.style.transform = 'scaleX(' + shown.toFixed(4) + ')';
+        pct.textContent = Math.round(shown * 100) + '%';
+        raf = requestAnimationFrame(tick);
+      }
+      return {
+        ask: function (meta, yes) {
+          init(); clearTimeout(closeT); $('rsMeta').textContent = meta; onYes = yes; show('ask');
+          setTimeout(function () { $('rsYes').focus(); }, 60);
+        },
+        stage: function (i, text) {
+          if (box.dataset.stage !== 'work') { shown = 0; target = 0.06; t0 = Date.now(); show('work'); cancelAnimationFrame(raf); last = 0; raf = requestAnimationFrame(tick); }
+          ceil = CAPS[i] - 0.03; target = Math.max(target, i ? CAPS[i - 1] : 0.06);
+          step.textContent = text;
+        },
+        done: function () {
+          var wait = Math.max(0, 1300 - (Date.now() - t0));
+          setTimeout(function () {
+            ceil = 1; target = 1; step.textContent = 'Done';
+            setTimeout(function () { cancelAnimationFrame(raf); show('done'); closeT = setTimeout(close, 2600); }, 520);
+          }, wait);
+        },
+        fail: function (msg) { cancelAnimationFrame(raf); $('rsErr').textContent = msg || 'Check the connection and try again.'; show('fail'); }
+      };
+    })();
+
     // "Ready for Sunday" = validate, then publish the set to Control/Display
     var publishing = false;
     function publish() {
@@ -1666,9 +1792,13 @@
       if (un.length) { select(un[0].key); toast('Save “' + songOf(un[0].slug).title + '” first (it has unsaved edits).', 'err'); return; }
       if (!connected) { openConnect('Publishing Sunday needs this computer connected first.'); return; }
       if (samePlan()) { toast('Sunday is already set. Control and Display are showing this service.', 'ok'); return; }
-      publishing = true;
-      var b = document.getElementById('readyBtn'); if (b) { b.disabled = true; b.textContent = 'Publishing…'; }
       var slugs = songSlugs();
+      RS.ask(order.length + (order.length === 1 ? ' item' : ' items') + ' · ' + slugs.length + (slugs.length === 1 ? ' song' : ' songs'), function () { sendSunday(slugs); });
+    }
+    function sendSunday(slugs) {
+      publishing = true;
+      RS.stage(0, 'Saving the order of service');
+      var b = document.getElementById('readyBtn'); if (b) { b.disabled = true; b.textContent = 'Publishing…'; }
       var serviceText = '/**\n * LBC Sunday — the order of service\n * ─────────────────────────────\n * Set in Worship Studio. Songs, readings, the sermon, the Lord\'s Table, videos, the logo.\n * WORSHIP_SAVED holds words written once and kept.\n */\n\n' +
                         'window.WORSHIP_SERVICE = ' + JSON.stringify(order.map(plain), null, 2) + ';\n\n' +
                         'window.WORSHIP_SAVED = ' + JSON.stringify(saved, null, 2) + ';\n';
@@ -1679,12 +1809,14 @@
         if (sha) payload.sha = sha;
         return gh('/repos/' + REPO + '/contents/' + SERVICE_PATH, { method: 'PUT', body: JSON.stringify(payload) });
       }).then(function () {
+        RS.stage(1, 'Updating the songs');
         return getFile(SETLIST_PATH).then(function (f) {
           if (f.text === setlistText) return;
           return putFile(SETLIST_PATH, setlistText, f.sha, 'worship studio: set Sunday (' + slugs.length + ' songs)');
         });
       }).then(function () {
         // remember these as songs the church has sung (the website's song list shows only those)
+        RS.stage(2, 'Finishing up');
         return getFile('js/sung.js').then(function (f) {
           var m = /window\.SUNG_SONGS = \[([\s\S]*?)\];/.exec(f.text);
           var have = m ? m[1].split('\n').map(function (l) { return (l.match(/'([^']+)'/) || [])[1]; }).filter(Boolean) : [];
@@ -1698,8 +1830,8 @@
         published = order.map(plain);
         persistOrder();
         window.WORSHIP_SAVED = JSON.parse(JSON.stringify(saved));
-        toast('Sunday is set. Control and Display will show this service within a minute.', 'ok');
-      }).catch(function (e) { toast(e.message, 'err', true); })
+        RS.done();
+      }).catch(function (e) { RS.fail(e.message); })
         .then(function () { publishing = false; renderRail(); });
     }
 
