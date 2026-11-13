@@ -34,4 +34,10 @@ h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: 
 .copy { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; background: #101012; padding: 12px 14px; font-size: 13.5px; color: var(--ink-dim); white-space: pre-wrap; word-break: break-word; font-family: ui-monospace, Menlo, monospace; }
 .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
 .foot a { color: var(--ink-dim); }
+/* a step with a picture: words on top, the screenshot under them, the button last */
+.step.pic { flex-wrap: wrap; }
+.step.pic .t { flex: 1; min-width: 0; }
+.step a.shot { flex-basis: 100%; display: block; border: 0; }
+.step a.shot img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+.step.pic > .btn { margin-top: 0; }
 @media (max-width: 480px) { body { padding: 24px 14px 64px; } .brand { font-size: 34px; } }

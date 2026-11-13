@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../job.css">
+  <link rel="stylesheet" href="../job.css?v=2">
 </head>
 <body>
   <div class="wrap">
@@ -17,13 +17,25 @@
     <div class="brand-sub">Legacy Bible Church</div>
 
     <h2>Preparation</h2>
-    <div class="step"><div class="n">1</div><div class="t">Worship guide. Open the folder, scroll to the bottom.<small>Not there by Thursday night? Text Pastor Todd.</small><a class="btn" href="https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67" target="_blank" rel="noopener">Open Worship Guides &rarr;</a></div></div>
-    <div class="step"><div class="n">2</div><div class="t">Import the worship guide into the Studio. Review it, especially the songs.<a class="btn" href="../../worship-studio.html">Open the Studio &rarr;</a></div></div>
+    <div class="step pic"><div class="n">1</div><div class="t">Open the folder. Download <b id="guideName">this Sunday&rsquo;s worship guide</b>.<small>Not there by Thursday night? Text Pastor Todd.</small></div>
+      <a class="shot" href="drive.jpg" target="_blank" rel="noopener"><img src="drive.jpg" width="990" height="432" alt="The Worship Guides folder with this Sunday&rsquo;s guide circled"></a>
+      <a class="btn" href="https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67" target="_blank" rel="noopener">Open Worship Guides &rarr;</a></div>
+    <div class="step pic"><div class="n">2</div><div class="t">Click <b>Import the worship guide</b>. Choose the file.</div>
+      <a class="shot" href="studio-import.jpg" target="_blank" rel="noopener"><img src="studio-import.jpg" width="1440" height="800" loading="lazy" alt="The Studio with the Import the worship guide button circled"></a>
+      <a class="btn" href="../../worship-studio.html">Open the Studio &rarr;</a></div>
+    <div class="step pic"><div class="n">3</div><div class="t">Review each row. Especially the songs.</div>
+      <a class="shot" href="studio-review.jpg" target="_blank" rel="noopener"><img src="studio-review.jpg" width="1440" height="1240" loading="lazy" alt="The Studio with the list of rows circled"></a></div>
+    <div class="step pic"><div class="n">4</div><div class="t">Click <b>Ready for Sunday</b>.</div>
+      <a class="shot" href="studio-ready.jpg" target="_blank" rel="noopener"><img src="studio-ready.jpg" width="1440" height="720" loading="lazy" alt="The Studio with the Ready for Sunday row circled"></a></div>
 
     <h2>Sunday morning</h2>
-    <div class="step"><div class="n">3</div><div class="t">Print the worship guide and hand it out.</div></div>
-    <div class="step"><div class="n">4</div><div class="t">Livestream Checklist.<a class="btn" href="../../worship-setup.html">Open the checklist &rarr;</a></div></div>
-    <div class="step"><div class="n">5</div><div class="t">Run the slides. Closing song right after the closing prayer.<a class="btn" href="../../worship-control.html">Open Run Sunday &rarr;</a></div></div>
+    <div class="step"><div class="n">5</div><div class="t">Print the worship guide and hand it out.</div></div>
+    <div class="step pic"><div class="n">6</div><div class="t">Livestream Checklist. Tap each line.</div>
+      <a class="shot" href="checklist.jpg" target="_blank" rel="noopener"><img src="checklist.jpg" width="1440" height="920" loading="lazy" alt="The Livestream Checklist with the first line circled"></a>
+      <a class="btn" href="../../worship-setup.html">Open the checklist &rarr;</a></div>
+    <div class="step pic"><div class="n">7</div><div class="t">Run the slides. Closing song right after the closing prayer.</div>
+      <a class="shot" href="control-next.jpg" target="_blank" rel="noopener"><img src="control-next.jpg" width="1440" height="880" loading="lazy" alt="Run Sunday with the Next button circled"></a>
+      <a class="btn" href="../../worship-control.html">Open Run Sunday &rarr;</a></div>
 
     <h2>Resources</h2>
     <div class="res">
@@ -34,5 +46,17 @@
       <a class="row" href="../../rotation.html"><span class="w">Sunday Rotation</span><span class="arrow">&rarr;</span></a>
     </div>
   </div>
+  <script>
+    // name this Sunday's file, so nobody has to hunt for it: LBC Worship Guide 2026.11.15
+    (function () {
+      try {
+        var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).split('-');
+        var d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
+        d.setUTCDate(d.getUTCDate() + (7 - d.getUTCDay()) % 7);
+        var two = function (n) { return (n < 10 ? '0' : '') + n; };
+        document.getElementById('guideName').textContent = 'LBC Worship Guide ' + d.getUTCFullYear() + '.' + two(d.getUTCMonth() + 1) + '.' + two(d.getUTCDate());
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
