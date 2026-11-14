@@ -41,7 +41,8 @@ h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: 
 .step.pic .t { flex: 1; min-width: 0; }
 .step a.shot { flex-basis: 100%; display: block; border: 0; }
 .step a.shot img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
-.step.pic > .btn { margin-top: 0; }
+.step.pic > .btn { margin-top: 0; margin-left: 42px; }
+.step.pic > .shot + .btn { margin-left: 0; }
 /* the checklist, opened right inside its step */
 .cl { flex-basis: 100%; min-width: 0; }
 .cl-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 12px; background: var(--panel); padding: 10px 0; font-size: 13px; color: var(--ink-dim); }
