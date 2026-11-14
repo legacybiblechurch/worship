@@ -266,17 +266,25 @@ const LEGACY_SONGS = {
   },
   "behold-our-god": {
     title: "Behold Our God",
-    youtube: "https://www.youtube.com/watch?v=67TvJwTTdxA",
+    youtube: "https://www.youtube.com/watch?v=m6rY0SQCth0",
     lyrics: [
-    { label: "", lines: ["Who has held the oceans in His hands", "Who has numbered every grain of sand", "Kings and nations tremble at His voice", "All creation rises to rejoice"] },
-    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him", "Behold our King nothing can compare", "Come let us adore Him"] },
-    { label: "", lines: ["Who has given counsel to the Lord", "Who can question any of His words", "Who can teach the One who knows all things", "Who can fathom all His wondrous deeds"] },
-    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him", "Behold our King nothing can compare", "Come let us adore Him"] },
-    { label: "", lines: ["Who has felt the nails upon His hand", "Bearing all the guilt of sinful man", "God eternal humbled to the grave", "Jesus Savior risen now to reign", "Behold our God seated on His throne", "Come let us adore Him", "Behold our King nothing can compare", "Come let us adore Him"] },
+    { label: "", lines: ["Who has held the oceans in His hands", "Who has numbered every grain of sand"] },
+    { label: "", lines: ["Kings and nations tremble at His voice", "All creation rises to rejoice"] },
+    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our King nothing can compare", "Come let us adore Him"] },
+    { label: "", lines: ["Who has given counsel to the Lord", "Who can question any of His words"] },
+    { label: "", lines: ["Who can teach the One who knows all things", "Who can fathom all His wondrous deeds"] },
+    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our King nothing can compare", "Come let us adore Him"] },
+    { label: "", lines: ["Who has felt the nails upon His hand", "Bearing all the guilt of sinful man", "God eternal humbled to the grave"] },
+    { label: "", lines: ["Jesus Savior risen now to reign", "Behold our God seated on His throne", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our King nothing can compare", "Come let us adore Him"] },
     { label: "", lines: ["You will reign forever", "Let Your glory fill the earth", "You will reign forever", "Let Your glory fill the earth"] },
     { label: "", lines: ["You will reign forever", "Let Your glory fill the earth", "You will reign forever", "Let Your glory fill"] },
-    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him", "Behold our King nothing can compare", "Come let us adore Him"] },
-    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him", "Behold our King nothing can compare", "Come let us adore Him"] }
+    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our King nothing can compare", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our God seated on His throne", "Come let us adore Him"] },
+    { label: "", lines: ["Behold our King nothing can compare", "Come let us adore Him"] }
   ]
   },
   "behold-the-lamb": {
