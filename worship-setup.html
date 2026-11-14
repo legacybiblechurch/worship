@@ -59,11 +59,17 @@
     .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
     .foot a { color: var(--ink-dim); }
     @media (max-width: 480px) { body { padding: 24px 14px 64px; } .brand { font-size: 34px; } }
+    /* ?embed=1: just the list, for showing inside a job page */
+    .embed, .embed body { background: transparent; }
+    .embed body { padding: 0; }
+    .embed .lbc-back, .embed .brand, .embed .brand-sub, .embed .lede, .embed .prog, .embed .fin, .embed .foot { display: none; }
+    .embed #list h2:first-child { margin-top: 6px; }
   </style>
+  <link rel="stylesheet" href="back.css?v=1">
 </head>
 <body>
   <div class="wrap">
-    <a class="back" href="worship.html">&larr; Worship</a>
+    <a class="lbc-back" href="worship.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg>Home</a>
     <div class="brand">Livestream Checklist</div>
     <div class="brand-sub">Legacy Bible Church &middot; Sunday morning</div>
 
@@ -137,6 +143,8 @@
       ]]
     ];
 
+    var EMBED = /[?&]embed=1/.test(location.search) && window.parent !== window;
+    if (EMBED) document.documentElement.className = 'embed';
     var KEY = 'lbc-setup-' + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
     var state = {};
     try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
@@ -167,8 +175,16 @@
       list.querySelectorAll('h2 small').forEach(function (s) { var p = per[s.getAttribute('data-g')] || [0, 0]; s.textContent = p[0] === p[1] ? 'done' : p[0] + ' / ' + p[1]; });
       var fin = document.getElementById('fin');
       if (done === total) { fin.className = 'fin yes'; fin.innerHTML = '<b>All set.</b> Go run the service. Scenes are on Run the stream.'; }
-      else { fin.className = 'fin'; fin.textContent = 'Keep going. The last line is Start Streaming.'; }
+      else { fin.className = 'fin'; fin.textContent = 'Keep going. The last line is Start Streaming.'; }      tell(done);
     }
+    // inside a job page: say how tall the list is and how far along, so that page can size and label it
+    var lastDone = 0;
+    function tell(done) {
+      if (!EMBED) return;
+      if (done != null) lastDone = done;
+      try { window.parent.postMessage({ lbcSetup: { done: lastDone, total: total, h: document.documentElement.scrollHeight } }, '*'); } catch (e) {}
+    }
+    if (EMBED) { window.addEventListener('resize', function () { tell(); }); if (window.ResizeObserver) new ResizeObserver(function () { tell(); }).observe(document.body); }
     list.addEventListener('change', function (e) { if (e.target.type === 'checkbox') { state[e.target.id] = e.target.checked; if (!e.target.checked) delete state[e.target.id]; save(); paint(); } });
     document.getElementById('reset').addEventListener('click', function () { state = {}; save(); list.querySelectorAll('input').forEach(function (c) { c.checked = false; }); paint(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     paint();

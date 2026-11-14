@@ -8,11 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../job.css?v=2">
+  <link rel="stylesheet" href="../job.css?v=3">
+  <link rel="stylesheet" href="../../back.css?v=1">
 </head>
 <body>
   <div class="wrap">
-    <a class="back" href="../../rotation.html">&larr; Sunday Rotation</a>
+    <a class="lbc-back" href="../../rotation.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg>Sunday Rotation</a>
     <div class="brand">Guide &amp; Slides</div>
     <div class="brand-sub">Legacy Bible Church</div>
 
@@ -30,10 +31,13 @@
 
     <h2>Sunday morning</h2>
     <div class="step"><div class="n">5</div><div class="t">Print the worship guide and hand it out.</div></div>
-    <div class="step pic"><div class="n">6</div><div class="t">Livestream Checklist. Tap each line.</div>
-      <a class="shot" href="checklist.jpg" target="_blank" rel="noopener"><img src="checklist.jpg" width="1440" height="920" loading="lazy" alt="The Livestream Checklist with the first line circled"></a>
-      <a class="btn" href="../../worship-setup.html">Open the checklist &rarr;</a></div>
-    <div class="step pic"><div class="n">7</div><div class="t">Run the slides. Closing song right after the closing prayer.</div>
+    <div class="step pic" id="cl"><div class="n">6</div><div class="t">Livestream Checklist. Tap each line.</div>
+      <div class="cl" id="clBox" hidden>
+        <div class="cl-bar"><b id="clCount"></b><span class="cl-track"><i id="clFill"></i></span><button type="button" class="cl-hide" id="clHide">Hide</button></div>
+        <iframe id="clFrame" title="Livestream Checklist"></iframe>
+      </div>
+      <button type="button" class="btn" id="clOpen">Open the checklist</button></div>
+    <div class="step pic"><div class="n">7</div><div class="t">Run the slides.</div>
       <a class="shot" href="control-next.jpg" target="_blank" rel="noopener"><img src="control-next.jpg" width="1440" height="880" loading="lazy" alt="Run Sunday with the Next button circled"></a>
       <a class="btn" href="../../worship-control.html">Open Run Sunday &rarr;</a></div>
 
@@ -46,6 +50,26 @@
       <a class="row" href="../../rotation.html"><span class="w">Sunday Rotation</span><span class="arrow">&rarr;</span></a>
     </div>
   </div>
+  <script>
+    // the checklist opens right here, so the steps and the list share one tab
+    (function () {
+      var box = document.getElementById('clBox'), frame = document.getElementById('clFrame'), open = document.getElementById('clOpen');
+      function show(on) {
+        box.hidden = !on; open.hidden = on;
+        if (on && !frame.getAttribute('src')) frame.src = '../../worship-setup.html?embed=1';
+        if (!on) document.getElementById('cl').scrollIntoView({ block: 'center' });
+      }
+      open.onclick = function () { show(true); };
+      document.getElementById('clHide').onclick = function () { show(false); };
+      window.addEventListener('message', function (e) {
+        var d = e.data && e.data.lbcSetup; if (!d || e.source !== frame.contentWindow) return;
+        if (d.h) frame.style.height = d.h + 'px';
+        document.getElementById('clCount').textContent = d.done + ' of ' + d.total;
+        document.getElementById('clFill').style.width = (100 * d.done / d.total) + '%';
+        open.textContent = 'Open the checklist' + (d.done ? ' \u00b7 ' + d.done + ' of ' + d.total : '');
+      });
+    })();
+  </script>
   <script>
     // name this Sunday's file, so nobody has to hunt for it: LBC Worship Guide 2026.11.15
     (function () {

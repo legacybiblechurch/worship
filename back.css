@@ -1,0 +1,8 @@
+/* Legacy Bible Church · the one way back. Every page uses this, so it looks and sits the same everywhere.
+   <a class="lbc-back" href="worship.html"><svg …/>Home</a>     add "bar" when it sits inside a top bar. */
+.lbc-back { display: inline-flex; align-items: center; gap: 6px; font: 500 13.5px/1 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: 0; text-transform: none; color: #9a9a9e; text-decoration: none; white-space: nowrap; padding: 8px 12px 8px 8px; margin: 0 0 14px -8px; border: 0; background: none; border-radius: 8px; transition: color 140ms ease, background 140ms ease; -webkit-tap-highlight-color: transparent; }
+.lbc-back svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform 140ms ease; }
+.lbc-back:hover { color: #ececed; background: rgba(255, 255, 255, 0.05); }
+.lbc-back:hover svg { transform: translateX(-2px); }
+.lbc-back:active { background: rgba(255, 255, 255, 0.09); }
+.lbc-back.bar { margin: 0 8px 0 -8px; }
