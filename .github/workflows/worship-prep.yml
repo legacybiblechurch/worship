@@ -15,6 +15,10 @@ on:
         description: "Optional YouTube link to use for that song"
         default: ""
         required: false
+      only:
+        description: "1 = look at that one video only (what the Studio sends when a link is pasted over a song)"
+        default: ""
+        required: false
       mode:
         description: "draft | apply | both  (sheet-driven run only)"
         default: "both"
@@ -62,6 +66,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
           YT_PROXY: ${{ secrets.YT_PROXY }}
+          LBC_ONLY_FORCED: ${{ github.event.inputs.only }}
         working-directory: scripts/prep
         run: |
           if [ -n "${{ github.event.inputs.song }}" ]; then

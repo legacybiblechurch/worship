@@ -160,9 +160,19 @@ def draft_row(row: sheet_mod.Row, songs: dict) -> dict:
         d = yt.details(forced)
         if d:
             candidates.append(d)
-    search_pool = (prev["searchCandidates"] if (cache_fresh and not row.redo)
+    # A link pasted over a song in the Studio wants the words of THAT recording, fast.
+    # LBC_ONLY_FORCED=1: no search, no other videos. The recordings found before are kept
+    # as they were so "Other recordings" still has them.
+    only = bool(candidates) and os.environ.get("LBC_ONLY_FORCED") == "1"
+    kept = [dict(c) for c in ((prev or {}).get("candidates") or []) if c.get("videoId") != forced] if only else []
+    search_pool = (((prev or {}).get("searchCandidates") or []) if only
+                   else prev["searchCandidates"] if (cache_fresh and not row.redo)
                    else yt.search(title, max_results=MAX_CANDIDATES))
-    for c in search_pool:
+    if only:
+        search_pool_for_candidates: list[dict] = []
+    else:
+        search_pool_for_candidates = search_pool
+    for c in search_pool_for_candidates:
         if c["videoId"] not in {x["videoId"] for x in candidates}:
             candidates.append(dict(c))
 
@@ -240,6 +250,7 @@ def draft_row(row: sheet_mod.Row, songs: dict) -> dict:
     forced_c = next((c for c in candidates if c["videoId"] == forced), None)
     if forced_c is not None:
         _fill(forced_c)
+    candidates.extend(kept)        # only-this-video mode: the earlier recordings ride along untouched
     if candidates and not any(c.get("lyrics") for c in candidates):
         _fill(candidates[0])
 
@@ -437,6 +448,8 @@ def draft_one(name: str, video: str = "") -> None:
         can_fetch = bool(os.environ.get("YT_PROXY")) or os.environ.get("LBC_FETCH_AUDIO") == "1"
         listened = False
         listen_top = int(os.environ.get("LBC_LISTEN_TOP", "2") or 2)
+        if video and os.environ.get("LBC_ONLY_FORCED") == "1":
+            listen_top = 1         # the pasted recording is the only one that matters
         for c in d["candidates"][:listen_top]:
             audio = esrc.fetch_audio(c["videoId"], audio_dir) if can_fetch else None
             if can_fetch and not audio:

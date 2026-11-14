@@ -963,12 +963,28 @@
       var vid = S.videoId(s.youtube); if (!vid) return;
       var prev = rematch[slug]; if (prev) clearTimeout(prev.timer);
       var old = prev && prev.old ? prev.old : { lyrics: JSON.parse(JSON.stringify(s.lyrics || [])), engineLines: s.engineLines || null };   // the words from before the first swap
-      if (!connected) { rematch[slug] = { vid: vid, phase: 'failed', old: null, msg: 'The words are still from the other recording. Connect this computer, then paste the link again.' }; return; }
       var r = rematch[slug] = { vid: vid, startedAt: Date.now(), phase: 'finding', old: old };
-      gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
-        body: JSON.stringify({ ref: 'main', inputs: { song: s.title, video: 'https://www.youtube.com/watch?v=' + vid } }) })
-        .then(function () { pollRematch(slug); })
-        .catch(function (e) { if (rematch[slug] !== r) return; r.phase = 'failed'; r.msg = e.message + ' The words are still from the other recording.'; paintRematch(slug); });
+      function json(url) { return fetch(url + '?cb=' + Date.now()).then(function (x) { return x.ok ? x.json() : null; }).catch(function () { return null; }); }
+      // 1. a recording already checked by ear, or one the finder has seen: its words are on file, so the swap is instant
+      json('verified/' + vid + '.json').then(function (v) {
+        if (rematch[slug] !== r) return true;
+        if (v && v.slug === slug && v.lyrics && v.lyrics.length) { applyRematch(slug, { lyrics: v.lyrics }); return true; }
+        return json('drafts/' + slug + '.json').then(function (d) {
+          if (rematch[slug] !== r) return true;
+          var c = ((d && d.candidates) || []).filter(function (x) { return x.videoId === vid && x.lyrics && x.lyrics.length && x.transcriptSource !== 'reference' && x.transcriptSource !== 'fromtitle'; })[0];
+          if (c) { applyRematch(slug, c); return true; }
+          return false;
+        });
+      }).then(function (done) {
+        if (done || rematch[slug] !== r) return;
+        // 2. never heard before: ask the finder for this one video only
+        if (!connected) { r.phase = 'failed'; r.old = null; r.msg = 'The words are still from the other recording. Connect this computer, then paste the link again.'; paintRematch(slug); return; }
+        r.startedAt = Date.now();
+        return gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
+          body: JSON.stringify({ ref: 'main', inputs: { song: s.title, video: 'https://www.youtube.com/watch?v=' + vid, only: '1' } }) })
+          .then(function () { pollRematch(slug); })
+          .catch(function (e) { if (rematch[slug] !== r) return; r.phase = 'failed'; r.msg = e.message + ' The words are still from the other recording.'; paintRematch(slug); });
+      });
     }
     function pollRematch(slug) {
       var r = rematch[slug]; if (!r || (r.phase !== 'finding' && r.phase !== 'listening')) return;
@@ -995,12 +1011,14 @@
       clearTimeout(r.timer);
       s.lyrics = JSON.parse(JSON.stringify(c.lyrics || []));
       s.engineLines = (c.engine && c.engine.lines) ? JSON.parse(JSON.stringify(c.engine.lines.filter(function (l) { return l.status !== 'excluded'; }))) : null;
+      var wasSaved = !dirty[slug];      // the new link was already saved while the words were on their way
       dirty[slug] = true; textMode[slug] = false;
       r.phase = 'done'; r.cand = null;
       var checks = (c.engine && c.engine.checks) || [];
       if (checks.length && s.engineLines) pendingChecks[slug] = { checks: checks, i: 0 };
       renderRail(); if (curSlug() === slug) renderMain();
-      toast('The words now match this recording. Check the slides, then Save.', 'ok');
+      if (wasSaved && !pendingChecks[slug]) { saveSong(slug); toast('New lyrics are in for “' + s.title + '” and saved.', 'ok'); }
+      else toast('New lyrics are in for “' + s.title + '”. Check the slides, then Save.', 'ok');
     }
     function paintRematch(slug) {
       var box = document.getElementById('rematch'); if (!box || curSlug() !== slug) return;
@@ -1010,13 +1028,13 @@
       box.innerHTML = '<span class="dot"></span><span class="m"></span>';
       var m = box.querySelector('.m');
       function btn(label, fn) { var b = el('button', 'btn quiet', label); b.type = 'button'; b.onclick = fn; box.appendChild(b); }
-      if (r.phase === 'finding') m.textContent = 'Getting the words from this recording. About a minute. The slides below are still the old words.';
+      if (r.phase === 'finding') m.textContent = 'Pending new lyrics';
       else if (r.phase === 'listening') {
-        m.textContent = 'The church computer is listening to this recording so the words match it exactly. If it is off this waits until it is on.';
+        m.textContent = 'Pending new lyrics';
         if (r.cand) btn('Use the words found so far', function () { applyRematch(slug, r.cand); });
       }
       else if (r.phase === 'done') {
-        m.textContent = 'The words were changed to match this recording.';
+        m.textContent = 'New lyrics are in.';
         if (r.old) btn('Put the old words back', function () {
           var s = songOf(slug); s.lyrics = r.old.lyrics; s.engineLines = r.old.engineLines; dirty[slug] = true; delete pendingChecks[slug]; delete rematch[slug];
           renderRail(); renderMain(); toast('The old words are back.', 'ok');
