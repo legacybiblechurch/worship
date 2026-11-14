@@ -1,0 +1,75 @@
+name: Bible key
+
+# Hands the church's API.Bible key (the NASB) to a computer that has just been
+# connected in the Worship Studio, so nobody pastes it in by hand.
+#
+# The Studio makes a one-time lock (an RSA public key) and sends it here. This job
+# puts the key inside that lock and leaves it on the keybox branch. Only the browser
+# that made the lock can open it. The key is never printed and never on the website.
+#
+# The key itself lives in one place: the repository secret API_BIBLE_KEY.
+# Only someone who can already save to the site can run this.
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "One-time id from the Studio"
+        required: true
+      pub:
+        description: "One-time public key from the Studio (base64 SPKI)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bible-key
+  cancel-in-progress: false
+
+jobs:
+  hand-over:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Lock the key and leave it in the keybox
+        env:
+          KEY: ${{ secrets.API_BIBLE_KEY }}
+          ID: ${{ inputs.id }}
+          PUB: ${{ inputs.pub }}
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ "$ID" =~ ^[a-f0-9]{32}$ ]] || { echo "bad id"; exit 1; }
+          printf '%s' "$PUB" | base64 -d > "$RUNNER_TEMP/pub.der"
+          openssl pkey -pubin -inform DER -in "$RUNNER_TEMP/pub.der" -out "$RUNNER_TEMP/pub.pem"
+
+          git init -q keybox && cd keybox
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git"
+          if git fetch -q --depth 1 origin keybox 2>/dev/null; then git checkout -q FETCH_HEAD; fi
+          git checkout -q --orphan fresh
+          mkdir -p box && touch index
+
+          # forget anything older than an hour
+          now=$(date +%s)
+          awk -v now="$now" '$2 > now - 3600' index > index.new || true
+          for f in box/*.txt; do
+            [ -e "$f" ] || continue
+            grep -q "^$(basename "$f" .txt) " index.new || rm -f "$f"
+          done
+          echo "$ID $now" >> index.new && mv index.new index
+
+          if [ -z "${KEY:-}" ]; then
+            printf 'none' > "box/$ID.txt"
+            echo "No API_BIBLE_KEY secret is set. Told the Studio so."
+          else
+            printf '%s' "$KEY" | openssl pkeyutl -encrypt -pubin -inkey "$RUNNER_TEMP/pub.pem" \
+              -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 -pkeyopt rsa_mgf1_md:sha256 \
+              | base64 -w0 > "box/$ID.txt"
+            echo "Key locked for $ID."
+          fi
+
+          git add -A
+          git -c user.name="Worship Studio" -c user.email="actions@users.noreply.github.com" commit -q -m "keybox"
+          git push -q -f origin fresh:keybox

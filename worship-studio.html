@@ -502,6 +502,47 @@
     }
     function bibleFor(abbr) { return bibles().filter(function (b) { return b.abbr === abbr; })[0] || null; }
     function defaultVersion() { var n = bibles().filter(function (b) { return /^NASB/.test(b.abbr); })[0]; return n ? n.abbr : 'WEB'; }
+    // The NASB key reaches a connected computer by itself. This browser makes a one-time lock, GitHub puts the
+    // church's key inside it (the bible-key workflow), and only this browser can open it. Nothing to paste.
+    var KEY_ASKED = 'lbc-bible-key-asked', keyOnItsWay = false;
+    function fetchChurchKey() {
+      if (bibleKey() || keyOnItsWay || !window.crypto || !crypto.subtle) return;
+      var asked = 0; try { asked = +localStorage.getItem(KEY_ASKED) || 0; } catch (e) {}
+      if (Date.now() - asked < 6 * 3600000) return;          // the church has not stored a key yet: ask again later, not on every load
+      keyOnItsWay = true;
+      var raw = crypto.getRandomValues(new Uint8Array(16)), id = '', pair;
+      for (var i = 0; i < raw.length; i++) id += (raw[i] < 16 ? '0' : '') + raw[i].toString(16);
+      function toB64(buf) { var b = new Uint8Array(buf), o = ''; for (var i = 0; i < b.length; i++) o += String.fromCharCode(b[i]); return btoa(o); }
+      function fromB64(str) { var t = atob(str.replace(/\s/g, '')), b = new Uint8Array(t.length); for (var i = 0; i < t.length; i++) b[i] = t.charCodeAt(i); return b; }
+      var started = Date.now();
+      function look() {
+        return gh('/repos/' + REPO + '/contents/box/' + id + '.txt?ref=keybox', { allow404: true }).then(function (j) { return fromB64(j.content); }, function (e) {
+          if (e.status !== 404 || Date.now() - started > 4 * 60000) throw e;
+          return new Promise(function (res) { setTimeout(res, 5000); }).then(look);
+        });
+      }
+      crypto.subtle.generateKey({ name: 'RSA-OAEP', modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: 'SHA-256' }, false, ['encrypt', 'decrypt'])
+        .then(function (p) { pair = p; return crypto.subtle.exportKey('spki', p.publicKey); })
+        .then(function (spki) {
+          return gh('/repos/' + REPO + '/actions/workflows/bible-key.yml/dispatches', { method: 'POST', actions: true,
+            body: JSON.stringify({ ref: 'main', inputs: { id: id, pub: toB64(spki) } }) });
+        })
+        .then(look)
+        .then(function (box) {
+          if (new TextDecoder().decode(box) === 'none') { try { localStorage.setItem(KEY_ASKED, String(Date.now())); } catch (e) {} return; }
+          return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, pair.privateKey, box).then(function (plain) {
+            if (bibleKey()) return;                               // someone pasted one in the meantime
+            setBibleKey(new TextDecoder().decode(plain).trim());
+            return loadBibles().then(function (keep) {
+              if (!keep.length) return;
+              toast(keep.map(function (b) { return b.abbr; }).join(', ') + ' is ready on this computer.', 'ok');
+              if (document.getElementById('verIn')) renderMain();
+            }, function () { setBibleKey(''); });
+          });
+        })
+        .catch(function () {})
+        .then(function () { keyOnItsWay = false; });
+    }
     var NEEDS_WRITE = 'This computer can see the site but not save to it. On github.com/settings/personal-access-tokens open the token and set Contents and Actions to "Read and write".';
     var NEEDS_ACTIONS = 'Finding new songs needs one more permission: on github.com/settings/personal-access-tokens open the token and set Actions to "Read and write".';
 
@@ -2016,6 +2057,7 @@
         document.getElementById('connect').className = '';
         document.getElementById('tokenInput').value = '';
         toast('Connected. This computer can now save songs.', 'ok');
+        fetchChurchKey();
         Object.keys(finding).forEach(pollFind);
       }).catch(function (e) { m.textContent = e.message; m.className = 'gate-msg err'; });
     };
@@ -2031,7 +2073,7 @@
     current = order[0] ? order[0].key : null;
     renderRail(); renderMain(); paintConn();
     if (token()) {
-      checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); })
+      checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); fetchChurchKey(); })
         .catch(function () { connected = false; paintConn(); });
     }
     // the key's Bible list refreshes quietly, so a newly licensed NASB shows up on the next Reading
