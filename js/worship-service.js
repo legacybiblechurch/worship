@@ -10,7 +10,7 @@ window.WORSHIP_SERVICE = [
     "type": "scripture",
     "ref": "Romans 11:33-12:8",
     "who": "Michael Hooks",
-    "version": "KJV",
+    "version": "NASB",
     "verses": [
       {
         "n": 33,
@@ -63,6 +63,10 @@ window.WORSHIP_SERVICE = [
     ]
   },
   {
+    "type": "song",
+    "slug": "take-my-life-and-let-it-be"
+  },
+  {
     "type": "sermon",
     "title": "God’s Glory in You, Pt 4",
     "passage": "1 Peter 4:7-11",
@@ -75,13 +79,21 @@ window.WORSHIP_SERVICE = [
       "5. Serve one another with your GRACE-gifts (10),",
       "a. if speaking, with God’s AUTHORITY (11a),",
       "b. if serving, with God’s STRENGTH (11b),",
-      "6. doing all things for God’s _______________ (11c)."
+      "6. doing all things for God’s GLORY (11c)."
     ],
     "who": "Todd Barnett"
   },
   {
     "type": "words",
     "id": "lords-table"
+  },
+  {
+    "type": "song",
+    "slug": "behold-our-god"
+  },
+  {
+    "type": "song",
+    "slug": "come-thou-fount-of-evry-blessing"
   },
   {
     "type": "prayer",
