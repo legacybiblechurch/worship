@@ -588,11 +588,9 @@ const LEGACY_SONGS = {
     { label: "Verse 2", lines: ["Hitherto, Thy love has blessed me", "Thou hast drawn me to this place", "And I know Thy hand will lead me"] },
     { label: "Verse 2", lines: ["Safely home by Thy good grace", "Jesus sought me when a stranger", "Wandering from the fold of God"] },
     { label: "Verse 2", lines: ["He, to rescue me from danger", "Bought me with His precious blood"] },
-    { label: "Verse 3", lines: ["O that day when freed from sinning", "I shall see Thy lovely face", "Cloth'ed there in blood-washed linen"] },
-    { label: "Verse 3", lines: ["How I'll sing Thy sov'reign grace", "Come, my Lord, no longer tarry", "Take my ransomed soul away"] },
-    { label: "Verse 3", lines: ["Send thine angels now to carry", "Me to realms of endless days"] },
-    { label: "Verse 4", lines: ["O to grace how great a debtor", "Daily I'm constrained to be", "Let that grace now, like a fetter"] },
-    { label: "Verse 4", lines: ["Bind my wand'ring heart to thee", "Prone to wander, Lord, I feel it", "Prone to leave the God I love"] },
+    { label: "Verse 4", lines: ["O to grace how great a debtor", "Daily I'm constrained to be"] },
+    { label: "", lines: ["Let thy goodness, like a fetter", "Bind my wand'ring heart to thee"] },
+    { label: "Verse 4", lines: ["Prone to wander, Lord, I feel it", "Prone to leave the God I love"] },
     { label: "Verse 4", lines: ["Here's my heart, O take and seal it", "Seal it for thy courts above"] }
   ]
   },
