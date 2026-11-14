@@ -75,13 +75,40 @@
     .edit .full { grid-column: 1 / -1; }
     .edit .off { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-dim); text-transform: none; letter-spacing: 0; font-weight: 500; }
     .edit .btns { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; }
-    .btn { background: var(--gold); color: #16130a; border: 0; font: inherit; font-weight: 600; font-size: 13.5px; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+    .btn { background: rgba(201,168,76,0.09); color: var(--gold); border: 1px solid rgba(201,168,76,0.34); font: inherit; font-weight: 600; font-size: 13.5px; padding: 7px 16px; border-radius: 999px; cursor: pointer; transition: background 160ms ease, border-color 160ms ease; }
+    .btn:hover:not(:disabled) { background: rgba(201,168,76,0.17); border-color: rgba(201,168,76,0.7); }
     .btn.quiet { background: none; color: var(--ink-dim); border: 1px solid var(--line); font-weight: 500; }
+    .btn.quiet:hover:not(:disabled) { background: none; color: var(--ink); border-color: var(--ink-faint); }
     .btn:disabled { opacity: 0.5; cursor: default; }
     .msg { font-size: 12.5px; color: var(--ink-dim); margin-left: auto; }
     .msg.bad { color: var(--warn); }
     .nokey { padding: 12px 18px; font-size: 13px; color: var(--ink-dim); border-bottom: 1px solid var(--line-soft); background: #121214; }
     .nokey a { color: var(--ink); }
+
+    /* a name you can tap: looks like the name, opens the list of people */
+    select.pick { -webkit-appearance: none; appearance: none; background: none; border: 0; border-bottom: 1px dashed var(--line); border-radius: 0; color: inherit; font: inherit; font-weight: 500; padding: 1px 0 2px; margin: 0; max-width: 100%; cursor: pointer; text-overflow: ellipsis; }
+    select.pick:hover, select.pick:focus { border-bottom-color: var(--gold); outline: none; }
+    select.pick option { color: #111; }
+    .status { font-weight: 600; letter-spacing: 0; text-transform: none; font-size: 11.5px; margin-left: auto; color: var(--ink-faint); transition: opacity 400ms; }
+    .status.bad { color: var(--warn); }
+    .status.ok { color: var(--good); }
+    h2 .link { margin-left: auto; background: none; border: 0; color: var(--ink-dim); font: inherit; font-size: 11.5px; font-weight: 600; letter-spacing: 0; text-transform: none; cursor: pointer; padding: 0; }
+    h2 .link:hover { color: var(--ink); }
+
+    /* the people, in order */
+    .ppl { padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .ppl span { font-size: 14px; background: var(--panel-2); border-radius: 999px; padding: 5px 12px 5px 6px; display: inline-flex; align-items: center; gap: 8px; }
+    .ppl span i { font-style: normal; font-size: 11px; font-weight: 700; color: var(--gold); width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; }
+    .prow { display: flex; align-items: center; gap: 8px; padding: 9px 18px; border-bottom: 1px solid var(--line-soft); font-size: 15px; }
+    .prow b { font-weight: 500; flex: 1; }
+    .prow i { font-style: normal; font-size: 11px; font-weight: 700; color: var(--gold); width: 22px; }
+    .prow button, .padd button { background: none; border: 1px solid var(--line); color: var(--ink-dim); font: inherit; font-size: 13px; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; }
+    .prow button:hover:not(:disabled), .padd button:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .prow button:disabled { opacity: 0.3; cursor: default; }
+    .padd { display: flex; gap: 8px; padding: 12px 18px; border-bottom: 1px solid var(--line-soft); }
+    .padd input { flex: 1; min-width: 0; background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 14px; }
+    .padd button { width: auto; padding: 0 14px; }
+    .pbtns { display: flex; gap: 8px; align-items: center; padding: 12px 18px; }
 
     .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
     .foot a { color: var(--ink-dim); }
@@ -121,10 +148,13 @@
       <a class="how link" href="jobs/stream/"><span>Stream</span><span class="arrow">&rarr;</span></a>
       <a class="how link" href="jobs/table/"><span>Table</span><span class="arrow">&rarr;</span></a>
     </div>
-    <h2>The weeks ahead <small id="order"></small></h2>
+    <h2>The weeks ahead <span class="status" id="status"></span></h2>
     <div class="box" id="weeks"></div>
 
-    <p class="foot">Order: <span id="order2"></span>. Each job moves down the list one Sunday at a time. Away that week? Tap Change on that Sunday.</p>
+    <h2>The order <button type="button" class="link" id="p-edit" hidden>Edit</button></h2>
+    <div class="box" id="people"></div>
+
+    <p class="foot" id="foot"></p>
   </div>
 
   <script src="js/rotation-data.js"></script>
@@ -140,8 +170,12 @@
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
     function token() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; } }
 
+    var editingPeople = null;                              // a working copy of the order while it is being edited
+    var sayTimer = null;
+    function say(text, kind) { var st = el('status'); clearTimeout(sayTimer); st.className = 'status' + (kind ? ' ' + kind : ''); st.textContent = text || ''; if (kind === 'ok') sayTimer = setTimeout(function () { say(''); }, 2500); }
+
     function paint() {
-      var c = R.cfg(), rows = R.list(TODAY, WEEKS), now = rows[0], nxt = rows[1];
+      var c = R.cfg(), rows = R.list(TODAY, WEEKS), now = rows[0], nxt = rows[1], can = !!token(), people = c.people || [];
       el('now-date').textContent = R.longLabel(now.date);
       el('now-slides').textContent = now.off ? 'No service' : now.slides;
       el('now-stream').textContent = now.off ? '' : now.stream;
@@ -151,35 +185,52 @@
       el('next').innerHTML = nxt.off
         ? '<span>Next Sunday, ' + esc(R.label(nxt.date)) + ': <b>no service</b>' + (nxt.note ? ' · ' + esc(nxt.note) : '') + '</span>'
         : '<span>Next Sunday, ' + esc(R.label(nxt.date)) + '</span><span>Guide <b>' + esc(nxt.slides) + '</b></span><span>Stream <b>' + esc(nxt.stream) + '</b></span><span>Table <b>' + esc(nxt.table) + '</b></span>';
-      el('order').textContent = ''; el('order2').textContent = (c.people || []).join(', ');
 
-      var html = token() ? '' : '<div class="nokey">Changes are made from the Studio laptop.</div>';
+      function name(w, job) {
+        if (w.off) return '—';
+        if (!can) return esc(w[job]);
+        var list = people.indexOf(w[job]) < 0 ? people.concat([w[job]]) : people;
+        return '<select class="pick" data-date="' + w.date + '" data-job="' + job + '" aria-label="' + job + ' on ' + esc(R.label(w.date)) + '">' +
+          list.map(function (p) { return '<option' + (p === w[job] ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('') + '</select>';
+      }
+      var html = '';
       rows.forEach(function (w, i) {
         var marks = w.changed ? '<span class="mark">' + (w.off ? 'off' : 'changed') + (w.note ? ' · ' + esc(w.note) : '') + '</span>' : '';
         html += '<div class="wk' + (i === 0 ? ' is-now' : '') + (w.off ? ' off' : '') + '" data-date="' + w.date + '">' +
           '<span class="dt">' + esc(R.label(w.date)) + '</span>' +
-          '<span class="nm"><small>Guide</small>' + esc(w.off ? '—' : w.slides) + '</span>' +
-          '<span class="nm"><small>Stream</small>' + esc(w.off ? '—' : w.stream) + '</span>' +
-          '<span class="nm"><small>Table</small>' + esc(w.off ? '—' : w.table) + '</span>' +
-          '<span>' + marks + (token() ? ' <button type="button" class="ch" data-date="' + w.date + '">Change</button>' : '') + '</span></div>';
+          '<span class="nm"><small>Guide</small>' + name(w, 'slides') + '</span>' +
+          '<span class="nm"><small>Stream</small>' + name(w, 'stream') + '</span>' +
+          '<span class="nm"><small>Table</small>' + name(w, 'table') + '</span>' +
+          '<span>' + marks + (can ? ' <button type="button" class="ch" data-date="' + w.date + '">More</button>' : '') + '</span></div>';
         if (editing === w.date) html += editor(w);
       });
       el('weeks').innerHTML = html;
+
+      el('p-edit').hidden = !can || !!editingPeople;
+      if (editingPeople) {
+        el('people').innerHTML = editingPeople.map(function (p, i) {
+          return '<div class="prow"><i>' + (i + 1) + '</i><b>' + esc(p) + '</b>' +
+            '<button type="button" data-p="up" data-i="' + i + '"' + (i === 0 ? ' disabled' : '') + ' aria-label="Move ' + esc(p) + ' up">&uarr;</button>' +
+            '<button type="button" data-p="down" data-i="' + i + '"' + (i === editingPeople.length - 1 ? ' disabled' : '') + ' aria-label="Move ' + esc(p) + ' down">&darr;</button>' +
+            '<button type="button" data-p="drop" data-i="' + i + '" aria-label="Remove ' + esc(p) + '">&times;</button></div>';
+        }).join('') +
+          '<div class="padd"><input type="text" id="p-name" placeholder="Add a name" autocomplete="off"><button type="button" id="p-add">Add</button></div>' +
+          '<div class="pbtns"><button type="button" class="btn" id="p-save">Save</button><button type="button" class="btn quiet" id="p-cancel">Cancel</button><span class="msg" id="p-msg">Saving reshuffles every Sunday ahead.</span></div>';
+      } else {
+        el('people').innerHTML = '<div class="ppl">' + people.map(function (p, i) { return '<span><i>' + (i + 1) + '</i>' + esc(p) + '</span>'; }).join('') + '</div>';
+      }
+      el('foot').innerHTML = can ? 'Tap a name to change it. Pick someone already on that Sunday and the two trade places.' : 'To make changes connect this computer in the <a href="worship-studio.html">Studio</a>.';
     }
     function editor(w) {
-      var c = R.cfg(), opts = function (sel) { return (c.people || []).map(function (p) { return '<option' + (p === sel ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
       return '<div class="edit" id="edit">' +
-        '<div><label>Guide &amp; Slides<select id="e-slides">' + opts(w.slides) + '</select></label></div>' +
-        '<div><label>Stream<select id="e-stream">' + opts(w.stream) + '</select></label></div>' +
-        '<div><label>Table<select id="e-table">' + opts(w.table) + '</select></label></div>' +
         '<div class="full"><label>Note (optional)<input type="text" id="e-note" placeholder="Marco away" value="' + esc(w.note || '') + '"></label></div>' +
         '<div class="full"><label class="off"><input type="checkbox" id="e-off"' + (w.off ? ' checked' : '') + '> No service this Sunday</label></div>' +
         '<div class="btns"><button type="button" class="btn" id="e-save">Save</button>' +
         '<button type="button" class="btn quiet" id="e-reset" title="Back to the normal rotation for this Sunday">Back to normal</button>' +
-        '<button type="button" class="btn quiet" id="e-cancel">Cancel</button><span class="msg" id="e-msg"></span></div></div>';
+        '<button type="button" class="btn quiet" id="e-cancel">Cancel</button></div></div>';
     }
 
-    // ── saving a change: rewrite js/rotation-data.js on GitHub, same connection the Studio uses
+    // ── saving: rewrite js/rotation-data.js on GitHub, same connection the Studio uses
     function gh(path, opts) {
       opts = opts || {};
       return fetch('https://api.github.com' + path, { method: opts.method || 'GET', body: opts.body,
@@ -202,37 +253,97 @@
         '//            {"off": true, "note": "No service"}. Set from the page.\n';
       return head + 'window.LBC_ROTATION = ' + JSON.stringify(cfg, null, 2) + ';\n';
     }
-    function save(date, change) {
-      var msg = el('e-msg'); msg.className = 'msg'; msg.textContent = 'Saving…'; el('e-save').disabled = true;
-      gh('/repos/' + REPO + '/contents/' + PATH + '?ref=main&cb=' + Date.now()).then(function (j) {
-        var text = b64d(j.content), m = text.match(/window\.LBC_ROTATION\s*=\s*(\{[\s\S]*\});?\s*$/);
-        if (!m) throw new Error('The rotation file looks damaged. Nothing was changed.');
-        var cfg = JSON.parse(m[1]); cfg.changes = cfg.changes || {};
-        if (change) cfg.changes[date] = change; else delete cfg.changes[date];
-        var w = R.at(date), label = change ? (change.off ? 'no service' : ('Slides ' + (change.slides || w.slides) + ', Stream ' + (change.stream || w.stream) + ', Table ' + (change.table || w.table))) : 'back to normal';
-        return gh('/repos/' + REPO + '/contents/' + PATH, { method: 'PUT', body: JSON.stringify({ message: 'rotation: ' + date + ' ' + label, content: b64e(serialize(cfg)), sha: j.sha, branch: 'main' }) })
-          .then(function () { window.LBC_ROTATION = cfg; editing = null; paint(); });
-      }).catch(function (e) { msg.className = 'msg bad'; msg.textContent = e.message; el('e-save').disabled = false; });
+    function copy(o) { return JSON.parse(JSON.stringify(o)); }
+    // the plain rotation for a Sunday, as if nothing had been changed by hand
+    function baseAt(cfg, date) {
+      var keep = window.LBC_ROTATION; window.LBC_ROTATION = Object.assign({}, cfg, { changes: {} });
+      var b = R.at(date); window.LBC_ROTATION = keep; return b;
     }
+    // write one Sunday into a config: only what differs from the plain rotation is kept
+    function setDay(cfg, date, want) {
+      var base = baseAt(cfg, date), ch = {};
+      cfg.changes = cfg.changes || {};
+      if (want.off) ch.off = true;
+      else R.JOBS.forEach(function (j) { if (want[j] && want[j] !== base[j]) ch[j] = want[j]; });
+      if (want.note) ch.note = want.note;
+      if (Object.keys(ch).length) cfg.changes[date] = ch; else delete cfg.changes[date];
+    }
+    // every save goes through here, one at a time. The page changes at once and goes back if the save fails.
+    var line = Promise.resolve();
+    function commit(change, message) {
+      var before = copy(R.cfg()), shown = copy(before);
+      change(shown); window.LBC_ROTATION = shown; paint(); say('Saving…');
+      line = line.then(function () {
+        return gh('/repos/' + REPO + '/contents/' + PATH + '?ref=main&cb=' + Date.now()).then(function (j) {
+          var text = b64d(j.content), m = text.match(/window\.LBC_ROTATION\s*=\s*(\{[\s\S]*\});?\s*$/);
+          if (!m) throw new Error('The rotation file looks damaged. Nothing was changed.');
+          var cfg = JSON.parse(m[1]); change(cfg);
+          return gh('/repos/' + REPO + '/contents/' + PATH, { method: 'PUT', body: JSON.stringify({ message: message, content: b64e(serialize(cfg)), sha: j.sha, branch: 'main' }) })
+            .then(function () { window.LBC_ROTATION = cfg; paint(); say('Saved', 'ok'); });
+        }).catch(function (e) { window.LBC_ROTATION = before; paint(); say(e.message, 'bad'); });
+      });
+    }
+
+    // tap a name, pick someone. If that person already has a job that Sunday the two trade places.
+    document.addEventListener('change', function (e) {
+      var t = e.target; if (!t.classList || !t.classList.contains('pick')) return;
+      var date = t.dataset.date, job = t.dataset.job, who = t.value, w = R.at(date);
+      if (w[job] === who) return;
+      var was = w[job];
+      commit(function (cfg) {
+        var keep = window.LBC_ROTATION; window.LBC_ROTATION = cfg; var cur = R.at(date); window.LBC_ROTATION = keep;
+        var want = { slides: cur.slides, stream: cur.stream, table: cur.table, note: cur.note, off: cur.off };
+        R.JOBS.forEach(function (j) { if (j !== job && want[j] === who) want[j] = was; });
+        want[job] = who;
+        setDay(cfg, date, want);
+      }, 'rotation: ' + date + ' ' + job + ' ' + who);
+    });
 
     document.addEventListener('click', function (e) {
       var t = e.target;
       if (t.classList.contains('ch')) { editing = editing === t.dataset.date ? null : t.dataset.date; paint(); return; }
       if (t.id === 'e-cancel') { editing = null; paint(); return; }
-      if (t.id === 'e-reset') { save(editing, null); return; }
+      if (t.id === 'e-reset') { var d0 = editing; editing = null; commit(function (cfg) { if (cfg.changes) delete cfg.changes[d0]; }, 'rotation: ' + d0 + ' back to normal'); return; }
       if (t.id === 'e-save') {
-        var base = R.at(editing), off = el('e-off').checked, s = el('e-slides').value, st = el('e-stream').value, tb = el('e-table').value, note = el('e-note').value.trim();
-        if (!off && (s === tb || s === st || st === tb)) { el('e-msg').className = 'msg bad'; el('e-msg').textContent = 'One person cannot have two jobs the same Sunday.'; return; }
-        var ch = {};
-        if (off) ch.off = true;
-        if (!off && s !== base.slides) ch.slides = s;
-        if (!off && st !== base.stream) ch.stream = st;
-        if (!off && tb !== base.table) ch.table = tb;
-        if (note) ch.note = note;
-        // nothing different from the normal rotation: just clear the override
-        save(editing, Object.keys(ch).length ? ch : null);
+        var d = editing, off = el('e-off').checked, note = el('e-note').value.trim(); editing = null;
+        commit(function (cfg) {
+          var keep = window.LBC_ROTATION; window.LBC_ROTATION = cfg; var cur = R.at(d); window.LBC_ROTATION = keep;
+          setDay(cfg, d, { slides: cur.slides, stream: cur.stream, table: cur.table, note: note, off: off });
+        }, 'rotation: ' + d + (off ? ' no service' : ' note'));
+        return;
+      }
+      // the order
+      if (t.id === 'p-edit') { editingPeople = (R.cfg().people || []).slice(); paint(); return; }
+      if (t.id === 'p-cancel') { editingPeople = null; paint(); return; }
+      if (t.dataset && t.dataset.p && editingPeople) {
+        var i = +t.dataset.i, L = editingPeople;
+        if (t.dataset.p === 'up' && i > 0) L.splice(i - 1, 0, L.splice(i, 1)[0]);
+        if (t.dataset.p === 'down' && i < L.length - 1) L.splice(i + 1, 0, L.splice(i, 1)[0]);
+        if (t.dataset.p === 'drop') L.splice(i, 1);
+        paint(); return;
+      }
+      if (t.id === 'p-add') { addPerson(); return; }
+      if (t.id === 'p-save') {
+        var list = editingPeople.slice();
+        if (list.length < 3) { el('p-msg').className = 'msg bad'; el('p-msg').textContent = 'Three jobs need at least three people.'; return; }
+        editingPeople = null;
+        commit(function (cfg) {
+          cfg.people = list;
+          cfg.jobs = list.length >= 4 ? { slides: 0, stream: 1, table: 3 } : { slides: 0, stream: 1, table: 2 };   // offsets that never give one person two jobs
+          Object.keys(cfg.changes || {}).forEach(function (d) {            // a hand-made change that names someone who left is dropped
+            R.JOBS.forEach(function (j) { if (cfg.changes[d][j] && list.indexOf(cfg.changes[d][j]) < 0) delete cfg.changes[d][j]; });
+            if (!Object.keys(cfg.changes[d]).length) delete cfg.changes[d];
+          });
+        }, 'rotation: the order is ' + list.join(', '));
       }
     });
+    function addPerson() {
+      var inp = el('p-name'), v = (inp.value || '').trim().replace(/\s+/g, ' ');
+      if (!v) { inp.focus(); return; }
+      if (editingPeople.some(function (p) { return p.toLowerCase() === v.toLowerCase(); })) { el('p-msg').className = 'msg bad'; el('p-msg').textContent = v + ' is already on the list.'; return; }
+      editingPeople.push(v); paint(); el('p-name').focus();
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.id === 'p-name') { e.preventDefault(); addPerson(); } });
     paint();
   })();
   </script>
