@@ -203,6 +203,20 @@
     .video-strip iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; background: #000; display: block; }
     /* scrolled past the video: it keeps playing, small, in the corner of this column */
     .video-strip iframe.mini { position: fixed; inset: auto; width: 300px; height: 169px; z-index: 40; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 16px 44px rgba(0,0,0,0.65); }
+    /* the small video can be dragged by this bar, and the list leaves room under itself so the last slide is never covered */
+    .mini-grip { position: fixed; z-index: 41; width: 300px; height: 22px; display: none; align-items: center; justify-content: center; gap: 6px; background: #1b1b1e; border: 1px solid var(--line); border-bottom: 0; border-radius: 8px 8px 0 0; color: var(--ink-faint); font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none; }
+    .mini-grip.on { display: flex; }
+    .mini-grip.drag { cursor: grabbing; color: var(--ink-dim); }
+    .video-strip iframe.mini.gripped { border-radius: 0 0 8px 8px; }
+    .pane.scroll.has-mini .points, .pane.scroll.has-mini #lyricBox { margin-bottom: 220px; }
+    /* a new link: the words are being matched to that recording */
+    .rematch { display: none; margin-top: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); font-size: 12.5px; line-height: 1.5; color: var(--ink-dim); align-items: center; gap: 10px; flex-wrap: wrap; }
+    .rematch.on { display: flex; }
+    .rematch .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; animation: rm-pulse 1.1s ease-in-out infinite; }
+    .rematch.done .dot { background: var(--good); animation: none; }
+    .rematch.bad .dot { background: var(--warn); animation: none; }
+    .rematch span.m { flex: 1; min-width: 180px; }
+    @keyframes rm-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
     .video-strip .novid { aspect-ratio: 16/9; border: 1px dashed var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--ink-faint); font-size: 13px; }
     .video-strip input { width: 100%; margin-top: 8px; font: inherit; font-size: 12.5px; font-family: var(--mono); background: var(--panel); color: var(--ink-dim); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; }
 
@@ -940,6 +954,75 @@
         });
       }).catch(function (e) { toast(e.message, 'err'); });
     }
+    // A different link was pasted for a song: the words have to come from THAT recording, or the slides drift from
+    // what the room hears. Ask the finder for this exact video, then put its words in. The old words can come back.
+    var rematch = {};      // slug -> { vid, startedAt, phase: finding | listening | done | failed, msg, cand, old }
+    function matchWords(slug, s) {
+      var vid = S.videoId(s.youtube); if (!vid) return;
+      var prev = rematch[slug]; if (prev) clearTimeout(prev.timer);
+      var old = prev && prev.old ? prev.old : { lyrics: JSON.parse(JSON.stringify(s.lyrics || [])), engineLines: s.engineLines || null };   // the words from before the first swap
+      if (!connected) { rematch[slug] = { vid: vid, phase: 'failed', old: null, msg: 'The words are still from the other recording. Connect this computer, then paste the link again.' }; return; }
+      var r = rematch[slug] = { vid: vid, startedAt: Date.now(), phase: 'finding', old: old };
+      gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
+        body: JSON.stringify({ ref: 'main', inputs: { song: s.title, video: 'https://www.youtube.com/watch?v=' + vid } }) })
+        .then(function () { pollRematch(slug); })
+        .catch(function (e) { if (rematch[slug] !== r) return; r.phase = 'failed'; r.msg = e.message + ' The words are still from the other recording.'; paintRematch(slug); });
+    }
+    function pollRematch(slug) {
+      var r = rematch[slug]; if (!r || (r.phase !== 'finding' && r.phase !== 'listening')) return;
+      var s = songOf(slug);
+      if (S.videoId(s.youtube) !== r.vid) { delete rematch[slug]; return; }           // the link changed again; that one has its own run
+      getFile('drafts/' + slug + '.json', true).then(function (f) { return JSON.parse(f.text); }, function () { return null; }).then(function (d) {
+        if (rematch[slug] !== r) return;
+        var fresh = d && Date.parse(d.generatedAt || 0) > r.startedAt - 60000;
+        var c = fresh ? (d.candidates || []).filter(function (x) { return x.videoId === r.vid; })[0] : null;
+        var has = !!(c && c.lyrics && c.lyrics.length);
+        if (fresh && !(d.needsAudio && !d.error)) {                                  // the finder is finished with it
+          if (has) applyRematch(slug, c);
+          else { r.phase = 'failed'; r.msg = 'No words could be taken from this recording. The words shown are from the other one. Fix them by hand or pick another recording.'; paintRematch(slug); }
+          return;
+        }
+        if (Date.now() - r.startedAt > 20 * 60000) { r.phase = 'failed'; r.msg = 'That took too long. The words shown are from the other recording.'; paintRematch(slug); return; }
+        if (fresh) { r.phase = 'listening'; r.cand = has ? c : null; }
+        r.timer = setTimeout(function () { pollRematch(slug); }, 6000);
+        paintRematch(slug);
+      });
+    }
+    function applyRematch(slug, c) {
+      var r = rematch[slug], s = songOf(slug); if (!r) return;
+      clearTimeout(r.timer);
+      s.lyrics = JSON.parse(JSON.stringify(c.lyrics || []));
+      s.engineLines = (c.engine && c.engine.lines) ? JSON.parse(JSON.stringify(c.engine.lines.filter(function (l) { return l.status !== 'excluded'; }))) : null;
+      dirty[slug] = true; textMode[slug] = false;
+      r.phase = 'done'; r.cand = null;
+      var checks = (c.engine && c.engine.checks) || [];
+      if (checks.length && s.engineLines) pendingChecks[slug] = { checks: checks, i: 0 };
+      renderRail(); if (curSlug() === slug) renderMain();
+      toast('The words now match this recording. Check the slides, then Save.', 'ok');
+    }
+    function paintRematch(slug) {
+      var box = document.getElementById('rematch'); if (!box || curSlug() !== slug) return;
+      var r = rematch[slug];
+      if (!r || S.videoId(songOf(slug).youtube) !== r.vid) { box.className = 'rematch'; box.innerHTML = ''; return; }
+      box.className = 'rematch on' + (r.phase === 'done' ? ' done' : r.phase === 'failed' ? ' bad' : '');
+      box.innerHTML = '<span class="dot"></span><span class="m"></span>';
+      var m = box.querySelector('.m');
+      function btn(label, fn) { var b = el('button', 'btn quiet', label); b.type = 'button'; b.onclick = fn; box.appendChild(b); }
+      if (r.phase === 'finding') m.textContent = 'Getting the words from this recording. About a minute. The slides below are still the old words.';
+      else if (r.phase === 'listening') {
+        m.textContent = 'The church computer is listening to this recording so the words match it exactly. If it is off this waits until it is on.';
+        if (r.cand) btn('Use the words found so far', function () { applyRematch(slug, r.cand); });
+      }
+      else if (r.phase === 'done') {
+        m.textContent = 'The words were changed to match this recording.';
+        if (r.old) btn('Put the old words back', function () {
+          var s = songOf(slug); s.lyrics = r.old.lyrics; s.engineLines = r.old.engineLines; dirty[slug] = true; delete pendingChecks[slug]; delete rematch[slug];
+          renderRail(); renderMain(); toast('The old words are back.', 'ok');
+        });
+      }
+      else m.textContent = r.msg || '';
+    }
+
     // swap the song in this slot for another, same place in the order
     function swapSong(it, slug, title) {
       if (!it || it.type !== 'song') return;
@@ -1218,7 +1301,7 @@
               '<div class="alt-row"><button class="btn quiet" id="altBtn">Other recordings</button>' +
               '<a class="btn quiet" id="ytSearch" target="_blank" rel="noopener">Search YouTube for different options &nearr;</a>' +
               '<span class="hint">or paste any YouTube link above</span></div>' +
-              '<div class="alts" id="alts"></div></div>' +
+              '<div class="alts" id="alts"></div><div class="rematch" id="rematch"></div></div>' +
             (asText
               ? '<div class="pane-head">Words<span class="hint">a blank line starts a new slide &nbsp;·&nbsp; [Chorus] names one</span><button class="btn quiet mode" id="modeBtn">Edit slide by slide</button></div>' +
                 '<textarea id="lyricBox" spellcheck="true" placeholder="Paste or type the words here."></textarea>'
@@ -1231,7 +1314,13 @@
       miniPlayer(main);
       var vidIn = document.getElementById('vidInput');
       vidIn.value = s.youtube || '';
-      vidIn.onchange = function () { s.youtube = vidIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
+      vidIn.onchange = function () {
+        var was = S.videoId(s.youtube), now = S.videoId(vidIn.value.trim());
+        s.youtube = vidIn.value.trim(); dirty[slug] = true;
+        if (now && now !== was) matchWords(slug, s); else if (!now) delete rematch[slug];
+        renderRail(); renderEditor(slug);
+      };
+      paintRematch(slug);
       var byIn = document.getElementById('byInput');
       byIn.value = s.writer || '';
       byIn.onchange = function () { s.writer = byIn.value.trim(); dirty[slug] = true; renderRail(); renderEditor(slug); };
@@ -1277,17 +1366,37 @@
     function miniPlayer(main) {
       var pane = main.querySelector('.pane.scroll'), wrap = main.querySelector('.vwrap'), frame = wrap && wrap.querySelector('iframe');
       if (!pane || !frame || !window.IntersectionObserver) return;
+      var W = 300, H = 169, GRIP = 22, POS_KEY = 'lbc-mini-pos';
+      var pos = null; try { pos = JSON.parse(localStorage.getItem(POS_KEY) || 'null'); } catch (e) {}      // {x, y} of the bar, once it has been dragged
+      var grip = el('div', 'mini-grip', 'Drag to move'); wrap.appendChild(grip);
       function place() {
         var r = pane.getBoundingClientRect();
-        frame.style.left = Math.round(r.right - 16 - 300) + 'px'; frame.style.top = Math.round(r.bottom - 16 - 169) + 'px';
+        var x = pos ? pos.x : r.right - 16 - W, y = pos ? pos.y : r.bottom - 16 - H - GRIP;
+        x = Math.max(8, Math.min(x, window.innerWidth - W - 8)); y = Math.max(8, Math.min(y, window.innerHeight - H - GRIP - 8));
+        grip.style.left = Math.round(x) + 'px'; grip.style.top = Math.round(y) + 'px';
+        frame.style.left = Math.round(x) + 'px'; frame.style.top = Math.round(y + GRIP) + 'px';
       }
-      new IntersectionObserver(function (en) {
-        var mini = en[0].intersectionRatio < 0.3;
+      function setMini(mini) {
         if (mini) place();
-        frame.classList.toggle('mini', mini);
+        frame.classList.toggle('mini', mini); frame.classList.toggle('gripped', mini);
+        grip.classList.toggle('on', mini); pane.classList.toggle('has-mini', mini);
         if (!mini) { frame.style.left = ''; frame.style.top = ''; }
-      }, { root: pane, threshold: [0, 0.3, 1] }).observe(wrap);
+      }
+      new IntersectionObserver(function (en) { setMini(en[0].intersectionRatio < 0.3); }, { root: pane, threshold: [0, 0.3, 1] }).observe(wrap);
       window.addEventListener('resize', function () { if (frame.classList.contains('mini')) place(); });
+      // drag by the bar. The video itself swallows the mouse, so it lets go of it while it is being moved.
+      var from = null;
+      grip.addEventListener('pointerdown', function (e) {
+        var b = grip.getBoundingClientRect(); from = { dx: e.clientX - b.left, dy: e.clientY - b.top };
+        grip.setPointerCapture(e.pointerId); grip.classList.add('drag'); frame.style.pointerEvents = 'none'; e.preventDefault();
+      });
+      grip.addEventListener('pointermove', function (e) { if (!from) return; pos = { x: e.clientX - from.dx, y: e.clientY - from.dy }; place(); });
+      function drop() {
+        if (!from) return; from = null; grip.classList.remove('drag'); frame.style.pointerEvents = '';
+        if (pos) { var b = grip.getBoundingClientRect(); pos = { x: b.left, y: b.top }; try { localStorage.setItem(POS_KEY, JSON.stringify(pos)); } catch (e) {} }
+      }
+      grip.addEventListener('pointerup', drop); grip.addEventListener('pointercancel', drop);
+      grip.addEventListener('dblclick', function () { pos = null; try { localStorage.removeItem(POS_KEY); } catch (e) {} place(); });   // double-click: back to the corner
     }
     // the + on a card's edge: a new slide above or below it
     function insertButtons(card, i, insertAt) {
