@@ -50,40 +50,22 @@
    ]
   },
   {
-   "label": "Verse 3",
-   "lines": [
-    "O that day when freed from sinning",
-    "I shall see Thy lovely face",
-    "Cloth'ed there in blood-washed linen"
-   ]
-  },
-  {
-   "label": "Verse 3",
-   "lines": [
-    "How I'll sing Thy sov'reign grace",
-    "Come, my Lord, no longer tarry",
-    "Take my ransomed soul away"
-   ]
-  },
-  {
-   "label": "Verse 3",
-   "lines": [
-    "Send thine angels now to carry",
-    "Me to realms of endless days"
-   ]
-  },
-  {
    "label": "Verse 4",
    "lines": [
     "O to grace how great a debtor",
-    "Daily I'm constrained to be",
-    "Let that grace now, like a fetter"
+    "Daily I'm constrained to be"
+   ]
+  },
+  {
+   "label": "",
+   "lines": [
+    "Let thy goodness, like a fetter",
+    "Bind my wand'ring heart to thee"
    ]
   },
   {
    "label": "Verse 4",
    "lines": [
-    "Bind my wand'ring heart to thee",
     "Prone to wander, Lord, I feel it",
     "Prone to leave the God I love"
    ]
@@ -97,6 +79,6 @@
   }
  ],
  "lines": [],
- "verifiedAt": "2026-11-14T23:44:41.090Z",
+ "verifiedAt": "2026-11-14T23:57:35.873Z",
  "by": "worship studio"
 }
