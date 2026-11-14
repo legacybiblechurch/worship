@@ -838,8 +838,10 @@
       var hi = -1, items = [];
       function paint() {
         var q = inp.value.trim();
-        items = q ? S.searchLibrary(q, 7) : [];
-        var pre = q ? S.searchTitles(q, FOUND_TITLES, 3).filter(function (it) { return it.score >= 70 && !LIB[it.slug]; }) : [];
+        // titles are stored with HTML codes for curly quotes (Ev&rsquo;ry): show and pass on the real characters
+        function clean(it) { var o = {}; for (var k in it) o[k] = it[k]; o.title = S.decodeEntities(it.title); return o; }
+        items = (q ? S.searchLibrary(q, 7) : []).map(clean);
+        var pre = (q ? S.searchTitles(q, FOUND_TITLES, 3).filter(function (it) { return it.score >= 70 && !LIB[it.slug]; }) : []).map(clean);
         sugg.innerHTML = '';
         if (!q) { sugg.className = 'sugg'; return; }
         items.forEach(function (it, i) {
