@@ -5,4 +5,7 @@
  */
 
 window.WORSHIP_SETLIST = [
+  'take-my-life-and-let-it-be',
+  'behold-our-god',
+  'come-thou-fount-of-evry-blessing',
 ];
