@@ -516,7 +516,7 @@
       function fromB64(str) { var t = atob(str.replace(/\s/g, '')), b = new Uint8Array(t.length); for (var i = 0; i < t.length; i++) b[i] = t.charCodeAt(i); return b; }
       var started = Date.now();
       function look() {
-        return gh('/repos/' + REPO + '/contents/box/' + id + '.txt?ref=keybox', { allow404: true }).then(function (j) { return fromB64(j.content); }, function (e) {
+        return gh('/repos/' + REPO + '/contents/box/' + id + '.txt?ref=keybox', { allow404: true }).then(function (j) { return atob(j.content.replace(/\s/g, '')).trim(); }, function (e) {
           if (e.status !== 404 || Date.now() - started > 4 * 60000) throw e;
           return new Promise(function (res) { setTimeout(res, 5000); }).then(look);
         });
@@ -529,8 +529,8 @@
         })
         .then(look)
         .then(function (box) {
-          if (new TextDecoder().decode(box) === 'none') { try { localStorage.setItem(KEY_ASKED, String(Date.now())); } catch (e) {} return; }
-          return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, pair.privateKey, box).then(function (plain) {
+          if (box === 'none') { try { localStorage.setItem(KEY_ASKED, String(Date.now())); } catch (e) {} return; }
+          return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, pair.privateKey, fromB64(box)).then(function (plain) {
             if (bibleKey()) return;                               // someone pasted one in the meantime
             setBibleKey(new TextDecoder().decode(plain).trim());
             return loadBibles().then(function (keep) {
