@@ -2027,8 +2027,7 @@ const LEGACY_SONGS = {
     { label: "Verse 2", lines: ["Take my hands, and let them move", "At the impulse of Thy love;"] },
     { label: "", lines: ["Take my feet, and let them be", "Swift and beautiful for Thee,", "Swift and beautiful for Thee."] },
     { label: "Verse 3", lines: ["Take my voice, and let me sing", "Always, only, for my King;"] },
-    { label: "", lines: ["Take my lips, and let them be", "filled with messages from Thee,", "filled with messages from Thee."] },
-    { label: "Verse 6", lines: ["Take myself and I will be", "Ever only all for Thee", "Ever only all for Thee"] }
+    { label: "", lines: ["Take my lips, and let them be", "filled with messages from Thee,", "filled with messages from Thee."] }
   ]
   },
   "to-god-be-the-glory": {
