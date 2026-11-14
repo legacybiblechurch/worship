@@ -1545,7 +1545,10 @@
         var nasb = bibles().filter(function (b) { return /^NASB/.test(b.abbr); })[0];
         if (nasb) note.textContent = 'Type the passage, like Psalm 24 or John 3:16-21, and click Get the passage. The ' + nasb.abbr + ' comes straight in.';
         else if (bibleKey()) note.textContent = 'WEB and KJV come in on their own. The key is in, but the NASB is not on it yet: check the Plan tab on api.bible.';
-        else askKey('WEB and KJV come in on their own. For the NASB, paste the church’s API.Bible key here once (api.bible → the Legacy Bible Church Worship app → API Key).');
+        else if (keyOnItsWay) note.textContent = 'WEB and KJV come in on their own. The NASB is on its way to this computer.';
+        else if (!connected) note.textContent = 'WEB and KJV come in on their own. The NASB arrives once this computer is connected.';
+        // only if the hand-over could not deliver: the old way still works
+        else askKey('The NASB did not arrive on its own. Paste the church’s API.Bible key here once (api.bible → the Legacy Bible Church Worship app → API Key).');
       }
       hint();
       ref.oninput = function () { it.ref = ref.value.trim(); main.querySelector('.main-title').textContent = 'Reading' + (it.ref ? ' · ' + it.ref : ''); touched(); paintItemPreview(it); };
