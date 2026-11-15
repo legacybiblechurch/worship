@@ -14,51 +14,51 @@ window.WORSHIP_SERVICE = [
     "verses": [
       {
         "n": 33,
-        "text": "O the depth of the riches both of the wisdom and knowledge of God! how unsearchable are his judgments, and his ways past finding out!"
+        "text": "Oh, the depth of the riches both of the wisdom and knowledge of God! How unsearchable are His judgments and unfathomable His ways!"
       },
       {
         "n": 34,
-        "text": "For who hath known the mind of the Lord? or who hath been his counsellor?"
+        "text": "For who has known the mind of the Lord, or who became His counselor?"
       },
       {
         "n": 35,
-        "text": "Or who hath first given to him, and it shall be recompensed unto him again?"
+        "text": "Or who has first given to Him that it might be paid back to him again?"
       },
       {
         "n": 36,
-        "text": "For of him, and through him, and to him, are all things: to whom be glory for ever. Amen."
+        "text": "For from Him and through Him and to Him are all things. To Him be the glory forever. Amen. Dedicated Service"
       },
       {
         "n": 1,
-        "text": "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service."
+        "text": "Therefore I urge you, brethren, by the mercies of God, to present your bodies a living and holy sacrifice, acceptable to God, which is your spiritual service of worship."
       },
       {
         "n": 2,
-        "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God."
+        "text": "And do not be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what the will of God is, that which is good and acceptable and perfect."
       },
       {
         "n": 3,
-        "text": "For I say, through the grace given unto me, to every man that is among you, not to think of himself more highly than he ought to think; but to think soberly, according as God hath dealt to every man the measure of faith."
+        "text": "For through the grace given to me I say to everyone among you not to think more highly of himself than he ought to think; but to think so as to have sound judgment, as God has allotted to each a measure of faith."
       },
       {
         "n": 4,
-        "text": "For as we have many members in one body, and all members have not the same office:"
+        "text": "For just as we have many members in one body and all the members do not have the same function,"
       },
       {
         "n": 5,
-        "text": "So we, being many, are one body in Christ, and every one members one of another."
+        "text": "so we, who are many, are one body in Christ, and individually members one of another."
       },
       {
         "n": 6,
-        "text": "Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith;"
+        "text": "Since we have gifts that differ according to the grace given to us, each of us is to exercise them accordingly: if prophecy, according to the proportion of his faith;"
       },
       {
         "n": 7,
-        "text": "Or ministry, let us wait on our ministering: or he that teacheth, on teaching;"
+        "text": "if service, in his serving; or he who teaches, in his teaching;"
       },
       {
         "n": 8,
-        "text": "Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness."
+        "text": "or he who exhorts, in his exhortation; he who gives, with liberality; he who leads, with diligence; he who shows mercy, with cheerfulness."
       }
     ]
   },
