@@ -192,7 +192,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=31"></script>
+  <script src="js/sheet.js?v=32"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -214,6 +214,14 @@
     // dropping to standby until the operator presses a key.
     try { pendingState = JSON.parse(localStorage.getItem('lbc-worship-state') || 'null'); } catch (e) {}
     LBCSheet.loadService(onSongsReady);
+    // a save in the Studio lands here at once. The slide on the TV is redrawn only if its own words changed.
+    if (LBCSheet.watchService) LBCSheet.watchService(function (items) {
+      var st = null; try { st = JSON.parse(localStorage.getItem('lbc-worship-state') || 'null'); } catch (e) {}
+      function shown(list) { var it = st && list[st.songIndex]; return it ? JSON.stringify([it.type, it.title, it.slides && it.slides[st.slideIndex]]) : ''; }
+      var was = shown(SONGS_BUILT);
+      SONGS_BUILT = buildSongs(items); songsReady = true;
+      if (st && shown(SONGS_BUILT) !== was) renderState(st);
+    });
 
     var channel    = new BroadcastChannel('lbc-worship');
     var standby    = document.getElementById('standby');

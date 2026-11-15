@@ -448,13 +448,20 @@
         else if (TEST) show(SAMPLE);
         else if (pending) { apply(pending); pending = null; }
       });
+      // a save in the Studio lands here at once. The card is redrawn only if its own words changed.
+      if (LBCSheet.watchService) LBCSheet.watchService(function (items) {
+        function shown(list) { var it = last && list[last.songIndex]; return it ? JSON.stringify([it.type, it.slides && it.slides[last.slideIndex]]) : ''; }
+        var was = shown(SONGS);
+        SONGS = items; ready = true;
+        if (!TEST && last && shown(SONGS) !== was) apply(last);
+      });
       // the set or the words republished while this is open? reload so they match
       Promise.all(SIGS.map(sig)).then(function (s) { SIGS.forEach(function (u, i) { base[u] = s[i]; }); });
       setInterval(function () {
         SIGS.forEach(function (u) { sig(u).then(function (v) { if (v && base[u] && v !== base[u]) fresh(); }); });
       }, 90000);
     }
-    load('js/sheet.js?v=31', function () {
+    load('js/sheet.js?v=32', function () {
       code = (qs.get('room') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (!code && window.LBCSheet) code = LBCSheet.ROOM;
       topic = code ? 'lbc-worship-' + code.toLowerCase() + '-7f3a' : '';

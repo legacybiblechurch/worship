@@ -417,7 +417,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=31"></script>
+  <script src="js/sheet.js?v=32"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -596,6 +596,14 @@
     }
 
     LBCSheet.loadService(init);
+    // a save in the Studio lands here at once (js/sheet.js "live data"). Same place in the service, new words.
+    if (LBCSheet.watchService) LBCSheet.watchService(function (items) {
+      init(items);
+      var n = document.getElementById('live-note');
+      if (!n) { n = document.createElement('div'); n.id = 'live-note'; n.style.cssText = 'position:fixed;left:16px;bottom:74px;z-index:60;background:#1b1b1e;border:1px solid #2a2a2e;color:#7bb37e;font:600 12.5px Inter,-apple-system,sans-serif;padding:8px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:opacity .4s;pointer-events:none'; document.body.appendChild(n); }
+      n.textContent = 'Updated from the Studio'; n.style.opacity = '1';
+      clearTimeout(n._t); n._t = setTimeout(function () { n.style.opacity = '0'; }, 4000);
+    }, { poll: true });
 
     // ── Net: the same slides from any device ─────────────────────────────
     // BroadcastChannel only reaches windows in one browser. For a phone across

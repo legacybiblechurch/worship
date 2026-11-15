@@ -14,9 +14,11 @@
 (function (global) {
   'use strict';
 
+  var live = { songs: null };
   // songs-data.js declares LEGACY_SONGS with `const`, so it is NOT a property of
   // window. Every reader has to fall back to the bare identifier.
   function library() {
+    if (live.songs) return live.songs;          // a save that arrived while this page was open (see "live data" below)
     if (typeof global.LEGACY_SONGS !== 'undefined') return global.LEGACY_SONGS;
     if (typeof LEGACY_SONGS !== 'undefined') return LEGACY_SONGS;
     return {};
@@ -504,6 +506,77 @@
     if (cite) t += '<span class="cite">' + escHtml(cite) + '</span>';   // the reference on its own small line
     return t;
   }
+  // ─────────────────────────────────────────── live data
+  // A save in the Studio has to show in Run Sunday, on the TV and in the stream window NOW, not when the
+  // website finishes rebuilding a minute later. Two roads, both ending in the same place:
+  //   1. the same browser: the Studio hands the new file over on a BroadcastChannel the moment it is saved
+  //   2. any other computer: one page (Run Sunday) asks GitHub, which has the save before the website does,
+  //      and passes what it finds to the TV and stream windows beside it
+  // Nothing here can break a page: if it all fails the page simply keeps what the website gave it.
+  var DATA_FILES = ['js/songs-data.js', 'js/worship-songs.js', 'js/worship-service.js'], DATA_REPO = 'legacybiblechurch/worship';
+  var dataChannel = null;
+  function dataChan() { if (!dataChannel) { try { dataChannel = new BroadcastChannel('lbc-worship-data'); } catch (e) { dataChannel = { postMessage: function () {} }; } } return dataChannel; }
+  // run the text of a data file: the two worship-*.js files set window.X themselves, songs-data.js declares a const
+  function applyData(files) {
+    try {
+      if (files['js/songs-data.js'] != null) {
+        var L = new Function(files['js/songs-data.js'] + '\n;return typeof LEGACY_SONGS !== "undefined" ? LEGACY_SONGS : null;')();
+        if (L && typeof L === 'object') live.songs = L;
+      }
+      ['js/worship-songs.js', 'js/worship-service.js'].forEach(function (f) { if (files[f] != null) new Function(files[f])(); });
+      return true;
+    } catch (e) { return false; }
+  }
+  // the Studio calls this after every successful save of a data file
+  function announceData(path, text) {
+    if (DATA_FILES.indexOf(path) < 0) return;
+    var f = {}; f[path] = text;
+    try { dataChan().postMessage({ files: f, at: Date.now() }); } catch (e) {}
+  }
+  // cb(items) whenever the service really changed. opts.poll: also ask GitHub (one page per computer is enough).
+  function watchService(cb, opts) {
+    opts = opts || {};
+    var lastLocal = 0;                                          // when the Studio last handed something over
+    function take(files) {
+      var before = JSON.stringify(service().map(buildItem));
+      if (!applyData(files)) return false;
+      var items = service().map(buildItem);
+      if (JSON.stringify(items) === before) return false;
+      try { cb(items); } catch (e) {}
+      return true;
+    }
+    var ch = dataChan();
+    ch.onmessage = function (e) { if (e.data && e.data.files) { lastLocal = Date.now(); take(e.data.files); } };
+    if (!opts.poll || typeof fetch !== 'function') return;
+    var etag = '', sha = '', busy = false, anon = false;
+    function token() { if (anon) return ''; try { return localStorage.getItem('lbc-gh-token') || ''; } catch (e) { return ''; } }
+    function hdr(accept) { var h = { 'Accept': accept, 'X-GitHub-Api-Version': '2022-11-28' }, t = token(); if (t) h.Authorization = 'Bearer ' + t; return h; }
+    function tick() {
+      if (busy) return; busy = true;
+      var started = Date.now(), h = hdr('application/vnd.github.sha'); if (etag) h['If-None-Match'] = etag;
+      fetch('https://api.github.com/repos/' + DATA_REPO + '/commits/main', { headers: h, cache: 'no-store' }).then(function (r) {
+        if (r.status === 304) return null;
+        if (r.status === 401) { anon = true; etag = ''; return null; }       // a dead connection: carry on without it
+        if (!r.ok) return null;
+        etag = r.headers.get('etag') || ''; return r.text();
+      }).then(function (now) {
+        now = now && now.trim(); if (!now || now === sha) return;
+        return Promise.all(DATA_FILES.map(function (f) {
+          return fetch('https://api.github.com/repos/' + DATA_REPO + '/contents/' + f + '?ref=' + now, { headers: hdr('application/vnd.github.raw'), cache: 'no-store' })
+            .then(function (r) { if (!r.ok) throw new Error('x'); return r.text(); });
+        })).then(function (texts) {
+          sha = now;
+          if (started < lastLocal) return;                       // the Studio in this browser saved while we were asking: its copy is newer
+          var files = {}; DATA_FILES.forEach(function (f, i) { files[f] = texts[i]; });
+          if (take(files)) { try { ch.postMessage({ files: files, at: Date.now() }); } catch (e) {} }   // pass it to the TV and stream windows
+        });
+      }).catch(function () {}).then(function () { busy = false; });
+    }
+    tick();
+    // connected computers may ask often; one that is not connected is rationed by GitHub, so it asks rarely
+    setInterval(tick, token() ? 8000 : 90000);
+  }
+
   global.LBCSheet = {
     markup: markup, proseLine: proseLine,
     ROOM: ROOM, RELAYS: RELAYS, relay: relay, relayTopic: relayTopic,
@@ -511,7 +584,7 @@
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, searchTitles: searchTitles, videoId: videoId,
     loadSongs: loadSongs,
     service: service, saved: saved, TYPE_NAMES: TYPE_NAMES, itemTitle: itemTitle,
-    buildItem: buildItem, loadService: loadService,
+    buildItem: buildItem, loadService: loadService, watchService: watchService, announceData: announceData,
     buildScriptureSlides: buildScriptureSlides, buildSermonSlides: buildSermonSlides,
     versesToText: versesToText, textToVerses: textToVerses, fetchPassage: fetchPassage,
     parseRef: parseRef, bibleList: bibleList, fetchPassageBible: fetchPassageBible,

@@ -415,7 +415,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=31"></script>
+  <script src="js/sheet.js?v=32"></script>
   <script>
   (function () {
     'use strict';
@@ -599,7 +599,8 @@
     }
     function putFile(path, text, sha, message) {
       return gh('/repos/' + REPO + '/contents/' + path, { method: 'PUT',
-        body: JSON.stringify({ message: message, content: b64encode(text), sha: sha, branch: 'main' }) });
+        body: JSON.stringify({ message: message, content: b64encode(text), sha: sha, branch: 'main' }) })
+        .then(function (j) { try { S.announceData(path, text); } catch (e) {} return j; });   // Run Sunday and the TV in this browser get it now
     }
     // a real write call with no effect: 403 = no write permission, 422 = we're good
     function checkAccess() {
