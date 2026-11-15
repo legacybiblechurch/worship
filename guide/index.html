@@ -20,6 +20,11 @@
     #doc section.docx { box-shadow: none; margin: 0 auto 14px; background: #fff; filter: invert(1) hue-rotate(180deg); }
     /* on a phone the document flows to the width of the screen so it can be read without pinching */
     #doc.flow section.docx { width: auto !important; min-height: 0 !important; padding: 18px 18px 26px !important; column-count: auto !important; }
+    /* a blank in the sermon outline: tap it and write the word in. It is kept on that phone only. */
+    #doc .fill { display: inline-block; min-width: 7.5em; padding: 0 5px; border-bottom: 1px solid currentColor; text-align: center; text-transform: uppercase; outline: none; cursor: text; line-height: 1.15; -webkit-user-select: text; user-select: text; }
+    #doc .fill:empty::before { content: 'tap to write'; text-transform: none; font-size: 0.72em; opacity: 0.38; }
+    #doc .fill:focus { border-bottom-width: 2px; }
+    #doc .fill:focus:empty::before { content: ''; }
     #msg { padding: 60px 22px; text-align: center; }
     #msg a { color: #c9a84c; }
     #admin { padding: 18px 18px 40px; text-align: center; font-size: 13px; color: #62626a; }
@@ -37,6 +42,10 @@
     <span class="note" id="note"></span>
   </div>
 
+  <!-- this Sunday's songs, as set in the Studio: they are written in where the guide only says "Song" -->
+  <script src="../js/songs-data.js"></script>
+  <script src="../js/worship-service.js"></script>
+  <script src="../js/sheet.js?v=40"></script>
   <script src="../js/vendor/jszip.min.js"></script>
   <script src="../js/vendor/docx-preview.min.js"></script>
   <script>
@@ -78,6 +87,7 @@
           if (ti < 0 && ml < -ti) e.style.marginLeft = (-ti) + 'px';          // a hanging number needs room to hang
           if (parseFloat(c.marginRight) < 0) e.style.marginRight = '0';
         });
+        songNames(); blanks();
         // Pictures keep their own colours. Dark mode flips light and dark, which would turn them into negatives.
         // So each picture is put back to its true colours, and its white paper is made see-through so it sits on
         // the dark page instead of in a white box. The letterhead is the one exception: see below.
@@ -108,6 +118,52 @@
         if (!phone) { var s = doc.querySelector('section.docx'); if (s) { var k = Math.min(1, (window.innerWidth - 24) / s.getBoundingClientRect().width); doc.querySelector('.docx-wrapper').style.zoom = k; } }
         doc.classList.add('in'); msg.hidden = true;
       });
+    }
+    // ── Where the guide only says "Song", write in the songs chosen in the Studio, in order. Only when the guide and
+    // the Studio are plainly about the same Sunday (the same Scripture reading), so last week's songs never land
+    // on this week's guide. Nobody has to type them into the document.
+    function flat(t) { return String(t || '').toLowerCase().replace(/[\u2010-\u2015]/g, '-').replace(/\s+/g, ''); }
+    function songNames() {
+      try {
+        if (!window.LBCSheet) return;
+        var svc = LBCSheet.service(), reading = svc.filter(function (it) { return it.type === 'scripture' && it.ref; })[0];
+        if (!reading || flat(doc.textContent).indexOf(flat(reading.ref)) < 0) return;
+        var titles = svc.filter(function (it) { return it.type === 'song' && !it.after; }).map(function (it) { return LBCSheet.titleOf(it.slug); });
+        var spots = [].slice.call(doc.querySelectorAll('section.docx p')).filter(function (p) { return /^song$/i.test(p.textContent.trim()); });
+        spots.forEach(function (p, i) {
+          if (!titles[i]) return;
+          var w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT), n, first = true;
+          while ((n = w.nextNode())) { if (!n.nodeValue.trim()) continue; n.nodeValue = first ? titles[i] : ''; first = false; }
+        });
+      } catch (e) {}
+    }
+    // ── A line of underscores is a blank to fill in. Make each one a place to write. What is written stays on that
+    // phone (nothing is sent anywhere) and is forgotten when a new guide is posted.
+    function blanks() {
+      try {
+        var key = 'lbc-guide-fill-' + (function (t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); })(flat(doc.textContent));
+        var kept = {}; try { kept = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (e) {}
+        var w = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT), n, found = [];
+        while ((n = w.nextNode())) if (/_{3,}/.test(n.nodeValue) && n.parentNode.closest('section.docx')) found.push(n);
+        var count = 0;
+        found.forEach(function (node) {
+          var parts = node.nodeValue.split(/(_{3,})/), frag = document.createDocumentFragment();
+          parts.forEach(function (part) {
+            if (!/^_{3,}$/.test(part)) { if (part) frag.appendChild(document.createTextNode(part)); return; }
+            var id = 'b' + (count++), f = document.createElement('span');
+            f.className = 'fill'; f.setAttribute('contenteditable', 'plaintext-only'); if (f.contentEditable !== 'plaintext-only') f.setAttribute('contenteditable', 'true');
+            f.setAttribute('role', 'textbox'); f.setAttribute('aria-label', 'Blank to fill in'); f.spellcheck = false;
+            f.textContent = kept[id] || '';
+            f.addEventListener('input', function () { kept[id] = f.textContent.replace(/\s+/g, ' ').trim(); try { localStorage.setItem(key, JSON.stringify(kept)); } catch (e) {} });
+            f.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); f.blur(); } });
+            f.addEventListener('blur', function () { if (!f.textContent.trim()) f.textContent = ''; });
+            frag.appendChild(f);
+          });
+          var host = node.parentNode;
+          if (host.style) host.style.textDecoration = 'none';        // the run was underlined to draw the line; the blank draws its own
+          host.replaceChild(frag, node);
+        });
+      } catch (e) {}
     }
     function load() {
       return fetch('guide.docx?cb=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('none'); return r.blob(); }).then(show);
