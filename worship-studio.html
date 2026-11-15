@@ -415,7 +415,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=35"></script>
+  <script src="js/sheet.js?v=36"></script>
   <script>
   (function () {
     'use strict';
@@ -463,7 +463,7 @@
     var RANK = { scripture: 0, sermon: 2, words: 3, prayer: 4.5 };
     // One more song may sit after the Closing Prayer: the music for the moment the prayer ends. It is marked
     // `after` so it keeps that place and is never taken for a closing song.
-    var AFTER_SLOT = 'After the Prayer', AFTER_RANK = 4.8;
+    var AFTER_SLOT = 'After Prayer Song', AFTER_RANK = 4.8;
     function isMedia(it) { return it.type === 'video' || it.type === 'logo'; }
     function rankOf(it) {
       if (it.type === 'song') {
@@ -483,7 +483,7 @@
     }
     function addItem(it) {
       it = withKey(it);
-      if (it.type === 'song' && pick === AFTER_SLOT) it.after = true;      // chosen from the After the Prayer row
+      if (it.type === 'song' && pick === AFTER_SLOT) it.after = true;      // chosen from the After Prayer Song row
       insertRanked(it, rankForNew(it)); persistOrder(); return it;
     }
     // the order the list would have if every ranked item sat in its slot (media where it is)

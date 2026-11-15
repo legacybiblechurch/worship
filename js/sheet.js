@@ -358,7 +358,7 @@
       out.slides = out.ready ? [songTitleSlide(it.slug, d)].concat(buildSlides(d.lyrics)) : [{ label: '', lines: ['No words yet. Open Studio to fix this song'] }];
       // the song for after the Closing Prayer: it opens on the church logo so Play can be pressed the moment the
       // prayer ends, with nothing to read on the TV. Its words follow, one click on, if they are wanted.
-      if (it.after) { out.after = true; out.slides.unshift({ label: 'After the Prayer', lines: [], logo: true, cue: 'Press Play the moment the prayer ends' }); }
+      if (it.after) { out.after = true; out.slides.unshift({ label: 'After Prayer Song', lines: [], logo: true, cue: 'Press Play the moment the prayer ends' }); }
     } else if (it.type === 'scripture') {
       out.slides = buildScriptureSlides(it);
       out.ready = out.slides.length > 0;
