@@ -415,7 +415,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=34"></script>
+  <script src="js/sheet.js?v=35"></script>
   <script>
   (function () {
     'use strict';
@@ -461,13 +461,19 @@
     // Table, two songs to close. A new item drops into its slot; videos and the
     // logo stay wherever they were put.
     var RANK = { scripture: 0, sermon: 2, words: 3, prayer: 4.5 };
+    // One more song may sit after the Closing Prayer: the music for the moment the prayer ends. It is marked
+    // `after` so it keeps that place and is never taken for a closing song.
+    var AFTER_SLOT = 'After the Prayer', AFTER_RANK = 4.8;
     function isMedia(it) { return it.type === 'video' || it.type === 'logo'; }
     function rankOf(it) {
-      if (it.type === 'song') { var first = order.filter(function (x) { return x.type === 'song'; })[0]; return first && first.key === it.key ? 1 : 4; }
+      if (it.type === 'song') {
+        if (it.after) return AFTER_RANK;
+        var first = order.filter(function (x) { return x.type === 'song' && !x.after; })[0]; return first && first.key === it.key ? 1 : 4;
+      }
       return RANK[it.type] != null ? RANK[it.type] : 5;
     }
     function rankForNew(it) {
-      if (it.type === 'song') return order.some(function (x) { return x.type === 'song'; }) ? 4 : 1;
+      if (it.type === 'song') return it.after ? AFTER_RANK : order.some(function (x) { return x.type === 'song' && !x.after; }) ? 4 : 1;
       return RANK[it.type] != null ? RANK[it.type] : 5;
     }
     function insertRanked(it, rank) {
@@ -475,7 +481,11 @@
       for (var i = 0; i < order.length; i++) { if (!isMedia(order[i]) && rankOf(order[i]) > rank) { order.splice(i, 0, it); return; } }
       order.push(it);
     }
-    function addItem(it) { it = withKey(it); insertRanked(it, rankForNew(it)); persistOrder(); return it; }
+    function addItem(it) {
+      it = withKey(it);
+      if (it.type === 'song' && pick === AFTER_SLOT) it.after = true;      // chosen from the After the Prayer row
+      insertRanked(it, rankForNew(it)); persistOrder(); return it;
+    }
     // the order the list would have if every ranked item sat in its slot (media where it is)
     function canonical() {
       var ranked = order.filter(function (x) { return !isMedia(x); }).map(function (x) { return { it: x, r: rankOf(x) }; });
@@ -752,8 +762,8 @@
     function paintCheck() {
       var box = document.getElementById('check'); if (!box) return;
       box.innerHTML = '';
-      var songsIn = order.filter(function (it) { return it.type === 'song'; });
-      var opening = songsIn[0], closing = songsIn.slice(1);
+      var songsIn = order.filter(function (it) { return it.type === 'song' && !it.after; });
+      var opening = songsIn[0], closing = songsIn.slice(1), exit = order.filter(function (it) { return it.type === 'song' && it.after; })[0];
       var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words'), prayer = firstOf('prayer');
       function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + '” needs its words' : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
       function songOk(it) { return !!it && itemReady(it) && !finding[it.slug] && !dirty[it.slug]; }
@@ -780,7 +790,11 @@
         rowFor('Closing Prayer', prayer, !!(prayer && itemReady(prayer)), !prayer ? 'Click here and type who is praying' : 'Type who is praying',
                prayer ? prayer.who : '', function () { return { type: 'prayer', who: '' }; }, 'after Closing Song 2')
       ];
-      var allIn = steps.every(function (st) { return st.done; });
+      // not every Sunday has one, so an empty row never holds Sunday up
+      var afterRow = songRow(AFTER_SLOT, exit, 'under the Closing Prayer');
+      if (!exit) { afterRow.optional = true; afterRow.note = 'Optional. A song to play the moment the prayer ends'; }
+      steps.push(afterRow);
+      var allIn = steps.every(function (st) { return st.done || st.optional; });
       steps.push({ title: 'Computer is Connected', done: !!connected, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
       steps.push({ title: 'Ready for Sunday', done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish });
       steps.forEach(function (st, i) {
@@ -792,10 +806,10 @@
         if (pick && st.title === pick && !st.done) b.classList.add('picking');
         box.appendChild(b);
       });
-      var done = steps.filter(function (st) { return st.done; }).length;
+      var counted = steps.filter(function (st) { return !st.optional; }), done = counted.filter(function (st) { return st.done; }).length;
       var pt = document.getElementById('progText'), pb = document.getElementById('prog');
-      if (pt) { pt.textContent = done + ' of ' + steps.length; pt.className = 'sub' + (done === steps.length ? ' good' : ''); }
-      if (pb) { pb.className = 'prog' + (done === steps.length ? ' all' : ''); pb.firstChild.style.width = Math.round(done / steps.length * 100) + '%'; }
+      if (pt) { pt.textContent = done + ' of ' + counted.length; pt.className = 'sub' + (done === counted.length ? ' good' : ''); }
+      if (pb) { pb.className = 'prog' + (done === counted.length ? ' all' : ''); pb.firstChild.style.width = Math.round(done / counted.length * 100) + '%'; }
     }
     function el(tag, cls, text) { var d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; }
     function icoBtn(ch, disabled, fn) {
