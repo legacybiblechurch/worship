@@ -406,7 +406,7 @@
       <div class="rs-view rs-done">
         <div class="rs-check"><svg viewBox="0 0 76 76" aria-hidden="true"><circle class="ring" cx="38" cy="38" r="34"></circle><path class="tick" d="M24 39.5l9.5 9.5L53 29.5"></path></svg></div>
         <h3>Sunday is ready</h3>
-        <p>Nice work. Now print the worship guide. The songs are already in it.</p>
+        <p>Nice work. Next is printing the Worship Guide.</p>
         <div class="rs-btns"><button class="rs-no" id="rsLater" type="button">Not now</button><button class="rs-yes" id="rsPrint" type="button">Print the guide</button></div>
       </div>
       <div class="rs-view rs-fail">
@@ -829,7 +829,7 @@
       steps.push({ title: 'Ready for Sunday', done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish });
       // the last thing to do, and never in the way: it is not counted and it waits until Sunday is set
       var printed = set && wasPrinted();
-      steps.push({ title: 'Print the Worship Guide', optional: !printed, done: printed, note: !set ? 'After Sunday is set' : printed ? 'The print copy was downloaded. Click to get it again' : 'Click here. The songs are already in it',
+      steps.push({ title: 'Print the Worship Guide', optional: !printed, done: printed, note: !set ? 'After Sunday is set' : printed ? 'The print copy was downloaded. Click to get it again' : 'Click here to print it',
                    go: function () { if (set) openPrintCopy(); } });
       steps.forEach(function (st, i) {
         var b = document.createElement('button');
