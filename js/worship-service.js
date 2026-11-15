@@ -97,7 +97,7 @@ window.WORSHIP_SERVICE = [
   },
   {
     "type": "prayer",
-    "who": "Quaid Barnett"
+    "who": "Quaid Barnet"
   },
   {
     "type": "song",
