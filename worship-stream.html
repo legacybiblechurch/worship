@@ -148,13 +148,14 @@
     }
     #board .top { display: flex; justify-content: space-between; align-items: flex-start; }
     #logo { width: 170px; height: auto; display: block; }
-    #l2 { font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #8A8780; padding-top: 18px; }
-    /* the QR code: one scan gets the worship guide and giving. Off until the church domain is live. ?qr=1 shows it */
-    #board .right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 26px; }
-    #qr img { width: 128px; height: 128px; display: block; margin-left: auto; border-radius: 8px; }
-    #qr .q1 { margin-top: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #C9A84C; }
-    #qr .q2 { margin-top: 5px; font-size: 12px; letter-spacing: 0.04em; color: #8A8780; }
-    body.noqr #qr img { display: none; }   /* no code until the real domain points at the site; the words stay */
+    /* the three codes the TV shows, in the quiet middle of the card: stay in touch, give, the worship guide */
+    #board .mid { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+    #codes { display: flex; gap: 44px; align-items: flex-start; }
+    #codes .c { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    #codes .q { width: 124px; height: 124px; box-sizing: border-box; background: #fff; border-radius: 12px; padding: 8px; box-shadow: 0 24px 60px -28px rgba(201,168,76,0.5); }
+    #codes .q img { width: 100%; height: 100%; display: block; }
+    #codes .lb { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C; white-space: nowrap; }
+    #board.nocodes .mid { display: none; }
     #board .bottom { display: flex; flex-direction: column; gap: 28px; }
     #board .row { display: flex; justify-content: space-between; align-items: flex-end; }
     #l1 { font-size: 30px; font-weight: 300; letter-spacing: -0.01em; color: #CFCBC2; padding-bottom: 18px; }
@@ -194,11 +195,8 @@
     <div id="board">
       <div class="top">
         <img id="logo" src="images/logo-dark.png" alt="Legacy Bible Church">
-        <div class="right">
-          <div id="l2">Sunday · 10:30 AM</div>
-          <div id="qr"><img src="images/qr-links.svg" alt=""><div class="q1">Worship guide · Give</div><div class="q2" id="q2">Links in the description</div></div>
-        </div>
       </div>
+      <div class="mid"><div id="codes"></div></div>
       <div class="bottom">
         <div class="row">
           <div id="l1">Worship begins in</div>
@@ -230,8 +228,6 @@
 
     // the starting-soon card
     var CARD  = qs.get('card') !== '0';                           // ?card=0 turns it off
-    if (qs.get('qr') !== '1') document.body.classList.add('noqr');  // the QR code waits for the real domain. ?qr=1 shows it
-    else document.getElementById('q2').textContent = 'Scan, or see the description';
     var TZ    = qs.get('tz') || 'America/Los_Angeles';
     var parts = (qs.get('at') || '10:30').split(':');
     var AT    = (+parts[0] || 0) * 3600 + (+parts[1] || 0) * 60;  // service start, seconds into the day
@@ -245,7 +241,7 @@
     var SAMPLE = ['Amazing grace, how sweet the sound', 'That saved a wretch like me', 'I once was lost, but now am found', 'Was blind, but now I see'];
 
     var plate = document.getElementById('plate'), lines = document.getElementById('lines');
-    var card = document.getElementById('card'), l1 = document.getElementById('l1'), l2 = document.getElementById('l2'), count = document.getElementById('count');
+    var card = document.getElementById('card'), l1 = document.getElementById('l1'), l2 = document.getElementById('l2') || {}, count = document.getElementById('count');
     var board = document.getElementById('board'), fillbar = document.getElementById('fillbar');
     var stage = document.getElementById('stage');
     function fitStage() {
@@ -439,8 +435,16 @@
         return r.headers.get('etag') || r.headers.get('last-modified') || r.headers.get('content-length') || '';
       }).catch(function () { return ''; });
     }
+    function paintCodes() {   // the same three codes as the TV, from the one list in sheet.js
+      var list = (window.LBCSheet && LBCSheet.tvCodes) ? LBCSheet.tvCodes() : [];
+      document.getElementById('board').classList.toggle('nocodes', !list.length);
+      document.getElementById('codes').innerHTML = list.map(function (c) {
+        return '<div class="c"><div class="q"><img src="' + esc(c.img) + '" alt=""></div><div class="lb">' + esc(c.label) + '</div></div>';
+      }).join('');
+    }
     function start() {
       if (!window.LBCSheet) { hudNote = 'sheet.js failed to load'; return; }
+      paintCodes();
       LBCSheet.loadService(function (items) {
         SONGS = items;   // every item of the service, slides already built
         ready = true;
