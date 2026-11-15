@@ -222,6 +222,25 @@
 
     /* finding / candidates */
     .center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; color: var(--ink-dim); gap: 10px; }
+    /* After Prayer Song: one question, one answer. Nothing to edit, because nothing but the logo is on the TV. */
+    .ap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 64px; position: relative; overflow: hidden; }
+    .ap::before { content: ''; position: absolute; left: 50%; top: 4%; width: 720px; height: 360px; margin-left: -360px; background: radial-gradient(closest-side, rgba(201,168,76,0.14), transparent); pointer-events: none; opacity: 0; animation: apGlow 1.4s ease .15s forwards; }
+    @keyframes apGlow { to { opacity: 1; } }
+    .ap > * { position: relative; opacity: 0; animation: rsIn .6s cubic-bezier(.2,.8,.2,1) forwards; }
+    .ap > :nth-child(1) { animation-delay: .05s; } .ap > :nth-child(2) { animation-delay: .16s; } .ap > :nth-child(3) { animation-delay: .3s; }
+    .ap > :nth-child(4) { animation-delay: .42s; } .ap > :nth-child(5) { animation-delay: .52s; } .ap > :nth-child(6) { animation-delay: .6s; }
+    .ap-k { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .ap h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.32; color: var(--ink); max-width: 580px; margin-top: 14px; text-wrap: balance; }
+    .ap h2.ap-song { font-size: 30px; }
+    .ap .add-wrap { width: min(480px, 100%); text-align: left; margin-top: 28px; z-index: 5; }
+    .ap .add-wrap input { padding: 15px 17px; font-size: 15px; border-radius: 12px; transition: border-color .25s ease, box-shadow .25s ease; }
+    .ap .add-wrap input:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,168,76,0.13); }
+    .ap-player { width: min(500px, 100%); aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); margin-top: 26px; background: #000; box-shadow: 0 34px 70px -34px rgba(0,0,0,0.9); }
+    .ap-player iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .ap-note { font-size: 13.5px; color: var(--ink-dim); margin-top: 18px; max-width: 460px; }
+    .ap-btns { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; justify-content: center; }
+    .ap-btns .btn { border-radius: 999px; padding: 9px 18px; transition: transform .2s ease, border-color .25s ease, color .25s ease; }
+    .ap-btns .btn:active { transform: scale(.97); }
     .center h2 { font-size: 20px; font-weight: 600; color: var(--ink); }
     .center p { max-width: 460px; font-size: 14px; }
     .spinner { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.9s linear infinite; margin-bottom: 8px; }
@@ -415,7 +434,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=37"></script>
+  <script src="js/sheet.js?v=38"></script>
   <script>
   (function () {
     'use strict';
@@ -908,6 +927,7 @@
       function choose(slug, title) {
         inp.value = ''; sugg.className = 'sugg';
         if (onPick) { onPick(slug, title); return; }
+        if (pick === AFTER_SLOT) { var a = addItem({ type: 'song', slug: slug }); select(a.key); toast('“' + songOf(slug).title + '” will play after the prayer.', 'ok'); return; }
         if (!hasSong(slug)) addItem({ type: 'song', slug: slug });
         select(slug);
         toast('Added “' + title + '”. It already has its words.', 'ok');
@@ -1232,6 +1252,16 @@
     function renderMain() {
       var main = document.getElementById('main'), it = curItem();
       if (!it) {
+        if (pick === AFTER_SLOT) {
+          main.innerHTML = '<div class="main-head"><span class="main-title"></span></div>' +
+            '<div class="ap"><div class="ap-k">After Prayer Song</div>' +
+            '<h2>What would you like the congregation to hear the minute the service ends and everyone begins to fellowship?</h2>' +
+            '<div class="add-wrap"><input id="addName" placeholder="Type a song name" autocomplete="off"><div class="sugg" id="sugg"></div></div></div>';
+          main.querySelector('.main-title').textContent = AFTER_SLOT;
+          wireAdd(document.getElementById('addName'), document.getElementById('sugg'));
+          setTimeout(function () { var a = document.getElementById('addName'); if (a) a.focus(); }, 650);
+          return;
+        }
         if (pick) {
           main.innerHTML = head() + '<div class="center"><h2>' + esc(pick) + '</h2>' +
             '<p>Type the song name. Songs we have sung come up as you type. A new one is found on YouTube and its words come with it.</p>' +
@@ -1264,8 +1294,25 @@
         return;
       }
       if (found[slug]) { renderCandidates(slug); return; }
+      if (it.after) { delete pendingChecks[slug]; renderAfter(it); return; }     // audio only: nothing to check, nothing to edit
       if (pendingChecks[slug]) { renderChecks(slug); return; }
       renderEditor(slug);
+    }
+
+    // the After Prayer Song once it is chosen: its name, a way to hear it, a way to change it. That is all.
+    function renderAfter(it) {
+      var main = document.getElementById('main'), s = songOf(it.slug), vid = S.videoId(s.youtube);
+      main.innerHTML = '<div class="main-head"><span class="main-title"></span></div>' +
+        '<div class="ap"><div class="ap-k">After Prayer Song</div><h2 class="ap-song"></h2>' +
+        (vid ? '<div class="ap-player"><iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media" allowfullscreen></iframe></div>'
+             : '<p class="ap-note" style="color:var(--warn)">This song has no recording yet. Choose a different one.</p>') +
+        '<p class="ap-note">It plays when the service ends. The TV stays on the church logo.</p>' +
+        '<div class="ap-btns"><button class="btn" id="apChange" type="button">Choose a different song</button><button class="btn quiet" id="apRemove" type="button">Remove</button></div></div>';
+      main.querySelector('.main-title').textContent = AFTER_SLOT;
+      main.querySelector('.ap-song').textContent = s.title;
+      function drop() { order = order.filter(function (x) { return x.key !== it.key; }); if (!hasSong(it.slug)) { delete dirty[it.slug]; delete finding[it.slug]; delete found[it.slug]; } persistOrder(); persistFinding(); }
+      document.getElementById('apChange').onclick = function () { drop(); pick = AFTER_SLOT; current = null; renderRail(); renderMain(); };
+      document.getElementById('apRemove').onclick = function () { drop(); pick = null; current = order[0] ? order[0].key : null; renderRail(); renderMain(); toast('After Prayer Song removed.', 'ok'); };
     }
 
     function renderCandidates(slug) {
