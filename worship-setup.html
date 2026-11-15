@@ -82,7 +82,7 @@
 
     <div class="where" id="where">
       <span>Where is church today?</span>
-      <button type="button" data-mode="home">Quaid's house</button>
+      <button type="button" data-mode="home">Barnett home</button>
       <button type="button" data-mode="away">Another house</button>
       <small id="whereNote"></small>
     </div>
@@ -96,7 +96,7 @@
 
     <div class="fin" id="fin">Keep going.</div>
 
-    <p class="foot">At Quaid's house the scene switching during the service is on <a href="worship-obs.html">Run the stream</a>. Away, the stream runs itself once it is live. Screens act up? <a href="worship-control.html">Worship Control</a> says which window is missing. Questions: Quaid.</p>
+    <p class="foot">At the Barnett home the scene switching during the service is on <a href="worship-obs.html">Run the stream</a>. Away, the stream runs itself once it is live. Screens act up? <a href="worship-control.html">Worship Control</a> says which window is missing. Questions: Quaid.</p>
   </div>
 
   <script>
@@ -155,7 +155,7 @@
       ]]
     ];
 
-    // Away from Quaid's house there is no Mac, no OBS and no iPhone camera. The media
+    // Away from the Barnett home there is no Mac, no OBS and no iPhone camera. The media
     // laptop runs the words to the TV and the iPad streams with PRISM, the way it ran
     // through October. Same words, same countdown; the overlay reaches the iPad by itself.
     var AWAY_GROUPS = [
@@ -212,7 +212,7 @@
     });
     document.getElementById('whereNote').textContent = MODE === 'away'
       ? 'No Mac today. The media laptop runs the words to the TV and the iPad streams with PRISM.'
-      : 'The Mac, OBS and the iPhone camera, the way it is set up at the media table.';
+      : 'The Mac, OBS and the iPhone camera at the media table.';
 
     var EMBED = /[?&]embed=1/.test(location.search) && window.parent !== window;
     if (EMBED) document.documentElement.className = 'embed';
