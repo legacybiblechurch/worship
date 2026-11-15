@@ -30,6 +30,7 @@
     #admin { padding: 18px 18px 40px; text-align: center; font-size: 13px; color: #62626a; }
     #admin button { background: none; border: 1px solid #2a2a2e; color: #9a9a9e; font: inherit; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
     #admin button:hover { color: #ececed; border-color: #62626a; }
+    #admin button + button { margin-left: 8px; }
     #admin .note { display: block; margin-top: 10px; min-height: 18px; }
   </style>
 </head>
@@ -38,6 +39,7 @@
   <div id="msg" hidden></div>
   <div id="admin" hidden>
     <input type="file" id="pick" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+    <button type="button" id="printCopy">Download the print copy</button>
     <button type="button" id="replace">Replace the document</button>
     <span class="note" id="note"></span>
   </div>
@@ -57,7 +59,9 @@
     function token() { try { return localStorage.getItem('lbc-gh-token') || ''; } catch (e) { return ''; } }
     var phone = Math.min(window.innerWidth, screen.width || 9999) < 700;
 
+    var shown = null;                                   // the document on the page, as posted
     function show(blob) {
+      shown = blob;
       doc.className = phone ? 'flow' : ''; doc.innerHTML = '';
       var logoDone = false;
       return docx.renderAsync(blob, doc, null, { inWrapper: true, ignoreWidth: phone, ignoreHeight: phone, breakPages: !phone, useBase64URL: true }).then(function () {
@@ -123,12 +127,19 @@
     // the Studio are plainly about the same Sunday (the same Scripture reading), so last week's songs never land
     // on this week's guide. Nobody has to type them into the document.
     function flat(t) { return String(t || '').toLowerCase().replace(/[\u2010-\u2015]/g, '-').replace(/\s+/g, ''); }
+    // the songs for this guide, in order, or [] when the Studio is not on the same Sunday as the guide
+    function songsFor(text) {
+      try {
+        if (!window.LBCSheet) return [];
+        var svc = LBCSheet.service(), reading = svc.filter(function (it) { return it.type === 'scripture' && it.ref; })[0];
+        if (!reading || flat(text).indexOf(flat(reading.ref)) < 0) return [];
+        return svc.filter(function (it) { return it.type === 'song' && !it.after; }).map(function (it) { return LBCSheet.titleOf(it.slug).replace(/'/g, '\u2019'); });
+      } catch (e) { return []; }
+    }
     function songNames() {
       try {
-        if (!window.LBCSheet) return;
-        var svc = LBCSheet.service(), reading = svc.filter(function (it) { return it.type === 'scripture' && it.ref; })[0];
-        if (!reading || flat(doc.textContent).indexOf(flat(reading.ref)) < 0) return;
-        var titles = svc.filter(function (it) { return it.type === 'song' && !it.after; }).map(function (it) { return LBCSheet.titleOf(it.slug); });
+        var titles = songsFor(doc.textContent);
+        if (!titles.length) return;
         var spots = [].slice.call(doc.querySelectorAll('section.docx p')).filter(function (p) { return /^song$/i.test(p.textContent.trim()); });
         spots.forEach(function (p, i) {
           if (!titles[i]) return;
@@ -165,16 +176,57 @@
         });
       } catch (e) {}
     }
+    // ── The print copy: Pastor Todd's own Word document with the songs written in where it says "Song". Nothing else
+    // in it is touched, so it prints exactly as he made it. It is made here in the browser and downloaded.
+    function printCopy() {
+      if (!shown) return Promise.reject(new Error('No worship guide is posted yet.'));
+      var W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main', zip;
+      return JSZip.loadAsync(shown).then(function (z) { zip = z; return z.file('word/document.xml').async('string'); }).then(function (xml) {
+        var dom = new DOMParser().parseFromString(xml, 'application/xml');
+        if (dom.getElementsByTagName('parsererror').length) throw new Error('The document could not be read.');
+        var paras = [].slice.call(dom.getElementsByTagNameNS(W, 'p')).filter(function (p) { return !p.getElementsByTagNameNS(W, 'p').length; });
+        function textOf(p) { return [].slice.call(p.getElementsByTagNameNS(W, 't')).map(function (t) { return t.textContent; }).join(''); }
+        var titles = songsFor(paras.map(textOf).join(' '));
+        if (!titles.length) throw new Error('The songs for this guide are not set in the Studio yet, so there is nothing to write in.');
+        var n = 0;
+        paras.forEach(function (p) {
+          if (!/^song$/i.test(textOf(p).trim()) || !titles[n]) return;
+          var ts = [].slice.call(p.getElementsByTagNameNS(W, 't')), first = true, title = titles[n++];
+          ts.forEach(function (t) { if (!t.textContent.trim() && !first) return; t.textContent = first ? title : ''; first = false; });
+        });
+        if (!n) throw new Error('This guide has no \u201cSong\u201d lines to fill in.');
+        zip.file('word/document.xml', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + new XMLSerializer().serializeToString(dom).replace(/^<\?xml[^>]*\?>\s*/, ''));
+        return zip.generateAsync({ type: 'blob', compression: 'DEFLATE', mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }).then(function (blob) { return { blob: blob, songs: n }; });
+      });
+    }
+    function sundayStamp() {       // 2026.11.15: the Sunday this guide is for, the way the files are named
+      var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).split('-');
+      var d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); d.setUTCDate(d.getUTCDate() + (7 - d.getUTCDay()) % 7);
+      function two(n) { return (n < 10 ? '0' : '') + n; }
+      return d.getUTCFullYear() + '.' + two(d.getUTCMonth() + 1) + '.' + two(d.getUTCDate());
+    }
+    function downloadPrintCopy() {
+      note.textContent = 'Making the print copy…';
+      return printCopy().then(function (r) {
+        var a = document.createElement('a'); a.href = URL.createObjectURL(r.blob); a.download = 'LBC Worship Guide ' + sundayStamp() + ' with songs.docx';
+        document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 4000);
+        note.textContent = 'Downloaded with ' + r.songs + (r.songs === 1 ? ' song' : ' songs') + ' written in. Open it and print.';
+      }).catch(function (e) { note.textContent = e.message; });
+    }
     function load() {
       return fetch('guide.docx?cb=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('none'); return r.blob(); }).then(show);
     }
-    load().catch(function () {
+    load().then(function () { if (wantsPrint) { admin.scrollIntoView({ block: 'end' }); downloadPrintCopy(); } }).catch(function () {
       // nothing posted (or it would not open): a connected computer is asked for the document, everyone else gets Sunday's order
       if (token()) { msg.hidden = false; msg.textContent = 'No worship guide is posted yet. Add it below.'; }
       else location.replace(FALLBACK);
     });
 
-    // ── a connected computer can put this Sunday's document here
+    // ── the buttons under the guide. A connected computer gets both. Anyone who came by the print link
+    // (guide/?print=1, from the Guide & Slides page) gets the print copy.
+    var wantsPrint = /[?&]print=1/.test(location.search);
+    document.getElementById('printCopy').onclick = downloadPrintCopy;
+    if (wantsPrint && !token()) { admin.hidden = false; document.getElementById('replace').hidden = true; }
     if (token()) {
       admin.hidden = false;
       var pick = document.getElementById('pick');
