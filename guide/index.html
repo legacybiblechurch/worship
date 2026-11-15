@@ -76,6 +76,29 @@
           if (ti < 0 && ml < -ti) e.style.marginLeft = (-ti) + 'px';          // a hanging number needs room to hang
           if (parseFloat(c.marginRight) < 0) e.style.marginRight = '0';
         });
+        // Pictures keep their own colours. Dark mode flips light and dark, which turned the burgundy letterhead pink.
+        // So each picture is put back to its true colours, and its white paper is made see-through so it sits on
+        // the dark page instead of in a white box.
+        doc.querySelectorAll('section.docx img').forEach(function (im) {
+          function fix() {
+            try {
+              var w = im.naturalWidth, h = im.naturalHeight; if (!w || !h) return;
+              var k = Math.min(1, 1600 / w), c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
+              var x = c.getContext('2d'); x.drawImage(im, 0, 0, c.width, c.height);
+              var d = x.getImageData(0, 0, c.width, c.height), p = d.data;
+              for (var i = 0; i < p.length; i += 4) {
+                var a = Math.min(1, (255 - Math.min(p[i], p[i + 1], p[i + 2])) / 200) * (p[i + 3] / 255);   // how much ink, how little paper
+                if (a <= 0) { p[i + 3] = 0; continue; }
+                for (var j = 0; j < 3; j++) p[i + j] = Math.max(0, Math.min(255, (p[i + j] - (1 - a) * 255) / a));   // the ink's own colour, the paper taken out
+                p[i + 3] = Math.round(a * 255);
+              }
+              x.putImageData(d, 0, 0);
+              im.onload = null; im.src = c.toDataURL('image/png');
+              im.style.filter = 'invert(1) hue-rotate(180deg)';      // cancels the page's dark-mode flip for this picture only
+            } catch (e) {}
+          }
+          if (im.complete && im.naturalWidth) fix(); else im.onload = fix;
+        });
         // a printed page is wider than some windows: bring it down to fit, never up
         if (!phone) { var s = doc.querySelector('section.docx'); if (s) { var k = Math.min(1, (window.innerWidth - 24) / s.getBoundingClientRect().width); doc.querySelector('.docx-wrapper').style.zoom = k; } }
         doc.classList.add('in'); msg.hidden = true;
