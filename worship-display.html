@@ -133,6 +133,18 @@
     }
     #blank.active { opacity: 1; }
 
+    /* ── THE QR SCREEN: before the service and after it. Its own layer, under the logo layer, so B still shows the logo. */
+    #codes { position: fixed; inset: 0; z-index: 900; background: #000; opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
+             display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7vh; padding: 4vh 4vw; }
+    #codes.active { opacity: 1; }
+    #codes .c-logo { width: min(34vw, 62vh); }
+    #codes .c-logo img { width: 100%; display: block; opacity: 0.92; }
+    #codes .c-row { display: flex; gap: 6.5vw; align-items: flex-start; justify-content: center; }
+    #codes .c-card { display: flex; flex-direction: column; align-items: center; gap: 2.6vh; }
+    #codes .c-qr { width: 27vh; height: 27vh; background: #fff; border-radius: 2.2vh; padding: 1.7vh; box-shadow: 0 30px 90px -30px rgba(201,168,76,0.45); }
+    #codes .c-qr img { width: 100%; height: 100%; display: block; }
+    #codes .c-lb { font-size: 2.6vh; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; white-space: nowrap; }
+
     /* static, centered church logo — no motion during the service */
     #dvd-logo {
       position: static;
@@ -182,6 +194,9 @@
   <!-- until the window fills the screen -->
   <div id="fill-hint">Click once to fill the screen</div>
 
+  <!-- The QR codes: before the service and after it -->
+  <div id="codes"></div>
+
   <!-- Blank screen: the church logo, still -->
   <div id="blank">
     <div id="dvd-logo">
@@ -192,7 +207,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=38"></script>
+  <script src="js/sheet.js?v=39"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -230,6 +245,11 @@
     var slideLines = document.getElementById('slideLines');
     var songTitle  = document.getElementById('song-title');
     var blankEl    = document.getElementById('blank');
+    var codesEl    = document.getElementById('codes');
+    codesEl.innerHTML = '<div class="c-logo"><img src="images/logo-dark.png" alt="Legacy Bible Church"></div><div class="c-row">' +
+      (LBCSheet.tvCodes ? LBCSheet.tvCodes() : []).map(function (c) {
+        return '<div class="c-card"><div class="c-qr"><img src="' + c.img + '" alt=""></div><div class="c-lb">' + esc(c.label) + '</div></div>';
+      }).join('') + '</div>';
 
     function esc(t) {
       return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -248,6 +268,9 @@
 
       blankEl.classList.toggle('active', blank);
       stopDvd();   // logo stays put during the service
+      // the QR screen belongs to its own slides only; anything else takes it down
+      var qrNow = !blank && state.songIndex != null && SONGS_BUILT[state.songIndex] && SONGS_BUILT[state.songIndex].slides[state.slideIndex];
+      codesEl.classList.toggle('active', !!(qrNow && qrNow.qr));
 
       if (songIdx == null || songIdx === undefined) {
         showStandby();
@@ -258,6 +281,7 @@
       var slide = song && song.slides[slideIdx];
       if (!song || !slide) { showStandby(); return; }
 
+      if (slide.qr) { standby.classList.add('hidden'); slideWrap.classList.remove('visible'); songTitle.textContent = ''; return; }
       // a video cue or a logo slot in the order: the TV shows the logo, same as B
       if (slide.logo) { blankEl.classList.add('active'); standby.classList.add('hidden'); songTitle.textContent = ''; return; }
 

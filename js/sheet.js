@@ -271,7 +271,7 @@
   // words written once and kept (the Lord's Table…), published alongside the service
   function saved() { return global.WORSHIP_SAVED && typeof global.WORSHIP_SAVED === 'object' ? global.WORSHIP_SAVED : {}; }
 
-  var TYPE_NAMES = { song: 'Song', scripture: 'Reading', sermon: 'Sermon', words: 'Words', video: 'Video', logo: 'Logo', prayer: 'Prayer' };
+  var TYPE_NAMES = { song: 'Song', scripture: 'Reading', sermon: 'Sermon', words: 'Words', video: 'Video', logo: 'Logo', prayer: 'Prayer', codes: 'TV' };
   function itemTitle(it) {
     switch (it.type) {
       case 'song': return titleOf(it.slug);
@@ -384,9 +384,31 @@
     }
     return out;
   }
+  // ── The QR screen. Before the service starts and after it ends the TV shows the church's QR codes instead of the
+  // plain logo. It is its own screen, so the logo between songs and the sermon is untouched. Every page builds the
+  // service through buildService(), so Run Sunday, the TV, the stream and the phone remote always count the same items.
+  //   label  the words under the code            img  the code itself (images/, made once, see guide/index.html)
+  var TV_CODES = [
+    { label: 'Stay in touch', img: 'images/qr-connect.svg' },     // the contact form in Planning Center
+    { label: 'Give by Zelle', img: 'images/qr-give.svg' },        // the church's Zelle code, same as the give page
+    { label: 'Worship guide', img: 'images/qr-guide.svg' }        // worship.legacybiblechurch.com/guide
+  ];
+  function tvCodes() { return TV_CODES.slice(); }
+  function codesItem(title) {
+    return { type: 'codes', title: title, ready: true, slides: [{ label: 'QR codes', lines: [], qr: true, logo: true, cue: 'The TV shows the QR codes' }] };
+  }
+  function buildService() {
+    var items = service().map(buildItem);
+    if (!items.length || !TV_CODES.length) return items;
+    var last = items[items.length - 1];
+    if (last.after && last.slides[0]) { last.slides[0].qr = true; last.slides[0].cue += '. The TV shows the QR codes'; }   // the After Prayer Song plays over the codes
+    else items.push(codesItem('After the Service'));
+    items.unshift(codesItem('Before the Service'));
+    return items;
+  }
   // the whole service, each item with its slides, in order (async like loadSongs)
   function loadService(resolve) {
-    setTimeout(function () { resolve(service().map(buildItem)); }, 0);
+    setTimeout(function () { resolve(buildService()); }, 0);
   }
 
   // the reading editor's plain-text format: one verse per line, its number first
@@ -591,9 +613,9 @@
     opts = opts || {};
     var lastLocal = 0;                                          // when the Studio last handed something over
     function take(files) {
-      var before = JSON.stringify(service().map(buildItem));
+      var before = JSON.stringify(buildService());
       if (!applyData(files)) return false;
-      var items = service().map(buildItem);
+      var items = buildService();
       if (JSON.stringify(items) === before) return false;
       try { cb(items); } catch (e) {}
       return true;
@@ -637,7 +659,7 @@
     slugify: slugify, resolveSlug: resolveSlug, searchLibrary: searchLibrary, searchTitles: searchTitles, videoId: videoId,
     loadSongs: loadSongs,
     service: service, saved: saved, TYPE_NAMES: TYPE_NAMES, itemTitle: itemTitle,
-    buildItem: buildItem, loadService: loadService, watchService: watchService, announceData: announceData,
+    buildItem: buildItem, buildService: buildService, tvCodes: tvCodes, loadService: loadService, watchService: watchService, announceData: announceData,
     buildScriptureSlides: buildScriptureSlides, buildSermonSlides: buildSermonSlides,
     versesToText: versesToText, textToVerses: textToVerses, fetchPassage: fetchPassage,
     parseRef: parseRef, bibleList: bibleList, fetchPassageBible: fetchPassageBible,
