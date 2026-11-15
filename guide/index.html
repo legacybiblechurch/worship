@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>if (location.protocol === "http:" && /legacybiblechurch\.com$/.test(location.hostname)) location.replace("https:" + location.href.slice(5));</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Worship Guide · Legacy Bible Church</title>
-  <!-- The QR code on the TV points here, at the church's own address. This page sends people on to this
-       Sunday's worship guide. When the guide moves, change the address below and no QR code has to be remade. -->
-  <meta http-equiv="refresh" content="0; url=https://legacybiblechurch.github.io/legacy-bible-church/prepare.html">
-  <script>location.replace('https://legacybiblechurch.github.io/legacy-bible-church/prepare.html');</script>
-  <style>body { background: #0d0d0f; color: #9a9a9e; font: 15px -apple-system, BlinkMacSystemFont, sans-serif; padding: 40px 20px; text-align: center; } a { color: #c9a84c; }</style>
+  <!-- The Worship guide QR code on the TV points here. This page shows the worship guide itself: the Word document
+       Pastor Todd writes, exactly as he wrote it, in dark mode. Nothing is retyped.
+         guide.docx     the document. The Studio puts it here when the guide is imported; a connected computer can
+                        also replace it from the link at the bottom of this page.
+       No document posted yet: the page goes to the Sunday Starts Saturday page instead. -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; background: #000; color: #9a9a9e; font: 15px/1.5 -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; -webkit-text-size-adjust: 100%; }
+    #doc { opacity: 0; transition: opacity .5s ease; }
+    #doc.in { opacity: 1; }
+    /* dark mode and nothing else: the page and everything on it is turned light for dark, hues kept */
+    #doc .docx-wrapper { background: #000; padding: 14px 0 6px; display: block; }
+    #doc section.docx { box-shadow: none; margin: 0 auto 14px; background: #fff; filter: invert(1) hue-rotate(180deg); }
+    /* on a phone the document flows to the width of the screen so it can be read without pinching */
+    #doc.flow section.docx { width: auto !important; min-height: 0 !important; padding: 18px 18px 26px !important; column-count: auto !important; }
+    #msg { padding: 60px 22px; text-align: center; }
+    #msg a { color: #c9a84c; }
+    #admin { padding: 18px 18px 40px; text-align: center; font-size: 13px; color: #62626a; }
+    #admin button { background: none; border: 1px solid #2a2a2e; color: #9a9a9e; font: inherit; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+    #admin button:hover { color: #ececed; border-color: #62626a; }
+    #admin .note { display: block; margin-top: 10px; min-height: 18px; }
+  </style>
 </head>
 <body>
-  <p>Opening this Sunday&rsquo;s worship guide. <a href="https://legacybiblechurch.github.io/legacy-bible-church/prepare.html">Tap here if it does not open.</a></p>
+  <div id="doc"></div>
+  <div id="msg" hidden></div>
+  <div id="admin" hidden>
+    <input type="file" id="pick" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+    <button type="button" id="replace">Replace the document</button>
+    <span class="note" id="note"></span>
+  </div>
+
+  <script src="../js/vendor/jszip.min.js"></script>
+  <script src="../js/vendor/docx-preview.min.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var REPO = 'legacybiblechurch/worship', PATH = 'guide/guide.docx';
+    var FALLBACK = 'https://legacybiblechurch.github.io/legacy-bible-church/prepare.html';
+    var doc = document.getElementById('doc'), msg = document.getElementById('msg'), admin = document.getElementById('admin'), note = document.getElementById('note');
+    function token() { try { return localStorage.getItem('lbc-gh-token') || ''; } catch (e) { return ''; } }
+    var phone = Math.min(window.innerWidth, screen.width || 9999) < 700;
+
+    function show(blob) {
+      doc.className = phone ? 'flow' : ''; doc.innerHTML = '';
+      return docx.renderAsync(blob, doc, null, { inWrapper: true, ignoreWidth: phone, ignoreHeight: phone, breakPages: !phone, useBase64URL: true }).then(function () {
+        // A picture placed by its distance from the corner of the page (the logo across the top) comes out of the
+        // converter hanging off the middle of its line, half off the page. Put it where Word has it.
+        doc.querySelectorAll('section.docx div').forEach(function (d) {
+          var im = d.querySelector('img');
+          if (!im || d.style.width !== '0px' || d.style.height !== '0px' || d.style.position !== 'relative') return;
+          var sec = d.closest('section.docx');
+          if (phone) {
+            d.style.cssText = 'display:block;position:static;width:100%;text-align:center;margin:0 0 10px;';
+            im.style.cssText = 'position:static;width:100%;max-width:' + (im.style.width || '100%') + ';height:auto;';
+          } else if (sec) {
+            // its distance is measured from the left edge of the page, not from where its line happens to start
+            var want = sec.getBoundingClientRect().left + (parseFloat(d.style.left) || 0) * 96 / 72;
+            var off = want - im.getBoundingClientRect().left;
+            if (Math.abs(off) > 1) d.style.left = ((parseFloat(d.style.left) || 0) * 96 / 72 + off) + 'px';
+          }
+        });
+        // On a phone the wide page margins are gone, so lines that reach out into those margins would be cut off
+        // at the edge of the screen. Bring them back inside.
+        if (phone) doc.querySelectorAll('section.docx p, section.docx li, section.docx table').forEach(function (e) {
+          var c = getComputedStyle(e);
+          var ml = parseFloat(c.marginLeft) || 0, ti = parseFloat(c.textIndent) || 0;
+          if (ml < 0) { ml = 0; e.style.marginLeft = '0'; }
+          if (ti < 0 && ml < -ti) e.style.marginLeft = (-ti) + 'px';          // a hanging number needs room to hang
+          if (parseFloat(c.marginRight) < 0) e.style.marginRight = '0';
+        });
+        // a printed page is wider than some windows: bring it down to fit, never up
+        if (!phone) { var s = doc.querySelector('section.docx'); if (s) { var k = Math.min(1, (window.innerWidth - 24) / s.getBoundingClientRect().width); doc.querySelector('.docx-wrapper').style.zoom = k; } }
+        doc.classList.add('in'); msg.hidden = true;
+      });
+    }
+    function load() {
+      return fetch('guide.docx?cb=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('none'); return r.blob(); }).then(show);
+    }
+    load().catch(function () {
+      // nothing posted (or it would not open): a connected computer is asked for the document, everyone else gets Sunday's order
+      if (token()) { msg.hidden = false; msg.textContent = 'No worship guide is posted yet. Add it below.'; }
+      else location.replace(FALLBACK);
+    });
+
+    // ── a connected computer can put this Sunday's document here
+    if (token()) {
+      admin.hidden = false;
+      var pick = document.getElementById('pick');
+      document.getElementById('replace').onclick = function () { pick.click(); };
+      pick.onchange = function () {
+        var f = pick.files && pick.files[0]; pick.value = ''; if (!f) return;
+        if (!/\.docx$/i.test(f.name)) { note.textContent = 'Choose the Word document (.docx).'; return; }
+        note.textContent = 'Saving ' + f.name + '…';
+        var hdr = { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token(), 'X-GitHub-Api-Version': '2022-11-28' };
+        var api = 'https://api.github.com/repos/' + REPO + '/contents/' + PATH;
+        var b64 = new Promise(function (res, rej) { var fr = new FileReader(); fr.onload = function () { res(String(fr.result).split(',')[1]); }; fr.onerror = rej; fr.readAsDataURL(f); });
+        Promise.all([b64, fetch(api + '?ref=main&cb=' + Date.now(), { headers: hdr }).then(function (r) { return r.ok ? r.json() : null; })]).then(function (a) {
+          return fetch(api, { method: 'PUT', headers: hdr, body: JSON.stringify({ message: 'worship guide: ' + f.name, content: a[0], sha: a[1] ? a[1].sha : undefined, branch: 'main' }) });
+        }).then(function (r) {
+          if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? 'This computer is not allowed to save. Connect it in the Studio.' : 'It did not save (' + r.status + '). Try again.');
+          note.textContent = 'Saved. This is what people will see.';
+          return show(f);
+        }).catch(function (e) { note.textContent = e.message; });
+      };
+    }
+  })();
+  </script>
 </body>
 </html>

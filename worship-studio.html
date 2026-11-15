@@ -2245,6 +2245,20 @@
         it.ref = p.ref; it.verses = p.verses; it.version = p.version; persistOrder(); renderRail(); if (current === it.key) renderMain();
       }).catch(function () {});
     }
+    // The Worship guide QR code on the TV opens the guide itself (guide/index.html shows the Word document in dark
+    // mode). Importing the guide here posts that same document, so the code is right every Sunday with no extra step.
+    function publishGuideDoc(f) {
+      if (!connected || !f || !/\.docx$/i.test(f.name)) return;
+      var fr = new FileReader();
+      fr.onload = function () {
+        var b64 = String(fr.result).split(',')[1], at = '/repos/' + REPO + '/contents/guide/guide.docx';
+        gh(at + '?ref=main&cb=' + Date.now(), { allow404: true }).then(function (j) { return j && j.sha; }, function () { return undefined; })
+          .then(function (sha) { return gh(at, { method: 'PUT', body: JSON.stringify({ message: 'worship guide: ' + f.name, content: b64, sha: sha, branch: 'main' }) }); })
+          .then(function () { toast('The worship guide is posted for the QR code on the TV.', 'ok'); })
+          .catch(function () {});
+      };
+      fr.readAsDataURL(f);
+    }
     document.getElementById('guideFile').addEventListener('change', function () {
       var f = this.files && this.files[0]; this.value = ''; if (!f) return;
       var btn = document.querySelector('.import-btn'); if (btn) { btn.classList.add('busy'); btn.textContent = 'Reading the guide…'; }
@@ -2254,6 +2268,7 @@
           var g = readGuide(lines);
           if (!g.reading && !g.title && !g.songs1.length) throw new Error('That file doesn’t look like the worship guide. Nothing was changed.');
           applyGuide(g);
+          publishGuideDoc(f);
         })
         .catch(function (e) { toast(e.message, 'err', true); })
         .then(function () { if (btn) { btn.classList.remove('busy'); btn.textContent = 'Import the worship guide'; } });
