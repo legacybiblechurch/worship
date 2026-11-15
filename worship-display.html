@@ -92,14 +92,14 @@
     }
 
     .slide-line {
-      font-size: clamp(32px, 5.6vw, 108px);   /* a living-room TV: as big as the slide allows, the fit loop below trims the tall ones */
+      font-size: clamp(32px, 7.4vw, 150px);   /* a living-room TV: as big as the slide allows, the fit loop below trims the tall ones */
       font-weight: 300;
       line-height: 1.3;
       color: #ffffff;
     }
     /* a reading: each verse is a paragraph in a measured column, wrapped by the
        browser evenly, read left to right like a page */
-    .slide-lines.prose { align-items: stretch; text-align: left; width: min(92vw, 34ch); margin: 0 auto; gap: 0.55em; font-size: clamp(26px, 4.3vw, 80px); }
+    .slide-lines.prose { align-items: stretch; text-align: left; width: min(92vw, 34ch); margin: 0 auto; gap: 0.55em; font-size: clamp(26px, 5.4vw, 104px); }
     .slide-lines.prose .slide-line { font-size: 1em; line-height: 1.34; text-wrap: pretty; }
     .nb { white-space: nowrap; }
     .slide-lines.rich .slide-line { text-wrap: balance; max-width: min(90vw, 30ch); margin-left: auto; margin-right: auto; }
@@ -301,7 +301,7 @@
           .join('');
         slideLines.style.fontSize = '';
         if (slide.prose) {
-          var room = window.innerHeight * 0.8, size = parseFloat(getComputedStyle(slideLines).fontSize) || 40, tries = 0;
+          var room = window.innerHeight * 0.84, size = parseFloat(getComputedStyle(slideLines).fontSize) || 40, tries = 0;
           while (slideLines.scrollHeight > room && tries++ < 14) { size *= 0.94; slideLines.style.fontSize = size + 'px'; }
         }
         songTitle.textContent = song.type === 'song' && !slide.title ? song.title : '';   // the title card says it already
