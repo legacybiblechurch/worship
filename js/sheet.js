@@ -356,9 +356,12 @@
       out.ready = !!(d && d.lyrics && d.lyrics.length);
       out.youtube = (d && d.youtube && videoId(d.youtube)) ? d.youtube : '';
       out.slides = out.ready ? [songTitleSlide(it.slug, d)].concat(buildSlides(d.lyrics)) : [{ label: '', lines: ['No words yet. Open Studio to fix this song'] }];
-      // the song for after the Closing Prayer: it opens on the church logo so Play can be pressed the moment the
-      // prayer ends, with nothing to read on the TV. Its words follow, one click on, if they are wanted.
-      if (it.after) { out.after = true; out.slides.unshift({ label: 'After Prayer Song', lines: [], logo: true, cue: 'Press Play the moment the prayer ends' }); }
+      // the song for after the Closing Prayer is audio only: the TV stays on the church logo and Play is pressed
+      // the moment the prayer ends. No title card, no words.
+      if (it.after) {
+        out.after = true; out.ready = !!out.youtube;
+        out.slides = [{ label: 'After Prayer Song', lines: [], logo: true, cue: out.ready ? 'Press Play the moment the prayer ends' : 'No recording yet. Open Studio' }];
+      }
     } else if (it.type === 'scripture') {
       out.slides = buildScriptureSlides(it);
       out.ready = out.slides.length > 0;

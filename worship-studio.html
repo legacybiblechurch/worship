@@ -415,7 +415,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=36"></script>
+  <script src="js/sheet.js?v=37"></script>
   <script>
   (function () {
     'use strict';
@@ -664,7 +664,7 @@
     function isReady(slug) { var s = songOf(slug); return !!(s.lyrics && s.lyrics.length); }
     // is this item of the order ready for Sunday?
     function itemReady(it) {
-      if (it.type === 'song') return isReady(it.slug);
+      if (it.type === 'song') return it.after ? !!S.videoId(songOf(it.slug).youtube) : isReady(it.slug);   // the After Prayer Song is audio only: a recording is all it needs
       if (it.type === 'scripture') return !!(it.verses && it.verses.length);
       if (it.type === 'sermon') return !!(it.title && it.title.trim());
       if (it.type === 'words') { var w = saved[it.id]; return !!(w && w.lyrics && w.lyrics.length); }
@@ -765,7 +765,7 @@
       var songsIn = order.filter(function (it) { return it.type === 'song' && !it.after; });
       var opening = songsIn[0], closing = songsIn.slice(1), exit = order.filter(function (it) { return it.type === 'song' && it.after; })[0];
       var reading = firstOf('scripture'), sermon = firstOf('sermon'), table = firstOf('words'), prayer = firstOf('prayer');
-      function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + '” needs its words' : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
+      function songNote(it) { return finding[it.slug] ? 'Finding “' + itemTitle(it) + '”… about a minute' : !itemReady(it) ? '“' + itemTitle(it) + (it.after ? '” needs a recording' : '” needs its words') : dirty[it.slug] ? '“' + itemTitle(it) + '” has edits to save' : ''; }
       function songOk(it) { return !!it && itemReady(it) && !finding[it.slug] && !dirty[it.slug]; }
       function pickSong(title) { pick = title; current = null; renderRail(); renderMain(); }
       function rowFor(title, it, ok, needs, doneNote, make, where) {
