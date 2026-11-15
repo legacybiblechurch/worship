@@ -822,7 +822,8 @@
       if (!exit) { afterRow.optional = true; afterRow.note = 'Optional. A song to play the moment the prayer ends'; }
       steps.push(afterRow);
       var allIn = steps.every(function (st) { return st.done || st.optional; });
-      steps.push({ title: 'Computer is Connected', done: !!connected, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
+      // the pill at the top right already says Connected, so this row only shows on a computer that still has to be
+      if (!connected) steps.push({ title: 'Connect this computer', done: false, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
       steps.push({ title: 'Ready for Sunday', done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish });
       steps.forEach(function (st, i) {
         var b = document.createElement('button');
@@ -1279,7 +1280,7 @@
           setTimeout(function () { document.getElementById('addName').focus(); }, 30);
           return;
         }
-        main.innerHTML = '<div class="center"><h2>Go down the list on the left</h2><p>Each row goes green when it is done. When all eight are green, Sunday is set.</p></div>';
+        main.innerHTML = '<div class="center"><h2>Go down the list on the left</h2><p>Each row goes green when it is done. When every row is green, Sunday is set.</p></div>';
         return;
       }
       if (it.type === 'scripture') { renderReading(it); return; }

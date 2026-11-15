@@ -305,7 +305,8 @@
       #header a[href="worship-display.html"], #header a[target="lbc-stream"], #disp-pill, #phone-btn { display: none; }
       body.start #start { display: none; }   /* a phone never opens the TV */
       body.start #layout { top: var(--header-h); }
-      body.remote #remote-pill { flex-shrink: 0; margin: 0; }
+      body.remote #remote-pill { flex-shrink: 0; margin: 0 0 0 auto; }
+      body.remote .wordmark { display: none; }     /* on the phone remote it squeezed down to a stray "CO" */
       body:not(.remote) #phone-btn { display: inline-block; padding: 7px 9px; font-size: 12px; flex-shrink: 0; }
       #phone-panel { right: 10px; left: 10px; width: auto; }
 
