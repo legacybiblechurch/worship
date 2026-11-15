@@ -78,7 +78,7 @@
     <div class="brand">Livestream Checklist</div>
     <div class="brand-sub">Legacy Bible Church &middot; Sunday morning</div>
 
-    <p class="lede">Go top to bottom. Tap a line when it is done. <b>The list clears itself every morning</b> so it is always fresh.</p>
+    <p class="lede">Tap each line when it is done.</p>
 
     <div class="where" id="where">
       <span>Where is church today?</span>
@@ -103,77 +103,68 @@
     // The list. Every line is one thing with your hands. Hints are short because they are read standing up.
     var GROUPS = [
       ['Power and cables', [
-        ['Laptop on the stand at the media table. <b>Charger plugged in.</b>'],
-        ['<b>USB-C adapter</b> plugged into the laptop. The grey one the HDMI cables go into.'],
-        ['<b>Monitor</b> HDMI into the adapter. Monitor on.'],
-        ['<b>TV</b> HDMI into the adapter.', 'The projector is retired. Too dim to read.'],
-        ['TV on. <b>Set to the HDMI input</b> the cable is in.'],
-        ['<b>Three screens show the desktop.</b> Laptop. Monitor. TV. None is a copy of another.', 'If two match: System Settings, Displays, pick the TV, Use as Extended Display.']
+        ['Laptop at the media table. <b>Charger in.</b>'],
+        ['<b>USB-C adapter</b> into the laptop.'],
+        ['<b>Monitor</b> into the adapter. Monitor on.'],
+        ['<b>TV</b> into the adapter. TV on. Select the correct HDMI input.'],
+        ['Set the displays to <b>Extend</b>.', 'System Settings, Displays, pick the TV, Use as Extended Display.']
       ]],
       ['Sound', [
-        ['<b>Bluetooth speaker</b> on. Set it where the room can hear it.'],
-        ['Pair it. Control Center at the top right, Bluetooth, tap the speaker.'],
-        ['System Settings, Sound, <b>Output: the speaker.</b>', 'Songs now play into the room.'],
-        ['<b>Headphone chip</b> into the Mac. Headphones on and powered.'],
-        ['<b>Mic receiver</b> into the Mac. The USB-C one. Not the Lightning one.'],
-        ['Clip mic on. Lights solid. <b>Clipped to the preacher</b> a hand below the chin.']
+        ['<b>Bluetooth speaker</b> on and connected.', 'Control Center, Bluetooth, tap the speaker.'],
+        ['Sound output: <b>the speaker</b>.', 'System Settings, Sound, Output.'],
+        ['<b>Headphone chip</b> into the Mac. Headphones on.'],
+        ['<b>Mic receiver</b> into the Mac.', 'The USB-C one.'],
+        ['Mic on and <b>connected to the podium</b>.']
       ]],
       ['Camera', [
-        ['<b>iPhone</b> plugged into the Mac with the cable. Phone locked. Screen off is fine.', 'No Camo. The Mac sees the phone as a camera on its own.'],
-        ['Phone on the tripod <b>sideways</b>. Back cameras aimed at the pulpit. <b>Do Not Disturb on.</b>'],
-        ['Control Center on the Mac, <b>Video Effects</b>. <b>Center Stage off.</b> Portrait off.', 'Center Stage is the thing that follows people back to their seats.'],
-        ['In OBS double-click <b>Camera</b>. Device: <b>the iPhone</b>. OK.', 'Not in the list? Unlock the phone once, tap Allow, lock it again.']
+        ['<b>iPhone</b> plugged into the Mac.'],
+        ['Phone on the tripod <b>sideways</b> aimed at the pulpit.'],
+        ['<b>Center Stage off.</b>', 'Control Center on the Mac, Video Effects.']
       ]],
       ['Screens', [
-        ['Double-click <b>Open Chrome for Sunday</b> on the Desktop.', 'This closes Chrome and opens it the right way. Control comes up by itself.'],
-        ['In Control: <b>Open the TV.</b> Drag it onto the TV. Click it once.', 'Stuck full screen on the wrong screen? Esc. Then Ctrl+Cmd+F if it is still stuck.'],
-        ['In Control: <b>Open the stream window.</b> Click it. <b>Ctrl+Cmd+F.</b>', 'It has to be full screen or OBS goes stale.'],
+        ['Double-click <b>Open Chrome for Sunday</b> on the Desktop.'],
+        ['In Control: <b>Open the TV.</b> Drag it onto the TV. Click it once.'],
+        ['In Control: <b>Open the stream window.</b> Click it. <b>Ctrl+Cmd+F.</b>'],
         ['Control says <b>TV connected</b> and <b>Stream connected</b>.'],
-        ['Running the words from an <b>iPad</b>? On it open <b>worship.legacybiblechurch.com/remote</b> and tap Connect.', 'Not the Control page. That makes the iPad its own computer and nothing moves. The pill on the iPad must say connected to the computer.']
+        ['Using an <b>iPad</b> for the words? On it open <b>worship.legacybiblechurch.com/remote</b> and tap Connect.']
       ]],
       ['OBS', [
-        ['Open <b>OBS</b>.', 'Opened on the TV? Window menu, Move to Built-in Display.'],
-        ['Double-click <b>Lyrics</b>. Pick the <b>Stream lyrics</b> window. OK.', 'OBS forgets this every time Chrome restarts. It is not you.'],
-        ['<b>Lyrics and Camera fill the preview</b> edge to edge.', 'They are locked so they stay put. One is off? Right-click it, Transform, Edit Transform, Scale to outer bounds, 1920 by 1080, Position 0 and 0.'],
-        ['<b>Camera shows the room.</b> Not the phone screen.', 'Wrong picture? Double-click Camera. Device: the iPhone.'],
+        ['Open <b>OBS</b>.'],
+        ['Double-click <b>Lyrics</b>. Pick the <b>Stream lyrics</b> window. OK.'],
+        ['<b>Lyrics and Camera fill the preview.</b>', 'One is off? Right-click it, Transform, Edit Transform. Scale to outer bounds, 1920 by 1080, Position 0 and 0.'],
+        ['<b>Camera shows the room.</b>', 'Wrong picture? Double-click Camera. Device: the iPhone.'],
         ['Double-click <b>Mic</b>. Device: <b>the mic receiver</b>. OK.'],
-        ['Settings, Audio, Advanced. <b>Monitoring Device: the headphones.</b> OK.'],
-        ['Mixer gear on Mic. Advanced Audio Properties. Mic and Songs both <b>Monitor and Output</b>. Close.'],
-        ['Talk. <b>Mic meter bounces.</b> You hear yourself in the headphones.'],
-        ['Play a song slide. <b>Songs meter bounces.</b> The speaker plays in the room.']
+        ['Settings, Audio, Advanced. <b>Monitoring Device: the headphones.</b>'],
+        ['Mixer gear on Mic. Advanced Audio Properties. Mic and Songs both <b>Monitor and Output</b>.'],
+        ['Talk. <b>The Mic meter moves</b> and you hear it in the headphones.'],
+        ['Play a song. <b>The Songs meter moves</b> and the speaker plays.']
       ]],
       ['Practice run', [
-        ['Control: Next five times. <b>OBS follows.</b> The gold line is moving.', 'OBS behind or frozen? Click the stream window once and Ctrl+Cmd+F again.'],
-        ['<b>TV</b> shows the same slide.'],
-        ['Scenes. <b>Service. Songs. Video. Service.</b> Each one looks right.']
+        ['In Control click <b>Next</b> a few times. OBS and the TV follow.', 'OBS frozen? Click the stream window and press Ctrl+Cmd+F.'],
+        ['Click each scene. <b>Service. Songs. Video.</b>']
       ]],
       ['Go live', [
-        ['OBS Settings, Stream. <b>The key is in.</b> YouTube event is scheduled.'],
-        ['<b>Start Streaming.</b> Bottom right.'],
-        ['On your phone: YouTube shows the preview and you hear sound. <b>You are live.</b>'],
-        ['<b>Closing song cued.</b> Control is on the last song. The moment the closing prayer ends, Play.']
+        ['<b>Start Streaming.</b>'],
+        ['Check YouTube on your phone. <b>Picture and sound.</b>'],
+        ['After the closing prayer: <b>Play</b> the After Prayer Song.']
       ]]
     ];
-
-    // Away from the Barnett home there is no Mac, no OBS and no iPhone camera. The media
-    // laptop runs the words to the TV and the iPad streams with PRISM, the way it ran
-    // through October. Same words, same countdown; the overlay reaches the iPad by itself.
+    // Another house: no Mac and no OBS. The media laptop runs the words to the TV, the iPad streams with PRISM.
     var AWAY_GROUPS = [
       ['Power and cables', [
-        ['<b>Media laptop</b> on a table near the TV. <b>Charger plugged in.</b>'],
+        ['<b>Media laptop</b> near the TV. <b>Charger in.</b>'],
         ['<b>HDMI</b> from the laptop to the TV.'],
         ['TV on. <b>Select the correct HDMI input.</b>'],
         ['Set the display to <b>Extend</b>.', 'Hold the Windows key and press P. Choose Extend.']
       ]],
       ['Sound', [
-        ['<b>Bluetooth speaker</b> on. Set it where the room can hear it.'],
-        ['Pair it to the media laptop. Settings, Bluetooth, tap the speaker.', 'Then the speaker icon at the bottom right: pick the speaker as the output.'],
-        ['Play a song in Control. <b>The speaker plays in the room.</b>'],
+        ['<b>Bluetooth speaker</b> on and connected to the laptop.', 'Settings, Bluetooth. Then pick it as the output from the speaker icon.'],
+        ['Play a song in Control. <b>The speaker plays.</b>'],
         ['Mic on and <b>connected to the podium</b>.'],
         ['<b>Mic receiver</b> into the iPad.']
       ]],
       ['Screens', [
-        ['On the media laptop open Chrome. <b>worship.legacybiblechurch.com</b>. Tap the gold <b>Run Sunday</b>.'],
+        ['Open Chrome. <b>worship.legacybiblechurch.com</b>. Click <b>Run Sunday</b>.'],
         ['In Control: <b>Open the TV.</b> Drag it onto the TV. Click it once.'],
         ['<b>Skip Open the stream window.</b> Click <b>Hide this</b>.'],
         ['Control says <b>TV connected</b>.'],
@@ -187,15 +178,14 @@
         ['The countdown shows on the iPad over the room.']
       ]],
       ['Practice run', [
-        ['In Control click <b>Next</b> a few times. The iPad follows with the words over the picture.'],
+        ['In Control click <b>Next</b> a few times. The TV and the iPad follow.'],
         ['Press <b>Blank</b> to hide the words. Press it again to show them.'],
-        ['<b>TV</b> shows the same slide.'],
-        ['Talk into the mic. <b>PRISM\u2019s level moves.</b>']
+        ['Talk into the mic. <b>PRISM’s level moves.</b>']
       ]],
       ['Go live', [
         ['PRISM: <b>Go Live.</b>'],
-        ['On your phone: YouTube shows the preview and you hear sound. <b>You are live.</b>'],
-        ['<b>Closing song cued.</b> Control is on the last song. The moment the closing prayer ends, Play.']
+        ['Check YouTube on your phone. <b>Picture and sound.</b>'],
+        ['After the closing prayer: <b>Play</b> the After Prayer Song.']
       ]]
     ];
     var HOME_GROUPS = GROUPS;
@@ -246,7 +236,7 @@
       list.querySelectorAll('h2 small').forEach(function (s) { var p = per[s.getAttribute('data-g')] || [0, 0]; s.textContent = p[0] === p[1] ? 'done' : p[0] + ' / ' + p[1]; });
       var fin = document.getElementById('fin');
       if (done === total) { fin.className = 'fin yes'; fin.innerHTML = MODE === 'away' ? '<b>All set.</b> Go run the service.' : '<b>All set.</b> Go run the service. Scenes are on Run the stream.'; }
-      else { fin.className = 'fin'; fin.textContent = MODE === 'away' ? 'Keep going. The last line is Go Live.' : 'Keep going. The last line is Start Streaming.'; }      tell(done);
+      else { fin.className = 'fin'; fin.textContent = 'Keep going.'; }      tell(done);
     }
     // inside a job page: say how tall the list is and how far along, so that page can size and label it
     var lastDone = 0;
