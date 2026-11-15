@@ -50,6 +50,7 @@
 
     function show(blob) {
       doc.className = phone ? 'flow' : ''; doc.innerHTML = '';
+      var logoDone = false;
       return docx.renderAsync(blob, doc, null, { inWrapper: true, ignoreWidth: phone, ignoreHeight: phone, breakPages: !phone, useBase64URL: true }).then(function () {
         // A picture placed by its distance from the corner of the page (the logo across the top) comes out of the
         // converter hanging off the middle of its line, half off the page. Put it where Word has it.
@@ -57,7 +58,14 @@
           var im = d.querySelector('img');
           if (!im || d.style.width !== '0px' || d.style.height !== '0px' || d.style.position !== 'relative') return;
           var sec = d.closest('section.docx');
-          if (phone) {
+          if (d.closest('header') && !logoDone) {
+            // the letterhead across the top: on this page it is the church's regular logo, white and gold, centred
+            logoDone = true;
+            d.style.cssText = 'display:block;position:static;width:100%;text-align:center;margin:' + (phone ? '4px 0 14px' : '0 0 6px') + ';';
+            im.setAttribute('data-logo', '1');
+            im.src = '../images/logo-dark.png';
+            im.style.cssText = 'position:static;width:' + (phone ? 'min(72%, 300px)' : '300px') + ';height:auto;filter:invert(1) hue-rotate(180deg);';   // the filter undoes the page's dark-mode flip for the logo
+          } else if (phone) {
             d.style.cssText = 'display:block;position:static;width:100%;text-align:center;margin:0 0 10px;';
             im.style.cssText = 'position:static;width:100%;max-width:' + (im.style.width || '100%') + ';height:auto;';
           } else if (sec) {
@@ -80,6 +88,7 @@
         // So each picture is put back to its true colours, and its white paper is made see-through so it sits on
         // the dark page instead of in a white box.
         doc.querySelectorAll('section.docx img').forEach(function (im) {
+          if (im.getAttribute('data-logo')) return;
           function fix() {
             try {
               var w = im.naturalWidth, h = im.naturalHeight; if (!w || !h) return;
