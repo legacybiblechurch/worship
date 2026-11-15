@@ -359,11 +359,12 @@
     .rs[data-stage="done"] .rs-glow { opacity: 1; }
     .rs-done h3, .rs-done p { opacity: 0; animation: rsIn .5s cubic-bezier(.2,.8,.2,1) .6s forwards; }
     .rs-done p { animation-delay: .7s; }
+    .rs-done .rs-btns { opacity: 0; animation: rsIn .5s cubic-bezier(.2,.8,.2,1) .85s forwards; }
     .rs-fail h3 { color: var(--bad); }
     @media (prefers-reduced-motion: reduce) {
       .rs, .rs-card, .rs-fill { transition: none !important; }
       .rs-fill::after, .rs-check::before, .rs-check::after { animation: none; }
-      .rs[data-stage] .rs-view, .rs-done h3, .rs-done p { animation: none; opacity: 1; }
+      .rs[data-stage] .rs-view, .rs-done h3, .rs-done p, .rs-done .rs-btns { animation: none; opacity: 1; }
       .rs[data-stage="done"] .ring, .rs[data-stage="done"] .tick { animation: none; stroke-dashoffset: 0; }
     }
   </style>
@@ -405,7 +406,8 @@
       <div class="rs-view rs-done">
         <div class="rs-check"><svg viewBox="0 0 76 76" aria-hidden="true"><circle class="ring" cx="38" cy="38" r="34"></circle><path class="tick" d="M24 39.5l9.5 9.5L53 29.5"></path></svg></div>
         <h3>Sunday is ready</h3>
-        <p>Control and the TV show this service.</p>
+        <p>Nice work. Now print the worship guide. The songs are already in it.</p>
+        <div class="rs-btns"><button class="rs-no" id="rsLater" type="button">Not now</button><button class="rs-yes" id="rsPrint" type="button">Print the guide</button></div>
       </div>
       <div class="rs-view rs-fail">
         <h3>That didn’t go through</h3>
@@ -825,6 +827,10 @@
       // the pill at the top right already says Connected, so this row only shows on a computer that still has to be
       if (!connected) steps.push({ title: 'Connect this computer', done: false, note: connected ? 'It can save Sunday to the church website' : 'One-time setup, about two minutes', go: function () { if (!connected) openConnect(); } });
       steps.push({ title: 'Ready for Sunday', done: set, note: set ? 'Control and the TV show this service' : allIn && connected ? 'Click here and Sunday is set' : 'Goes green when the rest is', go: publish });
+      // the last thing to do, and never in the way: it is not counted and it waits until Sunday is set
+      var printed = set && wasPrinted();
+      steps.push({ title: 'Print the Worship Guide', optional: !printed, done: printed, note: !set ? 'After Sunday is set' : printed ? 'The print copy was downloaded. Click to get it again' : 'Click here. The songs are already in it',
+                   go: function () { if (set) openPrintCopy(); } });
       steps.forEach(function (st, i) {
         var b = document.createElement('button');
         b.className = 'ck' + (st.done ? ' done' : '');
@@ -1988,6 +1994,17 @@
     }
 
 
+    // The print copy of the worship guide (guide/?print=1 makes it: Pastor Todd's document with these songs written in).
+    // Which Sunday it was last printed for is remembered on this computer, so the row can show a check.
+    var PRINTED_KEY = 'lbc-guide-printed';
+    function printSig() { return order.map(function (it) { return it.type + ':' + (it.slug || it.ref || it.title || ''); }).join('|'); }
+    function wasPrinted() { try { return localStorage.getItem(PRINTED_KEY) === printSig(); } catch (e) { return false; } }
+    function openPrintCopy() {
+      try { localStorage.setItem(PRINTED_KEY, printSig()); } catch (e) {}
+      window.open('guide/?print=1', '_blank', 'noopener');
+      paintCheck();
+    }
+
     // The Ready for Sunday window: ask first, then a bar that moves with each real step, then a check
     var RS = (function () {
       var box, fill, step, pct, t0 = 0, shown = 0, raf = 0, target = 0, ceil = 0, onYes = null, closeT = 0;
@@ -1997,6 +2014,7 @@
         if (box) return;
         box = $('rs'); fill = $('rsFill'); step = $('rsStep'); pct = $('rsPct');
         $('rsNo').onclick = close; $('rsClose').onclick = close;
+        $('rsLater').onclick = close; $('rsPrint').onclick = function () { close(); openPrintCopy(); };
         $('rsYes').onclick = function () { var f = onYes; onYes = null; if (f) f(); };
         box.addEventListener('click', function (e) { if (e.target === box && box.dataset.stage !== 'work') close(); });
         document.addEventListener('keydown', function (e) {
@@ -2031,7 +2049,7 @@
           var wait = Math.max(0, 650 - (Date.now() - t0));
           setTimeout(function () {
             ceil = 1; target = 1; step.textContent = 'Done';
-            setTimeout(function () { cancelAnimationFrame(raf); show('done'); closeT = setTimeout(close, 2600); }, 300);
+            setTimeout(function () { cancelAnimationFrame(raf); show('done'); setTimeout(function () { var b = $('rsPrint'); if (b) b.focus(); }, 1000); }, 300);
           }, wait);
         },
         fail: function (msg) { cancelAnimationFrame(raf); $('rsErr').textContent = msg || 'Check the connection and try again.'; show('fail'); }
