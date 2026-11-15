@@ -36,6 +36,18 @@
     .row .t { flex: 1; min-width: 0; }
     .row .s { font-size: 12px; color: var(--ink-faint); }
     .empty { padding: 18px; font-size: 14px; color: var(--ink-dim); }
+    /* the jobs card: each row is a link to that job's checklist */
+    .jobs { margin-top: 12px; }
+    .jobs-head { text-decoration: none; }
+    .jobs-more { margin-left: auto; font-size: 12.5px; font-weight: 500; color: var(--ink-faint); transition: color .25s ease; }
+    .jobs-head:hover .jobs-more { color: var(--gold); }
+    .row.job { text-decoration: none; color: var(--ink); padding: 14px 18px; transition: background .25s ease; }
+    .row.job:hover { background: #17171a; }
+    .row.job .t { font-weight: 600; }
+    .row.job .s { font-size: 14px; color: var(--ink-dim); }
+    .row.job .arr { color: var(--ink-faint); transition: transform .3s cubic-bezier(.2,.8,.2,1), color .25s ease; }
+    .row.job:hover .arr { color: var(--gold); transform: translateX(3px); }
+    .row.job:focus-visible, .jobs-head:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 
     .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
     @property --trace { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
@@ -99,13 +111,13 @@
       <div class="card-head"><span class="card-title">This Sunday</span><span class="card-state" id="state"></span></div>
     </div>
 
-    <!-- who has the two jobs this Sunday -->
-    <a class="act setup who rise" style="--i:2" id="act-who" href="rotation.html">
-      <span class="go" aria-hidden="true">&rarr;</span>
-      <div class="k">Sunday Rotation</div>
-      <h2 id="who-h">This Sunday</h2>
-      <p id="who-p"></p>
-    </a>
+    <!-- the three jobs this Sunday: who has each, and one tap to its checklist. The head goes to the full rotation -->
+    <div class="card jobs rise" style="--i:2">
+      <a class="card-head jobs-head" href="rotation.html"><span class="card-title">Sunday Jobs<span id="who-date"></span></span><span class="jobs-more">Rotation &rarr;</span></a>
+      <a class="row job" href="jobs/slides/?from=hub"><span class="t">Guide &amp; Slides</span><span class="s" id="who-slides"></span><span class="arr" aria-hidden="true">&rarr;</span></a>
+      <a class="row job" href="jobs/stream/?from=hub"><span class="t">Stream</span><span class="s" id="who-stream"></span><span class="arr" aria-hidden="true">&rarr;</span></a>
+      <a class="row job" href="jobs/table/?from=hub"><span class="t">Table</span><span class="s" id="who-table"></span><span class="arr" aria-hidden="true">&rarr;</span></a>
+    </div>
 
     <!-- the room checklist. Sunday morning it is the first thing to tap -->
     <a class="act setup rise" style="--i:3" id="act-setup" href="worship-setup.html">
@@ -142,13 +154,12 @@
   <script src="js/rotation-data.js"></script>
   <script src="js/rotation.js"></script>
   <script>
-    // who has Slides and the Table this coming Sunday
+    // who has each job this coming Sunday
     (function () {
       try {
-        var w = LBCRotation.at(), h = document.getElementById('who-h'), p = document.getElementById('who-p');
-        h.textContent = LBCRotation.label(w.date);
-        p.innerHTML = w.off ? 'No service' : 'Guide <b></b> &nbsp;·&nbsp; Stream <b></b> &nbsp;·&nbsp; Table <b></b>';
-        if (!w.off) { var b = p.querySelectorAll('b'); b[0].textContent = w.slides; b[1].textContent = w.stream; b[2].textContent = w.table; }
+        var w = LBCRotation.at();
+        document.getElementById('who-date').textContent = ' \u00b7 ' + LBCRotation.label(w.date) + (w.off ? ' \u00b7 No service' : '');
+        if (!w.off) ['slides', 'stream', 'table'].forEach(function (j) { document.getElementById('who-' + j).textContent = w[j]; });
       } catch (e) {}
     })();
     // Sunday: the morning card comes first. Any other day the getting-ready one does.
