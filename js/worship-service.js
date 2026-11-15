@@ -26,7 +26,7 @@ window.WORSHIP_SERVICE = [
       },
       {
         "n": 36,
-        "text": "For from Him and through Him and to Him are all things. To Him be the glory forever. Amen. Dedicated Service"
+        "text": "For from Him and through Him and to Him are all things. To Him be the glory forever. Amen."
       },
       {
         "n": 1,
