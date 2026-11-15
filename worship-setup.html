@@ -59,6 +59,10 @@
     .foot { margin-top: 32px; font-size: 13px; color: var(--ink-faint); }
     .foot a { color: var(--ink-dim); }
     @media (max-width: 480px) { body { padding: 24px 14px 64px; } .brand { font-size: 34px; } }
+    .where { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 18px 0 4px; font-size: 13.5px; color: var(--ink-dim); }
+    .where button { font: inherit; font-size: 13px; font-weight: 600; color: var(--ink-dim); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+    .where button.on { color: #16130a; background: var(--gold); border-color: var(--gold); }
+    .where small { flex-basis: 100%; font-size: 12.5px; color: var(--ink-faint); }
     /* ?embed=1: just the list, for showing inside a job page */
     .embed, .embed body { background: transparent; }
     .embed body { padding: 0; }
@@ -76,6 +80,13 @@
 
     <p class="lede">Go top to bottom. Tap a line when it is done. <b>The list clears itself every morning</b> so it is always fresh.</p>
 
+    <div class="where" id="where">
+      <span>Where is church today?</span>
+      <button type="button" data-mode="home">Quaid's house</button>
+      <button type="button" data-mode="away">Another house</button>
+      <small id="whereNote"></small>
+    </div>
+
     <div class="prog">
       <div class="prog-row"><b id="count">0 of 0</b><span id="word">to go</span><button type="button" id="reset">Start over</button></div>
       <div class="bar" id="bar"><i></i></div>
@@ -83,9 +94,9 @@
 
     <div id="list"></div>
 
-    <div class="fin" id="fin">Keep going. The last line is Start Streaming.</div>
+    <div class="fin" id="fin">Keep going.</div>
 
-    <p class="foot">During the service the scene switching is on <a href="worship-obs.html">Run the stream</a>. Screens act up? <a href="worship-control.html">Worship Control</a> says which window is missing. Questions: Quaid.</p>
+    <p class="foot">At Quaid's house the scene switching during the service is on <a href="worship-obs.html">Run the stream</a>. Away, the stream runs itself once it is live. Screens act up? <a href="worship-control.html">Worship Control</a> says which window is missing. Questions: Quaid.</p>
   </div>
 
   <script>
@@ -144,9 +155,68 @@
       ]]
     ];
 
+    // Away from Quaid's house there is no Mac, no OBS and no iPhone camera. The media
+    // laptop runs the words to the TV and the iPad streams with PRISM, the way it ran
+    // through October. Same words, same countdown; the overlay reaches the iPad by itself.
+    var AWAY_GROUPS = [
+      ['Power and cables', [
+        ['<b>Media laptop</b> on a table near the TV. <b>Charger plugged in.</b>'],
+        ['<b>HDMI</b> from the laptop to the TV. Bring the cable. Do not count on one being there.'],
+        ['TV on. <b>Set to the HDMI input</b> the cable is in.'],
+        ['<b>Two screens show the desktop.</b> Laptop and TV. Not a copy of each other.', 'If they match: hold the Windows key and press P, choose Extend.']
+      ]],
+      ['Sound', [
+        ['<b>Bluetooth speaker</b> on. Set it where the room can hear it.'],
+        ['Pair it to the media laptop. Settings, Bluetooth, tap the speaker.', 'Then the speaker icon at the bottom right: pick the speaker as the output.'],
+        ['Play a song in Control. <b>The speaker plays in the room.</b>'],
+        ['Clip mic on. Lights solid. <b>Clipped to the preacher</b> a hand below the chin.'],
+        ['<b>Mic receiver</b> into the iPad. The one that fits its port.', 'In PRISM the mic picker should show it. If it does not, the iPad hears the room with its own mic; set it close to the front.']
+      ]],
+      ['Screens', [
+        ['On the media laptop open Chrome. <b>worship.legacybiblechurch.com</b>. Tap the gold <b>Run Sunday</b>.'],
+        ['In Control: <b>Open the TV.</b> Drag it onto the TV. Click it once.', 'Chrome blocked the pop up? The little icon at the right end of the address bar, Allow, click the button again.'],
+        ['<b>Skip Open the stream window.</b> That is for OBS. Click <b>Hide this</b>.'],
+        ['Control says <b>TV connected</b>.'],
+        ['<b>Do not refresh Control</b> once the service starts. Refreshing over and over knocks the stream out of sync.']
+      ]],
+      ['The iPad', [
+        ['iPad on the tripod <b>sideways</b>. Aimed at the pulpit. <b>Do Not Disturb on.</b> Charger in if there is a plug.'],
+        ['Open <b>PRISM</b>. Pick the YouTube stream for today.'],
+        ['Add a <b>Web widget</b>. Address: <b>worship.legacybiblechurch.com/stream/</b>', 'PRISM adds the https itself. The steps with a Copy button are at worship.legacybiblechurch.com/stream/setup/'],
+        ['<b>Stretch it over the whole picture.</b> Lock the layer.'],
+        ['The countdown shows on the iPad over the room. <b>Nothing else to set.</b>']
+      ]],
+      ['Practice run', [
+        ['Control: Next five times. <b>The iPad follows.</b> Words over the picture.'],
+        ['Control: <b>B</b>. The words go and the room shows. <b>B</b> again, they come back.'],
+        ['<b>TV</b> shows the same slide.'],
+        ['Talk into the clip mic. <b>PRISM\u2019s level moves.</b>']
+      ]],
+      ['Go live', [
+        ['PRISM: <b>Go Live.</b>'],
+        ['On your phone: YouTube shows the preview and you hear sound. <b>You are live.</b>'],
+        ['<b>Closing song cued.</b> Control is on the last song. The moment the closing prayer ends, Play. No silence while people stand up.']
+      ]]
+    ];
+    var HOME_GROUPS = GROUPS;
+    var MODE = /[?&]away=1/.test(location.search) ? 'away' : '';
+    try { MODE = MODE || localStorage.getItem('lbc-setup-mode') || 'home'; } catch (e) { MODE = MODE || 'home'; }
+    GROUPS = MODE === 'away' ? AWAY_GROUPS : HOME_GROUPS;
+    document.querySelectorAll('#where button').forEach(function (b) {
+      b.className = b.getAttribute('data-mode') === MODE ? 'on' : '';
+      b.onclick = function () {
+        try { localStorage.setItem('lbc-setup-mode', b.getAttribute('data-mode')); } catch (e) {}
+        var q = new URLSearchParams(location.search); q.delete('away'); var qs = q.toString();
+        location.href = location.pathname + (qs ? '?' + qs : '');
+      };
+    });
+    document.getElementById('whereNote').textContent = MODE === 'away'
+      ? 'No Mac today. The media laptop runs the words to the TV and the iPad streams with PRISM.'
+      : 'The Mac, OBS and the iPhone camera, the way it is set up at the media table.';
+
     var EMBED = /[?&]embed=1/.test(location.search) && window.parent !== window;
     if (EMBED) document.documentElement.className = 'embed';
-    var KEY = 'lbc-setup-' + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+    var KEY = 'lbc-setup-' + (MODE === 'away' ? 'away-' : '') + new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
     var state = {};
     try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
     function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
@@ -164,7 +234,7 @@
         box.appendChild(l);
       });
       list.appendChild(box);
-      if (gi === 1) { var w = document.createElement('div'); w.className = 'warnbox'; w.innerHTML = '<b>Never</b> point OBS monitoring at the speaker. The mic goes into the room and squeals.'; list.appendChild(w); }
+      if (gi === 1 && MODE !== 'away') { var w = document.createElement('div'); w.className = 'warnbox'; w.innerHTML = '<b>Never</b> point OBS monitoring at the speaker. The mic goes into the room and squeals.'; list.appendChild(w); }
     });
 
     function paint() {
@@ -175,8 +245,8 @@
       var bar = document.getElementById('bar'); bar.querySelector('i').style.width = (100 * done / total) + '%'; bar.className = 'bar' + (done === total ? ' done' : '');
       list.querySelectorAll('h2 small').forEach(function (s) { var p = per[s.getAttribute('data-g')] || [0, 0]; s.textContent = p[0] === p[1] ? 'done' : p[0] + ' / ' + p[1]; });
       var fin = document.getElementById('fin');
-      if (done === total) { fin.className = 'fin yes'; fin.innerHTML = '<b>All set.</b> Go run the service. Scenes are on Run the stream.'; }
-      else { fin.className = 'fin'; fin.textContent = 'Keep going. The last line is Start Streaming.'; }      tell(done);
+      if (done === total) { fin.className = 'fin yes'; fin.innerHTML = MODE === 'away' ? '<b>All set.</b> Go run the service.' : '<b>All set.</b> Go run the service. Scenes are on Run the stream.'; }
+      else { fin.className = 'fin'; fin.textContent = MODE === 'away' ? 'Keep going. The last line is Go Live.' : 'Keep going. The last line is Start Streaming.'; }      tell(done);
     }
     // inside a job page: say how tall the list is and how far along, so that page can size and label it
     var lastDone = 0;
