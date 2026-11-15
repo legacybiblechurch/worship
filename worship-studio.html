@@ -1683,12 +1683,23 @@
       }
       hint();
       ref.oninput = function () { it.ref = ref.value.trim(); main.querySelector('.main-title').textContent = 'Reading' + (it.ref ? ' · ' + it.ref : ''); touched(); paintItemPreview(it); };
-      ver.onchange = function () { it.version = ver.value; touched(); paintItemPreview(it); };
+      // The version named on the slides must be the version of the words. Picking another one fetches the passage
+      // again in that version; if that cannot be done the name goes back to what the words really are.
+      ver.onchange = function () {
+        if (ver.value === it.version) return;
+        if (!ref.value.trim() || !it.verses.length) { it.version = ver.value; touched(); paintItemPreview(it); return; }   // nothing fetched yet: only a choice
+        go(function () { ver.value = it.version; });
+      };
       box.oninput = function () { it.verses = S.textToVerses(box.value); touched(); paintItemPreview(it); };
-      function go() {
+      function go(onFail) {
+        if (typeof onFail !== 'function') onFail = null;
         if (!ref.value.trim()) { ref.focus(); return; }
         var v = ver.value, bible = bibleFor(v);
-        if (!bible && v !== 'WEB' && v !== 'KJV') { askKey('The ' + v + ' needs the church’s API.Bible key. Paste it here once.'); return; }
+        if (!bible && v !== 'WEB' && v !== 'KJV') {
+          if (onFail) { onFail(); note.textContent = 'The ' + v + ' is not on this computer yet, so the passage is still the ' + it.version + '.'; }
+          else askKey('The ' + v + ' needs the church’s API.Bible key. Paste it here once.');
+          return;
+        }
         var b = document.getElementById('fetchBtn'); b.disabled = true; b.textContent = 'Getting…';
         (bible ? S.fetchPassageBible(ref.value, bible, bibleKey()) : S.fetchPassage(ref.value, v.toLowerCase())).then(function (p) {
           it.ref = p.ref; it.verses = p.verses; it.version = p.version;
@@ -1696,10 +1707,10 @@
           main.querySelector('.main-title').textContent = 'Reading · ' + p.ref;
           note.textContent = p.ref + ' is in, from the ' + p.version + '.';
           touched(); paintItemPreview(it);
-        }).catch(function (e) { if (/key/.test(e.message)) askKey(e.message); else note.textContent = e.message; })
+        }).catch(function (e) { if (onFail) onFail(); if (/key/.test(e.message)) askKey(e.message); else note.textContent = e.message; })
           .then(function () { b.disabled = false; b.textContent = 'Get the passage'; });
       }
-      document.getElementById('fetchBtn').onclick = go;
+      document.getElementById('fetchBtn').onclick = function () { go(); };
       ref.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } };
       document.getElementById('keySave').onclick = function () {
         var k = keyIn.value.trim(); if (!k) { keyIn.focus(); return; }
