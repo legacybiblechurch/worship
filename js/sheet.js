@@ -203,6 +203,43 @@
     return slides;
   }
 
+  // Words kept from week to week (the Lord's Table). When the lines are long they are a passage, not a song:
+  // every line stays whole (a verse is never cut in two) and a slide carries as many as read comfortably,
+  // shared out evenly, so there is far less clicking. Short lines are still laid out like a song.
+  // A blank line in the Studio always starts a new slide.
+  var WORDS_CAP = 320, WORDS_LINES = 3;
+  function packEven(lines, cap, maxLines) {
+    var count = 0, c = 0, n = 0;
+    lines.forEach(function (l) { if (n && (c + l.length > cap || n >= maxLines)) { count++; c = 0; n = 0; } c += l.length; n++; });
+    if (n) count++;
+    if (count <= 1) return [lines];
+    var total = lines.reduce(function (a, l) { return a + l.length; }, 0), out = [], cur = [], curC = 0, cum = 0, k = 1;
+    lines.forEach(function (l) {
+      var share = total * k / count;
+      var full = cur.length && (curC + l.length > cap || cur.length >= maxLines);
+      var even = cur.length && k < count && Math.abs(cum - share) <= Math.abs(cum + l.length - share);
+      if (full || even) { out.push(cur); cur = []; curC = 0; k++; }
+      cur.push(l); curC += l.length; cum += l.length;
+    });
+    if (cur.length) out.push(cur);
+    return out;
+  }
+  function buildWordsSlides(lyrics) {
+    var slides = [];
+    (lyrics || []).forEach(function (bl) {
+      // [a] [s] and the like are footnote marks that come along when a passage is copied from a Bible website
+      var lines = (bl.lines || []).map(function (l) { return String(l).replace(/\[[a-z]{1,2}\]\s*/g, '').replace(/\s+/g, ' ').trim(); }).filter(Boolean);
+      if (!lines.length) return;
+      var longest = Math.max.apply(null, lines.map(function (l) { return l.length; }));
+      if (longest <= 70) { buildSlides([{ label: bl.label || '', lines: lines }]).forEach(function (sl) { slides.push(sl); }); return; }
+      packEven(lines, WORDS_CAP, WORDS_LINES).forEach(function (chunk) {
+        var a = (chunk[0].match(/^(\d+)\s/) || [])[1], b = (chunk[chunk.length - 1].match(/^(\d+)\s/) || [])[1];
+        slides.push({ label: bl.label || (a ? 'v. ' + (a === b ? a : a + '-' + b) : ''), lines: chunk, prose: true });
+      });
+    });
+    return slides;
+  }
+
   // ─────────────────────────────────────────── the editor's plain-text format
   // A blank line starts a new slide. A line in [brackets] on its own names the
   // section (shown on Control only, never on the TV).
@@ -329,7 +366,7 @@
     } else if (it.type === 'words') {
       var w = saved()[it.id];
       out.ready = !!(w && w.lyrics && w.lyrics.length);
-      out.slides = out.ready ? buildSlides(w.lyrics) : [{ label: '', lines: ['No words yet. Open Studio'] }];
+      out.slides = out.ready ? buildWordsSlides(w.lyrics) : [{ label: '', lines: ['No words yet. Open Studio'] }];
     } else if (it.type === 'prayer') {
       out.ready = !!(it.who && String(it.who).trim());
       out.slides = [{ label: 'Closing Prayer', kicker: 'Closing Prayer', lines: [out.ready ? String(it.who).trim() : 'Who is praying? Open Studio'] }];

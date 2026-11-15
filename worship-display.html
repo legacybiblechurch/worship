@@ -192,7 +192,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=33"></script>
+  <script src="js/sheet.js?v=34"></script>
   <script>
     var SONGS_BUILT = [];
     var songsReady  = false;
@@ -275,6 +275,11 @@
         slideLines.innerHTML = slide.lines
           .map(function(l){ return '<div class="slide-line">' + (slide.prose ? LBCSheet.proseLine(l) : slide.rich ? LBCSheet.markup(l) : esc(l)) + '</div>'; })
           .join('');
+        slideLines.style.fontSize = '';
+        if (slide.prose) {
+          var room = window.innerHeight * 0.8, size = parseFloat(getComputedStyle(slideLines).fontSize) || 40, tries = 0;
+          while (slideLines.scrollHeight > room && tries++ < 14) { size *= 0.94; slideLines.style.fontSize = size + 'px'; }
+        }
         songTitle.textContent = song.type === 'song' && !slide.title ? song.title : '';   // the title card says it already
         slideWrap.classList.add('visible');
       }, 340);
