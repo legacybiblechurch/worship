@@ -214,6 +214,7 @@
     }
     .slide-thumb:hover { border-color: var(--ink-faint); background: var(--panel-2); }
     .slide-thumb.active { border-color: var(--gold); }
+    .slide-thumb.active .thumb-label { padding-right: 46px; }      /* room for the Live badge */
     .thumb-label {
       font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--gold);
@@ -417,7 +418,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=32"></script>
+  <script src="js/sheet.js?v=33"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the

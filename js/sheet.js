@@ -254,20 +254,29 @@
   function buildScriptureSlides(it) {
     var verses = (it.verses || []).filter(function (v) { return v && String(v.text || '').trim(); });
     if (!verses.length) return [];
-    var base = String(it.ref || '').replace(/:\s*[\d\s,–-]+$/, '').trim();
-    var slides = [], cur = [], nums = [], chars = 0;
+    var ref = String(it.ref || '').trim(), base = ref.replace(/:\s*[\d\s,–-]+$/, '').trim();
+    // "Romans 11:33-12:8": the book and the chapter it starts in. The verse numbers start over at 12:1, and that
+    // is how a new chapter is noticed. Without this every slide was named "Romans 11:33-12:35-36".
+    var bm = /^(.*?)(\d+)\s*:/.exec(ref) || (/\d\s*[-–]\s*\d/.test(ref) ? null : /^(.*?)(\d+)\s*$/.exec(ref));
+    var book = bm ? bm[1].trim() : '', chap = bm ? +bm[2] : 0, prevN = 0;
+    var slides = [], cur = [], nums = [], chaps = [], chars = 0;
     function flush() {
       if (!cur.length) return;
-      var a = nums[0], b = nums[nums.length - 1], range = a === b ? String(a) : a + '-' + b;
-      slides.push({ label: 'v. ' + range, kicker: (base ? base + ':' + range : 'v. ' + range) + (it.version ? ' · ' + it.version : ''), lines: cur, prose: true });
-      cur = []; nums = []; chars = 0;
+      var a = nums[0], b = nums[nums.length - 1], ca = chaps[0], cb = chaps[chaps.length - 1];
+      var range = a === b && ca === cb ? String(a) : ca === cb ? a + '-' + b : ca + ':' + a + '-' + cb + ':' + b;
+      var one = !bm && /\d\s*[-–]\s*\d/.test(ref) ? ref.replace(/\s*\d+\s*[-–]\s*\d+\s*$/, '') : '';      // a one-chapter book: "Jude 3-5" -> "Jude 3"
+      var where = !base ? 'v. ' + range : one ? one + ' ' + range : !bm ? base + ':' + range : ca === cb ? book + ' ' + ca + ':' + range : book + ' ' + range;
+      slides.push({ label: 'v. ' + range, kicker: where + (it.version ? ' · ' + it.version : ''), lines: cur, prose: true });
+      cur = []; nums = []; chaps = []; chars = 0;
     }
     // one line per verse, whole. The screen wraps it as a paragraph (left-aligned,
     // measured column) instead of us guessing where the breaks go.
     verses.forEach(function (v) {
       var txt = String(v.text).replace(/\s+/g, ' ').trim();
       if (cur.length && (chars + txt.length > 210 || cur.length >= 2)) flush();
-      cur.push(v.n + ' ' + txt); nums.push(v.n); chars += txt.length;
+      if (bm && prevN && +v.n < prevN) { chap++; flush(); }      // the numbers started over: next chapter, on its own slide
+      prevN = +v.n;
+      cur.push(v.n + ' ' + txt); nums.push(v.n); chaps.push(chap); chars += txt.length;
     });
     flush();
     // a plain card first, for while the reader walks up: Scripture Reading, the passage, the name
@@ -423,7 +432,7 @@
   function fetchPassageBible(ref, bible, key) {
     var p = parseRef(ref);
     if (!p) return Promise.reject(new Error('Write the reference like “Psalm 24” or “John 3:16-21”.'));
-    return bibleCall('/bibles/' + bible.id + '/passages/' + p.id + '?content-type=text&include-verse-numbers=true', key)
+    return bibleCall('/bibles/' + bible.id + '/passages/' + p.id + '?content-type=text&include-verse-numbers=true&include-titles=false&include-notes=false', key)
       .then(function (j) {
         var d = j.data || {}, text = String(d.content || ''), verses = [], re = /\[(\d+)\]\s*([^\[]*)/g, m;
         while ((m = re.exec(text))) { var t = m[2].replace(/\s+/g, ' ').trim(); if (t) verses.push({ n: +m[1], text: t }); }
