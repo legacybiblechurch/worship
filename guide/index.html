@@ -26,6 +26,15 @@
     #doc .fill:focus { border-bottom-width: 2px; }
     #doc .fill:focus:empty::before { content: ''; }
     #msg { padding: 60px 22px; text-align: center; }
+    /* printing this page: light, like paper. Dark mode is for screens only. */
+    @media print {
+      html, body { background: #fff !important; }
+      #doc { opacity: 1 !important; }
+      #doc .docx-wrapper { background: #fff !important; padding: 0 !important; zoom: 1 !important; }
+      #doc section.docx { filter: none !important; margin: 0 auto !important; }
+      #doc .fill:empty::before { content: '' !important; }
+      #admin, #msg { display: none !important; }
+    }
     #msg a { color: #c9a84c; }
     #admin { padding: 18px 18px 40px; text-align: center; font-size: 13px; color: #62626a; }
     #admin button { background: none; border: 1px solid #2a2a2e; color: #9a9a9e; font: inherit; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
@@ -112,7 +121,9 @@
                 p[i + 3] = Math.round(a * 255);
               }
               x.putImageData(d, 0, 0);
+              im.setAttribute('data-paper', im.src);                 // the picture as it is in the document, for printing
               im.onload = null; im.src = c.toDataURL('image/png');
+              im.setAttribute('data-screen', im.src);
               im.style.filter = 'invert(1) hue-rotate(180deg)';      // cancels the page's dark-mode flip for this picture only
             } catch (e) {}
           }
@@ -213,6 +224,13 @@
         note.textContent = 'Downloaded with ' + r.songs + (r.songs === 1 ? ' song' : ' songs') + ' written in. Open it and print.';
       }).catch(function (e) { note.textContent = e.message; });
     }
+    // printing: every picture goes back to how it is in the document (the burgundy letterhead on white paper)
+    window.addEventListener('beforeprint', function () {
+      doc.querySelectorAll('img[data-paper]').forEach(function (im) { im.src = im.getAttribute('data-paper'); im.style.filter = 'none'; });
+    });
+    window.addEventListener('afterprint', function () {
+      doc.querySelectorAll('img[data-screen]').forEach(function (im) { im.src = im.getAttribute('data-screen'); im.style.filter = 'invert(1) hue-rotate(180deg)'; });
+    });
     function load() {
       return fetch('guide.docx?cb=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('none'); return r.blob(); }).then(show);
     }
