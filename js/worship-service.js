@@ -98,6 +98,11 @@ window.WORSHIP_SERVICE = [
   {
     "type": "prayer",
     "who": "Quaid Barnett"
+  },
+  {
+    "type": "song",
+    "slug": "magnificent-marvelous-matchless-love",
+    "after": true
   }
 ];
 
