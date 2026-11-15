@@ -49,7 +49,7 @@
   <div id="admin" hidden>
     <input type="file" id="pick" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
     <button type="button" id="printCopy">Download the print copy</button>
-    <button type="button" id="replace">Replace the document</button>
+    <button type="button" id="replace">Upload a newer guide</button>
     <span class="note" id="note"></span>
   </div>
 
@@ -217,11 +217,11 @@
       return d.getUTCFullYear() + '.' + two(d.getUTCMonth() + 1) + '.' + two(d.getUTCDate());
     }
     function downloadPrintCopy() {
-      note.textContent = 'Making the print copy…';
+      note.textContent = 'Downloading…';
       return printCopy().then(function (r) {
         var a = document.createElement('a'); a.href = URL.createObjectURL(r.blob); a.download = 'LBC Worship Guide ' + sundayStamp() + ' with songs.docx';
         document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 4000);
-        note.textContent = 'Downloaded with ' + r.songs + (r.songs === 1 ? ' song' : ' songs') + ' written in. Open it and print.';
+        note.textContent = 'Downloaded. Open it to print.';
       }).catch(function (e) { note.textContent = e.message; });
     }
     // printing: every picture goes back to how it is in the document (the burgundy letterhead on white paper)
@@ -260,7 +260,7 @@
           return fetch(api, { method: 'PUT', headers: hdr, body: JSON.stringify({ message: 'worship guide: ' + f.name, content: a[0], sha: a[1] ? a[1].sha : undefined, branch: 'main' }) });
         }).then(function (r) {
           if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? 'This computer is not allowed to save. Connect it in the Studio.' : 'It did not save (' + r.status + '). Try again.');
-          note.textContent = 'Saved. This is what people will see.';
+          note.textContent = 'Saved.';
           return show(f);
         }).catch(function (e) { note.textContent = e.message; });
       };
