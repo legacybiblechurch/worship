@@ -58,14 +58,8 @@
           var im = d.querySelector('img');
           if (!im || d.style.width !== '0px' || d.style.height !== '0px' || d.style.position !== 'relative') return;
           var sec = d.closest('section.docx');
-          if (d.closest('header') && !logoDone) {
-            // the letterhead across the top: on this page it is the church's regular logo, white and gold, centred
-            logoDone = true;
-            d.style.cssText = 'display:block;position:static;width:100%;text-align:center;margin:' + (phone ? '4px 0 14px' : '0 0 6px') + ';';
-            im.setAttribute('data-logo', '1');
-            im.src = '../images/logo-dark.png';
-            im.style.cssText = 'position:static;width:' + (phone ? 'min(72%, 300px)' : '300px') + ';height:auto;filter:invert(1) hue-rotate(180deg);';   // the filter undoes the page's dark-mode flip for the logo
-          } else if (phone) {
+          if (d.closest('header') && !logoDone) { logoDone = true; im.setAttribute('data-letterhead', '1'); }   // the letterhead across the top
+          if (phone) {
             d.style.cssText = 'display:block;position:static;width:100%;text-align:center;margin:0 0 10px;';
             im.style.cssText = 'position:static;width:100%;max-width:' + (im.style.width || '100%') + ';height:auto;';
           } else if (sec) {
@@ -84,11 +78,11 @@
           if (ti < 0 && ml < -ti) e.style.marginLeft = (-ti) + 'px';          // a hanging number needs room to hang
           if (parseFloat(c.marginRight) < 0) e.style.marginRight = '0';
         });
-        // Pictures keep their own colours. Dark mode flips light and dark, which turned the burgundy letterhead pink.
+        // Pictures keep their own colours. Dark mode flips light and dark, which would turn them into negatives.
         // So each picture is put back to its true colours, and its white paper is made see-through so it sits on
-        // the dark page instead of in a white box.
+        // the dark page instead of in a white box. The letterhead is the one exception: see below.
         doc.querySelectorAll('section.docx img').forEach(function (im) {
-          if (im.getAttribute('data-logo')) return;
+          var letterhead = !!im.getAttribute('data-letterhead');
           function fix() {
             try {
               var w = im.naturalWidth, h = im.naturalHeight; if (!w || !h) return;
@@ -99,6 +93,8 @@
                 var a = Math.min(1, (255 - Math.min(p[i], p[i + 1], p[i + 2])) / 200) * (p[i + 3] / 255);   // how much ink, how little paper
                 if (a <= 0) { p[i + 3] = 0; continue; }
                 for (var j = 0; j < 3; j++) p[i + j] = Math.max(0, Math.min(255, (p[i + j] - (1 - a) * 255) / a));   // the ink's own colour, the paper taken out
+                // the letterhead takes the church's normal colours: its burgundy ink turns white, its gold is left as it is
+                if (letterhead && !(p[i + 1] > p[i] * 0.5 && p[i] > p[i + 2] + 30)) { p[i] = 246; p[i + 1] = 246; p[i + 2] = 246; }
                 p[i + 3] = Math.round(a * 255);
               }
               x.putImageData(d, 0, 0);
