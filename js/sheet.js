@@ -390,7 +390,7 @@
   //   label  the words under the code            img  the code itself (images/, made once, see guide/index.html)
   var TV_CODES = [
     { label: 'Stay in touch', img: 'images/qr-connect.svg' },     // the contact form in Planning Center
-    { label: 'Give by Zelle', img: 'images/qr-give.svg' },        // the church's Zelle code, same as the give page
+    { label: 'Give', img: 'images/qr-give.svg?v=2' },             // worship.legacybiblechurch.com/give -> the give page. NOT the raw Zelle code: banks like USAA cannot open it yet
     { label: 'Worship guide', img: 'images/qr-guide.svg' }        // worship.legacybiblechurch.com/guide
   ];
   function tvCodes() { return TV_CODES.slice(); }
