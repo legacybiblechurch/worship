@@ -1,0 +1,1185 @@
+{
+  "slug": "when-i-survey-the-wondrous-cross",
+  "title": "When I Survey the Wondrous Cross",
+  "input": "When I Survey the Wondrous Cross",
+  "isNew": true,
+  "forced": null,
+  "signature": "54cfee5e4278814c",
+  "generatedAt": "2026-11-22T17:44:53+00:00",
+  "titleKey": "when i survey the wondrous cross",
+  "searchCandidates": [
+    {
+      "videoId": "BimX33tWmzw",
+      "url": "https://www.youtube.com/watch?v=BimX33tWmzw",
+      "title": "When I Survey The Wondrous Cross (with lyrics) - The most BEAUTIFUL hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "2022-02-02T17:30:11Z",
+      "durationSec": 269,
+      "duration": "4:29",
+      "views": 62161,
+      "hasCaptions": true
+    },
+    {
+      "videoId": "4_fvFfPqjO4",
+      "url": "https://www.youtube.com/watch?v=4_fvFfPqjO4",
+      "title": "When I Survey the Wondrous Cross",
+      "channel": "Northern Baptist Association ",
+      "publishedAt": "2008-11-30T18:17:42Z",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 1333252,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "tRfcehP0SLU",
+      "url": "https://www.youtube.com/watch?v=tRfcehP0SLU",
+      "title": "When I Survey The Wondrous Cross Lyric Video - Keith &amp; Kristyn Getty",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "2021-11-05T11:45:04Z",
+      "durationSec": 242,
+      "duration": "4:02",
+      "views": 1077020,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "6A4cVYkYdTk",
+      "url": "https://www.youtube.com/watch?v=6A4cVYkYdTk",
+      "title": "When I Survey the Wondrous Cross (Metropolitan Tabernacle)",
+      "channel": "Martijn de Groot",
+      "publishedAt": "2017-09-08T16:00:00Z",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 487375,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "80TpeVdW7HE",
+      "url": "https://www.youtube.com/watch?v=80TpeVdW7HE",
+      "title": "When I Survey The Wondrous Cross (Hymn 274)",
+      "channel": "Hymns of Grace",
+      "publishedAt": "2024-08-30T13:00:07Z",
+      "durationSec": 290,
+      "duration": "4:50",
+      "views": 462341,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "7rEpweSCR0Y",
+      "url": "https://www.youtube.com/watch?v=7rEpweSCR0Y",
+      "title": "When I Survey the Wondrous Cross | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "2022-05-10T13:51:10Z",
+      "durationSec": 229,
+      "duration": "3:49",
+      "views": 130431,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "u0MyE_j30RY",
+      "url": "https://www.youtube.com/watch?v=u0MyE_j30RY",
+      "title": "When I Survey the Wondrous Cross : Robin Mark ~ Lyrics",
+      "channel": "Jesus is Lord",
+      "publishedAt": "2019-04-22T01:57:44Z",
+      "durationSec": 235,
+      "duration": "3:55",
+      "views": 3466,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "BimX33tWmzw",
+      "url": "https://www.youtube.com/watch?v=BimX33tWmzw",
+      "title": "When I Survey The Wondrous Cross (with lyrics) - The most BEAUTIFUL hymn!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "2022-02-02T17:30:11Z",
+      "durationSec": 269,
+      "duration": "4:29",
+      "views": 62161,
+      "hasCaptions": true,
+      "lyrics": [
+        {
+          "label": "Tag",
+          "lines": [
+            "When I survey the wondrous cross"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "On which the Prince of Glory died",
+            "My richest gain I count but loss",
+            "And pour contempt on all my pride",
+            "See from His head,",
+            "His hands, His feet",
+            "Sorrow and love flow mingled down",
+            "Did e'er such love and sorrow meet",
+            "Our thorns compose so rich a crown"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "With the whole realm of nature mine",
+            "That were a present far too small"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Love so amazing, so divine"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Demons my soul, my life, my all"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Demons my soul, my life, my all"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 71,
+      "notes": "Based on common hymn structure; exact wording may vary.",
+      "order": "['Verse 1', 'Verse 2', 'Verse 3', 'Verse 4']",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "When I survey the wondrous cross",
+            "t0": 13.22,
+            "t1": 23.54,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "When I survey the wondrous cross",
+              "asr_turbo": "When I survey the wondrous cross"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On which the Prince of Glory died",
+            "t0": 26.14,
+            "t1": 37.4,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "On which the Prince of Glory died",
+              "asr_turbo": "On which the Prince of Glory died"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My richest gain I count but loss",
+            "t0": 38.48,
+            "t1": 51.22,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My richest gain I count but loss",
+              "asr_turbo": "My richest gain I count but loss"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And pour contempt on all my pride",
+            "t0": 51.28,
+            "t1": 63.4,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And bore contempt on all my pride",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And pour contempt on all my pride",
+              "asr_turbo": "And bore contempt on all my pride"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "See from His head,",
+            "t0": 64.82,
+            "t1": 69.87855,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "See from His head,",
+              "asr_turbo": "See from his head,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "His hands, His feet",
+            "t0": 69.87855,
+            "t1": 75.81855,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "His hands, His feet",
+              "asr_turbo": "His hands, His feet"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sorrow and love flow mingled down",
+            "t0": 77.81855,
+            "t1": 88.898544,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Sorrow and love flow mingled down",
+              "asr_turbo": "Sorrow and love flow mingled down"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Did e'er such love and sorrow meet",
+            "t0": 90.95855,
+            "t1": 101.87855,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Did e'er such love and sorrow meet",
+              "asr_turbo": "Did e'er such love and sorrow meet"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Our thorns compose so rich a crown",
+            "t0": 103.91855,
+            "t1": 114.23855,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "All thorns compose so rich a crown",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Our thorns compose so rich a crown",
+              "asr_turbo": "All thorns compose so rich a crown"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "With the whole realm of nature mine",
+            "t0": 172.07709,
+            "t1": 182.6171,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Would the whole realm of nature mine",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "With the whole realm of nature mine",
+              "asr_turbo": "Would the whole realm of nature mine"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "That were a present far too small",
+            "t0": 184.01709,
+            "t1": 195.3171,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "That were a present far too small",
+              "asr_turbo": "That were a present far too small"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Love so amazing, so divine",
+            "t0": 197.7571,
+            "t1": 208.09564,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Love so amazing, so divine",
+              "asr_turbo": "Love so amazing, so divine,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Demons my soul, my life, my all",
+            "t0": 211.05565,
+            "t1": 221.25565,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Demands my soul, my life, my all",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Demons my soul, my life, my all",
+              "asr_turbo": "demands my soul, my life, my all."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Demons my soul, my life, my all",
+            "t0": 223.99564,
+            "t1": 239.89565,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Demons my soul, my life, my all",
+              "asr_turbo": "Demons my soul, my life, my all. Thank"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 49.28,
+            "t1": 63.4,
+            "text": "And pour contempt on all my pride",
+            "options": [
+              "And pour contempt on all my pride",
+              "And bore contempt on all my pride"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 101.91855,
+            "t1": 114.23855,
+            "text": "Our thorns compose so rich a crown",
+            "options": [
+              "Our thorns compose so rich a crown",
+              "All thorns compose so rich a crown"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 170.07709,
+            "t1": 182.6171,
+            "text": "With the whole realm of nature mine",
+            "options": [
+              "With the whole realm of nature mine",
+              "Would the whole realm of nature mine"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 209.05565,
+            "t1": 221.25565,
+            "text": "Demons my soul, my life, my all",
+            "options": [
+              "Demons my soul, my life, my all",
+              "Demands my soul, my life, my all"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "BimX33tWmzw",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 4.0,
+          "excluded": [
+            {
+              "t0": 139.87854,
+              "text": "Thank you"
+            },
+            {
+              "t0": 252.31564,
+              "text": "You"
+            }
+          ],
+          "lines": 14,
+          "verified": 10,
+          "checks": 4,
+          "seconds": 4.0,
+          "generatedAt": "2026-11-22T17:45:20+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "4_fvFfPqjO4",
+      "url": "https://www.youtube.com/watch?v=4_fvFfPqjO4",
+      "title": "When I Survey the Wondrous Cross",
+      "channel": "Northern Baptist Association ",
+      "publishedAt": "2008-11-30T18:17:42Z",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 1333252,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "When I surveyed the wondrous cross,",
+            "On which the grace of glory dies,",
+            "I need to stay my countenance,",
+            "And for content follow my bride",
+            "O bid it, Lord,",
+            "That I should most",
+            "Stay with the Lamb of Christ my God",
+            "O love in grace and joy in most"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "I sacrifice them to his blood",
+            "See from his head,",
+            "His hands, his feet,",
+            "So raw and loud the wind goes down. is"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Of nature mine",
+            "That were the home",
+            "In God's true stone",
+            "A soul amazing"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Demands my soul",
+            "My life, my all"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 11,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d).",
+      "order": "",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "When I surveyed the wondrous cross,",
+            "t0": 9.4,
+            "t1": 16.86,
+            "conf": 0.5,
+            "status": "check",
+            "alts": [
+              {
+                "text": "When I survey the wondrous cross,",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "When I survey the wondrous cross,",
+              "asr_turbo": "When I surveyed the wondrous cross,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "On which the grace of glory dies,",
+            "t0": 16.86,
+            "t1": 25.08,
+            "conf": 0.5,
+            "status": "check",
+            "alts": [
+              {
+                "text": "On which the grace of glory doth,",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "On which the grace of glory doth,",
+              "asr_turbo": "on which the grace of glory dies,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I need to stay my countenance,",
+            "t0": 25.52,
+            "t1": 32.66,
+            "conf": 0.62,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I need to stay, my count as loss,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I need to stay my countenance,",
+              "asr_turbo": "I need to stay, my count as loss,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And for content follow my bride",
+            "t0": 32.66,
+            "t1": 41.44,
+            "conf": 0.62,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And warm on set, follow my pride",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And for content follow my bride",
+              "asr_turbo": "and warm on set, follow my pride."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "O bid it, Lord,",
+            "t0": 42.76,
+            "t1": 46.54,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "O bid it not",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "O bid it, Lord,",
+              "asr_turbo": "O bid it not"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "That I should most",
+            "t0": 46.54,
+            "t1": 50.12,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "That I should boast,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "That I should most",
+              "asr_turbo": "that I should boast,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Stay with the Lamb of Christ my God",
+            "t0": 50.38,
+            "t1": 58.16,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Say, live the death of Christ my God",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Stay with the Lamb of Christ my God",
+              "asr_turbo": "say, live the death of Christ my God."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "O love in grace and joy in most",
+            "t0": 58.86,
+            "t1": 65.86,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "O love in praise, the joy he knows,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "O love in grace and joy in most",
+              "asr_turbo": "O love in praise, the joy he knows,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I sacrifice them to his blood",
+            "t0": 65.94,
+            "t1": 74.42,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "My son with eyes well to his world",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "My son with eyes well to his world",
+              "asr_turbo": "I sacrifice them to his blood."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "See from his head,",
+            "t0": 75.62,
+            "t1": 79.38,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "See from his head,",
+              "asr_turbo": "See from his head,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "His hands, his feet,",
+            "t0": 79.38,
+            "t1": 83.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "His hands, his feet,",
+              "asr_turbo": "his hands, his feet,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "So raw and loud the wind goes down. is",
+            "t0": 83.34,
+            "t1": 83.69366,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "So low and low, low wing low down. is",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "So raw and loud the wind goes down. is",
+              "asr_turbo": "so low and low, low wing low down. is"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Of nature mine",
+            "t0": 111.63366,
+            "t1": 116.11366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Of nature by",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Of nature mine",
+              "asr_turbo": "of nature by"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "That were the home",
+            "t0": 116.63366,
+            "t1": 120.11366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "By the world of",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "That were the home",
+              "asr_turbo": "by the world of"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In God's true stone",
+            "t0": 120.41366,
+            "t1": 123.71366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "God is strong strong",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "In God's true stone",
+              "asr_turbo": "God is strong strong"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "A soul amazing",
+            "t0": 125.01366,
+            "t1": 128.11366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "A soul of ancient",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "A soul amazing",
+              "asr_turbo": "a soul of ancient"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Demands my soul",
+            "t0": 132.69366,
+            "t1": 136.11366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Demands the soul",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Demands my soul",
+              "asr_turbo": "demands the soul"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My life, my all",
+            "t0": 136.69366,
+            "t1": 140.37366,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "By life by hope hope",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "My life, my all",
+              "asr_turbo": "by life by hope hope"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 7.4,
+            "t1": 16.86,
+            "text": "When I surveyed the wondrous cross,",
+            "options": [
+              "When I surveyed the wondrous cross,",
+              "When I survey the wondrous cross,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 14.86,
+            "t1": 25.08,
+            "text": "On which the grace of glory dies,",
+            "options": [
+              "On which the grace of glory dies,",
+              "On which the grace of glory doth,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 23.52,
+            "t1": 32.66,
+            "text": "I need to stay my countenance,",
+            "options": [
+              "I need to stay my countenance,",
+              "I need to stay, my count as loss,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 30.659999999999997,
+            "t1": 41.44,
+            "text": "And for content follow my bride",
+            "options": [
+              "And for content follow my bride",
+              "And warm on set, follow my pride"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 40.76,
+            "t1": 46.54,
+            "text": "O bid it, Lord,",
+            "options": [
+              "O bid it, Lord,",
+              "O bid it not"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 44.54,
+            "t1": 50.12,
+            "text": "That I should most",
+            "options": [
+              "That I should most",
+              "That I should boast,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 48.38,
+            "t1": 58.16,
+            "text": "Stay with the Lamb of Christ my God",
+            "options": [
+              "Stay with the Lamb of Christ my God",
+              "Say, live the death of Christ my God"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 56.86,
+            "t1": 65.86,
+            "text": "O love in grace and joy in most",
+            "options": [
+              "O love in grace and joy in most",
+              "O love in praise, the joy he knows,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 63.94,
+            "t1": 74.42,
+            "text": "I sacrifice them to his blood",
+            "options": [
+              "I sacrifice them to his blood",
+              "My son with eyes well to his world"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 81.34,
+            "t1": 83.69366,
+            "text": "So raw and loud the wind goes down. is",
+            "options": [
+              "So raw and loud the wind goes down. is",
+              "So low and low, low wing low down. is"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 109.63366,
+            "t1": 116.11366,
+            "text": "Of nature mine",
+            "options": [
+              "Of nature mine",
+              "Of nature by"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 114.63366,
+            "t1": 120.11366,
+            "text": "That were the home",
+            "options": [
+              "That were the home",
+              "By the world of"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 118.41366,
+            "t1": 123.71366,
+            "text": "In God's true stone",
+            "options": [
+              "In God's true stone",
+              "God is strong strong"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 123.01366,
+            "t1": 128.11366,
+            "text": "A soul amazing",
+            "options": [
+              "A soul amazing",
+              "A soul of ancient"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 130.69366,
+            "t1": 136.11366,
+            "text": "Demands my soul",
+            "options": [
+              "Demands my soul",
+              "Demands the soul"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 134.69366,
+            "t1": 140.37366,
+            "text": "My life, my all",
+            "options": [
+              "My life, my all",
+              "By life by hope hope"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "4_fvFfPqjO4",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 2.2,
+          "excluded": [
+            {
+              "t0": 102.41366,
+              "text": "So"
+            },
+            {
+              "t0": 129.23366,
+              "text": "So divine"
+            },
+            {
+              "t0": 141.63367,
+              "text": "You Thank"
+            },
+            {
+              "t0": 171.75366,
+              "text": "You"
+            }
+          ],
+          "lines": 18,
+          "verified": 2,
+          "checks": 16,
+          "seconds": 2.2,
+          "generatedAt": "2026-11-22T17:46:10+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "tRfcehP0SLU",
+      "url": "https://www.youtube.com/watch?v=tRfcehP0SLU",
+      "title": "When I Survey The Wondrous Cross Lyric Video - Keith &amp; Kristyn Getty",
+      "channel": "KeithandKristyn Getty",
+      "publishedAt": "2021-11-05T11:45:04Z",
+      "durationSec": 242,
+      "duration": "4:02",
+      "views": 1077020,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "6A4cVYkYdTk",
+      "url": "https://www.youtube.com/watch?v=6A4cVYkYdTk",
+      "title": "When I Survey the Wondrous Cross (Metropolitan Tabernacle)",
+      "channel": "Martijn de Groot",
+      "publishedAt": "2017-09-08T16:00:00Z",
+      "durationSec": 174,
+      "duration": "2:54",
+      "views": 487375,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "80TpeVdW7HE",
+      "url": "https://www.youtube.com/watch?v=80TpeVdW7HE",
+      "title": "When I Survey The Wondrous Cross (Hymn 274)",
+      "channel": "Hymns of Grace",
+      "publishedAt": "2024-08-30T13:00:07Z",
+      "durationSec": 290,
+      "duration": "4:50",
+      "views": 462341,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "7rEpweSCR0Y",
+      "url": "https://www.youtube.com/watch?v=7rEpweSCR0Y",
+      "title": "When I Survey the Wondrous Cross | Reawaken Hymns | Official Lyric Video",
+      "channel": "Reawaken Hymns",
+      "publishedAt": "2022-05-10T13:51:10Z",
+      "durationSec": 229,
+      "duration": "3:49",
+      "views": 130431,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "u0MyE_j30RY",
+      "url": "https://www.youtube.com/watch?v=u0MyE_j30RY",
+      "title": "When I Survey the Wondrous Cross : Robin Mark ~ Lyrics",
+      "channel": "Jesus is Lord",
+      "publishedAt": "2019-04-22T01:57:44Z",
+      "durationSec": 235,
+      "duration": "3:55",
+      "views": 3466,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] BimX33tWmzw: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] 4_fvFfPqjO4: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-d; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-11-22T17:46:10+00:00"
+}
