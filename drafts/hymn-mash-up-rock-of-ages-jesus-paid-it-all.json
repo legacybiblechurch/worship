@@ -1,0 +1,1650 @@
+{
+  "slug": "hymn-mash-up-rock-of-ages-jesus-paid-it-all",
+  "title": "hymn mash up: rock of ages + jesus paid it all",
+  "input": "hymn mash up: rock of ages + jesus paid it all",
+  "isNew": true,
+  "forced": null,
+  "signature": "2f17963fce93fe32",
+  "generatedAt": "2026-11-22T09:10:53+00:00",
+  "titleKey": "hymn mash up: rock of ages + jesus paid it all",
+  "searchCandidates": [
+    {
+      "videoId": "K4G6g1GvN14",
+      "url": "https://www.youtube.com/watch?v=K4G6g1GvN14",
+      "title": "Hymn Mashup: Rock Of Ages + Jesus Paid It All",
+      "channel": "CrossPoint Worship",
+      "publishedAt": "2024-07-12T15:00:29Z",
+      "durationSec": 441,
+      "duration": "7:21",
+      "views": 5971,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "K4G6g1GvN14",
+      "url": "https://www.youtube.com/watch?v=K4G6g1GvN14",
+      "title": "Hymn Mashup: Rock Of Ages + Jesus Paid It All",
+      "channel": "CrossPoint Worship",
+      "publishedAt": "2024-07-12T15:00:29Z",
+      "durationSec": 441,
+      "duration": "7:21",
+      "views": 5971,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Rock of Ages",
+            "Cleft for me",
+            "Let me hide myself in Thee",
+            "Let the water and the blood From",
+            "Thy wounded side which flow",
+            "Be of sin the double cure",
+            "Save from wrath and make me pure"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Not the labors of my hands",
+            "Can fulfill the Lord's demand",
+            "Could my seal no rest it no it",
+            "Could my tears forever flow?",
+            "All for sin could not atone",
+            "Thou must save and Thou alone",
+            "Nothing in my hand I bring",
+            "Simply to the cross I cling"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Naked come to Thee for dress",
+            "Helpless look to Thee for grace",
+            "F i to the Fountain fly",
+            "Wash me saor or I die"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Or I die Or I die"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "While I draw this fleeting breath When mine eyes shall close",
+            "In death When",
+            "I soar to worlds unknown See Thee on the judgment throne",
+            "Rock of Ages clap for me",
+            "Let me hide myself in thee"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I hide in thee"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "And I hear the Savior say,",
+            "Thy strength indeed is small child of weakness Watch and Pray find in",
+            "Me thine all in all",
+            "Jesus paid it all",
+            "All to Him I owe",
+            "Sin had left a crimson stain He",
+            "Washed it white as snow"
+          ]
+        },
+        {
+          "label": "Verse 6",
+          "lines": [
+            "He washed it white",
+            "Lord, now indeed I find",
+            "Thy power and Thine alone",
+            "Can change the leper's spots",
+            "And melt the heart of stone",
+            "Jesus paid it all",
+            "All to Him I owe",
+            "Sin had left a crimson stain He"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Washed it white as snow"
+          ]
+        },
+        {
+          "label": "Verse 7",
+          "lines": [
+            "He washed it white",
+            "It's washed away And",
+            "When before the throne I stand in him complete",
+            "And Jesus died my soul to save And",
+            "My lips shall still repeat",
+            "Jesus paid it all,",
+            "All to Him I owe",
+            "Sin had left a crimson stain He"
+          ]
+        },
+        {
+          "label": "Verse 8",
+          "lines": [
+            "Washed it white as snow",
+            "Jesus paid it all",
+            "All to Him I owe",
+            "Sin had left a crimson stain He",
+            "Washed it white as snow",
+            "Sin had left a crimson stain He",
+            "Washed it white as snow",
+            "Sin had left a crimson stain He"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Washed it white as snow"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "© transcript Emily Beynon"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 50,
+      "notes": "Auto‑generated captions were highly garbled; no reference lyrics were provided. Reconstructed verses from known 'Rock of Ages' and 'Jesus Paid It All' lyrics, matching the general phrases appearing in the transcript. Repeats of both sections are included because the transcript shows multiple occurrences, though exact wording and ordering cannot be verified.",
+      "order": "Verse 1 · Verse 1 · Chorus · Chorus · Chorus",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "Rock of Ages",
+            "t0": 26.08,
+            "t1": 27.96,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Rock of Ages",
+              "asr_large": "Rock of Ages",
+              "asr_turbo": "Rock of Ages"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Cleft for me",
+            "t0": 28.66,
+            "t1": 30.24,
+            "conf": 0.32,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Clap for me",
+                "sources": [
+                  "asr_turbo"
+                ]
+              },
+              {
+                "text": "Cleff for me",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "cleff for me",
+              "asr_large": "Cleft for me",
+              "asr_turbo": "Clap for me",
+              "asr_prompted": "for me let me hide myself in the a"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let me hide myself in Thee",
+            "t0": 31.16,
+            "t1": 36.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "let me hide myself in thee",
+              "asr_large": "Let me hide myself in Thee",
+              "asr_turbo": "Let me hide myself in thee",
+              "asr_prompted": "let me hide myself in thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let the water and the blood From",
+            "t0": 36.5,
+            "t1": 42.76,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "let the water and the blood from",
+              "asr_large": "Let the water and the blood From",
+              "asr_turbo": "Let the water and the blood From",
+              "asr_prompted": "let the water and the blood from"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy wounded side which flow",
+            "t0": 42.76,
+            "t1": 46.68,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "thy wounded side which flow",
+              "asr_large": "Thy wounded side which flow",
+              "asr_turbo": "thy wounded side which flow",
+              "asr_prompted": "thy wounded side which flow"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be of sin the double cure",
+            "t0": 47.66,
+            "t1": 51.86,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "be of sin the double cure",
+              "asr_large": "Be of sin the double cure",
+              "asr_turbo": "Be of sin the double cure",
+              "asr_prompted": "be of sin the double cure"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Save from wrath and make me pure",
+            "t0": 53.14,
+            "t1": 57.66,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "save from WRA and make me pure",
+              "asr_large": "Save from wrath and make me pure",
+              "asr_turbo": "Save from wrath and make me pure",
+              "asr_prompted": "save from wrath and make me pure"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Not the labors of my hands",
+            "t0": 66.66,
+            "t1": 71.66,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "not the Lors of my hands",
+              "asr_large": "Not the labors of my hands",
+              "asr_turbo": "Not the labors of my hands",
+              "asr_prompted": "not the labors of my hands"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Can fulfill the Lord's demand",
+            "t0": 72.26,
+            "t1": 76.46,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Can fulfill the Lord's demands",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "Can fulfill the law's demands",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "can fulfill the Lord's demand",
+              "asr_large": "Can fulfill the Lord's demands",
+              "asr_turbo": "Can fulfill the law's demands",
+              "asr_prompted": "can fulfill the Lord's demand"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Could my seal no rest it no it",
+            "t0": 77.74,
+            "t1": 81.88,
+            "conf": 0.53,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Could my seal no rest at all",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "Could my seal no respite known And",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "could my seal no rest it no and",
+              "asr_large": "Could my seal no rest at all",
+              "asr_turbo": "Could my seal no respite known And",
+              "asr_prompted": "could my seal no rest it no it"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Could my tears forever flow?",
+            "t0": 83.12,
+            "t1": 88.32,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "could my tears forever flow",
+              "asr_large": "Could my tears forever flow?",
+              "asr_turbo": "could my tears forever flow",
+              "asr_prompted": "could my tears forever good"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All for sin could not atone",
+            "t0": 88.8,
+            "t1": 92.84,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Or for s could not atone",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "or for s could not atone",
+              "asr_large": "All for sin could not atone",
+              "asr_turbo": "all for sin could not atone",
+              "asr_prompted": "not atone"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thou must save and Thou alone",
+            "t0": 94.02,
+            "t1": 98.18,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Thou must saveing thou alone",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "thou must saveing thou alone",
+              "asr_large": "Thou must save and Thou alone",
+              "asr_turbo": "thou must save and thou alone",
+              "asr_prompted": "thou must save in the"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Nothing in my hand I bring",
+            "t0": 98.76,
+            "t1": 112.24775,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "nothing in my hand I bring",
+              "asr_large": "Nothing in my hand I bring",
+              "asr_turbo": "nothing in my hand I bring",
+              "asr_prompted": "nothing in my hand I bring"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Simply to the cross I cling",
+            "t0": 113.047745,
+            "t1": 117.56775,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Simply to the cross I clean",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "simply to the cross I clean",
+              "asr_large": "Simply to the cross I cling",
+              "asr_turbo": "Simply to the cross I cling",
+              "asr_prompted": "simply to the cross I clean"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Naked come to Thee for dress",
+            "t0": 118.547745,
+            "t1": 123.60775,
+            "conf": 0.76,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "naked come to the for dress",
+              "asr_large": "Naked come to Thee for dress",
+              "asr_turbo": "Naked come to Thee for dress",
+              "asr_prompted": "naked come to thee for dress"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Helpless look to Thee for grace",
+            "t0": 124.12775,
+            "t1": 129.12775,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "helpless look to thee for Grace",
+              "asr_large": "Helpless look to Thee for grace",
+              "asr_turbo": "Helpless look to Thee for grace",
+              "asr_prompted": "helpless look to thee for grace"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "F i to the Fountain fly",
+            "t0": 129.52774,
+            "t1": 134.06775,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Foul eye to the fountain fly",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "Foul I do the fountain fly",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "f i to the Fountain fly",
+              "asr_large": "Foul eye to the fountain fly",
+              "asr_turbo": "Foul I do the fountain fly",
+              "asr_prompted": "f i to the Fountain fly"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Wash me saor or I die",
+            "t0": 134.94775,
+            "t1": 140.44775,
+            "conf": 0.37,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "captions_auto": "wash me saor or I die",
+              "asr_large": "Watch me save your or I die",
+              "asr_turbo": "Watch me, Savior, or I die.",
+              "asr_prompted": "wash me save your"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Or I die Or I die",
+            "t0": 148.60776,
+            "t1": 152.28775,
+            "conf": 0.39,
+            "status": "check",
+            "alts": [
+              {
+                "text": "All right and",
+                "sources": [
+                  "captions_auto"
+                ]
+              },
+              {
+                "text": "Or I die. And",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "all right and",
+              "asr_large": "Or I die Or I die",
+              "asr_turbo": "Or I die. And",
+              "asr_prompted": "or I die or I die"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "While I draw this fleeting breath When mine eyes shall close",
+            "t0": 159.66776,
+            "t1": 168.62775,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "while I draw this fleeting breath when my eyes shall close",
+              "asr_large": "While I draw this fleeting breath When mine eyes shall close",
+              "asr_turbo": "while I draw this fleeting breath When mine eyes shall close",
+              "asr_prompted": "while I draw this fleeting breath when my eyes shall close"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In death When",
+            "t0": 168.62775,
+            "t1": 171.06775,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "in death when",
+              "asr_large": "In death When",
+              "asr_turbo": "in death When",
+              "asr_prompted": "in death when"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I soar to worlds unknown See Thee on the judgment throne",
+            "t0": 171.06775,
+            "t1": 180.54774,
+            "conf": 0.58,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I saw two worlds unknown see thee are thy judgement Throne",
+                "sources": [
+                  "captions_auto",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "I saw two worlds unknown see thee are thy judgement Throne",
+              "asr_large": "I soar to worlds unknown See Thee on the judgment throne",
+              "asr_turbo": "I soar to worlds unknown See Thee on Thy judgment throne",
+              "asr_prompted": "I saw two worlds unknown see thee are thy judgement Throne"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Rock of Ages clap for me",
+            "t0": 181.40775,
+            "t1": 186.12775,
+            "conf": 0.82,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Rock of Ages clap for me",
+              "asr_large": "Rock of ages, cleft for me",
+              "asr_turbo": "Rock of Ages, clap for me.",
+              "asr_prompted": "Rock of Ages clap for me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Let me hide myself in thee",
+            "t0": 186.96774,
+            "t1": 191.86774,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "let me hide myself in the",
+              "asr_large": "Let me hide myself in thee",
+              "asr_turbo": "Let me hide myself in thee.",
+              "asr_prompted": "let me hide myself in thee"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I hide in thee",
+            "t0": 200.34775,
+            "t1": 202.92775,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [
+              {
+                "text": "A hid and",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "a hid and",
+              "asr_large": "I hide in thee",
+              "asr_turbo": "I hide in thee.",
+              "asr_prompted": "I die"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I hear the Savior say,",
+            "t0": 211.40775,
+            "t1": 215.64775,
+            "conf": 0.96,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and I hear the Savior say",
+              "asr_large": "And I hear the Savior say,",
+              "asr_turbo": "And I hear the Savior say,",
+              "asr_prompted": "here the Savior say"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy strength indeed is small child of weakness Watch and Pray find in",
+            "t0": 216.96774,
+            "t1": 228.5555,
+            "conf": 0.67,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Thy strength indeed is small child of weakness watching pray finding",
+                "sources": [
+                  "asr_large",
+                  "asr_prompted"
+                ]
+              }
+            ],
+            "why": "independent sources agree; sources disagree",
+            "sources": {
+              "captions_auto": "thy strength indeed is small child of weakness Watch and Pray find in",
+              "asr_large": "Thy strength indeed is small child of weakness watching pray finding",
+              "asr_turbo": "Thy strength indeed is small. Child of weakness, watch and pray. Find in",
+              "asr_prompted": "thy strength indeed is small child of weakness watching pray finding"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Me thine all in all",
+            "t0": 228.5555,
+            "t1": 232.1355,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "me thine all in all",
+              "asr_large": "Me thine all in all",
+              "asr_turbo": "me thine And all in all,",
+              "asr_prompted": "me thine all in all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus paid it all",
+            "t0": 231.8555,
+            "t1": 237.4755,
+            "conf": 0.73,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Jesus Paid it oh oh",
+              "asr_large": "Jesus paid it all",
+              "asr_turbo": "Jesus paid it all,",
+              "asr_prompted": "Jesus paid it all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All to Him I owe",
+            "t0": 239.53549,
+            "t1": 242.7355,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "all to him I owe",
+              "asr_large": "All to Him I owe",
+              "asr_turbo": "all to Him I owe.",
+              "asr_prompted": "all to him I owe"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 244.8555,
+            "t1": 250.3555,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 6x, 4 agree",
+            "sources": {
+              "captions_auto": "sin had left a Crimson Stain he",
+              "asr_large": "Sin had left a crimson stain He",
+              "asr_turbo": "Sin had left a crimson stain, He",
+              "asr_prompted": "sin had left a crimson stain he"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 250.3555,
+            "t1": 253.6955,
+            "conf": 0.71,
+            "status": "check",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "washed it white as snow",
+              "asr_large": "Washed it white as snow",
+              "asr_turbo": "washed it while it was snow.",
+              "asr_prompted": "washed it was"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He washed it white",
+            "t0": 257.2755,
+            "t1": 258.8155,
+            "conf": 0.39,
+            "status": "check",
+            "alts": [
+              {
+                "text": "He wased",
+                "sources": [
+                  "captions_auto"
+                ]
+              },
+              {
+                "text": "He washed the wine",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "he wased",
+              "asr_large": "He washed it white",
+              "asr_turbo": "He washed the wine"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Lord, now indeed I find",
+            "t0": 258.9355,
+            "t1": 267.55548,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Lord now indeed I find",
+              "asr_large": "Lord, now indeed I find",
+              "asr_turbo": "Lord, now indeed I find",
+              "asr_prompted": "Lord now indeed I find"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Thy power and Thine alone",
+            "t0": 268.6155,
+            "t1": 272.7555,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "thy power and thine alone",
+              "asr_large": "Thy power and Thine alone",
+              "asr_turbo": "Thy power and thine alone",
+              "asr_prompted": "thy power and thine alone"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Can change the leper's spots",
+            "t0": 273.9555,
+            "t1": 278.6155,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "can change the leers spot",
+              "asr_large": "Can change the leper's spots",
+              "asr_turbo": "Can change the leper's spots",
+              "asr_prompted": "change the leper spots"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And melt the heart of stone",
+            "t0": 279.61548,
+            "t1": 283.8355,
+            "conf": 0.75,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "and melt the heartest stone",
+              "asr_large": "And melt the heart of stone",
+              "asr_turbo": "And melt the heart of stone",
+              "asr_prompted": "and melt the heart stone"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus paid it all",
+            "t0": 285.6355,
+            "t1": 289.4155,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "Jesus Paid It all",
+              "asr_large": "Jesus paid it all",
+              "asr_turbo": "Jesus paid it all",
+              "asr_prompted": "Jesus paid it all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All to Him I owe",
+            "t0": 291.4555,
+            "t1": 294.7155,
+            "conf": 0.59,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "all to him my own",
+              "asr_large": "All to Him I owe",
+              "asr_turbo": "All to Him I owe",
+              "asr_prompted": "all to him my old"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 296.5955,
+            "t1": 302.1355,
+            "conf": 0.79,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Sin had left the crimson stain he",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "independent sources agree; matched to 4 other occurrences",
+            "sources": {
+              "captions_auto": "sin had left the Crimson Stain he",
+              "asr_large": "Sin had left a crimson stain He",
+              "asr_turbo": "Sin had left the crimson stain He",
+              "asr_prompted": "sin had left the crimson stain he"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 302.1355,
+            "t1": 305.6755,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 6x, 4 agree",
+            "sources": {
+              "captions_auto": "washed it white as snow",
+              "asr_large": "Washed it white as snow",
+              "asr_turbo": "washed it white as snow",
+              "asr_prompted": "washed it white snow"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "He washed it white",
+            "t0": 308.9755,
+            "t1": 311.1355,
+            "conf": 0.72,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "he washed it wi",
+              "asr_large": "He washed it white",
+              "asr_turbo": "He washed it white",
+              "asr_prompted": "he washed it white"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It's washed away And",
+            "t0": 311.3555,
+            "t1": 326.2355,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "it's washed away and",
+              "asr_large": "It's washed away And",
+              "asr_turbo": "It's washed away And",
+              "asr_prompted": "it's washed away and"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "When before the throne I stand in him complete",
+            "t0": 326.2355,
+            "t1": 335.38324,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "went before the Throne I stand in him complete",
+              "asr_large": "When before the throne I stand in him complete",
+              "asr_turbo": "when before the throne I stand in Him complete",
+              "asr_prompted": "when before the throne I stand in him complete"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And Jesus died my soul to save And",
+            "t0": 336.48325,
+            "t1": 342.44324,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "and Jesus died my soul to save and",
+              "asr_large": "And Jesus died my soul to save And",
+              "asr_turbo": "And Jesus died my soul to save And",
+              "asr_prompted": "and Jesus died my soul to save in"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My lips shall still repeat",
+            "t0": 342.44324,
+            "t1": 346.40326,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "my lips shall still repeat",
+              "asr_large": "My lips shall still repeat",
+              "asr_turbo": "my lips shall still repeat",
+              "asr_prompted": "my lips shall still"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus paid it all,",
+            "t0": 348.58325,
+            "t1": 354.30325,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "captions_auto": "Jesus Paid It all",
+              "asr_large": "Jesus paid it all,",
+              "asr_turbo": "Jesus paid it all",
+              "asr_prompted": "Jesus paid it all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All to Him I owe",
+            "t0": 354.30325,
+            "t1": 357.32324,
+            "conf": 0.34,
+            "status": "check",
+            "alts": [
+              {
+                "text": "All to him my own",
+                "sources": [
+                  "captions_auto"
+                ]
+              },
+              {
+                "text": "All to Him by all",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "captions_auto": "all to him my own",
+              "asr_large": "All to Him I owe",
+              "asr_turbo": "All to Him by all",
+              "asr_prompted": "to him"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 359.46326,
+            "t1": 364.96326,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 6x, 4 agree",
+            "sources": {
+              "captions_auto": "sin had left a Crimson Stain he",
+              "asr_large": "Sin had left a crimson stain He",
+              "asr_turbo": "Sin had left a crimson stain He",
+              "asr_prompted": "sin had left a crimson stain he"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 364.96326,
+            "t1": 368.36325,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "wash it wi snow",
+              "asr_large": "Washed it white as snow",
+              "asr_turbo": "washed it white as snow",
+              "asr_prompted": "was it was no"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus paid it all",
+            "t0": 370.28326,
+            "t1": 373.94324,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Jesus play it oh",
+              "asr_large": "Jesus paid it all",
+              "asr_turbo": "Jesus paid it all",
+              "asr_prompted": "Jesus faded oh oh"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All to Him I owe",
+            "t0": 375.90326,
+            "t1": 379.20325,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "all to him my own sin had left the Crimson Stain he washed it wash SN",
+              "asr_large": "All to Him I owe",
+              "asr_turbo": "All to Him I owe",
+              "asr_prompted": "to him my stain he was it was no sin had left the Crimson stain he was it was no"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 381.24326,
+            "t1": 386.68326,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 6x, 4 agree",
+            "sources": {
+              "captions_auto": "sin had left a Crimson Stain he",
+              "asr_large": "Sin had left a crimson stain He",
+              "asr_turbo": "Sin had left the crimson stain He washed it white as snow Sin had left the crimson stain He",
+              "asr_prompted": "sin had left a Crimson stain he"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 386.68326,
+            "t1": 392.76324,
+            "conf": 0.64,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Washed it white as snow Sin",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 4 other occurrences",
+            "sources": {
+              "captions_auto": "wased it wi as snow sin",
+              "asr_large": "Washed it white as snow Sin",
+              "asr_turbo": "washed it white as snow Sin",
+              "asr_prompted": "was"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 392.76324,
+            "t1": 396.34326,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Had left a crimson stain",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "independent sources agree; matched to 4 other occurrences",
+            "sources": {
+              "captions_auto": "had left a Crimson Stain",
+              "asr_large": "Had left a crimson stain",
+              "asr_turbo": "had left a crimson stain"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 396.94324,
+            "t1": 401.16327,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "He washed it white as snow",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "independent sources agree; matched to 4 other occurrences",
+            "sources": {
+              "captions_auto": "he washed it white as snow",
+              "asr_large": "He washed it white as snow",
+              "asr_turbo": "He washed it white as snow",
+              "asr_prompted": "you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sin had left a crimson stain He",
+            "t0": 403.08325,
+            "t1": 408.38324,
+            "conf": 0.63,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "captions_auto": "oh",
+              "asr_large": "Sin had left a crimson stain He",
+              "asr_turbo": "you"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Washed it white as snow",
+            "t0": 408.38324,
+            "t1": 411.92325,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "one witness only; not enough evidence; sung 6x, 4 agree",
+            "sources": {
+              "asr_large": "Washed it white as snow"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "© transcript Emily Beynon",
+            "t0": 439.88324,
+            "t1": 439.96326,
+            "conf": 1.0,
+            "status": "unverified",
+            "alts": [],
+            "why": "one witness only; not enough evidence",
+            "sources": {
+              "asr_large": "© transcript Emily Beynon"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 26.66,
+            "t1": 30.24,
+            "text": "Cleft for me",
+            "options": [
+              "Cleft for me",
+              "Clap for me",
+              "Cleff for me"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 51.14,
+            "t1": 57.66,
+            "text": "Save from wrath and make me pure",
+            "options": [
+              "Save from wrath and make me pure"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 64.66,
+            "t1": 71.66,
+            "text": "Not the labors of my hands",
+            "options": [
+              "Not the labors of my hands"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 70.26,
+            "t1": 76.46,
+            "text": "Can fulfill the Lord's demand",
+            "options": [
+              "Can fulfill the Lord's demand",
+              "Can fulfill the Lord's demands",
+              "Can fulfill the law's demands"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 75.74,
+            "t1": 81.88,
+            "text": "Could my seal no rest it no it",
+            "options": [
+              "Could my seal no rest it no it",
+              "Could my seal no rest at all",
+              "Could my seal no respite known And"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 86.8,
+            "t1": 92.84,
+            "text": "All for sin could not atone",
+            "options": [
+              "All for sin could not atone",
+              "Or for s could not atone"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 92.02,
+            "t1": 98.18,
+            "text": "Thou must save and Thou alone",
+            "options": [
+              "Thou must save and Thou alone",
+              "Thou must saveing thou alone"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 111.047745,
+            "t1": 117.56775,
+            "text": "Simply to the cross I cling",
+            "options": [
+              "Simply to the cross I cling",
+              "Simply to the cross I clean"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 116.547745,
+            "t1": 123.60775,
+            "text": "Naked come to Thee for dress",
+            "options": [
+              "Naked come to Thee for dress"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 127.52774,
+            "t1": 134.06775,
+            "text": "F i to the Fountain fly",
+            "options": [
+              "F i to the Fountain fly",
+              "Foul eye to the fountain fly",
+              "Foul I do the fountain fly"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 132.94775,
+            "t1": 140.44775,
+            "text": "Wash me saor or I die",
+            "options": [
+              "Wash me saor or I die"
+            ],
+            "why": "one witness only"
+          },
+          {
+            "t0": 146.60776,
+            "t1": 152.28775,
+            "text": "Or I die Or I die",
+            "options": [
+              "Or I die Or I die",
+              "All right and",
+              "Or I die. And"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 169.06775,
+            "t1": 180.54774,
+            "text": "I soar to worlds unknown See Thee on the judgment throne",
+            "options": [
+              "I soar to worlds unknown See Thee on the judgment throne",
+              "I saw two worlds unknown see thee are thy judgement Throne"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 184.96774,
+            "t1": 191.86774,
+            "text": "Let me hide myself in thee",
+            "options": [
+              "Let me hide myself in thee"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 198.34775,
+            "t1": 202.92775,
+            "text": "I hide in thee",
+            "options": [
+              "I hide in thee",
+              "A hid and"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 214.96774,
+            "t1": 228.5555,
+            "text": "Thy strength indeed is small child of weakness Watch and Pray find in",
+            "options": [
+              "Thy strength indeed is small child of weakness Watch and Pray find in",
+              "Thy strength indeed is small child of weakness watching pray finding"
+            ],
+            "why": "independent sources agree; sources disagree"
+          },
+          {
+            "t0": 229.8555,
+            "t1": 237.4755,
+            "text": "Jesus paid it all",
+            "options": [
+              "Jesus paid it all"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 248.3555,
+            "t1": 253.6955,
+            "text": "Washed it white as snow",
+            "options": [
+              "Washed it white as snow"
+            ],
+            "why": "independent sources agree"
+          },
+          {
+            "t0": 255.27550000000002,
+            "t1": 258.8155,
+            "text": "He washed it white",
+            "options": [
+              "He washed it white",
+              "He wased",
+              "He washed the wine"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 271.9555,
+            "t1": 278.6155,
+            "text": "Can change the leper's spots",
+            "options": [
+              "Can change the leper's spots"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 277.61548,
+            "t1": 283.8355,
+            "text": "And melt the heart of stone",
+            "options": [
+              "And melt the heart of stone"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 289.4555,
+            "t1": 294.7155,
+            "text": "All to Him I owe",
+            "options": [
+              "All to Him I owe"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 306.9755,
+            "t1": 311.1355,
+            "text": "He washed it white",
+            "options": [
+              "He washed it white"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 352.30325,
+            "t1": 357.32324,
+            "text": "All to Him I owe",
+            "options": [
+              "All to Him I owe",
+              "All to him my own",
+              "All to Him by all"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 362.96326,
+            "t1": 368.36325,
+            "text": "Washed it white as snow",
+            "options": [
+              "Washed it white as snow"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 368.28326,
+            "t1": 373.94324,
+            "text": "Jesus paid it all",
+            "options": [
+              "Jesus paid it all"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 373.90326,
+            "t1": 379.20325,
+            "text": "All to Him I owe",
+            "options": [
+              "All to Him I owe"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 384.68326,
+            "t1": 392.76324,
+            "text": "Washed it white as snow",
+            "options": [
+              "Washed it white as snow",
+              "Washed it white as snow Sin"
+            ],
+            "why": "two listens agree; matched to 4 other occurrences"
+          },
+          {
+            "t0": 401.08325,
+            "t1": 408.38324,
+            "text": "Sin had left a crimson stain He",
+            "options": [
+              "Sin had left a crimson stain He"
+            ],
+            "why": "one witness only"
+          }
+        ],
+        "report": {
+          "videoId": "K4G6g1GvN14",
+          "sources": [
+            "captions_auto",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "library"
+          ],
+          "asr_seconds": 11.8,
+          "lines": 60,
+          "verified": 30,
+          "checks": 29,
+          "seconds": 23.0,
+          "generatedAt": "2026-11-22T09:11:48+00:00"
+        }
+      }
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-11-22T09:11:48+00:00"
+}
