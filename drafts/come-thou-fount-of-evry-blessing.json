@@ -1,24 +1,13 @@
 {
   "slug": "come-thou-fount-of-evry-blessing",
   "title": "Come, Thou Fount of Ev'ry Blessing",
-  "input": "Come, Thou Fount of Ev'ry Blessing",
+  "input": "Come, Thou Fount of Every Blessing",
   "isNew": false,
-  "forced": "LR-WgHBc5Xc",
-  "signature": "337fe09062fb9053",
-  "generatedAt": "2026-11-22T08:37:14+00:00",
+  "forced": null,
+  "signature": "3a7121acf990b45e",
+  "generatedAt": "2026-11-22T17:38:55+00:00",
   "titleKey": "come, thou fount of ev'ry blessing",
   "searchCandidates": [
-    {
-      "videoId": "R_7T5k_1-2k",
-      "url": "https://www.youtube.com/watch?v=R_7T5k_1-2k",
-      "title": "Come Thou Fount of Every Blessing - The Crosby Family",
-      "channel": "The Crosbys",
-      "publishedAt": "2021-04-02T13:00:16Z",
-      "durationSec": 215,
-      "duration": "3:35",
-      "views": 5114065,
-      "hasCaptions": true
-    },
     {
       "videoId": "4xJXzgonLdQ",
       "url": "https://www.youtube.com/watch?v=4xJXzgonLdQ",
@@ -27,7 +16,7 @@
       "publishedAt": "2021-09-22T16:30:11Z",
       "durationSec": 236,
       "duration": "3:56",
-      "views": 1451844,
+      "views": 1462406,
       "hasCaptions": true
     },
     {
@@ -38,7 +27,7 @@
       "publishedAt": "2013-03-28T07:37:50Z",
       "durationSec": 223,
       "duration": "3:43",
-      "views": 5662766,
+      "views": 5671903,
       "hasCaptions": false
     },
     {
@@ -49,7 +38,7 @@
       "publishedAt": "2023-02-09T16:18:25Z",
       "durationSec": 248,
       "duration": "4:08",
-      "views": 649639,
+      "views": 657286,
       "hasCaptions": false
     },
     {
@@ -60,45 +49,83 @@
       "publishedAt": "2026-03-14T19:20:02Z",
       "durationSec": 396,
       "duration": "6:36",
-      "views": 587356,
+      "views": 640129,
       "hasCaptions": false
     },
     {
-      "videoId": "bpGFMuXshGE",
-      "url": "https://www.youtube.com/watch?v=bpGFMuXshGE",
-      "title": "COME, THOU FOUNT OF EVERY BLESSING | THE LIVING STONES QUARTET #thelsq",
-      "channel": "The Living Stones Quartet LSQ",
-      "publishedAt": "2022-01-16T02:18:22Z",
-      "durationSec": 191,
-      "duration": "3:11",
-      "views": 396845,
+      "videoId": "ebelr6d8D70",
+      "url": "https://www.youtube.com/watch?v=ebelr6d8D70",
+      "title": "Come Thou Fount of Every Blessing with Lyrics Chris Rice",
+      "channel": "Festus Morumbasi",
+      "publishedAt": "2018-04-20T10:27:59Z",
+      "durationSec": 222,
+      "duration": "3:42",
+      "views": 299901,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "EwdG5l_MeKk",
+      "url": "https://www.youtube.com/watch?v=EwdG5l_MeKk",
+      "title": "Come, Thou Fount of Every Blessing: Hymn #1001(with lyrics)",
+      "channel": "Fun Follow Me",
+      "publishedAt": "2024-08-04T17:15:00Z",
+      "durationSec": 159,
+      "duration": "2:39",
+      "views": 6616,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "3bvYJL6WhuY",
+      "url": "https://www.youtube.com/watch?v=3bvYJL6WhuY",
+      "title": "Shane &amp; Shane: Come Thou Fount (Above All Else)",
+      "channel": "Shane and Shane",
+      "publishedAt": "2019-02-14T15:05:21Z",
+      "durationSec": 359,
+      "duration": "5:59",
+      "views": 20015404,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "o1drPgXtti0",
+      "url": "https://www.youtube.com/watch?v=o1drPgXtti0",
+      "title": "Come Thou Fount | Classic Christian Hymn",
+      "channel": "Hymn Ascend",
+      "publishedAt": "2025-12-31T12:01:38Z",
+      "durationSec": 209,
+      "duration": "3:29",
+      "views": 2299390,
       "hasCaptions": false
     }
   ],
   "candidates": [
     {
-      "videoId": "LR-WgHBc5Xc",
-      "url": "https://www.youtube.com/watch?v=LR-WgHBc5Xc",
-      "title": "Come Thou Fount",
-      "channel": "Kings Kaleidoscope - Topic",
-      "publishedAt": "2020-11-01T10:01:15Z",
-      "durationSec": 297,
-      "duration": "4:57",
-      "views": 459117,
-      "hasCaptions": false,
+      "videoId": "4xJXzgonLdQ",
+      "url": "https://www.youtube.com/watch?v=4xJXzgonLdQ",
+      "title": "Come Thou Fount of Every Blessing (with lyrics) The most BEAUTIFUL hymn you&#39;ve EVER heard!",
+      "channel": "Rosemary Siemens",
+      "publishedAt": "2021-09-22T16:30:11Z",
+      "durationSec": 236,
+      "duration": "3:56",
+      "views": 1462406,
+      "hasCaptions": true,
       "lyrics": [
         {
           "label": "Verse 1",
           "lines": [
-            "Come, thou fount of ev'ry blessing",
-            "Tune my heart to sing Thy grace",
-            "Streams of mercy, never ceasing"
+            "Come thou fount of every blessing",
+            "Tune my heart to sing thy grace"
           ]
         },
         {
           "label": "Verse 1",
           "lines": [
-            "Call for songs of loudest praise",
+            "Streams of mercy never ceasing",
+            "Call for songs of loudest praise"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
             "Teach me some melodious sonnet",
             "Sung by flaming tongues above"
           ]
@@ -106,22 +133,28 @@
         {
           "label": "Verse 1",
           "lines": [
-            "Praise the mount, I'm fixed upon it",
-            "Mount of Thy redeeming love"
+            "Praise the mount I'm fixed upon it",
+            "Mount of God's redeeming love"
           ]
         },
         {
           "label": "Verse 2",
           "lines": [
-            "Hitherto, Thy love has blessed me",
-            "Thou hast drawn me to this place",
-            "And I know Thy hand will lead me"
+            "Here I find my greatest",
+            "Treasure",
+            "Hither by Thy help I've come"
           ]
         },
         {
           "label": "Verse 2",
           "lines": [
-            "Safely home by Thy good grace",
+            "And I hope by thy good pleasure",
+            "Safely to arrive at home"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
             "Jesus sought me when a stranger",
             "Wandering from the fold of God"
           ]
@@ -129,188 +162,118 @@
         {
           "label": "Verse 2",
           "lines": [
-            "He, to rescue me from danger",
-            "Bought me with His precious blood"
+            "He to rescue me from danger",
+            "Bought me",
+            "With His precious blood"
           ]
         },
         {
-          "label": "Verse 4",
+          "label": "Verse 3",
           "lines": [
-            "O to grace how great a debtor",
+            "Oh to grace how great a debtor",
             "Daily I'm constrained to be"
           ]
         },
         {
-          "label": "",
+          "label": "Verse 3",
           "lines": [
-            "Let thy goodness, like a fetter",
-            "Bind my wand'ring heart to thee"
+            "Let Thy goodness like a fetter",
+            "Bind my wandering heart to Thee"
           ]
         },
         {
-          "label": "Verse 4",
+          "label": "Verse 3",
           "lines": [
-            "Prone to wander, Lord, I feel it",
+            "Prone to wander, Lord I feel it",
             "Prone to leave the God I love"
           ]
         },
         {
-          "label": "Verse 4",
+          "label": "Verse 3",
           "lines": [
-            "Here's my heart, O take and seal it",
-            "Seal it for thy courts above"
-          ]
-        }
-      ],
-      "transcriptSource": "reference",
-      "confidence": 55,
-      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
-      "order": "",
-      "fetchError": "ERROR: unable to download video data: HTTP Error 403: Forbidden",
-      "engine": {
-        "verdict": "unverified",
-        "lines": [],
-        "checks": [],
-        "report": {
-          "videoId": "LR-WgHBc5Xc",
-          "sources": [
-            "library"
-          ],
-          "missing": [
-            "captions",
-            "audio"
-          ],
-          "note": "no recording evidence: needs audio or captions"
-        }
-      }
-    },
-    {
-      "videoId": "R_7T5k_1-2k",
-      "url": "https://www.youtube.com/watch?v=R_7T5k_1-2k",
-      "title": "Come Thou Fount of Every Blessing - The Crosby Family",
-      "channel": "The Crosbys",
-      "publishedAt": "2021-04-02T13:00:16Z",
-      "durationSec": 215,
-      "duration": "3:35",
-      "views": 5114065,
-      "hasCaptions": true,
-      "lyrics": [
-        {
-          "label": "Verse 1",
-          "lines": [
-            "Come, thou fount of ev'ry blessing",
-            "Tune my heart to sing Thy grace",
-            "Streams of mercy, never ceasing",
-            "Call for songs of loudest praise",
-            "Teach me some melodious sonnet",
-            "Sung by flaming tongues above",
-            "Praise the mount, I'm fixed upon it",
-            "Mount of Thy redeeming love"
+            "Here's my heart, oh take and seal it",
+            "Seal it for Thy courts above"
           ]
         },
         {
-          "label": "Verse 2",
+          "label": "Verse 3",
           "lines": [
-            "Here I raise my Ebenezer Hither by Thy help I've come",
-            "And I hope by Thy good pleasure Safely to arrive",
-            "At home",
-            "Jesus sought me when a stranger",
-            "Wandering from the fold of God",
-            "He, to rescue me from danger",
-            "Interposed His precious blood"
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "O to grace how great a debtor",
-            "Daily I'm constrained to be",
-            "Let Thy goodness like a fetter",
-            "Bind my wandering heart to Thee",
-            "Prone to wander, Lord, I feel it",
-            "Prone to leave the God I love",
-            "Here's my heart, O take and seal it",
-            "Seal it for thy courts above"
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "Bind my wandering heart to Thee"
+            "Here's my heart, oh take and seal it",
+            "Seal it for Thy courts above"
           ]
         },
         {
           "label": "Tag",
           "lines": [
-            "(light music)"
+            "(music)"
           ]
         }
       ],
       "transcriptSource": "engine",
       "confidence": 96,
-      "notes": "Verses 2‑4 differ from the provided reference lyrics; transcript lines were used verbatim where they diverge. All sections follow the order and repeats shown in the human‑written captions.",
+      "notes": "Used human captions for structure. Differences from reference: line 8 uses \"redeeming love\" (transcript); line 16 uses \"Bought me with His precious blood\"; line 20 uses \"goodness\" instead of \"grace\". Added line 9 (\"Here I find my greatest treasure\") not in reference. Final two lines treated as a Tag repeat.",
       "order": "Verse 1 · Verse 2 · Verse 3 · Tag",
       "engine": {
         "verdict": "check",
         "lines": [
           {
-            "text": "Come, thou fount of ev'ry blessing",
-            "t0": 7.3,
-            "t1": 12.86,
-            "conf": 0.77,
+            "text": "Come thou fount of every blessing",
+            "t0": 0.0,
+            "t1": 6.04,
+            "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
-              "captions_manual": "(light music) Come Thou fount of every blessing",
-              "library": "Come, thou fount of ev'ry blessing",
-              "asr_large": "Come Thou Fount of every blessing,",
-              "asr_turbo": "Come Thou Fount of Every Blessing",
-              "asr_prompted": "ev'ry blessing"
+              "captions_manual": "Come Thou fount of every blessing",
+              "library": "Come thou fount of every blessing",
+              "asr_large": "Come, Thou Fount of every blessing,",
+              "asr_turbo": "Come, Thou fount of every blessing,",
+              "asr_prompted": "Come thou fount of ev'ry blessing"
             },
             "label": "Verse 1",
             "block": 0
           },
           {
-            "text": "Tune my heart to sing Thy grace",
-            "t0": 12.86,
-            "t1": 17.22,
+            "text": "Tune my heart to sing thy grace",
+            "t0": 6.04,
+            "t1": 10.82,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "Tune my heart to sing Thy grace",
-              "library": "Tune my heart to sing Thy grace",
+              "library": "Tune my heart to sing thy grace",
               "asr_large": "Tune my heart to sing Thy grace",
-              "asr_turbo": "Tune my heart to sing Thy grace",
+              "asr_turbo": "Tune my heart to sing Thy grace.",
               "asr_prompted": "Tune my heart to sing thy grace"
             },
             "label": "Verse 1",
             "block": 0
           },
           {
-            "text": "Streams of mercy, never ceasing",
-            "t0": 18.28,
-            "t1": 23.92,
+            "text": "Streams of mercy never ceasing",
+            "t0": 11.64,
+            "t1": 17.16,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "Streams of mercy never ceasing",
-              "library": "Streams of mercy, never ceasing",
+              "library": "Streams of mercy never ceasing",
               "asr_large": "Streams of mercy never ceasing,",
-              "asr_turbo": "Streams of mercy never ceasing",
-              "asr_prompted": "Sreams of mercy, never ceasing"
+              "asr_turbo": "Streams of mercy never ceasing,",
+              "asr_prompted": "Sreams of mercy never ceasing"
             },
             "label": "Verse 1",
-            "block": 0
+            "block": 1
           },
           {
             "text": "Call for songs of loudest praise",
-            "t0": 23.92,
-            "t1": 27.94,
+            "t0": 17.16,
+            "t1": 22.48,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
@@ -319,34 +282,34 @@
               "captions_manual": "Call for songs of loudest praise",
               "library": "Call for songs of loudest praise",
               "asr_large": "Call for songs of loudest praise",
-              "asr_turbo": "Call for songs of loudest praise",
+              "asr_turbo": "Call for songs of loudest praise.",
               "asr_prompted": "Call for songs of loudest praise"
             },
             "label": "Verse 1",
-            "block": 0
+            "block": 1
           },
           {
             "text": "Teach me some melodious sonnet",
-            "t0": 29.28,
-            "t1": 33.14,
-            "conf": 0.85,
+            "t0": 22.72,
+            "t1": 27.68,
+            "conf": 1.0,
             "status": "verified",
             "alts": [],
-            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "why": "independent sources agree",
             "sources": {
               "captions_manual": "Teach me some melodious sonnet",
               "library": "Teach me some melodious sonnet",
-              "asr_large": "Teach me somehow, Lord, your",
-              "asr_turbo": "Teach me some melody, sonnet",
-              "asr_prompted": "Praise the mount, Lord, your"
+              "asr_large": "Teach me some melodious sonnet",
+              "asr_turbo": "Teach me some melodious sonnet,",
+              "asr_prompted": "Teach me some melodious sonnet"
             },
-            "label": "Verse 1",
-            "block": 0
+            "label": "",
+            "block": 2
           },
           {
             "text": "Sung by flaming tongues above",
-            "t0": 34.84,
-            "t1": 39.48,
+            "t0": 28.2,
+            "t1": 33.1,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
@@ -358,117 +321,155 @@
               "asr_turbo": "Sung by flaming tongues above",
               "asr_prompted": "Sung by flaming tongues above"
             },
-            "label": "Verse 1",
-            "block": 0
+            "label": "",
+            "block": 2
           },
           {
-            "text": "Praise the mount, I'm fixed upon it",
-            "t0": 40.32,
-            "t1": 44.34,
+            "text": "Praise the mount I'm fixed upon it",
+            "t0": 33.76,
+            "t1": 39.04,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "Praise the mount, I'm fixed upon it",
-              "library": "Praise the mount, I'm fixed upon it",
-              "asr_large": "Praise the mount I'm fixed upon",
+              "library": "Praise the mount I'm fixed upon it",
+              "asr_large": "Praise the mount I'm fixed upon it",
               "asr_turbo": "Praise the mount, I'm fixed upon it",
-              "asr_prompted": "Praise the mount, I'v'n fixed upon it"
+              "asr_prompted": "Praise the mount I'm fixed upon it"
             },
             "label": "Verse 1",
-            "block": 0
+            "block": 3
           },
           {
-            "text": "Mount of Thy redeeming love",
-            "t0": 44.56,
-            "t1": 50.52,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree",
-            "sources": {
-              "captions_manual": "Mount of Thy redeeming love",
-              "library": "Mount of Thy redeeming love",
-              "asr_large": "Mount of thy redeeming love",
-              "asr_turbo": "Mount of thy redeeming love",
-              "asr_prompted": "Mount of Thy redeeming love"
-            },
-            "label": "Verse 1",
-            "block": 0
-          },
-          {
-            "text": "Here I raise my Ebenezer Hither by Thy help I've come",
-            "t0": 62.58,
-            "t1": 72.42,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree",
-            "sources": {
-              "captions_manual": "Here I raise my Ebenezer Hither by Thy help I've come",
-              "asr_large": "Here I raise my Ebenezer Hither by thy help I come",
-              "asr_turbo": "Here I raise my Ebenezer Hither by thy help I come",
-              "asr_prompted": "Here I raise my Ebenezer Hither by Thy help I come"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "And I hope by Thy good pleasure Safely to arrive",
-            "t0": 73.52,
-            "t1": 82.28,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree",
-            "sources": {
-              "captions_manual": "And I hope by Thy good pleasure Safely to arrive",
-              "asr_large": "And I hope that by thy good pleasure Safely to arrive",
-              "asr_turbo": "And I hope by thy good pleasure Safely to arrive",
-              "asr_prompted": "And I hope that by Thy good pleasure Safely to arrive"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "At home",
-            "t0": 82.28,
-            "t1": 83.46,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree",
-            "sources": {
-              "captions_manual": "at home",
-              "asr_large": "At home",
-              "asr_turbo": "at home",
-              "asr_prompted": "at home"
-            },
-            "label": null,
-            "block": null
-          },
-          {
-            "text": "Jesus sought me when a stranger",
-            "t0": 84.64,
-            "t1": 89.5,
+            "text": "Mount of God's redeeming love",
+            "t0": 39.54,
+            "t1": 44.64,
             "conf": 0.85,
             "status": "verified",
             "alts": [],
-            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "why": "two listens agree; sound-alike resolved by verified words",
+            "sources": {
+              "captions_manual": "Mount of God’s redeeming love",
+              "library": "Mount of God's unchanging love",
+              "asr_large": "Bount of God's redeeming love",
+              "asr_turbo": "Bount of God's redeeming love",
+              "asr_prompted": "Mount of God's redeeming love"
+            },
+            "label": "Verse 1",
+            "block": 3
+          },
+          {
+            "text": "Here I find my greatest",
+            "t0": 48.04,
+            "t1": 51.62,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Here I find my greatest",
+              "library": "Here I raise my Ebenezer",
+              "asr_large": "Here I find my greatest",
+              "asr_turbo": "Here I find my greatest"
+            },
+            "label": "Verse 2",
+            "block": 4
+          },
+          {
+            "text": "Treasure",
+            "t0": 51.62,
+            "t1": 52.82,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "treasure",
+              "asr_large": "Treasure",
+              "asr_turbo": "treasure",
+              "asr_prompted": "Treasure"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Hither by Thy help I've come",
+            "t0": 53.42,
+            "t1": 58.16,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Hither by Thy help I've come",
+              "library": "Hither by Thy help I've come",
+              "asr_large": "Hither by thy help I've come",
+              "asr_turbo": "Hither by thy help I've come",
+              "asr_prompted": "hither by thy help I'v come"
+            },
+            "label": "Verse 2",
+            "block": 4
+          },
+          {
+            "text": "And I hope by thy good pleasure",
+            "t0": 59.18,
+            "t1": 64.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "And I hope by Thy good pleasure",
+              "library": "And I hope by thy good pleasure",
+              "asr_large": "And I hope by thy good pleasure",
+              "asr_turbo": "And I hope by thy good pleasure",
+              "asr_prompted": "And I hope by thy good pleasure"
+            },
+            "label": "",
+            "block": 5
+          },
+          {
+            "text": "Safely to arrive at home",
+            "t0": 64.14,
+            "t1": 69.42,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "Safely to arrive at home",
+              "library": "Safely to arrive at home",
+              "asr_large": "Safely to arrive at home",
+              "asr_turbo": "Safely to arrive at home",
+              "asr_prompted": "Safely to arrive at home"
+            },
+            "label": "",
+            "block": 5
+          },
+          {
+            "text": "Jesus sought me when a stranger",
+            "t0": 70.56,
+            "t1": 75.38,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
             "sources": {
               "captions_manual": "Jesus sought me when a stranger",
               "library": "Jesus sought me when a stranger",
-              "asr_large": "Jesus saw me when a stranger",
-              "asr_turbo": "Jesus saw me when a stranger"
+              "asr_large": "Jesus sought me when a stranger",
+              "asr_turbo": "Jesus sought me when a stranger",
+              "asr_prompted": "Jesus sought me when a stranger"
             },
             "label": "Verse 2",
-            "block": 1
+            "block": 6
           },
           {
             "text": "Wandering from the fold of God",
-            "t0": 90.26,
-            "t1": 95.2,
+            "t0": 75.38,
+            "t1": 81.94,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
@@ -481,217 +482,254 @@
               "asr_prompted": "Wandering from the fold of God"
             },
             "label": "Verse 2",
-            "block": 1
+            "block": 6
           },
           {
-            "text": "He, to rescue me from danger",
-            "t0": 94.94,
-            "t1": 100.64,
+            "text": "He to rescue me from danger",
+            "t0": 81.94,
+            "t1": 87.64,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "He to rescue me from danger",
-              "library": "He, to rescue me from danger",
-              "asr_large": "He to rescue me from danger",
+              "library": "He to rescue me from danger",
+              "asr_large": "He to rescue me from danger,",
               "asr_turbo": "He to rescue me from danger",
-              "asr_prompted": "He, to rescue me from danger"
+              "asr_prompted": "To rescue me from danger I'nterposed Hie to rescue me from danger"
             },
             "label": "Verse 2",
-            "block": 1
+            "block": 7
           },
           {
-            "text": "Interposed His precious blood",
-            "t0": 100.66,
-            "t1": 105.98721,
+            "text": "Bought me",
+            "t0": 87.64,
+            "t1": 88.24,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
-              "captions_manual": "Interposed His precious blood",
-              "asr_large": "Interposed his precious blood",
-              "asr_turbo": "Interposed His precious blood",
-              "asr_prompted": "Interposed His precious blood"
+              "captions_manual": "Bought me",
+              "asr_large": "Bought me",
+              "asr_turbo": "Bought me",
+              "asr_prompted": "Bought me"
             },
             "label": null,
             "block": null
           },
           {
-            "text": "O to grace how great a debtor",
-            "t0": 118.927216,
-            "t1": 124.44721,
+            "text": "With His precious blood",
+            "t0": 88.24,
+            "t1": 93.06,
+            "conf": 0.87,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_manual": "with His precious blood",
+              "library": "Interposed His precious blood",
+              "asr_large": "With his precious blood",
+              "asr_turbo": "with his precious blood",
+              "asr_prompted": "with His precious blood"
+            },
+            "label": "Verse 2",
+            "block": 7
+          },
+          {
+            "text": "Oh to grace how great a debtor",
+            "t0": 143.7652,
+            "t1": 149.40518,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "Oh, to grace how great a debtor",
-              "library": "O to grace how great a debtor",
-              "asr_large": "Oh to grace how great a debtor",
+              "library": "Oh to grace how great a debtor",
+              "asr_large": "Oh, to grace how great a debtor,",
               "asr_turbo": "Oh, to grace how great a debtor",
               "asr_prompted": "O to grace how great a debtor"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "Verse 3",
+            "block": 8
           },
           {
             "text": "Daily I'm constrained to be",
-            "t0": 124.887215,
-            "t1": 129.28722,
-            "conf": 0.85,
+            "t0": 149.40518,
+            "t1": 153.44519,
+            "conf": 1.0,
             "status": "verified",
             "alts": [],
-            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "why": "independent sources agree",
             "sources": {
               "captions_manual": "Daily I'm constrained to be",
               "library": "Daily I'm constrained to be",
-              "asr_large": "Dearly I'm constrained to be",
-              "asr_turbo": "Dearly I'm constrained to be",
-              "asr_prompted": "Dearly I'm constrained to Thee"
+              "asr_large": "Daily I'm constrained to be",
+              "asr_turbo": "Daily I'm constrained to be",
+              "asr_prompted": "Daily I'am constrained to be"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "Verse 3",
+            "block": 8
           },
           {
             "text": "Let Thy goodness like a fetter",
-            "t0": 130.48721,
-            "t1": 136.20721,
-            "conf": 0.98,
+            "t0": 154.92519,
+            "t1": 160.58519,
+            "conf": 0.87,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
               "captions_manual": "Let Thy goodness like a fetter",
-              "asr_large": "Let Thy goodness, like a fetter,",
-              "asr_turbo": "Let thy goodness, like a fetter,",
-              "asr_prompted": "Like a fetter"
+              "library": "Let Thy grace now like a fetter",
+              "asr_large": "Let thy goodness, like a fetter,",
+              "asr_turbo": "Let thy goodness, like a fetter",
+              "asr_prompted": "Let thy goodness like a fetter"
             },
-            "label": null,
-            "block": null
+            "label": "",
+            "block": 9
           },
           {
             "text": "Bind my wandering heart to Thee",
-            "t0": 136.20721,
-            "t1": 141.44722,
-            "conf": 0.98,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree; sung 2x, 2 agree",
-            "sources": {
-              "captions_manual": "Bind my wandering heart to Thee",
-              "library": "Bind my wand'ring heart to thee",
-              "asr_large": "Bind my wandering heart to Thee",
-              "asr_turbo": "bind my wandering heart to thee.",
-              "asr_prompted": "Bind my wandering heart to Thee"
-            },
-            "label": "Verse 4",
-            "block": 3
-          },
-          {
-            "text": "Prone to wander, Lord, I feel it",
-            "t0": 141.8872,
-            "t1": 146.84721,
+            "t0": 160.58519,
+            "t1": 164.80519,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree",
             "sources": {
-              "captions_manual": "Prone to wander, Lord I feel it",
-              "library": "Prone to wander, Lord, I feel it",
-              "asr_large": "Prone to wander, Lord, I feel it",
-              "asr_turbo": "Prone to wander, Lord, I feel it,",
-              "asr_prompted": "Prone to wander, Lord, I feel it"
+              "captions_manual": "Bind my wandering heart to Thee",
+              "library": "Bind my wandering heart to Thee",
+              "asr_large": "Bind my wandering heart to thee",
+              "asr_turbo": "Bind my wandering heart to thee",
+              "asr_prompted": "Bind my wandering heart to Thee"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "",
+            "block": 9
           },
           {
-            "text": "Prone to leave the God I love",
-            "t0": 146.84721,
-            "t1": 152.78722,
-            "conf": 0.96,
+            "text": "Prone to wander, Lord I feel it",
+            "t0": 166.22519,
+            "t1": 171.36519,
+            "conf": 0.95,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
             "sources": {
+              "captions_manual": "Prone to wander, Lord I feel it",
+              "library": "Prone to wander, Lord I feel it",
+              "asr_large": "Prone to wander, Lord, I feel it",
+              "asr_turbo": "Prone to wonder, Lord, I feel it",
+              "asr_prompted": "Prone to wander, Lord I feel it"
+            },
+            "label": "Verse 3",
+            "block": 10
+          },
+          {
+            "text": "Prone to leave the God I love",
+            "t0": 171.78519,
+            "t1": 176.74518,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
               "captions_manual": "Prone to leave the God I love",
               "library": "Prone to leave the God I love",
               "asr_large": "Prone to leave the God I love",
-              "asr_turbo": "prone to lift the guard I love.",
+              "asr_turbo": "Prone to leave the God I love",
               "asr_prompted": "Prone to leave the God I love"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "Verse 3",
+            "block": 10
           },
           {
-            "text": "Here's my heart, O take and seal it",
-            "t0": 152.84721,
-            "t1": 158.56721,
+            "text": "Here's my heart, oh take and seal it",
+            "t0": 177.28519,
+            "t1": 182.50519,
             "conf": 1.0,
             "status": "verified",
             "alts": [],
-            "why": "independent sources agree",
+            "why": "independent sources agree; sung 2x, 2 agree",
             "sources": {
-              "captions_manual": "Here's my heart Oh, take and seal it",
-              "library": "Here's my heart, O take and seal it",
-              "asr_large": "Here's my heart, oh take and seal it,",
-              "asr_turbo": "Here's my heart, oh take and seal it,",
-              "asr_prompted": "Here's my heart, O take and seal it"
+              "captions_manual": "Here's my heart, oh take and seal it",
+              "library": "Here's my heart, oh take and seal it",
+              "asr_large": "Here's my heart, oh, take and seal it",
+              "asr_turbo": "Here's my heart, oh take and seal it",
+              "asr_prompted": "Here's my heart O take and seal it"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "Verse 3",
+            "block": 13
           },
           {
-            "text": "Seal it for thy courts above",
-            "t0": 158.56721,
-            "t1": 163.18721,
-            "conf": 1.0,
-            "status": "verified",
-            "alts": [],
-            "why": "independent sources agree",
-            "sources": {
-              "captions_manual": "Seal it for Thy courts above",
-              "library": "Seal it for thy courts above",
-              "asr_large": "Seal it for thy courts above",
-              "asr_turbo": "seal it for thy courts above.",
-              "asr_prompted": "Seal it for Thy courts above"
-            },
-            "label": "Verse 4",
-            "block": 3
-          },
-          {
-            "text": "Bind my wandering heart to Thee",
-            "t0": 173.4472,
-            "t1": 184.9472,
+            "text": "Seal it for Thy courts above",
+            "t0": 182.9852,
+            "t1": 187.18518,
             "conf": 0.94,
             "status": "verified",
             "alts": [],
             "why": "independent sources agree; sung 2x, 2 agree",
             "sources": {
-              "captions_manual": "Bind my wandering heart to Thee",
-              "library": "Bind my wand'ring heart to thee",
-              "asr_large": "Bind my wandering heart. to thee",
-              "asr_turbo": "Bind my wandering heart To thee",
-              "asr_prompted": "Bind my wandering heart To Thee"
+              "captions_manual": "Seal it for Thy courts above (violin melody)",
+              "library": "Seal it for Thy courts above",
+              "asr_large": "Seal it for thy courts above",
+              "asr_turbo": "Seal it for thy courts above",
+              "asr_prompted": "Seal it for thy courts above"
             },
-            "label": "Verse 4",
-            "block": 3
+            "label": "Verse 3",
+            "block": 13
           },
           {
-            "text": "(light music)",
-            "t0": 212.30722,
-            "t1": 212.36722,
-            "conf": 0.65,
+            "text": "Here's my heart, oh take and seal it",
+            "t0": 200.14519,
+            "t1": 206.2652,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_manual": "Here's my heart, O take and seal it",
+              "library": "Here's my heart, oh take and seal it",
+              "asr_large": "Here's my heart, oh take and seal it",
+              "asr_turbo": "Here's my heart, oh, take and seal it",
+              "asr_prompted": "Here's my heart O take and seal it"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "Seal it for Thy courts above",
+            "t0": 206.96518,
+            "t1": 213.56519,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_manual": "Seal it for Thy courts above",
+              "library": "Seal it for Thy courts above",
+              "asr_large": "Seal it for thy courts above",
+              "asr_turbo": "Seal it for thy courts above",
+              "asr_prompted": "Seal it for thy courts above"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "(music)",
+            "t0": 254.6852,
+            "t1": 255.20518,
+            "conf": 0.55,
             "status": "check",
             "alts": [],
             "why": "one witness only",
             "sources": {
-              "captions_manual": "(light music)",
-              "asr_large": "You",
+              "captions_manual": "(music)",
+              "asr_large": "Thank you",
               "asr_turbo": "you",
-              "asr_prompted": "I'v'n"
+              "asr_prompted": "I'm"
             },
             "label": null,
             "block": null
@@ -699,17 +737,17 @@
         ],
         "checks": [
           {
-            "t0": 210.30722,
-            "t1": 212.36722,
-            "text": "(light music)",
+            "t0": 252.6852,
+            "t1": 255.20518,
+            "text": "(music)",
             "options": [
-              "(light music)"
+              "(music)"
             ],
             "why": "one witness only"
           }
         ],
         "report": {
-          "videoId": "R_7T5k_1-2k",
+          "videoId": "4xJXzgonLdQ",
           "sources": [
             "captions_manual",
             "library",
@@ -718,141 +756,49 @@
             "asr_prompted"
           ],
           "missing": [],
-          "asr_seconds": 3.9,
+          "asr_seconds": 4.6,
           "excluded": [
             {
-              "t0": 33.14,
-              "text": "Sunday"
+              "t0": 99.7,
+              "text": "Thank you for watching Thank you"
             }
           ],
-          "lines": 25,
-          "verified": 24,
+          "lines": 29,
+          "verified": 28,
           "checks": 1,
-          "seconds": 11.5,
-          "generatedAt": "2026-11-14T23:46:02+00:00"
+          "seconds": 21.1,
+          "generatedAt": "2026-11-22T17:39:41+00:00"
         }
       }
     },
     {
-      "videoId": "4xJXzgonLdQ",
-      "url": "https://www.youtube.com/watch?v=4xJXzgonLdQ",
-      "title": "Come Thou Fount of Every Blessing (with lyrics) The most BEAUTIFUL hymn you&#39;ve EVER heard!",
-      "channel": "Rosemary Siemens",
-      "publishedAt": "2021-09-22T16:30:11Z",
-      "durationSec": 236,
-      "duration": "3:56",
-      "views": 1451844,
-      "hasCaptions": true,
-      "lyrics": [
-        {
-          "label": "Verse 1",
-          "lines": [
-            "Come Thou fount of every blessing",
-            "Tune my heart to sing Thy grace",
-            "Streams of mercy never ceasing",
-            "Call for songs of loudest praise",
-            "Teach me some melodious sonnet",
-            "Sung by flaming tongues above",
-            "Praise the mount, I'm fixed upon it",
-            "Mount of God's redeeming love"
-          ],
-          "times": [
-            0.0,
-            5.8,
-            11.4,
-            17.1,
-            22.6,
-            28.2,
-            33.8,
-            39.3
-          ]
-        },
-        {
-          "label": "Verse 2",
-          "lines": [
-            "Here I find my greatest treasure",
-            "Hither by Thy help I've come",
-            "And I hope by Thy good pleasure",
-            "Safely to arrive at home",
-            "Jesus sought me when a stranger",
-            "Wandering from the fold of God",
-            "He to rescue me from danger",
-            "Bought me with His precious blood"
-          ],
-          "times": [
-            48.0,
-            53.5,
-            59.2,
-            64.9,
-            70.4,
-            76.0,
-            81.8,
-            87.4
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "Oh, to grace how great a debtor",
-            "Daily I'm constrained to be",
-            "Let Thy goodness like a fetter",
-            "Bind my wandering heart to Thee",
-            "Prone to wander, Lord I feel it",
-            "Prone to leave the God I love",
-            "Here's my heart, O take and seal it",
-            "Seal it for Thy courts above"
-          ],
-          "times": [
-            143.7,
-            149.3,
-            154.8,
-            160.6,
-            166.1,
-            171.7,
-            182.9,
-            200.1
-          ]
-        },
-        {
-          "label": "Tag",
-          "lines": [
-            "Here's my heart, O take and seal it",
-            "Seal it for Thy courts above"
-          ],
-          "times": [
-            null,
-            207.1
-          ]
-        }
-      ],
-      "transcriptSource": "subs",
-      "confidence": 92,
-      "notes": "Used human‑written captions for exact wording. Verse 3 from reference is not present in this recording. Several lines differ from the reference (e.g., Verse 2 and Verse 4 wording); kept transcript wording and flagged differences. The final two lines repeat as a tag and are shown in a separate block.",
-      "order": "Verse 1 · Verse 2 · Verse 4 · Tag"
-    },
-    {
-      "videoId": "dmhgaERoGXg",
-      "url": "https://www.youtube.com/watch?v=dmhgaERoGXg",
-      "title": "Come, Thou Fount of Every Blessing",
-      "channel": "Martijn de Groot",
-      "publishedAt": "2016-07-02T18:44:20Z",
-      "durationSec": 158,
-      "duration": "2:38",
-      "views": 145773,
+      "videoId": "9Fmi4AT4XCQ",
+      "url": "https://www.youtube.com/watch?v=9Fmi4AT4XCQ",
+      "title": "COME THOU FOUNT OF EVERY BLESSING ",
+      "channel": "BRIDE OF CHRIST MINISTRY",
+      "publishedAt": "2026-03-14T19:20:02Z",
+      "durationSec": 396,
+      "duration": "6:36",
+      "views": 640129,
       "hasCaptions": false,
       "lyrics": [
         {
           "label": "Verse 1",
           "lines": [
-            "Come, thou fount of ev'ry blessing",
-            "Tune my heart to sing Thy grace",
-            "Streams of mercy, never ceasing"
+            "Come thou fount of every blessing",
+            "Tune my heart to sing thy grace"
           ]
         },
         {
           "label": "Verse 1",
           "lines": [
-            "Call for songs of loudest praise",
+            "Streams of mercy never ceasing",
+            "Call for songs of loudest praise"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
             "Teach me some melodious sonnet",
             "Sung by flaming tongues above"
           ]
@@ -860,22 +806,27 @@
         {
           "label": "Verse 1",
           "lines": [
-            "Praise the mount, I'm fixed upon it",
-            "Mount of Thy redeeming love"
+            "Praise the mount I'm fixed upon it",
+            "Mount of God's unchanging love"
           ]
         },
         {
           "label": "Verse 2",
           "lines": [
-            "Hitherto, Thy love has blessed me",
-            "Thou hast drawn me to this place",
-            "And I know Thy hand will lead me"
+            "Here I raise my Ebenezer",
+            "Hither by Thy help I've come"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "And I hope by thy good pleasure",
+            "Safely to arrive at home"
           ]
         },
         {
           "label": "Verse 2",
           "lines": [
-            "Safely home by Thy good grace",
             "Jesus sought me when a stranger",
             "Wandering from the fold of God"
           ]
@@ -883,71 +834,1168 @@
         {
           "label": "Verse 2",
           "lines": [
-            "He, to rescue me from danger",
-            "Bought me with His precious blood"
+            "He to rescue me from danger",
+            "Interposed His precious blood"
           ]
         },
         {
           "label": "Verse 3",
           "lines": [
-            "O that day when freed from sinning",
-            "I shall see Thy lovely face",
-            "Cloth'ed there in blood-washed linen"
+            "Oh to grace how great a debtor",
+            "Daily I'm constrained to be"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Let Thy grace now like a fetter",
+            "Bind my wandering heart to Thee"
           ]
         },
         {
           "label": "Verse 3",
           "lines": [
-            "How I'll sing Thy sov'reign grace",
-            "Come, my Lord, no longer tarry",
-            "Take my ransomed soul away"
-          ]
-        },
-        {
-          "label": "Verse 3",
-          "lines": [
-            "Send thine angels now to carry",
-            "Me to realms of endless days"
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "O to grace how great a debtor",
-            "Daily I'm constrained to be",
-            "Let that grace now, like a fetter"
-          ]
-        },
-        {
-          "label": "Verse 4",
-          "lines": [
-            "Bind my wand'ring heart to thee",
-            "Prone to wander, Lord, I feel it",
+            "Prone to wander, Lord I feel it",
             "Prone to leave the God I love"
           ]
         },
         {
-          "label": "Verse 4",
+          "label": "Verse 2",
           "lines": [
-            "Here's my heart, O take and seal it",
-            "Seal it for thy courts above"
+            "Here's my heart, oh take and seal it",
+            "Seal it for Thy courts above",
+            "Hither to Thy love has blessed me Thou hast brought me",
+            "To this place And I know Thy hand will bring me",
+            "Safely home By Thy good grace",
+            "Jesus sought me when a stranger",
+            "Wandering from the fold of God"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "He to rescue me from danger",
+            "Bought me",
+            "Interposed His precious blood"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Oh to grace how great a debtor",
+            "Daily I'm constrained to be"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Let Thy grace now like a fetter",
+            "Bind my wandering heart to Thee"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Prone to wander, Lord I feel it",
+            "Prone to leave the God I love"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Here's my heart, oh take and seal it",
+            "Seal it for Thy courts above"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "Oh, that day when freed from sinning I shall see Thy"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Clothed then in blood, washed linen housing I so raise,",
+            "Sovereigns, praise Come my Lord, no longer tarry",
+            "Take my ransomed soul away Send Thine angels now to",
+            "Carry Me to realms of endless day"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Come thou fount of every blessing",
+            "Tune my heart to sing thy grace"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Streams of mercy never ceasing",
+            "Call for songs of loudest praise"
+          ]
+        },
+        {
+          "label": "Chorus",
+          "lines": [
+            "Teach me some melodious sonnet",
+            "Sung by flaming tongues above"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Praise the mount I'm fixed upon it",
+            "Mount of God's unchanging love",
+            "I'm not a fool"
           ]
         }
       ],
       "transcriptSource": "engine",
-      "confidence": 0,
-      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
-      "order": "",
+      "confidence": 92,
+      "notes": "Used reference wording where clear; auto‑generated captions were garbled but repeated sections (Verse 1) were identifiable, so repeated only that block. Some lines (e.g., ‘Oh to grace how great a debt’) are inferred from reference and transcript context. Confidence moderate due to caption noise.",
+      "order": "Verse 1 · Verse 2 · Verse 3 · Bridge · Verse 5 · Tag · Verse 1",
       "engine": {
-        "verdict": "verified",
-        "lines": [],
-        "checks": [],
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Come thou fount of every blessing",
+            "t0": 22.84,
+            "t1": 27.9,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Come thou [music] f of every blessing",
+              "library": "Come thou fount of every blessing",
+              "asr_large": "Come Thou Fount of Every Blessing",
+              "asr_turbo": "Come Thou Fount of Every Blessing",
+              "asr_prompted": "Ev'ry blessing Come, Thou Fount of Ev'ry blessing Come thou fount of every blessing"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Tune my heart to sing thy grace",
+            "t0": 28.44,
+            "t1": 33.62,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "to my heart [singing] to sing thy",
+              "library": "Tune my heart to sing thy grace",
+              "asr_large": "Tune my heart to sing Thy grace",
+              "asr_turbo": "Tune my heart to sing Thy grace",
+              "asr_prompted": "Tune my heart to sing thy grace"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Streams of mercy never ceasing",
+            "t0": 33.98,
+            "t1": 39.0,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Streams of mercy never ceasing [music]",
+              "library": "Streams of mercy never ceasing",
+              "asr_large": "Streams of mercy never ceasing",
+              "asr_turbo": "Streams of mercy never ceasing",
+              "asr_prompted": "Sdreams of mercy never ceasing"
+            },
+            "label": "Verse 1",
+            "block": 1
+          },
+          {
+            "text": "Call for songs of loudest praise",
+            "t0": 39.72,
+            "t1": 44.16,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "call for songs [singing] of loudest [music] praise.",
+              "library": "Call for songs of loudest praise",
+              "asr_large": "Call for songs of loudest praise",
+              "asr_turbo": "Call for songs of loudest praise",
+              "asr_prompted": "Call for songs of loudest praise"
+            },
+            "label": "Verse 1",
+            "block": 1
+          },
+          {
+            "text": "Teach me some melodious sonnet",
+            "t0": 45.38,
+            "t1": 50.0,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Teach me some [singing] songs",
+              "library": "Teach me some melodious sonnet",
+              "asr_large": "Teach me some mellowest song",
+              "asr_turbo": "Teach me some mellow you sung",
+              "asr_prompted": "Teach me some melodious sonnet"
+            },
+            "label": "",
+            "block": 2
+          },
+          {
+            "text": "Sung by flaming tongues above",
+            "t0": 50.3,
+            "t1": 55.4,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "sung by flaming [singing]",
+              "library": "Sung by flaming tongues above",
+              "asr_large": "Sung by flaming tongues above",
+              "asr_turbo": "Sung by flaming tongues above",
+              "asr_prompted": "Sung by flaming tongues above"
+            },
+            "label": "",
+            "block": 2
+          },
+          {
+            "text": "Praise the mount I'm fixed upon it",
+            "t0": 56.84,
+            "t1": 62.08,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sound-alike resolved by verified words; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Praise the mountain fixed upon [music] it.",
+              "library": "Praise the mount I'm fixed upon it",
+              "asr_large": "Praise the mountain fixed upon it",
+              "asr_turbo": "Praise the mountain fixed upon it",
+              "asr_prompted": "Praise the mount I'm fixed upon it I'm fixed upon it"
+            },
+            "label": "Verse 1",
+            "block": 3
+          },
+          {
+            "text": "Mount of God's unchanging love",
+            "t0": 62.46,
+            "t1": 67.1,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Mount of God's [singing] unchanging love.",
+              "library": "Mount of God's unchanging love",
+              "asr_large": "Mount of God's unchanging love",
+              "asr_turbo": "Mount of God's unchanging love",
+              "asr_prompted": "Mount of God's unchanging love S.A. S.A."
+            },
+            "label": "Verse 1",
+            "block": 3
+          },
+          {
+            "text": "Here I raise my Ebenezer",
+            "t0": 70.82,
+            "t1": 75.78,
+            "conf": 0.94,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "Here [music] I raise my eeneer.",
+              "library": "Here I raise my Ebenezer",
+              "asr_large": "Here I raise my Ebenezer",
+              "asr_turbo": "Here I raise my Ebenezer",
+              "asr_prompted": "Here I raise my Ebenezer"
+            },
+            "label": "Verse 2",
+            "block": 4
+          },
+          {
+            "text": "Hither by Thy help I've come",
+            "t0": 75.66,
+            "t1": 80.66,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words",
+            "sources": {
+              "captions_auto": "Hither [singing] by thy help [music] I'm come.",
+              "library": "Hither by Thy help I've come",
+              "asr_large": "Hither by Thy help I'm come",
+              "asr_turbo": "Hither by thy help I'm come",
+              "asr_prompted": "Hither by Thy help I'v come A."
+            },
+            "label": "Verse 2",
+            "block": 4
+          },
+          {
+            "text": "And I hope by thy good pleasure",
+            "t0": 80.96,
+            "t1": 87.92,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "And I hope by [music] thy good pleasure",
+              "library": "And I hope by thy good pleasure",
+              "asr_large": "And I hope by Thy good pleasure,",
+              "asr_turbo": "And I hope by Thy good pleasure",
+              "asr_prompted": "And I hope by thy good pleasure"
+            },
+            "label": "",
+            "block": 5
+          },
+          {
+            "text": "Safely to arrive at home",
+            "t0": 87.92,
+            "t1": 92.18,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "safely to arrive [music]",
+              "library": "Safely to arrive at home",
+              "asr_large": "Safely to arrive at home",
+              "asr_turbo": "Safely to arrive at home",
+              "asr_prompted": "Arrive at home"
+            },
+            "label": "",
+            "block": 5
+          },
+          {
+            "text": "Jesus sought me when a stranger",
+            "t0": 93.12,
+            "t1": 99.0,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Jesus saw [music] me when a strangeanger",
+              "library": "Jesus sought me when a stranger",
+              "asr_large": "Jesus saw me when a stranger,",
+              "asr_turbo": "Jesus sought me when a stranger",
+              "asr_prompted": "Jesus sought me when a stranger"
+            },
+            "label": "Verse 2",
+            "block": 6
+          },
+          {
+            "text": "Wandering from the fold of God",
+            "t0": 98.86667,
+            "t1": 104.02667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "wandering [music and singing] from the fold of God.",
+              "library": "Wandering from the fold of God",
+              "asr_large": "Wandering from the fold of God",
+              "asr_turbo": "Wandering from the fold of God",
+              "asr_prompted": "Wandering from the fold of God"
+            },
+            "label": "Verse 2",
+            "block": 6
+          },
+          {
+            "text": "He to rescue me from danger",
+            "t0": 103.66667,
+            "t1": 109.24667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "He to rescue [music] me from [singing] danger.",
+              "library": "He to rescue me from danger",
+              "asr_large": "He to rescue me from danger",
+              "asr_turbo": "He to rescue me from danger",
+              "asr_prompted": "He to rescue me from danger"
+            },
+            "label": "Verse 2",
+            "block": 7
+          },
+          {
+            "text": "Interposed His precious blood",
+            "t0": 109.22667,
+            "t1": 114.22667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Interpost his [music] precious blood.",
+              "library": "Interposed His precious blood",
+              "asr_large": "Interposed His precious blood",
+              "asr_turbo": "Interposed His precious blood",
+              "asr_prompted": "Interposed His precious blood"
+            },
+            "label": "Verse 2",
+            "block": 7
+          },
+          {
+            "text": "Oh to grace how great a debtor",
+            "t0": 118.22667,
+            "t1": 123.466675,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Oh to [music] grace [singing] how great a de",
+              "library": "Oh to grace how great a debtor",
+              "asr_large": "Oh to grace how great a debtor",
+              "asr_turbo": "Oh to grace how great a debtor",
+              "asr_prompted": "Oh to grace how great a debtor"
+            },
+            "label": "Verse 3",
+            "block": 8
+          },
+          {
+            "text": "Daily I'm constrained to be",
+            "t0": 124.02667,
+            "t1": 128.36667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "library": "Daily I'm constrained to be",
+              "asr_large": "Daily I'm constrained to be",
+              "asr_turbo": "Daily I'm constrained to be"
+            },
+            "label": "Verse 3",
+            "block": 8
+          },
+          {
+            "text": "Let Thy grace now like a fetter",
+            "t0": 129.36667,
+            "t1": 134.62668,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Let that grace [music] now like a feather [singing]",
+              "library": "Let Thy grace now like a fetter",
+              "asr_large": "Let that grace now like a fetter",
+              "asr_turbo": "Let that grace now, like a fetter"
+            },
+            "label": "",
+            "block": 9
+          },
+          {
+            "text": "Bind my wandering heart to Thee",
+            "t0": 135.16667,
+            "t1": 140.58667,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "bind my wondering [music] heart to thee.",
+              "library": "Bind my wandering heart to Thee",
+              "asr_large": "Bind my wandering heart to Thee",
+              "asr_turbo": "Bind my wandering heart to Thee"
+            },
+            "label": "",
+            "block": 9
+          },
+          {
+            "text": "Prone to wander, Lord I feel it",
+            "t0": 140.90668,
+            "t1": 146.04668,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Prone to [music] wonder. [singing] Lord I feel it.",
+              "library": "Prone to wander, Lord I feel it",
+              "asr_large": "Prone to wander, Lord, I feel it",
+              "asr_turbo": "Prone to wander, Lord, I feel it"
+            },
+            "label": "Verse 3",
+            "block": 10
+          },
+          {
+            "text": "Prone to leave the God I love",
+            "t0": 146.44667,
+            "t1": 150.96667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Prone [music] to leave the God I [singing] love.",
+              "library": "Prone to leave the God I love",
+              "asr_large": "Prone to leave the God I love",
+              "asr_turbo": "Prone to leave the God I love",
+              "asr_prompted": "The G-d G-d I love,"
+            },
+            "label": "Verse 3",
+            "block": 10
+          },
+          {
+            "text": "Here's my heart, oh take and seal it",
+            "t0": 152.08667,
+            "t1": 157.68668,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Take and seal it.",
+              "library": "Here's my heart, oh take and seal it",
+              "asr_large": "Here's my heart, oh, take and seal it,",
+              "asr_turbo": "Here's my heart, oh, take and seal it,",
+              "asr_prompted": "He is my heart Take and seal it"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "Seal it for Thy courts above",
+            "t0": 157.68668,
+            "t1": 163.04666,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Seal it [music] for",
+              "library": "Seal it for Thy courts above",
+              "asr_large": "Seal it for thy courts above",
+              "asr_turbo": "seal it for thy courts above.",
+              "asr_prompted": "Seal it for thy courts above"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "Hither to Thy love has blessed me Thou hast brought me",
+            "t0": 163.12668,
+            "t1": 171.02667,
+            "conf": 0.86,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Hither to thy love [singing] has blessed me. Thou hast brought me",
+              "asr_large": "Hither to Thy love has blessed me Thou hast brought me",
+              "asr_turbo": "Hitherto thy love has blessed me. Thou hast brought me",
+              "asr_prompted": "Hither to thy love has blessed me Thou hast brought me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To this place And I know Thy hand will bring me",
+            "t0": 171.02667,
+            "t1": 177.70667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "to this place and I know thy hand will bring me",
+              "asr_large": "To this place And I know Thy hand will bring me",
+              "asr_turbo": "to this place. And I know thy hand will bring me",
+              "asr_prompted": "to this place And I know thy hand will bring me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Safely home By Thy good grace",
+            "t0": 177.70667,
+            "t1": 183.70667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "safely home by thy good grace.",
+              "asr_large": "Safely home By Thy good grace",
+              "asr_turbo": "safely home by thy good grace.",
+              "asr_prompted": "safely home By thy good grace"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Jesus sought me when a stranger",
+            "t0": 184.38667,
+            "t1": 189.96667,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Jesus [music] saw me when a [singing] strangeanger",
+              "library": "Jesus sought me when a stranger",
+              "asr_large": "Jesus taught me when a stranger",
+              "asr_turbo": "Jesus taught me when a stranger",
+              "asr_prompted": "Jesus sought me when a stranger"
+            },
+            "label": "Verse 2",
+            "block": 6
+          },
+          {
+            "text": "Wandering from the fold of God",
+            "t0": 190.62668,
+            "t1": 195.72667,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "wandering from the fall He's",
+              "library": "Wandering from the fold of God",
+              "asr_large": "Wandering from the fold of God",
+              "asr_turbo": "Wandering from the fold of God",
+              "asr_prompted": "Wandering from the fold of God"
+            },
+            "label": "Verse 2",
+            "block": 6
+          },
+          {
+            "text": "He to rescue me from danger",
+            "t0": 195.52667,
+            "t1": 200.95334,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "to rescue me from [music and singing] danger.",
+              "library": "He to rescue me from danger",
+              "asr_large": "He to rescue me from danger",
+              "asr_turbo": "He to rescue me from danger",
+              "asr_prompted": "He to rescue"
+            },
+            "label": "Verse 2",
+            "block": 7
+          },
+          {
+            "text": "Bought me",
+            "t0": 201.55334,
+            "t1": 202.41335,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "Bought me",
+              "asr_large": "Bought me",
+              "asr_turbo": "Bought me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Interposed His precious blood",
+            "t0": 202.41335,
+            "t1": 206.19334,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sound-alike resolved by verified words; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "with his [singing] precious blood.",
+              "library": "Interposed His precious blood",
+              "asr_large": "With His precious blood",
+              "asr_turbo": "with His precious blood"
+            },
+            "label": "Verse 2",
+            "block": 7
+          },
+          {
+            "text": "Oh to grace how great a debtor",
+            "t0": 207.17334,
+            "t1": 212.19334,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Oh [music] to grace how great a",
+              "library": "Oh to grace how great a debtor",
+              "asr_large": "Oh to grace how great a debtor",
+              "asr_turbo": "Oh, to grace how great a debtor"
+            },
+            "label": "Verse 3",
+            "block": 8
+          },
+          {
+            "text": "Daily I'm constrained to be",
+            "t0": 212.71335,
+            "t1": 216.95334,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "I'm constrained to [music] be.",
+              "library": "Daily I'm constrained to be",
+              "asr_large": "Daily I'm constrained to be",
+              "asr_turbo": "Daily I'm constrained to be"
+            },
+            "label": "Verse 3",
+            "block": 8
+          },
+          {
+            "text": "Let Thy grace now like a fetter",
+            "t0": 218.05334,
+            "t1": 223.21335,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sound-alike resolved by verified words; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Let that grace Lord like a feather",
+              "library": "Let Thy grace now like a fetter",
+              "asr_large": "Let that grace Lord Like a fetter",
+              "asr_turbo": "Let that grace, Lord, like a feather Fetter"
+            },
+            "label": "",
+            "block": 9
+          },
+          {
+            "text": "Bind my wandering heart to Thee",
+            "t0": 223.77335,
+            "t1": 228.77335,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "bind my [music] wondering heart to thee.",
+              "library": "Bind my wandering heart to Thee",
+              "asr_large": "Bind my wandering heart to Thee",
+              "asr_turbo": "Bind my wandering Heart to Thee",
+              "asr_prompted": "my Ebenezer Ssing my praise to Thee"
+            },
+            "label": "",
+            "block": 9
+          },
+          {
+            "text": "Prone to wander, Lord I feel it",
+            "t0": 229.33334,
+            "t1": 234.37335,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Prone to wonder. Lord [singing and music] I feel it.",
+              "library": "Prone to wander, Lord I feel it",
+              "asr_large": "Prone to wander, Lord, I feel it",
+              "asr_turbo": "Prone to Wonder Lord I feel it",
+              "asr_prompted": "Thee"
+            },
+            "label": "Verse 3",
+            "block": 10
+          },
+          {
+            "text": "Prone to leave the God I love",
+            "t0": 234.79333,
+            "t1": 239.23334,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Prome to leave the [singing] God [music] I love.",
+              "library": "Prone to leave the God I love",
+              "asr_large": "Prone to leave the God I love",
+              "asr_turbo": "Prone to leave The God I love",
+              "asr_prompted": "the G-d G-d I love"
+            },
+            "label": "Verse 3",
+            "block": 10
+          },
+          {
+            "text": "Here's my heart, oh take and seal it",
+            "t0": 239.45334,
+            "t1": 245.41335,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Here's my heart. Take and [music and singing] seal it.",
+              "library": "Here's my heart, oh take and seal it",
+              "asr_large": "Here's my heart, Lord Take and seal it",
+              "asr_turbo": "Here's my heart Lord take and Seal it",
+              "asr_prompted": "Here's my heart, Lord Take and seal it"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "Seal it for Thy courts above",
+            "t0": 245.75334,
+            "t1": 250.27335,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Seal it for thy [music and singing] courts above.",
+              "library": "Seal it for Thy courts above",
+              "asr_large": "Seal it for Thy courts above",
+              "asr_turbo": "Seal it for Thy course above",
+              "asr_prompted": "Seal it for thy courts above"
+            },
+            "label": "Verse 3",
+            "block": 13
+          },
+          {
+            "text": "Oh, that day when freed from sinning I shall see Thy",
+            "t0": 254.01334,
+            "t1": 262.17334,
+            "conf": 0.74,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "Oh that [music] day free from sin clothe",
+              "asr_large": "Oh, that day when freed from sinning I shall see Thy",
+              "asr_turbo": "Oh, that day when freed from sinning I shall see thy",
+              "asr_prompted": "O that day when freed from sinning I shall see thy"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Clothed then in blood, washed linen housing I so raise,",
+            "t0": 264.97333,
+            "t1": 272.51334,
+            "conf": 0.83,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "captions_auto": "in [music and singing]",
+              "asr_large": "Clothed then in blood, washed linen housing I so raise,",
+              "asr_turbo": "Clothed and in blood washed, linen housing I so raise",
+              "asr_prompted": "Clothed then in blood, washed, linen housing I so raise,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Sovereigns, praise Come my Lord, no longer tarry",
+            "t0": 272.51334,
+            "t1": 280.87335,
+            "conf": 0.5,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I rest, praise You Come my Lord, no longer tarry",
+                "sources": [
+                  "asr_large"
+                ]
+              },
+              {
+                "text": "Our s",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "our s",
+              "asr_large": "I rest, praise You Come my Lord, no longer tarry",
+              "asr_turbo": "severance praise Come my Lord, no longer tarry",
+              "asr_prompted": "sovereigns, praise Come my Lord, no longer tarry"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Take my ransomed soul away Send Thine angels now to",
+            "t0": 280.61334,
+            "t1": 290.61334,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Take my ransom. [singing and music] soul away. Send thine angels [music] now [singing] to",
+                "sources": [
+                  "captions_auto"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "captions_auto": "take my ransom. [singing and music] soul away. Send thine angels [music] now [singing] to",
+              "asr_large": "Take my ransomed soul away Send Thine angels now to",
+              "asr_turbo": "Take my ransomed soul away Send thine angels now to",
+              "asr_prompted": "Handsome soul away Send thine angels now to"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Carry Me to realms of endless day",
+            "t0": 290.61334,
+            "t1": 297.32,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "captions_auto": "carry me to realms of [music] endless day.",
+              "asr_large": "Carry Me to realms of endless day",
+              "asr_turbo": "carry Me to realms of endless day",
+              "asr_prompted": "carry Me to realms of endless day"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Come thou fount of every blessing",
+            "t0": 300.44003,
+            "t1": 305.52002,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Come thou [music] f of [singing] every blessing",
+              "library": "Come thou fount of every blessing",
+              "asr_large": "Come Thou fount of every blessing",
+              "asr_turbo": "Come Thou fount of every blessing",
+              "asr_prompted": "Comethou fount of ev'ry blessing"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Tune my heart to sing thy grace",
+            "t0": 306.2,
+            "t1": 311.02002,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "to my heart to sing thy [music] praise.",
+              "library": "Tune my heart to sing thy grace",
+              "asr_large": "Tune my heart to sing Thy grace",
+              "asr_turbo": "Tune my heart to sing Thy grace",
+              "asr_prompted": "Tune my heart to sing thy grace"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Streams of mercy never ceasing",
+            "t0": 311.68002,
+            "t1": 316.64,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Streams of mercy [singing] never cease.",
+              "library": "Streams of mercy never ceasing",
+              "asr_large": "Streams of mercy never ceasing",
+              "asr_turbo": "Streams of mercy never ceasing",
+              "asr_prompted": "Scythe of"
+            },
+            "label": "Verse 1",
+            "block": 1
+          },
+          {
+            "text": "Call for songs of loudest praise",
+            "t0": 317.28003,
+            "t1": 321.74002,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Call [music] for songs of loudest",
+              "library": "Call for songs of loudest praise",
+              "asr_large": "Call for songs of loudest praise",
+              "asr_turbo": "Call for songs of loudest praise"
+            },
+            "label": "Verse 1",
+            "block": 1
+          },
+          {
+            "text": "Teach me some melodious sonnet",
+            "t0": 322.86002,
+            "t1": 327.94003,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Teach me some [music]",
+              "library": "Teach me some melodious sonnet",
+              "asr_large": "Teach me some melodious sonnet",
+              "asr_turbo": "Teach me some melodious sonnet"
+            },
+            "label": "",
+            "block": 2
+          },
+          {
+            "text": "Sung by flaming tongues above",
+            "t0": 328.48,
+            "t1": 332.66003,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "tongs above.",
+              "library": "Sung by flaming tongues above",
+              "asr_large": "Sung by flaming tongues above",
+              "asr_turbo": "Some by flaming tongues above"
+            },
+            "label": "",
+            "block": 2
+          },
+          {
+            "text": "Praise the mount I'm fixed upon it",
+            "t0": 333.24002,
+            "t1": 339.26,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "Praise the mountain [music and singing] fixed upon it.",
+              "library": "Praise the mount I'm fixed upon it",
+              "asr_large": "Praise the mount I'm fixed upon it",
+              "asr_turbo": "Praise the mountain fixed upon it",
+              "asr_prompted": "the dead I'v'ry Blessing."
+            },
+            "label": "Verse 1",
+            "block": 3
+          },
+          {
+            "text": "Mount of God's unchanging love",
+            "t0": 338.80002,
+            "t1": 344.2,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "sounds [singing] of God's love.",
+              "library": "Mount of God's unchanging love",
+              "asr_large": "Mount of God's unchanging love",
+              "asr_turbo": "Mound of God's unchanging love",
+              "asr_prompted": "Gd's unchanging love"
+            },
+            "label": "Verse 1",
+            "block": 3
+          },
+          {
+            "text": "I'm not a fool",
+            "t0": 345.28003,
+            "t1": 348.04004,
+            "conf": 0.51,
+            "status": "check",
+            "alts": [],
+            "why": "one witness only",
+            "sources": {
+              "captions_auto": "[music]",
+              "asr_large": "I'm not a fool",
+              "asr_turbo": "I'm sorry. you",
+              "asr_prompted": "I'am a sinner, but I am a man I am"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 252.01334,
+            "t1": 262.17334,
+            "text": "Oh, that day when freed from sinning I shall see Thy",
+            "options": [
+              "Oh, that day when freed from sinning I shall see Thy"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 270.51334,
+            "t1": 280.87335,
+            "text": "Sovereigns, praise Come my Lord, no longer tarry",
+            "options": [
+              "Sovereigns, praise Come my Lord, no longer tarry",
+              "I rest, praise You Come my Lord, no longer tarry",
+              "Our s"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 278.61334,
+            "t1": 290.61334,
+            "text": "Take my ransomed soul away Send Thine angels now to",
+            "options": [
+              "Take my ransomed soul away Send Thine angels now to",
+              "Take my ransom. [singing and music] soul away. Send thine angels [music] now [singing] to"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 343.28003,
+            "t1": 348.04004,
+            "text": "I'm not a fool",
+            "options": [
+              "I'm not a fool"
+            ],
+            "why": "one witness only"
+          }
+        ],
         "report": {
-          "videoId": "dmhgaERoGXg",
+          "videoId": "9Fmi4AT4XCQ",
           "sources": [
-            "verified_recording"
+            "captions_auto",
+            "library",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
           ],
-          "note": "human-verified for this exact recording"
+          "missing": [],
+          "asr_seconds": 5.4,
+          "excluded": [
+            {
+              "t0": 262.17334,
+              "text": "Lovely face"
+            },
+            {
+              "t0": 375.74002,
+              "text": "Mmm"
+            }
+          ],
+          "lines": 54,
+          "verified": 50,
+          "checks": 4,
+          "seconds": 13.4,
+          "generatedAt": "2026-11-22T17:40:11+00:00"
         }
       }
     },
@@ -959,12 +2007,12 @@
       "publishedAt": "2013-03-28T07:37:50Z",
       "durationSec": 223,
       "duration": "3:43",
-      "views": 5662766,
+      "views": 5671903,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
       "confidence": 0,
-      "notes": "",
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] ax_NMWLEb6U: Requested format is not available. Use --list-formats for a list of available formats).",
       "order": ""
     },
     {
@@ -975,7 +2023,23 @@
       "publishedAt": "2023-02-09T16:18:25Z",
       "durationSec": 248,
       "duration": "4:08",
-      "views": 649639,
+      "views": 657286,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] ax_NMWLEb6U: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] eQDOwb3yURk: Requested format is not available. Use --list-formats for a list of available formats).",
+      "order": ""
+    },
+    {
+      "videoId": "ebelr6d8D70",
+      "url": "https://www.youtube.com/watch?v=ebelr6d8D70",
+      "title": "Come Thou Fount of Every Blessing with Lyrics Chris Rice",
+      "channel": "Festus Morumbasi",
+      "publishedAt": "2018-04-20T10:27:59Z",
+      "durationSec": 222,
+      "duration": "3:42",
+      "views": 299901,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -984,14 +2048,14 @@
       "order": ""
     },
     {
-      "videoId": "9Fmi4AT4XCQ",
-      "url": "https://www.youtube.com/watch?v=9Fmi4AT4XCQ",
-      "title": "COME THOU FOUNT OF EVERY BLESSING ",
-      "channel": "BRIDE OF CHRIST MINISTRY",
-      "publishedAt": "2026-03-14T19:20:02Z",
-      "durationSec": 396,
-      "duration": "6:36",
-      "views": 587356,
+      "videoId": "EwdG5l_MeKk",
+      "url": "https://www.youtube.com/watch?v=EwdG5l_MeKk",
+      "title": "Come, Thou Fount of Every Blessing: Hymn #1001(with lyrics)",
+      "channel": "Fun Follow Me",
+      "publishedAt": "2024-08-04T17:15:00Z",
+      "durationSec": 159,
+      "duration": "2:39",
+      "views": 6616,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1000,14 +2064,30 @@
       "order": ""
     },
     {
-      "videoId": "bpGFMuXshGE",
-      "url": "https://www.youtube.com/watch?v=bpGFMuXshGE",
-      "title": "COME, THOU FOUNT OF EVERY BLESSING | THE LIVING STONES QUARTET #thelsq",
-      "channel": "The Living Stones Quartet LSQ",
-      "publishedAt": "2022-01-16T02:18:22Z",
-      "durationSec": 191,
-      "duration": "3:11",
-      "views": 396845,
+      "videoId": "3bvYJL6WhuY",
+      "url": "https://www.youtube.com/watch?v=3bvYJL6WhuY",
+      "title": "Shane &amp; Shane: Come Thou Fount (Above All Else)",
+      "channel": "Shane and Shane",
+      "publishedAt": "2019-02-14T15:05:21Z",
+      "durationSec": 359,
+      "duration": "5:59",
+      "views": 20015404,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "",
+      "order": ""
+    },
+    {
+      "videoId": "o1drPgXtti0",
+      "url": "https://www.youtube.com/watch?v=o1drPgXtti0",
+      "title": "Come Thou Fount | Classic Christian Hymn",
+      "channel": "Hymn Ascend",
+      "publishedAt": "2025-12-31T12:01:38Z",
+      "durationSec": 209,
+      "duration": "3:29",
+      "views": 2299390,
       "hasCaptions": false,
       "lyrics": null,
       "transcriptSource": "none",
@@ -1016,5 +2096,6 @@
       "order": ""
     }
   ],
-  "needsAudio": true
+  "needsAudio": false,
+  "listenedAt": "2026-11-22T17:40:11+00:00"
 }
