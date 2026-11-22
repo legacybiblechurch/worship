@@ -2033,15 +2033,20 @@ const LEGACY_SONGS = {
   },
   "take-my-life-and-let-it-be": {
     title: "Take My Life and Let it Be",
-    youtube: "https://www.youtube.com/watch?v=u64Onr6FW0k",
+    youtube: "https://youtu.be/P6XnZ6KFv-g?si=sCBKP7ColFy7nGbz",
     lyrics: [
-    { label: "", lines: ["Take My Life and Let it Be"] },
+    { label: "", lines: ["Take My Life and Let it Be", "- Frances Ridley Havergal (1874)"] },
     { label: "Verse 1", lines: ["Take my life, and let it be", "Consecrated, Lord, to Thee;"] },
     { label: "", lines: ["Take my moments and my days,", "Let them flow in ceaseless praise,", "Let them flow in ceaseless praise."] },
     { label: "Verse 2", lines: ["Take my hands, and let them move", "At the impulse of Thy love;"] },
     { label: "", lines: ["Take my feet, and let them be", "Swift and beautiful for Thee,", "Swift and beautiful for Thee."] },
     { label: "Verse 3", lines: ["Take my voice, and let me sing", "Always, only, for my King;"] },
-    { label: "", lines: ["Take my lips, and let them be", "filled with messages from Thee,", "filled with messages from Thee."] }
+    { label: "", lines: ["Take my lips, and let them be", "filled with messages from Thee,", "filled with messages from Thee."] },
+    { label: "Verse 4", lines: ["Take my silver and my gold,", "Not a mite would I withhold;"] },
+    { label: "", lines: ["Take my intellect, and use", "Every power as Thou shalt choose,", "Every power as Thou shalt choose."] },
+    { label: "Verse 5", lines: ["Take my will, and make it Thine;", "It shall be no longer mine."] },
+    { label: "", lines: ["Take my heart, it is Thine own;", "It shall be Thy royal throne,", "It shall be Thy royal throne."] },
+    { label: "Verse 6", lines: ["Take myself and I will be", "Ever only all for Thee", "Ever only all for Thee"] }
   ]
   },
   "to-god-be-the-glory": {
