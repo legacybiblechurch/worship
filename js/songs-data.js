@@ -587,18 +587,26 @@ const LEGACY_SONGS = {
   },
   "come-thou-fount-of-evry-blessing": {
     title: "Come, Thou Fount of Ev'ry Blessing",
-    youtube: "https://www.youtube.com/watch?v=dmhgaERoGXg",
+    youtube: "https://youtu.be/LR-WgHBc5Xc?si=8ni7lT3_k3d-lRf-",
     lyrics: [
-    { label: "Verse 1", lines: ["Come, thou fount of ev'ry blessing", "Tune my heart to sing Thy grace", "Streams of mercy, never ceasing"] },
-    { label: "Verse 1", lines: ["Call for songs of loudest praise", "Teach me some melodious sonnet", "Sung by flaming tongues above"] },
-    { label: "Verse 1", lines: ["Praise the mount, I'm fixed upon it", "Mount of Thy redeeming love"] },
-    { label: "Verse 2", lines: ["Hitherto, Thy love has blessed me", "Thou hast drawn me to this place", "And I know Thy hand will lead me"] },
-    { label: "Verse 2", lines: ["Safely home by Thy good grace", "Jesus sought me when a stranger", "Wandering from the fold of God"] },
-    { label: "Verse 2", lines: ["He, to rescue me from danger", "Bought me with His precious blood"] },
-    { label: "Verse 4", lines: ["O to grace how great a debtor", "Daily I'm constrained to be"] },
-    { label: "", lines: ["Let thy goodness, like a fetter", "Bind my wand'ring heart to thee"] },
-    { label: "Verse 4", lines: ["Prone to wander, Lord, I feel it", "Prone to leave the God I love"] },
-    { label: "Verse 4", lines: ["Here's my heart, O take and seal it", "Seal it for thy courts above"] }
+    { label: "Verse 1", lines: ["[Verse 1]", "Come thou fount of every blessing", "Tune my heart to sing thy grace"] },
+    { label: "Verse 1", lines: ["Streams of mercy never ceasing", "Call for songs of loudest praise"] },
+    { label: "", lines: ["Teach me some melodious sonnet", "Sung by flaming tongues above"] },
+    { label: "Verse 1", lines: ["Praise the mount I'm fixed upon it", "Mount of God's unchanging love"] },
+    { label: "Verse 2", lines: ["Here I raise my Ebenezer", "Hither by Thy help I've come"] },
+    { label: "", lines: ["And I hope by thy good pleasure", "Safely to arrive at home"] },
+    { label: "Verse 2", lines: ["Jesus sought me when a stranger", "Wandering from the fold of God"] },
+    { label: "Verse 2", lines: ["He to rescue me from danger", "Interposed His precious blood"] },
+    { label: "Verse 3", lines: ["Oh to grace how great a debtor", "Daily I'm constrained to be"] },
+    { label: "", lines: ["Let Thy grace now like a fetter", "Bind my wandering heart to Thee"] },
+    { label: "Verse 3", lines: ["Prone to wander, Lord I feel it", "Prone to leave the God I love"] },
+    { label: "", lines: ["Here's my heart, oh, take it seal it", "Seal it for Thy courts above"] },
+    { label: "Verse 3", lines: ["Prone to wander, Lord I feel it", "Prone to leave the God I love"] },
+    { label: "Verse 3", lines: ["Here's my heart, oh take and seal it", "Seal it for Thy courts above"] },
+    { label: "", lines: ["Come thou fount of every blessing", "Tune my heart to sing Thy grace"] },
+    { label: "", lines: ["Streams of mercy never ceasing", "Call for songs of loudest praise"] },
+    { label: "", lines: ["Teach me some melodious sonnet", "Sung by flaming tongues above"] },
+    { label: "", lines: ["Praise the mount I'm fixed upon it", "Mount of God's unchanging love"] }
   ]
   },
   "crown-him-with-many-crowns": {
