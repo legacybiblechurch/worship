@@ -3,12 +3,222 @@
   "title": "Behold Our God",
   "input": "Behold Our God",
   "isNew": false,
-  "forced": "0mfdjRA7vLM",
-  "signature": "121bc3c98ae22543",
-  "generatedAt": "2026-11-22T07:14:49+00:00",
+  "forced": "n20t8xfBCio",
+  "signature": "73c5eb59e1528637",
+  "generatedAt": "2026-11-22T17:00:34+00:00",
   "titleKey": "behold our god",
   "searchCandidates": [],
   "candidates": [
+    {
+      "videoId": "n20t8xfBCio",
+      "url": "https://www.youtube.com/watch?v=n20t8xfBCio",
+      "title": "When I Survey",
+      "channel": "Hymns of Grace - Topic",
+      "publishedAt": "2023-12-14T10:01:35Z",
+      "durationSec": 197,
+      "duration": "3:17",
+      "views": 29038,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "",
+          "lines": [
+            "Lord, where can we hide?",
+            "There's nothing hidden from Your sight"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "You know every heart,",
+            "You've seen the depths of who we are"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "But when our shame says run",
+            "Your mercy calls us home"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Lead us to repentance",
+            "Make us know Your presence"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Even when We fall",
+            "You are never far"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Draw us with Your kindness",
+            "With You there's forgiveness"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Condemnation's gone,",
+            "All the work is done",
+            "Lead us to repentance"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "There's no greater love",
+            "Our Savior bled and died for us"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Guilty ones are dressed",
+            "In Jesus' perfect righteousness"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "So when we go astray",
+            "Lord, give us grace to pray"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Lead us to repentance",
+            "Make us know Your presence"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Even when we fall",
+            "You are never far"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Draw us with Your kindness",
+            "With You there's forgiveness"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Condemnation's gone,",
+            "All the work is done",
+            "Lead us to repentance"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Father, Your loving kindness",
+            "Never has failed to find us",
+            "You have been patient with us",
+            "You always will be"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Father, your loving kindness",
+            "Never has failed to find us",
+            "You have been Patient with us",
+            "You always will be"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Lead us to repentance",
+            "Make us know Your presence"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Even when we fall",
+            "You are never far"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Draw us with Your kindness",
+            "With You there's forgiveness"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Condemnation's gone",
+            "All the work is done"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Lead us to repentance",
+            "Make us know Your presence"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Even when we fall",
+            "You are never far"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Draw us with Your kindness",
+            "With You there's forgiveness"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Condemnation's gone",
+            "All the work is done",
+            "Lead us to repentance",
+            "Oh, lead us to repentance"
+          ]
+        }
+      ],
+      "transcriptSource": "reference",
+      "confidence": 55,
+      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
+      "order": "",
+      "fetchError": "ERROR: unable to download video data: HTTP Error 403: Forbidden",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "n20t8xfBCio",
+          "sources": [
+            "library"
+          ],
+          "missing": [
+            "captions",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
+        }
+      }
+    },
     {
       "videoId": "0mfdjRA7vLM",
       "url": "https://www.youtube.com/watch?v=0mfdjRA7vLM",
@@ -676,6 +886,5 @@
       }
     }
   ],
-  "needsAudio": false,
-  "listenedAt": "2026-11-22T07:16:07+00:00"
+  "needsAudio": true
 }
