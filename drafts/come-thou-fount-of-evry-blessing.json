@@ -3,9 +3,9 @@
   "title": "Come, Thou Fount of Ev'ry Blessing",
   "input": "Come, Thou Fount of Ev'ry Blessing",
   "isNew": false,
-  "forced": "dmhgaERoGXg",
-  "signature": "afd2af9a8327b2fd",
-  "generatedAt": "2026-11-14T23:48:21+00:00",
+  "forced": "LR-WgHBc5Xc",
+  "signature": "337fe09062fb9053",
+  "generatedAt": "2026-11-22T08:37:14+00:00",
   "titleKey": "come, thou fount of ev'ry blessing",
   "searchCandidates": [
     {
@@ -77,14 +77,14 @@
   ],
   "candidates": [
     {
-      "videoId": "dmhgaERoGXg",
-      "url": "https://www.youtube.com/watch?v=dmhgaERoGXg",
-      "title": "Come, Thou Fount of Every Blessing",
-      "channel": "Martijn de Groot",
-      "publishedAt": "2016-07-02T18:44:20Z",
-      "durationSec": 158,
-      "duration": "2:38",
-      "views": 145773,
+      "videoId": "LR-WgHBc5Xc",
+      "url": "https://www.youtube.com/watch?v=LR-WgHBc5Xc",
+      "title": "Come Thou Fount",
+      "channel": "Kings Kaleidoscope - Topic",
+      "publishedAt": "2020-11-01T10:01:15Z",
+      "durationSec": 297,
+      "duration": "4:57",
+      "views": 459117,
       "hasCaptions": false,
       "lyrics": [
         {
@@ -134,40 +134,22 @@
           ]
         },
         {
-          "label": "Verse 3",
-          "lines": [
-            "O that day when freed from sinning",
-            "I shall see Thy lovely face",
-            "Cloth'ed there in blood-washed linen"
-          ]
-        },
-        {
-          "label": "Verse 3",
-          "lines": [
-            "How I'll sing Thy sov'reign grace",
-            "Come, my Lord, no longer tarry",
-            "Take my ransomed soul away"
-          ]
-        },
-        {
-          "label": "Verse 3",
-          "lines": [
-            "Send thine angels now to carry",
-            "Me to realms of endless days"
-          ]
-        },
-        {
           "label": "Verse 4",
           "lines": [
             "O to grace how great a debtor",
-            "Daily I'm constrained to be",
-            "Let that grace now, like a fetter"
+            "Daily I'm constrained to be"
+          ]
+        },
+        {
+          "label": "",
+          "lines": [
+            "Let thy goodness, like a fetter",
+            "Bind my wand'ring heart to thee"
           ]
         },
         {
           "label": "Verse 4",
           "lines": [
-            "Bind my wand'ring heart to thee",
             "Prone to wander, Lord, I feel it",
             "Prone to leave the God I love"
           ]
@@ -180,20 +162,25 @@
           ]
         }
       ],
-      "transcriptSource": "engine",
-      "confidence": 0,
+      "transcriptSource": "reference",
+      "confidence": 55,
       "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
       "order": "",
+      "fetchError": "ERROR: unable to download video data: HTTP Error 403: Forbidden",
       "engine": {
-        "verdict": "verified",
+        "verdict": "unverified",
         "lines": [],
         "checks": [],
         "report": {
-          "videoId": "dmhgaERoGXg",
+          "videoId": "LR-WgHBc5Xc",
           "sources": [
-            "verified_recording"
+            "library"
           ],
-          "note": "human-verified for this exact recording"
+          "missing": [
+            "captions",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
         }
       }
     },
@@ -844,6 +831,127 @@
       "order": "Verse 1 · Verse 2 · Verse 4 · Tag"
     },
     {
+      "videoId": "dmhgaERoGXg",
+      "url": "https://www.youtube.com/watch?v=dmhgaERoGXg",
+      "title": "Come, Thou Fount of Every Blessing",
+      "channel": "Martijn de Groot",
+      "publishedAt": "2016-07-02T18:44:20Z",
+      "durationSec": 158,
+      "duration": "2:38",
+      "views": 145773,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Come, thou fount of ev'ry blessing",
+            "Tune my heart to sing Thy grace",
+            "Streams of mercy, never ceasing"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Call for songs of loudest praise",
+            "Teach me some melodious sonnet",
+            "Sung by flaming tongues above"
+          ]
+        },
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Praise the mount, I'm fixed upon it",
+            "Mount of Thy redeeming love"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Hitherto, Thy love has blessed me",
+            "Thou hast drawn me to this place",
+            "And I know Thy hand will lead me"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Safely home by Thy good grace",
+            "Jesus sought me when a stranger",
+            "Wandering from the fold of God"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "He, to rescue me from danger",
+            "Bought me with His precious blood"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "O that day when freed from sinning",
+            "I shall see Thy lovely face",
+            "Cloth'ed there in blood-washed linen"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "How I'll sing Thy sov'reign grace",
+            "Come, my Lord, no longer tarry",
+            "Take my ransomed soul away"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Send thine angels now to carry",
+            "Me to realms of endless days"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "O to grace how great a debtor",
+            "Daily I'm constrained to be",
+            "Let that grace now, like a fetter"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Bind my wand'ring heart to thee",
+            "Prone to wander, Lord, I feel it",
+            "Prone to leave the God I love"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "Here's my heart, O take and seal it",
+            "Seal it for thy courts above"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 0,
+      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
+      "order": "",
+      "engine": {
+        "verdict": "verified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "dmhgaERoGXg",
+          "sources": [
+            "verified_recording"
+          ],
+          "note": "human-verified for this exact recording"
+        }
+      }
+    },
+    {
       "videoId": "ax_NMWLEb6U",
       "url": "https://www.youtube.com/watch?v=ax_NMWLEb6U",
       "title": "Come Thou Fount Of Every Blessing (lyrics &amp; chord) Chris Rice",
@@ -908,6 +1016,5 @@
       "order": ""
     }
   ],
-  "needsAudio": false,
-  "listenedAt": "2026-11-14T23:48:47+00:00"
+  "needsAudio": true
 }
