@@ -1,0 +1,1269 @@
+{
+  "slug": "let-me-be-caedmons",
+  "title": "let me be caedmon's",
+  "input": "let me be caedmon's",
+  "isNew": true,
+  "forced": null,
+  "signature": "7d399a7f1b4b67f9",
+  "generatedAt": "2026-11-22T09:27:18+00:00",
+  "titleKey": "let me be caedmon's",
+  "searchCandidates": [
+    {
+      "videoId": "Vn1i7en5bzE",
+      "url": "https://www.youtube.com/watch?v=Vn1i7en5bzE",
+      "title": "Let Me Be - Caedmon&#39;s Cross",
+      "channel": "Trinity Fellowship",
+      "publishedAt": "2013-06-08T09:56:33Z",
+      "durationSec": 270,
+      "duration": "4:30",
+      "views": 11400,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "AOm6b-8_1Nk",
+      "url": "https://www.youtube.com/watch?v=AOm6b-8_1Nk",
+      "title": "Caedmon&#39;s Call - Faith My Eyes",
+      "channel": "David",
+      "publishedAt": "2010-12-09T04:20:09Z",
+      "durationSec": 282,
+      "duration": "4:42",
+      "views": 144890,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "k8PIfjFxlys",
+      "url": "https://www.youtube.com/watch?v=k8PIfjFxlys",
+      "title": "Caedmon&#39;s Call- Love Alone (Lyric Video)",
+      "channel": "Mavin Groede",
+      "publishedAt": "2017-03-31T03:03:06Z",
+      "durationSec": 296,
+      "duration": "4:56",
+      "views": 80263,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "62is5qsMS_0",
+      "url": "https://www.youtube.com/watch?v=62is5qsMS_0",
+      "title": "Thy Mercy My God Lyrics Video - Caedmon&#39;s Call - Cinematic Drone - by The Two Books",
+      "channel": "Deremer Studios",
+      "publishedAt": "2023-01-12T14:10:28Z",
+      "durationSec": 188,
+      "duration": "3:08",
+      "views": 3559,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "DH9PfQniaz4",
+      "url": "https://www.youtube.com/watch?v=DH9PfQniaz4",
+      "title": "Covenant Song -  Caedmon&#39;s Call, lyric video",
+      "channel": "Rebekah Bishop",
+      "publishedAt": "2019-03-15T18:00:54Z",
+      "durationSec": 303,
+      "duration": "5:03",
+      "views": 3420,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "rqnom1eHS5Y",
+      "url": "https://www.youtube.com/watch?v=rqnom1eHS5Y",
+      "title": "Great and Mighty -  Caedmon&#39;s Call -  Lyrics",
+      "channel": "Trinity Fellowship",
+      "publishedAt": "2016-07-22T19:59:47Z",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 2238,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "HpHwYD786t4",
+      "url": "https://www.youtube.com/watch?v=HpHwYD786t4",
+      "title": "Caedmon&#39;s Call - Manner and means (lyrics in description)",
+      "channel": "Greg Chupin",
+      "publishedAt": "2011-11-23T06:41:58Z",
+      "durationSec": 283,
+      "duration": "4:43",
+      "views": 1822,
+      "hasCaptions": false
+    },
+    {
+      "videoId": "5fWmLK_kpsg",
+      "url": "https://www.youtube.com/watch?v=5fWmLK_kpsg",
+      "title": "Majesty - Caedmon&#39;s Call - Lyric video",
+      "channel": "Christian Worship Lyric Videos",
+      "publishedAt": "2021-06-24T05:57:16Z",
+      "durationSec": 244,
+      "duration": "4:04",
+      "views": 1181,
+      "hasCaptions": false
+    }
+  ],
+  "candidates": [
+    {
+      "videoId": "Vn1i7en5bzE",
+      "url": "https://www.youtube.com/watch?v=Vn1i7en5bzE",
+      "title": "Let Me Be - Caedmon&#39;s Cross",
+      "channel": "Trinity Fellowship",
+      "publishedAt": "2013-06-08T09:56:33Z",
+      "durationSec": 270,
+      "duration": "4:30",
+      "views": 11400,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "Waiting to listen to the recording.",
+      "order": "['Verse 1', 'Chorus', 'Verse 2', 'Bridge', 'Tag']",
+      "fetchError": "ERROR: unable to download video data: HTTP Error 403: Forbidden",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [],
+        "checks": [],
+        "report": {
+          "videoId": "Vn1i7en5bzE",
+          "sources": [],
+          "missing": [
+            "captions",
+            "library",
+            "audio"
+          ],
+          "note": "no recording evidence: needs audio or captions"
+        }
+      }
+    },
+    {
+      "videoId": "AOm6b-8_1Nk",
+      "url": "https://www.youtube.com/watch?v=AOm6b-8_1Nk",
+      "title": "Caedmon&#39;s Call - Faith My Eyes",
+      "channel": "David",
+      "publishedAt": "2010-12-09T04:20:09Z",
+      "durationSec": 282,
+      "duration": "4:42",
+      "views": 144890,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "As I survey the ground for ants",
+            "Looking for a place to sit and read"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "I'm reminded of the streets of my hometown How",
+            "They're much like this concrete",
+            "It's warm beneath my feet"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "Now I'm all wrapped up in my mother's face",
+            "With a touch of my father",
+            "Just up around the eyes",
+            "And the sound of my brother's laugh",
+            "More wraps up in what binds our ever-destined lives"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "But if I must go",
+            "Things I trust will be better off without me",
+            "But I don't want to know",
+            "Cause life is better off a mystery",
+            "So keep on coming with these lines on the road",
+            "And keep me responsible,",
+            "Be it a light or heavy load",
+            "Keep me guessing with these blessings in disguise"
+          ]
+        },
+        {
+          "label": "Verse 5",
+          "lines": [
+            "I'll walk grace like feet and faith like eyes",
+            "My hometown weather is on TV",
+            "And I imagine the lives of the people living there"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "And I'm curious if they imagine me"
+          ]
+        },
+        {
+          "label": "Verse 6",
+          "lines": [
+            "They just want to leave",
+            "I wish that I could stay"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I get turned around"
+          ]
+        },
+        {
+          "label": "Verse 7",
+          "lines": [
+            "And I mistake my happiness for blessing",
+            "And I'm blessed as the poor",
+            "Still I judge success by how I'm dressing",
+            "So keep on coming with these lines on the road",
+            "And keeping me responsible,",
+            "Be it a light or heavy load",
+            "Keep me guessing with these blessings in disguise",
+            "And I'll walk and grace my feet and faith my eyes"
+          ]
+        },
+        {
+          "label": "Verse 8",
+          "lines": [
+            "La la la la la la So",
+            "I'll sing a song of my hometown"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I'll breathe the air and I'll walk the streets"
+          ]
+        },
+        {
+          "label": "Verse 9",
+          "lines": [
+            "And maybe find a place to sit and breathe",
+            "But the ants are a welcome company",
+            "Keep welcoming the lions on the road",
+            "And keeping me responsible",
+            "Being light on heavy load",
+            "Keep me guessing with these blessings in disguise",
+            "I'll walk and grace my feet and faith my eyes",
+            "I'll walk and grace my feet and faith my eyes"
+          ]
+        },
+        {
+          "label": "Tag",
+          "lines": [
+            "I'll walk with grace my feet and faith my eyes"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 73,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats).",
+      "order": "",
+      "engine": {
+        "verdict": "unverified",
+        "lines": [
+          {
+            "text": "As I survey the ground for ants",
+            "t0": 13.44,
+            "t1": 17.2,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "As I survey the ground for ants",
+              "asr_turbo": "As I survey the ground for ants,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Looking for a place to sit and read",
+            "t0": 19.44,
+            "t1": 24.0,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Looking for a place to sin and be",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Looking for a place to sit and read",
+              "asr_turbo": "looking for a place to sin and be."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'm reminded of the streets of my hometown How",
+            "t0": 27.6,
+            "t1": 33.9,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I'm reminded of the streets of my hometown How",
+              "asr_turbo": "I'm reminded of the streets of my hometown How"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "They're much like this concrete",
+            "t0": 33.9,
+            "t1": 36.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "They're much like this concrete",
+              "asr_turbo": "they're much like this concrete"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "It's warm beneath my feet",
+            "t0": 36.94,
+            "t1": 39.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "It's warm beneath my feet",
+              "asr_turbo": "It's warm beneath my feet"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Now I'm all wrapped up in my mother's face",
+            "t0": 41.8,
+            "t1": 46.46,
+            "conf": 0.54,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And how I'm all wrapped up in my mother's face",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Now I'm all wrapped up in my mother's face",
+              "asr_turbo": "And how I'm all wrapped up in my mother's face"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "With a touch of my father",
+            "t0": 48.18,
+            "t1": 50.98,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "With a touch of my father",
+              "asr_turbo": "With a touch of my father"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Just up around the eyes",
+            "t0": 51.58,
+            "t1": 53.98,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Just up around the eyes",
+              "asr_turbo": "Just up around the eyes"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And the sound of my brother's laugh",
+            "t0": 53.5,
+            "t1": 61.28,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And the sound of my brother's laugh",
+              "asr_turbo": "And the sound of my brother's laugh"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "More wraps up in what binds our ever-destined lives",
+            "t0": 62.76,
+            "t1": 68.68,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "More wraps up in what binds our ever-destined lives",
+              "asr_turbo": "More wraps up in what binds our ever-destined ever-destined lies"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But if I must go",
+            "t0": 72.28,
+            "t1": 75.68291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "But if I must go",
+              "asr_turbo": "But if I must go?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Things I trust will be better off without me",
+            "t0": 78.08291,
+            "t1": 83.102905,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Things I trust will be better off without me",
+              "asr_turbo": "Things I trust will be better off without me"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But I don't want to know",
+            "t0": 83.90291,
+            "t1": 87.50291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "But I don't want to know",
+              "asr_turbo": "But I don't want to know"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Cause life is better off a mystery",
+            "t0": 89.58291,
+            "t1": 94.782906,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Cause life is better off a mystery",
+              "asr_turbo": "Cause life is better off How a mystery."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "So keep on coming with these lines on the road",
+            "t0": 96.282906,
+            "t1": 100.50291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "So keep on coming with these lines on the road",
+              "asr_turbo": "So keep on coming with these lines on the road."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And keep me responsible,",
+            "t0": 101.84291,
+            "t1": 104.102905,
+            "conf": 0.61,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Keep me responsible,",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And keep me responsible,",
+              "asr_turbo": "Keep me responsible,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be it a light or heavy load",
+            "t0": 104.102905,
+            "t1": 106.30291,
+            "conf": 0.61,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Being a light or heavy load",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Be it a light or heavy load",
+              "asr_turbo": "being a light or heavy load."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Keep me guessing with these blessings in disguise",
+            "t0": 107.94291,
+            "t1": 111.962906,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "Keep me guessing with these blessings in disguise",
+              "asr_turbo": "Keep me guessing with these blessings in disguise."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll walk grace like feet and faith like eyes",
+            "t0": 113.44291,
+            "t1": 118.36291,
+            "conf": 0.61,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I'll walk with grace my feet and fade my eyes",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I'll walk grace like feet and faith like eyes",
+              "asr_turbo": "I'll walk with grace my feet and fade my eyes."
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "My hometown weather is on TV",
+            "t0": 118.40291,
+            "t1": 124.84291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "My hometown weather is on TV",
+              "asr_turbo": "My hometown weather is on TV"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I imagine the lives of the people living there",
+            "t0": 127.04291,
+            "t1": 132.76291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And I imagine the lives of the people living there",
+              "asr_turbo": "And I imagine the lives of the people living there"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I'm curious if they imagine me",
+            "t0": 136.0029,
+            "t1": 140.04291,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And I'm curious if they imagine me",
+              "asr_turbo": "And I'm curious if they imagine me If"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "They just want to leave",
+            "t0": 142.48581,
+            "t1": 145.28581,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "They just want to leave",
+              "asr_turbo": "they just want to leave,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I wish that I could stay",
+            "t0": 144.30582,
+            "t1": 147.92581,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I wish that I could stay",
+              "asr_turbo": "I wish that I could stay"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I get turned around",
+            "t0": 151.30582,
+            "t1": 154.58582,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I get turned around",
+              "asr_turbo": "I get turned around"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I mistake my happiness for blessing",
+            "t0": 157.12582,
+            "t1": 162.00581,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And I mistake my happiness for blessing",
+              "asr_turbo": "And I mistake my happiness for blessing"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I'm blessed as the poor",
+            "t0": 162.92581,
+            "t1": 166.48581,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And I'm blessed as the poor",
+              "asr_turbo": "And I'm blessed as the poor"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Still I judge success by how I'm dressing",
+            "t0": 168.74582,
+            "t1": 174.14581,
+            "conf": 0.55,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Still I judge success I'm dressing",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Still I judge success by how I'm dressing",
+              "asr_turbo": "Still I judge success I'm dressing"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "So keep on coming with these lines on the road",
+            "t0": 175.28581,
+            "t1": 179.44582,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "So keep on coming with these lines on the road",
+              "asr_turbo": "So keep on coming With these lines on the road"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And keeping me responsible,",
+            "t0": 180.90582,
+            "t1": 183.16582,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "And keeping me responsible,",
+              "asr_turbo": "And keeping me responsible"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Be it a light or heavy load",
+            "t0": 183.16582,
+            "t1": 185.30582,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Be it a light or heavy load",
+              "asr_turbo": "Be it a light or a heavy load"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Keep me guessing with these blessings in disguise",
+            "t0": 187.14581,
+            "t1": 191.06581,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "Keep me guessing with these blessings in disguise",
+              "asr_turbo": "Keep me guessing With these blessings in disguise"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And I'll walk and grace my feet and faith my eyes",
+            "t0": 191.36581,
+            "t1": 199.00581,
+            "conf": 0.6,
+            "status": "check",
+            "alts": [
+              {
+                "text": "And I'll walk and grace my feet and give you faith my eyes La la la",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "And I'll walk and grace my feet and faith my eyes",
+              "asr_turbo": "And I'll walk and grace my feet and give you faith my eyes La la la"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "La la la la la la So",
+            "t0": 201.5458,
+            "t1": 208.06583,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "La la la la la la So",
+              "asr_turbo": "la la la la la la So"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll sing a song of my hometown",
+            "t0": 208.06583,
+            "t1": 211.26872,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I'll sing a song of my hometown",
+              "asr_turbo": "I'll sing a song of my hometown"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll breathe the air and I'll walk the streets",
+            "t0": 214.12872,
+            "t1": 219.14873,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I'll breathe the air and I'll walk the streets",
+              "asr_turbo": "Breathe the air and walk the streets"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And maybe find a place to sit and breathe",
+            "t0": 222.08873,
+            "t1": 226.26872,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "And maybe find a place to sit and breathe",
+              "asr_turbo": "And maybe find a place to sit and be"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But the ants are a welcome company",
+            "t0": 228.16873,
+            "t1": 232.84872,
+            "conf": 0.57,
+            "status": "check",
+            "alts": [
+              {
+                "text": "But the ends are welcome company To",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "But the ants are a welcome company",
+              "asr_turbo": "But the ends are welcome company To"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Keep welcoming the lions on the road",
+            "t0": 233.24872,
+            "t1": 238.08873,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Keep on coming, putting lines on the road",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Keep welcoming the lions on the road",
+              "asr_turbo": "keep on coming, putting lines on the road"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "And keeping me responsible",
+            "t0": 239.48872,
+            "t1": 241.06873,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "And keeping me responsible",
+              "asr_turbo": "And keeping me responsible,"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Being light on heavy load",
+            "t0": 241.20872,
+            "t1": 243.96872,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Being light on heavy load",
+              "asr_turbo": "being light on heavy load To"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Keep me guessing with these blessings in disguise",
+            "t0": 245.52872,
+            "t1": 249.60873,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Keep me guessing these blessings in disguise",
+                "sources": [
+                  "this occurrence"
+                ]
+              },
+              {
+                "text": "Keep me guessing, these blessings in the skies And",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree; matched to 2 other occurrences",
+            "sources": {
+              "asr_large": "Keep me guessing these blessings in disguise",
+              "asr_turbo": "keep me guessing, these blessings in the skies And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll walk and grace my feet and faith my eyes",
+            "t0": 251.20872,
+            "t1": 255.82872,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I'll walk and face my feet and face my eyes And",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I'll walk and grace my feet and faith my eyes",
+              "asr_turbo": "I'll walk and face my feet and face my eyes And"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll walk and grace my feet and faith my eyes",
+            "t0": 257.0887,
+            "t1": 261.66873,
+            "conf": 0.52,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I'll walk and face my feet and face my eyes",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I'll walk and grace my feet and faith my eyes",
+              "asr_turbo": "I'll walk and face my feet and face my eyes"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I'll walk with grace my feet and faith my eyes",
+            "t0": 262.90872,
+            "t1": 269.24872,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "I'll walk with grace my feet and faith my eyes",
+              "asr_turbo": "I'll walk with grace my feet, faith my eyes"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 17.44,
+            "t1": 24.0,
+            "text": "Looking for a place to sit and read",
+            "options": [
+              "Looking for a place to sit and read",
+              "Looking for a place to sin and be"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 39.8,
+            "t1": 46.46,
+            "text": "Now I'm all wrapped up in my mother's face",
+            "options": [
+              "Now I'm all wrapped up in my mother's face",
+              "And how I'm all wrapped up in my mother's face"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 99.84291,
+            "t1": 104.102905,
+            "text": "And keep me responsible,",
+            "options": [
+              "And keep me responsible,",
+              "Keep me responsible,"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 102.102905,
+            "t1": 106.30291,
+            "text": "Be it a light or heavy load",
+            "options": [
+              "Be it a light or heavy load",
+              "Being a light or heavy load"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 111.44291,
+            "t1": 118.36291,
+            "text": "I'll walk grace like feet and faith like eyes",
+            "options": [
+              "I'll walk grace like feet and faith like eyes",
+              "I'll walk with grace my feet and fade my eyes"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 166.74582,
+            "t1": 174.14581,
+            "text": "Still I judge success by how I'm dressing",
+            "options": [
+              "Still I judge success by how I'm dressing",
+              "Still I judge success I'm dressing"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 189.36581,
+            "t1": 199.00581,
+            "text": "And I'll walk and grace my feet and faith my eyes",
+            "options": [
+              "And I'll walk and grace my feet and faith my eyes",
+              "And I'll walk and grace my feet and give you faith my eyes La la la"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 226.16873,
+            "t1": 232.84872,
+            "text": "But the ants are a welcome company",
+            "options": [
+              "But the ants are a welcome company",
+              "But the ends are welcome company To"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 231.24872,
+            "t1": 238.08873,
+            "text": "Keep welcoming the lions on the road",
+            "options": [
+              "Keep welcoming the lions on the road",
+              "Keep on coming, putting lines on the road"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 243.52872,
+            "t1": 249.60873,
+            "text": "Keep me guessing with these blessings in disguise",
+            "options": [
+              "Keep me guessing with these blessings in disguise",
+              "Keep me guessing these blessings in disguise",
+              "Keep me guessing, these blessings in the skies And"
+            ],
+            "why": "one witness only; sources disagree; matched to 2 other occurrences"
+          },
+          {
+            "t0": 249.20872,
+            "t1": 255.82872,
+            "text": "I'll walk and grace my feet and faith my eyes",
+            "options": [
+              "I'll walk and grace my feet and faith my eyes",
+              "I'll walk and face my feet and face my eyes And"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 255.08870000000002,
+            "t1": 261.66873,
+            "text": "I'll walk and grace my feet and faith my eyes",
+            "options": [
+              "I'll walk and grace my feet and faith my eyes",
+              "I'll walk and face my feet and face my eyes"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "AOm6b-8_1Nk",
+          "sources": [
+            "asr_large",
+            "asr_turbo"
+          ],
+          "missing": [
+            "captions",
+            "library"
+          ],
+          "asr_seconds": 6.2,
+          "lines": 45,
+          "verified": 33,
+          "checks": 12,
+          "seconds": 6.2,
+          "generatedAt": "2026-11-22T09:28:04+00:00"
+        }
+      }
+    },
+    {
+      "videoId": "k8PIfjFxlys",
+      "url": "https://www.youtube.com/watch?v=k8PIfjFxlys",
+      "title": "Caedmon&#39;s Call- Love Alone (Lyric Video)",
+      "channel": "Mavin Groede",
+      "publishedAt": "2017-03-31T03:03:06Z",
+      "durationSec": 296,
+      "duration": "4:56",
+      "views": 80263,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-).",
+      "order": ""
+    },
+    {
+      "videoId": "62is5qsMS_0",
+      "url": "https://www.youtube.com/watch?v=62is5qsMS_0",
+      "title": "Thy Mercy My God Lyrics Video - Caedmon&#39;s Call - Cinematic Drone - by The Two Books",
+      "channel": "Deremer Studios",
+      "publishedAt": "2023-01-12T14:10:28Z",
+      "durationSec": 188,
+      "duration": "3:08",
+      "views": 3559,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "DH9PfQniaz4",
+      "url": "https://www.youtube.com/watch?v=DH9PfQniaz4",
+      "title": "Covenant Song -  Caedmon&#39;s Call, lyric video",
+      "channel": "Rebekah Bishop",
+      "publishedAt": "2019-03-15T18:00:54Z",
+      "durationSec": 303,
+      "duration": "5:03",
+      "views": 3420,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "rqnom1eHS5Y",
+      "url": "https://www.youtube.com/watch?v=rqnom1eHS5Y",
+      "title": "Great and Mighty -  Caedmon&#39;s Call -  Lyrics",
+      "channel": "Trinity Fellowship",
+      "publishedAt": "2016-07-22T19:59:47Z",
+      "durationSec": 247,
+      "duration": "4:07",
+      "views": 2238,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "HpHwYD786t4",
+      "url": "https://www.youtube.com/watch?v=HpHwYD786t4",
+      "title": "Caedmon&#39;s Call - Manner and means (lyrics in description)",
+      "channel": "Greg Chupin",
+      "publishedAt": "2011-11-23T06:41:58Z",
+      "durationSec": 283,
+      "duration": "4:43",
+      "views": 1822,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    },
+    {
+      "videoId": "5fWmLK_kpsg",
+      "url": "https://www.youtube.com/watch?v=5fWmLK_kpsg",
+      "title": "Majesty - Caedmon&#39;s Call - Lyric video",
+      "channel": "Christian Worship Lyric Videos",
+      "publishedAt": "2021-06-24T05:57:16Z",
+      "durationSec": 244,
+      "duration": "4:04",
+      "views": 1181,
+      "hasCaptions": false,
+      "lyrics": null,
+      "transcriptSource": "none",
+      "confidence": 0,
+      "notes": "No transcript (yt-dlp: ERROR: [youtube] Vn1i7en5bzE: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] AOm6b-8_1Nk: Requested format is not available. Use --list-formats for a list of available formats; yt-dlp: ERROR: [youtube] k8PIfjFxlys: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run; yt-dlp: yt-dlp blocked by YouTube this run).",
+      "order": ""
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-11-22T09:28:04+00:00"
+}
