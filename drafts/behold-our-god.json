@@ -1,0 +1,681 @@
+{
+  "slug": "behold-our-god",
+  "title": "Behold Our God",
+  "input": "Behold Our God",
+  "isNew": false,
+  "forced": "0mfdjRA7vLM",
+  "signature": "121bc3c98ae22543",
+  "generatedAt": "2026-11-22T07:14:49+00:00",
+  "titleKey": "behold our god",
+  "searchCandidates": [],
+  "candidates": [
+    {
+      "videoId": "0mfdjRA7vLM",
+      "url": "https://www.youtube.com/watch?v=0mfdjRA7vLM",
+      "title": "Lead Us To Repentance • Official Lyric Video",
+      "channel": "SovereignGraceMusic",
+      "publishedAt": "2026-07-25T04:00:22Z",
+      "durationSec": 303,
+      "duration": "5:03",
+      "views": 22898,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "Lord, where can we hide?",
+            "There's nothing hidden from your sight You know every heart You've",
+            "Seen the depths of who we are",
+            "But when our shame says run Your mercy calls us home",
+            "To repentance Make us know your presence Even when",
+            "We fall You are never far",
+            "Draw us with your kindness With you there's forgiveness Condemnation's gone",
+            "All the work is done Lead us to repentance"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "There's no greater love Our Savior bled and died for us",
+            "Guilty ones are trained",
+            "In Jesus' perfect righteousness So when we go astray Lord,",
+            "Give us grace to pray Lead us to repentance Make",
+            "Us know your presence Even when we fall You are",
+            "Draw us with your kindness With you there's forgiveness Come,"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "All the work is done Lead us to repentance All",
+            "The work is done",
+            "Father, your loving kindness Never has failed to find",
+            "Us You have been patient with us You always",
+            "Will be Father, your loving kindness",
+            "Never has failed to find us You have been",
+            "Patient with us You always will be Lead us",
+            "To repentance Make us know your presence Even when"
+          ]
+        },
+        {
+          "label": "Verse 4",
+          "lines": [
+            "We fall You are never gone Draw us with",
+            "Your kindness With you there's forgiveness",
+            "Condemnation's gone All the work is done Lead us",
+            "To repentance Make us know your presence Even when",
+            "We fall You are never far",
+            "Draw us with your kindness With you there's forgiveness",
+            "Condemnation's gone All the work is done Lead us",
+            "To repentance Oh, lead us to repentance"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 73,
+      "notes": "This video has no captions, so these are the lyrics already in the library, in the song's standard order. Play the video through and check the verses and repeats match - note any change in Fixes.",
+      "order": "",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "Lord, where can we hide?",
+            "t0": 13.74,
+            "t1": 17.44,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Lord, where can we hide?",
+              "asr_turbo": "Lord, where can we hide?",
+              "asr_prompted": "Lord, where can we hide?"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "There's nothing hidden from your sight You know every heart You've",
+            "t0": 19.76,
+            "t1": 33.58,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "There's nothing hidden from your sight You know every heart You've",
+              "asr_turbo": "There's nothing hidden from Your sight. You know every heart You've",
+              "asr_prompted": "There's nothing hidden from Your sight You know every heart You've"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Seen the depths of who we are",
+            "t0": 33.58,
+            "t1": 38.74,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Seen the depths of who we are",
+              "asr_turbo": "seen the depths of who we are",
+              "asr_prompted": "seen the depths of who we are"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "But when our shame says run Your mercy calls us home",
+            "t0": 39.62,
+            "t1": 50.68,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "But when our shame sets round Your mercy calls us home",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "asr_large": "But when our shame sets round Your mercy calls us home",
+              "asr_turbo": "But when our shame says wrong Your mercy calls us home",
+              "asr_prompted": "But when our shame says run Your mercy calls us home"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To repentance Make us know your presence Even when",
+            "t0": 51.7,
+            "t1": 59.56,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [
+              {
+                "text": "Lead us to repentance Make us know your presence Even when",
+                "sources": [
+                  "this occurrence"
+                ]
+              }
+            ],
+            "why": "two listens agree; matched to 2 other occurrences",
+            "sources": {
+              "asr_large": "Lead us to repentance Make us know your presence Even when",
+              "asr_turbo": "Lead us to repentance Make us know your presence Even when",
+              "asr_prompted": "Lead us to repentance Let us know Your presence Even when"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We fall You are never far",
+            "t0": 59.56,
+            "t1": 63.76,
+            "conf": 0.65,
+            "status": "check",
+            "alts": [
+              {
+                "text": "We fall You are never gone",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "asr_large": "We fall You are never far",
+              "asr_turbo": "we fall You are never gone",
+              "asr_prompted": "we fall You are never far"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Draw us with your kindness With you there's forgiveness Condemnation's gone",
+            "t0": 64.82,
+            "t1": 74.12,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Draw us with your kindness With you there's forgiveness Condemnation's gone",
+              "asr_turbo": "Draw us with your kindness With you there's forgiveness Condemnation's gone",
+              "asr_prompted": "Draw us with Your kindness With You there's forgiveness Condemnation's gone"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All the work is done Lead us to repentance",
+            "t0": 74.78,
+            "t1": 80.84867,
+            "conf": 0.68,
+            "status": "check",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "All the work is done Lead us to repentance",
+              "asr_turbo": "All the work is done Lead us to repent it",
+              "asr_prompted": "All the work is done Lead us to repentance A Repentance"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "There's no greater love Our Savior bled and died for us",
+            "t0": 84.86867,
+            "t1": 105.06867,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "There's no greater love Our Savior bled and died for us",
+              "asr_turbo": "There's no greater love Our Savior bled and died for us",
+              "asr_prompted": "There's no greater love Our Savior bled and died for us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Guilty ones are trained",
+            "t0": 106.16867,
+            "t1": 109.78867,
+            "conf": 0.41,
+            "status": "check",
+            "alts": [
+              {
+                "text": "Guilty once our praise",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "Guilty ones are trained",
+              "asr_turbo": "Guilty once our praise",
+              "asr_prompted": "Guilty ones are trapped"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "In Jesus' perfect righteousness So when we go astray Lord,",
+            "t0": 112.12867,
+            "t1": 126.10867,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "In Jesus' perfect righteousness So when we go astray Lord,",
+              "asr_turbo": "In Jesus' perfect righteousness So when we go astray Lord",
+              "asr_prompted": "In Jesus perfect righteousness So when we go astray Lord"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Give us grace to pray Lead us to repentance Make",
+            "t0": 126.10867,
+            "t1": 134.98868,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Give us grace to pray Lead us to repentance Make",
+              "asr_turbo": "give us grace to pray Lead us to repentance Make",
+              "asr_prompted": "give us grace to pray Lead us to repentance Make"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Us know your presence Even when we fall You are",
+            "t0": 134.98868,
+            "t1": 141.88867,
+            "conf": 0.78,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "Us know your presence Even when we fall You are",
+              "asr_turbo": "us know your presence Even when we fall You are",
+              "asr_prompted": "us know Your presence You are"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Draw us with your kindness With you there's forgiveness Come,",
+            "t0": 144.26868,
+            "t1": 151.64868,
+            "conf": 0.76,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "Draw us with your kindness With you there's forgiveness Come,",
+              "asr_turbo": "Draw us with your kindness With you there's forgiveness Condemnation's",
+              "asr_prompted": "Crossed with Your kindness With You there's forgiveness Condemnation's"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "All the work is done Lead us to repentance All",
+            "t0": 154.25734,
+            "t1": 164.07735,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "All the work is done Lead us to repentance All",
+              "asr_turbo": "All the work is done Lead us to repentance",
+              "asr_prompted": "all the work is done lead us to repentance all"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "The work is done",
+            "t0": 164.07735,
+            "t1": 167.99734,
+            "conf": 0.56,
+            "status": "check",
+            "alts": [
+              {
+                "text": "The work is done All the work is done",
+                "sources": [
+                  "asr_large"
+                ]
+              }
+            ],
+            "why": "two listens agree; sources disagree",
+            "sources": {
+              "asr_large": "The work is done All the work is done",
+              "asr_turbo": "All the work is done",
+              "asr_prompted": "the work is done"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Father, your loving kindness Never has failed to find",
+            "t0": 167.81734,
+            "t1": 184.97734,
+            "conf": 0.79,
+            "status": "unverified",
+            "alts": [],
+            "why": "two listens agree; not enough evidence",
+            "sources": {
+              "asr_large": "Father, your loving kindness Never has failed to find",
+              "asr_turbo": "Father, your loving kindness Never has failed to find",
+              "asr_prompted": "Father your love O God of love and kindness Never has failed to find"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Us You have been patient with us You always",
+            "t0": 184.97734,
+            "t1": 194.89734,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Us You have been patient with us You always",
+              "asr_turbo": "us You have been patient with us You always",
+              "asr_prompted": "us You have been patient with us You always"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Will be Father, your loving kindness",
+            "t0": 194.89734,
+            "t1": 205.05734,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Will be Father, your loving kindness",
+              "asr_turbo": "will be Father, your loving kindness",
+              "asr_prompted": "will be Father, Your loving kindness"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Never has failed to find us You have been",
+            "t0": 207.11734,
+            "t1": 215.49734,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Never has failed to find us You have been",
+              "asr_turbo": "Never has failed to find us You have been",
+              "asr_prompted": "Never has failed to find us You have been"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Patient with us You always will be Lead us",
+            "t0": 215.49734,
+            "t1": 227.97734,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Patient with us You always will be Lead us",
+              "asr_turbo": "patient with us you always will be lead us",
+              "asr_prompted": "patient with us You always will be Lead us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To repentance Make us know your presence Even when",
+            "t0": 227.97734,
+            "t1": 234.96602,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "To repentance Make us know your presence Even when",
+              "asr_turbo": "to repentance. Make us know your presence. Even when",
+              "asr_prompted": "to repentance Make us know Your presence Even when"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We fall You are never gone Draw us with",
+            "t0": 234.96602,
+            "t1": 241.64603,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "We fall You are never gone Draw us with",
+              "asr_turbo": "we fall, you are never far. Draw us with",
+              "asr_prompted": "we fall You are never far Draw us with"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Your kindness With you there's forgiveness",
+            "t0": 241.64603,
+            "t1": 245.88602,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Your kindness With you there's forgiveness",
+              "asr_turbo": "your kindness. With you there's forgiveness.",
+              "asr_prompted": "Your kindness With You there's forgiveness"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Condemnation's gone All the work is done Lead us",
+            "t0": 246.70602,
+            "t1": 254.42603,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Condemnation's gone All the work is done Lead us",
+              "asr_turbo": "Condemnation's gone. All the work is done Lead us",
+              "asr_prompted": "Condemnation's gone Lead us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To repentance Make us know your presence Even when",
+            "t0": 254.42603,
+            "t1": 261.48602,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 3x, 2 agree",
+            "sources": {
+              "asr_large": "To repentance Make us know your presence Even when",
+              "asr_turbo": "to repentance Make us know your presence Even when",
+              "asr_prompted": "to repentance Make us know Your presence Even when"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "We fall You are never far",
+            "t0": 261.48602,
+            "t1": 265.946,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "We fall You are never far",
+              "asr_turbo": "we fall You are never far",
+              "asr_prompted": "we fall You are never far"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Draw us with your kindness With you there's forgiveness",
+            "t0": 266.786,
+            "t1": 272.82602,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "Draw us with your kindness With you there's forgiveness",
+              "asr_turbo": "Draw us with your kindness With you there's forgiveness",
+              "asr_prompted": "Draw us with Your kindness With You there's forgiveness"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "Condemnation's gone All the work is done Lead us",
+            "t0": 273.36603,
+            "t1": 280.92603,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sung 2x, 2 agree",
+            "sources": {
+              "asr_large": "Condemnation's gone All the work is done Lead us",
+              "asr_turbo": "Condemnation's gone All the work is done Lead us",
+              "asr_prompted": "Condemnation's gone All the work is done Lead us"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "To repentance Oh, lead us to repentance",
+            "t0": 280.92603,
+            "t1": 288.846,
+            "conf": 0.81,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree",
+            "sources": {
+              "asr_large": "To repentance Oh, lead us to repentance",
+              "asr_turbo": "to repentance Oh, lead us to repentance",
+              "asr_prompted": "to repentance Holy dust you repented"
+            },
+            "label": null,
+            "block": null
+          }
+        ],
+        "checks": [
+          {
+            "t0": 37.62,
+            "t1": 50.68,
+            "text": "But when our shame says run Your mercy calls us home",
+            "options": [
+              "But when our shame says run Your mercy calls us home",
+              "But when our shame sets round Your mercy calls us home"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 57.56,
+            "t1": 63.76,
+            "text": "We fall You are never far",
+            "options": [
+              "We fall You are never far",
+              "We fall You are never gone"
+            ],
+            "why": "two listens agree; sources disagree"
+          },
+          {
+            "t0": 72.78,
+            "t1": 80.84867,
+            "text": "All the work is done Lead us to repentance",
+            "options": [
+              "All the work is done Lead us to repentance"
+            ],
+            "why": "two listens agree"
+          },
+          {
+            "t0": 104.16867,
+            "t1": 109.78867,
+            "text": "Guilty ones are trained",
+            "options": [
+              "Guilty ones are trained",
+              "Guilty once our praise"
+            ],
+            "why": "one witness only; sources disagree"
+          },
+          {
+            "t0": 162.07735,
+            "t1": 167.99734,
+            "text": "The work is done",
+            "options": [
+              "The work is done",
+              "The work is done All the work is done"
+            ],
+            "why": "two listens agree; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "0mfdjRA7vLM",
+          "sources": [
+            "library",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [
+            "captions"
+          ],
+          "asr_seconds": 4.8,
+          "excluded": [
+            {
+              "t0": 141.88867,
+              "text": "Never far"
+            },
+            {
+              "t0": 151.64868,
+              "text": "Gone"
+            }
+          ],
+          "lines": 30,
+          "verified": 22,
+          "checks": 5,
+          "seconds": 51.6,
+          "generatedAt": "2026-11-22T07:16:07+00:00"
+        }
+      }
+    }
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-11-22T07:16:07+00:00"
+}
