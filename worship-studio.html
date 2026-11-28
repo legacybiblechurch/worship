@@ -383,7 +383,7 @@
   </header>
 
   <div id="work">
-    <input type="file" id="guideFile" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display:none">
+    <input type="file" id="guideFile" accept=".pdf,.docx,.dotx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.wordprocessingml.template" style="display:none">
     <div class="rail" id="rail"></div>
     <div class="main" id="main"></div>
   </div>
@@ -2266,15 +2266,29 @@
     // The Worship guide QR code on the TV opens the guide itself (guide/index.html shows the Word document in dark
     // mode). Importing the guide here posts that same document, so the code is right every Sunday with no extra step.
     function publishGuideDoc(f) {
-      if (!connected || !f || !/\.docx$/i.test(f.name)) return;
-      var fr = new FileReader();
-      fr.onload = function () {
-        var b64 = String(fr.result).split(',')[1], at = '/repos/' + REPO + '/contents/guide/guide.docx';
+      if (!connected || !f || !/\.do[ct]x$/i.test(f.name)) return;
+      var name = f.name.replace(/\.dotx$/i, '.docx');
+      function post(b64) {
+        var at = '/repos/' + REPO + '/contents/guide/guide.docx';
         gh(at + '?ref=main&cb=' + Date.now(), { allow404: true }).then(function (j) { return j && j.sha; }, function () { return undefined; })
-          .then(function (sha) { return gh(at, { method: 'PUT', body: JSON.stringify({ message: 'worship guide: ' + f.name, content: b64, sha: sha, branch: 'main' }) }); })
+          .then(function (sha) { return gh(at, { method: 'PUT', body: JSON.stringify({ message: 'worship guide: ' + name, content: b64, sha: sha, branch: 'main' }) }); })
           .then(function () { toast('The worship guide is posted for the QR code on the TV.', 'ok'); })
           .catch(function () {});
-      };
+      }
+      // A guide saved as a Word template (.dotx) is the same file with one label different. That label is set
+      // back to "document" here, so the posted guide and the print copy open in Word like any other.
+      if (/\.dotx$/i.test(f.name) && window.JSZip) {
+        f.arrayBuffer().then(function (buf) { return JSZip.loadAsync(buf); }).then(function (zip) {
+          var ct = zip.file('[Content_Types].xml');
+          return (ct ? ct.async('string') : Promise.resolve('')).then(function (x) {
+            if (x) zip.file('[Content_Types].xml', x.split('wordprocessingml.template.main+xml').join('wordprocessingml.document.main+xml'));
+            return zip.generateAsync({ type: 'base64', compression: 'DEFLATE' });
+          });
+        }).then(post).catch(function () {});
+        return;
+      }
+      var fr = new FileReader();
+      fr.onload = function () { post(String(fr.result).split(',')[1]); };
       fr.readAsDataURL(f);
     }
     document.getElementById('guideFile').addEventListener('change', function () {
