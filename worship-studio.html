@@ -2448,14 +2448,14 @@
     // ───────────────────────────── a clean page once Sunday is over
     // The Sunday being prepared: today if it is Sunday before 4 in the afternoon, otherwise the next one.
     // When the service on the site was set for an earlier Sunday, and nobody has started on the new week on this
-    // computer, the Studio offers a clean page so last week's reading, songs and sermon are not in the way.
+    // computer, the Studio opens on a clean page by itself: last week's reading, songs and sermon are not in the
+    // way and nobody is asked anything. Nothing is lost by it. The service on the site is left exactly as it is.
     function targetSunday(now) {
       var d = new Date(now.getTime()), add = (7 - d.getDay()) % 7;
       if (d.getDay() === 0 && d.getHours() >= 16) add = 7;
       d.setDate(d.getDate() + add);
       return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
     }
-    var FRESH_LATER = 'lbc-fresh-later';
     // Asking on purpose: open the Studio with ?fresh and the question comes up once, whatever is on the page, and
     // Start fresh clears it. It is for the coming Sunday. If that Sunday is already set it is for the one after
     // (the Studio as it will be on the Monday after), which makes it a rehearsal. ?pretend=monday does the same.
@@ -2471,9 +2471,11 @@
         if (!was || was >= t || !published.length) return;
         if (!samePlan()) return;                                   // the new week is already under way here
         if (Object.keys(finding).length || Object.keys(dirty).some(function (k) { return dirty[k]; })) return;
-        try { if (sessionStorage.getItem(FRESH_LATER) === t) return; } catch (e) {}
+        startFresh('Last Sunday is cleared. This page is ready for Sunday ' + dayName(t) + '.');
+        return;
       }
-      var day = new Date(t + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+      // asked for on purpose (?fresh): there may be work on the page, so this one is a question
+      var day = dayName(t);
       var box = document.createElement('div'); box.className = 'rs'; box.id = 'fresh'; box.dataset.stage = 'ask';
       box.innerHTML = '<div class="rs-card" role="dialog" aria-modal="true" aria-labelledby="freshTitle"><div class="rs-glow"></div>' +
         '<div class="rs-view rs-ask"><div class="rs-meta">Next: Sunday ' + day + '</div><h3 id="freshTitle">Last Sunday is done</h3>' +
@@ -2481,11 +2483,12 @@
         '<div class="rs-btns"><button class="rs-no" id="freshNo" type="button">Not now</button><button class="rs-yes" id="freshYes" type="button">Start fresh</button></div></div></div>';
       document.body.appendChild(box);
       function shut() { box.classList.remove('open'); setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 320); }
-      document.getElementById('freshNo').onclick = function () { try { sessionStorage.setItem(FRESH_LATER, t); } catch (e) {} shut(); };
+      document.getElementById('freshNo').onclick = shut;
       document.getElementById('freshYes').onclick = function () { shut(); startFresh(); };
       setTimeout(function () { box.classList.add('open'); var y = document.getElementById('freshYes'); if (y) y.focus(); }, 40);   // a timer, not a frame: a tab opened in the background never gets a frame
     }
-    function startFresh() {
+    function dayName(t) { return new Date(t + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' }); }
+    function startFresh(msg) {
       order = [];
       // the Lord's Table words are written once and kept, so that row starts done
       if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] };
@@ -2493,10 +2496,9 @@
       finding = {}; found = {}; pendingChecks = {}; dirty = {}; persistFinding(); persistOrder();
       try { localStorage.removeItem('lbc-ap-confirmed'); localStorage.removeItem('lbc-guide-printed'); } catch (e) {}
       current = null; pick = null; swapKey = null; renderRail(); renderMain();
-      toast('A clean page. Import the worship guide when it is in.', 'ok', true);
+      toast(msg || 'A clean page. Import the worship guide when it is in.', 'ok', true);
     }
     document.addEventListener('visibilitychange', function () { if (!document.hidden) maybeFresh(); });
-    setTimeout(maybeFresh, 700);
 
     function recoverFound() {
       songSlugs().forEach(function (slug) {
@@ -2511,6 +2513,7 @@
     }
     current = order[0] ? order[0].key : null;
     renderRail(); renderMain(); paintConn();
+    maybeFresh();          // Sunday is over and nothing new has been started: open on a clean page
     if (token()) {
       checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); recoverFound(); fetchChurchKey(); })
         .catch(function () { connected = false; paintConn(); });
