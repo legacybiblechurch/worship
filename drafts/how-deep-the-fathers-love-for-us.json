@@ -1,12 +1,670 @@
 {
   "slug": "how-deep-the-fathers-love-for-us",
   "title": "How Deep the Father's Love for Us",
-  "input": "how-deep-the-fathers-love-for-us",
+  "input": "How Deep the Father's Love for Us",
   "isNew": false,
-  "forced": null,
-  "signature": "4228b6abc2262b23",
-  "generatedAt": "2026-08-30T05:34:39+00:00",
+  "forced": "A0CDqG5STPM",
+  "signature": "cb225e48b83d41ea",
+  "generatedAt": "2026-11-28T16:55:09+00:00",
+  "titleKey": "how deep the father's love for us",
+  "searchCandidates": [],
   "candidates": [
+    {
+      "videoId": "A0CDqG5STPM",
+      "url": "https://www.youtube.com/watch?v=A0CDqG5STPM",
+      "title": "How Deep The Father's Love For Us - Stuart Townend (Lyrics)",
+      "channel": "Humber UBF",
+      "publishedAt": "2020-04-26T18:20:20Z",
+      "durationSec": 218,
+      "duration": "3:38",
+      "views": 475955,
+      "hasCaptions": false,
+      "lyrics": [
+        {
+          "label": "Verse 1",
+          "lines": [
+            "How deep the Father's love for us",
+            "How vast beyond all measure",
+            "That He should give His only Son",
+            "To make a wretch His treasure",
+            "How great the pain of searing loss",
+            "The Father turns His face away",
+            "As wounds which mar the Chosen One",
+            "Bring many sons to glory"
+          ]
+        },
+        {
+          "label": "Verse 2",
+          "lines": [
+            "Behold the Man upon a cross",
+            "My sin upon His shoulders",
+            "Ashamed, I hear my mocking voice",
+            "Call out among the scoffers",
+            "It was my sin that held Him there",
+            "Until it was accomplished",
+            "His dying breath has brought me life",
+            "I know that it is finished"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "I'm going to finish",
+            "I will not boast in anything",
+            "No gifts, no power, no wisdom",
+            "But I will boast in Jesus Christ",
+            "His death and resurrection",
+            "Why should I gain from His reward",
+            "I cannot give an answer",
+            "But this I know with all my heart"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "His wounds have paid my ransom",
+            "Why should I gain from His reward",
+            "I cannot give an answer",
+            "But this I know with all my heart",
+            "His wounds have paid my ransom"
+          ]
+        },
+        {
+          "label": "Verse 3",
+          "lines": [
+            "His wounds have paid my ransom",
+            "His wounds have paid my ransom"
+          ]
+        }
+      ],
+      "transcriptSource": "engine",
+      "confidence": 96,
+      "notes": "Auto‑generated captions are extremely garbled and do not provide a clear picture of the recording's structure. The transcript cannot be used to determine verses, choruses, or repeats, so the reference lyrics and their typical order were used as a fallback. Confidence is low due to lack of reliable transcript evidence.",
+      "order": "Verse 1 · Verse 2 · Tag · Verse 3 · Tag",
+      "engine": {
+        "verdict": "check",
+        "lines": [
+          {
+            "text": "How deep the Father's love for us",
+            "t0": 24.08,
+            "t1": 28.24,
+            "conf": 0.95,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "the fathers my",
+              "library": "How deep the Father's love for us",
+              "asr_large": "How deep the Father's love for us",
+              "asr_turbo": "How deep the Father's love for us",
+              "asr_prompted": "Hes been slain by the Holy Ghost O Lord O Lord How deep the father's love for us"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "How vast beyond all measure",
+            "t0": 28.8,
+            "t1": 32.36,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "beyond measure",
+              "library": "How vast beyond all measure",
+              "asr_large": "How vast beyond all measure",
+              "asr_turbo": "How vast beyond all measure",
+              "asr_prompted": "How vast beyond all measure"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "That He should give His only Son",
+            "t0": 33.48,
+            "t1": 37.44,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "that we should give",
+              "library": "That He should give His only Son",
+              "asr_large": "That He should give His only Son",
+              "asr_turbo": "That He should give His only Son",
+              "asr_prompted": "Tthat He should give His only Son"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "To make a wretch His treasure",
+            "t0": 38.24,
+            "t1": 42.14,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "to she's trying",
+              "library": "To make a wretch His treasure",
+              "asr_large": "To make a wretch His treasure",
+              "asr_turbo": "To make a wretched treasure",
+              "asr_prompted": "Tto make a wretch His treasure"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "How great the pain of searing loss",
+            "t0": 43.16,
+            "t1": 47.88,
+            "conf": 0.94,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "how great the pain ah see",
+              "library": "How great the pain of searing loss",
+              "asr_large": "How great the pain of searing loss",
+              "asr_turbo": "How great the pain of searing loss",
+              "asr_prompted": "How great the pain of searing loss"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "The Father turns His face away",
+            "t0": 47.48,
+            "t1": 52.42,
+            "conf": 0.88,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "the father",
+              "library": "The Father turns His face away",
+              "asr_large": "The Father turns His face away",
+              "asr_turbo": "The Father turns His face away",
+              "asr_prompted": "Tthe Father turns His face away"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "As wounds which mar the Chosen One",
+            "t0": 52.1,
+            "t1": 57.18,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "which mother chosen bad",
+              "library": "As wounds which mar the Chosen One",
+              "asr_large": "As wounds which mother chosen won",
+              "asr_turbo": "As wounds which mar the chosen one",
+              "asr_prompted": "As wounds which mar the Chosen One I be a wretch Hes my"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Bring many sons to glory",
+            "t0": 58.26,
+            "t1": 61.92,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "he sounds too Oh ashamed",
+              "library": "Bring many sons to glory",
+              "asr_large": "Bring many sons to glory",
+              "asr_turbo": "Bring many sons to glory",
+              "asr_prompted": "God and I am a sinner Hes my God and I am a sinner I be a slave to"
+            },
+            "label": "Verse 1",
+            "block": 0
+          },
+          {
+            "text": "Behold the Man upon a cross",
+            "t0": 70.06,
+            "t1": 77.18,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "my the sky",
+              "library": "Behold the Man upon a cross",
+              "asr_large": "Behold the man upon a cross",
+              "asr_turbo": "Behold the man upon a cross",
+              "asr_prompted": "the I be a slave"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "My sin upon His shoulders",
+            "t0": 77.92,
+            "t1": 81.62,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "My sin upon His shoulders",
+              "asr_large": "My sin upon his shoulders",
+              "asr_turbo": "My sin upon his shoulders"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "Ashamed, I hear my mocking voice",
+            "t0": 82.92,
+            "t1": 87.2,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Ashamed, I hear my mocking voice",
+              "asr_large": "Ashamed I hear my mocking voice",
+              "asr_turbo": "Ashamed I hear my mocking voice",
+              "asr_prompted": "to"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "Call out among the scoffers",
+            "t0": 87.6,
+            "t1": 91.7,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "Call out among the scoffers",
+              "asr_large": "Call out among the scoffers",
+              "asr_turbo": "Call out among the scoffers",
+              "asr_prompted": "the"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "It was my sin that held Him there",
+            "t0": 91.7,
+            "t1": 96.66,
+            "conf": 0.92,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "it was my posted",
+              "library": "It was my sin that held Him there",
+              "asr_large": "It was my sin that held Him there",
+              "asr_turbo": "It was my sin that held Him there"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "Until it was accomplished",
+            "t0": 97.56,
+            "t1": 101.18,
+            "conf": 0.99,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "clothes",
+              "library": "Until it was accomplished",
+              "asr_large": "Until it was accomplished",
+              "asr_turbo": "Until it was accomplished"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "His dying breath has brought me life",
+            "t0": 102.42,
+            "t1": 106.48,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "change",
+              "library": "His dying breath has brought me life",
+              "asr_large": "His dying breath has brought me life",
+              "asr_turbo": "His dying breath has brought me round"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "I know that it is finished",
+            "t0": 106.18,
+            "t1": 111.038376,
+            "conf": 0.93,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "captions_auto": "is",
+              "library": "I know that it is finished",
+              "asr_large": "I know that it is finished",
+              "asr_turbo": "I know that it is finished"
+            },
+            "label": "Verse 2",
+            "block": 1
+          },
+          {
+            "text": "I'm going to finish",
+            "t0": 130.79837,
+            "t1": 132.29837,
+            "conf": 0.63,
+            "status": "check",
+            "alts": [
+              {
+                "text": "I don't know if this",
+                "sources": [
+                  "asr_turbo"
+                ]
+              }
+            ],
+            "why": "one witness only; sources disagree",
+            "sources": {
+              "asr_large": "I'm going to finish",
+              "asr_turbo": "I don't know if this"
+            },
+            "label": null,
+            "block": null
+          },
+          {
+            "text": "I will not boast in anything",
+            "t0": 133.89838,
+            "t1": 139.01837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "I will not boast in anything",
+              "asr_large": "I will not boast in anything,",
+              "asr_turbo": "I will not boast in anything,",
+              "asr_prompted": "I will not boast in anything"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "No gifts, no power, no wisdom",
+            "t0": 139.01837,
+            "t1": 142.93837,
+            "conf": 0.85,
+            "status": "verified",
+            "alts": [],
+            "why": "one witness only; listens misheard a sound-alike; verified words stand",
+            "sources": {
+              "library": "No gifts, no power, no wisdom",
+              "asr_large": "No gifts, no crown, no wisdom",
+              "asr_turbo": "no gifts, no doubt, no wisdom.",
+              "asr_prompted": "No gifts, no power, no wisdom It be lost in the world? I will not boast in anything No gifts, no power, no wisdom"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "But I will boast in Jesus Christ",
+            "t0": 143.77838,
+            "t1": 148.89838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "But I will boast in Jesus Christ",
+              "asr_large": "But I will boast in Jesus Christ,",
+              "asr_turbo": "But I will boast in Jesus Christ,",
+              "asr_prompted": "But I will boast in Jesus Christ"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "His death and resurrection",
+            "t0": 148.89838,
+            "t1": 152.21837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree",
+            "sources": {
+              "library": "His death and resurrection",
+              "asr_large": "His death and resurrection",
+              "asr_turbo": "His death and resurrection.",
+              "asr_prompted": "His death and resurrection"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "Why should I gain from His reward",
+            "t0": 153.65837,
+            "t1": 158.73837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "why should why",
+              "library": "Why should I gain from His reward",
+              "asr_large": "Why should I gain from His reward?",
+              "asr_turbo": "Why should I gain from His reward?",
+              "asr_prompted": "Why should I gain from His reward"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "I cannot give an answer",
+            "t0": 158.73837,
+            "t1": 162.93837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "sure",
+              "library": "I cannot give an answer",
+              "asr_large": "I cannot give an answer",
+              "asr_turbo": "I cannot give an answer.",
+              "asr_prompted": "I cannot give an answer"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "But this I know with all my heart",
+            "t0": 163.51837,
+            "t1": 167.67838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; listens misheard a sound-alike; verified words stand; sung 2x, 2 agree",
+            "sources": {
+              "captions_auto": "this is my eyes",
+              "library": "But this I know with all my heart",
+              "asr_large": "But this I know with all my heart",
+              "asr_turbo": "But this I know with all my heart",
+              "asr_prompted": "But this I know with all my heart"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "His wounds have paid my ransom",
+            "t0": 168.39838,
+            "t1": 171.83838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "library": "His wounds have paid my ransom",
+              "asr_large": "His wounds have paid my ransom",
+              "asr_turbo": "His wounds have paid my ransom",
+              "asr_prompted": "His wounds that paid my ransom"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "Why should I gain from His reward",
+            "t0": 171.41837,
+            "t1": 177.73837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "library": "Why should I gain from His reward",
+              "asr_large": "Why should I gain from His reward?",
+              "asr_turbo": "Why should I gain from His reward?",
+              "asr_prompted": "Why should I gain from His reward"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "I cannot give an answer",
+            "t0": 178.27838,
+            "t1": 181.93837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "library": "I cannot give an answer",
+              "asr_large": "I cannot give an answer",
+              "asr_turbo": "I cannot give an answer",
+              "asr_prompted": "I cannot give an answer"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "But this I know with all my heart",
+            "t0": 181.79837,
+            "t1": 187.37837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 2x, 2 agree",
+            "sources": {
+              "library": "But this I know with all my heart",
+              "asr_large": "But this I know with all my heart",
+              "asr_turbo": "But this I know with all my heart",
+              "asr_prompted": "But this I know with all my heart"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "His wounds have paid my ransom",
+            "t0": 188.13837,
+            "t1": 191.87837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "independent sources agree; sung 4x, 4 agree",
+            "sources": {
+              "library": "His wounds have paid my ransom",
+              "asr_large": "His wounds have paid my ransom",
+              "asr_turbo": "His wounds have paid my ransom",
+              "asr_prompted": "His wounds that paid my ransom"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "His wounds have paid my ransom",
+            "t0": 197.35837,
+            "t1": 208.21837,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 4x, 4 agree",
+            "sources": {
+              "library": "His wounds have paid my ransom",
+              "asr_large": "Wounds have paid my ransom Oh,",
+              "asr_turbo": "wounds have paid my ransom Oh,",
+              "asr_prompted": "a slave of my heart? Hath"
+            },
+            "label": "Verse 3",
+            "block": 5
+          },
+          {
+            "text": "His wounds have paid my ransom",
+            "t0": 208.21837,
+            "t1": 211.39838,
+            "conf": 1.0,
+            "status": "verified",
+            "alts": [],
+            "why": "two listens agree; sound-alike resolved by verified words; sung 4x, 4 agree",
+            "sources": {
+              "library": "His wounds have paid my ransom",
+              "asr_large": "Your wounds have paid my ransom",
+              "asr_turbo": "your wounds have paid my ransom",
+              "asr_prompted": "nigh no God but God?"
+            },
+            "label": "Verse 3",
+            "block": 5
+          }
+        ],
+        "checks": [
+          {
+            "t0": 128.79837,
+            "t1": 132.29837,
+            "text": "I'm going to finish",
+            "options": [
+              "I'm going to finish",
+              "I don't know if this"
+            ],
+            "why": "one witness only; sources disagree"
+          }
+        ],
+        "report": {
+          "videoId": "A0CDqG5STPM",
+          "sources": [
+            "captions_auto",
+            "library",
+            "asr_large",
+            "asr_turbo",
+            "asr_prompted"
+          ],
+          "missing": [],
+          "asr_seconds": 8.5,
+          "excluded": [
+            {
+              "t0": 197.11838,
+              "text": "Your"
+            }
+          ],
+          "lines": 31,
+          "verified": 30,
+          "checks": 1,
+          "seconds": 26.9,
+          "generatedAt": "2026-11-28T16:55:52+00:00"
+        }
+      }
+    },
     {
       "videoId": "z65YxhqY0_E",
       "url": "https://www.youtube.com/watch?v=z65YxhqY0_E",
@@ -114,22 +772,6 @@
       "order": ""
     },
     {
-      "videoId": "A0CDqG5STPM",
-      "url": "https://www.youtube.com/watch?v=A0CDqG5STPM",
-      "title": "How Deep The Father&#39;s Love For Us - Stuart Townend (Lyrics)",
-      "channel": "Humber UBF",
-      "publishedAt": "2020-04-26T18:20:20Z",
-      "durationSec": 218,
-      "duration": "3:38",
-      "views": 428435,
-      "hasCaptions": false,
-      "lyrics": null,
-      "transcriptSource": "none",
-      "confidence": 0,
-      "notes": "",
-      "order": ""
-    },
-    {
       "videoId": "TlyMxBj17LE",
       "url": "https://www.youtube.com/watch?v=TlyMxBj17LE",
       "title": "How Deep the Father&#39;s Love for Us - Phillips, Craig, &amp; Dean - Lyrics",
@@ -161,5 +803,7 @@
       "notes": "",
       "order": ""
     }
-  ]
+  ],
+  "needsAudio": false,
+  "listenedAt": "2026-11-28T16:55:52+00:00"
 }
