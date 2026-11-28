@@ -122,6 +122,8 @@
     .prog i { display: block; height: 100%; width: 0; background: var(--gold); border-radius: 3px; transition: width 0.35s ease, background 0.35s; }
     .prog.all i { background: var(--good); }
     .rail-label .sub.good { color: var(--good); }
+    .start-over { font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--ink-faint); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; margin-left: 10px; cursor: pointer; transition: color .15s, border-color .15s; }
+    .start-over:hover { color: var(--ink); border-color: var(--ink-faint); }
     .more-btn { font: inherit; font-size: 12px; color: var(--ink-faint); background: none; border: 0; cursor: pointer; text-align: left; padding: 10px 2px 4px; }
     .more-btn:hover { color: var(--ink); }
     .ready-note { font-size: 12px; color: var(--ink-faint); text-align: center; min-height: 18px; }
@@ -736,6 +738,10 @@
       var rail = document.getElementById('rail');
       rail.innerHTML = '';
       var lbl = el('div', 'rail-label', 'Set up Sunday');
+      // Start over: clears this page for a new week. Shown once there is something to clear.
+      if (order.some(function (x) { return !(x.type === 'words' && x.id === 'lords-table'); })) {
+        var so = el('button', 'start-over', 'Start over'); so.type = 'button'; so.onclick = startOver; lbl.appendChild(so);
+      }
       lbl.appendChild(el('span', 'sub', '')); lbl.lastChild.id = 'progText';
       rail.appendChild(lbl);
       // the whole Sunday from the worship guide in one go
@@ -2475,12 +2481,19 @@
         return;
       }
       // asked for on purpose (?fresh): there may be work on the page, so this one is a question
-      var day = dayName(t);
+      askFresh('Next: Sunday ' + dayName(t), 'Last Sunday is done', 'Start a clean page for this coming Sunday?', 'Not now', 'Start fresh');
+    }
+    // Start over, from the top of the list: the same clean page, any day, asked for by hand.
+    function startOver() {
+      if (publishing || document.getElementById('fresh')) return;
+      askFresh('Sunday ' + dayName(targetSunday(new Date())), 'Start this page over?', 'The reading, songs, sermon and prayer on this page are cleared.', 'Keep it', 'Start over');
+    }
+    function askFresh(meta, title, body, no, yes) {
       var box = document.createElement('div'); box.className = 'rs'; box.id = 'fresh'; box.dataset.stage = 'ask';
       box.innerHTML = '<div class="rs-card" role="dialog" aria-modal="true" aria-labelledby="freshTitle"><div class="rs-glow"></div>' +
-        '<div class="rs-view rs-ask"><div class="rs-meta">Next: Sunday ' + day + '</div><h3 id="freshTitle">Last Sunday is done</h3>' +
-        '<p>Start a clean page for this coming Sunday?</p>' +
-        '<div class="rs-btns"><button class="rs-no" id="freshNo" type="button">Not now</button><button class="rs-yes" id="freshYes" type="button">Start fresh</button></div></div></div>';
+        '<div class="rs-view rs-ask"><div class="rs-meta">' + esc(meta) + '</div><h3 id="freshTitle">' + esc(title) + '</h3>' +
+        '<p>' + esc(body) + '</p>' +
+        '<div class="rs-btns"><button class="rs-no" id="freshNo" type="button">' + esc(no) + '</button><button class="rs-yes" id="freshYes" type="button">' + esc(yes) + '</button></div></div></div>';
       document.body.appendChild(box);
       function shut() { box.classList.remove('open'); setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 320); }
       document.getElementById('freshNo').onclick = shut;
