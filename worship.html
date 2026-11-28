@@ -190,7 +190,11 @@
     });
     LBCSheet.loadService(function (songs) {
       var st = document.getElementById('state');
-      if (!songs.length) { st.textContent = 'Not ready'; st.className = 'card-state warn'; return; }
+      // a service set for a Sunday that has passed is not this Sunday's (the Studio stamps the date when it is set)
+      var d = new Date(), add = (7 - d.getDay()) % 7; if (d.getDay() === 0 && d.getHours() >= 16) add = 7;
+      d.setDate(d.getDate() + add);
+      var target = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+      if (!songs.length || (typeof window.WORSHIP_FOR === 'string' && window.WORSHIP_FOR < target)) { st.textContent = 'Not ready'; st.className = 'card-state warn'; return; }
       var bad = songs.filter(function (s) { return !s.ready; }).length;
       st.textContent = bad ? 'Not ready' : 'Ready';
       st.className = 'card-state ' + (bad ? 'warn' : 'good');

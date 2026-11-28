@@ -2139,7 +2139,8 @@
       var b = document.getElementById('readyBtn'); if (b) { b.disabled = true; b.textContent = 'Publishing…'; }
       var serviceText = '/**\n * LBC Sunday — the order of service\n * ─────────────────────────────\n * Set in Worship Studio. Songs, readings, the sermon, the Lord\'s Table, videos, the logo.\n * WORSHIP_SAVED holds words written once and kept.\n */\n\n' +
                         'window.WORSHIP_SERVICE = ' + JSON.stringify(order.map(plain), null, 2) + ';\n\n' +
-                        'window.WORSHIP_SAVED = ' + JSON.stringify(saved, null, 2) + ';\n';
+                        'window.WORSHIP_SAVED = ' + JSON.stringify(saved, null, 2) + ';\n\n' +
+                        '// the Sunday this service was set for\nwindow.WORSHIP_FOR = ' + JSON.stringify(targetSunday(new Date())) + ';\n';
       var setlistText = '/**\n * LBC Sunday Setlist\n * ──────────────────\n * The songs of the service, in order. Set in Worship Studio.\n */\n\nwindow.WORSHIP_SETLIST = [\n' +
                         slugs.map(function (s) { return "  '" + s + "',\n"; }).join('') + '];\n';
       getFile(SERVICE_PATH, true).then(function (f) { return f.sha; }, function () { return null; }).then(function (sha) {
@@ -2165,7 +2166,7 @@
           return putFile('js/sung.js', sung, f.sha, 'worship studio: sung ' + add.join(', '));
         }).catch(function () {});
       }).then(function () {
-        published = order.map(plain);
+        published = order.map(plain); window.WORSHIP_FOR = targetSunday(new Date());
         persistOrder();
         window.WORSHIP_SAVED = JSON.parse(JSON.stringify(saved));
         RS.done();
@@ -2417,6 +2418,48 @@
 
     // ───────────────────────────── boot
     order.forEach(function (it) { if (it.type === 'song') songOf(it.slug); });
+    // ───────────────────────────── a clean page once Sunday is over
+    // The Sunday being prepared: today if it is Sunday before 4 in the afternoon, otherwise the next one.
+    // When the service on the site was set for an earlier Sunday, and nobody has started on the new week on this
+    // computer, the Studio offers a clean page so last week's reading, songs and sermon are not in the way.
+    function targetSunday(now) {
+      var d = new Date(now.getTime()), add = (7 - d.getDay()) % 7;
+      if (d.getDay() === 0 && d.getHours() >= 16) add = 7;
+      d.setDate(d.getDate() + add);
+      return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+    }
+    var FRESH_LATER = 'lbc-fresh-later';
+    function maybeFresh() {
+      var t = targetSunday(new Date()), was = typeof window.WORSHIP_FOR === 'string' ? window.WORSHIP_FOR : '';
+      if (!was || was >= t || publishing || !published.length || document.getElementById('fresh')) return;
+      if (!samePlan()) return;                                     // the new week is already under way here
+      if (Object.keys(finding).length || Object.keys(dirty).some(function (k) { return dirty[k]; })) return;
+      try { if (sessionStorage.getItem(FRESH_LATER) === t) return; } catch (e) {}
+      var day = new Date(t + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+      var box = document.createElement('div'); box.className = 'rs'; box.id = 'fresh'; box.dataset.stage = 'ask';
+      box.innerHTML = '<div class="rs-card" role="dialog" aria-modal="true" aria-labelledby="freshTitle"><div class="rs-glow"></div>' +
+        '<div class="rs-view rs-ask"><div class="rs-meta">Next: Sunday ' + day + '</div><h3 id="freshTitle">Last Sunday is done</h3>' +
+        '<p>Start a clean page for this coming Sunday?</p>' +
+        '<div class="rs-btns"><button class="rs-no" id="freshNo" type="button">Not now</button><button class="rs-yes" id="freshYes" type="button">Start fresh</button></div></div></div>';
+      document.body.appendChild(box);
+      function shut() { box.classList.remove('open'); setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 320); }
+      document.getElementById('freshNo').onclick = function () { try { sessionStorage.setItem(FRESH_LATER, t); } catch (e) {} shut(); };
+      document.getElementById('freshYes').onclick = function () { shut(); startFresh(); };
+      setTimeout(function () { box.classList.add('open'); var y = document.getElementById('freshYes'); if (y) y.focus(); }, 40);   // a timer, not a frame: a tab opened in the background never gets a frame
+    }
+    function startFresh() {
+      order = [];
+      // the Lord's Table words are written once and kept, so that row starts done
+      if (!saved['lords-table']) saved['lords-table'] = { title: 'The Lord’s Table', lyrics: [] };
+      addItem({ type: 'words', id: 'lords-table' });
+      finding = {}; found = {}; pendingChecks = {}; persistFinding(); persistOrder();
+      try { localStorage.removeItem('lbc-ap-confirmed'); localStorage.removeItem('lbc-guide-printed'); } catch (e) {}
+      current = null; pick = null; swapKey = null; renderRail(); renderMain();
+      toast('A clean page. Import the worship guide when it is in.', 'ok', true);
+    }
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) maybeFresh(); });
+    setTimeout(maybeFresh, 700);
+
     function recoverFound() {
       songSlugs().forEach(function (slug) {
         if (LIB[slug] || finding[slug] || found[slug] || dirty[slug]) return;
