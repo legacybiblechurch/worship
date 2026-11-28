@@ -5,8 +5,8 @@
  */
 
 window.WORSHIP_SETLIST = [
-  'take-my-life-and-let-it-be',
-  'behold-our-god',
-  'come-thou-fount-of-evry-blessing',
-  'magnificent-marvelous-matchless-love',
+  'be-thou-my-vision',
+  'how-deep-the-fathers-love-for-us',
+  'jesus-paid-it-all',
+  'the-king-of-glory-psalm-24',
 ];
