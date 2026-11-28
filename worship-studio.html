@@ -2456,16 +2456,17 @@
       return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
     }
     var FRESH_LATER = 'lbc-fresh-later';
-    // A rehearsal: open the Studio with ?pretend=monday and it behaves as it will on the Monday after this coming
-    // Sunday. The question comes up once, whatever is on the page, and Start fresh clears it.
-    var pretend = /[?&]pretend=monday\b/.test(location.search);
+    // Asking on purpose: open the Studio with ?fresh and the question comes up once, whatever is on the page, and
+    // Start fresh clears it. It is for the coming Sunday. If that Sunday is already set it is for the one after
+    // (the Studio as it will be on the Monday after), which makes it a rehearsal. ?pretend=monday does the same.
+    var pretend = /[?&](fresh|pretend=monday)\b/.test(location.search);
     function maybeFresh() {
       var t = targetSunday(new Date()), was = typeof window.WORSHIP_FOR === 'string' ? window.WORSHIP_FOR : '';
       if (publishing || document.getElementById('fresh')) return;
       if (pretend) {
         pretend = false;
         try { history.replaceState(null, '', location.pathname); } catch (e) {}      // a reload must not ask again
-        var nx = new Date(t + 'T12:00:00'); nx.setDate(nx.getDate() + 7); t = targetSunday(nx);
+        if (was && was >= t) { var nx = new Date(t + 'T12:00:00'); nx.setDate(nx.getDate() + 7); t = targetSunday(nx); }
       } else {
         if (!was || was >= t || !published.length) return;
         if (!samePlan()) return;                                   // the new week is already under way here

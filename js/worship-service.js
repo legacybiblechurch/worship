@@ -133,3 +133,6 @@ window.WORSHIP_SAVED = {
     ]
   }
 };
+
+// the Sunday this service was set for
+window.WORSHIP_FOR = "2026-11-15";
