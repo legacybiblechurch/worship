@@ -360,6 +360,7 @@
       // the moment the prayer ends. No title card, no words.
       if (it.after) {
         out.after = true; out.ready = !!out.youtube;
+        out.start = Math.max(0, Math.round(+it.start || 0));               // seconds into the recording where it begins: a slow opening is skipped
         out.songTitle = out.title; out.title = 'After Prayer Song';        // Run Sunday lists it by what it is for, not by the song
         out.slides = [{ label: 'After Prayer Song', lines: [], logo: true, cue: out.ready ? 'Press Play the moment the prayer ends' : 'No recording yet. Open Studio' }];
       }

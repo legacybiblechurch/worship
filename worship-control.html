@@ -420,7 +420,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=40"></script>
+  <script src="js/sheet.js?v=41"></script>
   <script>
 
     // `songs` is every item of the service in order - songs, readings, the
@@ -718,15 +718,17 @@
         var seen = {}, out = [];
         [songs[i]].concat(songs.filter(function (x) { return x.type === 'song' && !x.after; })).forEach(function (x) {
           var v = x && vid(x.youtube);
-          if (v && !seen[v]) { seen[v] = 1; out.push({ v: v, title: x.songTitle || x.title }); }
+          if (v && !seen[v]) { seen[v] = 1; out.push({ v: v, title: x.songTitle || x.title, start: x.after ? (+x.start || 0) : 0 }); }
         });
         return out;
       }
+      // the After Prayer Song may begin partway in (set in the Studio), so the room hears the lively part at once
+      function loadAt(p, v, at) { if (at > 0) p.loadVideoById({ videoId: v, startSeconds: at }); else p.loadVideoById(v); }
       function tailOn() { return playingIdx >= 0 && songs[playingIdx] && songs[playingIdx].after && tail.length > 0; }
       function tailNext() {
         tailAt = (tailAt + 1) % tail.length;
         var p = players[active];
-        p.setVolume(volume); p.loadVideoById(tail[tailAt].v); p.playVideo();
+        p.setVolume(volume); loadAt(p, tail[tailAt].v, tail[tailAt].start); p.playVideo();
         paint();
       }
       var el = function (id) { return document.getElementById(id); };
@@ -782,7 +784,7 @@
         // the incoming song starts silent on the other player, then fades up
         var t = active; active = other; other = t;
         var inc = players[active];
-        inc.setVolume(0); inc.loadVideoById(v); inc.playVideo();
+        inc.setVolume(0); loadAt(inc, v, song.after ? song.start : 0); inc.playVideo();
         layout();
         playingIdx = i; paint();
         crossfade(was, inc);

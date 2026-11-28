@@ -248,6 +248,10 @@
     .ap .add-wrap input:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,168,76,0.13); }
     .ap-player { width: min(500px, 100%); aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); margin-top: 26px; background: #000; box-shadow: 0 34px 70px -34px rgba(0,0,0,0.9); }
     .ap-player iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .ap-start { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 13.5px; color: var(--ink-dim); flex-wrap: wrap; justify-content: center; }
+    .ap-start input { width: 74px; text-align: center; font: inherit; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; outline: none; transition: border-color .2s; }
+    .ap-start input:focus { border-color: var(--gold); }
+    .ap-start .btn { border-radius: 999px; padding: 7px 14px; font-size: 12.5px; }
     .ap-note { font-size: 13.5px; color: var(--ink-dim); margin-top: 18px; max-width: 460px; }
     .ap-btns { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; justify-content: center; }
     .ap-btns .btn { border-radius: 999px; padding: 9px 18px; transition: transform .2s ease, border-color .25s ease, color .25s ease; }
@@ -455,7 +459,7 @@
   <script src="js/songs-data.js"></script>
   <script src="js/worship-songs.js"></script>
   <script src="js/worship-service.js"></script>
-  <script src="js/sheet.js?v=40"></script>
+  <script src="js/sheet.js?v=41"></script>
   <script>
   (function () {
     'use strict';
@@ -1362,12 +1366,38 @@
       var main = document.getElementById('main'), s = songOf(it.slug), vid = S.videoId(s.youtube);
       main.innerHTML = '<div class="main-head"><span class="main-title"></span></div>' +
         '<div class="ap"><div class="ap-k">After Prayer Song</div><h2 class="ap-song"></h2>' +
-        (vid ? '<div class="ap-player"><iframe src="https://www.youtube.com/embed/' + vid + '" allow="encrypted-media" allowfullscreen></iframe></div>'
+        (vid ? '<div class="ap-player"><iframe id="apFrame" src="https://www.youtube.com/embed/' + vid + (it.start > 0 ? '?start=' + it.start : '') + '" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>' +
+               '<label class="ap-start">Start the song at <input id="apStart" inputmode="numeric" autocomplete="off" placeholder="0:00" aria-label="Start the song at, minutes and seconds">' +
+               '<button class="btn" id="apHear" type="button">Hear it from there</button></label>'
              : '<p class="ap-note" style="color:var(--warn)">This song has no recording yet. Choose a different one.</p>') +
         '<div class="ap-btns"><button class="btn ap-confirm" id="apConfirm" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Confirm</span></button>' +
         '<button class="btn" id="apChange" type="button">Choose a different song</button><button class="btn quiet" id="apRemove" type="button">Remove</button></div></div>';
       main.querySelector('.main-title').textContent = AFTER_SLOT;
       main.querySelector('.ap-song').textContent = s.title;
+      // Where the song begins. A slow opening can be skipped: type 0:30 and Run Sunday starts it there.
+      var st = document.getElementById('apStart');
+      if (st) {
+        var clock = function (n) { return Math.floor(n / 60) + ':' + ('0' + (n % 60)).slice(-2); };
+        var secs = function (t) {            // "30", "0:30", "1:05" -> seconds; anything else -> null
+          t = String(t).trim(); if (!t) return 0;
+          var m = t.match(/^(\d{1,2}):([0-5]?\d)$/); if (m) return (+m[1]) * 60 + (+m[2]);
+          return /^\d{1,4}$/.test(t) ? +t : null;
+        };
+        var frame = document.getElementById('apFrame');
+        st.value = it.start > 0 ? clock(it.start) : '';
+        var setStart = function (play) {
+          var n = secs(st.value);
+          if (n == null) { st.value = it.start > 0 ? clock(it.start) : ''; toast('Type the time like 0:30.', 'err'); return; }
+          var changed = (it.start || 0) !== n;
+          if (n > 0) it.start = n; else delete it.start;
+          st.value = n > 0 ? clock(n) : '';
+          if (changed) { persistOrder(); renderRail(); }
+          if (frame && (changed || play)) frame.src = 'https://www.youtube.com/embed/' + vid + '?start=' + n + (play ? '&autoplay=1' : '');
+        };
+        st.onchange = function () { setStart(false); };
+        st.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); setStart(true); st.blur(); } };
+        document.getElementById('apHear').onclick = function (e) { e.preventDefault(); setStart(true); };
+      }
       // Confirm: remembered on this computer for this song, so the screen still says Confirmed next time it is opened
       var cf = document.getElementById('apConfirm'), CF_KEY = 'lbc-ap-confirmed', was = ''; try { was = localStorage.getItem(CF_KEY) || ''; } catch (e) {}
       function confirmed(fresh) { cf.classList.add('done'); cf.classList.toggle('fresh', !!fresh); cf.querySelector('span').textContent = 'Confirmed'; }
