@@ -1140,7 +1140,7 @@
         if (!ready) throw new Error('not pre-found');
         delete finding[slug]; persistFinding();
         found[slug] = d;
-        renderRail(); if (current === slug) renderMain();
+        renderRail(); if (curSlug() === slug) renderMain();
         toast('Found “' + (d.title || name) + '” already. Pick the video that sounds right.', 'ok');
       }).catch(function () {
         return gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
@@ -1166,7 +1166,7 @@
           // videos found; the church computer still has to listen to the recording
           if (finding[slug].phase !== 'listening') {
             finding[slug].phase = 'listening'; persistFinding();
-            renderRail(); if (current === slug) renderMain();
+            renderRail(); if (curSlug() === slug) renderMain();
           }
           throw new Error('listening');
         }
@@ -1179,7 +1179,7 @@
         if (Date.now() - started > 20 * 60000) {
           delete finding[slug]; persistFinding();
           found[slug] = { slug: slug, title: songOf(slug).title, candidates: [], error: 'took too long' };
-          renderRail(); if (current === slug) renderMain();
+          renderRail(); if (curSlug() === slug) renderMain();
           return;
         }
         pollTimers[slug] = setTimeout(function () { pollFind(slug); }, 6000);
