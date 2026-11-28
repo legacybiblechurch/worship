@@ -44,13 +44,30 @@ do_sync() {
     real="${ph%.icloud}"; real="$(dirname "$real")/$(basename "$real" | sed 's/^\.//')"
     brctl download "$real" >/dev/null 2>&1 || true
   done
-  out="$(rsync -rt --update --omit-dir-times --no-perms --no-owner --no-group \
-          --exclude '.*' --exclude '~$*' --exclude 'Icon?' \
-          --itemize-changes "$SRC/" "$DST/" 2>&1)"
-  rc=$?
-  changed="$(printf '%s\n' "$out" | grep -c '^>f' || true)"
-  if [ "$rc" -ne 0 ]; then log "rsync exit $rc: $(printf '%s' "$out" | tail -3 | tr '\n' ' ')"
-  elif [ "${changed:-0}" -gt 0 ]; then log "copied $changed file(s): $(printf '%s\n' "$out" | grep '^>f' | sed 's/^>f[^ ]* //' | tr '\n' ';')"
+  # One file at a time, so a guide that cannot be read or written never holds up the ones after it.
+  # (Until 2026-11-28 this was one rsync run: a single stuck file stopped every newer guide.)
+  # A guide is copied when Drive does not have it yet, or when his copy is the newer one.
+  copied=""; stuck=""
+  while IFS= read -r -d '' f; do
+    rel="${f#"$SRC"/}"; d="$DST/$rel"
+    if [ -e "$d" ]; then
+      sm="$(stat -f %m "$f" 2>/dev/null || echo 0)"; dm="$(stat -f %m "$d" 2>/dev/null || echo 0)"
+      [ "$sm" -gt "$dm" ] || continue
+    fi
+    mkdir -p "$(dirname "$d")" 2>/dev/null
+    if err="$(cp "$f" "$d" 2>&1)"; then
+      touch -r "$f" "$d" 2>/dev/null || true
+      copied="$copied$rel; "
+    else
+      stuck="$stuck$rel: $(printf '%s' "$err" | tail -1 | sed 's/^cp: //'); "
+    fi
+  done < <(find "$SRC" -type f ! -name '.*' ! -name '~$*' ! -name 'Icon?' ! -path '*/.*' -print0 2>/dev/null)
+  [ -n "$copied" ] && log "copied: $copied"
+  # a stuck file is written to the log once, not every two minutes
+  STUCK="$APPDIR/guide-sync.stuck"
+  if [ "$stuck" != "$(cat "$STUCK" 2>/dev/null)" ]; then
+    printf '%s' "$stuck" > "$STUCK"
+    [ -n "$stuck" ] && log "could not copy: $stuck" || log "nothing is stuck now"
   fi
   exit 0
 }
@@ -58,7 +75,7 @@ do_sync() {
 # ── uninstall ────────────────────────────────────────────────────────────────
 do_uninstall() {
   launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
-  rm -f "$PLIST" "$SELF" "$CONF"
+  rm -f "$PLIST" "$SELF" "$CONF" "$APPDIR/guide-sync.stuck"
   say "Removed. Nothing in Drive or in the Worship Guides folder was touched."
   exit 0
 }
