@@ -8,9 +8,24 @@
 //   changes  one Sunday done differently: {"slides": "Cole"}, {"stream": "Joel"},
 //            {"off": true, "note": "No service"}. Set from the page.
 window.LBC_ROTATION = {
-  "people": ["Quaid", "Cole", "Marco", "Michael", "Joel"],
-  "jobs": {"slides": 0, "stream": 1, "table": 3},
+  "people": [
+    "Quaid",
+    "Cole",
+    "Marco",
+    "Michael",
+    "Joel"
+  ],
+  "jobs": {
+    "slides": 0,
+    "stream": 1,
+    "table": 3
+  },
   "start": "2026-11-15",
   "guide": "https://drive.google.com/drive/folders/1c20gNrB0OHoh_AZVM74sEqZhTE2I2h67",
-  "changes": {}
+  "changes": {
+    "2026-11-29": {
+      "slides": "Quaid",
+      "table": "Marco"
+    }
+  }
 };
