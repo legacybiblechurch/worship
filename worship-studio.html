@@ -1140,7 +1140,7 @@
         if (!ready) throw new Error('not pre-found');
         delete finding[slug]; persistFinding();
         found[slug] = d;
-        renderRail(); if (current === slug) renderMain();
+        renderRail(); if (curSlug() === slug) renderMain();
         toast('Found “' + (d.title || name) + '” already. Pick the video that sounds right.', 'ok');
       }).catch(function () {
         return gh('/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/dispatches', { method: 'POST', actions: true,
@@ -1166,7 +1166,7 @@
           // videos found; the church computer still has to listen to the recording
           if (finding[slug].phase !== 'listening') {
             finding[slug].phase = 'listening'; persistFinding();
-            renderRail(); if (current === slug) renderMain();
+            renderRail(); if (curSlug() === slug) renderMain();
           }
           throw new Error('listening');
         }
@@ -1179,7 +1179,7 @@
         if (Date.now() - started > 20 * 60000) {
           delete finding[slug]; persistFinding();
           found[slug] = { slug: slug, title: songOf(slug).title, candidates: [], error: 'took too long' };
-          renderRail(); if (current === slug) renderMain();
+          renderRail(); if (curSlug() === slug) renderMain();
           return;
         }
         pollTimers[slug] = setTimeout(function () { pollFind(slug); }, 6000);
@@ -1273,7 +1273,37 @@
     // select by an item's key, or by a song's slug (the song flows think in slugs)
     function select(x) {
       var k = order.some(function (it) { return it.key === x; }) ? x : keyOfSong(x);
-      current = k || null; pick = null; renderRail(); renderMain();
+      current = k || null; pick = null; swapKey = null; renderRail(); renderMain();
+    }
+    // "Choose a different song" on a song that is still being found or still waiting for its video to be picked.
+    // The row keeps its place: the new song takes the same slot. The same two buttons sit on every such screen,
+    // so changing your mind is one click wherever you are.
+    var swapKey = null;
+    var UNDO_BTNS = '<button class="btn" id="chgBtn" type="button">Choose a different song</button><button class="btn quiet" id="rmBtn" type="button">Remove from Sunday</button>';
+    function forget(slug) { if (!hasSong(slug)) { delete dirty[slug]; delete finding[slug]; delete found[slug]; persistFinding(); } }
+    function wireChange(it) {
+      var b = document.getElementById('chgBtn'); if (!b) return;
+      b.onclick = function () {
+        if (it.after) {            // the After Prayer Song has its own question screen
+          order = order.filter(function (x) { return x.key !== it.key; }); forget(it.slug); persistOrder();
+          pick = AFTER_SLOT; current = null; renderRail(); renderMain(); return;
+        }
+        swapKey = it.key; renderMain();
+      };
+    }
+    function renderSwap(it) {
+      var main = document.getElementById('main'), old = it.slug, was = itemTitle(it);
+      main.innerHTML = '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
+        '<button class="btn quiet" id="swapKeep" type="button">Keep this song</button><button class="btn quiet" id="rmBtn" type="button">Remove from Sunday</button></div></div>' +
+        '<div class="center"><h2>Choose a different song</h2>' +
+        '<p>Type the song name. Songs we have sung come up as you type.</p>' +
+        '<div class="add-wrap" style="width:min(460px,100%);text-align:left"><input id="addName" placeholder="Type the song name" autocomplete="off"><div class="sugg" id="sugg"></div></div></div>';
+      main.querySelector('.main-title').textContent = was;
+      document.getElementById('swapKeep').onclick = function () { swapKey = null; renderMain(); };
+      wireAdd(document.getElementById('addName'), document.getElementById('sugg'),
+        function (pickSlug, title) { swapKey = null; swapSong(it, pickSlug, title); forget(old); },
+        function (name) { swapKey = null; swapSongNew(it, name); forget(old); });
+      setTimeout(function () { var a = document.getElementById('addName'); if (a) a.focus(); }, 30);
     }
 
     function renderMain() {
@@ -1308,19 +1338,20 @@
       if (it.type === 'logo') { renderLogo(it); return; }
       if (it.type === 'prayer') { renderPrayer(it); return; }
       var slug = it.slug;
+      if (swapKey === it.key) { renderSwap(it); return; }
       if (finding[slug]) {
         var listening = finding[slug].phase === 'listening';
-        main.innerHTML = '<div class="main-head"><span class="main-title"></span></div>' +
+        main.innerHTML = '<div class="main-head"><span class="main-title"></span><div class="main-actions">' + UNDO_BTNS + '</div></div>' +
           '<div class="center"><div class="spinner"></div><h2>' + (listening ? 'Listening to the recording' : 'Finding the song') + '</h2>' +
           '<p>' + (listening
             ? 'The church computer is listening to the recording three separate ways and comparing what it hears, so the words match this exact version. About a minute when it’s on; if it’s off, this waits until it is.'
             : 'Searching YouTube for the song. You can add other songs while you wait.') + '</p>' +
           '<p style="color:var(--ink-faint);font-size:12px" id="elapsed"></p></div>';
         main.querySelector('.main-title').textContent = songOf(slug).title;
-        paintElapsed(slug);
+        paintElapsed(slug); wireChange(it);
         return;
       }
-      if (found[slug]) { renderCandidates(slug); return; }
+      if (found[slug]) { renderCandidates(slug); wireChange(it); return; }
       if (it.after) { delete pendingChecks[slug]; renderAfter(it); return; }     // audio only: nothing to check, nothing to edit
       if (pendingChecks[slug]) { renderChecks(slug); return; }
       renderEditor(slug);
@@ -1360,8 +1391,9 @@
           if (ra !== rb) return ra - rb;
           return ((a.engine || {}).checks || []).length - ((b.engine || {}).checks || []).length;
         });
+      var cur = curItem(), audioOnly = !!(cur && cur.slug === slug && cur.after);
       var html = '<div class="main-head"><span class="main-title"></span><div class="main-actions">' +
-                 '<button class="btn quiet" id="skipBtn">I’ll paste the words myself</button></div></div>';
+                 (audioOnly ? '' : '<button class="btn quiet" id="skipBtn">I’ll paste the words myself</button>') + UNDO_BTNS + '</div></div>';
       if (!cands.length) {
         html += '<div class="center"><h2>Couldn’t find good words for this one</h2>' +
                 '<p>' + (d.error === 'took too long' ? 'It took longer than usual and gave up.' : 'That title didn’t turn up a recording with usable words.') +
@@ -2373,7 +2405,7 @@
         document.getElementById('tokenInput').value = '';
         toast('Connected. This computer can now save songs.', 'ok');
         fetchChurchKey();
-        Object.keys(finding).forEach(pollFind);
+        Object.keys(finding).forEach(pollFind); recoverFound();
       }).catch(function (e) { m.textContent = e.message; m.className = 'gate-msg err'; });
     };
     document.getElementById('tokenInput').onkeydown = function (e) { if (e.key === 'Enter') document.getElementById('tokenSave').click(); };
@@ -2385,10 +2417,21 @@
 
     // ───────────────────────────── boot
     order.forEach(function (it) { if (it.type === 'song') songOf(it.slug); });
+    function recoverFound() {
+      songSlugs().forEach(function (slug) {
+        if (LIB[slug] || finding[slug] || found[slug] || dirty[slug]) return;
+        getFile('drafts/' + slug + '.json', true).then(function (f) {
+          var d = JSON.parse(f.text);
+          if (LIB[slug] || finding[slug] || found[slug] || dirty[slug] || !hasSong(slug)) return;
+          if (!(d.candidates || []).some(function (c) { return c.lyrics && c.lyrics.length; })) return;
+          found[slug] = d; renderRail(); if (curSlug() === slug) renderMain();
+        }).catch(function () {});
+      });
+    }
     current = order[0] ? order[0].key : null;
     renderRail(); renderMain(); paintConn();
     if (token()) {
-      checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); fetchChurchKey(); })
+      checkAccess().then(function () { connected = true; paintConn(); Object.keys(finding).forEach(pollFind); recoverFound(); fetchChurchKey(); })
         .catch(function () { connected = false; paintConn(); });
     }
     // the key's Bible list refreshes quietly, so a newly licensed NASB shows up on the next Reading
