@@ -1132,14 +1132,17 @@ const LEGACY_SONGS = {
     title: "Jesus Paid It All",
     youtube: "https://www.youtube.com/watch?v=0rWXUqF_BFo",
     lyrics: [
-    { label: "Verse 1", lines: ["I hear the Savior say", "\"Thy strength indeed is small", "\"Child of weakness, watch and pray", "\"Find in Me thine all in all\""] },
-    { label: "Verse 2", lines: ["For nothing good have I", "Whereby Thy grace to claim", "I'll wash my garments white", "In the blood of Calv'ry's Lamb"] },
+    { label: "Verse 1", lines: ["I hear the Savior say", "\"Thy strength indeed is small"] },
+    { label: "Verse 1", lines: ["\"Child of weakness, watch and pray", "\"Find in Me thine all in all\""] },
+    { label: "Verse 2", lines: ["For nothing good have I", "Whereby Thy grace to claim"] },
+    { label: "Verse 2", lines: ["I'll wash my garments white", "In the blood of Calv'ry's Lamb"] },
     { label: "Chorus", lines: ["Jesus paid it all", "All to Him I owe", "Sin had left a crimson stain", "He washed it white as snow"] },
     { label: "Verse 3", lines: ["And now, complete in Him", "My robe, His righteousness", "Close sheltered 'neath His side", "I am divinely blessed"] },
     { label: "Verse 4", lines: ["Lord, now indeed I find", "Thy pow'r, and Thine alone", "Can change the leper's spot", "And melt the heart of stone"] },
     { label: "Chorus", lines: ["Jesus paid it all", "All to Him I owe", "Sin had left a crimson stain", "He washed it white as snow"] },
     { label: "Bridge", lines: ["Oh, praise the One who paid my debt", "And raised this life up from the dead"] },
-    { label: "Verse 5", lines: ["When, from my dying bed", "My ransomed soul shall rise", "\"Jesus died my soul to save!\"", "Shall rend the vaulted skies"] },
+    { label: "Verse 5", lines: ["When, from my dying bed", "My ransomed soul shall rise"] },
+    { label: "Verse 5", lines: ["\"Jesus died my soul to save!\"", "Shall rend the vaulted skies"] },
     { label: "Verse 6", lines: ["And when, before the throne", "I stand in Him complete", "I'll lay my trophies down", "All down at Jesus' feet"] },
     { label: "Chorus", lines: ["Jesus paid it all", "All to Him I owe", "Sin had left a crimson stain", "He washed it white as snow"] }
   ]
