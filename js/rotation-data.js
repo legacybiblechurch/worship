@@ -26,7 +26,7 @@ window.LBC_ROTATION = {
     "2026-11-29": {
       "slides": "Quaid",
       "stream": "Marco",
-      "table": "Michael"
+      "table": "Cole"
     }
   }
 };
